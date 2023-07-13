@@ -1,0 +1,35 @@
+BASIC Initialisation on Linux
+
+1. sudo apt-get update && sudo apt-get upgrade
+
+2. sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+
+Update Python
+1. 
+
+Install Git
+1. sudo apt-get install git
+2. git --version
+3. $ git config --global user.name "Omkar Parte"
+4. $ git config --global user.email rakmoinfinity@gmail.com
+5. sudo apt-get install repo
+
+install java
+1. java --version
+2. sudo apt install default-jdk ( not imp )
+3. sudo apt install default-jre
+4. sudo apt-get update
+
+1. mkdir octavi
+2. cd octavi
+3. repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen
+4. repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+
+## DONE
+
+git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git device/realme/sm8250-common
+git clone https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git vendor/realme/sm8250-common
+git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git hardware/oplus
+git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm8250
+git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
+git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
