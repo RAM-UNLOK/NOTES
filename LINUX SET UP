@@ -33,3 +33,8 @@ git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git hardware/oplus
 git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm8250
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
+
+nano ~/.bashrc
+export USE_CCACHE=1
+ccache -M 50G
+export CCACHE_COMPRESS=1
