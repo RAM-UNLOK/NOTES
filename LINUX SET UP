@@ -33,20 +33,3 @@ git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git hardware/oplus
 git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm8250
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
-
-
-make[1]: Leaving directory '/home/rakmo/octavi/out/target/product/bitra/obj/DTBO_OBJ'
-make: Leaving directory '/home/rakmo/octavi/kernel/realme/sm8250'
-[ 36% 29649/82097] //frameworks/base/packages/SettingsLib/CollapsingToolbarBaseActivity:SettingsLibCollapsingToolbar
-frameworks/base/packages/SettingsLib/CollapsingToolbarBaseActivity/res/values-v31/attrs.xml:18: warn: ignoring configuration 'v31' for styleable CollapsingCoordinatorLayout.
-[ 36% 29650/82097] //frameworks/base/packages/SettingsLib/CollapsingToolbarBaseActivity:SettingsLibCollapsingToolbar
-frameworks/base/packages/SettingsLib/CollapsingToolbarBaseActivity/res/values-v31/attrs.xml:18: warn: ignoring configuration 'v31' for styleable CollapsingCoordinatorLayout.
-[ 36% 29934/82097] //frameworks/base/core/res:framework-res aapt2 compile device/realme/sm8250-common/overlay-aosp/f
-FAILED: /home/rakmo/octavi/out/soong/.intermediates/frameworks/base/core/res/framework-res/android_common/aapt2/device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res/values_config.arsc.flat
-/home/rakmo/octavi/out/host/linux-x86/bin/aapt2 compile -o /home/rakmo/octavi/out/soong/.intermediates/frameworks/base/core/res/framework-res/android_common/aapt2/device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res --pseudo-localize device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res/values/config.xml
-device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res/values/config.xml:44: error: invalid integer.
-device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res/values/config.xml:44: error: plain text not allowed here.
-device/realme/sm8250-common/overlay-aosp/frameworks/base/core/res/res/values/config.xml: error: file failed to compile.
-02:50:22 ninja failed with: exit status 1
-
-
