@@ -43,5 +43,5 @@ git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b leafos
 
 nano ~/.bashrc
 export USE_CCACHE=1
-ccache -M 50G
+ccache -M 100G
 export CCACHE_COMPRESS=1
