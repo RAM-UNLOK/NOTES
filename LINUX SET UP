@@ -16,15 +16,13 @@ g++-multilib gcc-multilib git-core gnupg gperf imagemagick lib32ncurses5-dev \
 lib32z-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev \
 libxml2-utils unzip x11proto-core-dev xsltproc zip zlib1g-dev
 
-Update Python
-1. 
 
 Install Git
-1. sudo apt-get install git
-2. git --version
-3. $ git config --global user.name "Omkar Parte"
-4. $ git config --global user.email rakmoinfinity@gmail.com
-5. sudo apt-get install repo
+sudo apt-get install git
+git --version
+git config --global user.name "Omkar Parte"
+git config --global user.email rakmoinfinity@gmail.com
+sudo apt-get install repo
 
 install java
 1. java --version
