@@ -25,15 +25,15 @@ git config --global user.email rakmoinfinity@gmail.com
 sudo apt-get install repo
 
 install java
-1. java --version
-2. sudo apt install default-jdk ( not imp )
-3. sudo apt install default-jre
-4. sudo apt-get update
+java --version
+sudo apt install default-jdk ( not imp )
+sudo apt install default-jre
+sudo apt-get update
 
-1. mkdir octavi
-2. cd octavi
-3. repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen
-4. repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+mkdir octavi
+cd octavi
+repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen
+repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 ## DONE
 
