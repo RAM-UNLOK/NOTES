@@ -41,7 +41,19 @@ or
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b leaf device/realme/bitra
 
 
-nano ~/.bashrc
+Add this to ~/.bashrc, then run source ~/.bashrc:
 export USE_CCACHE=1
 ccache -M 100G
 export CCACHE_COMPRESS=1
+
+
+python2
+openjdk
+python2-pip ( required for installing python2 protobuf )
+protobuf ( install by pip2 install protobuf ) ( required for payload )
+libz-dev for ubuntu / libz-devel for fedora (required for simg2img - Install if it says zlib.h is missing ).
+
+apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
+apt install liblzma-dev python-pip brotli lz4
+pip install backports.lzma protobuf pycrypto
+
