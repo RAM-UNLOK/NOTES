@@ -69,6 +69,8 @@ export USE_CCACHE=1
 ccache -M 100G
 export CCACHE_COMPRESS=1
 
+make clobber
+
 
 python2
 openjdk
