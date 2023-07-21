@@ -11,6 +11,14 @@ git gnupg gperf lib32ncurses5-dev lib32readline6-dev lib32z1-dev libesd0-dev lib
 libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 libxml2-utils lzop pngcrush schedtool \
 squashfs-tools xsltproc zip zlib1g-dev imagemagick
 
+apt-get -y install build-essential nghttp2 libnghttp2-dev libssl-dev
+sudo apt-get install build-essential fakeroot dpkg-dev -y
+sudo apt-get build-dep git -y
+sudo apt-get install libcurl4-openssl-dev -y
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+
 sudo apt-get install bc bison build-essential ccache curl flex \
 g++-multilib gcc-multilib git-core gnupg gperf imagemagick lib32ncurses5-dev \
 lib32z-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev \
