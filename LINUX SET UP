@@ -46,8 +46,7 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 ## DONE
 
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b blaze-13.0 device/realme/sm8250-common
-git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b leaf device/realme/sm8250-common
-git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b octavi device/realme/sm8250-common
+git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b pixys device/realme/sm8250-common
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b arrow device/realme/sm8250-common
 
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git vendor/realme/sm8250-common
@@ -59,8 +58,7 @@ git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
 
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b blaze-13.0 device/realme/bitra
-git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b leaf device/realme/bitra
-git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b octavi device/realme/bitra
+git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b pixys device/realme/bitra
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b arrow device/realme/bitra
 
 nano ~/.bashrc, 
