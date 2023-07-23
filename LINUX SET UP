@@ -81,3 +81,8 @@ apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mp
 apt install liblzma-dev python-pip brotli lz4
 pip install backports.lzma protobuf pycrypto
 
+
+# FOR PIXYSOS
+git clone https://github.com/LineageOS/android_hardware_lineage_livedisplay.git hardware/lineage/livedisplay
+git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git packages/resources/devicesettings
+
