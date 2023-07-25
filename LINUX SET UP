@@ -80,21 +80,11 @@ pip install backports.lzma protobuf pycrypto
 #sim error
 https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb53812883f327af4a82c86ce3234f03538118
 
-# gapps size 
-BOARD_ODMIMAGE_PARTITION_RESERVED_SIZE := 104857600
+https://github.com/RAM-UNLOK/android_hardware_oplus
 
-ifeq ($(ARROW_GAPPS),true)
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 104857600
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 104857600
-else
-BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 2147483648
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 2147483648
-endif
+https://github.com/RAM-UNLOK/android_device_realme_bitra/tree/octavi
 
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 104857600
-BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 104857600
+https://github.com/RAM-UNLOK/android_device_realme_sm8250-common/tree/octavi
 
 
 
