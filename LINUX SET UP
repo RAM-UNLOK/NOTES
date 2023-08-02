@@ -55,6 +55,7 @@ git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git -b octavi hard
 
 git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm8250
 git clone https://github.com/Lyinx01/kernel_realme_sm8250.git -b Pulvis-AOSP kernel/realme/sm8250
+git clone https://github.com/AOSPA/android_kernel_realme_sm8250.git kernel/realme/sm8250
 
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
 
@@ -65,6 +66,7 @@ nano ~/.bashrc,
 export USE_CCACHE=1
 ccache -M 100G
 export CCACHE_COMPRESS=1
+WITH_DEXPREOPT=false
 
 make clobber
 
