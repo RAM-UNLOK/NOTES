@@ -84,11 +84,13 @@ pip install backports.lzma protobuf pycrypto
 #sim error
 https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb53812883f327af4a82c86ce3234f03538118
 
-https://github.com/RAM-UNLOK/android_hardware_oplus
+# NEW
+git clone https://github.com/AOSPA/android_kernel_realme_sm8250.git kernel/realme/sm8250
+git clone https://github.com/RAM-UNLOK/new_android_device_realme_sm8250-common.git device/realme/sm8250-common
+git clone https://github.com/RAM-UNLOK/new_android_device_realme_bitra.git device/realme/bitra
+git clone https://github.com/RAM-UNLOK/new_proprietary_vendor_realme.git vendor/realme
 
-https://github.com/RAM-UNLOK/android_device_realme_bitra/tree/octavi
 
-https://github.com/RAM-UNLOK/android_device_realme_sm8250-common/tree/octavi
 
 
 
