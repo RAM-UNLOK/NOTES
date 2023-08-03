@@ -89,6 +89,7 @@ git clone https://github.com/AOSPA/android_kernel_realme_sm8250.git kernel/realm
 git clone https://github.com/RAM-UNLOK/new_android_device_realme_sm8250-common.git device/realme/sm8250-common
 git clone https://github.com/RAM-UNLOK/new_android_device_realme_bitra.git device/realme/bitra
 git clone https://github.com/RAM-UNLOK/new_proprietary_vendor_realme.git vendor/realme
+git clone https://github.com/RAM-UNLOK/new_android_hardware_oplus.git hardware/oplus
 
 
 
