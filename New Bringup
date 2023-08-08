@@ -17,10 +17,6 @@ optional
 sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
 sudo apt install liblzma-dev brotli lz4
 
-
-
-
-
 sudo apt install default-jdk
 sudo apt install default-jre
 
