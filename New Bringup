@@ -29,27 +29,25 @@ git config --global user.email rakmoparte@gmail.com
 
 nano ~/.bashrc, 
 export USE_CCACHE=1
-ccache -M 100G
+ccache -M 150G
 export CCACHE_COMPRESS=1
 
 make clobber
 make clean
 
+# Blaze Bringup
+
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git device/realme/sm8250-common
-
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git vendor/realme/sm8250-common
-
 git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git hardware/oplus
-
 git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm8250
-git clone https://github.com/namjaejeon/linux-exfat-oot.git kernel/realme/sm8250/fs/exfat
-git clone https://github.com/Lyinx01/kernel_realme_sm8250.git -b Pulvis-AOSP kernel/realme/sm8250
-git clone https://github.com/AOSPA/android_kernel_realme_sm8250.git kernel/realme/sm8250
-
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
-
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
 
+# Custom Gapps 
+git clone https://gitlab.com/havoc_os/android_vendor_gms.git vendor/gms
+https://gitlab.com/Roxor-007/android_vendor_gms
+common.mk => $(call inherit-product, vendor/gms/products/gms.mk)
 
 #sim error
 https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb53812883f327af4a82c86ce3234f03538118
