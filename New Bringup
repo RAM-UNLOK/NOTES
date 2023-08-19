@@ -45,8 +45,7 @@ git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/re
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
 
 # Custom Gapps 
-git clone https://gitlab.com/havoc_os/android_vendor_gms.git vendor/gms
-https://gitlab.com/Roxor-007/android_vendor_gms
+git clone https://gitlab.com/Roxor-007/android_vendor_gms.git vendor/gms
 common.mk => $(call inherit-product, vendor/gms/products/gms.mk)
 
 #sim error
