@@ -44,10 +44,17 @@ git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git kernel/realme/sm
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git vendor/realme/bitra
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git device/realme/bitra
 
-# Custom Gapps 
-git clone https://gitlab.com/Roxor-007/android_vendor_gms.git vendor/gms
-common.mk => $(call inherit-product, vendor/gms/products/gms.mk)
-
 #sim error
 https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb53812883f327af4a82c86ce3234f03538118
+
+# Update Bolbs
+https://baalajimaestro.me/posts/extract-vendor-2/
+bash extract-files.sh /home/rakmo/dumpyara/working/EX10/
+bash setup-makefiles.sh /home/rakmo/dumpyara/working/EX10/
+python3 reorder-libs.py
+
+
+
+
+
 
