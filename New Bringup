@@ -15,8 +15,8 @@ sudo apt-get install python3-protobuf
 sudo apt-get install python-is-python3 libncurses5
 
 # optional 
-sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
-sudo apt install liblzma-dev brotli lz4
+sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
+sudo apt-get install liblzma-dev brotli lz4
 
 # Kernel Build
 sudo apt-get install git automake flex lzop bison gperf build-essential zip curl
