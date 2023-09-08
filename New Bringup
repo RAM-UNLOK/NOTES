@@ -1,8 +1,10 @@
 sudo apt-get update && sudo apt-get upgrade 
 
 # Custom Rom Compilation
-sudo apt-get install bc bison build-essential ccache curl flex
-sudo apt-get install g++-multilib gcc-multilib git-core gnupg gperf imagemagick lib32ncurses-dev
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install bc bison build-essential ccache curl flex git
+sudo apt-get install g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev
 sudo apt-get install lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev
 sudo apt-get install libxml2-utils unzip x11proto-core-dev xsltproc zip zlib1g-dev
 sudo apt-get install default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpkg-dev
@@ -28,26 +30,22 @@ sudo apt-get install make optipng maven libssl-dev pwgen libswitch-perl policyco
 sudo apt-get install libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 lib32ncurses5-dev
 sudo apt-get install x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip
 
-#RevampedFMRadio
-git clone https://github.com/iusmac/RevampedFMRadio.git -b qcom packages/apps/RevampedFMRadio
-
-install Git Kraken
-
-sudo apt-get install git
-git --version
-git config --global user.name "RAM-UNLOK"
-git config --global user.email rakmoparte@gmail.com
-
-nano ~/.bashrc, 
-export USE_CCACHE=1
-ccache -M 150G
-export CCACHE_COMPRESS=1
-
-#Latest Repo
+# Build Config ( Adds Latest git-repo )
 mkdir -p ~/.bin
 PATH="${HOME}/.bin:${PATH}"
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 chmod a+rx ~/.bin/repo
+
+nano ~/.bashrc
+( add lines below )
+export USE_CCACHE=1
+ccache -M 150G
+PATH="${HOME}/.bin:${PATH}"
+( Ctrl+o , Ctrl+x )
+
+install Git Kraken
+git config --global user.name "RAM-UNLOK"
+git config --global user.email rakmoparte@gmail.com
 
 make clobber
 make clean
@@ -56,25 +54,18 @@ make clean
 
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b Blaze device/realme/sm8250-common
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b Rise device/realme/sm8250-common
-git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b Pixel device/realme/sm8250-common
-git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b F10 device/realme/sm8250-common
 
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git -b Blaze vendor/realme/sm8250-common
-git clone https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git -b F10 vendor/realme/sm8250-common
 
 git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git -b Blaze hardware/oplus
 git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git -b Rise hardware/oplus
-git clone https://github.com/RAM-UNLOK/android_hardware_oplus.git -b Pixel hardware/oplus
 
 git clone https://github.com/RAM-UNLOK/kernel_realme_sm8250.git -b Bigshot-staging kernel/realme/sm8250
 
 git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git -b Blaze vendor/realme/bitra
-git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git -b F10 vendor/realme/bitra
 
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b Blaze device/realme/bitra
 git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b Rise device/realme/bitra
-git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b Pixel device/realme/bitra
-git clone https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b F10 device/realme/bitra
 
 #sim error
 https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb53812883f327af4a82c86ce3234f03538118
