@@ -27,9 +27,6 @@ sudo apt-get install make optipng maven libssl-dev pwgen libswitch-perl policyco
 sudo apt-get install libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 lib32ncurses5-dev
 sudo apt-get install x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip
 
-sudo apt install default-jdk
-sudo apt install default-jre
-
 install Git Kraken
 
 sudo apt-get install git
