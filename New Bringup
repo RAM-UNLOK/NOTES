@@ -40,6 +40,12 @@ export USE_CCACHE=1
 ccache -M 150G
 export CCACHE_COMPRESS=1
 
+#Latest Repo
+mkdir -p ~/.bin
+PATH="${HOME}/.bin:${PATH}"
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+chmod a+rx ~/.bin/repo
+
 make clobber
 make clean
 
