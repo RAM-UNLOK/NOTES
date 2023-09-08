@@ -1,5 +1,6 @@
 sudo apt-get update && sudo apt-get upgrade 
 
+# Custom Rom Compilation
 sudo apt-get install bc bison build-essential ccache curl flex
 sudo apt-get install g++-multilib gcc-multilib git-core gnupg gperf imagemagick lib32ncurses-dev
 sudo apt-get install lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev
@@ -13,9 +14,18 @@ sudo apt-get install python3-pip
 sudo apt-get install python3-protobuf
 sudo apt-get install python-is-python3 libncurses5
 
-optional 
+# optional 
 sudo apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
 sudo apt install liblzma-dev brotli lz4
+
+# Kernel Build
+sudo apt-get install git automake flex lzop bison gperf build-essential zip curl
+sudo apt-get install zlib1g-dev zlib1g-dev:i386 g++-multilib python3-networkx
+sudo apt-get install libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev
+sudo apt-get install squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool
+sudo apt-get install make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom
+sudo apt-get install libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 lib32ncurses5-dev
+sudo apt-get install x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip
 
 sudo apt install default-jdk
 sudo apt install default-jre
@@ -36,8 +46,6 @@ make clobber
 make clean
 
 # Blaze/Rising/Pixel Bringup
-
-PixelOS
 
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b Blaze device/realme/sm8250-common
 git clone https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b Rise device/realme/sm8250-common
