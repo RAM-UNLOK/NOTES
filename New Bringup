@@ -17,6 +17,7 @@ sudo apt-get install python-is-python3 libncurses5
 # optional 
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
 sudo apt-get install liblzma-dev brotli lz4
+sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x
 
 # Kernel Build
 sudo apt-get install git automake flex lzop bison gperf build-essential zip curl
