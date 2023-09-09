@@ -72,7 +72,7 @@ https://github.com/LeafOS-Project/android_device_qcom_sepolicy_vndr/commit/b4cb5
 
 # Update Bolbs
 https://baalajimaestro.me/posts/extract-vendor-2/
-bash extract-files.sh /home/rakmo/dumpyara/working/EX10/
-bash setup-makefiles.sh /home/rakmo/dumpyara/working/EX10/
+bash extract-files.sh /home/eam-unlok/dumpyara/working/F10/
+bash setup-makefiles.sh /home/eam-unlok/dumpyara/working/F10/
 python3 reorder-libs.py
 sort proprietary-files.txt | uniq -cd | sort -nr
