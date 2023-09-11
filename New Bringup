@@ -8,7 +8,7 @@ sudo apt-get install g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncur
 sudo apt-get install lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev
 sudo apt-get install libxml2-utils unzip x11proto-core-dev xsltproc zip zlib1g-dev
 sudo apt-get install default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpkg-dev
-sudo apt-get install libcurl4-openssl-dev git-lfs
+sudo apt-get install libcurl4-openssl-dev git-lfs patchelf
 
 sudo apt-get install python3
 sudo apt-get install python3-full
