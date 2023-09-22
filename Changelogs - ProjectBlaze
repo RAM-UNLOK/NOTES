@@ -1,47 +1,17 @@
-#  Changelogs 2.8
-   Build Date : 25th July 2023
-   Build Type : Unofficial
+#  Changelogs 2.10
+   Build Date : 23rd September 2023
+   Build Type : Official
    Build By : @UNLOK_18 ( Omkar Parte ) ( RAKMO )
 
-  -> Initial Build 
-  -> Both Vanilla and GApps build available
-  -> EU or IN F04 Firmware Recommended 
+  -> Updated Blobs to EX01
+  -> From Now Only Gapps Variant
+  -> Audio Issues Now Fixed ( Offload & volume trigger )
+  -> Enabled SecureNFC Feature
+  -> Fixup udfps sensor locations
+  -> EU or IN EX01 Firmware Required & " Mandatory " ( otherwise sensor and touch will be dead )
   -> Ships with latest Bigshot Kernel 
   -> Flash using any recovery ( I used Ofox )
-  -> Shipped with AOSP Dialer & Messaging app in GApps build too
-  -> Removed Lineage Livedisplay 
-  -> Increase Partition Reserve ( Flash Custom Gapps upto 2GB )
-  -> No Volume issue on any players
-  -> Auto Brightness works flawlessly
-  -> Google Photo Spoof Working ( Won't show unlimited upload in photos setting )
-
-This is my first every build, if any bugs found do let me know. 
-
-# NikGapps Zip Include ( Vanilla Build )
-
-  -> gms_optimization = yes
-  -> Core Package = yes
-  -> GoogleMessages = yes
-  -> GoogleContacts = yes
-  -> GoogleClock = yes
-  -> GoogleCalculator = yes
-  -> GoogleDrive = yes
-  -> GoogleMaps = yes
-  -> GooglePhotos = yes
-  -> GBoard = yes
-  -> GoogleCalendar = yes
-  -> GoogleKeep = yes
-  -> MarkupGoogle = yes
-  -> GoogleSearch = yes
-  -> GoogleSounds = yes
-  -> GoogleChrome = yes
-  -> Gmail = yes
-  -> GoogleDuo = yes
-  -> GoogleDocs = yes
-  -> GoogleSlides = yes
-  -> GoogleSheets = yes
-  -> PixelSetupWizard = yes
-
+  -> Shipped with AOSP & Google Dialer ( Your can disable either one as per your need )
 
 # Credits
 
