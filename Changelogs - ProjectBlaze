@@ -13,14 +13,15 @@
   -> Flash using any recovery ( I used Ofox )
   -> Shipped with AOSP & Google Dialer ( Your can disable either one as per your need )
 
-sky/vintf/FCM: Define missing HALs
-The following HALs in device manifest are not declared in FCM <= level 5:
+Define missing HALs
+
+The following HALs in device manifest are not declared in FCM <= level 6:
   android.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/default (@2)
-  android.hardware.drm@1.4::IDrmFactory/clearkey
-  android.hardware.power.IPower/default (@3)
   android.hardware.wifi.hostapd.IHostapd/default (@1)
   android.hardware.wifi.supplicant.ISupplicant/default (@1)
-  android.hardware.wifi@1.6::IWifi/default
+  android.hardware.sensors.ISensors/default (@1)
+
+
 
 # Credits
 
