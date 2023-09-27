@@ -3,15 +3,21 @@
    Build Type : Official
    Build By : @UNLOK_18 ( Omkar Parte ) ( RAKMO )
 
-  -> Updated Blobs to EX01
+  -> Updated Blobs from RMX3370_11.F.12 [ RMX3370_13.1.0.600 (EX01) ]
   -> From Now Only Gapps Variant
-  -> Audio Issues Now Fixed ( Offload & volume trigger )
+  -> Updated Audio Policy Configs
   -> Enabled SecureNFC Feature
   -> Fixup udfps sensor locations
+  -> Define missing HALs in FCM
+  -> Tweaks Power Profile For Battery Optimization 
+  -> Enhances ext4 stability
+  
   -> EU or IN EX01 Firmware Required & " Mandatory " ( otherwise sensor and touch will be dead )
   -> Ships with latest Bigshot Kernel 
   -> Flash using any recovery ( I used Ofox )
   -> Shipped with AOSP & Google Dialer ( Your can disable either one as per your need )
+
+Known Issues Otg Doesn't Work ( Will be Fixed On Next Update )
 
 Define missing HALs
 
