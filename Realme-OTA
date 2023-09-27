@@ -1,0 +1,6 @@
+sudo apt install python3-pip
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install --upgrade git+https://github.com/R0rt1z2/realme-ota
+
+realme-ota -v 4 -r 0 RMX3370 RMX3370_11.F.10_3100_202307201755 4
