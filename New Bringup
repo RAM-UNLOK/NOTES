@@ -83,3 +83,6 @@ sort proprietary-files.txt | uniq -cd | sort -nr
 
 #Install .dep packages
 sudo dpkg -i <packages>
+
+#Snapenhance install gradle 
+https://vegastack.com/tutorials/how-to-install-gradle-on-ubuntu-22-04/
