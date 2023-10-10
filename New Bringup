@@ -9,6 +9,7 @@ sudo apt-get install lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx1
 sudo apt-get install libxml2-utils unzip x11proto-core-dev xsltproc zip zlib1g-dev
 sudo apt-get install default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpkg-dev
 sudo apt-get install libcurl4-openssl-dev git-lfs patchelf policycoreutils-python-utils
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 
 sudo apt-get install python3
 sudo apt-get install python3-full
