@@ -45,6 +45,7 @@ PATH="${HOME}/.bin:${PATH}"
 ( Ctrl+o , Ctrl+x )
 
 install Git Kraken
+install android-studio
 git config --global user.name "RAM-UNLOK"
 git config --global user.email rakmoparte@gmail.com
 
