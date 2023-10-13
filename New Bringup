@@ -46,6 +46,7 @@ PATH="${HOME}/.bin:${PATH}"
 
 install Git Kraken
 install android-studio
+instal Chrome ( chrome://flags/ | TLS 1.3 hybridized Kyber support=enabled )
 git config --global user.name "RAM-UNLOK"
 git config --global user.email rakmoparte@gmail.com
 
