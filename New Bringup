@@ -42,6 +42,7 @@ nano ~/.bashrc
 export USE_CCACHE=1
 ccache -M 150G
 PATH="${HOME}/.bin:${PATH}"
+ANDROID_HOME=/home/unlok/Android/Sdk
 ( Ctrl+o , Ctrl+x )
 
 install Git Kraken
