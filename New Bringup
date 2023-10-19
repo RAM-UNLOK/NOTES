@@ -11,7 +11,7 @@ sudo apt-get install default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpk
 sudo apt-get install libcurl4-openssl-dev git-lfs patchelf policycoreutils-python-utils
 sudo apt-get install libc6:i386 libncurses6:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses6
-sudo apt-get install lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libncurses5 libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils
+sudo apt-get install lib32readline-dev lib32z1-dev liblz4-tool libncurses6 libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils
 sudo apt-get install lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
 
 sudo apt-get install python3
@@ -31,7 +31,7 @@ sudo apt-get install zlib1g-dev zlib1g-dev:i386 g++-multilib python3-networkx
 sudo apt-get install libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev
 sudo apt-get install squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool
 sudo apt-get install make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom
-sudo apt-get install libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 lib32ncurses5-dev
+sudo apt-get install libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386
 sudo apt-get install x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip
 
 # Build Config ( Adds Latest git-repo )
