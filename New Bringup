@@ -18,7 +18,14 @@ sudo apt-get install python3
 sudo apt-get install python3-full
 sudo apt-get install python3-pip
 sudo apt-get install python3-protobuf
-sudo apt-get install python-is-python3 libncurses5
+sudo apt-get install python-is-python3 libncurses6
+
+sudo apt-get update --fix-missing
+sudo apt-get install -f
+sudo apt-get clean
+sudo apt-get autoremove
+
+sudo dpkg -i 
 
 # optional 
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
