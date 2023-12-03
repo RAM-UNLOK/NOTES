@@ -4,7 +4,7 @@ source .venv/bin/activate
 pip3 install --upgrade git+https://github.com/R0rt1z2/realme-ota
 
 -r (GL = 0, CN = 1, IN= 2, EU = 3)
--v (RUI - 1 , 2 , 3 , 4)
+-v (RUI - 1 , 2 , 3 , 4 , 5 )
 -d (Filename = [ Global = DUMPGL , China = DUMPCN , India = DUMPIN , Europe = DUMPEU ] )
 
 
