@@ -1,0 +1,41 @@
+sudo apt install python3-pip
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install --upgrade git+https://github.com/R0rt1z2/realme-ota
+
+-r (GL = 0, CN = 1, IN= 2, EU = 3)
+-v (RUI - 1 , 2 , 3 , 4)
+-d (Filename = [ Global = DUMPGL , China = DUMPCN , India = DUMPIN , Europe = DUMPEU ] )
+
+
+realme-ota -v 4 -r 0 RMX3370 RMX3370_11.F.13_3130_202309251336 4 -d DUMPGL
+realme-ota -v 4 -r 0 RMX3370 RMX3370_11.F.13_3130_202309251336 4 -d DUMPCN
+realme-ota -v 4 -r 0 RMX3370 RMX3370_11.F.13_3130_202309251336 4 -d DUMPIN
+realme-ota -v 4 -r 0 RMX3370 RMX3370_11.F.13_3130_202309251336 4 -d DUMPEU
+
+# GLO
+"versionName": "RMX3370_13.1.0.601(EX01)"
+"osVersion": "ColorOS 13.1"
+"otaVersion": "RMX3370_11.F.13_3130_202309251336"
+Download Link 
+https://gauss-componentotacostmanual-sg.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/09/26/94c9ecf4e929458884b92d0d220b28ef.zip
+Description Link
+https://gauss-componentotacostmanual-sg.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/10/13/3f75bf2e13ca4a7ca7512126b54e3cf0.html?logoType=1
+
+# IN
+"versionName": "RMX3370_13.1.0.601(EX01)"
+"osVersion": "ColorOS 13.1"
+"otaVersion": "RMX3370_11.F.13_3130_202309251336"
+Download Link 
+https://gauss-componentotacostmanual-in.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/09/26/94c9ecf4e929458884b92d0d220b28ef.zip
+Description Link
+https://gauss-componentotacostmanual-in.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/10/20/d0c20aed6fe34626a54e33b437038e17.html?logoType=1
+
+# EU
+"versionName": "RMX3370_13.1.0.601(EX01)"
+"osVersion": "ColorOS 13.1"
+"otaVersion": "RMX3370_11.F.13_3130_202309251334"
+Download Link 
+https://gauss-componentotacostmanual-eu.allawnofs.com/remove-c59ebb51cddb341de07534e40c219f4b/component-ota/23/09/26/8577d80c5a984f22b79c5327ff8382a3.zip
+Description Link
+https://gauss-componentotacostmanual-eu.allawnofs.com/remove-c59ebb51cddb341de07534e40c219f4b/component-ota/23/10/20/aed8ffa67d514b85aefc076bde44c839.html?logoType=1

@@ -1,0 +1,88 @@
+{
+    "aid": "RMX3370NV44_11.F",
+    "androidVersion": "Android 13",
+    "colorOSVersion": "ColorOS 13.1",
+    "componentAssembleType": true,
+    "components": [
+        {
+            "componentId": "my_manifest_RMX3370_11.F.13_3130_202309251334.44.99b6cefe",
+            "componentName": "my_manifest",
+            "componentPackets": {
+                "id": "foreign_my_manifest_RMX3370_11.F.13_3130_202309251334.44.99b6cefe_1_fc101ae9c025cab52f30286633c37548",
+                "manualUrl": "https://gauss-componentotacostmanual-eu.allawnofs.com/remove-c59ebb51cddb341de07534e40c219f4b/component-ota/23/09/26/8577d80c5a984f22b79c5327ff8382a3.zip",
+                "md5": "fc101ae9c025cab52f30286633c37548",
+                "size": "5264393110",
+                "type": "1",
+                "url": "https://gauss-componentotacostmanual-eu.allawnofs.com/remove-c59ebb51cddb341de07534e40c219f4b/component-ota/23/09/26/8577d80c5a984f22b79c5327ff8382a3.zip"
+            },
+            "componentVersion": "RMX3370_11.F.13_3130_202309251334.44.99b6cefe"
+        }
+    ],
+    "decentralize": {
+        "offset": 13997,
+        "round": 28800,
+        "strategyVersion": "8"
+    },
+    "description": {
+        "share": ".",
+        "url": "https://gauss-componentotacostmanual-eu.allawnofs.com/remove-c59ebb51cddb341de07534e40c219f4b/component-ota/23/10/20/aed8ffa67d514b85aefc076bde44c839.html?logoType=1"
+    },
+    "googlePatchInfo": "0",
+    "id": "65321bd0124eec01155efbac",
+    "isNvDescription": true,
+    "isRecruit": false,
+    "isSecret": false,
+    "nightUpdateLimit": "00-99",
+    "noticeType": 0,
+    "nvId16": "NV44",
+    "osVersion": "ColorOS 13.1",
+    "otaVersion": "RMX3370_11.F.13_3130_202309251334",
+    "paramFlag": 1,
+    "parent": "ota",
+    "realAndroidVersion": "Android 13",
+    "realOsVersion": "ColorOS 13.1.0",
+    "reminderType": 1,
+    "reminderValue": {
+        "download": {
+            "notice": [
+                1,
+                3,
+                5,
+                7,
+                7,
+                7
+            ],
+            "pop": [
+                1,
+                1,
+                1
+            ],
+            "version": "1697423688000"
+        },
+        "upgrade": {
+            "notice": [
+                3,
+                5,
+                7,
+                7,
+                7
+            ],
+            "pop": [
+                3,
+                3,
+                3,
+                3,
+                3
+            ],
+            "version": "1697423688000"
+        }
+    },
+    "rid": "db9347d8-5b5f-4913-bcef-34d8ec7734a5",
+    "securityPatch": "2023-09-05",
+    "securityPatchVendor": "2023-09-05",
+    "silenceUpdate": 0,
+    "status": "published",
+    "versionCode": 3130,
+    "versionName": "RMX3370_13.1.0.601(EX01)",
+    "versionTypeH5": "Official version"
+}
