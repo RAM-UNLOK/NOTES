@@ -86,7 +86,7 @@ bootdts/27.dtsdump_Qualcomm_Technologies,_Inc._kona_v1_SoC.dts
 bootdts/28.dtsdump_Qualcomm_Technologies,_Inc._kona_v2.1_SoC.dts
 bootdts/29.dtsdump_Qualcomm_Technologies,_Inc._kona_v2_SoC.dts
 bootdts/30.dtsdump_Qualcomm_Technologies,_Inc._kona_v1_SoC.dts
-bootdts/31.dtsdump__qcom,rtic-id.dts
+bootdts/31.dtsdump_4C_r!c.dts
 boot.img
 bootimg/00_kernel
 bootimg/01_dtbdump_Qualcomm_Technologies,_Inc._kona_v2.1_SoC.dtb
@@ -119,7 +119,7 @@ bootimg/27_dtbdump_Qualcomm_Technologies,_Inc._kona_v1_SoC.dtb
 bootimg/28_dtbdump_Qualcomm_Technologies,_Inc._kona_v2.1_SoC.dtb
 bootimg/29_dtbdump_Qualcomm_Technologies,_Inc._kona_v2_SoC.dtb
 bootimg/30_dtbdump_Qualcomm_Technologies,_Inc._kona_v1_SoC.dtb
-bootimg/31_dtbdump__qcom,rtic-id.dtb
+bootimg/31_dtbdump_4C_r!c.dtb
 boot/img_info
 boot/kernel
 boot/ramdisk/avb/q-gsi.avbpubkey
@@ -217,6 +217,7 @@ my_bigball/del-app-pre/Videos_del/Videos.apk
 my_bigball/del-app-pre/YTMusic_del/YTMusic.apk
 my_bigball/del-app/RMCommEXP/lib/arm/libcrypter-lib.so
 my_bigball/del-app/RMCommEXP/lib/arm/libgpuimage-library.so
+my_bigball/del-app/RMCommEXP/lib/arm/libImSDK.so
 my_bigball/del-app/RMCommEXP/lib/arm/libmmkv.so
 my_bigball/del-app/RMCommEXP/lib/arm/libobjectbox-jni.so
 my_bigball/del-app/RMCommEXP/lib/arm/librtmp-jni.so
@@ -1045,7 +1046,6 @@ my_product/etc/permissions/com.oplus.features_config.xml
 my_product/etc/permissions/com.oplus.features.xml
 my_product/etc/permissions/com.oplus.product.connectivity.common.features.xml
 my_product/etc/permissions/com.oppo.features_display.xml
-my_product/etc/permissions/default_grant_permissions_list.xml
 my_product/etc/permissions/oplus.feature.android.xml
 my_product/etc/permissions/oplus.feature.bsp.charge.xml
 my_product/etc/permissions/oplus.features.connectivity.xml
@@ -1071,6 +1071,7 @@ my_product/etc/settings/regulatory_image_brazil_anatel_rmx3363.png
 my_product/etc/settings/regulatory_image_india_anatel_rmp2107.png
 my_product/etc/settings/regulatory_image_india_anatel_rmp2108.png
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
+my_product/etc/sys_perf_config.json
 my_product/etc/sys_resolution_switch_config.xml
 my_product/etc/vibrator/effect2waveform.xml
 my_product/framework/com.android.hotwordenrollment.common.util.impl.jar
@@ -1401,6 +1402,7 @@ my_region/etc/extension/cn-ct/simLoaded/feature_com.android.phone_common_v3.xml
 my_region/etc/extension/cn-cu/simLoaded/feature_com.android.phone_common_v3.xml
 my_region/etc/extension/co-claro/simLoaded/feature_com.android.phone_common_v3.xml
 my_region/etc/extension/com.oplus.app-features.xml
+my_region/etc/extension/com.oplus.oplus-feature.xml
 my_region/etc/extension/cosmote-gr/simReady/feature_com.android.phone_common_v3.xml
 my_region/etc/extension/cr-claro/simLoaded/feature_com.android.phone_common_v3.xml
 my_region/etc/extension/crnogorski-me/simReady/feature_com.android.phone_common_v3.xml
@@ -1632,6 +1634,7 @@ my_stock/app/CommercialMidGround/oat/arm64/CommercialMidGround.vdex
 my_stock/app/COSA/COSA.apk
 my_stock/app/COSA/oat/arm64/COSA.vdex
 my_stock/app/FileEncryption/FileEncryption.apk
+my_stock/app/FileEncryption/oat/arm64/FileEncryption.vdex
 my_stock/app/FileManager/FileManager.apk
 my_stock/app/FloatAssistant/FloatAssistant.apk
 my_stock/app/FloatAssistant/oat/arm64/FloatAssistant.vdex
@@ -1655,7 +1658,6 @@ my_stock/app/LocationProxy/oat/arm64/LocationProxy.vdex
 my_stock/app/Music/Music.apk
 my_stock/app/Music/oat/arm64/Music.vdex
 my_stock/app/Music/oat/arm/Music.vdex
-my_stock/app/NewSoundRecorder/lib/arm64/liblamemp3.so
 my_stock/app/NewSoundRecorder/lib/arm64/libopluslog.so
 my_stock/app/NewSoundRecorder/lib/arm64/libsilenceWrapper.so
 my_stock/app/NewSoundRecorder/lib/arm64/libSlienceDetect.so
@@ -1691,7 +1693,7 @@ my_stock/app/Portrait/lib/arm64/liboplus_image_process.so
 my_stock/app/Portrait/lib/arm64/libyuv2.so
 my_stock/app/Portrait/oat/arm64/Portrait.vdex
 my_stock/app/Portrait/Portrait.apk
-my_stock/app/realmeMovieShot/oat/arm/realmeMovieShot.vdex
+my_stock/app/realmeMovieShot/oat/arm64/realmeMovieShot.vdex
 my_stock/app/realmeMovieShot/realmeMovieShot.apk
 my_stock/app/RomUpdate/RomUpdate.apk
 my_stock/app/SceneMode/oat/arm64/SceneMode.vdex
@@ -1700,6 +1702,8 @@ my_stock/app/SecurePay/oat/arm64/SecurePay.vdex
 my_stock/app/SecurePay/SecurePay.apk
 my_stock/app/SmartEngine/lib/arm64/libETC2Loader.so
 my_stock/app/SmartEngine/lib/arm/libETC2Loader.so
+my_stock/app/SmartEngine/oat/arm64/SmartEngine.vdex
+my_stock/app/SmartEngine/oat/arm/SmartEngine.vdex
 my_stock/app/SmartEngine/SmartEngine.apk
 my_stock/app/SmartSideBar/oat/arm64/SmartSideBar.vdex
 my_stock/app/SmartSideBar/SmartSideBar.apk
@@ -2677,6 +2681,7 @@ my_stock/priv-app/HeyCast/oat/arm64/HeyCast.vdex
 my_stock/priv-app/HeySynergy/HeySynergy.apk
 my_stock/priv-app/HeySynergy/oat/arm64/HeySynergy.vdex
 my_stock/priv-app/LockAssistant/LockAssistant.apk
+my_stock/priv-app/LockAssistant/oat/arm64/LockAssistant.vdex
 my_stock/priv-app/MDSService/MDSService.apk
 my_stock/priv-app/MDSService/oat/arm64/MDSService.vdex
 my_stock/priv-app/Metis/Metis.apk
@@ -5862,8 +5867,6 @@ system_ext/app/OplusGestureUI/lib/arm64/libQnnSystem.so
 system_ext/app/OplusGestureUI/lib/arm64/libscan_engine_decode.so
 system_ext/app/OplusGestureUI/lib/arm64/libscan_engine_detect.so
 system_ext/app/OplusGestureUI/lib/arm64/libscannerdetector.so
-system_ext/app/OplusGestureUI/lib/arm64/libsgmain.so
-system_ext/app/OplusGestureUI/lib/arm64/libsgmainso-5.4.171.so
 system_ext/app/OplusGestureUI/lib/arm64/libtensorflowlite.so
 system_ext/app/OplusGestureUI/lib/arm64/libyolofusiondetector.so
 system_ext/app/OplusGestureUI/oat/arm64/OplusGestureUI.odex
@@ -7337,7 +7340,6 @@ system_ext/lib64/liboplussfplugin_ccodec.so
 system_ext/lib64/libOplusSloganClient.so
 system_ext/lib64/liboplusstagefright__mp3enc.so
 system_ext/lib64/liboplusstagefright.so
-system_ext/lib64/liboplustinyxml.so
 system_ext/lib64/liboplusutils.so
 system_ext/lib64/libOplusVirtualAudio.so
 system_ext/lib64/libOplusVirtualCamera.so
@@ -7773,7 +7775,6 @@ system_ext/lib/liboplus_servers.so
 system_ext/lib/liboplussfplugin_ccodec.so
 system_ext/lib/liboplusstagefright__mp3enc.so
 system_ext/lib/liboplusstagefright.so
-system_ext/lib/liboplustinyxml.so
 system_ext/lib/liboplusutils.so
 system_ext/lib/libOplusVirtualAudio.so
 system_ext/lib/libOplusVirtualCamera.so
@@ -9056,7 +9057,6 @@ system/system/etc/security/cacerts/c491639e.0
 system/system/etc/security/cacerts/c51c224c.0
 system/system/etc/security/cacerts/c559d742.0
 system/system/etc/security/cacerts/c90bc37d.0
-system/system/etc/security/cacerts/cb156124.0
 system/system/etc/security/cacerts/cb1c3204.0
 system/system/etc/security/cacerts/ccc52f49.0
 system/system/etc/security/cacerts/cf701eeb.0

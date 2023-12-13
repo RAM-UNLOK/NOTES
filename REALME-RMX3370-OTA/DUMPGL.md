@@ -5,30 +5,30 @@
     "componentAssembleType": true,
     "components": [
         {
-            "componentId": "my_manifest_RMX3370_11.F.13_3130_202309251336.1B.f167dc86",
+            "componentId": "my_manifest_RMX3370_11.F.14_3140_202311161918.1B.e659055c",
             "componentName": "my_manifest",
             "componentPackets": {
-                "id": "foreign_my_manifest_RMX3370_11.F.13_3130_202309251336.1B.f167dc86_1_c0031444e3c5e1a316d9731b3d9f706d",
-                "manualUrl": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/09/26/94c9ecf4e929458884b92d0d220b28ef.zip",
-                "md5": "c0031444e3c5e1a316d9731b3d9f706d",
-                "size": "6207016931",
+                "id": "foreign_my_manifest_RMX3370_11.F.14_3140_202311161918.1B.e659055c_1_d4b411d77a0d4b5ba219732165224814",
+                "manualUrl": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-f4aedc728028cb0abef1b3ea8ae617b2/component-ota/23/12/04/79f58c25fe6240868c0afe694d688c0f.zip",
+                "md5": "d4b411d77a0d4b5ba219732165224814",
+                "size": "6204186791",
                 "type": "1",
-                "url": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/09/26/94c9ecf4e929458884b92d0d220b28ef.zip"
+                "url": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-f4aedc728028cb0abef1b3ea8ae617b2/component-ota/23/12/04/79f58c25fe6240868c0afe694d688c0f.zip"
             },
-            "componentVersion": "RMX3370_11.F.13_3130_202309251336.1B.f167dc86"
+            "componentVersion": "RMX3370_11.F.14_3140_202311161918.1B.e659055c"
         }
     ],
     "decentralize": {
-        "offset": 12424,
+        "offset": 21604,
         "round": 28800,
         "strategyVersion": "default"
     },
     "description": {
         "share": ".",
-        "url": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-7273420710053ae38ca6d15a66d4609b/component-ota/23/10/20/d0c20aed6fe34626a54e33b437038e17.html?logoType=1"
+        "url": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-f4aedc728028cb0abef1b3ea8ae617b2/component-ota/23/12/13/6ffc39cd71f54175ab26f9ab7fb798fb.html?logoType=1"
     },
     "googlePatchInfo": "0",
-    "id": "65321b8b66c96101151799c4",
+    "id": "65795f38124eec011acde373",
     "isNvDescription": true,
     "isRecruit": false,
     "isSecret": false,
@@ -36,7 +36,7 @@
     "noticeType": 0,
     "nvId16": "NV1B",
     "osVersion": "ColorOS 13.1",
-    "otaVersion": "RMX3370_11.F.13_3130_202309251336",
+    "otaVersion": "RMX3370_11.F.14_3140_202311161918",
     "paramFlag": 1,
     "parent": "ota",
     "realAndroidVersion": "Android 13",
@@ -57,7 +57,7 @@
                 1,
                 1
             ],
-            "version": "1697185300000"
+            "version": "1701702296000"
         },
         "upgrade": {
             "notice": [
@@ -74,15 +74,15 @@
                 3,
                 3
             ],
-            "version": "1697185300000"
+            "version": "1701702296000"
         }
     },
-    "rid": "020a47c7-4b68-4f77-af28-4edf24cc7385",
-    "securityPatch": "2023-09-05",
-    "securityPatchVendor": "2023-09-05",
+    "rid": "63ef7229-be7b-4898-9491-dcf4d5ecc0be",
+    "securityPatch": "2023-11-05",
+    "securityPatchVendor": "2023-11-05",
     "silenceUpdate": 0,
     "status": "published",
-    "versionCode": 3130,
-    "versionName": "RMX3370_13.1.0.601(EX01)",
+    "versionCode": 3140,
+    "versionName": "RMX3370_13.1.0.700(EX01)",
     "versionTypeH5": "Official version"
 }
