@@ -35,6 +35,28 @@ git clone https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git -b A14 ve
 ```
 
 
+## Depth 1 Clone repos (Project Blaze Bringup)
+
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/android_device_realme_sm8250-common.git -b A14 device/realme/sm8250-common
+```
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/android_device_realme_bitra.git -b A14 device/realme/bitra
+```
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/android_hardware_oplus.git -b A14 hardware/oplus
+```
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/kernel_realme_sm8250.git -b bigshot-AOSP kernel/realme/sm8250
+```
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-common.git -b A14 vendor/realme/sm8250-common
+```
+```
+git clone --depth 1 https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git -b A14 vendor/realme/bitra
+```
+
+
 ## Some Tweaks For Building the ROM
 
 - Build BCR (add this to your blaze_device.mk)
