@@ -63,7 +63,20 @@ git clone --depth 1 https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git
 - Thanks to [chenxiaolong](https://github.com/chenxiaolong)
 
 ```
+git clone https://gitlab.com/ram-unlok/bcr.git vendor/bcr
+```
+```
 $(call inherit-product, vendor/bcr/bcr.mk)
+```
+
+- Build VIPERFX RE for Blaze
+- Thanks to [TogoFire](https://github.com/TogoFire)
+
+```
+git clone --depth 1 https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
+```
+```
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 ```
 
 - Change Build Time and Date to Indian time

@@ -1,6 +1,6 @@
-#  Changelogs Project Blaze 3.0 (A14) BETA-2
+#  Changelogs Project Blaze 3.0 (A14) STABLE
 
->   Build Date : 22nd DEC 2023
+>   Build Date : 25TH DEC 2023
 
 >   Build Type : Official Stable ( A14 Build )
 
@@ -8,17 +8,20 @@
 
 ### Changelog Bitra RMX3370
 
-(22/12/23)
+(25/12/23)
 
-- Updated Kernel From AOSPA & Bigshot (Thanks To Elias & Peter)
-- Play Integrity Passes By Default
+- Upstreamed Bigshot Kernel to 4.19.300 Stable
+(ASB-2023-12-05_4.19-stable & LA.UM.9.12.r1-17900-SMxx50.QSSI14.0)
+- Play Integrity Fail (Use Magisk Module)
 - December Secutiy Patch
 - Updated Blobs to RMX3370_13.1.0.700(EX01) (F14)
 - Fix udfps Overlay not showing
+- Fix Flash on lockscreen for UDFPS
 - New Keboard Tap Vibration
-- Enable casefolding (which is required for removal of sdcardfs)
+- Updated fstab From RMX3370_11.F.14
 - Updated Ofox Recovery
-
+- Fixed NFC (Does Activate But Not sure if Fully Working)
+- Some more miscellaneous Changes
 
 (04/12/23)
 
@@ -35,10 +38,9 @@
 - Remove some camera-daemon commands
 - Remove obsolete config_keyboardTapVibePattern
 - Add missing BT LDAC lib
-- Add some miscellaneous Changes
 
 
-###  [Flash Guide & Download Link](https://github.com/RAM-UNLOK/NOTES/blob/main/Changelogs/Flash%20Guide.md)
+###  [Flash Guide & Download Link](https://github.com/RAM-UNLOK/NOTES/blob/main/CHANGELOG/Flash-Guide.md)
 
 ## Credits
 

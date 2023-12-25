@@ -9,15 +9,13 @@
 - Flash Orange Fox Recovery (A14) through existing Custom Recovery or any Other Custom Recovery For A14
 - Flash Latest F14 Firmware of your Region ( Mandatory!!!! )
 - Flash Project Blaze Custom ROM zip
-- Flash Magisk Delta ( Optional but required since Play Integrity fails after few days ) ( You can flash later after booting too )
 - Now Format DATA and Reboot
+- Flash Magisk Delta (Recommended To FLash After Boot)
 - Don’t Forget to flash play integrity Fix Magisk Module Else few apps will be unavailable in playstore.
 
 
 ## WARNING AND BUGS
 
-- NFC wont work
-- You may face screen flashes at udfps unlock (WIP)
 - Power Menu Toggles Dont work
 - Report Any Bugs with log if possible
 
