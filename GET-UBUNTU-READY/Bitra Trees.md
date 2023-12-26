@@ -56,6 +56,12 @@ git clone --depth 1 https://github.com/RAM-UNLOK/android_vendor_realme_sm8250-co
 git clone --depth 1 https://github.com/RAM-UNLOK/android_vendor_realme_bitra.git -b A14 vendor/realme/bitra
 ```
 
+- To Update trees which were cloned with depth=1 use below
+
+```
+git pull -f --depth=1 --rebase
+```
+
 
 ## Some Tweaks For Building the ROM
 
