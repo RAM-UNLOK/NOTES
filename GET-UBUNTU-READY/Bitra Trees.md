@@ -167,3 +167,9 @@ java -jar SELinuxDenialsTool.jar
 ```
 python3 denials.py
 ```
+
+## Find and replace one word from multiple dir
+
+```
+grep -rli 'EXPORT_SYMBOL' | xargs sed -i 's/EXPORT_SYMBOL(/EXPORT_SYMBOL_GPL(/g'
+```
