@@ -2,33 +2,33 @@
     "aid": "RMX3370NV97_11.F",
     "androidVersion": "Android 13",
     "colorOSVersion": "ColorOS 13.1",
-    "componentAssembleType": true,
+    "componentAssembleType": false,
     "components": [
         {
-            "componentId": "my_manifest_RMX3370_11.F.13_3130_202309251338.97.e8ef3355",
+            "componentId": "my_manifest_RMX3370_11.F.15_3150_202312141836.97.ecd2e83f",
             "componentName": "my_manifest",
             "componentPackets": {
-                "id": "domestic_my_manifest_RMX3370_11.F.13_3130_202309251338.97.e8ef3355_1_b2cd7439f7575359fe91b53d43db67c5",
-                "manualUrl": "https://gauss-componentotacostmanual-cn.allawnfs.com/remove-072accd2b61dc2d00f350b860a7fd5c9/component-ota/23/09/26/e7efa4c543c34f97926841e61c27da3f.zip",
-                "md5": "b2cd7439f7575359fe91b53d43db67c5",
-                "size": "7014807031",
+                "id": "domestic_my_manifest_RMX3370_11.F.15_3150_202312141836.97.ecd2e83f_1_974b0be343bf2cae08a4f5132cbd4e42",
+                "manualUrl": "https://gauss-componentotacostmanual-cn.allawnfs.com/remove-acd70ae136bdbc2bc333667babc9c4d0/component-ota/23/12/20/f6a5941301ba435d888f0335a81ec8f0.zip",
+                "md5": "974b0be343bf2cae08a4f5132cbd4e42",
+                "size": "7048416572",
                 "type": "1",
-                "url": "https://gauss-compotacostauto-cn.allawnfs.com/remove-072accd2b61dc2d00f350b860a7fd5c9/component-ota/23/09/26/e7efa4c543c34f97926841e61c27da3f.zip"
+                "url": "https://gauss-compotacostauto-cn.allawnfs.com/remove-acd70ae136bdbc2bc333667babc9c4d0/component-ota/23/12/20/f6a5941301ba435d888f0335a81ec8f0.zip"
             },
-            "componentVersion": "RMX3370_11.F.13_3130_202309251338.97.e8ef3355"
+            "componentVersion": "RMX3370_11.F.15_3150_202312141836.97.ecd2e83f"
         }
     ],
     "decentralize": {
-        "offset": 8796,
+        "offset": 15721,
         "round": 28800,
         "strategyVersion": "8"
     },
     "description": {
         "share": ".",
-        "url": "https://gauss-compotacostauto-cn.allawnfs.com/remove-072accd2b61dc2d00f350b860a7fd5c9/component-ota/23/10/20/75ec8e05f41e4f939d84d68f727fd4c3.html?logoType=1&fontType=opposans"
+        "url": "https://gauss-compotacostauto-cn.allawnfs.com/remove-acd70ae136bdbc2bc333667babc9c4d0/component-ota/24/01/01/4a6d322d2ae94efc9f05f1ef1bcfff72.html?logoType=1&fontType=opposans"
     },
     "googlePatchInfo": "0",
-    "id": "65321c2866c96101151799d5",
+    "id": "6592ba1a124eec011ace2ccf",
     "isNvDescription": true,
     "isRecruit": false,
     "isSecret": false,
@@ -36,7 +36,7 @@
     "noticeType": 0,
     "nvId16": "NV97",
     "osVersion": "ColorOS 13.1",
-    "otaVersion": "RMX3370_11.F.13_3130_202309251338",
+    "otaVersion": "RMX3370_11.F.15_3150_202312141836",
     "paramFlag": 1,
     "parent": "ota",
     "realAndroidVersion": "Android 13",
@@ -57,7 +57,7 @@
                 1,
                 1
             ],
-            "version": "1697179991000"
+            "version": "1703242597000"
         },
         "upgrade": {
             "notice": [
@@ -74,15 +74,15 @@
                 3,
                 3
             ],
-            "version": "1697179991000"
+            "version": "1703242597000"
         }
     },
-    "rid": "b55a4102-04e2-4416-a5e3-890ebc12c62a",
-    "securityPatch": "2023-09-05",
-    "securityPatchVendor": "2023-09-05",
+    "rid": "1926aa4c-62cb-4bdc-9270-4c414a7a6775",
+    "securityPatch": "2023-11-05",
+    "securityPatchVendor": "2023-11-05",
     "silenceUpdate": 0,
     "status": "published",
-    "versionCode": 3130,
-    "versionName": "RMX3370_13.1.0.201(CN01)",
+    "versionCode": 3150,
+    "versionName": "RMX3370_13.1.0.302(CN01)",
     "versionTypeH5": "正式版"
 }

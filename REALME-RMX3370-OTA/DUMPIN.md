@@ -19,7 +19,7 @@
         }
     ],
     "decentralize": {
-        "offset": 7595,
+        "offset": 1332,
         "round": 28800,
         "strategyVersion": "default"
     },

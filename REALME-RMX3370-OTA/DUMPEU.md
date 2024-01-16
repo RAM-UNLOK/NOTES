@@ -19,16 +19,16 @@
         }
     ],
     "decentralize": {
-        "offset": 27708,
+        "offset": 9688,
         "round": 28800,
         "strategyVersion": "8"
     },
     "description": {
         "share": ".",
-        "url": "https://gauss-componentotacostmanual-eu.allawnofs.com/remove-7e59eaeed4aa6579539c133bd617eab1/component-ota/23/12/05/b439f20da94744d6b99d54fa3ea6a46f.html?logoType=1"
+        "url": "https://gauss-componentotacostmanual-eu.allawnofs.com/remove-7e59eaeed4aa6579539c133bd617eab1/component-ota/23/12/18/8efeaee700424e0995ebffd4f96692d2.html?logoType=1"
     },
     "googlePatchInfo": "0",
-    "id": "656e9dba124eec011acdb915",
+    "id": "657ff879124eec011acdf76e",
     "isNvDescription": true,
     "isRecruit": false,
     "isSecret": false,
