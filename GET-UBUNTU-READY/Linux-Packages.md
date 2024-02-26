@@ -146,6 +146,17 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 > Now install android studio via flatpak (reboot first if you haven't)
 
+- Install Telegram PPA ( Flatpak or snap doesnt work sometimes )
+
+```
+sudo add-apt-repository ppa:atareao/telegram
+```
+```
+sudo apt-get update
+```
+```
+sudo apt-get install -y telegram
+```
 
 - Installing any `.deb` packages you downloaded use this
 
