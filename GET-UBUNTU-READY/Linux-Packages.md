@@ -189,3 +189,33 @@ sudo mkdir -m 775 Foldername
 sudo chown -R username:group Foldername
 ```
 
+- Create a virtual environment using venv or virtualenv
+
+> Make sure venv is installed by running:
+```
+sudo apt install python3-venv
+```
+
+> To create a new virtual environment in a directory named .venv, run:
+```
+python3 -m venv .venv
+```
+
+> To activate this virtual environment (which modifies the PATH environment variable), run this:
+```
+source .venv/bin/activate
+```
+
+> Now you can install a library like requests in this virtual environment:
+```
+pip install requests
+```
+
+> The files will get installed under the .venv/ directory.
+
+> If you want to leave the virtual environment, you can run:
+```
+deactivate
+```
+
+
