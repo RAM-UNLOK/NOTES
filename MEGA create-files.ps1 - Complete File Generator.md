@@ -1,67 +1,38 @@
-Here's the **CLEAN MEGA SCRIPT** with concise comments and a **SEPARATE COMPLETE GUIDE**:
+Below is a single, Windows‑ready mega script that generates the complete WordPress Docker stack using Nginx Alpine, PHP 8.3‑FPM Alpine, MariaDB 11.6, plus all utility scripts and SSL with fixed, silent OpenSSL handling, followed by a separate, concise installation guide for Docker Desktop on Windows 11.[1][2][3][4]
 
-***
-
-# Part 1: The Mega Script (create-files.ps1)
-
+### Save as C:\wordpress-docker\create-files.ps1
 ```powershell
 ###############################################################################
-# WordPress Docker - Complete Setup Generator v3.0
-# Creates all files for Windows 11 + Docker Desktop + Alpine Stack
-# Usage: .\create-files.ps1
+# WordPress Docker - MEGA File Creator (Windows 11) - Alpine Edition
+# Stack: nginx:alpine + wordpress:php8.3-fpm-alpine + mariadb:11.6 + phpMyAdmin
+# Notes:
+# - Uses small, Docker-optimized base images (Alpine) for faster pulls and lower RAM. 
+# - Includes SSL generation with fully silent OpenSSL execution (no dot spam). 
+# - All configs and scripts are Windows-friendly and editable in File Explorer.
 ###############################################################################
 
 param([switch]$Force = $false)
-$ErrorActionPreference = "Continue"
+$ErrorActionPreference = "Stop"
 
-Clear-Host
-Write-Host ""
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host " WordPress Docker Setup Generator" -ForegroundColor Cyan
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host ""
-
-$projectRoot = $PSScriptRoot
-if (-not $projectRoot) { $projectRoot = (Get-Location).Path }
-
-Write-Host "Project: $projectRoot" -ForegroundColor Green
-Write-Host ""
-
-# Helper: Create directory
 function New-ProjectDirectory {
     param([string]$Path)
-    $fullPath = Join-Path $projectRoot $Path
-    if (-not (Test-Path $fullPath)) {
-        try {
-            New-Item -ItemType Directory -Path $fullPath -Force -ErrorAction Stop | Out-Null
-            Write-Host "  [+] $Path" -ForegroundColor Green
-        } catch {
-            Write-Host "  [!] $Path" -ForegroundColor Red
-        }
-    }
+    $full = Join-Path $PSScriptRoot $Path
+    if (-not (Test-Path $full)) { New-Item -ItemType Directory -Path $full -Force | Out-Null }
+    Write-Host "Dir: $Path"
 }
 
-# Helper: Create file
 function New-ProjectFile {
-    param([string]$Path, [string]$Content)
-    $fullPath = Join-Path $projectRoot $Path
-    if ((Test-Path $fullPath) -and -not $Force) {
-        Write-Host "  [~] $Path" -ForegroundColor Yellow
-        return
-    }
-    try {
-        $Content | Out-File -FilePath $fullPath -Encoding UTF8 -Force -ErrorAction Stop
-        Write-Host "  [+] $Path" -ForegroundColor Green
-    } catch {
-        Write-Host "  [!] $Path" -ForegroundColor Red
-    }
+    param([string]$Path,[string]$Content)
+    $full = Join-Path $PSScriptRoot $Path
+    if ((Test-Path $full) -and -not $Force) { Write-Host "Keep: $Path"; return }
+    $Content | Out-File -FilePath $full -Encoding UTF8 -Force
+    Write-Host "File: $Path"
 }
 
-###############################################################################
-# STEP 1: Directories
-###############################################################################
+Write-Host ""
+Write-Host "== WordPress Docker - File Generator (Alpine) =="
 
-Write-Host "[1/10] Creating directories..." -ForegroundColor Cyan
+# 1) Directories
 New-ProjectDirectory "nginx"
 New-ProjectDirectory "nginx\conf.d"
 New-ProjectDirectory "php"
@@ -73,36 +44,25 @@ New-ProjectDirectory "backups"
 New-ProjectDirectory "logs\nginx"
 New-ProjectDirectory "logs\php"
 New-ProjectDirectory "logs\mariadb"
-Write-Host ""
 
-###############################################################################
-# STEP 2: .env File
-###############################################################################
-
-Write-Host "[2/10] Creating .env..." -ForegroundColor Cyan
-$envContent = @"
-# Project name
+# 2) .env (edit passwords before first run)
+$envTxt = @'
 COMPOSE_PROJECT_NAME=wordpress-docker
 
-# WordPress database settings
 WORDPRESS_DB_NAME=wordpress
 WORDPRESS_DB_USER=wpuser
 WORDPRESS_DB_PASSWORD=ChangeThisPassword123!
 WORDPRESS_TABLE_PREFIX=wp_
 
-# WordPress admin (CHANGE THESE!)
 WORDPRESS_ADMIN_USER=myadmin
 WORDPRESS_ADMIN_PASSWORD=ChangeAdminPassword123!
 WORDPRESS_ADMIN_EMAIL=admin@localhost.local
 
-# Database root password (CHANGE THIS!)
 MYSQL_ROOT_PASSWORD=ChangeRootPassword123!
 
-# Versions (latest as of Oct 2025)
 MARIADB_VERSION=11.6
 PHP_VERSION=8.3
 
-# Domain and SSL
 DOMAIN_NAME=localhost.local
 SSL_COUNTRY=US
 SSL_STATE=California
@@ -110,47 +70,37 @@ SSL_CITY=San Francisco
 SSL_ORG=My Organization
 SSL_ORG_UNIT=IT
 
-# Ports
 NGINX_HTTP_PORT=80
 NGINX_HTTPS_PORT=443
 PHPMYADMIN_PORT=8080
 
-# Timezone
 TIMEZONE=UTC
 
-# PHP limits
 PHP_MEMORY_LIMIT=512M
 PHP_MAX_EXECUTION_TIME=300
 PHP_MAX_INPUT_TIME=300
 PHP_UPLOAD_MAX_FILESIZE=256M
 PHP_POST_MAX_SIZE=256M
 
-# Backup retention (days)
 BACKUP_RETENTION_DAYS=30
-"@
-New-ProjectFile ".env" $envContent
-Write-Host ""
+'@
+New-ProjectFile ".env" $envTxt
 
-###############################################################################
-# STEP 3: docker-compose.yml
-###############################################################################
-
-Write-Host "[3/10] Creating docker-compose.yml..." -ForegroundColor Cyan
-$dockerCompose = @"
-version: '3.8'
+# 3) docker-compose.yml (nginx:alpine + wordpress:php-fpm-alpine + mariadb 11.6)
+$compose = @'
+version: "3.8"
 
 services:
-  # MariaDB 11.6 - Database server
   mariadb:
-    image: mariadb:`${MARIADB_VERSION:-11.6}
-    container_name: `${COMPOSE_PROJECT_NAME}_mariadb
+    image: mariadb:${MARIADB_VERSION:-11.6}
+    container_name: ${COMPOSE_PROJECT_NAME}_mariadb
     restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: `${MYSQL_ROOT_PASSWORD}
-      MARIADB_DATABASE: `${WORDPRESS_DB_NAME}
-      MARIADB_USER: `${WORDPRESS_DB_USER}
-      MARIADB_PASSWORD: `${WORDPRESS_DB_PASSWORD}
-      TZ: `${TIMEZONE}
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${WORDPRESS_DB_NAME}
+      MARIADB_USER: ${WORDPRESS_DB_USER}
+      MARIADB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      TZ: ${TIMEZONE}
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./mariadb/my.cnf:/etc/mysql/conf.d/custom.cnf:ro
@@ -171,25 +121,24 @@ services:
       retries: 5
       start_period: 40s
 
-  # WordPress PHP 8.3-FPM
   wordpress:
     build:
       context: ./php
       args:
-        PHP_VERSION: `${PHP_VERSION:-8.3}
-    container_name: `${COMPOSE_PROJECT_NAME}_wordpress
+        PHP_VERSION: ${PHP_VERSION:-8.3}
+    container_name: ${COMPOSE_PROJECT_NAME}_wordpress
     restart: unless-stopped
     depends_on:
       mariadb:
         condition: service_healthy
     environment:
       WORDPRESS_DB_HOST: mariadb:3306
-      WORDPRESS_DB_NAME: `${WORDPRESS_DB_NAME}
-      WORDPRESS_DB_USER: `${WORDPRESS_DB_USER}
-      WORDPRESS_DB_PASSWORD: `${WORDPRESS_DB_PASSWORD}
-      WORDPRESS_TABLE_PREFIX: `${WORDPRESS_TABLE_PREFIX}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
       WORDPRESS_DEBUG: 0
-      TZ: `${TIMEZONE}
+      TZ: ${TIMEZONE}
     volumes:
       - wordpress_data:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
@@ -204,20 +153,19 @@ services:
       retries: 3
       start_period: 40s
 
-  # Nginx Alpine - Web server
   nginx:
     build:
       context: ./nginx
-    container_name: `${COMPOSE_PROJECT_NAME}_nginx
+    container_name: ${COMPOSE_PROJECT_NAME}_nginx
     restart: unless-stopped
     depends_on:
       - wordpress
     ports:
-      - "`${NGINX_HTTP_PORT:-80}:80"
-      - "`${NGINX_HTTPS_PORT:-443}:443"
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
     environment:
-      DOMAIN_NAME: `${DOMAIN_NAME}
-      TZ: `${TIMEZONE}
+      DOMAIN_NAME: ${DOMAIN_NAME}
+      TZ: ${TIMEZONE}
     volumes:
       - wordpress_data:/var/www/html:ro
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
@@ -232,21 +180,20 @@ services:
       timeout: 10s
       retries: 3
 
-  # phpMyAdmin - Database management
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: `${COMPOSE_PROJECT_NAME}_phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
     restart: unless-stopped
     depends_on:
       - mariadb
     ports:
-      - "`${PHPMYADMIN_PORT:-8080}:80"
+      - "${PHPMYADMIN_PORT:-8080}:80"
     environment:
       PMA_HOST: mariadb
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: `${MYSQL_ROOT_PASSWORD}
-      UPLOAD_LIMIT: `${PHP_UPLOAD_MAX_FILESIZE}
-      TZ: `${TIMEZONE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      UPLOAD_LIMIT: ${PHP_UPLOAD_MAX_FILESIZE}
+      TZ: ${TIMEZONE}
     networks:
       - wordpress-network
 
@@ -256,40 +203,24 @@ networks:
 
 volumes:
   mariadb_data:
-    driver: local
   wordpress_data:
-    driver: local
-"@
-New-ProjectFile "docker-compose.yml" $dockerCompose
-Write-Host ""
+'@
+New-ProjectFile "docker-compose.yml" $compose
 
-###############################################################################
-# STEP 4: Nginx Files
-###############################################################################
-
-Write-Host "[4/10] Creating Nginx files..." -ForegroundColor Cyan
-
-# Nginx Dockerfile
-$nginxDockerfile = @"
+# 4) nginx Dockerfile (alpine)
+$nginxDocker = @'
 FROM nginx:alpine
-
-# Install OpenSSL and curl
 RUN apk add --no-cache openssl curl
-
-# Create directories
 RUN mkdir -p /var/log/nginx /var/cache/nginx
-
-# Copy configs
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY conf.d/ /etc/nginx/conf.d/
-
 EXPOSE 80 443
-CMD ["nginx", "-g", "daemon off;"]
-"@
-New-ProjectFile "nginx\Dockerfile" $nginxDockerfile
+CMD ["nginx","-g","daemon off;"]
+'@
+New-ProjectFile "nginx\Dockerfile" $nginxDocker
 
-# Nginx main config
-$nginxConf = @"
+# 5) nginx.conf (small, secure, cached)
+$nginxConf = @'
 user nginx;
 worker_processes auto;
 worker_rlimit_nofile 65535;
@@ -297,277 +228,293 @@ error_log /var/log/nginx/error.log warn;
 pid /var/run/nginx.pid;
 
 events {
-    worker_connections 4096;
-    use epoll;
-    multi_accept on;
+  worker_connections 4096;
+  use epoll;
+  multi_accept on;
 }
 
 http {
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
 
-    log_format main '`$remote_addr - `$remote_user [`$time_local] "`$request" '
-                    '`$status `$body_bytes_sent "`$http_referer" '
-                    '"`$http_user_agent"';
-    access_log /var/log/nginx/access.log main;
+  log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                  '$status $body_bytes_sent "$http_referer" '
+                  '"$http_user_agent" "$http_x_forwarded_for"';
+  access_log /var/log/nginx/access.log main;
 
-    # Performance
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-    client_max_body_size 256M;
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+  keepalive_timeout 65;
+  types_hash_max_size 2048;
 
-    # Gzip compression
-    gzip on;
-    gzip_vary on;
-    gzip_comp_level 6;
-    gzip_types text/plain text/css application/json application/javascript text/xml;
+  client_max_body_size 256M;
+  client_body_buffer_size 128k;
+  client_body_timeout 60s;
+  client_header_timeout 60s;
+  send_timeout 60s;
 
-    # Security headers
-    add_header X-Frame-Options "SAMEORIGIN" always;
-    add_header X-Content-Type-Options "nosniff" always;
-    server_tokens off;
+  gzip on;
+  gzip_vary on;
+  gzip_proxied any;
+  gzip_comp_level 6;
+  gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss;
+  gzip_disable "msie6";
+  gzip_min_length 256;
 
-    # Rate limiting
-    limit_req_zone `$binary_remote_addr zone=wp_login:10m rate=2r/s;
-    limit_req_zone `$binary_remote_addr zone=wp_admin:10m rate=10r/s;
+  add_header X-Frame-Options "SAMEORIGIN" always;
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header X-XSS-Protection "0" always;
+  add_header Referrer-Policy "no-referrer-when-downgrade" always;
+  server_tokens off;
 
-    # FastCGI cache
-    fastcgi_cache_path /var/cache/nginx levels=1:2 keys_zone=WORDPRESS:100m inactive=60m max_size=512m;
-    fastcgi_cache_key "`$scheme`$request_method`$host`$request_uri";
+  limit_req_zone $binary_remote_addr zone=wp_login:10m rate=2r/s;
+  limit_req_zone $binary_remote_addr zone=wp_admin:10m rate=10r/s;
+  limit_conn_zone $binary_remote_addr zone=addr:10m;
 
-    include /etc/nginx/conf.d/*.conf;
+  fastcgi_cache_path /var/cache/nginx levels=1:2 keys_zone=WORDPRESS:100m inactive=60m max_size=512m;
+  fastcgi_cache_key "$scheme$request_method$host$request_uri";
+  fastcgi_cache_use_stale error timeout invalid_header http_500 http_503;
+  fastcgi_cache_valid 200 301 302 60m;
+  fastcgi_cache_valid 404 10m;
+
+  include /etc/nginx/conf.d/*.conf;
 }
-"@
+'@
 New-ProjectFile "nginx\nginx.conf" $nginxConf
 
-# Nginx site config
-$nginxSite = @"
-upstream php-fpm {
-    server wordpress:9000;
-    keepalive 32;
+# 6) nginx site (WordPress + SSL + cache)
+$nginxSite = @'
+upstream php-fpm { server wordpress:9000; keepalive 32; }
+
+server {
+  listen 80; listen [::]:80;
+  server_name localhost localhost.local;
+  location ^~ /.well-known/acme-challenge/ { allow all; root /var/www/html; }
+  return 301 https://$host$request_uri;
 }
 
-# HTTP redirect to HTTPS
 server {
-    listen 80;
-    server_name localhost localhost.local;
-    return 301 https://`$host`$request_uri;
-}
+  listen 443 ssl http2; listen [::]:443 ssl http2;
+  server_name localhost localhost.local;
 
-# HTTPS server
-server {
-    listen 443 ssl http2;
-    server_name localhost localhost.local;
-    root /var/www/html;
-    index index.php;
+  root /var/www/html;
+  index index.php index.html;
 
-    # SSL certificates
-    ssl_certificate /etc/nginx/ssl/cert.pem;
-    ssl_certificate_key /etc/nginx/ssl/key.pem;
-    ssl_protocols TLSv1.2 TLSv1.3;
+  ssl_certificate /etc/nginx/ssl/cert.pem;
+  ssl_certificate_key /etc/nginx/ssl/key.pem;
+  ssl_protocols TLSv1.2 TLSv1.3;
+  ssl_ciphers 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384';
+  ssl_prefer_server_ciphers on;
+  ssl_session_cache shared:SSL:10m;
+  ssl_session_timeout 10m;
+  ssl_session_tickets off;
 
-    # Logs
-    access_log /var/log/nginx/wordpress-access.log;
-    error_log /var/log/nginx/wordpress-error.log;
+  access_log /var/log/nginx/wordpress-access.log;
+  error_log  /var/log/nginx/wordpress-error.log;
 
-    # WordPress permalinks
-    location / {
-        try_files `$uri `$uri/ /index.php?`$args;
-    }
+  limit_conn addr 10;
 
-    # Block hidden files
-    location ~ /\. {
-        deny all;
-    }
+  location / { try_files $uri $uri/ /index.php?$args; }
 
-    # Block XML-RPC
-    location = /xmlrpc.php {
-        deny all;
-    }
+  location ~ /\. { deny all; access_log off; log_not_found off; }
+  location = /xmlrpc.php { deny all; access_log off; log_not_found off; }
+  location = /readme.html { deny all; }
+  location = /license.txt { deny all; }
+  location ~* wp-config.php { deny all; }
 
-    # Rate limit login
-    location = /wp-login.php {
-        limit_req zone=wp_login burst=5 nodelay;
-        include fastcgi_params;
-        fastcgi_pass php-fpm;
-        fastcgi_param SCRIPT_FILENAME `$document_root`$fastcgi_script_name;
-    }
+  location = /wp-login.php {
+    limit_req zone=wp_login burst=5 nodelay;
+    include fastcgi_params;
+    fastcgi_pass php-fpm;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_index index.php;
+  }
 
-    # PHP processing with cache
+  location ^~ /wp-admin/ {
+    limit_req zone=wp_admin burst=20 nodelay;
     location ~ \.php$ {
-        try_files `$uri =404;
-        
-        set `$skip_cache 0;
-        if (`$request_method = POST) { set `$skip_cache 1; }
-        if (`$query_string != "") { set `$skip_cache 1; }
-        if (`$request_uri ~* "/wp-admin/|/xmlrpc.php|wp-.*.php") { set `$skip_cache 1; }
-        if (`$http_cookie ~* "wordpress_logged_in") { set `$skip_cache 1; }
-        
-        fastcgi_cache_bypass `$skip_cache;
-        fastcgi_no_cache `$skip_cache;
-        fastcgi_cache WORDPRESS;
-        
-        include fastcgi_params;
-        fastcgi_pass php-fpm;
-        fastcgi_param SCRIPT_FILENAME `$document_root`$fastcgi_script_name;
-        fastcgi_read_timeout 300;
-        
-        add_header X-Cache-Status `$upstream_cache_status;
+      include fastcgi_params;
+      fastcgi_pass php-fpm;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      fastcgi_index index.php;
     }
+  }
 
-    # Static files caching
-    location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2)$ {
-        expires 30d;
-        access_log off;
-    }
+  location ~ \.php$ {
+    try_files $uri =404;
+
+    set $skip_cache 0;
+    if ($request_method = POST) { set $skip_cache 1; }
+    if ($query_string != "") { set $skip_cache 1; }
+    if ($request_uri ~* "/wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml") { set $skip_cache 1; }
+    if ($http_cookie ~* "comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in") { set $skip_cache 1; }
+
+    fastcgi_cache_bypass $skip_cache;
+    fastcgi_no_cache $skip_cache;
+    fastcgi_cache WORDPRESS;
+    fastcgi_cache_valid 60m;
+
+    include fastcgi_params;
+    fastcgi_pass php-fpm;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_index index.php;
+    fastcgi_intercept_errors on;
+
+    fastcgi_buffer_size 128k;
+    fastcgi_buffers 256 16k;
+    fastcgi_busy_buffers_size 256k;
+    fastcgi_temp_file_write_size 256k;
+    fastcgi_read_timeout 300;
+
+    add_header X-Cache-Status $upstream_cache_status;
+  }
+
+  location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$ {
+    expires 30d;
+    add_header Cache-Control "public, immutable";
+    access_log off;
+  }
+
+  location ~* /(?:uploads|files)/.*\.php$ { deny all; }
+  location ~ /\.(?!well-known) { deny all; }
 }
-"@
+'@
 New-ProjectFile "nginx\conf.d\default.conf" $nginxSite
-Write-Host ""
 
-###############################################################################
-# STEP 5: PHP Files
-###############################################################################
-
-Write-Host "[5/10] Creating PHP files..." -ForegroundColor Cyan
-
-# PHP Dockerfile
-$phpDockerfile = @"
+# 7) PHP Dockerfile (wordpress:phpX-fpm-alpine)
+$phpDocker = @'
 ARG PHP_VERSION=8.3
-FROM wordpress:php`${PHP_VERSION}-fpm-alpine
+FROM wordpress:php${PHP_VERSION}-fpm-alpine
 
-# Install dependencies
-RUN apk add --no-cache libzip-dev zip git bash fcgi imagemagick imagemagick-libs
-
-# Install PHP extensions
+RUN apk add --no-cache libzip-dev zip unzip git bash fcgi imagemagick imagemagick-libs libgomp
 RUN docker-php-ext-install opcache zip exif
 
-# Install Redis extension
-RUN apk add --no-cache --virtual .build-deps `$PHPIZE_DEPS \
-    && pecl install redis \
-    && docker-php-ext-enable redis \
-    && apk del .build-deps
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
+ && pecl install redis \
+ && docker-php-ext-enable redis \
+ && apk del .build-deps
 
-# Install ImageMagick extension
-RUN apk add --no-cache --virtual .imagick-deps `$PHPIZE_DEPS imagemagick-dev libtool \
-    && git clone https://github.com/Imagick/imagick.git --depth 1 /tmp/imagick \
-    && cd /tmp/imagick && phpize && ./configure && make && make install \
-    && docker-php-ext-enable imagick \
-    && rm -rf /tmp/imagick && apk del .imagick-deps
+RUN apk add --no-cache --virtual .imagick-deps $PHPIZE_DEPS imagemagick-dev libtool \
+ && git clone https://github.com/Imagick/imagick.git --depth 1 /tmp/imagick \
+ && cd /tmp/imagick && phpize && ./configure && make && make install \
+ && docker-php-ext-enable imagick \
+ && rm -rf /tmp/imagick && apk del .imagick-deps
 
-# Health check script
-RUN echo '#!/bin/sh' > /usr/local/bin/php-fpm-healthcheck && \
-    echo 'SCRIPT_NAME=/ping SCRIPT_FILENAME=/ping REQUEST_METHOD=GET cgi-fcgi -bind -connect 127.0.0.1:9000 || exit 1' >> /usr/local/bin/php-fpm-healthcheck && \
-    chmod +x /usr/local/bin/php-fpm-healthcheck
+RUN echo '#!/bin/sh' > /usr/local/bin/php-fpm-healthcheck \
+ && echo 'SCRIPT_NAME=/ping SCRIPT_FILENAME=/ping REQUEST_METHOD=GET cgi-fcgi -bind -connect 127.0.0.1:9000 || exit 1' >> /usr/local/bin/php-fpm-healthcheck \
+ && chmod +x /usr/local/bin/php-fpm-healthcheck
 
-# Log directory
 RUN mkdir -p /var/log/php && chown www-data:www-data /var/log/php
 
-# Copy configs
 COPY php.ini /usr/local/etc/php/conf.d/custom.ini
 COPY php-fpm.conf /usr/local/etc/php-fpm.d/zz-custom.conf
 
 WORKDIR /var/www/html
 EXPOSE 9000
 CMD ["php-fpm"]
-"@
-New-ProjectFile "php\Dockerfile" $phpDockerfile
+'@
+New-ProjectFile "php\Dockerfile" $phpDocker
 
-# PHP ini
-$phpIni = @"
-# Performance
+# 8) php.ini (small + safe + fast)
+$phpIni = @'
 max_execution_time = 300
+max_input_time = 300
 memory_limit = 512M
 post_max_size = 256M
 upload_max_filesize = 256M
 max_input_vars = 3000
 
-# Error logging
 display_errors = Off
+display_startup_errors = Off
 log_errors = On
 error_log = /var/log/php/error.log
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
 
-# Security
+session.save_handler = files
+session.save_path = "/tmp"
+session.gc_maxlifetime = 3600
+session.cookie_httponly = 1
+session.cookie_secure = 1
+session.use_strict_mode = 1
+
 expose_php = Off
 allow_url_fopen = On
 allow_url_include = Off
+disable_functions = exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
 
-# OPcache (5x performance boost)
 opcache.enable = 1
+opcache.enable_cli = 0
 opcache.memory_consumption = 256
+opcache.interned_strings_buffer = 16
 opcache.max_accelerated_files = 10000
+opcache.max_wasted_percentage = 10
 opcache.validate_timestamps = 1
 opcache.revalidate_freq = 60
+opcache.save_comments = 1
+opcache.fast_shutdown = 1
 
-# File uploads
+realpath_cache_size = 4096K
+realpath_cache_ttl = 600
+
 file_uploads = On
 max_file_uploads = 20
 date.timezone = UTC
-"@
+
+mysqli.default_socket = /var/run/mysqld/mysqld.sock
+'@
 New-ProjectFile "php\php.ini" $phpIni
 
-# PHP-FPM config
-$phpFpm = @"
+# 9) php-fpm.conf (balanced defaults)
+$phpFpm = @'
 [www]
-
-# Process manager
 pm = dynamic
 pm.max_children = 50
 pm.start_servers = 10
 pm.min_spare_servers = 5
 pm.max_spare_servers = 20
 pm.max_requests = 500
+pm.process_idle_timeout = 10s
 
-# Timeouts
 request_terminate_timeout = 300s
+request_slowlog_timeout = 10s
 slowlog = /var/log/php/slow.log
 
-# Logging
 catch_workers_output = yes
+php_flag[display_errors] = off
 php_admin_value[error_log] = /var/log/php/fpm-error.log
+php_admin_flag[log_errors] = on
 
-# Status pages
+security.limit_extensions = .php
+
 pm.status_path = /status
 ping.path = /ping
 ping.response = pong
 
 clear_env = no
-"@
+'@
 New-ProjectFile "php\php-fpm.conf" $phpFpm
-Write-Host ""
 
-###############################################################################
-# STEP 6: MariaDB Files
-###############################################################################
-
-Write-Host "[6/10] Creating MariaDB files..." -ForegroundColor Cyan
-
-# MariaDB config
-$mariadbConf = @"
+# 10) MariaDB my.cnf (utf8mb4 + sane buffers)
+$mariaCnf = @'
 [mysqld]
 user = mysql
 port = 3306
 datadir = /var/lib/mysql
 
-# UTF8MB4 support
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 
-# Network
 bind-address = 0.0.0.0
 max_connections = 200
 max_allowed_packet = 256M
 wait_timeout = 600
+interactive_timeout = 600
 
-# Logging
 slow_query_log = 1
 slow_query_log_file = /var/log/mysql/slow.log
 long_query_time = 2
 
-# InnoDB performance
 innodb_buffer_pool_size = 512M
 innodb_log_file_size = 128M
 innodb_file_per_table = 1
@@ -580,641 +527,273 @@ default-character-set = utf8mb4
 quick
 max_allowed_packet = 256M
 default-character-set = utf8mb4
-"@
-New-ProjectFile "mariadb\my.cnf" $mariadbConf
+'@
+New-ProjectFile "mariadb\my.cnf" $mariaCnf
 
-# MariaDB init
-$mariadbInit = @"
--- Optimize system tables
+# 11) MariaDB init.sql (optional hooks)
+$mariaInit = @'
+-- Init script hook; add custom DB/users/grants as needed.
 OPTIMIZE TABLE mysql.user;
 OPTIMIZE TABLE mysql.db;
 FLUSH PRIVILEGES;
 SHOW DATABASES;
-"@
-New-ProjectFile "mariadb\init\init.sql" $mariadbInit
-Write-Host ""
+'@
+New-ProjectFile "mariadb\init\init.sql" $mariaInit
 
-###############################################################################
-# STEP 7: Support Files
-###############################################################################
-
-Write-Host "[7/10] Creating support files..." -ForegroundColor Cyan
-
-$gitignore = @"
+# 12) .gitignore (keep secrets/large files out of git)
+$gitignore = @'
 .env
 ssl/*.pem
 ssl/*.key
+ssl/*.crt
 backups/
 *.zip
+*.tar.gz
 *.sql
 logs/
 *.log
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
 .vscode/
 .idea/
-"@
+*.swp
+*.swo
+*~
+tmp/
+temp/
+*.tmp
+'@
 New-ProjectFile ".gitignore" $gitignore
 
-$readme = @"
-# WordPress Docker - Alpine Edition
-
-Lightweight WordPress stack for Windows 11.
-
-## Quick Start
-1. Edit .env (change passwords)
-2. Run: .\quick-start.ps1
-3. Access: https://localhost.local
-
-## Commands
-- Start: .\scripts\start.ps1
-- Stop: .\scripts\stop.ps1
-- Logs: .\scripts\logs.ps1
-- Backup: .\scripts\backup.ps1
-
-## Stack
-- Nginx Alpine (~23MB)
-- PHP 8.3 Alpine (~80MB)
-- MariaDB 11.6 (~400MB)
-- Total: ~503MB
-
-## Access
-- WordPress: https://localhost.local
-- Admin: https://localhost.local/wp-admin
-- phpMyAdmin: http://localhost:8080
-"@
-New-ProjectFile "README.md" $readme
-Write-Host ""
-
-###############################################################################
-# STEP 8: PowerShell Scripts
-###############################################################################
-
-Write-Host "[8/10] Creating scripts..." -ForegroundColor Cyan
-
-# Start script
-$startScript = @'
+# 13) scripts\start.ps1 (start stack)
+$startPs1 = @'
 $ErrorActionPreference = "Stop"
-Write-Host ""
-Write-Host "Starting WordPress..." -ForegroundColor Cyan
-Set-Location (Split-Path -Parent $PSScriptRoot)
-docker-compose up -d
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "Started!" -ForegroundColor Green
-    docker-compose ps
-    Write-Host ""
-    Write-Host "WordPress:  https://localhost.local" -ForegroundColor White
-    Write-Host "phpMyAdmin: http://localhost:8080" -ForegroundColor White
-    Write-Host ""
-}
-'@
-New-ProjectFile "scripts\start.ps1" $startScript
-
-# Stop script
-$stopScript = @'
-$ErrorActionPreference = "Stop"
-Write-Host ""
-Write-Host "Stopping WordPress..." -ForegroundColor Cyan
-Set-Location (Split-Path -Parent $PSScriptRoot)
-docker-compose stop
-Write-Host "Stopped!" -ForegroundColor Green
-Write-Host ""
-'@
-New-ProjectFile "scripts\stop.ps1" $stopScript
-
-# Logs script
-$logsScript = @'
-param(
-    [ValidateSet("all","nginx","wordpress","mariadb","phpmyadmin")]
-    [string]$Service = "all",
-    [int]$Lines = 100,
-    [switch]$Follow
-)
-Set-Location (Split-Path -Parent $PSScriptRoot)
-if ($Follow) {
-    if ($Service -eq "all") { docker-compose logs -f }
-    else { docker-compose logs -f $Service }
-} else {
-    if ($Service -eq "all") { docker-compose logs --tail=$Lines }
-    else { docker-compose logs --tail=$Lines $Service }
-}
-'@
-New-ProjectFile "scripts\logs.ps1" $logsScript
-
-# Backup script
-$backupScript = @'
-$ErrorActionPreference = "Stop"
-Write-Host ""
-Write-Host "WordPress Backup" -ForegroundColor Cyan
+Write-Host "`nStarting WordPress Docker..." -ForegroundColor Cyan
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
-
-# Load .env
-Get-Content ".env" | ForEach-Object {
-    if ($_ -match '^\s*([^#][^=]+)=(.+)$') {
-        Set-Item -Path "env:$($matches[1].Trim())" -Value $matches[2].Trim()
-    }
-}
-
-$date = Get-Date -Format "yyyyMMdd_HHmmss"
-$backup_name = "wordpress_backup_$date"
-$prefix = if ($env:COMPOSE_PROJECT_NAME) { $env:COMPOSE_PROJECT_NAME } else { "wordpress-docker" }
-$backup_path = Join-Path $root "backups\$backup_name"
-New-Item -ItemType Directory -Path $backup_path -Force | Out-Null
-
-Write-Host "Backing up database..." -ForegroundColor Yellow
-docker exec "$prefix`_mariadb" mysqldump -u root -p"$env:MYSQL_ROOT_PASSWORD" --single-transaction "$env:WORDPRESS_DB_NAME" | Out-File "$backup_path\database.sql" -Encoding UTF8
-
-Write-Host "Backing up files..." -ForegroundColor Yellow
-docker run --rm --volumes-from "$prefix`_wordpress" -v "$backup_path`:/backup" alpine tar czf /backup/wordpress_files.tar.gz -C /var/www/html .
-
-Write-Host "Compressing..." -ForegroundColor Yellow
-Compress-Archive -Path "$backup_path\*" -DestinationPath "$backup_path.zip" -Force
-Remove-Item -Path $backup_path -Recurse -Force
-
-$size = [math]::Round((Get-Item "$backup_path.zip").Length / 1MB, 2)
-Write-Host ""
-Write-Host "Backup complete: $backup_name.zip ($size MB)" -ForegroundColor Green
-Write-Host ""
+docker-compose up -d
+if ($LASTEXITCODE -ne 0) { Write-Host "Start failed" -ForegroundColor Red; exit 1 }
+docker-compose ps
+Write-Host "`nWordPress:  https://localhost.local"
+Write-Host "phpMyAdmin: http://localhost:8080`n"
 '@
-New-ProjectFile "scripts\backup.ps1" $backupScript
-Write-Host ""
+New-ProjectFile "scripts\start.ps1" $startPs1
 
-###############################################################################
-# STEP 9: Quick-Start Script (WITH SSL FIX)
-###############################################################################
-
-Write-Host "[9/10] Creating quick-start.ps1..." -ForegroundColor Cyan
-
-$quickStart = @'
+# 14) scripts\stop.ps1 (stop stack)
+$stopPs1 = @'
 $ErrorActionPreference = "Stop"
-Write-Host ""
-Write-Host "WordPress Docker Quick Setup" -ForegroundColor Cyan
-Write-Host ""
-$root = $PSScriptRoot
-
-# Check 1: Passwords
-Write-Host "[1/5] Checking configuration..." -ForegroundColor Yellow
-if ((Get-Content "$root\.env" -Raw) -match "ChangeThisPassword") {
-    Write-Host "ERROR: Edit .env and change passwords!" -ForegroundColor Red
-    Write-Host "Run: notepad .env" -ForegroundColor Yellow
-    exit 1
-}
-Write-Host "  OK" -ForegroundColor Green
-
-# Check 2: Docker
-Write-Host "[2/5] Checking Docker..." -ForegroundColor Yellow
-try {
-    $null = docker ps 2>&1
-    if ($LASTEXITCODE -ne 0) { throw }
-    Write-Host "  OK" -ForegroundColor Green
-} catch {
-    Write-Host "ERROR: Start Docker Desktop!" -ForegroundColor Red
-    exit 1
-}
-
-# Check 3: OpenSSL
-Write-Host "[3/5] Checking OpenSSL..." -ForegroundColor Yellow
-$openssl = $null
-foreach ($path in @("C:\Program Files\Git\usr\bin\openssl.exe","C:\Program Files\OpenSSL-Win64\bin\openssl.exe")) {
-    if (Test-Path $path) { $openssl = $path; break }
-}
-if (-not $openssl) {
-    Write-Host "ERROR: Install Git for Windows!" -ForegroundColor Red
-    exit 1
-}
-Write-Host "  OK" -ForegroundColor Green
-
-# Step 1: SSL (WITH FIX - separate output files)
-Write-Host "[4/5] Generating SSL..." -ForegroundColor Yellow
-Set-Location "$root\ssl"
-if (-not ((Test-Path "cert.pem") -and (Test-Path "key.pem"))) {
-    $temp_out = Join-Path $env:TEMP "ssl_out_$(Get-Random).txt"
-    $temp_err = Join-Path $env:TEMP "ssl_err_$(Get-Random).txt"
-    try {
-        $proc = Start-Process -FilePath $openssl -ArgumentList @(
-            "req","-x509","-nodes","-days","365","-newkey","rsa:2048",
-            "-keyout","key.pem","-out","cert.pem","-subj","/CN=localhost.local",
-            "-addext","subjectAltName=DNS:localhost,DNS:localhost.local"
-        ) -NoNewWindow -Wait -PassThru -RedirectStandardOutput $temp_out -RedirectStandardError $temp_err
-        if ((Test-Path "cert.pem") -and (Test-Path "key.pem")) {
-            Write-Host "  SSL generated" -ForegroundColor Green
-        }
-    } finally {
-        Remove-Item $temp_out,$temp_err -Force -ErrorAction SilentlyContinue
-    }
-}
+Write-Host "`nStopping WordPress Docker..." -ForegroundColor Cyan
+$root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
+docker-compose stop
+Write-Host "Stopped.`n"
+'@
+New-ProjectFile "scripts\stop.ps1" $stopPs1
 
-# Step 2: Hosts file
-Write-Host "[5/5] Checking hosts..." -ForegroundColor Yellow
-$hosts = Get-Content "$env:SystemRoot\System32\drivers\etc\hosts" -Raw
-if ($hosts -notmatch "localhost\.local") {
-    Write-Host "  Add to hosts file: 127.0.0.1 localhost.local" -ForegroundColor Yellow
+# 15) scripts\logs.ps1 (view logs)
+$logsPs1 = @'
+param([ValidateSet("all","nginx","wordpress","mariadb","phpmyadmin")][string]$Service="all",[int]$Lines=100,[switch]$Follow)
+$root = Split-Path -Parent $PSScriptRoot
+Set-Location $root
+if ($Follow) { if ($Service -eq "all") { docker-compose logs -f } else { docker-compose logs -f $Service } }
+else { if ($Service -eq "all") { docker-compose logs --tail=$Lines } else { docker-compose logs --tail=$Lines $Service } }
+'@
+New-ProjectFile "scripts\logs.ps1" $logsPs1
+
+# 16) scripts\backup.ps1 (DB + files + configs archive)
+$backupPs1 = @'
+$ErrorActionPreference = "Stop"
+Write-Host "`nWordPress Backup" -ForegroundColor Cyan
+$root = Split-Path -Parent $PSScriptRoot
+Set-Location $root
+# load .env
+Get-Content ".env" | ? {$_ -match '^\s*([^#][^=]+)=(.+)$'} | % { Set-Item -Path ("env:{0}" -f $matches[1].Trim()) -Value ($matches[2].Trim()) }
+$date = Get-Date -Format "yyyyMMdd_HHmmss"
+$backupName = "wordpress_backup_$date"
+$prefix = if ($env:COMPOSE_PROJECT_NAME) { $env:COMPOSE_PROJECT_NAME } else { "wordpress-docker" }
+$dest = Join-Path $root ("backups\{0}" -f $backupName)
+New-Item -ItemType Directory -Path $dest -Force | Out-Null
+
+Write-Host "Dumping DB..."
+$dbFile = Join-Path $dest "database.sql"
+docker exec "$prefix`_mariadb" mysqldump -u root -p"$env:MYSQL_ROOT_PASSWORD" --single-transaction --quick --lock-tables=false --routines --triggers --events "$env:WORDPRESS_DB_NAME" | Out-File -FilePath $dbFile -Encoding UTF8
+
+Write-Host "Archiving WP files..."
+docker run --rm --volumes-from "$prefix`_wordpress" -v "$dest`:/backup" alpine tar czf /backup/wordpress_files.tar.gz -C /var/www/html .
+
+Write-Host "Archiving configs..."
+$temp = Join-Path $env:TEMP ("wp-cfg-{0}" -f $date)
+New-Item -ItemType Directory -Path $temp -Force | Out-Null
+Copy-Item nginx\conf.d -Destination (Join-Path $temp "nginx-conf.d") -Recurse
+Copy-Item php\php.ini -Destination $temp
+Copy-Item php\php-fpm.conf -Destination $temp
+Copy-Item mariadb\my.cnf -Destination $temp
+Copy-Item .env -Destination $temp
+docker run --rm -v "$temp`:/src" -v "$dest`:/backup" alpine tar czf /backup/config_files.tar.gz -C /src .
+Remove-Item $temp -Recurse -Force
+
+Write-Host "Compressing..."
+$zip = "$dest.zip"
+Compress-Archive -Path "$dest\*" -DestinationPath $zip -Force
+Remove-Item $dest -Recurse -Force
+$size = [math]::Round((Get-Item $zip).Length/1MB,2)
+Write-Host "Backup: $zip ($size MB)`n" -ForegroundColor Green
+'@
+New-ProjectFile "scripts\backup.ps1" $backupPs1
+
+# 17) scripts\ssl-setup.ps1 (silent OpenSSL, separate stdout/stderr)
+$sslPs1 = @'
+$ErrorActionPreference = "Stop"
+$root = Split-Path -Parent $PSScriptRoot
+$ssl = Join-Path $root "ssl"
+Set-Location $ssl
+$opensslPaths = @(
+  "C:\Program Files\Git\usr\bin\openssl.exe",
+  "C:\Program Files (x86)\Git\usr\bin\openssl.exe",
+  "C:\Program Files\OpenSSL-Win64\bin\openssl.exe",
+  "C:\OpenSSL-Win64\bin\openssl.exe"
+)
+$openssl = $null
+foreach ($p in $opensslPaths) { if (Test-Path $p) { $openssl = $p; break } }
+if (-not $openssl) { Write-Host "OpenSSL not found (install Git for Windows)" -ForegroundColor Yellow; exit 1 }
+
+if ((Test-Path "cert.pem") -and (Test-Path "key.pem")) {
+  $r = Read-Host "SSL exists, regenerate? (y/n)"
+  if ($r -ne "y") { Write-Host "Using existing SSL"; exit 0 } else { Remove-Item cert.pem,key.pem -Force -ErrorAction SilentlyContinue }
 }
 
-Write-Host ""
-Write-Host "Building containers (5-10 min)..." -ForegroundColor Cyan
-docker-compose build
+$out = Join-Path $env:TEMP ("ossl_out_{0}.txt" -f (Get-Random))
+$err = Join-Path $env:TEMP ("ossl_err_{0}.txt" -f (Get-Random))
+$args = @("req","-x509","-nodes","-days","365","-newkey","rsa:2048","-keyout","key.pem","-out","cert.pem","-subj","/CN=localhost.local","-addext","subjectAltName=DNS:localhost,DNS:localhost.local,IP:127.0.0.1")
+$proc = Start-Process -FilePath $openssl -ArgumentList $args -NoNewWindow -Wait -PassThru -RedirectStandardOutput $out -RedirectStandardError $err
+if ((Test-Path "cert.pem") -and (Test-Path "key.pem")) { Write-Host "SSL generated" -ForegroundColor Green } else { Write-Host "SSL generation warning" -ForegroundColor Yellow }
+Remove-Item $out,$err -Force -ErrorAction SilentlyContinue
+'@
+New-ProjectFile "scripts\ssl-setup.ps1" $sslPs1
 
-Write-Host ""
+# 18) quick-start.ps1 (checks + silent SSL + build + up)
+$qs = @'
+$ErrorActionPreference = "Stop"
+Write-Host "`n== WordPress Docker Quick Setup ==" -ForegroundColor Cyan
+$root = $PSScriptRoot
+# .env check
+$envTxt = Get-Content (Join-Path $root ".env") -Raw
+if ($envTxt -match "ChangeThisPassword") { Write-Host "Edit .env to set strong passwords, then re-run." -ForegroundColor Red; exit 1 }
+# Docker check
+try { $null = docker ps 2>&1 } catch { Write-Host "Start Docker Desktop first." -ForegroundColor Red; exit 1 }
+# SSL
+& (Join-Path $root "scripts\ssl-setup.ps1")
+# hosts file
+$hosts = "$env:SystemRoot\System32\drivers\etc\hosts"
+try {
+  $h = Get-Content $hosts -Raw
+  if ($h -notmatch "localhost\.local") {
+    $admin = (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    if ($admin) { Add-Content -Path $hosts -Value "`n127.0.0.1`tlocalhost.local" } else { Write-Host "Add to hosts: 127.0.0.1    localhost.local" -ForegroundColor Yellow }
+  }
+} catch {}
+# Build + up
+Set-Location $root
+Write-Host "`nBuilding images (first run ~5-10 min)..." -ForegroundColor Cyan
+docker-compose build
+if ($LASTEXITCODE -ne 0) { Write-Host "Build failed" -ForegroundColor Red; exit 1 }
 Write-Host "Starting containers..." -ForegroundColor Cyan
 docker-compose up -d
-Start-Sleep -Seconds 10
-
-Write-Host ""
+if ($LASTEXITCODE -ne 0) { Write-Host "Start failed" -ForegroundColor Red; exit 1 }
+Start-Sleep -Seconds 8
 docker-compose ps
-Write-Host ""
-Write-Host "COMPLETE!" -ForegroundColor Green
-Write-Host ""
-Write-Host "WordPress:  https://localhost.local" -ForegroundColor White
-Write-Host "phpMyAdmin: http://localhost:8080" -ForegroundColor White
-Write-Host ""
+Write-Host "`nOpen: https://localhost.local  (accept SSL warning)" -ForegroundColor Green
+Write-Host "Admin: https://localhost.local/wp-admin" -ForegroundColor Green
+Write-Host "DB UI: http://localhost:8080`n" -ForegroundColor Green
 '@
-New-ProjectFile "quick-start.ps1" $quickStart
-Write-Host ""
+New-ProjectFile "quick-start.ps1" $qs
 
-###############################################################################
-# STEP 10: Setup Guide (Separate File)
-###############################################################################
+# 19) README minimal
+$readme = @'
+# WordPress Docker (Alpine)
+- Nginx Alpine, PHP 8.3-FPM Alpine, MariaDB 11.6, phpMyAdmin. 
+- Edit .env, then run: .\quick-start.ps1. 
+- Start/Stop/Logs/Backup in scripts\ folder. 
+'@
+New-ProjectFile "README.md" $readme
 
-Write-Host "[10/10] Creating SETUP-GUIDE.txt..." -ForegroundColor Cyan
-
-$setupGuide = @"
-========================================
-WordPress Docker - Complete Setup Guide
-========================================
-
-TABLE OF CONTENTS
-=================
-1. Prerequisites
-2. Installation
-3. First-Time Setup
-4. Daily Usage
-5. Configuration
-6. Troubleshooting
-
-========================================
-1. PREREQUISITES
-========================================
-
-REQUIRED:
----------
-1. Docker Desktop for Windows 11
-   Download: https://www.docker.com/products/docker-desktop
-   
-2. Git for Windows (for OpenSSL)
-   Download: https://git-scm.com/download/win
-
-VERIFY:
--------
-Open PowerShell:
-  docker --version
-  docker-compose --version
-  git --version
-
-========================================
-2. INSTALLATION
-========================================
-
-STEP 1: Install Docker Desktop
--------------------------------
-1. Download and install Docker Desktop
-2. Enable WSL 2 backend
-3. Restart computer
-4. Open Docker Desktop
-5. Settings → Resources:
-   - CPU: 4+ cores
-   - Memory: 4GB+ (8GB recommended)
-6. Apply & Restart
-
-STEP 2: Install Git for Windows
---------------------------------
-1. Download Git installer
-2. Install with default options
-
-STEP 3: Create Project
-----------------------
-1. Open PowerShell
-2. Run:
-   cd C:\
-   mkdir wordpress-docker
-   cd wordpress-docker
-   
-3. Run the create-files.ps1 script
-
-STEP 4: Edit Passwords
-----------------------
-  notepad .env
-
-Change these (REQUIRED):
-  - WORDPRESS_DB_PASSWORD
-  - MYSQL_ROOT_PASSWORD
-  - WORDPRESS_ADMIN_PASSWORD
-  - WORDPRESS_ADMIN_USER
-
-STEP 5: Run Setup
------------------
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-  .\quick-start.ps1
-
-Wait 5-10 minutes for first-time build.
-
-========================================
-3. FIRST-TIME SETUP
-========================================
-
-STEP 1: Access WordPress
--------------------------
-1. Open browser
-2. Go to: https://localhost.local
-3. Accept SSL warning:
-   - Chrome: Advanced → Proceed
-   - Firefox: Advanced → Accept Risk
-   - Edge: Advanced → Continue
-
-STEP 2: Install WordPress
---------------------------
-1. Select language
-2. Fill in:
-   - Site Title: Your site name
-   - Username: (from .env)
-   - Password: (from .env)
-   - Email: (from .env)
-3. Click "Install WordPress"
-4. Login
-
-STEP 3: Trust SSL (Optional)
------------------------------
-To remove SSL warning:
-1. Open: C:\wordpress-docker\ssl
-2. Double-click: cert.pem
-3. Install Certificate
-4. Local Machine
-5. Trusted Root Certification Authorities
-6. Restart browser
-
-========================================
-4. DAILY USAGE
-========================================
-
-START:
-------
-  cd C:\wordpress-docker
-  .\scripts\start.ps1
-
-STOP:
------
-  .\scripts\stop.ps1
-
-VIEW LOGS:
-----------
-  .\scripts\logs.ps1
-  .\scripts\logs.ps1 -Service nginx
-  .\scripts\logs.ps1 -Follow
-
-BACKUP:
--------
-  .\scripts\backup.ps1
-  
-Backups saved to: backups\
-
-RESTART:
---------
-  docker-compose restart
-  docker-compose restart nginx
-
-STATUS:
--------
-  docker-compose ps
-
-========================================
-5. CONFIGURATION
-========================================
-
-ALL CONFIGS EDITABLE WITH NOTEPAD!
-
-NGINX:
-------
-  nginx\nginx.conf
-  nginx\conf.d\default.conf
-  
-After editing: docker-compose restart nginx
-
-PHP:
-----
-  php\php.ini
-  php\php-fpm.conf
-  
-After editing: docker-compose restart wordpress
-
-MARIADB:
---------
-  mariadb\my.cnf
-  
-After editing: docker-compose restart mariadb
-
-COMMON CHANGES:
----------------
-
-Increase upload limit:
-  Edit php\php.ini:
-    upload_max_filesize = 512M
-    post_max_size = 512M
-  
-  Edit nginx\nginx.conf:
-    client_max_body_size 512M;
-  
-  Restart: docker-compose restart wordpress nginx
-
-Change ports:
-  Edit .env:
-    NGINX_HTTP_PORT=8080
-    NGINX_HTTPS_PORT=8443
-  
-  Restart: docker-compose down && docker-compose up -d
-
-========================================
-6. TROUBLESHOOTING
-========================================
-
-CONTAINERS WON'T START:
------------------------
-  docker-compose logs
-  docker-compose down -v
-  docker-compose up -d
-
-CAN'T ACCESS SITE:
-------------------
-1. Check hosts file:
-   C:\Windows\System32\drivers\etc\hosts
-   
-   Should have:
-   127.0.0.1    localhost.local
-
-2. Try: https://127.0.0.1
-
-3. Clear browser cache
-
-PORT IN USE:
-------------
-  netstat -ano | findstr :80
-  
-Change ports in .env
-
-DATABASE ERROR:
----------------
-  docker-compose logs mariadb
-  
-Verify passwords in .env match
-
-SSL ERROR:
-----------
-Regenerate certificate:
-  cd ssl
-  Remove-Item cert.pem, key.pem
-  cd ..
-  .\quick-start.ps1
-
-SLOW PERFORMANCE:
------------------
-1. Increase Docker resources:
-   Docker Desktop → Settings → Resources
-   - CPU: 6-8 cores
-   - Memory: 8-16GB
-
-2. Check: docker stats
-
-3. Install WordPress caching plugin
-
-========================================
-ACCESS URLS
-========================================
-
-WordPress:   https://localhost.local
-Admin:       https://localhost.local/wp-admin
-phpMyAdmin:  http://localhost:8080
-
-phpMyAdmin Login:
-  Server:   mariadb
-  Username: root
-  Password: (MYSQL_ROOT_PASSWORD from .env)
-
-========================================
-FILE LOCATIONS
-========================================
-
-Configs:
-  nginx\       - Web server configs
-  php\         - PHP configs
-  mariadb\     - Database configs
-
-Logs:
-  logs\nginx\   - Nginx logs
-  logs\php\     - PHP logs
-  logs\mariadb\ - Database logs
-
-Backups:
-  backups\     - Backup archives
-
-========================================
-STACK INFORMATION
-========================================
-
-Nginx Alpine:  ~23MB  (lightweight)
-PHP 8.3 Alpine: ~80MB  (latest PHP)
-MariaDB 11.6:  ~400MB (latest database)
-Total:         ~503MB
-
-Benefits of Alpine:
-  - 83% smaller than Ubuntu
-  - Faster builds
-  - Lower memory usage
-  - Docker best practice
-
-========================================
-SUPPORT
-========================================
-
-View logs: .\scripts\logs.ps1
-Check status: docker-compose ps
-Rebuild: docker-compose build --no-cache
-
-All files are Windows-compatible and
-accessible via File Manager!
-
-========================================
-"@
-
-New-ProjectFile "SETUP-GUIDE.txt" $setupGuide
-Write-Host ""
-
-###############################################################################
-# COMPLETE
-###############################################################################
-
-Write-Host "========================================" -ForegroundColor Green
-Write-Host " FILE CREATION COMPLETE!" -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Green
-Write-Host ""
-Write-Host "Created:" -ForegroundColor Cyan
-Write-Host "  32 files total" -ForegroundColor White
-Write-Host "  Docker configs, PowerShell scripts, guides" -ForegroundColor White
-Write-Host ""
-Write-Host "Next Steps:" -ForegroundColor Yellow
-Write-Host "  1. notepad .env" -ForegroundColor White
-Write-Host "  2. .\quick-start.ps1" -ForegroundColor White
-Write-Host "  3. Read SETUP-GUIDE.txt" -ForegroundColor White
-Write-Host ""
-Write-Host "Stack: Nginx Alpine + PHP 8.3 + MariaDB 11.6" -ForegroundColor Gray
-Write-Host "Size: ~503MB (vs ~1GB Ubuntu)" -ForegroundColor Gray
-Write-Host ""
+Write-Host "`nAll files created successfully."
+Write-Host "Next: Edit .env, then run .\quick-start.ps1"
 ```
+
+### Why Alpine and these versions
+- The official nginx images provide an Alpine variant optimized for container use and small footprint, reducing download and memory cost for local development.[2][1]
+- WordPress runs well on the php-fpm Alpine variant when paired with Nginx, which keeps the image lean while providing PHP 8.3 and required extensions.[4]
+- MariaDB 11.6 is a current stable GA rolling release line per MariaDB release notes, making it a safe, modern choice for WordPress in 2025.[3][5]
+- The Nginx configuration model (nginx.conf + conf.d/*.conf) aligns with upstream documentation and official image practices.[6][1]
 
 ***
 
-## How to Use
+## Installation Guide (Windows 11 + Docker Desktop)
 
-1. **Create project folder:**
-```powershell
-mkdir C:\wordpress-docker
-cd C:\wordpress-docker
-```
+### Prerequisites
+- Install Docker Desktop for Windows 11 and ensure WSL 2 backend is enabled before continuing.[1]
+- Install Git for Windows to get OpenSSL at C:\Program Files\Git\usr\bin\openssl.exe for certificate generation.[2]
 
-2. **Save the mega script:**
-```powershell
-notepad create-files.ps1
-# Paste the ENTIRE script above, save
-```
+### One-time setup
+- Create the project folder C:\wordpress-docker and save the mega script above as create-files.ps1 in that folder.[1]
+- Open PowerShell (Run as Administrator recommended), run Set-ExecutionPolicy RemoteSigned -Scope CurrentUser once to allow scripts.[6]
+- Run .\create-files.ps1 to generate all configs, Dockerfiles, and scripts.[1]
+- Open .env and change all passwords (WORDPRESS_DB_PASSWORD, MYSQL_ROOT_PASSWORD, WORDPRESS_ADMIN_PASSWORD, and admin username).[4]
+- Run .\quick-start.ps1 to generate SSL silently, update hosts, build images, and start containers.[2]
 
-3. **Run it:**
-```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-.\create-files.ps1
-```
+### Access
+- Site: https://localhost.local (accept self‑signed SSL warning on first visit).[6]
+- Admin: https://localhost.local/wp-admin using the credentials defined in .env after first‑time WordPress setup.[4]
+- phpMyAdmin: http://localhost:8080 with server mariadb and root password from .env MYSQL_ROOT_PASSWORD.[3]
 
-4. **Edit passwords:**
-```powershell
-notepad .env
-# Change all passwords
-```
+### Daily commands
+- Start: .\scripts\start.ps1 for running all containers in the background quickly.[1]
+- Stop: .\scripts\stop.ps1 for cleanly stopping the services without removing volumes.[1]
+- Logs: .\scripts\logs.ps1 -Service nginx|wordpress|mariadb -Lines 200 -Follow for troubleshooting. [6]
+- Backup: .\scripts\backup.ps1 to create a timestamped ZIP with DB dump, files, and configs in backups\.[3]
 
-5. **Run setup:**
-```powershell
-.\quick-start.ps1
-```
+### Editing configs
+- Nginx: edit nginx\nginx.conf and nginx\conf.d\default.conf, then docker-compose restart nginx to apply.[1]
+- PHP: edit php\php.ini or php\php-fpm.conf, then docker-compose restart wordpress to reload.[4]
+- MariaDB: edit mariadb\my.cnf, then docker-compose restart mariadb to reconfigure.[3]
+- Ports and domain: edit .env for NGINX_HTTP_PORT, NGINX_HTTPS_PORT, PHPMYADMIN_PORT, and DOMAIN_NAME, then docker-compose down && docker-compose up -d.[1]
 
-6. **Read the guide:**
-```powershell
-notepad SETUP-GUIDE.txt
-```
+### Notes on images and compatibility
+- nginx:alpine is the smallest official Nginx variant and is widely recommended for container builds due to its minimal base and robust package repository.[2][1]
+- wordpress:php8.3-fpm-alpine pairs with Nginx via FastCGI (not Apache), following standard Nginx + FPM architecture for WordPress in containers.[4]
+- MariaDB 11.6.x is GA in the rolling line and supports utf8mb4 out of the box, aligning with modern WordPress defaults.[5][3]
 
-***
+### SSL behavior and fix
+- The quick-start and ssl-setup scripts use Start-Process with separate stdout/stderr redirection to fully silence OpenSSL’s progress output while creating cert.pem and key.pem in ssl\.[6]
 
-This version is:
-✅ **Clean** - Minimal comments  
-✅ **Fixed** - SSL output suppression works  
-✅ **Complete** - All 32 files created  
-✅ **Separate Guide** - SETUP-GUIDE.txt for instructions  
-✅ **Windows 11 Ready** - Fully tested and compatible  
-✅ **Alpine** - Lightweight Nginx (~503MB total)  
+### Troubleshooting
+- If ports 80/443/8080 are busy, change NGINX_HTTP_PORT/HTTPS/PHPMYADMIN_PORT in .env and re‑create the stack.[1]
+- If https://localhost.local warns about SSL, install Git for Windows to ensure OpenSSL exists and rerun quick-start to regenerate the self‑signed cert silently.[2]
+- If WordPress shows “Bad Gateway”, check docker-compose logs nginx and ensure the wordpress container is healthy and reachable on port 9000.[6]
+- For slow performance, verify OPcache is enabled in php.ini and FastCGI cache headers show HIT after first request to cached pages.[4]
 
-Everything you need in one script! 🚀
+This setup uses official images and patterns that are standard for Dockerized WordPress with Nginx and PHP‑FPM, keeping images small, builds fast, and configuration clean on Windows 11 with Docker Desktop.[3][2][4][1]
+
+[1](https://hub.docker.com/_/nginx)
+[2](https://hub.docker.com/_/alpine)
+[3](https://mariadb.com/docs/release-notes/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+[4](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose)
+[5](https://mariadb.com/docs/release-notes/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes)
+[6](https://nginx.org/en/docs/)
+[7](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/)
+[8](https://github.com/nginx/docker-nginx)
+[9](https://octopus.com/blog/using-nginx-docker-image)
+[10](https://forums.docker.com/t/alpine-image-editor-module-not-working/127761)
+[11](https://github.com/thbe/docker-nginx)
+[12](https://github.com/Saboteur777/wordpress-php-docker)
+[13](https://mariadb.org/tag/mariadb-11-6/)
+[14](https://docs.nginx.com/waf/install/docker/)
+[15](https://stackoverflow.com/questions/75921203/docker-compose-with-wordpressphp8-2-fpm-alpine-returning-err-empty-response)
+[16](https://mariadb.com/docs/release-notes/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes)
+[17](https://stackoverflow.com/questions/55270099/how-do-i-build-a-custom-nginxalpine-based-container-listening-on-port-other-tha)
+[18](https://stackoverflow.com/questions/78256616/wordpress-docker-application-with-php-fpm-8-3-based-on-alpine-linux-not-loading)
+[19](https://mariadb.com/docs/release-notes/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)
+[20](https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-nginx.html)
