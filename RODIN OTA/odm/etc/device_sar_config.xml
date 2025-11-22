@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+listeners is a statues set,if corresponding position is 1, that mean reg this listener.
+    Now, contain the listener is:
+    receiver,wifi_spot,bluetooth,bluetooth_pan,sarsensor1,sarsensor2,mcc,wifi,cable,hall,usb
+    1: need to reg, 0 : don`t reg
+    like for J18 device, listeners that need to reg is:  11111111110
+    like for J3S device, listeners that need to reg is:  11111111100
+    like for J1/J2 device, listeners that need to reg is 11111011000
+dsiMap：
+    1. F mean NA,the other state is corresponding listener value.
+    2. wifi_spot,bluetooth,bluetooth_pan is one state: hotSpot.
+    receiver,hotSpot,sarsensor1,sarsensor2,mcc,wifi,cable,hall,usb
+    like for J18 device:
+        DSI1: 10FF1F00
+        DSI2: 10FF2F00,10FF3F00 == 10FF4F00
+        DSI3: 0020FF00
+        DSI4: 00102F00,00103F00 == 00104F00
+        an so on
+-->
+<SarDsiConfig>
+    <!-- use for sar uncouple framework -->
+    <sarVersion>2</sarVersion>
+
+    <!-- only use for CN -->
+    <deviceSarConfig device_name="rodin">
+        <prop prop_name="ro.boot.hwc">CN</prop>
+        <!-- receiver,hotSpot(wifi_spot,(bluetooth,bluetooth_pan)),sarsensor1,sarsensor2,mcc,wifi,cable,hall,usb,lab -->
+        <listeners>100000000001</listeners>
+        <!-- receiver,sarsensor1,sarsensor2,lab -->
+        <dsimap value="10">1</dsimap>
+        <dsimap value="00">2</dsimap>
+        <dsimap value="11">3</dsimap>
+        <dsimap value="01">4</dsimap>
+    </deviceSarConfig>
+
+    <!-- only use for GL --> 
+    <deviceSarConfig device_name="rodin">
+        <prop prop_name="ro.boot.hwc">GL</prop>
+        <!-- receiver,hotSpot(wifi_spot,(bluetooth,bluetooth_pan)),sarsensor1,sarsensor2,mcc,wifi,cable,hall,usb,lab -->
+        <listeners>111101000000</listeners>
+        <!-- receiver,hotspot,sarsensor1,sarsensor2 -->
+        <dsimap value="10F">1</dsimap>
+        <dsimap value="001">3</dsimap>
+        <dsimap value="000">4</dsimap>
+        <dsimap value="F1F">5</dsimap>
+    </deviceSarConfig>
+
+    <!-- only use for IN --> 
+    <deviceSarConfig device_name="rodin">
+        <prop prop_name="ro.boot.hwc">IN</prop>
+        <!-- receiver,hotSpot(wifi_spot,(bluetooth,bluetooth_pan)),sarsensor1,sarsensor2,mcc,wifi,cable,hall,usb,lab -->
+        <listeners>100000000000</listeners>
+        <!-- receiver,hotspot,sarsensor1,sarsensor2 -->
+        <dsimap value="1">1</dsimap>
+        <dsimap value="0">2</dsimap>
+    </deviceSarConfig>
+
+    <!-- default configuration -->
+    <deviceSarConfig device_name="miro">
+        <prop prop_name="ro.boot.hwc">default</prop>
+        <prop prop_name="ro.product.mod_device">default</prop>
+        <listeners>111101000000</listeners>
+        <!-- receiver,hotspot,sarsensor1,sarsensor2 -->
+        <dsimap value="10F">1</dsimap>
+        <dsimap value="001">3</dsimap>
+        <dsimap value="000">4</dsimap>
+        <dsimap value="F1F">5</dsimap>
+    </deviceSarConfig>
+</SarDsiConfig>

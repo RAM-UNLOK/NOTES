@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParam>
+	<ParamTree>
+		<Param path="Common" param_id="0"/>
+		<Param path="MT6899" param_id="1"/>
+	</ParamTree>
+	<ParamUnitPool>
+		<ParamUnit param_id="0">
+			<Param name="power_enable" value="0"/>
+			<Param name="SPK" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="RCV" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="HP" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC_2CH" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC_HDR" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+		</ParamUnit>
+		<ParamUnit param_id="1">
+			<Param name="power_enable" value="1"/>
+			<Param name="SPK" value="539,695,695,718,718,765,765,812,812,929,929,1170,1170,7120,7120,14780,14780,14880,14880,17940,17940,18680,18680,19400,19400,19400,19400,19400,19400,19400,19400"/>
+			<Param name="RCV" value="539,695,695,718,718,765,765,812,812,929,929,1170,1170,7120,7120,14780,14780,14880,14880,17940,17940,18680,18680,19400,19400,19400,19400,19400,19400,19400,19400"/>
+			<Param name="HP" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC_2CH" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+			<Param name="MIC_HDR" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+		</ParamUnit>
+	</ParamUnitPool>
+</AudioParam>

@@ -1,0 +1,26 @@
+<!--
+    Input:
+        vendor/xiaomi/proprietary/mifingerprint/mfp_service/fod-aidl.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>com.fingerprints.extension3</name>
+        <fqname>IFingerprintSensorTest/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>com.fingerprints.extension3</name>
+        <fqname>IFingerprintNavigation/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.hardware.dtool1</name>
+        <fqname>IDtool/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.hardware.fingerprintextension</name>
+        <fqname>IXiaomiFingerprint/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.hardware.fx.tunnel</name>
+        <fqname>IMiFxTunnel/default</fqname>
+    </hal>
+</manifest>

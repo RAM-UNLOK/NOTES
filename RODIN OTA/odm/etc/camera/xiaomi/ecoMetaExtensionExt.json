@@ -1,0 +1,242 @@
+/*
+测试用，后续需要修改
+说明：
+    ecoMetaExtension.json 的附加文件，不同项目需要不同配置的，放在这里，相同Signature同版本的选项会合并
+*/
+[
+    {
+        // 定制 extension bokeh 映射的系统 camera role id
+        "Signature": "_MappingMiBokehId",
+        "IsPublish": false,
+        "Target": {
+            "CameraRoleId": 63 // RoleIdRearBokeh1x
+        }
+    },
+    {
+        // 使用 mapping id 的方式，直接调用系统相机的 bokeh 摄像头, 默认打开
+        "Signature": "ExtensionBokehMappingId",
+        "Version": "1.0",
+        "Parents": [
+            "BokehRear",
+            "_MappingMiBokehId"
+        ],
+        "Source": {
+            "Prop": [
+                {
+                    "Name": "persist.vendor.camera.extension.debug.bokeh",
+                    "Value": [
+                        "",
+                        "0"
+                    ]
+                }
+            ]
+        }
+    },
+    /*
+    {
+        // 定制 微信中的排除窗体名
+        "Signature": "_WechetVideoExcept",
+        "Source": {
+            "SourceFlag" : 1,
+            "Prop":
+            [
+                {
+                    "Name": "persist.vendor.vcb.activity",
+                    "Value": ["com.tencent.mm.plugin.flash.action.FaceFlashActionUI",
+                              "com.tencent.mm.plugin.flash.FaceFlashUI"]
+                }
+            ]
+            "Meta": [
+                {
+                    "CamOpt": ["Config"],
+                    "Name": "com.xiaomi.sessionparams.activityName",
+                    "Value": ["com.tencent.mm.plugin.flash.action.FaceFlashActionUI",
+                              "com.tencent.mm.plugin.flash.FaceFlashUI"],
+                    "Type": "String"
+                }
+            ]
+        }
+    },
+    {
+        // 定制 微信
+        "Signature": "WechetVideo",
+        "Parents": [
+            "_WechetVideoExcept"
+        ],
+        "Source": {
+            "Meta": [
+                {
+                    "CamOpt": ["Config"],
+                    "Name": "com.xiaomi.sessionparams.MiStreamUsecase",
+                    "Value": ["2","8"],
+                    "Type": "Int",
+                    "Size":2
+                },
+                {
+                    "CamOpt": ["Config"],
+                    "Name": "com.xiaomi.sessionparams.clientName",
+                    "Value": "com.tencent.mm",
+                    "Type": "String"
+                }
+            ]
+        },
+        "Target": {
+            "OptMode": "0x9011", // StreamConfigModeThirdCameraBeauty
+            "SdkOpMode": "0xefff", // StreamConfigModeVendorEnd
+            "Meta": [
+                {
+                    "CamOpt": ["Config"],
+                    "Name": "com.xiaomi.sessionparams.clientName",
+                    "Value": "com.android.camera",
+                    "Type": "String"
+                }
+            ]
+        }
+    },
+    */
+    {
+        // 直接在 id 0 上实现bokeh 算法，默认关闭
+        "Signature": "ExtensionBokehRearNormal",
+        "Version": "1.0",
+        "Parents": [
+            "BokehRear"
+        ],
+        "Source": {
+            "Prop": [
+                {
+                    "Name": "persist.vendor.camera.extension.debug.bokeh",
+                    "Value": "1"
+                }
+            ]
+        }
+    },
+    {
+        "Signature": "ExtensionBokehRearNormal",
+        "Target": {
+            "Meta": [
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.slaveCameraId",
+                    "Value": "6",
+                    "Type": "Byte"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.reducepreviewsize",
+                    "Value": [
+                        "1280",
+                        "960",
+                        "1280",
+                        "720",
+                        "1280",
+                        "576"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.masterOptimalSize1X",
+                    "Value": [
+                        "4096",
+                        "3072",
+                        "4096",
+                        "2304",
+                        "4096",
+                        "1840"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.slaveOptimalSize1X",
+                    "Value": [
+                        "3584",
+                        "2688",
+                        "3584",
+                        "2016",
+                        "3584",
+                        "1616"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.optimalPictureSize1X",
+                    "Value": [
+                        "4096",
+                        "3072",
+                        "4096",
+                        "2304",
+                        "4080",
+                        "1840"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.masterOptimalSize",
+                    "Value": [
+                        "4080",
+                        "3072",
+                        "4080",
+                        "2296",
+                        "4080",
+                        "1840"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.slaveOptimalSize",
+                    "Value": [
+                        "1920",
+                        "1440",
+                        "1920",
+                        "1080",
+                        "1920",
+                        "864"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.optimalPictureSize",
+                    "Value": [
+                        "4080",
+                        "3072",
+                        "4080",
+                        "2296",
+                        "4080",
+                        "1840"
+                    ],
+                    "Size": 6,
+                    "Type": "Int"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.masterCameraId1X",
+                    "Value": "6",
+                    "Type": "Byte"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.slaveCameraId1X",
+                    "Value": "3",
+                    "Type": "Byte"
+                },
+                {
+                    "CamOpt": "Characteristics",
+                    "Name": "xiaomi.camera.bokehinfo.masterCameraId",
+                    "Value": "2",
+                    "Type": "Byte"
+                }
+            ]
+        }
+    }
+]

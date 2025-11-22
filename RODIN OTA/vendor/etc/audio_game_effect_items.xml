@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+    <!--
+        List of FPS packages which support AudioGameEffect.
+    -->
+    <FPSpackages>
+        <FPSpackage name="com.tencent.tmgp.pubgmhd"/>
+        <FPSpackage name="com.tencent.tmgp.cf"/>
+        <FPSpackage name="com.tencent.toaa"/>
+        <FPSpackage name="com.tencent.tmgp.cod"/>
+        <FPSpackage name="com.tencent.ig"/>
+        <FPSpackage name="com.activision.callofduty.shooter"/>
+        <FPSpackage name="com.rekoo.pubgm"/>
+    </FPSpackages>
+    <!--
+        List of ALL packages which support AudioGameEffect.
+        Each package has two AudioGameEffect parameters for headset and speaker.
+        For param item, four number represent: [low frequency voice]-[human dialogue voice]-[footsteps voice]-[surround sound voice], respectively
+        [0, 100] represents the degree of voice enhancement
+    std::string parameter_keys[4] = {"FpsOpLowFreqBoost", "FpsOpVocalBoost", "FpsOpFootStepBoost", "FpsOpSoundFieldBoost"};
+	                                                       //effectLevel      //gameType
+    -->
+    <package name="com.tencent.tmgp.pubgmhd">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.tencent.tmgp.cf">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.tencent.toaa">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.tencent.tmgp.cod">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.miHoYo.ys.mi">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.miHoYo.Yuanshen">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.tencent.tmgp.sgame">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <!-- Follow packages are used for overseas version -->
+    <package name="com.tencent.ig">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.rekoo.pubgm">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.activision.callofduty.shooter">
+        <device name="headset" param="0-100-1-0"/>
+        <device name="speaker" param="0-100-1-0"/>
+    </package>
+    <package name="com.miHoYo.GenshinImpact">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.mobile.legends">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.ngame.allstar.eu">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.jsdw.drawHCR2">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.outfit7.mytalkingtomfree">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.netease.party.mi">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.happyelements.AndroidAnimal">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.kiloo.subwaysurf">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+    <package name="com.tencent.jkchess">
+        <device name="headset" param="0-100-2-0"/>
+        <device name="speaker" param="0-100-2-0"/>
+    </package>
+</packages>

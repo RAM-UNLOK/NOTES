@@ -1,0 +1,246 @@
+{
+    "version": "1.0",
+    "product": "rodin",
+    "threshold": {
+        "lowAdj_threshold": 0,
+        "3rd_lowAdj_threshold": 50,
+        "update_state_delay_ms": 5000,
+        "kill_lowprio_sysapp_threshlod": 10240,
+        "kill_highprio_sysapp_threshlod": 30720,
+        "intercept_restart_time": 3000,
+        "protect_locktask_num": 2,
+        "kill_tag": 63,
+        "lowerAdj_freeMem_threshold": 0,
+        "adj_threshold": 702
+    },
+    "support": {
+        "cam_boost_early_enable": true,
+        "inhibit_3rdprocs_enable": true,
+        "perceptible_support": true,
+        "skip_camera_boost": true,
+        "oom_update_support": true,
+        "lmkd_perceptible_support": true,
+        "inhibit_sysapp_cgroup_support": true,
+        "inhibit_tokill_cgroup_support": true,
+        "trim_memory_support": false,
+        "mms_camcpt_enable": false
+    },
+    "oom": {
+        "oom_level": "51200:0,89600:100,128000:200,154200:251,179200:701,262144:800",
+        "psi_level": "28,20,17,15,13,11,9",
+        "adj_level": "251,200,100,100,50"
+    },
+    "configs": [
+        {
+            "name": "protect_list",
+            "config": [
+                "com.tencent.mobileqq",
+                "com.ss.android.lark.kami"
+            ]
+        },
+        {
+            "name": "perceptible_list",
+            "config": [
+                "com.tencent.mm",
+                "com.miui.gallery",
+                "com.miui.personalassistant",
+                "com.xiaomi.bluetooth",
+                "com.miui.securitycenter:ui",
+                "com.google.process.gservices",
+                "com.milink.service",
+                "com.miui.mishare.connectivity",
+                "com.miui.presale",
+                "com.android.settings",
+                "com.android.updater"
+            ]
+        },
+        {
+            "name": "white_list",
+            "config": [
+                "com.miui.screenrecorder",
+                "com.android.camera",
+                "com.miui.home",
+                "com.tencent.mm:push",
+                "com.tencent.mobileqq:MSF",
+                "com.ss.android.lark.kami:wschannel",
+                "android.process.media",
+                "com.android.traceur",
+                "com.phonetest.application:CameraMemoryWatcher",
+                "android.camera.cts",
+                "android.camera.cts:errorLoggingServiceProcess",
+                "com.miui.avpressuretest"
+            ]
+        },
+        {
+            "name": "inhibit_app_list",
+            "config": [
+                "com.google.android.providers.media.module",
+                "com.sohu.inputmethod.sogou.xiaomi",
+                "com.google.process.gservices",
+                "com.google.android.gms",
+                "com.google.android.gms.persistent",
+                "com.google.process.gapps",
+                "com.android.vending",
+                "android.process.acore",
+                "com.google.android.googlequicksearchbox",
+                "com.tencent.android.qqdownloader",
+                "com.google.android.apps.photos",
+                "com.google.android.apps.messaging"
+            ]
+        },
+        {
+            "name": "inhibit_sysapp_list",
+            "config": [
+                "<pre-initialized>",
+                "com.lbe.security.miui",
+                "com.mi.health",
+                "com.milink.service",
+                "com.miui.analytics",
+                "com.miui.daemon",
+                "com.miui.mishare.connectivity",
+                "com.miui.securitycenter",
+                "com.miui.voiceassist",
+                "com.xiaomi.bluetooth",
+                "com.miui.home",
+                "com.miui.miwallpaper"
+            ]
+        },
+        {
+            "name": "inhibit_native_list",
+            "config": [
+                "com.google.android.gms.persistent",
+                "/system/bin/logd",
+                "/vendor/bin/diag-router",
+                "/system/vendor/bin/cnss_diag",
+                "/apex/com.android.art/bin/dex2oat64",
+                "/odm/bin/mrmd",
+                "/system_ext/bin/tango_pretranslator",
+                "/system_ext/bin/mobile_log_d"
+            ]
+        },
+        {
+            "name": "intercept_restart_list",
+            "config": [
+                "com.xiaomi.bsp.gps.nps",
+                "com.android.settings:remote",
+                "com.google.process.gservices",
+                "com.google.android.gms",
+                "com.google.android.gms.persistent",
+                "com.google.process.gapps",
+                "com.android.vending",
+                "com.google.android.apps.photos"
+            ]
+        },
+        {
+            "name": "inhibit_3rdscene_list",
+            "config": [
+                "com.tencent.mm/.plugin.scanner.ui.BaseScanUI",
+                "com.eg.android.AlipayGphone/com.alipay.mobile.scan.as.main.MainCaptureActivity",
+                "com.duowan.kiwi/com.duowan.liveroom.LiveRoomActivity",
+                "air.tv.douyu.android/com.dy.live.activity.RecorderCameraLandActivity",
+                "air.tv.douyu.android/com.dy.live.activity.RecorderCameraPortraitActivity",
+                "com.duowan.mobile/com.yy.mobile.plugin.pluginmobilelive.MobileLiveActivity"
+            ]
+        }
+    ],
+    "mem_compact_threshold":{
+        "default": 204800,
+        "video": 716800,
+        "hdr":614400,
+        "sr":614400,
+        "hdr_sr":614400,
+        "burst":409600,
+        "sn":614400,
+        "bokeh":614400,
+        "bokeh_hdr":614400,
+        "bokeh_se":614400,
+        "bokeh_hdsr":614400,
+        "bokeh_mfnr":409600,
+        "single_bokeh_mfnr":409600,
+        "single_bokeh_hdr":614400,
+        "bokeh_ainr":614400,
+        "bokeh_sr":614400,
+        "bokeh_snsc":614400,
+        "reclaim_base_threshold": 512000,
+        "reclaim_mid_free_threshold": 358400,
+        "reclaim_mid_free_threshold_video":716800,
+        "reclaim_critical_free_threshold": 81920,
+        "reclaim_once_size": 204800,
+        "reclaim_preview_free_target": 819200,
+        "reclaim_capture_free_target": 819200,
+        "relcaim_cache_threshold":1024000,
+        "relcaim_psi_threshold":40,
+        "compacted_rss_threshold":102400
+    },
+    "config_cn": [
+        {
+            "name": "intercept_restart_list",
+            "config": [
+                "com.xiaomi.bsp.gps.nps",
+                "com.android.settings:remote",
+                "com.google.process.gservices",
+                "com.google.android.gms",
+                "com.google.android.gms.persistent",
+                "com.google.process.gapps",
+                "com.android.vending"
+            ]
+        },
+        {
+            "name": "inhibit_app_list",
+            "config": [
+                "com.google.android.providers.media.module",
+                "com.sohu.inputmethod.sogou.xiaomi",
+                "com.google.process.gservices",
+                "com.google.android.gms",
+                "com.google.android.gms.persistent",
+                "com.google.process.gapps",
+                "com.android.vending",
+                "com.google.android.apps.photos"
+            ]
+        }
+    ],
+    "configs_8Gmem": [
+        {
+            "name": "inhibit_white_list",
+            "config": [
+                "com.miui.gallery",
+                "com.netease.cloudmusic:play"
+            ]
+        }
+    ],
+    "threshold_8Gmem": {
+        "protect_locktask_num": 1,
+        "kill_tag": 63,
+        "skip_task_lower": 1,
+        "reclaim_critical_free_threshold" : 1500000,
+        "adj_threshold":100,
+        "lowerAdj_freeMem_threshold": 614400,
+        "recent_task_pss_threshold":0
+    },
+    "mem_compact_threshold_8Gmem":{
+        "default": 204800,
+        "video": 1500000,
+        "wide_basic" : 716800,
+        "wide_bokeh_hdr": 716800,
+        "bokeh_hdr":614400,
+        "bokeh_se":614400,
+        "hdr":614400,
+        "sr":614400,
+        "hdr_sr":614400,
+        "burst":409600,
+        "sn":614400,
+        "bokeh":614400,
+        "bokeh_hdsr":614400,
+        "bokeh_mfnr":409600,
+        "single_bokeh_mfnr":409600,
+        "single_bokeh_hdr":614400,
+        "bokeh_ainr":614400,
+        "bokeh_sr":614400,
+        "bokeh_snsc":614400
+    },
+    "oom_8Gmem": {
+        "oom_level": "51200:0,89600:100,128000:200,179200:251,262144:701,393216:800",
+        "psi_level": "28,20,13,4",
+        "adj_level": "251,200,100,50"
+    }
+}

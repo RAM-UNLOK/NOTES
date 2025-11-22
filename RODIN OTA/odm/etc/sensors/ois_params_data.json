@@ -1,0 +1,14 @@
+{
+    "ois_params_data":{
+        "ois_max_mode":              "3648000",
+        "ois_min_mode":              "448000",
+        "centering_attenu":          "100000",
+        "max_bound_cnt":             "128000",
+        "min_bound_cnt":             "20000",
+        "pos_holder":                "750",
+        "sync_video_cnt":            "5000",
+        "sync_setting_amp":          "800",
+        "pid_attenu_counter_amp":    "1000",
+        "hor_ver_config":            "1100000"
+    }
+}

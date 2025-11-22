@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+    <range
+        colorARGB="#ff0000"
+        flashMode="0"
+        onMS="5000"
+        offMS="0"
+        brightnessMode="0"
+        min="0"
+        max="20"/>
+
+    <range
+        colorARGB="#ffbf00"
+        flashMode="0"
+        onMS="5000"
+        offMS="0"
+        brightnessMode="0"
+        min="20"
+        max="50"/>
+
+    <range
+        colorARGB="#6aff00"
+        flashMode="0"
+        onMS="5000"
+        offMS="0"
+        brightnessMode="0"
+        min="50"
+        max="99"/>
+
+        <range
+        colorARGB="#ffffff"
+        flashMode="0"
+        onMS="0"
+        offMS="0"
+        brightnessMode="0"
+        min="99"
+        max="100"/>
+
+</mapping>

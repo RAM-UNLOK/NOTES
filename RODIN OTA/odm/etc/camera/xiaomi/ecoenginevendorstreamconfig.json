@@ -1,0 +1,413 @@
+/*
+测试用，后续需要修改
+*/
+{
+    "ModeList": {
+        "Mode": [
+            {
+                // CameraUser::SDK
+                "CameraUser": 0,
+                // 0x800A, StreamConfigModeMiuiSuperNight
+                "VendorOpMode": 32778,
+                // 0x800A, StreamConfigModeMiuiSuperNight
+                "MialgoOpMode": 32778,
+                "RoleIds": [64],
+                "Signature": "RearSuperNight",
+                "BufferLimitCnt": 8,
+                "VendorSnapshotBufferQueueSize": 28,
+                "FlushWaitTimeMs": [700, 4000],
+                // 0001 0000 0000, 0x100, sn
+                "FeatureMask" : 256,
+                "StreamConfig": [
+                    // wide_NV12buffer	0	0	1	4096	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // wide_F1buffer	0	0	1	8222	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // wide_MEbuffer	0	0	1	538982489	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // ultra_NV12buffer	0	0	1	4096	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // ultra_F1buffer	0	0	1	8222	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // ultra_MEbuffer	0	0	1	538982489	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // raw16 stream of wide
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 32,
+                        "usage": 3,
+                        "dataSpace": 146931712
+                    },
+                    // raw16 stream of ultra wide
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 32,
+                        "usage": 3,
+                        "dataSpace": 146931712
+                    }
+                ]
+            },
+            {
+                // CameraUser::MIUI
+                "CameraUser": 0,
+                // 0x9000, StreamConfigModeAlgoDual
+                "VendorOpMode": 36864,
+                // 0x8002, StreamConfigModeBokeh
+                "MialgoOpMode": 32770,
+                "RoleIds": [64],
+                "Signature": "DualBokeh",
+                "BufferLimitCnt": 8,
+                "minZSLQLength": 9,
+                // Bokeh 12/1, HDRBokeh 12/3, SNBokeh 12/6
+                "VendorSnapshotBufferQueueSize": 30,
+                "FlushWaitTimeMs": [4000, 4000],
+                // 0001 0001 0001, 0x111, mihalMfnr/hdrBokeh/snBokeh
+                "FeatureMask" : 273,
+                "StreamConfig": [
+                    // nv12 stream of master
+                    {
+                        "bokehSig": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // f1 stream of master
+                    {
+                        "bokehSig": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // me stream of master
+                    {
+                        "bokehSig": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // nv12 stream of slave
+                    {
+                        "bokehSig": 2,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // f1 stream of slave
+                    {
+                        "bokehSig": 2,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // me stream of slave
+                    {
+                        "bokehSig": 2,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 131123,
+                        "stream_prop": 17,
+                        "dataSpace": 146931712
+                    },
+                    // bayer10 stream of master
+                    {
+                        // BokehCamSig::masterRaw
+                        "bokehSig": 1,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8705,
+                        "usage": 3,
+                        "dataSpace": 146931712
+                    },
+                    // bayer10 stream of slave
+                    {
+                        // BokehCamSig::slaveRaw
+                        "bokehSig": 3,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8705,
+                        "usage": 131123,
+                        "dataSpace": 146931712
+                    },
+                    // R1buffer stream of master
+                    {
+                        "bokehSig": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8217,
+                        "usage": 131123,
+                        "stream_prop": 13,
+                        "dataSpace": 146931712
+                    },
+                    // raw16 stream of master for sebokeh
+                    {
+                        // BokehCamSig::masterRaw
+                        "bokehSig": 1,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 32,
+                        "usage": 3,
+                        "dataSpace": 146931712
+                    },
+                    // raw16 stream of slave for sebokeh
+                    {
+                        // BokehCamSig::slaveRaw
+                        "bokehSig": 3,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 32,
+                        "usage": 131123,
+                        "dataSpace": 146931712
+                    }
+                ]
+            },
+            {
+                // CameraUser::SDK
+                "CameraUser": 1,
+                // 0x0, ThirdApp
+                "VendorOpMode": 36869,
+                // 0xFF1B,StreamConfigModeThirdPartyJpegRFront
+                "MialgoOpMode": 65307,
+                "RoleIds": [1],
+                // UltraHDR/mihal mfnr
+                // 0x20000/0x1
+                "FeatureMask" : 1,
+                "Signature": "ThirdJpegRFront",
+                "BufferLimitCnt": 8,
+                "minZSLQLength": 9,
+                "VendorSnapshotBufferQueueSize": 30,
+                "FlushWaitTimeMs": [4000, 4000],
+                "StreamConfig": [
+                    // cam1_bayer10_拍照
+                    {
+                        "ratio": 0.0,
+                        "isPhysicalStream": false,
+                        "isZSL": true,
+                        "format": 8705,
+                        "usage": 131123,
+                        "dataSpace": 146931712
+                    },
+                    // cam1_R1buffer
+                    {
+                        "ratio": 0.0,
+                        "isPhysicalStream": false,
+                        "isZSL": true,
+                        "format": 8217,
+                        "usage": 0,
+                        "stream_prop": 13,
+                        "dataSpace": 0
+                    },
+                    // cam1_NV12buffer
+                    {
+                        "ratio": 0.0,
+                        "isPhysicalStream": false,
+                        "format": 4096,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // cam1_F1buffer
+                    {
+                        "ratio": 0.0,
+                        "isPhysicalStream": false,
+                        "format": 8222,
+                        "usage": 0,
+                        "dataSpace": 0
+                    },
+                    // cam1_MEbuffer
+                    {
+                        "ratio": 0.0,
+                        "isPhysicalStream": false,
+                        "format": 538982489,
+                        "usage": 0,
+                        "dataSpace": 0
+                    }
+                ]
+            },
+            {
+                // CameraUser::SDK
+                "CameraUser": 1,
+                // 0x0, ThirdApp
+                "VendorOpMode": 36866,
+                // 0xFF1A,StreamConfigModeThirdPartyJpegR
+                "MialgoOpMode": 65306,
+                "RoleIds": [64],
+                // Mihal Mfnr
+                // 0x1
+                "FeatureMask" : 1,
+                "Signature": "ThirdJpegR",
+                "BufferLimitCnt": 12,
+                "minZSLQLength": 9,
+                "VendorSnapshotBufferQueueSize": 42,
+                "FlushWaitTimeMs": [4000, 4000],
+                "StreamConfig": [
+                    // wide_bayer14_拍照	0	0	1	8707	131123	146931712
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8707,
+                        "usage": 131123,
+                        "dataSpace": 146931712
+                    },
+                    // wide_R1buffer	0	0	1	8217	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8217,
+                        "usage": 0,
+                        "stream_prop": 13,
+                        "dataSpace": 0
+                    },
+                    // wide_NV12buffer	0	0	1	4096	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    },
+                    // wide_F1buffer	0	0	1	8222	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    },
+                    // wide_MEbuffer	0	0	1	538982489	0	0
+                    {
+                        "roleId": 0,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    },
+                    // ultra_bayer10_拍照
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8705,
+                        "usage": 131123,
+                        "dataSpace": 146931712
+                    },
+                    // ultra_R1buffer
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "isZSL": true,
+                        "format": 8217,
+                        "usage": 0,
+                        "stream_prop": 13,
+                        "dataSpace": 0
+                    },
+                    // ultra_NV12buffer	0	0	1	4096	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 4096,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    },
+                    // ultra_F1buffer	0	0	1	8222	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 8222,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    },
+                    // ultra_MEbuffer	0	0	1	538982489	0	0
+                    {
+                        "roleId": 21,
+                        "ratio": 0.0,
+                        "isPhysicalStream": true,
+                        "format": 538982489,
+                        "usage": 0,
+                        "stream_prop": 17,
+                        "dataSpace": 0
+                    }
+                ]
+            }
+        ]
+    }
+}

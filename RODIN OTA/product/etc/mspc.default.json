@@ -1,0 +1,43 @@
+{
+    "aging": [{
+        "name": "com.xiaomi.joyose",
+        "miui": 55,
+        "lite": 0,
+        "processes": [
+            "com.xiaomi.joyose"
+        ]
+    }, {
+        "name": "com.miui.analytics",
+        "miui": 115,
+        "lite": 110,
+        "processes": [
+            "com.miui.analytics"
+        ]
+    }, {
+        "name": "com.xiaomi.mi_connect_service",
+        "miui": 58,
+        "lite": 55,
+        "processes": [
+            "com.xiaomi.mi_connect_service"
+        ]
+    }, {
+        "name": "com.miui.miwallpaper",
+        "miui": 437,
+        "lite": 418,
+        "processes": [
+            "com.miui.miwallpaper"
+        ]
+    }, {
+        "name": "com.android.thememanager",
+        "miui": 1200,
+        "lite": 575,
+        "processes": [
+            "com.android.thememanager"
+        ]
+    }],
+    "heap": [{
+        "name": "com.ss.android.ugc.aweme",
+        "miui": 430,
+        "lite": 430
+    }]
+}

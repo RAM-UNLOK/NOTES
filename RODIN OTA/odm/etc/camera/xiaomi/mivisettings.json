@@ -1,0 +1,9 @@
+{
+    "offlinedebugmask" : 0,
+    "Soc" : "MTK",
+    "SupportMDBokeh" : true,
+    "MialgoEnginePreviewThreadNum" : 12,
+    "MialgoEngineCaptureThreadNum" : 12,
+    "Mivi3LogLevel" : 5,
+    "Mivi3LogGroupsEnable" : 0
+}

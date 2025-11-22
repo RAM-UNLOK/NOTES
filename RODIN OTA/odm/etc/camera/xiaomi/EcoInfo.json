@@ -1,0 +1,960 @@
+{
+    "version": "4.0.1",
+    "cameraControllerInfo": {
+        "version": "4.0.1",
+        "cameraExposedRoleIdList": "20#21#63#60#61#0"
+    },
+    "miviPlatformInfo": {
+        "version": "4.0.1",
+        "modeList": [
+            {
+                "mode": "Normal",
+                "conflictFunctionList": [
+                    "HDR",
+                    "MFNR"
+                ],
+                "modeAbility": [
+                    {
+                        "roleName": "PhotoSat",
+                        "supportFunctionList": [
+                            "HDR",
+                            "MFNR",
+                            "Beauty",
+                            "Depurple"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 4096,
+                                    "height": 3072
+                                },
+                                {
+                                    "width": 4096,
+                                    "height": 2304
+                                },
+                                {
+                                    "width": 4080,
+                                    "height": 1836
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 4096,
+                                    "height": 3072
+                                },
+                                {
+                                    "width": 4096,
+                                    "height": 2304
+                                },
+                                {
+                                    "width": 4080,
+                                    "height": 1836
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "Front",
+                        "supportFunctionList": [
+                            "HDR",
+                            "MFNR",
+                            "Beauty"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 2592,
+                                    "height": 1944
+                                },
+                                {
+                                    "width": 2592,
+                                    "height": 1458
+                                },
+                                {
+                                    "width": 2560,
+                                    "height": 1152
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "UltraWide",
+                        "supportFunctionList": [],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 3264,
+                                    "height": 2448
+                                },
+                                {
+                                    "width": 3264,
+                                    "height": 1836
+                                },
+                                {
+                                    "width": 3200,
+                                    "height": 1440
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "SuperNight",
+                "modeAbility": [
+                    {
+                        "roleName": "Front",
+                        "supportFunctionList": [
+                            "Beauty",
+                            "SuperNight"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 2592,
+                                    "height": 1944
+                                },
+                                {
+                                    "width": 2592,
+                                    "height": 1458
+                                },
+                                {
+                                    "width": 2560,
+                                    "height": 1152
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [
+                            "SuperNight"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 4096,
+                                    "height": 3072
+                                },
+                                {
+                                    "width": 4096,
+                                    "height": 2304
+                                },
+                                {
+                                    "width": 4080,
+                                    "height": 1836
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "UltraWide",
+                        "supportFunctionList": [
+                            "SuperNight"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 3264,
+                                    "height": 2448
+                                },
+                                {
+                                    "width": 3264,
+                                    "height": 1836
+                                },
+                                {
+                                    "width": 3200,
+                                    "height": 1440
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "AntiShake",
+                "modeAbility": [
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [
+                            "AntiShake"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "UltraWide",
+                        "supportFunctionList": [
+                            "AntiShake"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "PhotoSat",
+                        "supportFunctionList": [
+                            "AntiShake"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "AntiShakeV3",
+                "modeAbility": [
+                    {
+                        "roleName": "PhotoSat",
+                        "supportFunctionList": [
+                            "AntiShakeV3"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "VideoSuperNight",
+                "modeAbility": [
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [
+                            "VideoSuperNight"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "VideoHDR",
+                "modeAbility": [
+                    {
+                        "roleName": "PhotoSat",
+                        "supportFunctionList": [
+                            "VideoHDR"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "Bokeh",
+                "modeAbility": [
+                    {
+                        "roleName": "Bokeh",
+                        "supportFunctionList": [
+                            "HDR",
+                            "Beauty",
+                            "BokehRear"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 960
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 576
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 4096,
+                                    "height": 3072
+                                },
+                                {
+                                    "width": 4096,
+                                    "height": 2304
+                                },
+                                {
+                                    "width": 4080,
+                                    "height": 1836
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "Front",
+                        "supportFunctionList": [
+                            "HDR",
+                            "Beauty",
+                            "BokehFront"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1440,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                },
+                                {
+                                    "width": 2400,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 2592,
+                                    "height": 1944
+                                },
+                                {
+                                    "width": 2592,
+                                    "height": 1458
+                                },
+                                {
+                                    "width": 2560,
+                                    "height": 1152
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "Bokeh2x",
+                "modeAbility": [
+                    {
+                        "roleName": "Bokeh",
+                        "supportFunctionList": [
+                            "HDR",
+                            "Beauty",
+                            "BokehRear"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 960
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "width": 1280,
+                                    "height": 576
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 4080,
+                                    "height": 3060
+                                },
+                                {
+                                    "width": 4064,
+                                    "height": 2284
+                                },
+                                {
+                                    "width": 4080,
+                                    "height": 1836
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "VideoNormal",
+                "modeAbility": [
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [
+                            "VideoBokehRear",
+                            "Beauty"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "Front",
+                        "supportFunctionList": [
+                            "VideoBokehFront",
+                            "Beauty"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "roleName": "UltraWide",
+                        "supportFunctionList": [
+                            "VideoBokehRear",
+                            "Beauty"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1280,
+                                    "height": 720
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "mode": "VideoHDR10",
+                "modeAbility": [
+                    {
+                        "roleName": "Rear",
+                        "supportFunctionList": [
+                            "VideoHDR10"
+                        ],
+                        "supportSizeObject": {
+                            "preview": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "capture": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ],
+                            "video": [
+                                {
+                                    "width": 1920,
+                                    "height": 1080
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "miviAppWhiteList": {
+        "version": "4.0.1",
+        "packageNames": [
+            {
+                "packageName": "com.xiaomi.camera.sample",
+                "exceptModeList": [
+                    {
+                        "mode": "Normal",
+                        "modeAbility": [
+                            {
+                                "roleName": "Front",
+                                "functionList": [
+                                    "Beauty"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "packageName": "com.xiaomi.camera.mivi"
+            },
+            {"packageName": "com.milink.service"}
+        ]
+    },
+    "cameraExtension": {
+        "version": "4.0.1",
+        "platformInfo": {
+            "modeList": [
+                {
+                    "mode": ["Night"],
+                    "modeAbility": [
+                        {
+                            "roleName": "Front",
+                            "supportSizeObject": {
+                                "preview": [
+                                    {
+                                        "width": 1440,
+                                        "height": 1080
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080
+                                    }
+                                ],
+                                "captureYuv": [
+                                    {
+                                        "width": 2592,
+                                        "height": 1944,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2592,
+                                        "height": 1458,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width":2560,
+                                        "height": 1152,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1440,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    }
+                                ],
+                                "capture": [
+                                    {
+                                        "width": 2592,
+                                        "height": 1944,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2592,
+                                        "height": 1458,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width":2560,
+                                        "height": 1152,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1440,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "roleName": "Rear",
+                            "supportSizeObject": {
+                                "preview": [
+                                    {
+                                        "width": 1440,
+                                        "height": 1080
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080
+                                    }
+                                ],
+                                "captureYuv": [
+                                    {
+                                        "width": 4096,
+                                        "height": 3072,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 4096,
+                                        "height": 2304,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 4080,
+                                        "height": 1836,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 1440,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    }
+                                ],
+                                "capture": [
+                                    {
+                                        "width": 4096,
+                                        "height": 3072,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 4096,
+                                        "height": 2304,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 4080,
+                                        "height": 1836,
+                                        "shotTimeMax": 70
+                                    },
+                                    {
+                                        "width": 1440,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 1920,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    },
+                                    {
+                                        "width": 2400,
+                                        "height": 1080,
+                                        "shotTimeMax": 50
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

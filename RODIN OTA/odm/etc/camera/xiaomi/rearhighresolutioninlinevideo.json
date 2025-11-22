@@ -1,0 +1,208 @@
+{
+    "PipelineName": "RearHighResolutionInlineVideo",
+    "NodesList": {
+        "Node": [
+            {
+                "NodeName": "com.xiaomi.plugin.hwhalproc",
+                "NodeInstance": "VSEWARPMCNRPQInstance0",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 32896
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.hwhalproc",
+                "NodeInstance": "VSEWARPMCNRPQInstance1",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 32896
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.mimotionvideo",
+                "NodeInstance": "MiMotionInstance",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 1
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.mimotionvideo",
+                "NodeInstance": "MiMotionInstance1",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 1
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.asdasync",
+                "NodeInstance": "AsdAsyncInstance0",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 1
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.mihisv2",
+                "NodeInstance": "HISV2Instance1",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 1
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.mihisv3",
+                "NodeInstance": "HISV3Instance1",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 8193
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.hwjpeg",
+                "NodeInstance": "JpegInstance"
+            },
+            {
+                "NodeName": "",
+                "NodeInstance": "virtualSinkbuffer",
+                "NodeProperty": [
+                    {
+                        "NodePropertyName": "NodeMask",
+                        "NodePropertyValue": 1536
+                    }
+                ]
+            }
+        ]
+    },
+    "PortLinkages": {
+        "Link": [
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "SourceBuffer"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "MiMotionInstance"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "MiMotionInstance"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "HISV2Instance1"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 1,
+                    "NodeInstance": "SourceBuffer1"
+                },
+                "DstPort": {
+                    "PortId": 1,
+                    "NodeInstance": "MiMotionInstance1"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 1,
+                    "NodeInstance": "MiMotionInstance1"
+                },
+                "DstPort": {
+                    "PortId": 1,
+                    "NodeInstance": "HISV3Instance1"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "HISV2Instance1"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "VSEWARPMCNRPQInstance0"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 1,
+                    "NodeInstance": "HISV3Instance1"
+                },
+                "DstPort": {
+                    "PortId": 1,
+                    "NodeInstance": "VSEWARPMCNRPQInstance1"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "VSEWARPMCNRPQInstance0"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "virtualSinkbuffer"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "virtualSinkbuffer"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "AsdAsyncInstance0",
+                    "PortFormat": "YUV420_NV12"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 1,
+                    "NodeInstance": "VSEWARPMCNRPQInstance1",
+                    "PortFormat": "YUV420_NV12"
+                },
+                "DstPort": {
+                    "PortId": 1,
+                    "NodeInstance": "SinkBuffer1"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 2,
+                    "NodeInstance": "VSEWARPMCNRPQInstance0"
+                },
+                "DstPort": {
+                    "PortId": 2,
+                    "NodeInstance": "JpegInstance"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 2,
+                    "NodeInstance": "JpegInstance",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 2,
+                    "NodeInstance": "SinkBuffer2"
+                }
+            }
+        ]
+    }
+}

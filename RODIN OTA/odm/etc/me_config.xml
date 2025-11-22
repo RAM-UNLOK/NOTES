@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MIUI ADD: Modem_ModemEnhance -->
+<MESubFeatureConfig>
+    <!--global -->
+    <!-- device_name = ro.product.device -->
+    <deviceConfig device_name="rodin">
+        <!-- hwc_name = ro.product.mod_device -->
+        <hwc hwc_name="GL" />
+        <!-- feature_id refer to MEFeatureConfig.MEFEATURE_TYPE_ID_XXX -->
+        <!-- UAC -->
+        <feature feature_id="1"  hw_support="0" sw_version="1" sw_enable="0" sw_mp_enable="0"/>
+        <!-- UL Imbalance -->
+        <feature feature_id="2"  hw_support="1" sw_version="1" sw_enable="1" sw_mp_enable="1"/>
+        <feature feature_id="17" hw_support="0" sw_version="1" sw_enable="0" sw_mp_enable="0"/>
+    </deviceConfig>
+
+    <!--cn -->
+    <!-- device_name = ro.product.device -->
+    <deviceConfig device_name="rodin">
+        <!-- hwc_name = ro.product.mod_device -->
+        <hwc hwc_name="CN" />
+        <!-- feature_id refer to MEFeatureConfig.MEFEATURE_TYPE_ID_XXX -->
+        <!-- UAC -->
+        <feature feature_id="1"  hw_support="0" sw_version="1" sw_enable="0" sw_mp_enable="0"/>
+        <!-- UL Imbalance -->
+        <feature feature_id="2"  hw_support="1" sw_version="1" sw_enable="1" sw_mp_enable="1"/>
+        <!-- SmartUplink -->
+        <feature feature_id="4"  hw_support="1" sw_version="1" sw_enable="1" sw_mp_enable="1"/>
+    </deviceConfig>
+
+    <!--default -->
+    <!-- device_name = ro.product.device -->
+    <deviceConfig device_name="rodin">
+        <!-- hwc_name = ro.product.mod_device -->
+        <hwc hwc_name="default" />
+        <!-- feature_id refer to MEFeatureConfig.MEFEATURE_TYPE_ID_XXX -->
+        <feature feature_id="1"  hw_support="0" sw_version="1" sw_enable="0" sw_mp_enable="0"/>
+        <feature feature_id="17" hw_support="0" sw_version="1" sw_enable="0" sw_mp_enable="0"/>
+    </deviceConfig>
+
+</MESubFeatureConfig>
+<!-- END Modem_ModemEnhance -->

@@ -1,0 +1,27 @@
+{
+	"name": "SMotion",
+	"version": "1.0",
+	"product": "rodin",
+	"SUPER CORE": {
+		"MODE": 10001,
+		"DEFAULT": true,
+		"APP": []
+	},
+	"SUPER CHIP": {
+		"MODE": 10002,
+		"DEFAULT": true,
+		"APP": []
+	},
+	"SUPER ALGO": {
+		"MODE": 10003,
+		"DEFAULT": true,
+		"APP": []
+	},
+	"SUPER_MISTOUCH": {
+		"MODE": 10004,
+		"ALL_DEFAULT_ENABLE": true,
+		"DEFAULT": true,
+		"APP": [],
+		"LEVEL": 2 // range[1, 2, 3]
+	}
+}
