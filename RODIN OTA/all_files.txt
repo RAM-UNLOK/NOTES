@@ -1172,7 +1172,6 @@ product/app/messaging/oat/arm64/messaging.odex
 product/app/messaging/oat/arm64/messaging.vdex
 product/app/messaging/messaging.apk
 product/app/talkback/talkback.apk
-product/data-app/MIMediaEditorGlobal/MIMediaEditorGlobal.apk
 product/data-app/MIUICalculatorGlobal/MIUICalculatorGlobal.apk
 product/data-app/MIUIDeskClockGlobal/MIUIDeskClockGlobal.apk
 product/data-app/MIUINotes/MIUINotes.apk
@@ -1180,6 +1179,7 @@ product/data-app/MIUIScreenRecorder/MIUIScreenRecorder.apk
 product/data-app/MIUISoundRecorderTargetSdk30Global/MIUISoundRecorderTargetSdk30Global.apk
 product/data-app/MIUIWeatherGlobal/MIUIWeatherGlobal.apk
 product/data-app/MiGalleryLockScreenGlobalOs3/MiGalleryLockScreenGlobalOs3.apk
+product/data-app/MiMediaEditor/MiMediaEditor.apk
 product/data-app/MiuiScanner/MiuiScanner.apk
 product/data-app/POCOCOMMUNITY_OVERSEA/POCOCOMMUNITY_OVERSEA.apk
 product/etc/aconfig/flag.info
@@ -1200,6 +1200,7 @@ product/etc/lights/lightstyle_battery.xml
 product/etc/lights/lightstyle_notification.xml
 product/etc/lights/lightstyle_phone.xml
 product/etc/lut/lutForPrimeShaderCache.txt
+product/etc/miuibooster/miuibooster_config.json
 product/etc/permissions/android.software.angle.xml
 product/etc/permissions/com.android.imsserviceentitlement.xml
 product/etc/permissions/com.android.settings.intelligence.xml
@@ -1475,6 +1476,8 @@ product/etc/pipeline_infos/com.xiaomi.shop/com.android.skia.shaders_cache
 product/etc/pipeline_infos/com.xiaomi.shop/com.android.vulkan.pipelineinfo
 product/etc/pipeline_infos/com.xiaomi.smarthome/com.android.skia.shaders_cache
 product/etc/pipeline_infos/com.xiaomi.smarthome/com.android.vulkan.pipelineinfo
+product/etc/pipeline_infos/com.xiaomi.subscreencenter/com.android.skia.shaders_cache
+product/etc/pipeline_infos/com.xiaomi.subscreencenter/com.android.vulkan.pipelineinfo
 product/etc/pipeline_infos/com.xiaomi.tinygame/com.android.skia.shaders_cache
 product/etc/pipeline_infos/com.xiaomi.tinygame/com.android.vulkan.pipelineinfo
 product/etc/pipeline_infos/com.xiaomi.vipaccount/com.android.skia.shaders_cache
@@ -1738,8 +1741,10 @@ product/fonts/MiSansCondensed2T.ttf
 product/fonts/MiSansDevanagariVF.ttf
 product/fonts/MiSansGujaratiVF.ttf
 product/fonts/MiSansGurmukhiVF.ttf
+product/fonts/MiSansJapaneseVF.ttf
 product/fonts/MiSansKannadaVF.ttf
 product/fonts/MiSansKhmerVF.ttf
+product/fonts/MiSansKoreanVF.ttf
 product/fonts/MiSansL3.otf
 product/fonts/MiSansLaoVF.ttf
 product/fonts/MiSansLatinVF.ttf
@@ -3530,8 +3535,10 @@ system/system/fonts/MiSansBengaliVF.ttf
 system/system/fonts/MiSansDevanagariVF.ttf
 system/system/fonts/MiSansGujaratiVF.ttf
 system/system/fonts/MiSansGurmukhiVF.ttf
+system/system/fonts/MiSansJapaneseVF.ttf
 system/system/fonts/MiSansKannadaVF.ttf
 system/system/fonts/MiSansKhmerVF.ttf
+system/system/fonts/MiSansKoreanVF.ttf
 system/system/fonts/MiSansL3.otf
 system/system/fonts/MiSansLaoVF.ttf
 system/system/fonts/MiSansLatinVF.ttf
@@ -6905,6 +6912,14 @@ system_ext/etc/cust/za/cust.prop
 system_ext/etc/cust/zm/cust.prop
 system_ext/etc/cust/zw/cust.prop
 system_ext/etc/default-permissions/default-permissions-miui-common.xml
+system_ext/etc/dynamic_em/antenna/tuner/MTK_Tuner_Controller_dynamic.xml
+system_ext/etc/dynamic_em/antenna/ASD_Scenario_Detection_dynamic.xml
+system_ext/etc/dynamic_em/antenna/Antenna_Force_dynamic.xml
+system_ext/etc/dynamic_em/antenna/UAC_Condition_dynamic.xml
+system_ext/etc/dynamic_em/antenna/UAC_Information_Monitor_dynamic.xml
+system_ext/etc/dynamic_em/antenna/UAC_Scenario_dynamic.xml
+system_ext/etc/dynamic_em/BandMode_dynamic.xml
+system_ext/etc/dynamic_em/MD_SAR_and_PD_Feature_Control_dynamic.xml
 system_ext/etc/forcedarkconfig/ForceDarkAppConfigVersion.json
 system_ext/etc/forcedarkconfig/ForceDarkAppRemoveSetting.json
 system_ext/etc/forcedarkconfig/ForceDarkAppSettings.json
@@ -7052,6 +7067,7 @@ system_ext/etc/init/init.miui.cust.rc
 system_ext/etc/init/init.miui.dumpaudiobinderInfo.rc
 system_ext/etc/init/init.miui.ext.rc
 system_ext/etc/init/init.nativedebug.rc
+system_ext/etc/init/init.restore_aconfig_perm.rc
 system_ext/etc/init/init.secureboot.rc
 system_ext/etc/init/init.thermald.rc
 system_ext/etc/init/init.vtservice.rc
@@ -8124,6 +8140,11 @@ system_ext/lib/vendor.mediatek.hardware.pq_aidl-V7-ndk.so
 system_ext/lib/vendor.mediatek.hardware.touchll@1.0.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib/vendor.pixelworks.hardware.display@1.0.so
+system_ext/lib/vendor.pixelworks.hardware.display@1.1.so
+system_ext/lib/vendor.pixelworks.hardware.display@1.2.so
+system_ext/lib/vendor.pixelworks.hardware.feature@1.0.so
+system_ext/lib/vendor.pixelworks.hardware.feature@1.1.so
 system_ext/lib/vendor.xiaomi.hardware.aidl.intentaware-V1-ndk.so
 system_ext/lib/vendor.xiaomi.hardware.aidlbgservice-V1-ndk.so
 system_ext/lib/vendor.xiaomi.hardware.bgservice@1.0.so
@@ -8585,6 +8606,11 @@ system_ext/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.touchll@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.pixelworks.hardware.display@1.0.so
+system_ext/lib64/vendor.pixelworks.hardware.display@1.1.so
+system_ext/lib64/vendor.pixelworks.hardware.display@1.2.so
+system_ext/lib64/vendor.pixelworks.hardware.feature@1.0.so
+system_ext/lib64/vendor.pixelworks.hardware.feature@1.1.so
 system_ext/lib64/vendor.xiaomi.hardware.aidl.intentaware-V1-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.aidlbgservice-V1-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.bgservice@1.0.so
@@ -10208,6 +10234,7 @@ vendor/etc/voicecommand/training/ubmfile/keyword02/znnn/supplement/8
 vendor/etc/voicecommand/training/ubmfile/keyword02/znnn/supplement/9
 vendor/etc/voicecommand/training/ubmfile/keyword02/znnn/supplement/b
 vendor/etc/voicecommand/training/ubmfile/keyword02/.gitignore
+vendor/etc/voicecommand/training/ubmfile/keyword02/OWNERS
 vendor/etc/voicecommand/training/ubmfile/keyword02/README.txt
 vendor/etc/voicecommand/training/ubmfile/keyword02/keyphrase.xml
 vendor/etc/voicecommand/training/ubmfile/keyword03/de-DE/hhhh/p2.3/antiCmds/Model1.bin
@@ -10762,6 +10789,7 @@ vendor/etc/voicecommand/training/ubmfile/keyword03/it-IT/hhhh/supplement/8
 vendor/etc/voicecommand/training/ubmfile/keyword03/it-IT/hhhh/supplement/9
 vendor/etc/voicecommand/training/ubmfile/keyword03/it-IT/hhhh/supplement/b
 vendor/etc/voicecommand/training/ubmfile/keyword03/it-IT/keyphrase.xml
+vendor/etc/voicecommand/training/ubmfile/keyword03/OWNERS
 vendor/etc/voicecommand/training/ubmfile/keyword03/README.txt
 vendor/etc/voicecommand/training/ubmfile/keyword03/keyphrase.xml
 vendor/etc/voicecommand/training/ubmfile/keyword08/dddd/p1.5/nl
@@ -10989,6 +11017,7 @@ vendor/etc/voicecommand/training/ubmfile/keyword08/znnn/supplement/8
 vendor/etc/voicecommand/training/ubmfile/keyword08/znnn/supplement/9
 vendor/etc/voicecommand/training/ubmfile/keyword08/znnn/supplement/b
 vendor/etc/voicecommand/training/ubmfile/keyword08/.gitignore
+vendor/etc/voicecommand/training/ubmfile/keyword08/OWNERS
 vendor/etc/voicecommand/training/ubmfile/keyword08/keyphrase.xml
 vendor/etc/wifi/dla/mtk_qoe_predict.dla
 vendor/etc/wifi/dla/sgame_latency_predict.dla
