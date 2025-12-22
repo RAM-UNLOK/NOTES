@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MIUI MOD: Modem_CommunicationFrame -->
+<permissions>
+    <privapp-permissions package="com.xiaomi.hypercomm">
+    </privapp-permissions>
+</permissions>
+<!--END Modem_CommunicationFrame-->

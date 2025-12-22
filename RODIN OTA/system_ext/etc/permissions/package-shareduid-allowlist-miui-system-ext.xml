@@ -30,8 +30,6 @@ Example usage
     <allow-package-shareduid package="com.xdandroid.sample" shareduid="android.uid.system" />
     <allow-package-shareduid package="com.xiaomi.uatalive" shareduid="android.uid.system" />
     <allow-package-shareduid package="com.phonetest.stresstest" shareduid="android.uid.system" />
-    <allow-package-shareduid package="com.xiaomi.phonetest" shareduid="android.uid.system" />
-    <allow-package-shareduid package="com.interact.stresstest" shareduid="android.uid.system" />
     <allow-package-shareduid package="com.xiaomi.mihomemanager" shareduid="android.uid.system" />
     <allow-package-shareduid package="com.xiaomi.aiasst.service" shareduid="android.uid.system" />
 </config>

@@ -33,7 +33,7 @@
     <spnOverride numeric="21601" spn="Yettel HU"/>
     <spnOverride numeric="21603" spn="Digi.Mobile Hungary"/>
     <spnOverride numeric="21630" spn="Telekom HU"/>
-    <spnOverride numeric="21670" spn="vodafone HU"/>
+    <spnOverride numeric="21670" spn="One HU"/>
     <spnOverride numeric="21801" spn="HT ERONET"/>
     <spnOverride numeric="21803" spn="HT ERONET"/>
     <spnOverride numeric="21805" spn="m:tel"/>
@@ -403,9 +403,10 @@
     <spnOverride numeric="366110" spn="FLOW"/>
     <spnOverride numeric="36620" spn="Cingular"/>
     <spnOverride numeric="36801" spn="CUBACEL"/>
-    <spnOverride numeric="37001" spn="Orange"/>
+    <spnOverride numeric="37001" spn="Altice"/>
     <spnOverride numeric="37002" spn="CLARO DOM"/>
     <spnOverride numeric="37004" spn="Viva DO"/>
+    <spnOverride numeric="37005" spn="Wind Telecom"/>
     <spnOverride numeric="37201" spn="COMCEL"/>
     <spnOverride numeric="37203" spn="Natcom"/>
     <spnOverride numeric="37412" spn="TSTT"/>
@@ -745,7 +746,7 @@
     <spnOverride numeric="43235" spn="MTN Irancell"/>
     <spnOverride numeric="43404" spn="Beeline UZ"/>
     <spnOverride numeric="43405" spn="UZB Ucell"/>
-    <spnOverride numeric="43407" spn="UMS-UZB"/>
+    <spnOverride numeric="43407" spn="MOBIUZ"/>
     <spnOverride numeric="43408" spn="UzMobile"/>
     <spnOverride numeric="43601" spn="TCELL"/>
     <spnOverride numeric="43602" spn="TCELL"/>
@@ -885,6 +886,7 @@
     <spnOverride numeric="52501" spn="Singtel"/>
     <spnOverride numeric="52502" spn="Singtel"/>
     <spnOverride numeric="52503" spn="SGP-M1"/>
+    <spnOverride numeric="52505" spn="StarHub"/>
     <spnOverride numeric="52507" spn="SGP Call Zone"/>
     <spnOverride numeric="52508" spn="StarHub"/>
     <spnOverride numeric="52510" spn="TPG SG"/>

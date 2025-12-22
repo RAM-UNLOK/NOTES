@@ -113,12 +113,15 @@
             <axis tag="wght" stylevalue="450"/>
         </font>
         <font weight="700" style="normal" postScriptName="MiSansVF">MiSansVF_Overlay.ttf
-            <axis tag="wght" stylevalue="520"/>
+            <axis tag="wght" stylevalue="450"/>
         </font>
         <font weight="800" style="normal" postScriptName="MiSansVF">MiSansVF_Overlay.ttf
-            <axis tag="wght" stylevalue="630"/>
+            <axis tag="wght" stylevalue="520"/>
         </font>
         <font weight="900" style="normal" postScriptName="MiSansVF">MiSansVF_Overlay.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansVF">MiSansVF_Overlay.ttf
             <axis tag="wght" stylevalue="700"/>
         </font>
     </family>
@@ -189,7 +192,7 @@
 
     <!--  MIUI MOD: Font_VariableFont  -->
 
-    <!-- MIUI fonts begin -->
+    <!-- MIUI fonts begin /-->
     <!-- <alias name="miui" to="sans-serif" weight="400" /> -->
     <alias name="miui-thin" to="sans-serif" weight="100" />
     <alias name="miui-light" to="sans-serif" weight="200" />
@@ -203,11 +206,17 @@
     <alias name="mipro-normal" to="sans-serif" weight="350" />
     <!-- <alias name="mipro-regular" to="sans-serif" weight="400" /> -->
     <alias name="mipro-medium" to="sans-serif" weight="500" />
-    <alias name="mipro-demibold" to="sans-serif" weight="600" />
-    <alias name="mipro-semibold" to="sans-serif" weight="700" />
-    <alias name="mipro-bold" to="sans-serif" weight="800" />
-    <alias name="mipro-heavy" to="sans-serif" weight="900" />
-    <!-- MIUI fonts end -->
+    <alias name="mipro-demibold" to="sans-serif" weight="700" />
+    <alias name="mipro-semibold" to="sans-serif" weight="800" />
+    <alias name="mipro-bold" to="sans-serif" weight="900" />
+    <alias name="mipro-heavy" to="sans-serif" weight="950" />
+
+    <family lang="zh">
+        <font weight="400" style="normal" postScriptName="MiSans-L3">
+            MiSansL3.otf
+        </font>
+    </family>
+    <!-- MIUI fonts end /-->
     <!--  END Font_VariableFont  -->
 
     <family name="source-sans-pro">
@@ -362,7 +371,7 @@
         <font postScriptName="NotoSansBengali-Regular" supportedAxes="wght">
             NotoSansBengali-VF.ttf
         </font>
-        <font fallbackFor="serif" postScriptName="NotoSerifBengali-Regular">
+        <font fallbackFor="serif" postScriptName="NotoSerifBengali-Regular" supportedAxes="wght">
             NotoSerifBengali-VF.ttf
         </font>
     </family>
@@ -412,7 +421,7 @@
         <font postScriptName="NotoSansSinhala-Regular" supportedAxes="wght">
             NotoSansSinhala-VF.ttf
         </font>
-        <font fallbackFor="serif" postScriptName="NotoSerifSinhala-Regular">
+        <font fallbackFor="serif" postScriptName="NotoSerifSinhala-Regular" supportedAxes="wght">
             NotoSerifSinhala-VF.ttf
         </font>
     </family>
@@ -1001,23 +1010,23 @@
             NotoSansMedefaidrin-VF.ttf
         </font>
     </family>
-    <family lang="und-Soyo" supportedAxes="wght">
-        <font postScriptName="NotoSansSoyombo-Regular">
+    <family lang="und-Soyo">
+        <font postScriptName="NotoSansSoyombo-Regular" supportedAxes="wght">
             NotoSansSoyombo-VF.ttf
         </font>
     </family>
-    <family lang="und-Takr" supportedAxes="wght">
-        <font postScriptName="NotoSansTakri-Regular">
+    <family lang="und-Takr">
+        <font postScriptName="NotoSansTakri-Regular" supportedAxes="wght">
             NotoSansTakri-VF.ttf
         </font>
     </family>
-    <family lang="und-Hmnp" supportedAxes="wght">
-        <font postScriptName="NotoSerifHmongNyiakeng-Regular">
+    <family lang="und-Hmnp">
+        <font postScriptName="NotoSerifHmongNyiakeng-Regular" supportedAxes="wght">
             NotoSerifNyiakengPuachueHmong-VF.ttf
         </font>
     </family>
-    <family lang="und-Yezi" supportedAxes="wght">
-        <font postScriptName="NotoSerifYezidi-Regular">
+    <family lang="und-Yezi">
+        <font postScriptName="NotoSerifYezidi-Regular" supportedAxes="wght">
             NotoSerifYezidi-VF.ttf
         </font>
     </family>

@@ -212,6 +212,17 @@
           ]
         },
         {
+          "activityName": "com.taobao.tao.TBMainActivity",
+          "config": [
+            {
+              "className": "*",
+              "idResourceName": "*",
+              "autoHandwritingEnabled": false,
+              "comment": "淘宝-视频-直播，评论区是假框无法书写，强制加黑，BUGOS2-535863"
+            }
+          ]
+        },
+        {
           "activityName": "com.taobao.tao.welcome.Welcome",
           "config": [
             {
@@ -592,6 +603,19 @@
             }
           ]
         }
+      ],
+      "enabledViewConfigList": [
+        {
+          "activityName": "com.netease.cloudmusic.music.biz.rn.activity.NoteDetailRNActivity",
+          "config": [
+            {
+              "className": "*",
+              "idResourceName": "*",
+              "autoHandwritingEnabled": false,
+              "comment": "网易云-我的-笔记-评论，评论区无法书写，强制加黑，BUGOS2-535863"
+            }
+          ]
+        }
       ]
     },
     {
@@ -619,6 +643,22 @@
               "idResourceName": "*",
               "className": "PublishEditText",
               "comment": "腾讯新闻，文章评论区，不支持撤销重做笔势，加黑处理/BUGOS2-349548"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packageName": "com.UCMobile",
+      "enabledViewConfigList": [
+        {
+          "activityName": "com.uc.browser.InnerUCMobile",
+          "config": [
+            {
+              "className": "NewEditText",
+              "idResourceName": "*",
+              "autoHandwritingEnabled": false,
+              "comment": "UC浏览器首页搜索框无法书写，强制加黑，BUGOS2-535863"
             }
           ]
         }

@@ -5,4 +5,5 @@
     <allow-in-power-save package="com.android.mms"/>
     <allow-in-power-save package="com.google.android.apps.messaging"/>
     <allow-in-power-save package="com.cmcc.dcservice"/>
+    <allow-in-power-save package="com.miui.powerinsight"/>
 </permissions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <string-array name="config_remove_google_csp_except_device">
+            <item>tides</item>
+            <item>moon</item>
+            <item>emerald</item>
+            <item>emerald_r</item>
+        </string-array>
+        <bool name="mms_hk_region">true</bool>
+        <bool name="config_album_support_share">true</bool>
+        <bool name="config_remove_google_csp_pkg">true</bool>
+    </cust_feature>
+</cust_features>

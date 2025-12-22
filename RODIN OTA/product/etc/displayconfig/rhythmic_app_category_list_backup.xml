@@ -138,5 +138,24 @@
             <item>com.obreey.reader</item>
             <item>com.adobe.reader</item>
         </rhythmic_app_category_read>
+        <rhythmic_app_category_read_v3>
+            <item>com.dragon.read</item>
+            <item>com.xs.fm</item>
+            <item>com.kmxs.reader</item>
+            <item>com.qidian.QDReader</item>
+            <item>com.tencent.weread</item>
+            <item>com.jjwxc.reader</item>
+            <item>com.eggflower.read</item>
+            <item>com.shuqi.controller</item>
+            <item>com.qq.reader</item>
+            <item>com.woodleaves.read</item>
+            <item>com.chaozh.iReaderFree</item>
+            <item>com.chaozh.iReader.dj</item>
+            <item>com.kuangxiangciweimao.novel</item>
+            <item>com.bytedance.writer_assistant_flutter</item>
+            <item>com.dj.speed</item>
+            <item>com.duokan.reader</item>
+            <item>com.android.fileexplorer</item>
+        </rhythmic_app_category_read_v3>
     </rhythmic_app_category_list>
 </display-config>

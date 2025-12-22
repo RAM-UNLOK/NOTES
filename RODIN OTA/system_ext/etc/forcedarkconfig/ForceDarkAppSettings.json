@@ -11,7 +11,7 @@
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.dianping.v1","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.tencent.qqpimsecure","showInSettings":true,"forceDarkOrigin":false,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.tencent.gamehelper.smoba","showInSettings":false,"forceDarkOrigin":true},
-{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.chaoxing.mobile","showInSettings":true,"forceDarkSplashScreen":1},
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.chaoxing.mobile","showInSettings":false,"forceDarkOrigin":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.lianjia.beike","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.jzzs.ParentsHelper","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.gorgeous.lite","showInSettings":false,"forceDarkOrigin":true},
@@ -21,7 +21,7 @@
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.taobao.live","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.kwai.m2u","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.cleanmaster.mguard_cn","showInSettings":true,"forceDarkSplashScreen":1},
-{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.xiachufang","showInSettings":true,"interceptRelaunch":2,"forceDarkSplashScreen":1},
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.xiachufang","showInSettings":false,"forceDarkOrigin":true,"interceptRelaunch":2,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.p1.mobile.putong","showInSettings":false,"forceDarkOrigin":true},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.ygkj.chelaile.standard","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.didapinche.booking","showInSettings":true,"forceDarkOrigin":false,"forceDarkSplashScreen":1},
@@ -60,7 +60,7 @@
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.xuexiaoyi.xxy","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.pingan.lifeinsurance","showInSettings":false,"forceDarkOrigin":true},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.jsmcc","showInSettings":true,"forceDarkSplashScreen":1},
-{"defaultEnable":false,"overrideEnableValue":0,"packageName":"cn.TuHu.android","showInSettings":true,"forceDarkSplashScreen":1},
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"cn.TuHu.android","showInSettings":false,"forceDarkOrigin":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.tianyancha.skyeye","showInSettings":true,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.homelink.android","showInSettings":true,"forceDarkOrigin":false,"forceDarkSplashScreen":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.taobao.etao","showInSettings":true,"forceDarkSplashScreen":1},
@@ -126,5 +126,7 @@
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.duokan.reader","showInSettings":false,"forceDarkOrigin":true},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.tencent.qqlive","showInSettings":false,"forceDarkOrigin":true,"interceptRelaunch":1},
 {"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.gotokeep.keep","showInSettings":false,"forceDarkOrigin":true},
-{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.baidu.appsearch","showInSettings":false,"forceDarkOrigin":true}
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.baidu.appsearch","showInSettings":false,"forceDarkOrigin":true},
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"hk.com.hsbc.hsbckmobilebamking","showInSettings":false,"forceDarkOrigin":true},
+{"defaultEnable":false,"overrideEnableValue":0,"packageName":"com.bochk.app.aos","showInSettings":false,"forceDarkOrigin":true}
 ]

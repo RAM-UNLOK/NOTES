@@ -104,6 +104,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. -->
         <permission name="android.permission.READ_WIFI_CREDENTIAL"/>
         <permission name="android.permission.MODIFY_DEFAULT_AUDIO_EFFECTS"/>
         <permission name="android.permission.ACCESS_CONTEXT_HUB"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.xiaomi.finddevice">
@@ -177,10 +178,19 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. -->
     </privapp-permissions>
     <!--END Telephony_CallFrame -->
 
-    <!--MIUI ADD: Security_MiTrustedUI -->
-    <privapp-permissions package="com.xiaomi.tuiservice">
+    <!--MIUI ADD: Power_BatteryEnhance -->
+    <privapp-permissions package="com.miui.powerinsight">
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.SHUTDOWN"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.MAINLINE_NETWORK_STACK"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        <permission name="android.permission.SET_ACTIVITY_WATCHER" />
     </privapp-permissions>
-    <!--END Security_MiTrustedUI -->
+    <!--END Power_BatteryEnhance -->
 
 </permissions>

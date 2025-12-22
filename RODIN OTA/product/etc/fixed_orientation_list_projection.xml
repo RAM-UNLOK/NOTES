@@ -12,7 +12,7 @@
     <package name="com.tencent.mtt"
         defaultSettings="true"
         source="2"
-        compatChange="OVERRIDE_UNDEFINED_ORIENTATION_TO_PORTRAIT"
+        allPortrait="true"
         forceKillWhenSwitch="true" />
     <package name="com.happyelements.AndroidAnimal"
         defaultSettings="true"
@@ -40,7 +40,6 @@
         skipSelfAdaptive="true"
         allPortrait="true"
         skipCompatMode="true"
-        compatChange="OVERRIDE_UNDEFINED_ORIENTATION_TO_PORTRAIT"
         isScale="true" />
     <package name="com.picsart.studio"
         defaultSettings="true"

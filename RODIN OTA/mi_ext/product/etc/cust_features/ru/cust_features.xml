@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="mms_ru_region">true</bool>
+        <bool name="config_enable_cnap">true</bool>
+    </cust_feature>
+</cust_features>

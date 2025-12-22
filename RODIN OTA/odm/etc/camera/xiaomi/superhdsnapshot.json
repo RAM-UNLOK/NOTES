@@ -151,6 +151,10 @@
                 ]
             },
             {
+                "NodeName": "com.xiaomi.plugin.heifedit",
+                "NodeInstance": "HeifEditInstance"
+            },
+            {
                 "NodeName": "com.xiaomi.plugin.swjpegencode",
                 "NodeInstance": "swjpegInstance1",
                 "NodeProperty":[
@@ -439,12 +443,32 @@
             },
             {
                 "SrcPort": {
+                    "PortId": 2,
+                    "NodeInstance": "WatermarkInstance0"
+                },
+                "DstPort": {
+                    "PortId": 3,
+                    "NodeInstance": "HeifEditInstance"
+                }
+            },
+            {
+                "SrcPort": {
                     "PortId": 3,
                     "NodeInstance": "WatermarkInstance0"
                 },
                 "DstPort": {
                     "PortId": 4,
                     "NodeInstance": "jpegrAggrInstance"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 3,
+                    "NodeInstance": "WatermarkInstance0"
+                },
+                "DstPort": {
+                    "PortId": 4,
+                    "NodeInstance": "HeifEditInstance"
                 }
             },
             {
@@ -466,6 +490,18 @@
                 "DstPort": {
                     "PortId": 1,
                     "NodeInstance": "jpegrAggrInstance",
+                    "PortFormat": "BLOB"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "swjpegInstance1",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 1,
+                    "NodeInstance": "HeifEditInstance",
                     "PortFormat": "BLOB"
                 }
             },
@@ -495,6 +531,18 @@
                 "SrcPort": {
                     "PortId": 0,
                     "NodeInstance": "jpegrAggrInstance",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "HeifEditInstance",
+                    "PortFormat": "BLOB"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "HeifEditInstance",
                     "PortFormat": "BLOB"
                 },
                 "DstPort": {

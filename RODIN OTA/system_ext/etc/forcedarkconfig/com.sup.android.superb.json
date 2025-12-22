@@ -257,6 +257,35 @@
           ]
         }
       ]
+    },
+    {
+      "activityName": "com.sup.superb.feedui.view.ReadHistoryActivity",
+      "forceDark": true,
+      "forceDarkViewConfigList": [
+        {
+          "viewName": "com.sup.android.uikit.widget.ObservableRecyclerView",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.sup.android.uikit.widget.refreshlayout.CommonRefreshLayout",
+              "index": -1
+            },
+            {
+              "parent": 2,
+              "viewName": "androidx.viewpager.widget.ViewPager",
+              "index": -1
+            },
+            {
+              "parent": 6,
+              "viewName": "com.sup.android.uikit.base.slide.CustomSlideView",
+              "index": -1
+            }
+          ]
+        }
+      ]
     }
   ]
 }

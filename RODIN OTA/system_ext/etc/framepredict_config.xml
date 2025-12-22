@@ -5,9 +5,9 @@
 
     <!-- other way to config threshold -->
     <!-- <gsched_level model="user" glevel1="0.3" glevel2="0.7">gsched_level</gsched_level> -->
-    
+
     <whitelist>
-        <app config="default">com.miui.home</app>
+        <!-- app config="default">com.miui.home</app -->
         <app config="default">com.android.systemui</app>
         <app config="default">com.android.browser</app>
         <app config="default">com.miui.gallery</app>

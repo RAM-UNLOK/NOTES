@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <if condition="getModemVersion();&gt;NR"/>
+  <dualsim>true</dualsim>
+  <ui>
+    <lifecycle>
+      <action type="onCreate">
+        <cmd name="query_support_band" cmd_type="at_cmd" field_dependence="true">AT+EPBSEH=?;+EPBSEH:"support_gsm_band","support_umts_band","support_lte_band","support_nr_band"</cmd>
+        <cmd name="query_band" cmd_type="at_cmd">AT+EPBSEH?;+EPBSEH:"gsm_band","umts_band","lte_band","nr_band","nsa_band"</cmd>
+        <if condition="isCdma();=true">
+          <cmd name="query_cdma_band" cmd_type="at_cmd" field_dependence="true">AT+ECBANDCFG?;+ECBANDCFG:support_cdma_band,cdma_band</cmd>
+        </if>
+      </action>
+    </lifecycle>
+    <element ui_type="GroupView">
+      <if condition="isGsm();=true"/>
+      <element ui_type="GroupView">
+        <sub_element column="3"/>
+        <element ui_type="TextView">
+          <ui_attribute textsize="18"/>
+          <default>GSM Mode</default>
+        </element>
+        <element ui_type="Button" label="Deselect All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="clear GSM">gsm_band=0</cmd>
+          </action>
+        </element>
+        <element ui_type="Button" label="Select All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="Set all GSM">gsm_band=support_gsm_band</cmd>
+          </action>
+        </element>
+      </element>
+      <element ui_type="GroupView">
+        <grid>inside</grid>
+        <field>support_gsm_band</field>
+        <children_field operation="bitwise" format="%x"/>
+        <sub_element ui_type="CheckBox" column="2" batch_field="gsm_band1,gsm_band3,gsm_band4,gsm_band7" batch_label="EGSM900,DCS1800,PCS1900,GSM850"  batch_bit="1,3,4,7" parent="gsm_band"/>
+      </element>
+    </element>
+    <element ui_type="GroupView">
+      <field>gsm_band</field>
+      <children_field operation="bitwise" format="%x">gsm_band1,gsm_band3,gsm_band4,gsm_band7</children_field>
+    </element>
+    <element ui_type="GroupView">
+      <if condition="isWcdma();=true"/>
+      <element ui_type="GroupView">
+        <sub_element column="3"/>
+        <element ui_type="TextView">
+          <ui_attribute textsize="18"/>
+          <default>UMTS Mode</default>
+        </element>
+        <element ui_type="Button" label="Deselect All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="clear UMTS">umts_band=0</cmd>
+          </action>
+        </element>
+        <element ui_type="Button" label="Select All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="Set all UMTS">umts_band=support_umts_band</cmd>
+          </action>
+        </element>
+      </element>
+      <element ui_type="GroupView">
+        <grid>inside</grid>
+        <field>support_umts_band</field>
+        <children_field operation="bitwise" format="%x"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="umts_band0~19" batch_label="B1~20" batch_bit="0~19" parent="umts_band"/>
+      </element>
+    </element>
+    <element ui_type="GroupView">
+      <field>umts_band</field>
+      <children_field operation="bitwise" format="%x">umts_band0~19</children_field>
+    </element>
+    <element ui_type="GroupView">
+      <if condition="isLteFdd();=true|isLteTdd();=true"/>
+      <element ui_type="GroupView">
+        <sub_element column="3"/>
+        <element ui_type="TextView">
+          <ui_attribute textsize="18"/>
+          <default>LTE Mode</default>
+        </element>
+        <element ui_type="Button" label="Deselect All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="clear LTE">lte_band=0</cmd>
+          </action>
+        </element>
+        <element ui_type="Button" label="Select All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="Set all LTE">lte_band=support_lte_band</cmd>
+          </action>
+        </element>
+      </element>
+      <element ui_type="GroupView">
+        <grid>inside</grid>
+        <field>support_lte_band</field>
+        <children_field operation="bitwise" format="%x"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="lte_band0~31" batch_label="FDD1~32" batch_bit="0~31" parent="lte_band"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="lte_band32~63" batch_label="TDD33~64" batch_bit="32~63" parent="lte_band"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="lte_band64~96" batch_label="FDD65~96" batch_bit="64~96" parent="lte_band"/>
+      </element>
+    </element>
+    <element ui_type="GroupView">
+      <field>lte_band</field>
+      <children_field operation="bitwise" format="%x">lte_band0~31</children_field>
+      <children_field operation="bitwise" format="%x">lte_band32~63</children_field>
+      <children_field operation="bitwise" format="%x">lte_band64~96</children_field>
+    </element>
+    <element ui_type="GroupView">
+      <if condition="isNr();=true"/>
+      <element ui_type="GroupView">
+        <sub_element column="3"/>
+        <element ui_type="TextView">
+          <ui_attribute textsize="18"/>
+          <default>NR Mode</default>
+        </element>
+        <element ui_type="Button" label="Deselect All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="clear NR">nr_band=0</cmd>
+          </action>
+        </element>
+        <element ui_type="Button" label="Select All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="Set all NR">nr_band=support_nr_band</cmd>
+          </action>
+        </element>
+      </element>
+      <element ui_type="GroupView">
+        <grid>inside</grid>
+        <field>support_nr_band</field>
+        <children_field operation="bitwise" format="%x"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="nr_band0~319" batch_label="N1~320" batch_bit="0~319" parent="nr_band"/>
+      </element>
+    </element>
+    <element ui_type="GroupView">
+      <field>nr_band</field>
+      <children_field operation="bitwise" format="%x">nr_band0~319</children_field>
+    </element>
+    <element ui_type="GroupView">
+      <if condition="isCdma();=true"/>
+      <element ui_type="GroupView">
+        <sub_element column="3"/>
+        <element ui_type="TextView">
+          <ui_attribute textsize="18"/>
+          <default>CDMA Mode</default>
+        </element>
+        <element ui_type="Button" label="Deselect All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="clear CDMA">cdma_band=0</cmd>
+          </action>
+        </element>
+        <element ui_type="Button" label="Select All">
+          <ui_attribute textsize="14"/>
+          <action>
+            <cmd cmd_type="set_field" name="Set all CDMA">cdma_band=support_cdma_band</cmd>
+          </action>
+        </element>
+      </element>
+      <element ui_type="GroupView">
+        <grid>inside</grid>
+        <field>support_cdma_band</field>
+        <children_field operation="bitwise" format="%x"/>
+        <sub_element ui_type="CheckBox" column="3" batch_field="cdma_band0~15" batch_label="C0~15" batch_bit="0~15" parent="cdma_band"/>
+      </element>
+    </element>
+    <element ui_type="GroupView">
+      <if condition="isCdma();=true"/>
+      <field>cdma_band</field>
+      <children_field operation="bitwise" format="%d">cdma_band0~15</children_field>
+    </element>
+    <element ui_type="Button" label="SET">
+      <ui_attribute textsize="24"/>
+      <action>
+        <if condition="gsm_band=0|umts_band=0|lte_band=0|nr_band=0">
+          <cmd name="warning" cmd_type="show_dialog">The GSM/UMTS/LTE/NR band settings are prohibited.To Deselect All bands for a specific RAT, please navigate to EngineerMode -> Network Selecting and disable the corresponding RAT.</cmd>
+        </if>
+        <else>
+          <cmd cmd_type="at_cmd" name="set_band">AT+EPBSEH="gsm_band","umts_band","lte_band","nr_band"</cmd>
+        </else>
+        <if condition="isCdma();=true">
+          <if condition="cdma_band=0">
+            <cmd name="warning_cdma" cmd_type="show_dialog">The CDMA band settings are prohibited.</cmd>
+          </if>
+          <else>
+            <cmd name="set_cdma_band" cmd_type="at_cmd">AT+ECBANDCFG=cdma_band</cmd>
+            <cmd name="reboot modem" cmd_type="api_async">rebootModem()</cmd>
+          </else>
+        </if>
+      </action>
+    </element>
+  </ui>
+</settings>

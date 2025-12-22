@@ -10,5 +10,8 @@
     "perf_device_config": {
         "interaction_jank_enabled": "1",
         "interaction_sampling_interval": "1"
-    }
+    },
+    "perf_thermal_app": [
+        "com.ss.android.ugc.aweme"
+    ]
 }

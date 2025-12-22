@@ -28,6 +28,7 @@
         <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
         <permission name="android.permission.GET_APP_OPS_STATS"/>
+        <permission name="android.permission.HIDE_STATUS_BAR_NOTIFICATION"/>
         <permission name="android.permission.INSTALL_PACKAGES"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.LOADER_USAGE_STATS"/>
@@ -92,13 +93,15 @@
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
     <privapp-permissions package="com.google.android.apps.restore">
+        <permission name="android.permission.ACCESS_LAUNCHER_DATA"/>
         <permission name="android.permission.BACKUP"/>
         <permission name="android.permission.MANAGE_USB"/>
         <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
-	<permission name="android.permission.MANAGE_USERS"/>
+	    <permission name="android.permission.MANAGE_USERS"/>
         <permission name="android.permission.MANAGE_WIFI_NETWORK_SELECTION"/>
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.READ_WIFI_CREDENTIAL"/>
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
         <permission name="android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
@@ -184,6 +187,7 @@
         <permission name="android.permission.READ_SYSTEM_GRAMMATICAL_GENDER"/>
         <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
         <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.REBOOT"/>
         <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
         <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
         <permission name="android.permission.SET_WALLPAPER_DIM_AMOUNT"/>
@@ -209,6 +213,10 @@
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.READ_LOGS"/>
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.google.android.deskclock">
+        <permission name="android.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"/>
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
     </privapp-permissions>
     <privapp-permissions package="com.google.android.gms">
         <permission name="android.permission.ACCESS_BROADCAST_RESPONSE_STATS"/>
@@ -245,6 +253,7 @@
         <permission name="android.permission.EMERGENCY_INSTALL_PACKAGES"/>
         <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.GET_APP_OPS_STATS"/>
+        <permission name="android.permission.GET_ROLE_HOLDERS"/>
         <permission name="android.permission.INSTALL_LOCATION_TIME_ZONE_PROVIDER_SERVICE"/>
         <permission name="android.permission.INTENT_FILTER_VERIFICATION_AGENT"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
@@ -253,6 +262,7 @@
         <permission name="android.permission.LOCATION_BYPASS"/>
         <permission name="android.permission.LOCATION_HARDWARE"/>
         <permission name="android.permission.LOCK_DEVICE"/>
+        <permission name="android.permission.LOG_COMPAT_CHANGE"/>
         <permission name="android.permission.MANAGE_ADVANCED_PROTECTION_MODE"/>
         <permission name="android.permission.MANAGE_DEVICE_ADMINS"/>
         <permission name="android.permission.MANAGE_FACTORY_RESET_PROTECTION"/>
@@ -260,6 +270,7 @@
         <permission name="android.permission.MANAGE_GAME_MODE"/>
         <permission name="android.permission.MANAGE_INTRUSION_DETECTION_STATE"/>
         <permission name="android.permission.MANAGE_ROLLBACKS"/>
+        <permission name="android.permission.MANAGE_SECURE_LOCK_DEVICE"/>
         <permission name="android.permission.MANAGE_SOUND_TRIGGER"/>
         <permission name="android.permission.MANAGE_SUBSCRIPTION_PLANS"/>
         <permission name="android.permission.MANAGE_TIME_AND_ZONE_DETECTION"/>
@@ -278,6 +289,7 @@
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
         <permission name="android.permission.NOTIFY_PENDING_SYSTEM_UPDATE"/>
         <permission name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"/>
+        <permission name="android.permission.OBSERVE_ROLE_HOLDERS"/>
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.PREPARE_FACTORY_RESET"/>
@@ -285,6 +297,7 @@
         <permission name="android.permission.PROVIDE_REMOTE_CREDENTIALS"/>
         <permission name="android.permission.PROVIDE_RESOLVER_RANKER_SERVICE"/>
         <permission name="android.permission.PROVIDE_TRUST_AGENT"/>
+        <permission name="android.permission.READ_COMPAT_CHANGE_CONFIG"/>
         <permission name="android.permission.READ_DREAM_STATE"/>
         <permission name="android.permission.READ_DROPBOX_DATA"/>
         <permission name="android.permission.READ_INTRUSION_DETECTION_STATE"/>
@@ -319,6 +332,7 @@
         <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
         <permission name="android.permission.START_TASKS_FROM_RECENTS"/>
         <permission name="android.permission.STATUS_BAR"/>
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"/>
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
         <permission name="android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON"/>
         <permission name="android.permission.TETHER_PRIVILEGED"/>
@@ -343,6 +357,7 @@
         <permission name="android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST"/>
         <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
         <permission name="android.permission.GET_APP_OPS_STATS"/>
+        <permission name="android.permission.GET_ROLE_HOLDERS"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.MANAGE_DEVICE_ADMINS"/>
         <permission name="android.permission.MANAGE_FACTORY_RESET_PROTECTION" />
@@ -350,6 +365,7 @@
         <permission name="android.permission.MANAGE_USERS"/>
         <permission name="android.permission.MASTER_CLEAR"/>
         <permission name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"/>
+        <permission name="android.permission.OBSERVE_ROLE_HOLDERS"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.READ_DREAM_STATE"/>
         <permission name="android.permission.RESET_PASSWORD"/>
@@ -372,6 +388,7 @@
         <permission name="android.permission.CAPTURE_MEDIA_OUTPUT"/>
         <permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
         <permission name="android.permission.ENTER_CAR_MODE_PRIORITIZED"/>
+        <permission name="android.permission.EXECUTE_APP_FUNCTIONS"/>
         <permission name="android.permission.GLOBAL_SEARCH"/>
         <permission name="android.permission.INTERACT_ACROSS_PROFILES"/>
         <deny-permission name="android.permission.INTERACT_ACROSS_USERS"/>
@@ -394,9 +411,9 @@
         <permission name="android.permission.STATUS_BAR"/>
         <permission name="android.permission.STOP_APP_SWITCHES"/>
         <permission name="com.google.android.permission.SET_WATCH_FACE_PRIVILEGED"/>
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"/>
 	<permission name="android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON"/>
         <permission name="android.permission.WRITE_APN_SETTINGS"/>
-        <permission name="android.permission.EXECUTE_APP_FUNCTIONS"/>
     </privapp-permissions>
     <privapp-permissions package="com.google.android.inputmethod.latin">
         <permission name="android.permission.INTERACT_ACROSS_PROFILES"/>

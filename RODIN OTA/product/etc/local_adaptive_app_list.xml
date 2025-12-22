@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<adaptiveAppRule>
+    <package name="android.server.wm.cts" enable="true" />"
+    <package name="com.wemade.nightcrowsglobal" enable="false" />
+    <package name="com.fyxtech.muslim" enable="false" />
+    <package name="com.lemon.lvoverseas" enable="false" />
+    <package name="com.google.android.apps.youtube.kids" enable="false" />
+    <package name="com.snapchat.android" enable="false" />
+    <package name="com.amazon.mShop.android.shopping" enable="false" />
+    <package name="com.shopee.id" enable="false" />
+    <package name="com.alibaba.aliexpresshd" enable="false" />
+    <package name="com.booking" enable="false" />
+    <package name="ru.mail.mailapp" enable="false" />
+    <package name="in.startv.hotstar.dplus" enable="false" />
+    <package name="com.digidust.elokence.akinator.freemium" enable="false" />
+    <package name="ru.ok.android" enable="false" />
+    <package name="com.playgendary.bowmasters" enable="false" />
+    <package name="com.rvappstudios.kids.coloring.book.color.painting" enable="false" />
+    <package name="com.ansangha.drdriving" enable="false" />
+    <package name="com.zuuks.truck.simulator.ultimate" enable="false" />
+    <package name="com.valor.mfc.droid.mobile" enable="false" />
+    <package name="com.igg.android.lordsmobile" enable="false" />
+    <package name="ru.sberbankmobile" enable="false" />
+    <package name="com.ohbibi.fps" enable="false" />
+    <package name="com.mcmnw.lzg" enable="false" />
+    <package name="com.Psyonix.RL2D" enable="false" />
+    <package name="com.rvappstudios.baby.toddler.kids.games.learning.activity" enable="false" />
+    <package name="com.pixel.gun3d" enable="false" />
+    <package name="fi.twomenandadog.zombiecatchers" enable="false" />
+    <package name="iSellerRestaurant.Android" enable="false" />
+    <package name="ru.aliexpress.buyer" enable="false" />
+    <package name="com.playit.videoplayer" enable="false" />
+    <package name="com.carxtech.sr" enable="false" />
+    <package name="com.pubg.newstate" enable="false" />
+    <package name="ru.ritmmedia.yappy" enable="false" />
+    <package name="com.nglreactnative" enable="false" />
+    <package name="org.telegram.plus" enable="false" />
+    <package name="com.jura.coloring.page" enable="false" />
+    <package name="pl.inpost.inmobile" enable="false" />
+    <package name="com.axis.net" enable="false" />
+    <package name="android.text.cts" enable="true" activityRule="android.text.method.cts.CtsActivity:false;android.text.method.cts.KeyListenerCtsActivity:false" />
+    <package name="android.widget.cts" enable="false" />
+</adaptiveAppRule>

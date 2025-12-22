@@ -29,8 +29,10 @@
         ]
       },
       {
-        "packageName": "com.mi.car.mobile",
-        "isReverseOptimizeEnable": 0
+        "packageName": "com.taobao.taobao",
+        "activityBlackList": [
+          "com.taobao.tao.welcome.Welcome"
+        ]
       }
     ]
   }

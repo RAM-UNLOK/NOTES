@@ -1,5 +1,5 @@
 {
-  "versionDynamic": "24120901",
+  "versionDynamic": "25062501",
   "devicePolicy": [
     "haotian",
     "dada",
@@ -86,6 +86,18 @@
               ]
             ]
           }
+        },
+        {
+          "versionCode": "2380+",
+          "activityName": "com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI",
+          "data": {
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
         }
       ]
     },
@@ -95,6 +107,18 @@
         {
           "versionCode": "4108+",
           "activityName": "com.tencent.av.ui.AVActivity",
+          "data": {
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "4108+",
+          "activityName": "com.tencent.av.smallscreen.SmallScreenDialogActivity",
           "data": {
             "supportedFeatures": 3,
             "layout": [
@@ -237,6 +261,26 @@
         {
           "versionCode": "1062+",
           "activityName": "com.alibaba.android.teleconf.mozi.activity.TeleVideoConfActivity",
+          "data": {
+            "supportedFeatures": 3,
+            "layout-port": [
+              [
+                3
+              ]
+            ],
+            "layout-land": [
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "1062+",
+          "activityName": "com.alibaba.android.teleconf.mozi.activity.TeleVideoConfEasygoActivity",
           "data": {
             "supportedFeatures": 3,
             "layout-port": [
@@ -478,7 +522,19 @@
           "versionCode": "7940017+",
           "activityName": "com.xingin.capa.lib.entrance.CapaEntranceActivity",
           "data": {
-            "supportedFeatures": 2,
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "7940017+",
+          "activityName": "com.xingin.capa.lib.newcapa.camerahub.CameraHubActivity",
+          "data": {
+            "supportedFeatures": 3,
             "layout": [
               [
                 3
@@ -497,6 +553,18 @@
               ]
             ]
           }
+        },
+        {
+          "versionCode": "7940017+",
+          "activityName": "com.xingin.alpha.emcee.AlphaEmceeActivity",
+          "data": {
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
         }
       ]
     },
@@ -507,7 +575,19 @@
           "versionCode": "6592+",
           "activityName": "com.yxcorp.gifshow.camera.record.CameraActivity",
           "data": {
-            "supportedFeatures": 2,
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "6592+",
+          "activityName": "com.kuaishou.live.anchor.basic.activity.LivePushActivity",
+          "data": {
+            "supportedFeatures": 3,
             "layout": [
               [
                 3
@@ -541,7 +621,19 @@
           "versionCode": "300501+",
           "activityName": "com.ss.android.ugc.aweme.shortvideo.ui.VideoRecordNewActivity",
           "data": {
-            "supportedFeatures": 2,
+            "supportedFeatures": 3,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "300501+",
+          "activityName": "com.ss.android.ugc.aweme.live.TransparentLiveBroadcastActivity",
+          "data": {
+            "supportedFeatures": 3,
             "layout": [
               [
                 3
@@ -667,7 +759,31 @@
         },
         {
           "versionCode": "6560400+",
+          "activityName": "com.bilibili.bilibililive.ui.room.BlinkRoomActivityV2",
+          "data": {
+            "supportedFeatures": 2,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "6560400+",
           "activityName": "com.bilibili.studio.centerplus.ui.CenterPlusMainActivity",
+          "data": {
+            "supportedFeatures": 2,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "6560400+",
+          "activityName": "com.bilibili.bilibililive.ui.livestreaming.streaming.web.LiveStreamingCommWebActivity",
           "data": {
             "supportedFeatures": 2,
             "layout": [
@@ -719,6 +835,18 @@
         {
           "versionCode": "241377003+",
           "activityName": "com.whatsapp.voipcalling.VoipActivityV2",
+          "data": {
+            "supportedFeatures": 2,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "241377003+",
+          "activityName": "com.whatsapp.calling.ui.VoipActivityV2",
           "data": {
             "supportedFeatures": 2,
             "layout": [
@@ -856,6 +984,18 @@
         {
           "versionCode": "241377003+",
           "activityName": "com.whatsapp.voipcalling.VoipActivityV2",
+          "data": {
+            "supportedFeatures": 2,
+            "layout": [
+              [
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "versionCode": "241377003+",
+          "activityName": "com.whatsapp.calling.ui.VoipActivityV2",
           "data": {
             "supportedFeatures": 2,
             "layout": [

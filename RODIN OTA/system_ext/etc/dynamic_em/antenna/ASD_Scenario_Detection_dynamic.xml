@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <if condition="getModemVersion();&gt;NR17"/>
+  <ui>
+    <lifecycle>
+      <action type="onCreate">
+        <cmd name="onCreate" cmd_type="api" next_step="start_test|exit_activity"></cmd>
+      </action>
+      <action type="onBackPressed">
+        <cmd name="exit_activity" cmd_type="exit" next_step="none">exit</cmd>
+      </action>
+      <action type="onDestroy">
+        <cmd name="stop_test" cmd_type="urc">unregisterUrc</cmd>
+        <if condition="eci_by_ant=0">
+          <cmd name="stop_eci_urc" cmd_type="at_cmd">AT+ERFIDX=1,,0</cmd>
+        </if>
+        <else>
+          <cmd name="stop_ant_eci_urc" cmd_type="at_cmd">AT+EM_REG_IND;0</cmd>
+        </else>
+        <cmd name="stop_dmf_urc" cmd_type="at_cmd">AT+EDMFAPP=8,0,0</cmd>
+        <cmd name="exit_background" cmd_type="api">runInBackground(false,ASD Scenario Detection)</cmd>
+      </action>
+    </lifecycle>
+    <element ui_type="GroupView">
+      <sub_element column="2"/>
+      <element ui_type="Button" label="Start">
+        <action>
+          <cmd name="start_test" cmd_type="api" fail_action="stop">runInBackground(true,ASD Scenario Detection)</cmd>
+          <cmd name="register_dmf_urc" cmd_type="urc">registerUrc();+EDMFAPP:8,0,1,lte_tx0_ant,lte_pcc_tx_freq,lte_tx1_ant,lte_scc_tx_freq;+EDMFAPP:8,0,2,nr_tx0_ant,nr_pcc_tx_freq,nr_tx1_ant,nr_scc_tx_freq</cmd>
+          <cmd name="request_dmf_urc" cmd_type="at_cmd">AT+EDMFAPP=8,0,1</cmd>
+          <if condition="eci_by_ant=0">
+            <cmd name="clear_ant_eci" cmd_type="set_field" batch_range="0~11">eci_ii=-</cmd>
+            <cmd name="register_eci_urc" cmd_type="urc">registerUrc();+ERFIDX:,,,,eci</cmd>
+            <cmd name="allow_urc" cmd_type="at_cmd">AT+EURCALLOW="+ERFIDX:"</cmd>
+            <cmd name="request_eci_urc" cmd_type="at_cmd" next_step="check_ECI_by_ANT|stop_test">AT+ERFIDX=1,,1;+ERFIDX:,,,,eci</cmd>
+          </if>
+          <else>
+            <!-- ECI By ANT -->
+            <cmd name="clear_ant_eci" cmd_type="set_field">eci=-</cmd>
+            <cmd name="register_ant_eci_urc" cmd_type="urc">registerUrc();+ERFANTIDX:&lt;12&gt;[eci_ii]</cmd>
+            <cmd name="request_ant_eci_urc" cmd_type="at_cmd" next_step="uncheck_ECI_by_ANT0|stop_test">AT+EM_REG_IND;1</cmd>
+          </else>
+        </action>
+      </element>
+      <element ui_type="Button" label="Stop">
+        <action>
+        <cmd name="stop_test" cmd_type="urc">unregisterUrc</cmd>
+        <if condition="eci_by_ant=0">
+          <cmd name="stop_eci_urc" cmd_type="at_cmd">AT+ERFIDX=1,,0</cmd>
+        </if>
+        <else>
+          <cmd name="stop_ant_eci_urc" cmd_type="at_cmd">AT+EM_REG_IND;0</cmd>
+        </else>
+        <cmd name="stop_dmf_urc" cmd_type="at_cmd">AT+EDMFAPP=8,0,0</cmd>
+        <cmd name="exit_background" cmd_type="api" next_step="start_test|exit_activity">runInBackground(false,ASD Scenario Detection)</cmd>
+        </action>
+      </element>
+    </element>
+    <element ui_type="Checkbox" label="ECI by ANT">
+      <field>eci_by_ant</field>
+      <save_data>true</save_data>
+      <options>
+        <option state="true" value="1"/>
+        <option state="false" value="0"/>
+      </options>
+      <action>
+        <if condition="eci_by_ant=0">
+          <cmd name="uncheck_ECI_by_ANT" cmd_type="set_field" batch_range="0~11" hint="false">eci_ii=-</cmd>
+          <cmd name="stop_ant_eci_urc" cmd_type="at_cmd" hint="false">AT+EM_REG_IND;0</cmd>
+          <cmd name="unregister_ant_eci_urc" cmd_type="urc" hint="false">unregisterUrc();+ERFANTIDX:</cmd>
+          <cmd name="register_eci_urc" cmd_type="urc" hint="false">registerUrc();+ERFIDX:,,,,eci</cmd>
+          <cmd name="allow_urc" cmd_type="at_cmd" hint="false">AT+EURCALLOW="+ERFIDX:"</cmd>
+          <cmd name="request_eci_urc" cmd_type="at_cmd" next_step="check_ECI_by_ANT|stop_test" hint="false">AT+ERFIDX=1,,1;+ERFIDX:,,,,eci</cmd>
+        </if>
+        <else> <!-- ECI By ANT -->
+          <cmd name="check_ECI_by_ANT" cmd_type="set_field" hint="false">eci=-</cmd>
+          <cmd name="stop_eci_urc" cmd_type="at_cmd" hint="false">AT+ERFIDX=1,,0</cmd>
+          <cmd name="unregister_eci_urc" cmd_type="urc" hint="false">unregisterUrc();+ERFIDX:</cmd>
+          <cmd name="register_ant_eci_urc" cmd_type="urc" hint="false">registerUrc();+ERFANTIDX:&lt;12&gt;[eci_ii]</cmd>
+          <cmd name="request_ant_eci_urc" cmd_type="at_cmd" next_step="uncheck_ECI_by_ANT0|stop_test" hint="false">AT+EM_REG_IND;1</cmd>
+        </else>
+      </action>
+    </element>
+    <element ui_type="GroupView">
+      <field>lte_tx0_ant</field>
+      <slave>lte_tx0</slave>
+    </element>
+    <element ui_type="GroupView">
+      <field>lte_tx1_ant</field>
+      <slave>lte_tx1</slave>
+    </element>
+    <element ui_type="GroupView">
+      <field>nr_tx0_ant</field>
+      <slave>nr_tx0</slave>
+    </element>
+    <element ui_type="GroupView">
+      <field>nr_tx1_ant</field>
+      <slave>nr_tx1</slave>
+    </element>
+    <element ui_type="GroupView" label="LTE Tx ANT">
+      <ui_attribute textsize="18"/>
+      <sub_element column="2"/>
+      <grid>outside</grid>
+      <element ui_type="TextView" label="Tx0:">
+        <slave_id>lte_tx0</slave_id>
+        <default>-</default>
+        <dependence master="lte_tx0_ant" slave_attr="default">
+          <if lte_tx0_ant="0">ANT0</if>
+          <if lte_tx0_ant="1">ANT1</if>
+          <if lte_tx0_ant="2">ANT2</if>
+          <if lte_tx0_ant="3">ANT3</if>
+          <if lte_tx0_ant="4">ANT4</if>
+          <if lte_tx0_ant="5">ANT5</if>
+          <if lte_tx0_ant="6">ANT6</if>
+          <if lte_tx0_ant="7">ANT7</if>
+          <if lte_tx0_ant="8">ANT8</if>
+          <if lte_tx0_ant="9">ANT9</if>
+          <if lte_tx0_ant="10">ANT10</if>
+          <if lte_tx0_ant="11">ANT11</if>
+          <if lte_tx0_ant="others">Invalid</if>
+        </dependence>
+      </element>
+      <element ui_type="TextView" label="Tx1:">
+        <slave_id>lte_tx1</slave_id>
+        <default>-</default>
+        <dependence master="lte_tx1_ant" slave_attr="default">
+          <if lte_tx1_ant="0">ANT0</if>
+          <if lte_tx1_ant="1">ANT1</if>
+          <if lte_tx1_ant="2">ANT2</if>
+          <if lte_tx1_ant="3">ANT3</if>
+          <if lte_tx1_ant="4">ANT4</if>
+          <if lte_tx1_ant="5">ANT5</if>
+          <if lte_tx1_ant="6">ANT6</if>
+          <if lte_tx1_ant="7">ANT7</if>
+          <if lte_tx1_ant="8">ANT8</if>
+          <if lte_tx1_ant="9">ANT9</if>
+          <if lte_tx1_ant="10">ANT10</if>
+          <if lte_tx1_ant="11">ANT11</if>
+          <if lte_tx1_ant="others">Invalid</if>
+        </dependence>
+      </element>
+      <element ui_type="TextView" label="LTE Tx Frequency(MHz)"/>
+      <element ui_type="TextView"/>
+      <element ui_type="TextView" label="PCC:">
+        <field>lte_pcc_tx_freq</field>
+        <default>-</default>
+      </element>
+      <element ui_type="TextView" label="SCC:">
+        <field>lte_scc_tx_freq</field>
+        <default>-</default>
+      </element>
+    </element>
+    <element ui_type="GroupView" label="NR Tx ANT">
+      <ui_attribute textsize="18"/>
+      <sub_element column="2"/>
+      <grid>outside</grid>
+      <element ui_type="TextView" label="Tx0:">
+        <slave_id>nr_tx0</slave_id>
+        <default>-</default>
+        <dependence master="nr_tx0_ant" slave_attr="default">
+          <if nr_tx0_ant="0">ANT0</if>
+          <if nr_tx0_ant="1">ANT1</if>
+          <if nr_tx0_ant="2">ANT2</if>
+          <if nr_tx0_ant="3">ANT3</if>
+          <if nr_tx0_ant="4">ANT4</if>
+          <if nr_tx0_ant="5">ANT5</if>
+          <if nr_tx0_ant="6">ANT6</if>
+          <if nr_tx0_ant="7">ANT7</if>
+          <if nr_tx0_ant="8">ANT8</if>
+          <if nr_tx0_ant="9">ANT9</if>
+          <if nr_tx0_ant="10">ANT10</if>
+          <if nr_tx0_ant="11">ANT11</if>
+          <if nr_tx0_ant="others">Invalid</if>
+        </dependence>
+      </element>
+      <element ui_type="TextView" label="Tx1:">
+        <slave_id>nr_tx1</slave_id>
+        <default>-</default>
+        <dependence master="nr_tx1_ant" slave_attr="default">
+          <if nr_tx1_ant="0">ANT0</if>
+          <if nr_tx1_ant="1">ANT1</if>
+          <if nr_tx1_ant="2">ANT2</if>
+          <if nr_tx1_ant="3">ANT3</if>
+          <if nr_tx1_ant="4">ANT4</if>
+          <if nr_tx1_ant="5">ANT5</if>
+          <if nr_tx1_ant="6">ANT6</if>
+          <if nr_tx1_ant="7">ANT7</if>
+          <if nr_tx1_ant="8">ANT8</if>
+          <if nr_tx1_ant="9">ANT9</if>
+          <if nr_tx1_ant="10">ANT10</if>
+          <if nr_tx1_ant="11">ANT11</if>
+          <if nr_tx1_ant="others">Invalid</if>
+        </dependence>
+      </element>
+      <element ui_type="TextView" label="NR Tx Frequency(MHz)"/>
+      <element ui_type="TextView"/>
+      <element ui_type="TextView" label="PCC:">
+        <field>nr_pcc_tx_freq</field>
+        <default>-</default>
+      </element>
+      <element ui_type="TextView" label="SCC:">
+        <field>nr_scc_tx_freq</field>
+        <default>-</default>
+      </element>
+    </element>
+    <element ui_type="TextView">
+      <ui_attribute textsize="18"/>
+      <default>Final ECI:</default>
+    </element>
+    <element ui_type="GroupView">
+      <grid>outside</grid>
+      <element ui_type="TextView">
+        <field>eci</field>
+        <default>-</default>
+      </element>
+      <element ui_type="TextView">
+        <default>
+
+        </default>
+      </element>
+    </element>
+    <element ui_type="TextView">
+      <ui_attribute textsize="18"/>
+      <default>ECI by ANT table:</default>
+    </element>
+    <element ui_type="GroupView">
+      <grid>inside</grid>
+      <element ui_type="TextView">
+        <default>ANT</default>
+      </element>
+      <sub_element ui_type="TextView" column="7" batch_field="ant0~5" batch_default="0~5"/>
+      <element ui_type="TextView">
+        <default>ECI</default>
+      </element>
+      <sub_element ui_type="TextView" batch_field="eci0~5" batch_default="-"/>
+      <element ui_type="TextView">
+        <default>ANT</default>
+      </element>
+      <sub_element ui_type="TextView" batch_field="ant6~11" batch_default="6~11"/>
+      <element ui_type="TextView">
+        <default>ECI</default>
+      </element>
+      <sub_element ui_type="TextView" batch_field="eci6~11" batch_default="-"/>
+    </element>
+  </ui>
+</settings>

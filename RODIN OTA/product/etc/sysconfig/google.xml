@@ -87,6 +87,9 @@
     <!-- AI services open-source network component can only bind back to the core package. -->
     <allow-association target="com.google.android.as.oss" allowed="com.google.android.as" />
 
+    <!-- AI services open-source network component can bind to AI Core. -->
+    <allow-association target="com.google.android.as.oss" allowed="com.google.android.aicore" />
+
     <!-- Specify the explicit set of other applications whose app data directories are
         accessible by other applications. -->
     <app-data-isolation-whitelisted-app package="com.google.android.gms" />

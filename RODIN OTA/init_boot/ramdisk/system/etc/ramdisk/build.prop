@@ -2,22 +2,21 @@
 # from generate-common-build-props
 # These properties identify this partition image.
 ####################################
-ro.product.bootimage.brand=POCO
-ro.product.bootimage.device=rodin
-ro.product.bootimage.manufacturer=Xiaomi
-ro.product.bootimage.model=2412DPC0AG
-ro.product.bootimage.name=rodin_global
-ro.product.bootimage.marketname=POCO X7 Pro
-ro.product.bootimage.cert=2412DPC0AG
-ro.bootimage.build.date=Mon Aug 25 20:10:17 CST 2025
-ro.bootimage.build.date.utc=1756123817
-ro.bootimage.build.fingerprint=POCO/rodin_global/rodin:15/AP3A.240905.015.A2/OS2.0.204.0.VOJMIXM:user/release-keys
-ro.bootimage.build.id=AP3A.240905.015.A2
+ro.product.bootimage.brand=Xiaomi
+ro.product.bootimage.device=missi
+ro.product.bootimage.manufacturer=unknown
+ro.product.bootimage.model=missi
+ro.product.bootimage.name=missi
+ro.bootimage.build.date=Wed Nov 26 10:31:59 CST 2025
+ro.bootimage.build.date.utc=1764124319
+ro.bootimage.build.fingerprint=Xiaomi/missi/missi:16/BP2A.250605.031.A3/OS3.0.5.0.WOJMIXM:user/release-keys
+ro.bootimage.build.id=BP2A.250605.031.A3
 ro.bootimage.build.tags=release-keys
 ro.bootimage.build.type=user
-ro.bootimage.build.version.incremental=OS2.0.204.0.VOJMIXM
-ro.bootimage.build.version.release=15
-ro.bootimage.build.version.release_or_codename=15
-ro.bootimage.build.version.sdk=35
+ro.bootimage.build.version.incremental=OS3.0.5.0.WOJMIXM
+ro.bootimage.build.version.release=16
+ro.bootimage.build.version.release_or_codename=16
+ro.bootimage.build.version.sdk=36
+ro.bootimage.build.version.sdk_full=36.0
 # end of file
 

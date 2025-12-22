@@ -599,7 +599,6 @@
     <bool name="gallery_support_time_burst_video">true</bool>
     <bool name="support_local_ocr">true</bool>
     <bool name="support_hdr_enhance">true</bool>
-    <bool name="gallery_support_dolby">true</bool>
     <bool name="gallery_support_print">false</bool>
 
     <!-- BSP-Power: whether the device supports UnionPower features -->
@@ -609,8 +608,8 @@
     <!-- Whether support PowerSaveMode 2.0 -->
     <bool name="support_power_save_new">true</bool>
 
-    <!-- Whether support Danmu -->
-    <bool name="support_danmu">true</bool>
+    <!-- Whether support extra video -->
+    <bool name="support_extravideo">true</bool>
 
     <!-- Low temprature BCL level 0 region list-->
     <string-array name="bcl_level0_region_list">
@@ -625,13 +624,4 @@
     <!-- Whether support WildBoost in Battery&Performance -->
     <bool name="support_wild_boost_bat_perf">true</bool>
 
-    <!--wheater the device supports fling optimize-->
-    <bool name="support_fling_optimize">true</bool>
-    <string-array name="fling_optimize_package_list">
-        <item>com.ss.android.article.lite:60,120</item>
-        <item>com.sina.weibo:60,120</item>
-        <item>com.xingin.xhs:60,120</item>
-        <item>com.zhihu.android:60,120</item>
-        <item>me.ele:60,120</item>
-    </string-array>
 </features>

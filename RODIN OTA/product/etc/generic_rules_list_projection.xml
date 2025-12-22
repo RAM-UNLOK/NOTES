@@ -81,9 +81,19 @@ Sample:
     <package name="com.miHoYo.ys.mi"
         forceKillWhenSwitch="true"/>
     <package name="com.netease.sky.mi"
-        relaunchRule="ProjectionDisplaySwitch:*:false" />
+        forceKillWhenSwitch="true"/>
     <package name="com.netease.dwrg.mi"
-        relaunchRule="ProjectionDisplaySwitch:*:false" />
+        forceKillWhenSwitch="true"/>
     <package name = "com.xiaomi.shop"
         jetpackDisabled="true"/>
+    <package name="com.ss.android.lark.kazdtq"
+        jetpackDisabled="true" />
+    <package name="com.taobao.trip"
+        jetpackDisabled="true" />
+    <package name="com.greenpoint.android.mc10086.activity"
+        jetpackDisabled="true" />
+    <package name="com.ss.android.lark.saxmsa667"
+        jetpackDisabled="true" />
+    <package name="com.longfor.supera"
+        jetpackDisabled="true" />
 </package_config>

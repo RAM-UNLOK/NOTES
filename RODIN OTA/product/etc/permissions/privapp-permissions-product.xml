@@ -136,9 +136,9 @@
    </privapp-permissions>
    <privapp-permissions package="com.miui.gallery">
       <permission name="android.permission.WRITE_MEDIA_STORAGE" />
-      <permission name="android.permission.INTERACT_ACROSS_USERS" />
       <permission name="android.permission.WRITE_SECURE_SETTINGS" />
       <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
+      <permission name="android.permission.INTERACT_ACROSS_USERS" />
    </privapp-permissions>
    <privapp-permissions package="com.miui.mishare.connectivity">
       <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
@@ -150,6 +150,7 @@
       <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
       <permission name="android.permission.MANAGE_USERS" />
       <permission name="android.permission.INTERACT_ACROSS_USERS" />
+      <permission name="android.permission.START_TASKS_FROM_RECENTS" />
    </privapp-permissions>
    <privapp-permissions package="com.miui.player">
       <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -182,6 +183,7 @@
       <permission name="android.permission.WRITE_APN_SETTINGS" />
       <permission name="android.permission.REAL_GET_TASKS" />
       <permission name="android.permission.PACKAGE_VERIFICATION_AGENT" />
+      <permission name="android.permission.READ_WALLPAPER_INTERNAL" />
    </privapp-permissions>
    <privapp-permissions package="com.xiaomi.aicr">
       <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
@@ -193,6 +195,8 @@
       <permission name="android.permission.MODIFY_DAY_NIGHT_MODE" />
       <permission name="android.permission.STATUS_BAR" />
       <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
+      <permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" />
+      <permission name="android.permission.INTERACT_ACROSS_USERS" />
       <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
       <permission name="android.permission.PACKAGE_USAGE_STATS" />
       <permission name="android.permission.REAL_GET_TASKS" />
@@ -205,11 +209,18 @@
       <permission name="android.permission.CAPTURE_AUDIO_OUTPUT" />
       <permission name="android.permission.INTERACT_ACROSS_USERS" />
       <permission name="android.permission.TURN_SCREEN_ON" />
-      <permission name="android.permission.TURN_SCREEN_ON" />
+      <permission name="android.permission.TETHER_PRIVILEGED" />
+   </privapp-permissions>
+   <privapp-permissions package="com.xiaomi.misettings">
+      <permission name="android.permission.INTERACT_ACROSS_USERS" />
+      <permission name="android.permission.FORCE_STOP_PACKAGES" />
+      <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
    </privapp-permissions>
    <privapp-permissions package="com.xiaomi.uatalive">
-      <permission name="android.permission.WRITE_SECURE_SETTINGS" />
-      <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
       <permission name="android.permission.CONTROL_LOCATION_UPDATES" />
+      <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+      <permission name="android.permission.READ_PHONE_STATE" />
+      <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+      <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
    </privapp-permissions>
 </permissions>

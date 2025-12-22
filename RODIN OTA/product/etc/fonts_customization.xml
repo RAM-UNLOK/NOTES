@@ -14,60 +14,101 @@
   ~ limitations under the License.
    -->
 <fonts-modification version="1">
+<!--
+  ~ family tag should only contain 2 attributes
+  ~ customizationType: value is always "new-named-family"
+  ~ name: customized family name, better not to duplicate with family-name in system/etc/fonts.xml
+  ~ you can add new family like this
+    -->
+<!--    <family customizationType="new-named-family" name="lobster">-->
+<!--        <font weight="400" style="normal">Lobster-Regular.ttf</font>-->
+<!--    </family>-->
+
+    <family customizationType="new-named-family" name="miclock-bebas-neue-mono">
+        <font weight="400" style="normal" postScriptName="BebasNeue-Mono">BebasNeue-Mono.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-beihaibei-sc-regular">
+        <font weight="500" style="normal" postScriptName="BeihaibeiSC-Regular">BeihaibeiSC-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-beihaibei-tc-regular">
+        <font weight="500" style="normal" postScriptName="BeihaibeiTC-Regular">BeihaibeiTC-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-c800">
+        <font weight="400" style="normal" postScriptName="C800">C800.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-chamberi-display-semibold-italic">
+        <font weight="600" style="normal" postScriptName="ChamberiDisplay-Italic">ChamberiDisplay-Italic.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-chamberi-display-semibold">
+        <font weight="600" style="normal" postScriptName="ChamberiDisplay-Semibold">ChamberiDisplay-Semibold.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="coca-cola-care-font-kaiti">
+        <font weight="400" style="normal" postScriptName="Coca-Cola Care Font KaiTi">Coca-ColaCareFontKaiTi.TTF</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-commuters-sans-mono">
+        <font weight="400" style="normal" postScriptName="CommutersSansMono">CommutersSansMono.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-dela-gothic-one">
+        <font weight="400" style="normal" postScriptName="LogoSCUnboundedSans-Regular">DelaGothicOne.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-dela-gothic-one-hz">
+        <font weight="400" style="normal" postScriptName="DelaGothicOne-HZ">DelaGothicOne-HZ.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="fzfw-zhuzi-a-yuans-b">
+        <font weight="400" style="normal" postScriptName="FZFW ZhuZi A YuanS B">FZFWZhuZiAYuanJWB.TTF</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-gulfs-display-extra-expanded-italic">
+        <font weight="400" style="normal" postScriptName="GulfsDisplay-ExtraExpandedItalic">GulfsDisplay-ExtraExpandedItalic.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-inter-mono-semi-bold">
+        <font weight="600" style="normal" postScriptName="InterMono-SemiBold">InterMono-SemiBold.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-inter-scaled-medium">
+        <font weight="500" style="normal" postScriptName="Interscaled">Interscaled-Medium.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-inter-scaled-regular">
+        <font weight="400" style="normal" postScriptName="Interscaled-Regular">Interscaled-Regular.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-michroma-mono">
+        <font weight="400" style="normal" postScriptName="MichromaMono">MichromaMono.otf</font>
+    </family>
     <family customizationType="new-named-family" name="miclock">
         <font weight="400" style="normal" postScriptName="MiClock-Extralight">MiClock.otf</font>
     </family>
-
-    <family customizationType="new-named-family" name="miclock-thin">
-        <font weight="400" style="normal" postScriptName="MiClock-Thin">MiClockThin.otf</font>
-    </family>
-
     <family customizationType="new-named-family" name="miclock-mono">
         <font weight="400" style="normal" postScriptName="MiClockMono-Extralight">MiClockMono.otf</font>
     </family>
-
+    <family customizationType="new-named-family" name="miclock-thin">
+        <font weight="400" style="normal" postScriptName="MiClock-Thin">MiClockThin.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-thin-tibetan">
+        <font weight="400" style="normal" postScriptName="MiClockTibetan-test0119">MiClockTibetan-Thin.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-thin-ug">
+        <font weight="400" style="normal" postScriptName="MiClockUyghurCondensed-Thin">MiClockUyghur-Thin.ttf</font>
+    </family>
     <family customizationType="new-named-family" name="miclock-time-thin">
         <font weight="400" style="normal" postScriptName="MiSansC">MiSansC_3.005.ttf
             <axis tag="wght" stylevalue="224"/>
         </font>
     </family>
-
     <family customizationType="new-named-family" name="miclock-date-thin">
         <font weight="400" style="normal" postScriptName="MiSansC">MiSansC_3.005.ttf
             <axis tag="wght" stylevalue="162"/>
         </font>
     </family>
-
     <family customizationType="new-named-family" name="miclock-time">
         <font weight="400" style="normal" postScriptName="MiSansC">MiSansC_3.005.ttf
             <axis tag="wght" stylevalue="230"/>
         </font>
     </family>
-
     <family customizationType="new-named-family" name="miclock-date">
         <font weight="400" style="normal" postScriptName="MiSansC">MiSansC_3.005.ttf
             <axis tag="wght" stylevalue="182"/>
         </font>
     </family>
-
-    <!-- MIUI15 lockscreen fonts start /-->
-    <family customizationType="new-named-family" name="miclock-gulfs-display-extra-expanded-italic">
-        <font weight="400" style="normal" postScriptName="GulfsDisplay-ExtraExpandedItalic">GulfsDisplay-ExtraExpandedItalic.otf</font>
-    </family>
-    <family customizationType="new-named-family" name="miclock-neue-matic-compressed-black">
-        <font weight="900" style="normal" postScriptName="Neumatic Compressed">NeumaticCompressed.otf</font>
-    </family>
-    <family customizationType="new-named-family" name="miclock-qinghe-75w">
-        <font weight="700" style="normal" postScriptName="Qinghe">Qinghe-75W.otf</font>
-    </family>
-    <family customizationType="new-named-family" name="miclock-misansround-medium">
-        <font weight="330" style="normal" postScriptName="MiSansRound-Medium">MiSansRound-Medium.otf</font>
-    </family>
-    <family customizationType="new-named-family" name="miclock-chamberi-display-semibold">
-        <font weight="600" style="normal" postScriptName="ChamberiDisplay-Semibold">ChamberiDisplay-Semibold.ttf</font>
-    </family>
-    <family customizationType="new-named-family" name="miclock-chamberi-display-semibold-italic">
-        <font weight="600" style="normal" postScriptName="ChamberiDisplay-Italic">ChamberiDisplay-Italic.otf</font>
+    <family customizationType="new-named-family" name="misans-condensed">
+        <font weight="400" supportedAxes="wght,wdth" style="normal" postScriptName="MiSansCondensed2T">MiSansCondensed2T.ttf</font>
     </family>
     <family customizationType="new-named-family" name="miclock-misans-rounded-sc">
         <font weight="400" style="normal" postScriptName="MiSansRoundedSC-Regular">MiSansRoundedSC.ttf
@@ -82,73 +123,896 @@
             <axis tag="wght" stylevalue="330"/>
         </font>
     </family>
+    <alias name="miclock-misans-rounded-sc-medium" to="miclock-misans-rounded-sc" weight="700" />
+    <alias name="miclock-misansround-medium" to="miclock-misans-rounded-sc" weight="700" />
     <family customizationType="new-named-family" name="miclock-serif-sc-regular">
-        <font weight="400" style="normal" postScriptName="MiSerifSC-Regular">MiSerifSC-Regular-01.ttf</font>
+        <font weight="400" style="normal" postScriptName="MiSerifSCVF">MiSerifSCVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSerifSCVF">MiSerifSCVF.ttf
+            <axis tag="wght" stylevalue="430"/>
+        </font>
     </family>
     <family customizationType="new-named-family" name="miclock-serif-tc-regular">
-        <font weight="400" style="normal" postScriptName="MiSerifTC-Regular">MiSerifTC-Regular-01.ttf</font>
+        <font weight="400" style="normal" postScriptName="MiSerifTCVF">MiSerifTCVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSerifTCVF">MiSerifTCVF.ttf
+            <axis tag="wght" stylevalue="430"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-beihaibei-sc-regular">
-        <font weight="500" style="normal" postScriptName="BeihaibeiSC-Regular">BeihaibeiSC-Regular.ttf</font>
+    <alias name="miclock-miserif-sc-vf" to="miclock-serif-sc-regular" weight="700" />
+    <alias name="miclock-miserif-tc-vf" to="miclock-serif-tc-regular" weight="700" />
+    <family customizationType="new-named-family" name="mitype-clock">
+        <font weight="400" style="normal" postScriptName="MitypeRoundedNormal">MitypeClock.otf</font>
     </family>
-    <family customizationType="new-named-family" name="miclock-beihaibei-tc-regular">
-        <font weight="500" style="normal" postScriptName="BeihaibeiTC-Regular">BeihaibeiTC-Regular.ttf</font>
+    <family customizationType="new-named-family" name="mitype-clock-mono">
+        <font weight="400" style="normal" postScriptName="NormalCondensed">MitypeClockMono.otf</font>
     </family>
-    <family customizationType="new-named-family" name="miclock-inter-scaled-regular">
-        <font weight="400" style="normal" postScriptName="Interscaled-Regular">Interscaled-Regular.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-inter-scaled-medium">
-        <font weight="500" style="normal" postScriptName="Interscaled">Interscaled-Medium.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-thin">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="10"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="20"/>
+        </font>
     </family>
-    <!-- MIUI15 lockscreen fonts end /-->
-
-    <!-- OS2 artistic fonts start -->
-    <family customizationType="new-named-family" name="miclock-dela-gothic-one">
-        <font weight="400" style="normal" postScriptName="LogoSCUnboundedSans-Regular">DelaGothicOne.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-extralight">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="20"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="30"/>
+        </font>
     </family>
-    <alias name="miclock-misans-rounded-sc-medium" to="miclock-misans-rounded-sc" weight="700" />
-    <!-- OS2 artistic fonts end -->
-
-    <!-- OS2 lockscreen fonts start /-->
-    <family customizationType="new-named-family" name="miclock-bebas-neue-mono">
-        <font weight="400" style="normal" postScriptName="BebasNeue-Mono">BebasNeue-Mono.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-light">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="30"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="40"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-commuters-sans-mono">
-        <font weight="400" style="normal" postScriptName="CommutersSansMono">CommutersSansMono.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-normal">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="40"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-heading-now-15medium-mono">
-        <font weight="500" style="normal" postScriptName="HeadingNow15Medium-mono">HeadingNow-15Medium-mono.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-regular">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-chronicle-display-compressed-semibold">
-        <font weight="600" style="normal" postScriptName="ChronicleDisplayCompressed-Semibold">ChronicleDisplayCompressed-Semibold.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-medium">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="70"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-heading-now-06bold-mono">
-        <font weight="700" style="normal" postScriptName="HeadingNow-06Bold-mono">HeadingNow-06Bold-mono.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-demibold">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="70"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="80"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-miserif-sc-vf">
-        <font weight="430" style="normal" postScriptName="MiSerifSCVF">MiSerifSCVF.ttf</font>
+    <family customizationType="new-named-family" name="mitype-mono-semibold">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="80"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="90"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-miserif-tc-vf">
-        <font weight="430" style="normal" postScriptName="MiSerifTCVF">MiSerifTCVF.ttf</font>
+    <family customizationType="new-named-family" name="mitype-mono-bold">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="90"/>
+        </font>
+        <font weight="700" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="100"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-shadows-into-light-chinese-chn">
-        <font weight="400" style="normal" postScriptName="ShadowsIntoLightchinese-CHN">ShadowsIntoLightchinese-CHN.otf</font>
+    <family customizationType="new-named-family" name="mitype-mono-heavy">
+        <font weight="400" style="normal">MitypeMonoVF.ttf
+            <axis tag="wght" stylevalue="100"/>
+        </font>
     </family>
-    <!-- OS2 lockscreen fonts pad /-->
-    <family customizationType="new-named-family" name="miclock-c800">
-        <font weight="400" style="normal" postScriptName="C800">C800.ttf</font>
+    <family customizationType="new-named-family" name="mitype">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-dela-gothic-one-hz">
-        <font weight="400" style="normal" postScriptName="DelaGothicOne-HZ">DelaGothicOne-HZ.otf</font>
+    <family customizationType="new-named-family" name="mitype-thin">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="10"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="20"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-inter-mono-semi-bold">
-        <font weight="600" style="normal" postScriptName="InterMono-SemiBold">InterMono-SemiBold.otf</font>
+    <family customizationType="new-named-family" name="mitype-extralight">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="20"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="30"/>
+        </font>
     </family>
-    <family customizationType="new-named-family" name="miclock-michroma-mono">
-        <font weight="400" style="normal" postScriptName="MichromaMono">MichromaMono.otf</font>
+    <family customizationType="new-named-family" name="mitype-light">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="30"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="40"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-normal">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="40"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-regular">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="50"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-medium">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="60"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="70"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-demibold">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="70"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="80"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-semibold">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="80"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="90"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-bold">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="90"/>
+        </font>
+        <font weight="700" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="100"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="mitype-heavy">
+        <font weight="400" style="normal">MitypeVF.ttf
+            <axis tag="wght" stylevalue="100"/>
+        </font>
+    </family>
+    <family customizationType="new-named-family" name="miuiex">
+        <font weight="400" style="normal" postScriptName="MIUIEX-Normal">MiuiEx-Regular.ttf</font>
+        <font weight="700" style="normal" postScriptName="MIUIEX-Bold">MiuiEx-Bold.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miuiex-light">
+        <font weight="300" style="normal" postScriptName="MIUIEX-Light">MiuiEx-Light.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-neue-matic-compressed-black">
+        <font weight="900" style="normal" postScriptName="Neumatic Compressed">NeumaticCompressed.otf</font>
+    </family>
+    <family customizationType="new-named-family" name="miclock-qinghe-75w">
+        <font weight="700" style="normal" postScriptName="Qinghe">Qinghe.otf</font>
     </family>
     <family customizationType="new-named-family" name="miclock-silk-serif-regular">
         <font weight="400" style="normal" postScriptName="SilkSerif-Regular">SilkSerif-Regular.ttf</font>
     </family>
-    <!-- OS2 lockscreen fonts end /-->
+
+
+    <family customizationType="new-locale-family" operation="prepend" lang="en">
+        <font weight="100" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansLatinVF">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="zh-Hans">
+        <font weight="100" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansVF">MiSansVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLatinVF" fallbackFor="serif">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Beng">
+        <font weight="100" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Deva">
+        <font weight="100" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansDevanagariVF">MiSansDevanagariVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Gujr">
+        <font weight="100" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansGujaratiVF">MiSansGujaratiVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Guru">
+        <font weight="100" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansGurmukhiVF">MiSansGurmukhiVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="ja">
+        <font weight="100" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansJapaneseVF">MiSansJapaneseVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLatinVF" fallbackFor="serif">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Knda">
+        <font weight="100" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansKannadaVF">MiSansKannadaVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Khmr">
+        <font weight="100" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansKhmerVF-Regular">MiSansKhmerVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="ko">
+        <font weight="100" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansKoreanVF">MiSansKoreanVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLatinVF" fallbackFor="serif">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Laoo">
+        <font weight="100" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansLaoVF">MiSansLaoVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Mlym">
+        <font weight="100" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansMalayalamVF">MiSansMalayalamVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Mymr">
+        <font weight="100" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansMyanmarVF">MiSansMyanmarVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Orya">
+        <font weight="100" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansOdiaVF">MiSansOdiaVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Taml">
+        <font weight="100" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansTamilVF">MiSansTamilVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="zh-Hant,zh-Bopo">
+        <font weight="100" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MisansTCVF">MiSansTCVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansLatinVF" fallbackFor="serif">MiSansLatinVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Telu">
+        <font weight="100" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansTeluguVF">MiSansTeluguVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Thai">
+        <font weight="100" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansThaiVF">MiSansThaiVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Tibt">
+        <font weight="100" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansTibetanVF">MiSansTibetanVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
+
 </fonts-modification>

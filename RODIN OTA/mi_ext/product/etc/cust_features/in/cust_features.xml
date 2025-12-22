@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="mms_in_region">true</bool>
+        <bool name="config_show_sar_info_panel">true</bool>
+        <bool name="config_airtel_dpc">true</bool>
+    </cust_feature>
+</cust_features>

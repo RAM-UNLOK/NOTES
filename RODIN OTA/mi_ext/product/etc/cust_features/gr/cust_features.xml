@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="mms_gr_region">true</bool>
+        <bool name="unsupport_call_recording_gl">true</bool>
+        <integer name="config_operator_cust_wifi">1</integer>
+        <string-array name="config_disable_clear_data_list">
+            <item>com.aura.oobe.deutsche</item>
+        </string-array>
+        <string-array name="config_cust_hide_uninstall_apps">
+            <item>com.aura.oobe.deutsche</item>
+        </string-array>
+        <string-array name="config_cust_in_list_apps">
+            <item>com.aura.oobe.deutsche</item>
+        </string-array>
+    </cust_feature>
+</cust_features>

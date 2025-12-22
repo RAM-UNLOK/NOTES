@@ -1,0 +1,36 @@
+<permissions>
+    <signature-permissions package="com.miui.miwallpaper.moon">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+    <signature-permissions package="com.miui.miwallpaper.snowmountain">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+    <signature-permissions package="com.miui.miwallpaper.earth">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+    <signature-permissions package="com.miui.miwallpaper.mars">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+    <signature-permissions package="com.miui.miwallpaper.geometry">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+    <signature-permissions package="com.miui.miwallpaper.saturn">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BROADCAST_OPTION_INTERACTIVE"/>
+    </signature-permissions>
+
+    <!--add for notes-->
+    <signature-permissions package="com.miui.notes">
+        <permission name="android.permission.READ_FRAME_BUFFER" />
+    </signature-permissions>
+
+        <!--add for health-->
+    <signature-permissions package="com.mi.health">
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    </signature-permissions>
+</permissions>

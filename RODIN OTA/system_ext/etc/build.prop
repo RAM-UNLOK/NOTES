@@ -4,21 +4,20 @@
 ####################################
 ro.product.system_ext.brand=Xiaomi
 ro.product.system_ext.device=missi
-ro.product.system_ext.manufacturer=Xiaomi
+ro.product.system_ext.manufacturer=unknown
 ro.product.system_ext.model=missi
 ro.product.system_ext.name=missi
-ro.product.system_ext.marketname=
-ro.product.system_ext.cert=
-ro.system_ext.build.date=Mon Aug 25 20:09:24 CST 2025
-ro.system_ext.build.date.utc=1756123764
-ro.system_ext.build.fingerprint=Xiaomi/missi/missi:15/AP3A.240905.015.A2/OS2.0.204.0.VOJMIXM:user/release-keys
-ro.system_ext.build.id=AP3A.240905.015.A2
+ro.system_ext.build.date=Wed Nov 26 10:31:59 CST 2025
+ro.system_ext.build.date.utc=1764124319
+ro.system_ext.build.fingerprint=Xiaomi/missi/missi:16/BP2A.250605.031.A3/OS3.0.5.0.WOJMIXM:user/release-keys
+ro.system_ext.build.id=BP2A.250605.031.A3
 ro.system_ext.build.tags=release-keys
 ro.system_ext.build.type=user
-ro.system_ext.build.version.incremental=OS2.0.204.0.VOJMIXM
-ro.system_ext.build.version.release=15
-ro.system_ext.build.version.release_or_codename=15
-ro.system_ext.build.version.sdk=35
+ro.system_ext.build.version.incremental=OS3.0.5.0.WOJMIXM
+ro.system_ext.build.version.release=16
+ro.system_ext.build.version.release_or_codename=16
+ro.system_ext.build.version.sdk=36
+ro.system_ext.build.version.sdk_full=36.0
 ####################################
 # from build/make/target/board/gsi_system_ext_user.prop
 ####################################
@@ -37,8 +36,8 @@ ro.control_privapp_permissions=disable
 ####################################
 persist.wm.extensions.enabled=true
 persist.wm.extensions.activity_embedding_guard_with_android_15=false
+persist.settings.on_animation_consume.enabled=true
 persist.sys.mcd_config_file=/system_ext/etc/mcd_default.conf
-persist.sys.oom_crash_on_watchdog=true
 persist.sys.sysrqOnAnr_D_state=true
 persist.sys.miui_scout_binder_full_kill_process=true
 persist.sys.stability.enable_sentinel_resource_monitor=true
@@ -49,12 +48,20 @@ persist.sys.stability.enable_dmabuf_monitor=true
 persist.sys.stability.enable_fd_monitor=true
 persist.sys.stability.enable_slab_monitor=true
 persist.sys.stability.monitor_third_party_app=true
+persist.sys.stability.get_tpa_hprof=false
+persist.sys.stability.enable_res_leak_abort=true
+persist.sys.stability.enable_pss_leak_abort=true
+persist.sys.stability.enable_fd_leak_abort=true
+persist.sys.stability.enable_thread_leak_abort=true
+persist.sys.stability.pss_highest_line=6291456
+persist.sys.stability.dmabuf_highest_line=3145728
 persist.sys.stability.window_monitor.enabled=true
 persist.sys.stability.window_monitor.kill_when_leak=true
 persist.sys.stability.window_monitor.kill_threshold=500
 persist.sys.stability.nativehang.enable=true
 persist.sys.stability.nativehangII.enable=true
-persist.sys.whole_machine_d_status_enable=true
+persist.sys.stability.nativehangII.resume=true
+persist.sys.whole_machine_d_status_enable=false
 persist.sys.stability.report_app_launch.enable=true
 persist.sys.stability.reboot_days=7
 persist.sys.stability.maintain_factory_reboot_days=60
@@ -76,8 +83,12 @@ ro.support_one_handed_mode=true
 persist.sys.support_view_smoothcorner=true
 persist.sys.support_window_smoothcorner=true
 persist.sys.mi_shadow_supported=true
+persist.sys.support_window_mishadow=true
+persist.sys.support_view_mishadow=true
+ro.multiwin.fulldecor_support=true
 ro.miui.support_force_enable=1
 ro.miui.enable_cloud_verify=true
+ro.mi.os.soc.vendor=mtk
 ro.mi.development=
 ro.config.isolated_compilation_enabled=true
 # end of file

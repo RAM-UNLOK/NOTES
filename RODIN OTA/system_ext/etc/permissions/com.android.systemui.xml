@@ -21,6 +21,18 @@
         <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
         <!-- END NMS_FocusNotification -->
 
+        <!-- MIUI ADD: Keyguard_FingerprintUnlock-->
+        <permission name="android.permission.MANAGE_FINGERPRINT"/>
+        <!-- END Keyguard_FingerprintUnlock-->
+
+        <!-- MIUI ADD: SYSTEMUI_MIUIX -->
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <!-- END SYSTEMUI_MIUIX -->
+
+        <!-- MIUI ADD: Statusbar_MobileIcon -->
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <!-- END Statusbar_MobileIcon-->
+
         <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
         <permission name="android.permission.ALLOW_SLIPPERY_TOUCHES"/>
         <permission name="android.permission.BATTERY_STATS"/>
@@ -98,5 +110,8 @@
         <permission name="android.permission.MODIFY_DEFAULT_AUDIO_EFFECTS" />
         <permission name="android.permission.CONTROL_UI_TRACING" />
         <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
+        <permission name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW"/>
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE" />
+        <permission name="android.permission.SET_UNRESTRICTED_GESTURE_EXCLUSION" />
     </privapp-permissions>
 </permissions>

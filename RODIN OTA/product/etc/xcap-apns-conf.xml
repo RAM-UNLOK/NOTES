@@ -192,7 +192,7 @@
         mnc="01"
         apn="vowifiorange"
         type="xcap"
-        protocol="IPV4V6"
+        protocol="IP"
         roaming_protocol="IPV4V6"
         network_type_bitmask="18"
     />
@@ -248,6 +248,15 @@
         type="xcap"
         protocol="IPV4V6"
         roaming_protocol="IPV4V6"
+    />
+    <apn carrier="XCAP"
+        mcc="214"
+        mnc="05"
+        apn="xcap"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
+        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
     />
     <apn carrier="INTERNET GPRS"
         mcc="214"
@@ -336,6 +345,15 @@
         roaming_protocol="IP"
         network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
     />
+    <apn carrier="XCAP"
+        mcc="214"
+        mnc="38"
+        apn="xcap"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
+        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
+    />
     <apn carrier="xcap"
         mcc="216"
         mnc="01"
@@ -361,11 +379,14 @@
         roaming_protocol="IP"
         network_type_bitmask ="18"
     />
-    <apn carrier="Xcap"
+    <apn carrier="hos"
         mcc="216"
         mnc="70"
         apn="hos"
         type="xcap"
+        proxy="xcap.ims.mnc070.mcc216.pub.3gppnetwork.org"
+        port="80"
+        protocol="IP"
     />
     <apn carrier="xcap"
         mcc="218"
@@ -395,7 +416,12 @@
         protocol="IPV4V6"
         roaming_protocol="IP"
     />
-
+    <apn carrier="HOS"
+        mcc="219"
+        mnc="02"
+        apn="hos"
+        type="xcap"
+    />
     <apn carrier="HOS"
         mcc="219"
         mnc="10"
@@ -504,6 +530,17 @@
         type="xcap"
         protocol="IP"
         roaming_protocol="IP"
+    />
+
+    <apn carrier="IMS"
+        mcc="222"
+        mnc="99"
+        apn="xcap"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
+        mvno_type="gid"
+        mvno_match_data="0000000099"
     />
 
     <apn carrier="Vodafone Internet"
@@ -905,7 +942,7 @@
         apn="xcap"
         type="xcap"
         protocol="IPV6"
-        roaming_protocol="IPV4"
+        roaming_protocol="IPV4V6"
     />
     <apn carrier="XCAP"
         mcc="238"
@@ -938,7 +975,7 @@
         apn="xcap"
         type="xcap"
         protocol="IPV6"
-        roaming_protocol="IPV4"
+        roaming_protocol="IPV4V6"
     />
 
     <apn carrier="HOS"
@@ -1391,6 +1428,8 @@
         type="xcap"
         protocol="IPV4V6"
         roaming_protocol="IPV4V6"
+        server="xcap.ims.mnc014.mcc262.pub.3gppnetwork.org"
+        port="80"
     />
     <apn carrier="hos"
         mcc="262"
@@ -1567,6 +1606,30 @@
         protocol="IPV4V6"
         roaming_protocol="IPV4V6"
     />
+    <apn carrier="Cablenet XCAP"
+        mcc="280"
+        mnc="22"
+        apn="hos"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
+    />
+    <apn carrier="Cellfie Mobile XCAP"
+        mcc="282"
+        mnc="04"
+        apn="hos"
+        type="xcap"
+        user_editable="0"
+        protocol="IPV4V6"
+    />
+    <apn carrier="xcap"
+        mcc="283"
+        mnc="05"
+        apn="hos"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
+    />
     <apn carrier="xcap"
         mcc="284"
         mnc="01"
@@ -1621,7 +1684,7 @@
         apn="hos"
         type="xcap"
     />
-    <apn carrier="XCAP"
+    <apn carrier="hos"
         mcc="293"
         mnc="40"
         apn="hos"
@@ -2771,6 +2834,106 @@
         roaming_protocol="IPV4V6"
     />
 
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="00"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="02"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="18"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="00"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01020000FFFFFFFF"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="00"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01010000FFFFFFFF"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="02"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01020000FFFFFFFF"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="02"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01010000FFFFFFFF"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="16"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="18"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01020000FFFFFFFF"
+    />
+
+     <apn carrier="HOS"
+        mcc="454"
+        mnc="18"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+        mvno_type="gid"
+        mvno_match_data="01010000FFFFFFFF"
+    />
+
+    <apn carrier="HOS"
+        mcc="454"
+        mnc="19"
+        apn="HOS"
+        type="xcap"
+        protocol="IPV4"
+    />
+
     <apn carrier="hos"
         mcc="454"
         mnc="03"
@@ -2874,6 +3037,14 @@
         protocol="IP"
         roaming_protocol="IP"
         bearer_bitmask ="18"
+    />
+    <apn carrier="xcap"
+        mcc="456"
+        mnc="08"
+        apn="xcap"
+        type="xcap"
+        protocol="IP"
+        roaming_protocol="IP"
     />
     <apn carrier="Best5G"
         mcc="457"

@@ -29,6 +29,9 @@
             <Attributes> <Usage value="AUDIO_USAGE_VOICE_COMMUNICATION"/> </Attributes>
         </AttributesGroup>
         <AttributesGroup streamType="AUDIO_STREAM_BLUETOOTH_SCO" volumeGroup="bluetooth_sco">
+            <!-- MIUI ADD: Audio_MIUIAudioFrame -->
+            <Attributes> <Usage value="AUDIO_USAGE_BLUETOOTH_SCO"/> </Attributes>
+            <!-- END Audio_MIUIAudioFrame -->
             <Attributes> <Flags value="AUDIO_FLAG_SCO"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
@@ -44,6 +47,9 @@
 
     <ProductStrategy name="STRATEGY_ENFORCED_AUDIBLE">
         <AttributesGroup streamType="AUDIO_STREAM_ENFORCED_AUDIBLE" volumeGroup="enforced_audible">
+            <!-- MIUI ADD: Audio_MIUIAudioFrame -->
+            <Attributes> <Usage value="AUDIO_USAGE_ENFORCED_AUDIBLE"/> </Attributes>
+            <!-- END Audio_MIUIAudioFrame -->
             <Attributes> <Flags value="AUDIO_FLAG_AUDIBILITY_ENFORCED"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
@@ -90,6 +96,9 @@
          (TTS) of the device -->
     <ProductStrategy name="STRATEGY_TRANSMITTED_THROUGH_SPEAKER">
         <AttributesGroup streamType="AUDIO_STREAM_TTS" volumeGroup="tts">
+            <!-- MIUI ADD: Audio_MIUIAudioFrame -->
+            <Attributes> <Usage value="AUDIO_USAGE_TTS"/> </Attributes>
+            <!-- END Audio_MIUIAudioFrame -->
             <Attributes> <Flags value="AUDIO_FLAG_BEACON"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>

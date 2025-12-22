@@ -67,6 +67,23 @@
               "index": -1
             }
           ]
+        },
+        {
+          "viewName": "com.lynx.tasm.behavior.ui.view.AndroidView",
+          "forceDark": false,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.lynx.tasm.behavior.ui.view.AndroidView",
+              "index": -1
+            },
+            {
+              "parent": 2,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "content"
+            }
+          ]
         }
       ]
     }

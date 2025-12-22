@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="config_support_traffic_purchase">true</bool>
+        <bool name="mms_id_region">true</bool>
+        <bool name="support_earthquake_warning">true</bool>
+    </cust_feature>
+</cust_features>

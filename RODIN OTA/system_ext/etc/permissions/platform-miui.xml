@@ -47,4 +47,8 @@
     <library name="global-cleaner-empty.jar"
         file="/system_ext/framework/global-cleaner-empty.jar" />
 
+    <!--  changqianqian@xiaomi.com added. Allow other apps access it's sandbox storage of AIService -->
+    <!--  https://xiaomi.f.mioffice.cn/wiki/WWEuwvD4piGTJ8kfZZwkBWsu4we?from=from_copylink  -->
+    <app-data-isolation-whitelisted-app package="com.xiaomi.aiservice" />
+
 </permissions>

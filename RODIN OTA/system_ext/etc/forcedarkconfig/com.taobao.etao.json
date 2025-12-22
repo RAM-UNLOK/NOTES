@@ -482,28 +482,6 @@
         {
           "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
           "forceDark": true,
-          "usage": 105,
-          "conditions": [
-            {
-              "parent": 0,
-              "viewName": "alimama.com.unwimage.UNWImageView",
-              "index": -1
-            },
-            {
-              "parent": 2,
-              "viewName": "android.widget.FrameLayout",
-              "index": -1
-            },
-            {
-              "parent": 1,
-              "viewName": "android.widget.FrameLayout",
-              "index": -1
-            }
-          ]
-        },
-        {
-          "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
-          "forceDark": true,
           "usage": 103,
           "conditions": [
             {
@@ -546,29 +524,6 @@
           ]
         },
         {
-          "viewName": "com.taobao.android.AliUrlImageView",
-          "forceDark": true,
-          "usage": 103,
-          "conditions": [
-            {
-              "parent": 0,
-              "viewName": "com.taobao.android.dinamicx.view.DXNativeFrameLayout",
-              "index": -1
-            },
-            {
-              "parent": 6,
-              "viewName": "com.taobao.android.dinamicx.DXRootView",
-              "index": -1
-            },
-            {
-              "parent": 13,
-              "viewName": "androidx.appcompat.widget.ContentFrameLayout",
-              "index": -1,
-              "id": "content"
-            }
-          ]
-        },
-        {
           "viewName": "com.taobao.android.dinamicx.view.DXNativeTextView",
           "forceDark": false,
           "conditions": [
@@ -586,6 +541,109 @@
               "parent": 2,
               "viewName": "com.taobao.android.dinamicx.view.DXNativeFrameLayout",
               "index": -1
+            }
+          ]
+        },
+        {
+          "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
+          "id": "home_V4_image_page_bg",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103
+        },
+        {
+          "viewName": "com.taobao.android.AliUrlImageView",
+          "forceDark": true,
+          "usage": 105,
+          "backgroundUsage": 105,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.dinamicx.view.DXNativeFrameLayout",
+              "index": -1
+            },
+            {
+              "parent": 1,
+              "viewName": "com.taobao.android.dinamicx.DXRootView",
+              "index": -1
+            },
+            {
+              "parent": 2,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "home_fragment_container"
+            }
+          ]
+        },
+        {
+          "viewName": "com.taobao.android.AliUrlImageView",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.dinamicx.view.DXNativeFrameLayout",
+              "index": -1
+            },
+            {
+              "parent": 6,
+              "viewName": "com.taobao.android.dinamicx.DXRootView",
+              "index": -1
+            },
+            {
+              "parent": 7,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "home_fragment_container"
+            }
+          ]
+        },
+        {
+          "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "alimama.com.unwimage.UNWImageView",
+              "index": -1
+            },
+            {
+              "parent": 8,
+              "viewName": "com.taobao.android.dinamicx.DXRootView",
+              "index": -1
+            },
+            {
+              "parent": 9,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "home_fragment_container"
+            }
+          ]
+        },
+        {
+          "viewName": "com.taobao.android.AliUrlImageView",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.dinamicx.view.DXNativeFrameLayout",
+              "index": -1
+            },
+            {
+              "parent": 6,
+              "viewName": "com.taobao.android.dinamicx.DXRootView",
+              "index": -1
+            },
+            {
+              "parent": 7,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "home_fragment_container"
             }
           ]
         }
@@ -773,6 +831,57 @@
               "index": -1
             }
           ]
+        },
+        {
+          "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "alimama.com.unwimage.UNWImageView",
+              "index": -1
+            },
+            {
+              "parent": 1,
+              "viewName": "com.taobao.android.icart.widget.CartFragmentLayout",
+              "index": -1,
+              "id": "cart_container"
+            },
+            {
+              "parent": 2,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "icart_activity_root"
+            }
+          ]
+        },
+        {
+          "viewName": "android.view.View",
+          "forceDark": true,
+          "usage": 105,
+          "backgroundUsage": 105,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.icart.widget.CartFragmentLayout",
+              "index": -1,
+              "id": "cart_container"
+            },
+            {
+              "parent": 1,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "icart_activity_root"
+            },
+            {
+              "parent": 2,
+              "viewName": "android.widget.LinearLayout",
+              "index": -1,
+              "id": "tab_container"
+            }
+          ]
         }
       ]
     },
@@ -830,6 +939,68 @@
               "parent": 6,
               "viewName": "androidx.appcompat.widget.FitWindowsLinearLayout",
               "index": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "activityName": "com.taobao.etao.icart.EtaoICartCommonActivity",
+      "forceDark": true,
+      "forceDarkViewConfigList": [
+        {
+          "viewName": "alimama.com.unwimage.UNWPhenixImageImpl",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "alimama.com.unwimage.UNWImageView",
+              "index": -1
+            },
+            {
+              "parent": 1,
+              "viewName": "com.taobao.android.icart.widget.CartFragmentLayout",
+              "index": -1,
+              "id": "cart_container"
+            },
+            {
+              "parent": 2,
+              "viewName": "android.widget.FrameLayout",
+              "index": -1,
+              "id": "icart_activity_root"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "activityName": "com.taobao.etao.detail.EtaoGoodsDetailNAActivity",
+      "forceDark": true,
+      "forceDarkViewConfigList": [
+        {
+          "viewName": "com.taobao.android.AliUrlImageView",
+          "forceDark": true,
+          "usage": 105,
+          "backgroundUsage": 105,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.dinamicx.view.DXNativeLinearLayout",
+              "index": -1
+            },
+            {
+              "parent": 2,
+              "viewName": "com.taobao.android.detail.core.aura.widget.AliDetailAuraRecyclerView",
+              "index": -1,
+              "id": "mainpage2"
+            },
+            {
+              "parent": 4,
+              "viewName": "com.taobao.android.detail.core.detail.widget.container.NestedScrollContainer",
+              "index": -1,
+              "id": "aliDetailNestedScrollContainer"
             }
           ]
         }

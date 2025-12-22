@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="mms_fr_region">true</bool>
+        <bool name="unsupport_call_recording_gl">true</bool>
+    </cust_feature>
+</cust_features>

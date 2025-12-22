@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <string name="config_netflix_channel">bd708d30-9b02-11e8-a47d-6d03b1dd4cf8</string>
+        <string name="config_facebook_partnerid">entel:8b460038-4f80-7a56-bde1-570b3410efe4</string>
+        <string-array name="allow_install_third_apps">
+            <item>com.facebook.katana</item>
+            <item>com.netflix.mediaclient</item>
+        </string-array>
+        <bool name="disable_smsc_setting_update">true</bool>
+    </cust_feature>
+</cust_features>

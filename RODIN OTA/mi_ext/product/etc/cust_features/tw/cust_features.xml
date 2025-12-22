@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="mms_tw_region">true</bool>
+        <bool name="config_disable_query_operator">true</bool>
+        <bool name="config_album_support_share">true</bool>
+        <bool name="config_disable_telocation">true</bool>
+        <bool name="config_dismiss_countryiso_after_conference">true</bool>
+    </cust_feature>
+</cust_features>

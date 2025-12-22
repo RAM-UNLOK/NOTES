@@ -11,7 +11,7 @@ com.mediatek.log.gpshost.enabled = false
 com.mediatek.log.bthost.enabled = false
 
 com.mediatek.log.mobile.maxsize = 1000
-com.mediatek.log.modem.maxsize = 2000
+com.mediatek.log.modem.maxsize = 8000
 com.mediatek.log.net.maxsize =600
 com.mediatek.log.connsysfw.maxsize = 2000
 com.mediatek.log.bthost.maxsize = 2000

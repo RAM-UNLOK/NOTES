@@ -175,6 +175,16 @@
       ]
     },
     {
+      "action": "system_input_gesture",
+      "functions": [
+        {
+          "function": "launch_xiaoai_screen_identification",
+          "global": 2
+        }
+      ]
+    },
+
+    {
       "action": "fingerprint_double_tap"
     },
     {
