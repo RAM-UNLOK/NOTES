@@ -410,6 +410,41 @@
             <axis tag="wght" stylevalue="330"/>
         </font>
     </family>
+    <family customizationType="new-locale-family" operation="prepend" lang="und-Arab">
+        <font weight="100" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="150"/>
+        </font>
+        <font weight="200" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="200"/>
+        </font>
+        <font weight="300" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="250"/>
+        </font>
+        <font weight="350" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="305"/>
+        </font>
+        <font weight="400" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="330"/>
+        </font>
+        <font weight="500" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="380"/>
+        </font>
+        <font weight="600" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="700" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="450"/>
+        </font>
+        <font weight="800" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="520"/>
+        </font>
+        <font weight="900" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="630"/>
+        </font>
+        <font weight="950" style="normal" postScriptName="MiSansArabicUIVF">MiSansArabicVF.ttf
+            <axis tag="wght" stylevalue="700"/>
+        </font>
+    </family>
     <family customizationType="new-locale-family" operation="prepend" lang="und-Beng">
         <font weight="100" style="normal" postScriptName="MiSansBengaliVF">MiSansBengaliVF.ttf
             <axis tag="wght" stylevalue="150"/>

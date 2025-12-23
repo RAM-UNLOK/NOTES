@@ -34530,6 +34530,13 @@
         roaming_protocol="IPV6"
     />
 
+    <apn carrier="sos"
+        mcc="425"
+        mnc="01"
+        apn="sos"
+        type="emergency"
+    />
+
     <apn carrier="Cellcom Internet"
         mcc="425"
         mnc="02"
@@ -34557,7 +34564,7 @@
         apn="ims"
         type="ims"
         protocol="IPV6"
-        roaming_protocol="IP"
+        roaming_protocol="IPV4V6"
     />
 
     <apn carrier="Multimedia Pelephone"
@@ -34592,6 +34599,14 @@
         type="ims"
         protocol="IPV6"
         roaming_protocol="IPV6"
+    />
+
+    <apn carrier="sos"
+        mcc="425"
+        mnc="03"
+        apn="sos"
+        type="emergency"
+        protocol="IPV6"
     />
 
     <apn carrier="Jawwal MMS"
@@ -34701,21 +34716,24 @@
     <apn carrier="we"
         mcc="425"
         mnc="09"
-        apn="xfone"
-        type="default"
-        protocol="IPV4V6"
-        roaming_protocol="IPV4V6"
+        apn="we"
+        type="default,mms"
+        mmsc="http://mms.we4g.co.il"
+        mmsport="80"
     />
 
-    <apn carrier="we mms"
+    <apn carrier="ims"
         mcc="425"
         mnc="09"
-        apn="xfone"
-        mmsc="mms.we4g.co.il"
-        mmsport="8080"
-        type="mms"
-        protocol="IPV4V6"
-        roaming_protocol="IPV4V6"
+        apn="ims"
+        type="ims"
+    />
+
+    <apn carrier="sos"
+        mcc="425"
+        mnc="09"
+        apn="sos"
+        type="emergency"
     />
 
     <apn carrier="3G Portal"
@@ -34744,6 +34762,13 @@
         type="ims"
         protocol="IPV6"
         roaming_protocol="IPV6"
+    />
+
+    <apn carrier="sos"
+        mcc="425"
+        mnc="10"
+        apn="sos"
+        type="emergency"
     />
 
     <apn carrier="Alon Internet"
@@ -34797,6 +34822,43 @@
         roaming_protocol="IPV4V6"
     />
 
+    <apn carrier="019IMS"
+        mcc="425"
+        mnc="19"
+        apn="ims"
+        type="ims"
+        protocol="IPV6"
+        roaming_protocol="IPV6"
+    />
+
+    <apn carrier="019SOS"
+        mcc="425"
+        mnc="19"
+        apn="sos"
+        type="emergency"
+    />
+
+    <apn carrier="xphone"
+        mcc="425"
+        mnc="21"
+        apn="internet"
+        type="default"
+    />
+
+    <apn carrier="ims"
+        mcc="425"
+        mnc="21"
+        apn="ims"
+        type="ims,xcap"
+    />
+
+    <apn carrier="sos"
+        mcc="425"
+        mnc="21"
+        apn="sos"
+        type="emergency"
+    />
+
     <apn carrier="internet"
         mcc="425"
         mnc="26"
@@ -34813,6 +34875,13 @@
         type="ims"
         protocol="IPV6"
         roaming_protocol="IPV6"
+    />
+
+    <apn carrier="sos"
+        mcc="425"
+        mnc="26"
+        apn="sos"
+        type="emergency"
     />
 
     <apn carrier="Batelco Internet"

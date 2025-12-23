@@ -2693,13 +2693,12 @@
         protocol="IPV4V6"
         roaming_protocol="IPV4V6"
     />
-    <apn carrier="hos"
+    <apn carrier="HOS"
         mcc="425"
         mnc="01"
-        apn="hos"
+        apn="HOS"
         type="xcap"
         protocol="IP"
-        roaming_protocol="IP"
     />
     <apn carrier="XCAP"
         mcc="425"
@@ -2710,6 +2709,14 @@
         roaming_protocol="IP"
     />
 
+    <apn carrier="hos"
+        mcc="425"
+        mnc="03"
+        apn="hos"
+        type="xcap"
+        protocol="IP"
+    />
+
     <apn carrier="xcap"
         mcc="425"
         mnc="07"
@@ -2718,13 +2725,45 @@
         protocol="IPV4V6"
         roaming_protocol="IPV4V6"
     />
+
+    <apn carrier="hos"
+        mcc="425"
+        mnc="09"
+        apn="hos"
+        type="xcap"
+        proxy="xcap.ims.mnc009.mcc425.pub.3gppnetwork.org"
+        port="80"
+    />
+
+    <apn carrier="HOS"
+        mcc="425"
+        mnc="10"
+        apn="HOS"
+        type="xcap"
+        protocol="IP"
+    />
+
+    <apn carrier="019HOS"
+        mcc="425"
+        mnc="19"
+        apn="hos"
+        type="xcap"
+    />
+
+    <apn carrier="ims"
+        mcc="425"
+        mnc="21"
+        apn="ims"
+        type="xcap"
+    />
+
     <apn carrier="xcap"
         mcc="425"
         mnc="26"
-        apn="xcap"
+        apn="hos"
         type="xcap"
-        protocol="IPV6"
-        roaming_protocol="IPV6"
+        protocol="IPV4V6"
+        roaming_protocol="IPV4V6"
     />
     <apn carrier="xcap"
         mcc="427"

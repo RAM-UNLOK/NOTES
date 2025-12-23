@@ -1654,7 +1654,6 @@ product/etc/embedded_rules_list_projection.xml
 product/etc/env.exr
 product/etc/fiveG-apns-conf.xml
 product/etc/fixed_orientation_list_projection.xml
-product/etc/fonts_customization.xml
 product/etc/fs_config_dirs
 product/etc/fs_config_files
 product/etc/generic_rules_list_projection.xml
@@ -1663,6 +1662,7 @@ product/etc/gpunoise.txt
 product/etc/group
 product/etc/linker.config.pb
 product/etc/local_adaptive_app_list.xml
+product/etc/mi_fonts_customization.xml
 product/etc/miui-spn-conf.xml
 product/etc/miuix_astc.spv
 product/etc/mspc.default.json
@@ -3400,6 +3400,7 @@ system/system/etc/selinux/plat_sepolicy_genfs_202504.cil
 system/system/etc/selinux/plat_sepolicy_genfs_202604.cil
 system/system/etc/selinux/plat_service_contexts
 system/system/etc/selinux/plat_tee_service_contexts
+system/system/etc/sysconfig/com.google.android.mainline.patchlevel.2.xml
 system/system/etc/sysconfig/enhanced-confirmation.xml
 system/system/etc/sysconfig/framework-sysconfig.xml
 system/system/etc/sysconfig/google-hiddenapi-package-allowlist.xml
@@ -3446,7 +3447,6 @@ system/system/etc/boot-image.prof
 system/system/etc/boot-image.prof.fsv_meta
 system/system/etc/build_flags.json
 system/system/etc/cgroups.json
-system/system/etc/com.google.android.mainline.patchlevel.2.xml
 system/system/etc/core.protolog.pb
 system/system/etc/default_screenshot.png
 system/system/etc/dirty-image-objects
