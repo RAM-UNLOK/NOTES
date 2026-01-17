@@ -28,6 +28,12 @@
             ]
         },
         {
+            "Name": "CPUSET_SP_CAMERA_BACKGROUND_LIMIT_LEVEL5",
+            "Profiles": [
+                "CameraProcessCapacityLevel5"
+            ]
+        },
+        {
             "Name": "CAMERA_PRIME_SCHED",
             "Profiles": [
                 "CameraVipPerformance",
@@ -44,7 +50,7 @@
         {
             "Name": "CAMERA_CAPTURE_SCHED",
             "Profiles": [
-                "CameraProcessCapacityLevel5",
+                "CameraProcessCapacityLevel6",
                 "CameraPerformanceLevel2"
             ]
         }
@@ -109,6 +115,18 @@
                 }
             ],
             "Name": "CameraProcessCapacityLevel5"
+        },
+        {
+            "Actions": [
+                {
+                    "Name": "JoinCgroup",
+                    "Params": {
+                        "Controller": "cpuset",
+                        "Path": "camera-daemon/limit-level6"
+                    }
+                }
+            ],
+            "Name": "CameraProcessCapacityLevel6"
         },
         {
             "Actions": [

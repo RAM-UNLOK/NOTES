@@ -71,7 +71,7 @@
 
 <Event min="902003001" max="902003001">
     <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
-    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/Performance/" pattern="MiPgc-Perf-KillProcess-.*" option="latest=2|delete"/>
+    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/PerfUploadTrace/" pattern="MiPgc-Perf-KillProcess-.*" option="latest=2|delete"/>
 </Event>
 
 <Event range1="902004001">
@@ -79,7 +79,7 @@
 </Event>
 
 <Event range1="902005001" range2="902005002" range3="902005000" range4="902005004">
-    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/Performance/" pattern="MiPgc-Perf-.*" option="latest=2|delete"/>
+    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/PerfUploadTrace/" pattern="MiPgc-Perf-.*" option="latest=2|delete"/>
     <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
 </Event>
 
@@ -93,12 +93,12 @@
 
 <Event range1="902005007">
     <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
-    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/Performance/" pattern="MiPgc-Perf-Fps-.*" option="latest=2|delete"/>
+    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/PerfUploadTrace/" pattern="MiPgc-Perf-Fps-.*" option="latest=2|delete"/>
 </Event>
 
 <Event range1="902005008">
     <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
-    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/Performance/" pattern="MiPgc-Perf-ResponseDelay-.*" option="latest=2|delete"/>
+    <DynamicPath FaultLevel="GENERAL" PrivacyLevel="L3" dir="/sdcard/MIUI/debug_log/common/PerfUploadTrace/" pattern="MiPgc-Perf-ResponseDelay-.*" option="latest=2|delete"/>
 </Event>
 
 <Event range1="903000000-903114999" range2="903116000-903999999">
@@ -155,13 +155,43 @@
     <Import template="TPL_BASE_DMESG_LOG"/>
 </Event>
 
-<Event range1="906001051" range2="906001301" range3="906201005">
+<Event range1="906001051-906001052" range2="906001301" range3="906201005" range4="906001355">
     <Import template="TPL_BASE_LOGCAT_LOG"/>
 </Event>
 
-<Event range1="906002001-906002005" range2="906100001-906100003" range3="906121001" range4="906130001" range5="906140001-906140002" range6="906001151-906001155" range7="906150001-906150002">
+<Event range1="906001413-906001414">
+    <Import template="TPL_BASE_LOGCAT_LOG"/>
+</Event>
+
+<Event range1="906001452">
+    <Import template="TPL_BASE_LOGCAT_LOG"/>
+</Event>
+
+<Event range1="906001400-906001401" range2="906001156" range3="906001411-906001412"  range4="906001421-906001422" range5="906001431">
+    <Import template="TPL_BASE_LOGCAT_LOG"/>
+</Event>
+
+<Event range1="906002001-906002007" range2="906100001-906100004" range3="906121001" range4="906130001" range5="906140001-906140002" range6="906001151-906001155" range7="906150001-906150002">
     <Import template="TPL_BASE_DMESG_LOG"/>
     <Import template="TPL_BASE_LOGCAT_LOG"/>
+</Event>
+
+<Event range1="906003031-906003036" range2="906003101-906003102" range3="906003151-906003152"
+        range4="906003301-906003302" range5="906003311" range6="906003321" range7="906004001">
+    <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
+</Event>
+
+<Event range1="906005001-906005005">
+    <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
+    <Import template="TPL_BASE_DMESG_LOG"/>
+</Event>
+
+<Event range1="906006001-906006010" range2="906006031-906006035">
+    <Import template="TPL_BASE_LOGCAT_LOG"/>
+</Event>
+
+<Event range1="906008003">
+    <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
 </Event>
 
 <Event range1="904001001-904001004" range2="904002001-904002002" range3="904003001" range4="904004001-904004003" range5="904005001-904005005" range6="904006001-904006004" range7="904007001-904007006" range8="904008001-904008004" range9="904009001-904009002" range10="904011001-904011005">
@@ -363,7 +393,7 @@
     <Path FaultLevel="IMPORTANT" PrivacyLevel="L3" path="/sdcard/MIUI/debug_log/taglog/taglog.zip" option="delay=15" extra="UploadLog:true"/>
 </Event>
 
-<Event range1="909001004-909001005" range2="909002001-909002012" range3="909003001-909003006" range4="909005001-909005009" range5="909006001-909006011" range6="909007001-909007002" range7="909009001-909009003" range8="909010002" range9="909011001-909011002" range10="909012001-909012006" range11="909013001-909013004" range12="909014002" range13="909014020-909014021">
+<Event range1="909001004-909001005" range2="909002001-909002012" range3="909003001-909003006" range4="909005001-909005009" range5="909006001-909006011" range6="909007001-909007002" range7="909009001-909009003" range8="909010002" range9="909011001-909011002" range10="909012001-909012006" range11="909013001-909013004" range12="909014002" range13="909014020-909014022">
     <Import template="TPL_BASE_LOGCAT_LOG_ALL"/>
     <Import template="TPL_BASE_DMESG_LOG"/>
     <Import template="TPL_MCA_CHARGER_LOG"/>

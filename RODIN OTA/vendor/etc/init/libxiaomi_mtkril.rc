@@ -1,0 +1,9 @@
+on post-fs-data
+    # for at cmd
+    chmod 0777 /dev/smd8
+    chown radio radio /dev/smd8
+    # for modem data file
+    mkdir /data/vendor/modem 0777 radio radio
+
+on property:persist.vendor.radio.close_wenkong=yes
+    stop mi_thermald

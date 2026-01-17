@@ -26,6 +26,10 @@
         {
             "FeatureType":"FrontDisableNFC",
             "State": 0
+        },
+        {
+            "FeatureType":"isSupportDymicDecreaseRFPower",
+            "State": 0
         }
     ]
 }

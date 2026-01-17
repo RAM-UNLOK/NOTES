@@ -196,7 +196,6 @@
       <permission name="android.permission.STATUS_BAR" />
       <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
       <permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" />
-      <permission name="android.permission.INTERACT_ACROSS_USERS" />
       <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
       <permission name="android.permission.PACKAGE_USAGE_STATS" />
       <permission name="android.permission.REAL_GET_TASKS" />

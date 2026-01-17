@@ -841,7 +841,6 @@
     <spnOverride numeric="47202" spn="Ooredoo Maldives PVT LTD"/>
     <spnOverride numeric="50212" spn="MY MAXIS"/>
     <spnOverride numeric="50213" spn="MY CELCOM 3G"/>
-    <spnOverride numeric="502152" spn="YES FT5G"/>
     <spnOverride numeric="502153" spn="unifi"/>
     <spnOverride numeric="502156" spn="MYSALTEL"/>
     <spnOverride numeric="50216" spn="Digi"/>

@@ -452,6 +452,13 @@
         "com.kuaishou.merchant.pagedy.page.MerchantEraActivity": {
           "mode": 1,
           "color": 1
+        },
+        "com.yxcorp.gifshow.profile.activity.UserProfileActivity": {
+          "mode": 2
+        },
+        "com.smile.gifshow.post.profile.ProfileUpdatePostImageCropActivity": {
+          "mode": 1,
+          "color": 1
         }
       }
     },
@@ -627,6 +634,10 @@
         "com.xingin.alioth.search.GlobalSearchActivity": {
           "mode": 2,
           "color": null
+        },
+        "com.xingin.login.activity.LoginActivity": {
+          "mode": 1,
+          "color": 1
         }
       }
     },
@@ -1760,8 +1771,8 @@
           "color": 1
         },
         "com.taobao.android.order.bundle.TBOrderListActivity": {
-          "mode": 0,
-          "color": null
+          "mode": 1,
+          "color": 1
         },
         "com.tmall.wireless.gallery.TMDetailActivity": {
           "mode": 1,

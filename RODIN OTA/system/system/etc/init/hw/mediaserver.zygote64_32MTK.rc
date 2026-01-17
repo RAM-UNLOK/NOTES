@@ -1,0 +1,9 @@
+# MIUI ADD: Audio_DecoupledMtk
+service media32 /system/bin/mediaserver32
+    disabled
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+# END Audio_DecoupledMtk

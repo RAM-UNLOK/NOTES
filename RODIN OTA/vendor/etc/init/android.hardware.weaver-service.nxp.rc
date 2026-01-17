@@ -1,0 +1,5 @@
+service vendor.weaver_nxp /vendor/bin/hw/android.hardware.weaver-service.nxp
+    class hal
+    user 2902
+    group system drmrpc
+    capabilities WAKE_ALARM

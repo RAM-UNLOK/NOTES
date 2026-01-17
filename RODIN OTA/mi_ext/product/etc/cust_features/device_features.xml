@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <bool name="powerkeeper_ExtremeScenarioAware">true</bool>
+        <bool name="support_virtual_call">true</bool>
+        <integer name="config_wifi_sar_pattern">8</integer>
+        <bool name="config_supported_aon_devices">true</bool>
+        <bool name="input_scroller_optimization_normal_support">true</bool>
+    </cust_feature>
+</cust_features>

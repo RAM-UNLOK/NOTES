@@ -1,0 +1,9 @@
+# MIUI ADD: Performance_IOEnhance
+# for replace atomic write
+on post-fs-data
+    mkdir /data/system/atomic_replace 0755 system system
+    restorecon_recursive /data/system/atomic_replace
+    write /data/system/atomic_replace/enable "1"
+    chown system system /data/system/atomic_replace/enable
+    chmod 0755 /data/system/atomic_replace/enable
+# END Performance_IOEnhance

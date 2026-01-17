@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cust_features>
     <cust_feature>
+        <bool name="support_sleep_mode">true</bool>
         <bool name="config_disable_cnap">true</bool>
     </cust_feature>
 </cust_features>

@@ -6,6 +6,7 @@
     <item>com.mi.global.shop</item>
     <item>com.miui.compass</item>
     <item>com.miui.huanji</item>
+    <item>com.miui.virtualsim</item>
     <item>com.xiaomi.calendar</item>
     <item>com.xiaomi.midrop</item>
     <item>com.xiaomi.scanner</item>
@@ -20,6 +21,7 @@
     <item>/product/data-app/MISTORE_OVERSEA/MISTORE_OVERSEA.apk</item>
     <item>/product/data-app/MIUICompassGlobal/MIUICompassGlobal.apk</item>
     <item>/product/data-app/MIUIHuanjiGlobal/MIUIHuanjiGlobal.apk</item>
+    <item>/product/data-app/MIUIVirtualSim/MIUIVirtualSim.apk</item>
     <item>/product/data-app/MiuiCalendarGlobal/MiuiCalendarGlobal.apk</item>
     <item>/product/data-app/MIDrop/MIDrop.apk</item>
     <item>/product/data-app/MiuiScanner/MiuiScanner.apk</item>

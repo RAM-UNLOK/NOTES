@@ -1,0 +1,8 @@
+service vendor.hwcomposer /vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles ServiceCapacityLow
+    writepid /sys/kernel/reserve_pool/pid /proc/sys/binder_prio/composer_pid

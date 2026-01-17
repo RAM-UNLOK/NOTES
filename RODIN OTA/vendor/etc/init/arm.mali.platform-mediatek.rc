@@ -1,0 +1,5 @@
+service vendor.mali_platform-mediatek /vendor/bin/hw/arm.mali.platform-service.mediatek
+    class hal
+    user system
+    group system
+    writepid /proc/sys/binder_prio/arm_mali_pid /sys/module/metis/parameters/set_static_vip

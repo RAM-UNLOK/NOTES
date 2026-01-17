@@ -24,6 +24,7 @@ mi_ext/product/app/MIUIMiPicks/MIUIMiPicks.apk
 mi_ext/product/app/MiAONServiceV/MiAONServiceV.apk
 mi_ext/product/app/PaymentService_Global/PaymentService_Global.apk
 mi_ext/product/app/SoterService/SoterService.apk
+mi_ext/product/app/XiaomiInCallUI/XiaomiInCallUI.apk
 mi_ext/product/app/messaging/messaging.apk
 mi_ext/product/data-app/GlobalWPSLITE/GlobalWPSLITE.apk
 mi_ext/product/data-app/MIDrop/MIDrop.apk
@@ -31,6 +32,7 @@ mi_ext/product/data-app/MISTORE_OVERSEA/MISTORE_OVERSEA.apk
 mi_ext/product/data-app/MIUICompassGlobal/MIUICompassGlobal.apk
 mi_ext/product/data-app/MIUIHuanjiGlobal/MIUIHuanjiGlobal.apk
 mi_ext/product/data-app/MIUISoundRecorderTargetSdk30Global/MIUISoundRecorderTargetSdk30Global.apk
+mi_ext/product/data-app/MIUIVirtualSim/MIUIVirtualSim.apk
 mi_ext/product/data-app/MiuiCalendarGlobal/MiuiCalendarGlobal.apk
 mi_ext/product/data-app/MiuiScanner/MiuiScanner.apk
 mi_ext/product/data-app/POCOCOMMUNITY_OVERSEA/POCOCOMMUNITY_OVERSEA.apk
@@ -55,6 +57,7 @@ mi_ext/product/etc/cust_features/ie/cust_features.xml
 mi_ext/product/etc/cust_features/in/cust_features.xml
 mi_ext/product/etc/cust_features/is/cust_features.xml
 mi_ext/product/etc/cust_features/it/cust_features.xml
+mi_ext/product/etc/cust_features/jp/cust_features.xml
 mi_ext/product/etc/cust_features/kr/cust_features.xml
 mi_ext/product/etc/cust_features/kz/cust_features.xml
 mi_ext/product/etc/cust_features/mx/cust_features.xml
@@ -70,11 +73,13 @@ mi_ext/product/etc/cust_features/tw/cust_features.xml
 mi_ext/product/etc/cust_features/za/cust_features.xml
 mi_ext/product/etc/cust_features/cust_features.xml
 mi_ext/product/etc/cust_features/cust_sim_features.xml
+mi_ext/product/etc/cust_features/device_features.xml
 mi_ext/product/etc/permissions/AndroidSystemIntelligence-privapp-permissions-gms-international-product.xml
 mi_ext/product/etc/permissions/GoogleDialer-privapp-permissions-gms-international-product.xml
 mi_ext/product/etc/permissions/Messages-privapp-permissions-gms-international-product.xml
 mi_ext/product/etc/permissions/PrivateComputeServices-privapp-permissions-gms-international-product.xml
 mi_ext/product/etc/permissions/com.google.android.dialer.support.xml
+mi_ext/product/etc/permissions/privapp-permissions-gms-searchselector.xml
 mi_ext/product/etc/permissions/privapp-permissions-miext.xml
 mi_ext/product/etc/permissions/privapp-permissions-product-miext.xml
 mi_ext/product/etc/permissions/signature-permissions-mx_virtualsim.xml
@@ -82,6 +87,7 @@ mi_ext/product/etc/permissions/system_launcher_private_permission.xml
 mi_ext/product/etc/sysconfig/asi_features.xml
 mi_ext/product/etc/sysconfig/cross_device_services.xml
 mi_ext/product/etc/sysconfig/gemini_shell.xml
+mi_ext/product/etc/sysconfig/jp_choice_screen.xml
 mi_ext/product/etc/ecc_list.xml
 mi_ext/product/etc/miext_removable_apk_info.xml
 mi_ext/product/etc/vendor_miui.xml
@@ -96,6 +102,7 @@ mi_ext/product/opcust/TG/sv/cust_features.xml
 mi_ext/product/opcust/TG/cust_features.xml
 mi_ext/product/overlay/GmsConfigOverlayASI_Features.apk
 mi_ext/product/overlay/GmsConfigOverlayComms.apk
+mi_ext/product/overlay/GmsConfigOverlaySearchSelector.apk
 mi_ext/product/overlay/GmsTelecommOverlay.apk
 mi_ext/product/overlay/GmsTelephonyOverlay.apk
 mi_ext/product/overlay/MiuiStkResOverlay.apk
@@ -115,6 +122,7 @@ mi_ext/product/priv-app/MIUIYellowPageGlobal/MIUIYellowPageGlobal.apk
 mi_ext/product/priv-app/Messages_arm64_xxhdpi/Messages_arm64_xxhdpi.apk
 mi_ext/product/priv-app/MiuiMmsGlobal/MiuiMmsGlobal.apk
 mi_ext/product/priv-app/PrivateComputeServices_arm64/PrivateComputeServices_arm64.apk
+mi_ext/product/priv-app/SearchSelector/SearchSelector.apk
 mi_ext/product/usr/share/ime/google/d3_lms/mozc.data
 mi_ext/system/etc/permissions/privapp-permissions-system-miext.xml
 mi_ext/system/etc/permissions/signature-permission-miext.xml
@@ -1067,8 +1075,6 @@ product/app/MIUITouchAssistantGlobal/MIUITouchAssistantGlobal.apk
 product/app/MIUIXiaomiAccountGlobal/oat/arm64/MIUIXiaomiAccountGlobal.odex
 product/app/MIUIXiaomiAccountGlobal/oat/arm64/MIUIXiaomiAccountGlobal.vdex
 product/app/MIUIXiaomiAccountGlobal/MIUIXiaomiAccountGlobal.apk
-product/app/MSA-Global/oat/arm64/MSA-Global.odex
-product/app/MSA-Global/oat/arm64/MSA-Global.vdex
 product/app/MSA-Global/MSA-Global.apk
 product/app/Maps/Maps.apk
 product/app/MediaViewerGlobal/oat/arm64/MediaViewerGlobal.odex
@@ -1136,13 +1142,13 @@ product/app/messaging/oat/arm64/messaging.odex
 product/app/messaging/oat/arm64/messaging.vdex
 product/app/messaging/messaging.apk
 product/app/talkback/talkback.apk
+product/data-app/MIMediaEditorGlobal/MIMediaEditorGlobal.apk
 product/data-app/MIUICalculatorGlobal/MIUICalculatorGlobal.apk
 product/data-app/MIUIDeskClockGlobal/MIUIDeskClockGlobal.apk
 product/data-app/MIUINotes/MIUINotes.apk
 product/data-app/MIUIScreenRecorder/MIUIScreenRecorder.apk
 product/data-app/MIUIWeatherGlobal/MIUIWeatherGlobal.apk
 product/data-app/MiGalleryLockScreenGlobalOs3/MiGalleryLockScreenGlobalOs3.apk
-product/data-app/MiMediaEditor/MiMediaEditor.apk
 product/etc/aconfig/flag.info
 product/etc/aconfig/flag.map
 product/etc/aconfig/flag.val

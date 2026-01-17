@@ -1,0 +1,3 @@
+on property:ro.vendor.miface.started=true
+    start odm.miface
+    start vendor.miface

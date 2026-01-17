@@ -55,7 +55,6 @@
     <spn numeric="502142,502147,50217" alpha="MY MAXIS" short="MY MAXIS" />
     <spn numeric="50213,502145,502148" alpha="MY CELCOM" short="MY CELCOM" />
     <spn numeric="502153" alpha="unifi" short="unifi" />
-    <spn numeric="502152" alpha="YES FT5G" short="YES FT5G" />
 
     <!-- Providers in Indonesia -->
     <spn numeric="51011" alpha="XL" short="XL" />
@@ -138,7 +137,6 @@
     <spn numeric="42402" alpha="e&amp;" short="e&amp;" />
     <spn numeric="45005" alpha="SKT" short="SKT" />
     <spn numeric="45006" alpha="LG U+" short="LG U+" />
-    <spn numeric="60203" alpha="e&amp;" short="e&amp;" />
 
     <!-- KDDI -->
     <spn numeric="44007,44008,44050,44051,44052,44053,44054,44055,44056,44070,44071,44072,44073,44074,44075,44076,44077,44078,44079,44088,44089,44170" alpha="au" short="au" />

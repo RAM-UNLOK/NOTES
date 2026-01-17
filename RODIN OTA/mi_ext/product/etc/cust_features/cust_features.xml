@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cust_features>
     <cust_feature>
+        <bool name="settings_is_need_remove_art_from_model_name">true</bool>
+        <bool name="gnss_enhance_interface_version2">true</bool>
         <bool name="config_greezer_global_net_enable">true</bool>
         <bool name="config_greezer_launchMode_global_enable">true</bool>
         <bool name="config_greezer_dfs_monitor_enable">true</bool>
@@ -38,6 +40,36 @@
             <item>com.baidu.tieba.qrcode.activity.QRCodeScanActivity</item>
             <item>com.baidu.tieba.sdkcode.scan.ScanActivity</item>
         </string-array>
+        <string-array name="is_always_set_nitz_name_mtk">
+            <item>62124</item>
+            <item>41406</item>
+            <item>405840</item>
+            <item>405854</item>
+            <item>405855</item>
+            <item>405856</item>
+            <item>405857</item>
+            <item>405858</item>
+            <item>405859</item>
+            <item>405860</item>
+            <item>405861</item>
+            <item>405862</item>
+            <item>405863</item>
+            <item>405864</item>
+            <item>405865</item>
+            <item>405866</item>
+            <item>405867</item>
+            <item>405868</item>
+            <item>405869</item>
+            <item>405870</item>
+            <item>405871</item>
+            <item>405872</item>
+            <item>405873</item>
+            <item>405874</item>
+            <item>50212</item>
+            <item>62120</item>
+            <item>71610</item>
+            <item>502152</item>
+        </string-array>
         <string-array name="sar_scan_code_white_list">
             <item>com.xiaomi.scanner</item>
             <item>com.tencent.mm</item>
@@ -68,35 +100,6 @@
             <item>-123</item>
             <item>-121</item>
         </integer-array>
-        <string-array name="is_always_set_nitz_name_mtk">
-            <item>62124</item>
-            <item>41406</item>
-            <item>405840</item>
-            <item>405854</item>
-            <item>405855</item>
-            <item>405856</item>
-            <item>405857</item>
-            <item>405858</item>
-            <item>405859</item>
-            <item>405860</item>
-            <item>405861</item>
-            <item>405862</item>
-            <item>405863</item>
-            <item>405864</item>
-            <item>405865</item>
-            <item>405866</item>
-            <item>405867</item>
-            <item>405868</item>
-            <item>405869</item>
-            <item>405870</item>
-            <item>405871</item>
-            <item>405872</item>
-            <item>405873</item>
-            <item>405874</item>
-            <item>50212</item>
-            <item>62120</item>
-            <item>71610</item>
-        </string-array>
         <string-array name="sns_hdr_opt_white_list_for_c6c7">
             <item>com.autonavi.minimap</item>
             <item>com.tencent.tmgp.sgame</item>

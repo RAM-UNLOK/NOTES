@@ -90,6 +90,7 @@
         <bool name="always_enable_data_roaming">true</bool>
     </cust_feature>
     <cust_feature mcc="730">
+        <integer name="config_status_bar_vowifi_drawable_type">2</integer>
         <integer name="config_status_bar_volte_drawable_type">1</integer>
     </cust_feature>
     <cust_feature mcc="456">
@@ -544,6 +545,10 @@
         </map>
     </cust_feature>
     <cust_feature mcc="420" mnc="01">
+        <string-array name="preferred_network_type_list">
+            <item>32,preferred_network_type_pref_entries_5g_preferred</item>
+            <item>20,preferred_network_type_pref_entries_4g_preferred</item>
+        </string-array>
         <string name="spn_override_name">STC</string>
     </cust_feature>
     <cust_feature mcc="419" mnc="02">
@@ -589,6 +594,7 @@
         <string name="spn_override_name">Ucom AM</string>
     </cust_feature>
     <cust_feature mcc="602" mnc="03">
+        <bool name="always_show_plmn">true</bool>
         <string name="spn_override_name">Etisalat</string>
     </cust_feature>
     <cust_feature mcc="466" mnc="05">
@@ -1233,7 +1239,7 @@
         <bool name="config_status_bar_show_mobile_type_in_mms">true</bool>
     </cust_feature>
     <cust_feature mcc="502" mnc="152">
-        <string name="spn_override_name">YES FT5G</string>
+        <bool name="is_only_show_plmn">true</bool>
         <bool name="support_lte_and_above_only">true</bool>
         <bool name="remove_network_mode_non_fiveg_device">true</bool>
     </cust_feature>
@@ -4606,9 +4612,6 @@
     </cust_feature>
     <cust_feature mcc="405" mnc="25">
         <string name="spn_override_name">TATA DOCOMO</string>
-    </cust_feature>
-    <cust_feature mcc="730">
-        <integer name="config_status_bar_vowifi_drawable_type">2</integer>
     </cust_feature>
     <cust_feature mcc="642" mnc="03">
         <string name="spn_override_name">ONATEL BDI</string>

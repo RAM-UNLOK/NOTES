@@ -1,0 +1,6 @@
+#MIUI MOD: NFC_MIUINFCFrame
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nqnfc-service.nxp
+    class hal
+    user nfc
+    group nfc oem_2912
+#END NFC_MIUINFCFrame
