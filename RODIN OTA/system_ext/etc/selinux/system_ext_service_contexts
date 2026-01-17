@@ -225,6 +225,7 @@ vendor.trustonic.teeregistryservice.ITeeRegistryService u:object_r:teeregistry_s
 vendor.trustonic.teeservice.ITeeService                 u:object_r:tee_service:s0
 payjoy_access_service                     u:object_r:payjoy_access_service:s0
 miguardca_access_service  u:object_r:miguardca_access_service:s0
+ese_update_mgmt                                u:object_r:ese_updatemgmt_service:s0
 xiaomi.system.hypsys.common.IHypSysSsi/default       u:object_r:hypsys_ssi_service:s0
 xiaomi.system.hypsys.common.IHypSysSsiIntl/default       u:object_r:hypsys_ssi_service:s0
 xm.radio.extphone                                        u:object_r:radio_service:s0

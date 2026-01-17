@@ -25061,9 +25061,12 @@
 (allow profman privapp_data_file (file (read write getattr lock map)))
 (allow profman app_data_file (dir (read getattr search)))
 (allow profman privapp_data_file (dir (read getattr search)))
+(allow profman init_tmpfs (file (read getattr map open)))
+(allow profman tmpfs (file (read getattr map open)))
+(allow profman tmpfs (dir (read getattr map open)))
 (allow profman device_config_runtime_native_prop (file (read getattr map open)))
 (allow profman device_config_runtime_native_boot_prop (file (read getattr map open)))
-;;* lmx 48 system/sepolicy/private/profman.te
+;;* lmx 55 system/sepolicy/private/profman.te
 
 (neverallow profman app_data_file_type (file (open)))
 (neverallow profman app_data_file_type (lnk_file (open)))

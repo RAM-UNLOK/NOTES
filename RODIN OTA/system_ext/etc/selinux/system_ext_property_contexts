@@ -838,6 +838,9 @@ persist.vendor.camera.IsStreetModeSupported u:object_r:camera_config_prop:s0 exa
 #MIUI ADD: FaceCenter
 persist.vendor.camera.facetracker.support  u:object_r:camera_config_prop:s0 exact int
 #END FaceCenter
+
+#audio CID
+vendor.audio.usb_cctoggle                  u:object_r:audio_prop:s0 exact string
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 
 #line 1 "vendor/xiaomi/proprietary/misys/hypsys/hypsys_ssi/aidl/common/default/sepolicy/private/common/modules_policy/property_contexts"
