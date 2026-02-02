@@ -32,7 +32,7 @@ wait
 
 echo ""
 echo "Installing Essential Build Tools..."
-sudo apt-get install -y bc bison build-essential ccache curl flex git \
+sudo apt-get install -y bc bison build-essential ccache curl flex git git-core \
 g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev \
 lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev
 wait
