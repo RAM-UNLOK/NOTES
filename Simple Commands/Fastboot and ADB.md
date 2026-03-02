@@ -784,6 +784,11 @@ Writes a backup image back to the partition (requires root, very dangerous if us
 
 ***
 
+adb logcat > live_boot_debug.txt
+
+grep "mi_thermald" live_boot_debug.txt > errors_only.log
+
+
 ## ⚠️ Important Notes
 
 - **For Windows-specific commands:** Always replace `USERNAME` with your actual Windows username in file paths.
