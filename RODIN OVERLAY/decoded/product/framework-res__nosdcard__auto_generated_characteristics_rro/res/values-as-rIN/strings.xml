@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">এপটোক আপোনাৰ আভ্যন্তৰীণ সংগ্ৰহণৰ সমলসমূহ পঢ়িবলৈ অনুমতি দিয়ে।</string>
+    <string name="permdesc_sdcardWrite">এপটোক আভ্যন্তৰীণ সংগ্ৰহণত লিখিবলৈ অনুমতি দিয়ে।</string>
+    <string name="permlab_sdcardRead">আপোনাৰ আভ্যন্তৰীণ সংগ্ৰহণৰ সমলসমূহ পঢ়ে</string>
+    <string name="permlab_sdcardWrite">আভ্যন্তৰীণ সংগ্ৰহণত লিখক/বিলোপ কৰক</string>
+    <string name="progress_erasing">ইউএছবি সংগ্ৰহণ মচি আছে…</string>
+</resources>

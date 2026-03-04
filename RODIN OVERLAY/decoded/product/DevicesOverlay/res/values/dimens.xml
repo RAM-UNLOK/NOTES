@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cut_out_center_y">58.94699px</dimen>
+    <dimen name="rounded_corner_content_padding">69.0px</dimen>
+</resources>

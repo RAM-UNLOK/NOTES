@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/miuix_theme_dialog_negative_radius" />
+    <solid android:color="@color/miuix_color_blue_primary_default" />
+</shape>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">Հավելվածին թույլ է տալիս կարդալ ձեր USB կրիչի պարունակությունը:</string>
+    <string name="permdesc_sdcardWrite">Թույլ է տալիս հավելվածին գրել USB կրիչի վրա:</string>
+    <string name="permlab_sdcardRead">կարդալ ձեր USB կրիչի պարունակությունը</string>
+    <string name="permlab_sdcardWrite">փոփոխել կամ ջնջել ձեր USB կրիչի բովանդակությունը</string>
+    <string name="progress_erasing">Ջնջում է USB կրիչը...</string>
+</resources>

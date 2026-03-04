@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: QdNajunB2nldIz8Ql4LuB8HS4WolMh4OjYD5dUbdDFU=
+
+Name: assets/CarrierRestrictionOperatorDetails.json
+SHA-256-Digest: M+hg/++M/UkrsFrZE0AFqk2WMXq/nUqZiYtT4MpRTYc=
+
+Name: assets/eri.xml
+SHA-256-Digest: CDBR0lSMezb49RDRjq7Wo5lZj+NEhqRs5QII1LwlkbQ=
+
+Name: assets/eri_310120.xml
+SHA-256-Digest: k1qXTG0HSYJVpgdAkplKWnyWlTyePgIsyOkYzqFfPhA=
+
+Name: assets/eri_311220.xml
+SHA-256-Digest: DES0S/7q2Z7dsVk/Qrtnhh9ZLWCZUWCVSSHW6eW0gTg=
+
+Name: assets/eri_311480.xml
+SHA-256-Digest: cFVWymq6Q9Xa0gvuAQ5xP2VyDijmiykdr6BAvNGOG0k=
+
+Name: assets/eri_311480_BA01450000000000.xml
+SHA-256-Digest: XiwCiFYFue/kJdHi1fN4LDVmkXlVoflww7jSsid4IY0=
+
+Name: assets/eri_311490.xml
+SHA-256-Digest: 0EOzqEFk47rapURUskxbHcC0hiXcAyhnZAdK7Lf8bJ8=
+
+Name: assets/eri_311870.xml
+SHA-256-Digest: ky+5GyxT6zXaK4iLXm9TX8Susxf0vfayfGjWRGRXnoA=
+
+Name: assets/google_us_san_mtv_sat_s2.dat
+SHA-256-Digest: jp2ywMzmowfiYoCqyhO9jaUpGLw+k6Oj+5PsIl6VWuo=
+
+Name: assets/google_us_san_sat_s2.dat
+SHA-256-Digest: sD0pxT+TZmhpIcLRWsAitMww00z71QEQzHC/taaFsnw=
+
+Name: assets/satellite_access_config.json
+SHA-256-Digest: m1nI9dfOxKrubF8xbrFOmkQsL/ZLq51qtMuf4ml0yL8=
+
+Name: resources.arsc
+SHA-256-Digest: H6PLKRKFNI7BszyF5zF9mJRncH9HkcTlMC8tMS0eGMg=
+

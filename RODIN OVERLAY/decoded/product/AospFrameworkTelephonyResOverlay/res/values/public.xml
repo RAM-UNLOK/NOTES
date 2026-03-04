@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="config_operatorConsideredNonRoaming" id="0x7f010000" />
+    <public type="array" name="config_telephonyEuiccDeviceCapabilities" id="0x7f010001" />
+    <public type="array" name="non_removable_euicc_slots" id="0x7f010002" />
+    <public type="array" name="wfcSpnFormats" id="0x7f010003" />
+    <public type="bool" name="config_dontPreferApn" id="0x7f020000" />
+    <public type="bool" name="config_pdp_reject_enable_retry" id="0x7f020001" />
+    <public type="bool" name="config_sms_decode_gsm_8bit_data" id="0x7f020002" />
+    <public type="integer" name="config_mobile_mtu" id="0x7f030000" />
+    <public type="integer" name="config_pdp_reject_retry_delay_ms" id="0x7f030001" />
+    <public type="string" name="config_pdp_reject_dialog_title" id="0x7f040000" />
+    <public type="string" name="config_pdp_reject_multi_conn_to_same_pdn_not_allowed" id="0x7f040001" />
+    <public type="string" name="config_pdp_reject_service_not_subscribed" id="0x7f040002" />
+    <public type="string" name="config_pdp_reject_user_authentication_failed" id="0x7f040003" />
+</resources>

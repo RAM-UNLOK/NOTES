@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: sG08vJM+t//5RACxu6KA5ATJK3faDw7MXRNeZAeAxzI=
+
+Name: res/drawable-nxhdpi-v4/default_wallpaper.jpg
+SHA-256-Digest: vhDivaG5VA3s6GITZbKdOfbxh+swDa3ycYm5jBI3W0s=
+
+Name: res/drawable-xhdpi-v4/default_wallpaper.jpg
+SHA-256-Digest: vhDivaG5VA3s6GITZbKdOfbxh+swDa3ycYm5jBI3W0s=
+
+Name: res/drawable-xxhdpi-v4/default_wallpaper.jpg
+SHA-256-Digest: vhDivaG5VA3s6GITZbKdOfbxh+swDa3ycYm5jBI3W0s=
+
+Name: res/drawable-xxxhdpi-v4/default_wallpaper.jpg
+SHA-256-Digest: vhDivaG5VA3s6GITZbKdOfbxh+swDa3ycYm5jBI3W0s=
+
+Name: resources.arsc
+SHA-256-Digest: mur4l07EwFcH0vDdqRaTltTrbmPndZ87tASokVqMHLs=
+

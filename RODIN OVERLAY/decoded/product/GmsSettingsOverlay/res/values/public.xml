@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="config_preinstalled_display_services" id="0x7f010000" />
+    <public type="array" name="config_preinstalled_interaction_control_services" id="0x7f010001" />
+    <public type="array" name="config_settings_slices_accessibility_components" id="0x7f010002" />
+    <public type="string" name="config_emergency_intent_action" id="0x7f020000" />
+    <public type="string" name="config_emergency_package_name" id="0x7f020001" />
+    <public type="string" name="emergency_gesture_settings_package" id="0x7f020002" />
+</resources>

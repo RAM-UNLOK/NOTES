@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="UpsideDownCake" package="com.xiaomi.android.overlay.rodinin" platformBuildVersionCode="34" platformBuildVersionName="UpsideDownCake">
+    <application android:extractNativeLibs="false" android:hasCode="false"/>
+    <overlay android:isStatic="true" android:priority="15000" android:requiredSystemPropertyName="ro.miui.build.region" android:requiredSystemPropertyValue="in" android:targetPackage="android"/>
+</manifest>

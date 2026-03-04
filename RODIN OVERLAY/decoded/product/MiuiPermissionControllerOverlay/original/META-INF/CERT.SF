@@ -1,0 +1,45 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: yt9ovz5qmbtAaM0/A8vVtbqnso/+mbq562SIC4ecicg=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: mR/rvwhR5GZBzFNnwSUqLVyQXIJ93xi4YTUi3JaNZpY=
+
+Name: res/drawable/miuix_btn_bg_normal.xml
+SHA-256-Digest: CQQH+AcObJ/4wtOLyXTD6TUi7iRhS2b9CN4CcARQr3E=
+
+Name: res/drawable/miuix_btn_bg_normal_pressed.xml
+SHA-256-Digest: rCw4ymgcufZebpJ3EjP5Ag7B8Xey0fDK722GT6YH6Q4=
+
+Name: res/drawable/miuix_btn_bg_normal_selector.xml
+SHA-256-Digest: /9V4/qwD2r5pz6otuFfYwXvHBXk+oQ9wFSHeRsz2vXw=
+
+Name: res/drawable/miuix_btn_bg_suggest.xml
+SHA-256-Digest: RfBdC/H0Xa+gzHr1djSUjqiq3ZcUI5WnwLwd1zppZxQ=
+
+Name: res/drawable/miuix_btn_bg_suggest_pressed.xml
+SHA-256-Digest: T9zwQQX3GuvLzvL1y9rg1WU3x6lj6pJwNtLQFgmmHE0=
+
+Name: res/drawable/miuix_btn_bg_suggest_selector.xml
+SHA-256-Digest: GtsrYxEcgRxonUTBPENMrmYLbtPzjen/NQ0BZkYiE58=
+
+Name: res/drawable/miuix_grant_dialog_permission_rationale_background.
+ xml
+SHA-256-Digest: Zb8dMPcTWQLsM3Ho2y7B93ugNSQ9svlrrLtnO7vIRkI=
+
+Name: res/drawable/miuix_list_divider.xml
+SHA-256-Digest: m1ys9hKNypI9xtTdfoR4I2BWQolFyyqAuvH2/Px1bIw=
+
+Name: res/drawable/miuix_per_dialog_bg.xml
+SHA-256-Digest: kaM0LjUiNOjRe6ORfLAlm/kN7AfcfCng8LVkB6ue23Q=
+
+Name: res/drawable/miuix_per_dialog_icon_bg.xml
+SHA-256-Digest: alWUo4Fd5bqC1ICVfvPbVqfdZhqAPpDXT1jZWdLB8O8=
+
+Name: res/xml/overlays.xml
+SHA-256-Digest: sP6k244LhH5iO3F6d0MmdiO3+T+JnWaoeYPnSnWFmuQ=
+
+Name: resources.arsc
+SHA-256-Digest: GPVIug0Xvu5L4op9T4jmMGtrLCOtQ0V5Wtr6r+psWnU=
+

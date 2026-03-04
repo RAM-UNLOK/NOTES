@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: fdVkZNPBTWJlNon6Vr2cxQsLEa4U1sT+mkj25YBqPLI=
+
+Name: res/drawable/miuix_btn_bg_normal.xml
+SHA-256-Digest: dSEMFg/G7ZpECcigSJfUpj+X8Xgi4tWTwurv00a74y4=
+
+Name: res/drawable/miuix_btn_bg_normal_pressed.xml
+SHA-256-Digest: GLYaS+ZXo4Ugk1p2xqzHqenu5GAQuDu6Ft8XNUYR0nA=
+
+Name: res/drawable/miuix_btn_bg_normal_selector.xml
+SHA-256-Digest: OmtMQycZl2mT7GG+CuegEww160MwuwqxPamBTQOPji8=
+
+Name: res/drawable/miuix_btn_bg_suggest.xml
+SHA-256-Digest: sGzC/M7rJ9oLoleeVhle0cnPCdM7lycGacSsnRJ60JI=
+
+Name: res/drawable/miuix_btn_bg_suggest_pressed.xml
+SHA-256-Digest: a1lEWgcB1YrulWLIHuLCvfHr4JekKeUzZ//mt7VjL1Q=
+
+Name: res/drawable/miuix_btn_bg_suggest_selector.xml
+SHA-256-Digest: kJAnbdA4AIHyCj2ThnORCK9GODwoW9XOf07EvvZboMM=
+
+Name: res/drawable/miuix_grant_dialog_permission_rationale_background.
+ xml
+SHA-256-Digest: 0Eg35WM7PHQnVX4O4sy1Ub2G6DxbHtdS7L34CQWAW8M=
+
+Name: res/drawable/miuix_list_divider.xml
+SHA-256-Digest: 1J9uyWitmM4GcCFT2Ey/5GATx8enqwq5RchQl95qC0k=
+
+Name: res/drawable/miuix_per_dialog_bg.xml
+SHA-256-Digest: rBwsfVrGGeukUZVElrrCO5+pagwavpfeg4kaKjRUIk8=
+
+Name: res/drawable/miuix_per_dialog_icon_bg.xml
+SHA-256-Digest: kETxlTQpWxLajuCj9+Vj7K67NpX9/hy+EnztWq4R4Tw=
+
+Name: res/xml/overlays.xml
+SHA-256-Digest: rFqenmQQZPVSaZuJFWjkjIr79s9v1TfveCqGPpnkXpE=
+
+Name: resources.arsc
+SHA-256-Digest: ZqM9fHwbo0K1DqtFhCbvkYl4KxfMLRE63DJ3S6WrGJw=
+

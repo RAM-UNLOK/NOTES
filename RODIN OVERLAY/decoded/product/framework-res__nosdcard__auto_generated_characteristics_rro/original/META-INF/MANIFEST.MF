@@ -1,0 +1,68 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: lHwlXaN6o+CmS885oAcJGQ7PRmwXKjuyWx5Lxf6H90E=
+
+Name: assets/geoid_map/README.md
+SHA-256-Digest: 52JNzfdTWDq/GNan9tSmfcEQ3PwJiDoNVYbimaHMF3o=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-1.pb
+SHA-256-Digest: b3eMzrcSGmjjsTkzg7xj1EzckSTaldRuMBBidp9xs1M=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-3.pb
+SHA-256-Digest: WPSfs6pcfUhakDGCRe7k+UwIGYbl/P+GDgG+ArkSoWM=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-5.pb
+SHA-256-Digest: dtgZa2gIPyJ4mwox0GuGzQNqHYX3ZboZ2OPAzegjBF0=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-7.pb
+SHA-256-Digest: Hv7/wPsRZJKOtalR79TympfBoMWhbOfCjiy/O3HlBpQ=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-9.pb
+SHA-256-Digest: kQuSFuUwKHQky/DBjdLGQg983UjeWOYyz2x4U8NXlI8=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-b.pb
+SHA-256-Digest: nXajvHIj/wm6f9VlxXK2qeINEOM3dPs9nypSez+Fn7o=
+
+Name: assets/geoid_map/expiration-distance-params.pb
+SHA-256-Digest: X/5uT0bdl/NTqFGfmsYjCDb2g/40usjN2ex7BKfVkx8=
+
+Name: assets/geoid_map/geoid-height-disk-tile-1.pb
+SHA-256-Digest: 6YN84nlLmoOtQmfHRRJCX+SAsqSUNGHOCciz+vPBec0=
+
+Name: assets/geoid_map/geoid-height-disk-tile-3.pb
+SHA-256-Digest: FF+GIiDQ9Xsp8/wbtvItmCsJEJG7kGj+vWy+d+ybfDM=
+
+Name: assets/geoid_map/geoid-height-disk-tile-5.pb
+SHA-256-Digest: Gd5pcb4kaYblxprP0NUw20DGzJHKBVos7/JK+l6WhG8=
+
+Name: assets/geoid_map/geoid-height-disk-tile-7.pb
+SHA-256-Digest: 7kiM5QuL9TyD2QC+0p71WPsztQlWbLwPKFX058iDLMY=
+
+Name: assets/geoid_map/geoid-height-disk-tile-9.pb
+SHA-256-Digest: UjfKsATki9QsH6y7lJFJDkfqniTyph5ftsbaYJgHHzQ=
+
+Name: assets/geoid_map/geoid-height-disk-tile-b.pb
+SHA-256-Digest: c8EZXmi5NSgk9895mH2JGKbTYt6v4JQjcjNLMYFLbrc=
+
+Name: assets/geoid_map/geoid-height-params.pb
+SHA-256-Digest: HlAvR8TRb2HL2/DDCr9MWGbBIZ1xMa/uUmtQSYa6yW0=
+
+Name: assets/images/android-logo-mask.png
+SHA-256-Digest: yNZGcDMe1mqbubnbxeRliE9h+6pgfwqNksnkqZy45SQ=
+
+Name: assets/images/android-logo-shine.png
+SHA-256-Digest: TcAAmprjLavEtZvcBGgAaEaBYYeKykqYMGyDCOmfJ7s=
+
+Name: assets/images/clock_font.png
+SHA-256-Digest: GS6fvVdWMvvGwymE2nioYKqTQ9VDkZnNjljWQYxW2nY=
+
+Name: assets/images/progress_font.png
+SHA-256-Digest: DRfDlWXvshbAppS9QnDH3wXG2tGF08YmVQzANNL3oec=
+
+Name: assets/webkit/android-weberror.png
+SHA-256-Digest: lwqYehYXhFCOlDaRInmSACTYePYvDRTY4faHP/Ah9to=
+
+Name: resources.arsc
+SHA-256-Digest: rPk7wubysYdpUwoalDLLkdkk1WCJ4ZTq7wiSr0tSaGM=
+

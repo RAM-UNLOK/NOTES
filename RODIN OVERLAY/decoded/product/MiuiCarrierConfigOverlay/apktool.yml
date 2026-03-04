@@ -1,0 +1,15 @@
+version: 2.12.1
+apkFileName: MiuiCarrierConfigOverlay.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 36
+  targetSdkVersion: 36
+packageInfo:
+  forcedPackageId: 127
+versionInfo:
+  versionCode: 36
+  versionName: 16
+doNotCompress:
+- arsc

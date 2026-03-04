@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_allow_fast_rate_time">3000</integer>
+    <integer name="config_backlightBit">14</integer>
+    <integer name="def_screen_mode_type">2</integer>
+</resources>

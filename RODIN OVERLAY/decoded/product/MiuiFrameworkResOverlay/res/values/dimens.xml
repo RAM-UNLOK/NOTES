@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="config_GammaLinearConvertAValue">0.21459933</item>
+    <item type="dimen" name="config_GammaLinearConvertBValue">0.28466892</item>
+    <item type="dimen" name="config_GammaLinearConvertCValue">0.4718929</item>
+    <item type="dimen" name="config_GammaLinearConvertRValue">0.4</item>
+    <item type="dimen" name="config_max_hbm_brightness_for_peak">0.99993896</item>
+    <item type="dimen" name="config_max_manual_brt_boost">0.6999145</item>
+</resources>

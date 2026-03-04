@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">Omogućava aplikaciji čitanje sadržaja USB pohrane.</string>
+    <string name="permdesc_sdcardWrite">Dozvoljava pisanje na USB pohranu.</string>
+    <string name="permlab_sdcardRead">čitanje sadržaja USB pohrane</string>
+    <string name="permlab_sdcardWrite">mijenjanje ili brisanje sadržaja USB pohrane</string>
+    <string name="progress_erasing">Brisanje USB pohrane...</string>
+</resources>

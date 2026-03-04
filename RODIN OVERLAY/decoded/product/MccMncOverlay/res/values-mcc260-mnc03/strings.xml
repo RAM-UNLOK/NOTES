@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="quick_settings_vowifi_label">WiFi Calling</string>
+    <string name="quick_settings_vowifi_sim1_label">WiFi Calling SIM1</string>
+    <string name="quick_settings_vowifi_sim2_label">WiFi Calling SIM2</string>
+</resources>

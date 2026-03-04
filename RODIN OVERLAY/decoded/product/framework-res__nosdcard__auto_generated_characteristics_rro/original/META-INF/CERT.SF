@@ -1,0 +1,71 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: Y7aFzj/dTqoNb8Xe7aBp3gDFYL15wsGZjH4TbShWLv0=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: NYWS+FkZxTeBOG3FzscACzQnyCmekVGIgHrciN5b99s=
+
+Name: assets/geoid_map/README.md
+SHA-256-Digest: b2bTmzTj5FJsTwiNz2+5RVj8NK7YoTDFqT9QtHp4X6o=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-1.pb
+SHA-256-Digest: ByP4pHtuDvLRPAJe+9pPV4ffTdn3GKbLIk/At/NloRA=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-3.pb
+SHA-256-Digest: 0B2F2bgccCoYvt4QoqsV8bI0HV8NZDrTQU0auUmPBtM=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-5.pb
+SHA-256-Digest: mpNDfnoB5OigvqdM5TudiY2clF3akfZ+8oa+NluPbOc=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-7.pb
+SHA-256-Digest: grF9UPkWQHMzVHp+SOCzPPEx7l8v42ZehN0q6CWDg48=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-9.pb
+SHA-256-Digest: DNKmE/KhLQU1qlj2eJPsbUTK9hbEoA2Zha71wJ6xzCs=
+
+Name: assets/geoid_map/expiration-distance-disk-tile-b.pb
+SHA-256-Digest: MA92tgDjQJCyYfViJMN25iYHLTpYTLmUCj5czdtm3E8=
+
+Name: assets/geoid_map/expiration-distance-params.pb
+SHA-256-Digest: TMMW7vZyQ4bIcvx9R+lkZafWP6tZXlH/KC87JbhxF+8=
+
+Name: assets/geoid_map/geoid-height-disk-tile-1.pb
+SHA-256-Digest: yyl6rAsoO6AhayKeCNb4ZzuiyM/1ERQNZOurMjWB9ZY=
+
+Name: assets/geoid_map/geoid-height-disk-tile-3.pb
+SHA-256-Digest: LgnLqBNuHBPNuK8sBCR8O7JqqG1f8U2ffBCtsf1jC/k=
+
+Name: assets/geoid_map/geoid-height-disk-tile-5.pb
+SHA-256-Digest: eq92Ya5StCl99W73dbJXJhrCwo4CQr0XxjBfnx9qAck=
+
+Name: assets/geoid_map/geoid-height-disk-tile-7.pb
+SHA-256-Digest: GwvK8pwbUzjNhA4kF5YZJbPOKwx2uhj6J4Pn9oBRS+8=
+
+Name: assets/geoid_map/geoid-height-disk-tile-9.pb
+SHA-256-Digest: hLXhzIimwRQ5fkqg8HtyTrisvvV2MT79aE4r5mjY7TY=
+
+Name: assets/geoid_map/geoid-height-disk-tile-b.pb
+SHA-256-Digest: i1BBHWh9eG57WhC3rRBzSWWpYK/IaJy/vO3u59A+RPA=
+
+Name: assets/geoid_map/geoid-height-params.pb
+SHA-256-Digest: jP/8mlKL/L4FWMQngFZ/mOHzx9cPJGEEBp8tYSaPvNw=
+
+Name: assets/images/android-logo-mask.png
+SHA-256-Digest: jlIa/T30boCewVpPaOFqlnwTmZq2mFbrKHDGq3Bk6NI=
+
+Name: assets/images/android-logo-shine.png
+SHA-256-Digest: DcslaCRCIj5M/OfGc9tcWSiQ6ptP+FCmJvDYx7ik3Js=
+
+Name: assets/images/clock_font.png
+SHA-256-Digest: rDSEbnns/i8av+I1u0L74Bd93aXt0blNqQN94tHBDdU=
+
+Name: assets/images/progress_font.png
+SHA-256-Digest: qxd4eDl7gwq/G/IYIrpTQIpZhZWkAdWFpFCVolW+EO4=
+
+Name: assets/webkit/android-weberror.png
+SHA-256-Digest: 9TzodkFuM8Qya3MFXTxHTd2IOI1yqywTO2n5xAmZCQU=
+
+Name: resources.arsc
+SHA-256-Digest: n5kBBxVxTK7doVdrSKfjO9UXqsMI9vkHC9CzN0cHPbE=
+

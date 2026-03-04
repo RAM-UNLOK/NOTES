@@ -1,0 +1,121 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: nblQWLnSXXxfgeLZYeyvG4lqFPbF2JNPWH37ne8AjbQ=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: tDtjuOaojU/bU2jWiB7Ia58xNB7T2MlxYlw/O7hmntQ=
+
+Name: res/drawable-night-nxhdpi-v8/credentials_image_24129rt7cc.png
+SHA-256-Digest: LapFixgka76gDiD+xMlKkiFiqUY52LEPv0fL7ieRTSk=
+
+Name: res/drawable-night-nxhdpi-v8/credentials_image_2412dpc0ag.png
+SHA-256-Digest: kprPxJpt+x9Tp9UHSn7w7ANoW4N5+pv+ur2aKgZ86EM=
+
+Name: res/drawable-night-nxhdpi-v8/credentials_image_2412dpc0ag_art.pn
+ g
+SHA-256-Digest: bFQDHAifUhymuxr2SCR8Gk2WMj13MFyjxAVEFhMQsY8=
+
+Name: res/drawable-night-nxhdpi-v8/credentials_image_2412dpc0ai_india_
+ 15.png
+SHA-256-Digest: JPGu++tZqC8K9HB5uzZMMLxYrr3pf6fj6eeRKgh4yx4=
+
+Name: res/drawable-night-v8/image_back_strap.webp
+SHA-256-Digest: LWEVIrWS8tWH88ggrQmZCE1Gqu2gZYUTWXNejAnOK0o=
+
+Name: res/drawable-night-xhdpi-v8/credentials_image_24129rt7cc.png
+SHA-256-Digest: bG2t8A16fLN9HsjMxtsPt6k39gZh2Xfzr7SpUutOijA=
+
+Name: res/drawable-night-xhdpi-v8/credentials_image_2412dpc0ag.png
+SHA-256-Digest: QwG3lJ+1kOL+G6WFv3mGriJ/r4KmaEGpTMENJGLYorA=
+
+Name: res/drawable-night-xhdpi-v8/credentials_image_2412dpc0ag_art.png
+SHA-256-Digest: HKn6Ynfui/j1KtBeDCww6D11DL4KjuIrOufXQzdaaY0=
+
+Name: res/drawable-night-xhdpi-v8/credentials_image_2412dpc0ai_india_1
+ 5.png
+SHA-256-Digest: WysWfRWgnwqv1IKxyGZBmuhKMg2C6YYZIThrdXPdhHo=
+
+Name: res/drawable-night-xxhdpi-v8/credentials_image_24129rt7cc.png
+SHA-256-Digest: O1UOmh+Q5iR1GO6XKusa7Nbcu4c81MDjJBTXpsU1FDA=
+
+Name: res/drawable-night-xxhdpi-v8/credentials_image_2412dpc0ag.png
+SHA-256-Digest: uvIc4XB20ZPIdA5EBum0A02qzxf4OWuHzANs1+Ix26k=
+
+Name: res/drawable-night-xxhdpi-v8/credentials_image_2412dpc0ag_art.pn
+ g
+SHA-256-Digest: yte//SEVKgy/26864Nk+KPWoLD8sCUh530R2piWd9xY=
+
+Name: res/drawable-night-xxhdpi-v8/credentials_image_2412dpc0ai_india_
+ 15.png
+SHA-256-Digest: cP4JR5pwxgIwtl1ZzXL59WVPlop1+MKGsKFO8Irg4H8=
+
+Name: res/drawable-night-xxxhdpi-v8/credentials_image_24129rt7cc.png
+SHA-256-Digest: Zhsxz3NKTEmIoNb8U72/tRxFBEZRrhX3jvbnG/BUGCY=
+
+Name: res/drawable-night-xxxhdpi-v8/credentials_image_2412dpc0ag.png
+SHA-256-Digest: EIAItYNWXGVu/KONz197Keydg8iso6QVcHsB8j1eJ9Y=
+
+Name: res/drawable-night-xxxhdpi-v8/credentials_image_2412dpc0ag_art.p
+ ng
+SHA-256-Digest: CrmG0TKNml/+nb3cFuvDBct4Fe2Aau/BLcf6dcRY9eo=
+
+Name: res/drawable-night-xxxhdpi-v8/credentials_image_2412dpc0ai_india
+ _15.png
+SHA-256-Digest: Er0y//MD6DVBNQ++of+bnJaTSav+ZNVOth0bm2jMIjw=
+
+Name: res/drawable-nxhdpi-v4/credentials_image_24129rt7cc.png
+SHA-256-Digest: qg4PODmNs/fDjAtjr0F8h6d1M03ov50GHkzMJ6CKOHw=
+
+Name: res/drawable-nxhdpi-v4/credentials_image_2412dpc0ag.png
+SHA-256-Digest: 6w2sC1mrAr8xkW5trYo4+YPJP4L6mRvDCU0i1tQqPzk=
+
+Name: res/drawable-nxhdpi-v4/credentials_image_2412dpc0ag_art.png
+SHA-256-Digest: hqyBcG0BGK2eH+Iy380Jh30tJw9xEuXNQEg0xUcmaYY=
+
+Name: res/drawable-nxhdpi-v4/credentials_image_2412dpc0ai_india_15.png
+SHA-256-Digest: 7wlFt2VVz21ahnm2zsN1AZUCtLhk7T3eGKMANArLjQk=
+
+Name: res/drawable-xhdpi-v4/credentials_image_24129rt7cc.png
+SHA-256-Digest: V57Aezu3ea7M2+mRW9HGY74pa9DVnz35/zpQEpK/3MM=
+
+Name: res/drawable-xhdpi-v4/credentials_image_2412dpc0ag.png
+SHA-256-Digest: kuKgvoN08joif/LhvnHiN3JLp4O2ZaLyzkyBhKSy+FA=
+
+Name: res/drawable-xhdpi-v4/credentials_image_2412dpc0ag_art.png
+SHA-256-Digest: Gg9dPv40IueiiIIOm6yuO6bZlJHxrEE/LmbXEHTiUrA=
+
+Name: res/drawable-xhdpi-v4/credentials_image_2412dpc0ai_india_15.png
+SHA-256-Digest: zzK3Te+cRofXl2LDcW9seeitp6qe45pL3wGHjdYzJWM=
+
+Name: res/drawable-xxhdpi-v4/credentials_image_24129rt7cc.png
+SHA-256-Digest: 3ZX3n+gNbE9MGxGg6e3HXwSqPC7Clw3uAVA1FVES1R4=
+
+Name: res/drawable-xxhdpi-v4/credentials_image_2412dpc0ag.png
+SHA-256-Digest: 3xS+kYtsUh43pdUjhxFGnXwhiADxqVymGl+y7flf3KI=
+
+Name: res/drawable-xxhdpi-v4/credentials_image_2412dpc0ag_art.png
+SHA-256-Digest: aMlWOSSRfGUbRZr8t4hc4nWyirEi4sESv5znfgJz43Y=
+
+Name: res/drawable-xxhdpi-v4/credentials_image_2412dpc0ai_india_15.png
+SHA-256-Digest: 7r/Fsl9nBJDW21YGYEbEHCCMuHD84TyX2iXuodyKClg=
+
+Name: res/drawable-xxxhdpi-v4/credentials_image_24129rt7cc.png
+SHA-256-Digest: KcN6CEL22et7vPrCdoirSmm2tpgiV1lT+/wvtdXYiOk=
+
+Name: res/drawable-xxxhdpi-v4/credentials_image_2412dpc0ag.png
+SHA-256-Digest: vWbRKsdQO2305Lsp74Zl+CJBTXfoA7X46npxNWje3v0=
+
+Name: res/drawable-xxxhdpi-v4/credentials_image_2412dpc0ag_art.png
+SHA-256-Digest: 6n8bMgTyjfTyhjcgLnQUHBCEfanCv9uXkUCQrYlwbNI=
+
+Name: res/drawable-xxxhdpi-v4/credentials_image_2412dpc0ai_india_15.pn
+ g
+SHA-256-Digest: zSlKqdQObRIiXjoQ3EYrouFYkjEaGQk3OneaQvHVxto=
+
+Name: res/drawable/image_back_strap.webp
+SHA-256-Digest: hamSS5844o7qjul8+QIS0nFcMorMBNPMXeq1a16YjKk=
+
+Name: resources.arsc
+SHA-256-Digest: Qj0AC798opqmtCpJVBD5arx17fnEFSv7gwm2C7uXBsw=
+

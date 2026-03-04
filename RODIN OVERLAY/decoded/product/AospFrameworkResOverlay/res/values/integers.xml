@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
+    <integer name="config_batterySaver_full_soundTriggerMode">0</integer>
+    <integer name="config_brightness_ramp_rate_fast">4932</integer>
+    <integer name="config_brightness_ramp_rate_slow">3946</integer>
+    <integer name="config_screenBrightnessDim_hyper">15</integer>
+    <integer name="config_screenBrightnessSettingDefault_hyper">1229</integer>
+    <integer name="config_screenBrightnessSettingMaximum_hyper">16383</integer>
+    <integer name="config_screenBrightnessSettingMinimum_hyper">15</integer>
+    <integer name="config_shutdownBatteryTemperature">580</integer>
+</resources>

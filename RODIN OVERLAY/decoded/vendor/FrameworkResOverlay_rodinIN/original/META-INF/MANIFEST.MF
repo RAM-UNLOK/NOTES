@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: sqowyTlIifrc1u8W+bjLwETgtgsfivzzwc9EPapueYE=
+
+Name: res/xml/power_profile.xml
+SHA-256-Digest: JEJYviM8KJioTDosaU5VSJdhptKo6F9cBkwfRPyHRHI=
+
+Name: resources.arsc
+SHA-256-Digest: iLiTXvG02i3bP7LXgoGXkt+HERBX2NvH6LYWVMh+mG8=
+

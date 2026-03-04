@@ -1,0 +1,26 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: 47egPH8DvByMbS9TAazPYjhM1KiYnuoif7VOm+VaQsQ=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: 9Ry641RklScO+Eiqmss1PFtquf110VOtoErYxpSUSQw=
+
+Name: res/mipmap-hdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: hjqFg6JY6O2ocCgvpy1hiRwzzAHt3zuCV3a0OFoIsXQ=
+
+Name: res/mipmap-mdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: jSD8LCaHc4iz/UXQAtcAz3szN+FHsmX8UDSsb95B7Rw=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: hNIwtenLmDOSWWguNu/ziNnykftTvvA5y/qamwCm5CM=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: hWkld+hzTbWZBmqqerKBFfThtalaaVXYtTX+fgc4jRw=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: ww4SA0OP9PYW2y7ujekidVd5piXZxMe24C8GxOvNdl4=
+
+Name: resources.arsc
+SHA-256-Digest: ANsuEOYbr4wlFhpxg+SE/dHPm7zMlk1Y/Sqzj3YxyWI=
+

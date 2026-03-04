@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MIUIPermissionGrantTitleIconMaterial3">
+        <item name="android:background">@drawable/miuix_per_dialog_icon_bg</item>
+        <item name="android:layout_width">32.0dip</item>
+        <item name="android:layout_height">32.0dip</item>
+        <item name="android:layout_marginBottom">14.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/miuix_color_icon</item>
+    </style>
+</resources>

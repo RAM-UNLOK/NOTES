@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" package="com.miui.phone.carriers.overlay.vodafone" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <application android:extractNativeLibs="false" android:hasCode="false" android:usesNonSdkApi="true"/>
+    <overlay android:isStatic="false" android:priority="1000" android:targetPackage="com.android.phone"/>
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usb_storage_error_message">使用USB存储设备作为USB大容量存储设备时出现问题。</string>
+    <string name="usb_storage_message">您已通过USB连接至计算机。如果您要在计算机与Android设备的USB存储设备之间复制文件，请按下面的按钮。</string>
+    <string name="usb_storage_stop_message">在关闭USB存储设备前，请从计算机中卸载（“弹出”）Android设备的USB存储设备。</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_5ga_3gpp_version">16</integer>
+    <integer name="config_real_time_optimization_bit_mask">62</integer>
+    <integer name="config_voice_link_supported_scenes">3</integer>
+</resources>

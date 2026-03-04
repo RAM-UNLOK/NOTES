@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: LTLSOEDh/U5es2QefeL6NZqWQYbVhZqFPS7wfMpavcA=
+
+Name: res/mipmap-hdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: g8fyJfx65dwpKQ5nLPVYDFJ21U5QRB8vyFAvhJMV8IQ=
+
+Name: res/mipmap-mdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: PB67dY/FzeHdsvc3QXEiuuOVRgg/Bnk3m/DVz2d0WDs=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: Frk3x6ED8navudFVY3LMg5/fmmaEHWAX+6gAIaOQjQU=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: /8/5V4YQLfK0BAffR+E9HQR9l9EGskq7k84wH9YXOn8=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher_phone.webp
+SHA-256-Digest: PEDS++ZvhTyVhkmz55p2YPSmuWrhirVu+RhewoA7w/s=
+
+Name: resources.arsc
+SHA-256-Digest: B5AF8y0Q/ivuzFiTOK4xlGrLtiogcDDbKG4KBBHEyX8=
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="data_type_name_mcc_key" id="0x7f010000" />
+    <public type="array" name="data_type_name_mcc_mnc_key" id="0x7f010001" />
+    <public type="array" name="data_type_name_mcc_mnc_value" id="0x7f010002" />
+    <public type="array" name="data_type_name_mcc_value" id="0x7f010003" />
+    <public type="array" name="status_bar_show_spn_by_gid_when_airplane" id="0x7f010004" />
+    <public type="bool" name="notification_default_carrier" id="0x7f020000" />
+    <public type="bool" name="show_carrier_in_status_bar_header" id="0x7f020001" />
+    <public type="bool" name="show_plmn_and_spn_in_carrier" id="0x7f020002" />
+    <public type="bool" name="show_volte_when_wifi_and_drip_end" id="0x7f020003" />
+    <public type="bool" name="show_vowifi_first_dialog" id="0x7f020004" />
+    <public type="bool" name="show_vowifi_qs" id="0x7f020005" />
+    <public type="bool" name="status_bar_hide_national_roaming" id="0x7f020006" />
+    <public type="bool" name="status_bar_hide_volte" id="0x7f020007" />
+    <public type="bool" name="status_bar_hide_vowifi_mcc_mnc" id="0x7f020008" />
+    <public type="bool" name="status_bar_show_mobile_type_in_mms" id="0x7f020009" />
+    <public type="bool" name="status_bar_show_mobile_type_when_wifi_on" id="0x7f02000a" />
+    <public type="bool" name="status_bar_show_special_5g_icon" id="0x7f02000b" />
+    <public type="bool" name="status_bar_show_spn_when_airplane" id="0x7f02000c" />
+    <public type="bool" name="status_bar_show_volte_when_satellite_enabled" id="0x7f02000d" />
+    <public type="bool" name="status_bar_support_5GA_display" id="0x7f02000e" />
+    <public type="integer" name="status_bar_volte_drawable_type" id="0x7f030000" />
+    <public type="integer" name="status_bar_vowifi_drawable_type" id="0x7f030001" />
+    <public type="string" name="quick_settings_vowifi_label" id="0x7f040000" />
+    <public type="string" name="quick_settings_vowifi_sim1_label" id="0x7f040001" />
+    <public type="string" name="quick_settings_vowifi_sim2_label" id="0x7f040002" />
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_disconnectedP2pIfaceLowPriorityTimeoutMs">0</integer>
+    <integer name="config_wifiDisableReasonAssociationRejectionThreshold">5</integer>
+    <integer name="config_wifiDisableReasonAuthenticationFailureThreshold">5</integer>
+    <integer name="config_wifiMaxNumWifiConfigurations">1000</integer>
+    <integer name="config_wifiPnoScanIntervalMultiplier">6</integer>
+</resources>

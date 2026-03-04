@@ -1,0 +1,74 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: W/AsYcsAQ/NIJDPJTimymJHUJF8o83mfAmuWM8cxVDQ=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: G9b0djLEPpQRDqmLSLG8F3edi/cRKer59RKW1ThLkBg=
+
+Name: assets/default/2g_and_3g_sunset.xml
+SHA-256-Digest: wsV+tJZgtBY6/Xj+7AOPD2NQ/h9d35RSnN4xPeIuWVU=
+
+Name: assets/default/default_mtk_v2.6.xml
+SHA-256-Digest: idgI6HpDzUQ73gp2Xu4GMMs4WpEGphZEdVFG9G/524U=
+
+Name: assets/default/default_mtk_v2.7.3.xml
+SHA-256-Digest: O0Xnd63i7YYwA8QqMYyGc8nfdHlhsvs6vyKoeSTaxIo=
+
+Name: assets/default/default_mtk_v2.8.4.xml
+SHA-256-Digest: BtEzLvGsSCZv9IObZnpu1httrP4dLlr5Ycw6oV/Cqhc=
+
+Name: assets/default/default_qcom_6150_v2.7.3.xml
+SHA-256-Digest: use6vywV0zjK70zGJRQbGihYXq8I2Ebores3R77JwtI=
+
+Name: assets/default/default_qcom_v2.6.xml
+SHA-256-Digest: gwYJMNyptgxHftgROmVUEqQqVaXDogMiC0WzySL3qM8=
+
+Name: assets/default/default_qcom_v2.7.3.xml
+SHA-256-Digest: C79hg6exsKs2Tcoon0iz9min0DkReMCU89bbWoDrwSE=
+
+Name: assets/default/default_qcom_v2.8.4.xml
+SHA-256-Digest: 4QBGwuTkTS6BfNY4dnzAtB3lbH/WKxRI9dBbV4hhRKI=
+
+Name: assets/default/default_v2.8.3.xml
+SHA-256-Digest: cCGk9rzVFHwU97vBcTRLM+dhfy465Fl1ldQo07xBZf0=
+
+Name: assets/default/default_v2.9.1.xml
+SHA-256-Digest: 5ZZts3J4og0XFWlVcvRHR5OGlVG34wuG/lFa3LMoh1Y=
+
+Name: assets/default/default_v2.9.2.xml
+SHA-256-Digest: sxkobPiHdWoj+sA2dH9ZUqsI1mL7L9WDhfgnnDGyQXk=
+
+Name: assets/default/default_v2.9.3.xml
+SHA-256-Digest: KWsoyi+Ntv97DrFZff44Mk0fq9EXlFhuDJH9UjqWp0M=
+
+Name: assets/default/default_v2.9.4.xml
+SHA-256-Digest: 6vt6vrBXeh7mBI+jbaj2PgYAJd5CqWOScyA7dc5Ke0c=
+
+Name: assets/default/default_v2.9.5.xml
+SHA-256-Digest: ZXGwkb3WkQmk7TVZSNrOnsYgE2globMD6cw9j1KubcA=
+
+Name: assets/default/default_v2.9.6.xml
+SHA-256-Digest: 9B0bgEQF3VKJ8kPcgNcne/24YxOOe3QXO40ZQeM6AlE=
+
+Name: assets/default/default_v2.9.7.xml
+SHA-256-Digest: ToibyEQlK/H0rzuk0+bMnexEShZ9teIBN09nh14wDEs=
+
+Name: assets/default/default_v2.9.8.xml
+SHA-256-Digest: 5gkTSWCaIbdfiaAEMsrABQ5rmusY8yBN7GgWqkMWeDE=
+
+Name: assets/default/default_v2.9.xml
+SHA-256-Digest: CFvqU4LxZTaxs9+uZ90uyeTgX9vs9fzHAAr/UekB1d0=
+
+Name: assets/default/globalization.xml
+SHA-256-Digest: XmTITG4SQFiDSUozAEWiyxRYCg2952kxVYH/8F/3dzY=
+
+Name: assets/default/rtt.xml
+SHA-256-Digest: qCNgnO6VBRA8jpndVzrM3fSrE7lkySlCfrGtn0L5fSg=
+
+Name: res/xml/vendor_device.xml
+SHA-256-Digest: WlW2ue6EGcv1aofV2GRr89a2VlrURN9kBwF5xaMBELo=
+
+Name: resources.arsc
+SHA-256-Digest: FTSuQRN7kwymArCrvxe9KXCF/DlQoTo4U9L2snn2OaE=
+

@@ -1,0 +1,56 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: qzbIhhRmEMnU6zLJFcmYRt8iPFWQnramZd0zuTzUrLI=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: uILwq3wQdd14Vncg/pj2B7v8uGbKuiYjRAEVD9LUNqU=
+
+Name: assets/README
+SHA-256-Digest: Yz65d1Xe9jmcEAFK2Q/d1qA1Ot8UC2f8QmBV2h7Frps=
+
+Name: assets/latest_carrier_id/carrier_list.pb
+SHA-256-Digest: +CeFJyQl3UPHybICr702jvtyKF4TriFj0ryrpnXLiyo=
+
+Name: assets/latest_carrier_id/carrier_list.textpb
+SHA-256-Digest: A8K10deApJU4poutMKu0XcRAL+I+jxDQIIpSGq1k2ME=
+
+Name: assets/sdk28_carrier_id/carrier_list.pb
+SHA-256-Digest: HTMZA7jrTWve09m9IrJc95Ebxwrg/8kJsCqss3j/Gqg=
+
+Name: assets/sdk28_carrier_id/carrier_list.textpb
+SHA-256-Digest: JujXmWWW9k1uB99/wwDAs3/8ffm1HuRnq8XZX9FExJg=
+
+Name: assets/sdk29_carrier_id/carrier_list.pb
+SHA-256-Digest: +9lA1EH4K2wg1cNmPgHvRvLAg44wJR5SiO6tReumo94=
+
+Name: assets/sdk29_carrier_id/carrier_list.textpb
+SHA-256-Digest: ImcCkpb8XA7vPI25/+wZoRPSBZ6QVjycbz/wCINjdT8=
+
+Name: assets/sdk30_carrier_id/carrier_list.pb
+SHA-256-Digest: qUZu+gXYcR/qieilybr7euzQY287PdiMl+bFE6flIpI=
+
+Name: assets/sdk30_carrier_id/carrier_list.textpb
+SHA-256-Digest: Gmue/N+ZVvD6u7VpsIqUjbUH5PJ2GCxWNPzWxnsDlC0=
+
+Name: assets/sdk31_carrier_id/carrier_list.pb
+SHA-256-Digest: aYQgr3Ee193FiGwJWmeX0+IaY0/UZjM9cOtxgLLyJ3Q=
+
+Name: assets/sdk31_carrier_id/carrier_list.textpb
+SHA-256-Digest: 1cjoVkPiYAxLKqUeD5AYsy3vCixii9R7bI5mU+aAc+w=
+
+Name: assets/sdk33_carrier_id/carrier_list.pb
+SHA-256-Digest: p9D/iUq1x7+SpqVKGTEhgTZ/32Z21ZSoLmKXN/Q0MMY=
+
+Name: assets/sdk33_carrier_id/carrier_list.textpb
+SHA-256-Digest: PxjrC552L3pGeoTPiR3HlbO2sjCByvkAczLM2q5SBrg=
+
+Name: assets/sdk34_carrier_id/carrier_list.pb
+SHA-256-Digest: h0GnEUEgY6UdUXEOArQ182WVFryD7GfJwSD/LaMxgB4=
+
+Name: assets/sdk34_carrier_id/carrier_list.textpb
+SHA-256-Digest: ml6gjyz4Z7rBX7xp1q262+LaORlOKew7dEcUUC4+StQ=
+
+Name: resources.arsc
+SHA-256-Digest: WI7ra9otg9dpCR3VQ1+hGvOUf/iB0oxzAf1HWkM8CU4=
+

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" coreApp="true" package="com.android.providers.settings.overlay" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <overlay android:isStatic="true" android:priority="999" android:targetPackage="com.android.providers.settings"/>
+    <application android:extractNativeLibs="false" android:hasCode="false" android:usesNonSdkApi="true"/>
+</manifest>

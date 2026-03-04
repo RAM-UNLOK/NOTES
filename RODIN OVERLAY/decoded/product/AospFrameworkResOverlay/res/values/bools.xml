@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_adaptive_sleep_available">true</bool>
+    <bool name="config_batterySaverTurnedOffNotificationEnabled">false</bool>
+    <bool name="config_cellBroadcastAppLinks">true</bool>
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+    <bool name="config_enableAutoPowerModes">true</bool>
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    <bool name="config_showNavigationBar">true</bool>
+    <bool name="config_spatial_audio_head_tracking_enabled_default">true</bool>
+    <bool name="config_stopSystemPackagesByDefault">false</bool>
+    <bool name="config_supportsMicToggle">true</bool>
+</resources>

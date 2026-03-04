@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_backupHealthConnectDataAndSettingsKnownSigners">
+        <item>4F59009D33D5B8C60E4B14623A771EBA08E5C02D2F0A124DE8D184AA9DAF00B4</item>
+        <item>5F2391277B1DBD489000467E4C2FA6AF802430080457DCE2F618992E9DFB5402</item>
+        <item>3B062A8FD947C2574749F6609E51D29C4C86525248DD94A3D5D6CD8C338A4D84</item>
+    </string-array>
+    <string-array name="config_healthConnectMigrationKnownSigners">
+        <item>B2C0A80E485934BFB08F902CA27505813DF3159E4E6DD4A4DF078D66CB1C2003</item>
+    </string-array>
+    <string-array name="config_healthConnectRestoreKnownSigners">
+        <item>56BE132B780656FE2444CD34326EB5D7AAC91D2096ABF0FE673A99270622EC87</item>
+    </string-array>
+    <string-array name="config_restoreHealthConnectDataAndSettingsKnownSigners">
+        <item>4F59009D33D5B8C60E4B14623A771EBA08E5C02D2F0A124DE8D184AA9DAF00B4</item>
+        <item>5F2391277B1DBD489000467E4C2FA6AF802430080457DCE2F618992E9DFB5402</item>
+        <item>3B062A8FD947C2574749F6609E51D29C4C86525248DD94A3D5D6CD8C338A4D84</item>
+    </string-array>
+</resources>

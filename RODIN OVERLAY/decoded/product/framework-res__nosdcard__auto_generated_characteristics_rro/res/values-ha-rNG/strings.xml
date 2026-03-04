@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">"Ba manhaja damar karanta duka abinda ke ciki ma'ajin ka."</string>
+    <string name="permdesc_sdcardWrite">"Ba manhaja damar rubutu a ma'aji na ciki."</string>
+    <string name="permlab_sdcardRead">"karanta abun dake cikin ma'ajin ka"</string>
+    <string name="permlab_sdcardWrite">"rubuta/share ma'ajin ciki"</string>
+    <string name="progress_erasing">"Goge ma'aji USB…"</string>
+</resources>

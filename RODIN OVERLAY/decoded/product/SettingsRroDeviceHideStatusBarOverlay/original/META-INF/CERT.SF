@@ -1,0 +1,71 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: fr56M0xE+nCoC0EjMeFTjtQMl17nWcuf/n+ULx7VKNM=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: v1hZ6/yr0k/jWoEEPNcqVShM3wEF5YbwCZQaIcIDLRc=
+
+Name: res/drawable-night-v8/$notch_style_show__0.xml
+SHA-256-Digest: q46Tu7D1fnhmDI45qn/8IlsEOExoWxBrKBJtELlZPRU=
+
+Name: res/drawable-night-v8/$notch_style_show__1.xml
+SHA-256-Digest: P9dTqdOkFwssTgbBg8eEMabhL75p3kkj5FPFWmCTiGs=
+
+Name: res/drawable-night-v8/$notch_style_show__2.xml
+SHA-256-Digest: 2URGBXPA1IjdroQDfr2jDT2ixg7DE2wVizt11VOexys=
+
+Name: res/drawable-night-v8/$notch_style_show__3.xml
+SHA-256-Digest: 0nAG1DuGpfO9OCjgt+p1X76yvjMn+UkuZWsc3dm1PcE=
+
+Name: res/drawable-night-v8/$notch_style_show__4.xml
+SHA-256-Digest: CH8BDk+HVcMWoNCZGZ1j1pG3sUCO9nH0BioTAmU+bKc=
+
+Name: res/drawable-night-v8/$notch_style_show__5.xml
+SHA-256-Digest: +Hx5pD1duYHXr9L27OCM0mSTVwBDCF56X8NY2H/WmfA=
+
+Name: res/drawable-night-v8/$notch_style_show__6.xml
+SHA-256-Digest: z1NthgG45nlDukIfQn5TZiqNmm1IWUfJxWCft/BDuRE=
+
+Name: res/drawable-night-v8/$notch_style_show__7.xml
+SHA-256-Digest: dEvaTjq7ObQznj+YOjCVHeD0YYKw+sX2b+ATyX5Uc1Y=
+
+Name: res/drawable-night-v8/$notch_style_show__8.xml
+SHA-256-Digest: U+2apHY7NCAnrXuNbIOfy4DYOsLlsghGkW3HaHBh/yU=
+
+Name: res/drawable-night-v8/notch_style_show.xml
+SHA-256-Digest: 7AqkgGrunxPxN60bT7YwdSox1qfCeqm1qn66I2ZdJEg=
+
+Name: res/drawable/$notch_style_show__0.xml
+SHA-256-Digest: pZjUzeS+MgniKnSlqoq5rkqXpXRyWMzZtj+yocjaIpw=
+
+Name: res/drawable/$notch_style_show__1.xml
+SHA-256-Digest: Bu3lU+DyraG1TO/rRxFXNgnKuZcFQ4hzJeJNIL8UK08=
+
+Name: res/drawable/$notch_style_show__2.xml
+SHA-256-Digest: CFgGaapv2lugJ6/hezpqLjcxBJ98iUPFWUTSCoLB2ho=
+
+Name: res/drawable/$notch_style_show__3.xml
+SHA-256-Digest: pNPbyEEh0+HpQZkYEbI1Mln7fW81j7X8J6hMoYkht3o=
+
+Name: res/drawable/$notch_style_show__4.xml
+SHA-256-Digest: 5DyZHsgLQt9NolvdkHxMGrXL0e/VNhcZP5hIWyuUY+g=
+
+Name: res/drawable/$notch_style_show__5.xml
+SHA-256-Digest: uNSJlZGCwQtk9AxAKPK2KTK9ZMnwEYOXU6zuQr7xib8=
+
+Name: res/drawable/$notch_style_show__6.xml
+SHA-256-Digest: XnR7+0iJeu0jrqPOwA/gl9OBWY9kFGzEgYkGDm185us=
+
+Name: res/drawable/$notch_style_show__7.xml
+SHA-256-Digest: h9v6Aaa41lQxmdpzvEECbUArPx1fx/yuAjCPiMUJlw8=
+
+Name: res/drawable/$notch_style_show__8.xml
+SHA-256-Digest: cCJ8WCWNv3DCcRbdoUqEaPT5BnOFE6hBu3lmUS/p6J8=
+
+Name: res/drawable/notch_style_show.xml
+SHA-256-Digest: lqENfRIRoHrEnMXiVlFoiW+2u2ocUgdOhNTHL9/z53U=
+
+Name: resources.arsc
+SHA-256-Digest: Gzv5sDNDLLFmzJgXIowj2mwGjEplox9oRNFWIV9othE=
+

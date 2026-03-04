@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_buttonTextAllCaps">false</bool>
+    <bool name="config_enableAutoPowerModes">true</bool>
+    <bool name="config_enableFusedLocationOverlay">true</bool>
+    <bool name="config_enableGeocoderOverlay">true</bool>
+    <bool name="config_enableGeofenceOverlay">true</bool>
+    <bool name="config_enableNetworkLocationOverlay">true</bool>
+    <bool name="config_hotspotNetworksEnabledForService">false</bool>
+    <bool name="config_knownNetworksEnabledForService">false</bool>
+    <bool name="config_settingsHelpLinksEnabled">false</bool>
+    <bool name="config_stopSystemPackagesByDefault">true</bool>
+</resources>

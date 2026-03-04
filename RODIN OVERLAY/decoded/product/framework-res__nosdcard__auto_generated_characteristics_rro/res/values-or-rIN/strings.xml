@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">ଆପଣଙ୍କ ଆଭ୍ୟନ୍ତରୀଣ ଷ୍ଟୋରେଜର କଣ୍ଟେଣ୍ଟ ପଢ଼ିବାକୁ ଆପକୁ ଅନୁମତି ଦେଇଥାଏ|</string>
+    <string name="permdesc_sdcardWrite">ଆଭ୍ୟନ୍ତରୀଣ ଷ୍ଟୋରେଜରେ ରାଇଟ କରିବାକୁ ଆପକୁ ଅନୁମତି ଦେଇଥାଏ|</string>
+    <string name="permlab_sdcardRead">ଆପଣଙ୍କ ଆଭ୍ୟନ୍ତରୀଣ ଷ୍ଟୋରେଜର କଣ୍ଟେଣ୍ଟ ପଢ଼ନ୍ତୁ</string>
+    <string name="permlab_sdcardWrite">ଆଭ୍ୟନ୍ତରୀଣ ଷ୍ଟୋରେଜ ରାଇଟ କରନ୍ତୁ/ବିଲୋପ କରନ୍ତୁ</string>
+    <string name="progress_erasing">USB ଷ୍ଟୋରେଜ ମେଣ୍ଟାଯାଉଛି…</string>
+</resources>

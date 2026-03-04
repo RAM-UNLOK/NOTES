@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="config_md_gamemode_opt_country" id="0x7f010000" />
+    <public type="array" name="config_mdexpress_support_country" id="0x7f010001" />
+    <public type="array" name="config_should_hide_vodata_sims" id="0x7f010002" />
+    <public type="array" name="config_support_voice_link_all_scene_sims" id="0x7f010003" />
+    <public type="array" name="country_support_esim" id="0x7f010004" />
+    <public type="bool" name="config_enable_deprioritize_sa_during_pingpong_in_night_mode" id="0x7f020000" />
+    <public type="bool" name="config_ims_signal_optimization_supported" id="0x7f020001" />
+    <public type="bool" name="config_is_aftersale_info_supported" id="0x7f020002" />
+    <public type="bool" name="config_is_modem_power_stats_supported" id="0x7f020003" />
+    <public type="bool" name="config_is_mtk_force_search_nr_supported" id="0x7f020004" />
+    <public type="bool" name="config_is_mtk_network_optimize_supported" id="0x7f020005" />
+    <public type="bool" name="config_is_nsa_thermal_control_supported" id="0x7f020006" />
+    <public type="bool" name="config_is_sa_thermal_control_supported" id="0x7f020007" />
+    <public type="bool" name="config_is_use_mipc_for_throttle_level" id="0x7f020008" />
+    <public type="bool" name="config_mtk_cloud_modem_feature_supported" id="0x7f020009" />
+    <public type="bool" name="config_mtk_disable_n8_n28_supported" id="0x7f02000a" />
+    <public type="bool" name="config_mtk_modem_status_track_supported" id="0x7f02000b" />
+    <public type="bool" name="config_mtk_ping_pong_opt_supported" id="0x7f02000c" />
+    <public type="bool" name="config_mtk_video_sbp_optimization_supported" id="0x7f02000d" />
+    <public type="bool" name="config_nsa_scg_poor_optimization_supported" id="0x7f02000e" />
+    <public type="bool" name="config_power_save_mode_supported" id="0x7f02000f" />
+    <public type="bool" name="config_remove_cdma" id="0x7f020010" />
+    <public type="bool" name="config_resident_cells_optimization_supported" id="0x7f020011" />
+    <public type="bool" name="config_self_study_supported" id="0x7f020012" />
+    <public type="bool" name="config_smart_network_game_optimization_supported" id="0x7f020013" />
+    <public type="bool" name="config_special_network_optimization_supported" id="0x7f020014" />
+    <public type="bool" name="config_voice_link_feature_support" id="0x7f020015" />
+    <public type="bool" name="config_wechat_video_optimization_supported" id="0x7f020016" />
+    <public type="integer" name="config_5ga_3gpp_version" id="0x7f030000" />
+    <public type="integer" name="config_real_time_optimization_bit_mask" id="0x7f030001" />
+    <public type="integer" name="config_voice_link_supported_scenes" id="0x7f030002" />
+    <public type="string" name="config_miui_cpu_model" id="0x7f040000" />
+</resources>

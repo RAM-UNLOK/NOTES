@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overlay
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item target="style/PermissionGrantSingleton" value="@style/MIUIPermissionGrantSingleton" />
+    <item target="style/PermissionGrantDialog" value="@style/MIUIPermissionGrantDialog" />
+    <item target="style/PermissionGrantContent" value="@style/MIUIPermissionGrantContent" />
+    <item target="style/PermissionGrantTitleIcon" value="@style/MIUIPermissionGrantTitleIcon" />
+    <item target="style/PermissionGrantTitleMessage" value="@style/MIUIPermissionGrantTitleMessage" />
+    <item target="style/PermissionGrantButton" value="@style/MIUIPermissionGrantButton" />
+    <item target="style/PermissionGrantButtonAllow" value="@style/MIUIPermissionGrantButtonAllow" />
+    <item target="style/PermissionGrantButtonAllowForeground" value="@style/MIUIPermissionGrantButtonAllowForeground" />
+    <item target="style/PermissionGrantButtonAllowOneTime" value="@style/MIUIPermissionGrantButtonAllowOneTime" />
+    <item target="style/PermissionGrantButtonDeny" value="@style/MIUIPermissionGrantButtonDeny" />
+    <item target="style/PermissionGrantButtonNoUpgrade" value="@style/MIUIPermissionGrantButtonNoUpgrade" />
+    <item target="style/PermissionGrantPermissionRationaleContent" value="@style/MIUIPermissionGrantPermissionRationaleContent" />
+    <item target="style/PermissionGrantPermissionRationaleIcon" value="@style/MIUIPermissionGrantPermissionRationaleIcon" />
+    <item target="style/PermissionGrantPermissionRationaleMessage" value="@style/MIUIPermissionGrantPermissionRationaleMessage" />
+    <item target="style/PermissionGrantPermissionRationaleMoreInfoIcon" value="@style/MIUIPermissionGrantPermissionRationaleMoreInfoIcon" />
+    <item target="style/PermissionGrantButtonTop" value="@style/MIUIPermissionGrantButtonTop" />
+    <item target="style/PermissionGrantButtonMiddle" value="@style/MIUIPermissionGrantButtonMiddle" />
+    <item target="style/PermissionGrantButtonBottom" value="@style/MIUIPermissionGrantButtonBottom" />
+    <item target="style/PermissionGrantDialogMaterial3" value="@style/MIUIPermissionGrantDialogMaterial3" />
+    <item target="style/PermissionGrantTitleIconMaterial3" value="@style/MIUIPermissionGrantTitleIconMaterial3" />
+    <item target="style/PermissionGrantButtonAllowMaterial3" value="@style/MIUIPermissionGrantButtonAllowMaterial3" />
+    <item target="style/PermissionGrantButtonAllowForegroundMaterial3" value="@style/MIUIPermissionGrantButtonAllowForegroundMaterial3" />
+    <item target="style/PermissionGrantButtonAllowOneTimeMaterial3" value="@style/MIUIPermissionGrantButtonAllowOneTimeMaterial3" />
+    <item target="style/PermissionGrantButtonDenyMaterial3" value="@style/MIUIPermissionGrantButtonDenyMaterial3" />
+    <item target="style/PermissionGrantButtonNoUpgradeMaterial3" value="@style/MIUIPermissionGrantButtonNoUpgradeMaterial3" />
+</overlay>

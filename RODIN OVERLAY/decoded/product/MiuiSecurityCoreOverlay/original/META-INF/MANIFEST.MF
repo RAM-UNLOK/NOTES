@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: Cp17VuY3pnal4PO4rFwq4o1Ej9EtHWyxsfufyUb1sws=
+
+Name: res/drawable-port/keyboard_show_icon.webp
+SHA-256-Digest: o6qlWyuRdLb/xnDSiBdgdbC8fgDLnVggB7kZe/s9WPQ=
+
+Name: res/drawable-port/keyboard_show_icon_white.webp
+SHA-256-Digest: T9pMneVlOKOBj8ovv5eMS88p6dT4fWCMP7WW2i36qis=
+
+Name: res/drawable/keyboard_show_icon.webp
+SHA-256-Digest: o6qlWyuRdLb/xnDSiBdgdbC8fgDLnVggB7kZe/s9WPQ=
+
+Name: res/drawable/keyboard_show_icon_white.webp
+SHA-256-Digest: qxA5Api45IavPR3SPeajWbnb7RCjV0lfn++KO/L6Kbo=
+
+Name: resources.arsc
+SHA-256-Digest: 2lXIOFqTumBqsc7+X1ni31dr578KPOz0VKcZF0HItsU=
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="allow">Allow</string>
+    <string name="config_defaultAttentionService">com.google.android.as/com.google.android.apps.miphone.aiai.attention.service.AiAiAttentionService</string>
+    <string name="config_defaultAutofillService">com.google.android.gms/.autofill.service.AutofillService</string>
+    <string name="config_defaultListenerAccessPackages">com.android.launcher3:com.google.android.projection.gearhead:com.xiaomi.barrage:com.xiaomi.misubscreenui</string>
+    <string name="config_screenshotServiceComponent">com.miui.screenshot/com.miui.screenshot.TakeScreenshotService</string>
+    <string name="deny">Deny</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">Tħalli lill-app taqra l-kontenut tal-memorja interna.</string>
+    <string name="permdesc_sdcardWrite">Tħalli lill-app tikteb fil-memorja interna.</string>
+    <string name="permlab_sdcardRead">aqra l-kontenut tal-memorja interna</string>
+    <string name="permlab_sdcardWrite">ikteb/ħassar fil-memorja interna</string>
+    <string name="progress_erasing">Qed iħassar il-ħażna USB…</string>
+</resources>

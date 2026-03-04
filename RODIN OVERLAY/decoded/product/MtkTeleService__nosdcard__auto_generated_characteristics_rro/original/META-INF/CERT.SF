@@ -1,0 +1,44 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: mG4KjYMcdmrZAeyTzlVQ0Wg6rTJf/vqXGGzUF+0lm1A=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: I3o6EpVm4AECdBGJDq0pVR3zw8rlxJz7UCqBwRWKw0E=
+
+Name: assets/CarrierRestrictionOperatorDetails.json
+SHA-256-Digest: CVFfg/a6kAEzGfuLld0UQ/k2ennelrVUhprpb+NWHcA=
+
+Name: assets/eri.xml
+SHA-256-Digest: LTOQAdnR/VoztosjKgNm3wRV/BO/IT2svHceRQ5hGv0=
+
+Name: assets/eri_310120.xml
+SHA-256-Digest: sdJEcbGelhATwU7Hgfg9Yfz48Gv3MnEUCXW22Vsv1D4=
+
+Name: assets/eri_311220.xml
+SHA-256-Digest: 5fvMXIPhLbBEuPDdBbU2u5S0EXEpr2biNl1YOjcNFDM=
+
+Name: assets/eri_311480.xml
+SHA-256-Digest: GbGbYJxxGWa/ecgf2CMd8pRegPZTcroXh0ZjKMbgeQk=
+
+Name: assets/eri_311480_BA01450000000000.xml
+SHA-256-Digest: Wr9BjyLmORolrqDknVc77p3syKNYSFOgHcOI9RK3AU0=
+
+Name: assets/eri_311490.xml
+SHA-256-Digest: kosEFwLKQy+yUkiAoIU9e+DKWg0cPSnmbUgRhGm4xsU=
+
+Name: assets/eri_311870.xml
+SHA-256-Digest: n3sp430PpwrNCf6+18mcTkkBTDHLmv7lej4+xsu7DRU=
+
+Name: assets/google_us_san_mtv_sat_s2.dat
+SHA-256-Digest: 9+5wcLujpJFJSPV0z87aNDLPFyjhaxdXwt94ZhhS6QE=
+
+Name: assets/google_us_san_sat_s2.dat
+SHA-256-Digest: jeYx21bpGvkdggG9KCB3w0LvlksaIE1wrw/zvQvKMls=
+
+Name: assets/satellite_access_config.json
+SHA-256-Digest: miuoqUGscsKbkfo4hZ8hQbrcKam3Fx6T2avxl9wa15I=
+
+Name: resources.arsc
+SHA-256-Digest: WI7ra9otg9dpCR3VQ1+hGvOUf/iB0oxzAf1HWkM8CU4=
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" package="com.android.theme.font.notoserifsource" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <overlay android:category="android.theme.customization.font" android:priority="1" android:targetPackage="android"/>
+    <application android:extractNativeLibs="true" android:hasCode="false" android:label="@string/font_notoserif_source_overlay">
+        <meta-data android:name="android.theme.customization.REQUIRED_SYSTEM_FONTS" android:value="serif,serif-bold,source-sans-pro,source-sans-pro-medium"/>
+    </application>
+</manifest>

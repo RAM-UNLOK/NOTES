@@ -1,0 +1,53 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: EHoYwXFzxcVuDy+Lgs+vWt24fNP6zUxtZQPN98gLXcA=
+
+Name: assets/README
+SHA-256-Digest: opY3x5d1LBn26PI1Ksh+E5LQDLFeuHWH99xG+t3u29Y=
+
+Name: assets/latest_carrier_id/carrier_list.pb
+SHA-256-Digest: mN3Nvd37EDdqsgJ3QEGgJPQe9QplGokao8rac94SKz0=
+
+Name: assets/latest_carrier_id/carrier_list.textpb
+SHA-256-Digest: pqjMRK+5rQkb2oFtqY5UbA2OrIaFHuKGVu5oAuXKCCU=
+
+Name: assets/sdk28_carrier_id/carrier_list.pb
+SHA-256-Digest: I4nE71CqlvRvuI2Cx8wx1Y4V80v8Oas4cAhtFeNwYks=
+
+Name: assets/sdk28_carrier_id/carrier_list.textpb
+SHA-256-Digest: /ddqjEd/k1s2ep6Sa0eXnGXSt5fhNJfHcaaFT71xtZY=
+
+Name: assets/sdk29_carrier_id/carrier_list.pb
+SHA-256-Digest: xmYfG64LK+7JBZveN1YHHhI4qCrxy5snSd42Uj01rd8=
+
+Name: assets/sdk29_carrier_id/carrier_list.textpb
+SHA-256-Digest: VCVIRVEWeroLGjE9bHWO4BMujQeP6UZO3CBEWiQcyp8=
+
+Name: assets/sdk30_carrier_id/carrier_list.pb
+SHA-256-Digest: n5UH4ZwQxgWzEUm7IY/nsoRBLZksdspAeO9eteH1N+Q=
+
+Name: assets/sdk30_carrier_id/carrier_list.textpb
+SHA-256-Digest: AfZshfIFvK3bTCK7vIDOhbbAfz2SEDqz1se/S+aU41E=
+
+Name: assets/sdk31_carrier_id/carrier_list.pb
+SHA-256-Digest: TCz5ST0JEZ9jPGy+fCWY3toIQs4OuUXmodaGqXoiRnQ=
+
+Name: assets/sdk31_carrier_id/carrier_list.textpb
+SHA-256-Digest: PPxPBkdXus3Bcr3ek7fJUAWJgcQVG4LBK5IxxKpDAxo=
+
+Name: assets/sdk33_carrier_id/carrier_list.pb
+SHA-256-Digest: VsIHyUxntIQOBUEnJJn0lGc2JAXpDYUMMs4LP1/GIuA=
+
+Name: assets/sdk33_carrier_id/carrier_list.textpb
+SHA-256-Digest: bxYIZl4NJDkJQx+x3LaLzOQic+oq+jSomdnGGWm2EJ4=
+
+Name: assets/sdk34_carrier_id/carrier_list.pb
+SHA-256-Digest: BoEvdGJnfAf6rLHVsL0p6ghiZ9gS5AHSBPpWdy9NeCo=
+
+Name: assets/sdk34_carrier_id/carrier_list.textpb
+SHA-256-Digest: bRxiJtoBj2S5hOsrCGclrxpHz9AB6mtPCxwbDF37jqM=
+
+Name: resources.arsc
+SHA-256-Digest: H6PLKRKFNI7BszyF5zF9mJRncH9HkcTlMC8tMS0eGMg=
+
