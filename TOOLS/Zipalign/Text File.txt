@@ -1,9 +1,0 @@
-keytool -genkeypair \
-    -keystore gcam-release-key.jks \
-    -alias gcam \
-    -keyalg RSA \
-    -keysize 4096 \
-    -validity 10000 \
-    -storepass gcamrodin \
-    -keypass gcamrodin \
-    -dname "CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US"
