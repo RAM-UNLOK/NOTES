@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 # =============================================================================
 #  decode_overlays.sh
-#  Automates Apktool framework installation and overlay APK decoding.
+#  Fully automated Apktool framework installation and overlay APK decoding.
 #
-#  Folder structure expected:
-#    overlaytodecode/
-#      framework-res.apk
-#      framework-ext-res.apk
-#      framework.jar
-#      product/overlay/*.apk
-#      vendor/overlay/*.apk
+#  Everything is discovered from the dump — no manual file setup required.
+#
+#  What it finds automatically:
+#    • framework-res.apk       (e.g. system/system/framework/framework-res.apk)
+#    • framework-ext-res.apk   (e.g. system_ext/framework/framework-ext-res/framework-ext-res.apk)
+#    • All *.apk files inside any "overlay" directory, at any depth
 #
 #  Usage:
 #    chmod +x decode_overlays.sh
-#    ./decode_overlays.sh [path/to/overlaytodecode]
+#    ./decode_overlays.sh [path/to/dump]
 #
-#  Optional argument: path to the root folder (defaults to ./overlaytodecode)
+#  Optional argument: path to the dump root (defaults to ./dump)
 # =============================================================================
 
 set -euo pipefail
@@ -31,11 +30,11 @@ error()   { echo -e "${RED}[ERROR]${RESET} $*" >&2; }
 header()  { echo -e "\n${BOLD}${CYAN}══ $* ══${RESET}"; }
 
 # ── Resolve paths ─────────────────────────────────────────────────────────────
-ROOT_DIR="${1:-./overlaytodecode}"
-ROOT_DIR="$(realpath "$ROOT_DIR")"
+DUMP_DIR="${1:-./dump}"
+DUMP_DIR="$(realpath "$DUMP_DIR")"
 
-FRAMEWORK_DIR="$ROOT_DIR/frameworks"          # where apktool stores installed frameworks
-OUTPUT_BASE="$ROOT_DIR/decoded"               # where decoded APKs will land
+FRAMEWORK_DIR="$DUMP_DIR/.apktool_frameworks"   # apktool framework cache
+OUTPUT_BASE="$DUMP_DIR/decoded_overlays"         # decoded output root
 
 # ── Sanity checks ─────────────────────────────────────────────────────────────
 header "Pre-flight checks"
@@ -49,48 +48,92 @@ fi
 APKTOOL_VER="$(apktool --version 2>&1 | head -1)"
 info "Using apktool: $APKTOOL_VER"
 
-if [[ ! -d "$ROOT_DIR" ]]; then
-    error "Root folder not found: $ROOT_DIR"
+if [[ ! -d "$DUMP_DIR" ]]; then
+    error "Dump folder not found: $DUMP_DIR"
     exit 1
 fi
 
-# Check for required framework files
-FRAMEWORK_RES="$ROOT_DIR/framework-res.apk"
-FRAMEWORK_EXT="$ROOT_DIR/framework-ext-res.apk"
-# framework.jar is a code-only DEX library (no resources.arsc) — not installable as a framework
+success "Dump root: $DUMP_DIR"
 
-[[ -f "$FRAMEWORK_RES" ]] || { error "Missing: $FRAMEWORK_RES"; exit 1; }
-[[ -f "$FRAMEWORK_EXT" ]] || warn "Not found (optional): $FRAMEWORK_EXT"
+# ── Step 1 – Auto-discover framework APKs ────────────────────────────────────
+header "Step 1 · Locating Framework APKs"
 
-success "Root folder: $ROOT_DIR"
+# framework-res.apk — must be installed first (pkgId 0x01).
+# Typically at system/system/framework/framework-res.apk but search the whole dump.
+FRAMEWORK_RES="$(find "$DUMP_DIR" \
+    -not -path "$OUTPUT_BASE*" \
+    -not -path "$FRAMEWORK_DIR*" \
+    -type f -name "framework-res.apk" \
+    | head -1)"
 
-# ── Create output directories ─────────────────────────────────────────────────
+if [[ -z "$FRAMEWORK_RES" ]]; then
+    error "Could not find framework-res.apk anywhere in: $DUMP_DIR"
+    exit 1
+fi
+info "Found framework-res.apk  →  ${FRAMEWORK_RES#"$DUMP_DIR"/}"
+
+# framework-ext-res.apk — optional, but common on MediaTek / MIUI devices.
+FRAMEWORK_EXT="$(find "$DUMP_DIR" \
+    -not -path "$OUTPUT_BASE*" \
+    -not -path "$FRAMEWORK_DIR*" \
+    -type f -name "framework-ext-res.apk" \
+    | head -1)"
+
+if [[ -n "$FRAMEWORK_EXT" ]]; then
+    info "Found framework-ext-res.apk  →  ${FRAMEWORK_EXT#"$DUMP_DIR"/}"
+else
+    warn "framework-ext-res.apk not found (optional — continuing without it)."
+fi
+
+# ── Step 2 – Install frameworks into apktool ──────────────────────────────────
+header "Step 2 · Installing Frameworks"
+
 mkdir -p "$FRAMEWORK_DIR"
-mkdir -p "$OUTPUT_BASE/product"
-mkdir -p "$OUTPUT_BASE/vendor"
-
-# ── Step 1 – Install frameworks ───────────────────────────────────────────────
-header "Step 1 · Installing Frameworks"
 
 install_framework() {
     local file="$1"
     local label="$2"
-    if [[ -f "$file" ]]; then
-        info "Installing $label …"
-        apktool if "$file" -p "$FRAMEWORK_DIR"
+    info "Installing $label …"
+    if apktool if "$file" -p "$FRAMEWORK_DIR" 2>&1 | sed 's/^/    /'; then
         success "$label installed."
     else
-        warn "Skipping $label (file not found)."
+        error "Failed to install $label — decoding may still work if it was cached."
     fi
 }
 
-# Order matters — framework-res.apk (pkgId 0x01) must come first
+# Order matters: framework-res.apk (0x01) before framework-ext-res.apk
 install_framework "$FRAMEWORK_RES" "framework-res.apk"
-install_framework "$FRAMEWORK_EXT" "framework-ext-res.apk"
-# framework.jar is skipped — it's a DEX library with no resources.arsc
+[[ -n "$FRAMEWORK_EXT" ]] && install_framework "$FRAMEWORK_EXT" "framework-ext-res.apk"
 
-# ── Step 2 – Decode overlay APKs ─────────────────────────────────────────────
-header "Step 2 · Decoding Overlay APKs"
+# framework.jar and other *.jar files are DEX-only (no resources.arsc) — skip them.
+
+# ── Step 3 – Discover all overlay APKs across the entire dump ─────────────────
+header "Step 3 · Discovering Overlay APKs"
+
+# Find every directory named "overlay" in the dump (any depth, any partition),
+# then collect all *.apk files inside them recursively.
+mapfile -t ALL_APKS < <(
+    find "$DUMP_DIR" \
+        -not -path "$OUTPUT_BASE*" \
+        -not -path "$FRAMEWORK_DIR*" \
+        -type d -name "overlay" \
+    | while read -r overlay_dir; do
+        find "$overlay_dir" -type f -iname "*.apk"
+    done | sort -u
+)
+
+if [[ ${#ALL_APKS[@]} -eq 0 ]]; then
+    warn "No overlay APKs found anywhere under: $DUMP_DIR"
+    exit 0
+fi
+
+info "Found ${#ALL_APKS[@]} overlay APK(s) across all partitions:"
+for apk in "${ALL_APKS[@]}"; do
+    echo "    ${apk#"$DUMP_DIR"/}"
+done
+
+# ── Step 4 – Decode every overlay APK ────────────────────────────────────────
+header "Step 4 · Decoding Overlay APKs"
 
 DECODED=0
 FAILED=0
@@ -98,66 +141,51 @@ SKIPPED=0
 
 decode_apk() {
     local apk_path="$1"
-    local out_subdir="$2"   # "product" or "vendor"
 
+    # Mirror the dump's directory structure under OUTPUT_BASE so:
+    #   product/overlay/MiuiFrameworkResOverlay.apk
+    #     → decoded_overlays/product/overlay/MiuiFrameworkResOverlay/
+    #
+    #   product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk
+    #     → decoded_overlays/product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay/
+    #
+    #   mi_ext/product/overlay/GmsTelephonyOverlay.apk
+    #     → decoded_overlays/mi_ext/product/overlay/GmsTelephonyOverlay/
+    local rel_path="${apk_path#"$DUMP_DIR"/}"
+    local rel_dir
+    rel_dir="$(dirname "$rel_path")"
     local apk_name
-    apk_name="$(basename "$apk_path" .apk)"   # strip .apk for the output folder name
+    apk_name="$(basename "$apk_path" .apk)"
 
-    local out_dir="$OUTPUT_BASE/$out_subdir/$apk_name"
+    local out_dir="$OUTPUT_BASE/$rel_dir/$apk_name"
 
-    # Skip if already decoded (remove folder manually to re-decode)
+    # Skip if already decoded — delete the folder manually to force a re-decode.
     if [[ -d "$out_dir" ]]; then
-        warn "Already decoded, skipping: $apk_name  →  $out_dir"
+        warn "Already decoded, skipping: $rel_path"
         (( SKIPPED++ )) || true
         return
     fi
 
-    info "Decoding [$out_subdir] $apk_name …"
+    mkdir -p "$(dirname "$out_dir")"
+
+    info "Decoding  $rel_path …"
 
     if apktool d "$apk_path" \
             -p "$FRAMEWORK_DIR" \
             -o "$out_dir" \
             --force \
             2>&1 | sed 's/^/    /'; then
-        success "Done → $out_dir"
+        success "Done → ${out_dir#"$DUMP_DIR"/}"
         (( DECODED++ )) || true
     else
-        error "Failed to decode: $apk_path"
+        error "Failed: $rel_path"
         (( FAILED++ )) || true
     fi
 }
 
-# Decode product overlays
-PRODUCT_DIR="$ROOT_DIR/product/overlay"
-if [[ -d "$PRODUCT_DIR" ]]; then
-    mapfile -t PRODUCT_APKS < <(find "$PRODUCT_DIR" -maxdepth 1 -iname "*.apk" | sort)
-    if [[ ${#PRODUCT_APKS[@]} -eq 0 ]]; then
-        warn "No APKs found in: $PRODUCT_DIR"
-    else
-        info "Found ${#PRODUCT_APKS[@]} APK(s) in product/overlay"
-        for apk in "${PRODUCT_APKS[@]}"; do
-            decode_apk "$apk" "product"
-        done
-    fi
-else
-    warn "product/overlay folder not found, skipping."
-fi
-
-# Decode vendor overlays
-VENDOR_DIR="$ROOT_DIR/vendor/overlay"
-if [[ -d "$VENDOR_DIR" ]]; then
-    mapfile -t VENDOR_APKS < <(find "$VENDOR_DIR" -maxdepth 1 -iname "*.apk" | sort)
-    if [[ ${#VENDOR_APKS[@]} -eq 0 ]]; then
-        warn "No APKs found in: $VENDOR_DIR"
-    else
-        info "Found ${#VENDOR_APKS[@]} APK(s) in vendor/overlay"
-        for apk in "${VENDOR_APKS[@]}"; do
-            decode_apk "$apk" "vendor"
-        done
-    fi
-else
-    warn "vendor/overlay folder not found, skipping."
-fi
+for apk in "${ALL_APKS[@]}"; do
+    decode_apk "$apk"
+done
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 header "Summary"
@@ -165,7 +193,7 @@ echo -e "  ${GREEN}Decoded :${RESET}  $DECODED"
 echo -e "  ${YELLOW}Skipped :${RESET}  $SKIPPED  (already existed)"
 echo -e "  ${RED}Failed  :${RESET}  $FAILED"
 echo
-echo -e "  Output folder: ${BOLD}$OUTPUT_BASE${RESET}"
+echo -e "  Output folder: ${BOLD}${OUTPUT_BASE#"$DUMP_DIR"/}${RESET}"
 echo
 
 if [[ $FAILED -gt 0 ]]; then
