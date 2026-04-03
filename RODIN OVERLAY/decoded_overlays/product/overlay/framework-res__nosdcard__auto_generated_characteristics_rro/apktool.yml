@@ -1,0 +1,30 @@
+version: 3.0.1
+apkFileName: framework-res__nosdcard__auto_generated_characteristics_rro.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 36
+  targetSdkVersion: 36
+versionInfo:
+  versionCode: 36
+  versionName: 16
+resourcesInfo:
+  packageId: 127
+  compactEntries: true
+doNotCompress:
+- arsc
+- png
+- assets/geoid_map/expiration-distance-disk-tile-1.pb
+- assets/geoid_map/expiration-distance-disk-tile-3.pb
+- assets/geoid_map/expiration-distance-disk-tile-5.pb
+- assets/geoid_map/expiration-distance-disk-tile-7.pb
+- assets/geoid_map/expiration-distance-disk-tile-9.pb
+- assets/geoid_map/expiration-distance-disk-tile-b.pb
+- assets/geoid_map/expiration-distance-params.pb
+- assets/geoid_map/geoid-height-disk-tile-1.pb
+- assets/geoid_map/geoid-height-disk-tile-3.pb
+- assets/geoid_map/geoid-height-disk-tile-5.pb
+- assets/geoid_map/geoid-height-disk-tile-7.pb
+- assets/geoid_map/geoid-height-disk-tile-9.pb
+- assets/geoid_map/geoid-height-disk-tile-b.pb

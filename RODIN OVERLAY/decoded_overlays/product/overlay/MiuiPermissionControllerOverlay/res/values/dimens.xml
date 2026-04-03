@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="miuix_theme_dialog_icon_radius">8.0dp</dimen>
+    <dimen name="miuix_theme_dialog_negative_button_height">50.0dp</dimen>
+    <dimen name="miuix_theme_dialog_negative_button_left">28.0dp</dimen>
+    <dimen name="miuix_theme_dialog_negative_button_text_size">17.0sp</dimen>
+    <dimen name="miuix_theme_dialog_negative_radius">16.0dp</dimen>
+    <dimen name="miuix_theme_dialog_radius">24.0dp</dimen>
+    <dimen name="miuix_theme_dialog_title_text_size">18.0sp</dimen>
+</resources>

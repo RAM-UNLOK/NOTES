@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="notification_default_carrier">true</bool>
+    <bool name="show_vowifi_qs">true</bool>
+</resources>

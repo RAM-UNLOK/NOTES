@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lable_sim_not_ready">SIM卡应用未就绪或不受支持</string>
+    <string name="sim_type_sim_name">SIM卡工具包</string>
+    <string name="sim_type_uim_name">UIM卡工具包</string>
+    <string name="sim_type_usim_name">USIM卡应用</string>
+    <string name="stk_ic_remove_content">移除桌面图标后可在系统设置中继续使用。</string>
+    <string name="stk_ic_remove_title">移除“USIM卡应用”桌面图标？</string>
+</resources>

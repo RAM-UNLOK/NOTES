@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_defaultDialer">com.google.android.dialer</string>
+    <string name="config_defaultSms">com.google.android.apps.messaging</string>
+    <string name="config_systemContacts">com.google.android.contacts</string>
+</resources>

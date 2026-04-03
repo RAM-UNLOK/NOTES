@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="dimen" name="navigation_bar_gesture_height">@android:dimen/navigation_bar_frame_height</item>
-</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="dimen" name="keyboard_demo_width_and_height_ratio">0.3844</item>
-    <item type="dimen" name="keyboard_demo_x_ratio">0.28085</item>
-    <item type="dimen" name="keyboard_demo_y_ratio">0.86808</item>
-    <dimen name="keyboard_key_text_sp">8.889984sp</dimen>
-    <dimen name="ks_radio_button_preference_width">690.66406dip</dimen>
-</resources>

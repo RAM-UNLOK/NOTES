@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alphabet">អក្សរ</string>
+    <string name="app_name">ប្រអប់ឧបករណ៍ស៊ីម</string>
+    <string name="button_cancel">បោះបង់</string>
+    <string name="button_no">ទេ</string>
+    <string name="button_ok">យល់ព្រម</string>
+    <string name="button_yes">បាទ/ចា៎ស</string>
+    <string name="default_call_setup_msg">ការហៅកំពុងដំណើរការ…</string>
+    <string name="default_close_channel_msg">ឆានែលត្រូវបានបិទ</string>
+    <string name="default_open_channel_msg">បើកឆានែល?</string>
+    <string name="default_receive_data_msg">កំពុង​ទទួលទិន្នន័យ…</string>
+    <string name="default_send_data_msg">កំពុងផ្ញើ​ទិន្នន័យ…</string>
+    <string name="default_setup_call_msg">កំពុងរៀបចំការហៅ…</string>
+    <string name="default_tone_dialog_msg">កំពុងលេងសូរ…</string>
+    <string name="digits">លេខ (0-9, *, #, +)</string>
+    <string name="disable_app">បានបិទដំណើរការ</string>
+    <string name="enable_app">បានបើកដំណើរការ</string>
+    <string name="help">ជំនួយ</string>
+    <string name="menu_back">ថយក្រោយ</string>
+    <string name="menu_end_session">ចុងបញ្ចប់សម័យ</string>
+    <string name="no_sim_card_inserted">បញ្ចូលស៊ីមដើម្បីចាប់ផ្តើមបើកដំណើរការប្រអប់ឧបករណ៍ស៊ីម។</string>
+    <string name="service_name">ឈ្មោះសេវា</string>
+    <string name="sim_type_sim_name">ប្រអប់ឧបករណ៍ស៊ីម</string>
+    <string name="sim_type_uim_name">ប្រអប់ឧបករណ៍ UIM</string>
+    <string name="sim_type_usim_name">ប្រអប់ឧបករណ៍ USIM</string>
+    <string name="stk_app_state">សេចក្តីថ្លែងកម្មវិធី</string>
+    <string name="stk_dialog_accept">បាទ/ចា៎ស</string>
+    <string name="stk_dialog_reject">ទេ</string>
+    <string name="stk_dialog_title">ប្រអប់ឧបករណ៍ស៊ីម</string>
+    <string name="stk_intent_permission">សិទ្ធិត្រូវបានទាមទារ</string>
+    <string name="stk_no_service">មិនមានសេវាទេ</string>
+</resources>

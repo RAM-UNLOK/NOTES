@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="show_vowifi_qs">true</bool>
-    <bool name="show_volte_when_wifi_and_drip_end">true</bool>
-</resources>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lable_sim_not_ready">"L'utilitaire SIM n'est pas prêt ou n'est pas pris en charge."</string>
+</resources>

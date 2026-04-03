@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: U7J9y4EwAyVitHuzDw4roJ40MYrZQtZcTsTT5lYpte0=
+
+Name: res/drawable-nxhdpi-v4/ic_launcher_sim_toolkit.png
+SHA-256-Digest: Kfc29xtG69X4p41QVxffvD+RYEVPmqsecN1xfffD6JE=
+
+Name: res/drawable-xhdpi-v4/ic_launcher_sim_toolkit.png
+SHA-256-Digest: Ol2tvJL/SEpwvVkfluVSAFFe3PyDlNgj9Or6i16gl9c=
+
+Name: res/drawable-xxhdpi-v4/ic_launcher_sim_toolkit.png
+SHA-256-Digest: Kfc29xtG69X4p41QVxffvD+RYEVPmqsecN1xfffD6JE=
+
+Name: res/drawable-xxxhdpi-v4/ic_launcher_sim_toolkit.png
+SHA-256-Digest: Kfc29xtG69X4p41QVxffvD+RYEVPmqsecN1xfffD6JE=
+
+Name: resources.arsc
+SHA-256-Digest: P2JrsdFOUJbvcCzN2xd8I4Y/0GtjZ46chyEUj4vrpYI=
+

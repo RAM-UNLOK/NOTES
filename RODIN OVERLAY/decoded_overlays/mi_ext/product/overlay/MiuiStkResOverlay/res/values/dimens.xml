@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="stk_bottom_padding">13.329987dp</dimen>
+    <dimen name="stk_top_padding">6.669983dp</dimen>
+</resources>

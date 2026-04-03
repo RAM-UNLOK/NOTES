@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_defaultSearchSelectorPackageName">com.google.android.apps.setupwizard.searchselector</string>
+</resources>
