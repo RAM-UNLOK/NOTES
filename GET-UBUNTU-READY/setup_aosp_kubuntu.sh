@@ -160,7 +160,7 @@ chown "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME/.bin/repo"
 
 echo "--> 8/9 Enforcing Git Identity and Network Workarounds..."
 sudo -u "$ACTUAL_USER" git config --global user.name "Omkar Parte"
-sudo -u "$ACTUAL_USER" git config --global user.email "rakmoparte@gmail.com"
+sudo -u "$ACTUAL_USER" git config --global user.email "88646966+RAM-UNLOK@users.noreply.github.com"
 sudo -u "$ACTUAL_USER" git config --global color.ui true
 
 sudo -u "$ACTUAL_USER" git config --global http.postBuffer 524288000

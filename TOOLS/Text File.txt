@@ -1,0 +1,40 @@
+ 
+adb shell dmesg > dmesg.log
+adb pull /data/tombstones/ .
+adb shell cat /sys/fs/pstore/console-ramoops-0 > ramoops.log
+adb shell cat /proc/last_kmsg > last_kmsg.log
+adb logcat -b all > full_logcat.log
+
+adb shell ls -la /vendor/etc/audio_effects.xml
+adb shell ls -la /vendor/etc/audio/
+adb shell cat /vendor/etc/audio_effects.xml
+
+
+# Find what createIEffectMTK tries to dlopen at runtime
+adb shell readelf -d /vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so | grep -v NEEDED
+
+# Check all Dolby lib dependencies
+adb shell readelf -d /vendor/lib64/soundfx/libswdapaidl.so | grep NEEDED
+adb shell readelf -d /vendor/lib64/soundfx/libdlbvolaidl.so | grep NEEDED
+adb shell readelf -d /vendor/lib64/soundfx/libswspatializeraidl.so | grep NEEDED
+adb shell readelf -d /vendor/lib64/soundfx/libswgamedapaidl.so | grep NEEDED
+
+# Enable verbose linker logging to catch the silent dlopen failure
+adb shell setprop debug.ld.all dlerror
+adb shell stop && adb shell start
+# Then grab logcat immediately — it will print the exact failing library name
+
+
+# 1. Most important - find the mystery dlopen target:
+adb shell "strace -e trace=openat,dlopen /vendor/bin/hw/android.hardware.audio.service-aidl.mediatek 2>&1 | head -100"
+
+# 2. Or easier - enable linker debug and grab the error:
+adb shell setprop debug.ld.all dlerror
+adb logcat -c && adb shell stop ; adb shell start
+adb logcat | grep -E "dlerror|dlopen.*failed|cannot locate" | head -20
+
+# 3. Check what MTK-specific libs exist that could be the backend:
+adb shell ls /vendor/lib64/ | grep -iE "effect|mtkaudio|libmtk"
+adb shell ls /vendor/lib64/hw/ | grep -iE "effect|audio"
+
+adb logcat -b all > full_logcat1.log

@@ -30,11 +30,13 @@ error()   { echo -e "${RED}[ERROR]${RESET} $*" >&2; }
 header()  { echo -e "\n${BOLD}${CYAN}══ $* ══${RESET}"; }
 
 # ── Resolve paths ─────────────────────────────────────────────────────────────
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 DUMP_DIR="${1:-./dump}"
 DUMP_DIR="$(realpath "$DUMP_DIR")"
 
 FRAMEWORK_DIR="$DUMP_DIR/.apktool_frameworks"   # apktool framework cache
-OUTPUT_BASE="$DUMP_DIR/decoded_overlays"         # decoded output root
+OUTPUT_BASE="$SCRIPT_DIR/decoded_overlays"      # decoded output root
 
 # ── Sanity checks ─────────────────────────────────────────────────────────────
 header "Pre-flight checks"
@@ -129,7 +131,7 @@ fi
 
 info "Found ${#ALL_APKS[@]} overlay APK(s) across all partitions:"
 for apk in "${ALL_APKS[@]}"; do
-    echo "    ${apk#"$DUMP_DIR"/}"
+    echo "  ${apk#"$DUMP_DIR"/}"
 done
 
 # ── Step 4 – Decode every overlay APK ────────────────────────────────────────
@@ -143,14 +145,14 @@ decode_apk() {
     local apk_path="$1"
 
     # Mirror the dump's directory structure under OUTPUT_BASE so:
-    #   product/overlay/MiuiFrameworkResOverlay.apk
-    #     → decoded_overlays/product/overlay/MiuiFrameworkResOverlay/
+    # product/overlay/MiuiFrameworkResOverlay.apk
+    # → decoded_overlays/product/overlay/MiuiFrameworkResOverlay/
     #
-    #   product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk
-    #     → decoded_overlays/product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay/
+    # product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk
+    # → decoded_overlays/product/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay/
     #
-    #   mi_ext/product/overlay/GmsTelephonyOverlay.apk
-    #     → decoded_overlays/mi_ext/product/overlay/GmsTelephonyOverlay/
+    # mi_ext/product/overlay/GmsTelephonyOverlay.apk
+    # → decoded_overlays/mi_ext/product/overlay/GmsTelephonyOverlay/
     local rel_path="${apk_path#"$DUMP_DIR"/}"
     local rel_dir
     rel_dir="$(dirname "$rel_path")"
@@ -168,14 +170,14 @@ decode_apk() {
 
     mkdir -p "$(dirname "$out_dir")"
 
-    info "Decoding  $rel_path …"
+    info "Decoding $rel_path …"
 
     if apktool d "$apk_path" \
-            -p "$FRAMEWORK_DIR" \
-            -o "$out_dir" \
-            --force \
-            2>&1 | sed 's/^/    /'; then
-        success "Done → ${out_dir#"$DUMP_DIR"/}"
+        -p "$FRAMEWORK_DIR" \
+        -o "$out_dir" \
+        --force \
+        2>&1 | sed 's/^/    /'; then
+        success "Done → $out_dir"
         (( DECODED++ )) || true
     else
         error "Failed: $rel_path"
@@ -189,11 +191,11 @@ done
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 header "Summary"
-echo -e "  ${GREEN}Decoded :${RESET}  $DECODED"
-echo -e "  ${YELLOW}Skipped :${RESET}  $SKIPPED  (already existed)"
-echo -e "  ${RED}Failed  :${RESET}  $FAILED"
+echo -e "  ${GREEN}Decoded :${RESET} $DECODED"
+echo -e "  ${YELLOW}Skipped :${RESET} $SKIPPED (already existed)"
+echo -e "  ${RED}Failed  :${RESET} $FAILED"
 echo
-echo -e "  Output folder: ${BOLD}${OUTPUT_BASE#"$DUMP_DIR"/}${RESET}"
+echo -e "  Output folder: ${BOLD}$OUTPUT_BASE${RESET}"
 echo
 
 if [[ $FAILED -gt 0 ]]; then
