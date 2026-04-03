@@ -64,7 +64,7 @@ Name: assets/default/rtt.xml
 SHA-256-Digest: XGat/B2w+V0hM8M3+P+sdK6UGiy4wRw3mHSkNrrevgY=
 
 Name: res/xml/vendor_device.xml
-SHA-256-Digest: JgBlJFSWY6C8LN+jMW/nRww6TgzxWPMVM/EFV0qbJSw=
+SHA-256-Digest: 9YDjXaGpVz9ft0+4/tkCP+lJLZ4Z8yajEHLS6tOfeV8=
 
 Name: resources.arsc
 SHA-256-Digest: UjMxW4hS4EuIFmnLZ5PUQXAjIG18vIDURs8UXwogXSY=

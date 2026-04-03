@@ -294,7 +294,15 @@
         <string name="call_screening_app">com.trustonic.telecoms.standard.dlc/com.trustonic.telecoms.entrypoint.carrier.CallScreeningService</string>
         <string name="call_redirection_service_component_name_string">com.trustonic.telecoms.standard.dlc/com.trustonic.telecoms.entrypoint.carrier.CallRedirectionService</string>
     </carrier_config>
-    <carrier_config mcc="404" mnc="02,03,10,16,31,40,45,49,51,52,53,54,55,56,70,90,92,93,94,95,96,97,98">
+    <carrier_config mcc="404" mnc="02,03,10,16,31,40,45,49,70,90,92,93,94,95,96,97,98">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+        <boolean name="carrier_disable_vice_sa_mode_bool" value="false" />
+        <boolean name="config_is_show_vonr_switch" value="true" />
+        <boolean name="config_show_vonr_icon_in_statusbar" value="true" />
+        <boolean name="config_vonr_on_by_defalut_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="51,52,53,54,55,56">
         <boolean name="carrier_sa_mode_available_bool" value="true" />
         <boolean name="carrier_disable_sa_mode_bool" value="false" />
         <boolean name="carrier_disable_vice_sa_mode_bool" value="false" />
