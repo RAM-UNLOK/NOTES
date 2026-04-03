@@ -18,7 +18,7 @@
             },
             {
                 "NodeName": "com.xiaomi.plugin.hwhalproc",
-                "NodeInstance": "WPEPQInstance0",
+                "NodeInstance": "WPEPQInstanceWithoutEIS",
                 "NodeProperty": [
                     {
                         "NodePropertyName": "NodeMask",
@@ -85,14 +85,14 @@
                 },
                 "DstPort": {
                     "PortId": 0,
-                    "NodeInstance": "WPEPQInstance0",
+                    "NodeInstance": "WPEPQInstanceWithoutEIS",
                     "PortFormat": "YUV420_NV12"
                 }
             },
             {
                 "SrcPort": {
                     "PortId": 0,
-                    "NodeInstance": "WPEPQInstance0"
+                    "NodeInstance": "WPEPQInstanceWithoutEIS"
                 },
                 "DstPort": {
                     "PortId": 0,
@@ -113,7 +113,7 @@
             {
                 "SrcPort": {
                     "PortId": 1,
-                    "NodeInstance": "WPEPQInstance0"
+                    "NodeInstance": "WPEPQInstanceWithoutEIS"
                 },
                 "DstPort": {
                     "PortId": 1,
@@ -123,7 +123,7 @@
             {
                 "SrcPort": {
                     "PortId": 2,
-                    "NodeInstance": "WPEPQInstance0"
+                    "NodeInstance": "WPEPQInstanceWithoutEIS"
                 },
                 "DstPort": {
                     "PortId": 2,

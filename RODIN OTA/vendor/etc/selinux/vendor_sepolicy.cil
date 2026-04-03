@@ -15609,6 +15609,8 @@
 (allow mtk_hal_camera vendor_data_file_202404 (sock_file (read write create getattr setattr unlink)))
 (allow mtk_hal_camera self (process (execmem)))
 (allow mtk_hal_camera vendor_data_file_202404 (file (read write create getattr setattr lock)))
+(allow mtk_hal_camera sysfs_dmabuf_stats_202404 (dir (read open search)))
+(allow mtk_hal_camera sysfs_dmabuf_stats_202404 (file (read getattr open)))
 (allow mtk_hal_camera mtk_hal_neuralnetworks (binder (call transfer)))
 (allow mtk_hal_camera mtk_hal_neuralnetworks (fd (use)))
 (allow mtk_hal_neuralnetworks vendor_camera_dump_file (file (read write create getattr setattr append rename open)))
