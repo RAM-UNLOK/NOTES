@@ -1,16 +1,17 @@
 =====================================================
-    🌕 LUNARIS-AOSP v3.8 | STABLE RELEASE 🌕
+    🌕 LUNARIS-AOSP v3.9 | STABLE RELEASE 🌕
 =====================================================
   Device:       POCO X7 Pro (rodin)
-  Build Date:   2026-03-11
+  Build Date:   2026-04-11
   Maintainer:   @rakmoparte
   Android:      16 QPR2 (16.0.0_r4)
 =====================================================
 
-🚀 RELEASE STATUS: FIRST STABLE
-This is our first stable milestone after the initial 
-preview. It includes 28 targeted commits for hardware 
-stability, performance, and display optimization.
+🚀 RELEASE STATUS: SECOND STABLE
+This is our second Stable Build, bringing a massive 
+under-the-hood rework. It includes over 50+ device 
+tree improvements targeted at stock-like performance, 
+audio, and battery life.
 
 -----------------------------------------------------
 ⚠️ IMPORTANT NOTES (READ BEFORE USE)
@@ -22,12 +23,6 @@ stability, performance, and display optimization.
    - DO NOT use other tests; it will cause system 
      crashes and broken sensors.
 
-2. REFRESH RATE: If you experience display flickering, 
-   manually set the rate to 120Hz in Display Settings.
-
-3. GCAM: For custom libs and configs, please install 
-   the gcam_signed.apk manually after flashing.
-
 =====================================================
       🚀 INSTALLATION & CALIBRATION GUIDE 🚀
 =====================================================
@@ -37,8 +32,6 @@ stability, performance, and display optimization.
   or any other AOSP ROM.
 - DIRTY FLASH: Only supported if you are already on 
   a previous Lunaris-AOSP build.
-- Remove lockscreen PIN/Password and DELETE all 
-  enrolled fingerprints BEFORE flashing.
 
 STEP 1: FLASH PARTITIONS (FASTBOOT)
 (SKIP this step if you are already on an existing 
@@ -51,7 +44,7 @@ STEP 2: FORMAT & SIDELOAD
 - FORMAT DATA: Select Factory Reset -> Format Data.
   (SKIP this only if Dirty Flashing from previous Lunaris)
 - Apply Update -> Apply from ADB.
-- Run: > adb sideload lunaris-aosp-v3.8.zip
+- Run: > adb sideload lunaris-aosp-v3.9.zip
 - Recovery will ask: "Reboot to recovery?" -> Select YES.
 - Select: Reboot System Now.
 
@@ -71,7 +64,6 @@ Reboot to Fastboot and run:
 🔗 OFFICIAL LINKS
 -----------------------------------------------------
 📁 Device Tree: https://github.com/Digimend-X-Rodin/android_device_xiaomi_rodin/tree/Lunaris-AOSP
-📸 GCam XMLs:   https://t.me/XydrionXUpdates
 💬 Support:     @rakmoparte
 
 ❤ Thank you for supporting Lunaris-AOSP!
