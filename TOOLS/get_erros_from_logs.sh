@@ -73,6 +73,8 @@ grep "avc: denied" logcat.log | grep -E "pid=|scontext=|tcontext=|tclass="
 adb logcat -b all | grep "avc: denied"
 ```
 
+grep "avc:" full_logcat1.log | cut -d' ' -f3- | sort -u > sorted_avc_denials.txt
+
 ## 7. Permission-related errors
 
 ```bash
