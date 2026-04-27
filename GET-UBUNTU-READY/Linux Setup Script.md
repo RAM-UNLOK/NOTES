@@ -1,112 +1,213 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+# AOSP Build Environment – Ubuntu / Kubuntu 26.04 LTS
 
-# can you create a script to automate the installation of all packages
+**All-in-one installer by Omkar Parte · [Digimend Labs](https://digimendlabs.in)**  
+Automates the full setup of an AOSP build environment on Ubuntu / Kubuntu 26.04 LTS, including build dependencies, Apktool, Android udev rules, KVM, Flatpak apps, git-repo, and SDK paths.
 
-Here's a shell script that will automate the entire installation and setup of all required packages, symlinks, and helper tools for building AOSP custom ROMs on Kubuntu 24.04.3 LTS. Simply save this script as `setup_aosp_env.sh`, make it executable, and run it with root privileges.
+---
+
+## Requirements
+
+| Item | Minimum |
+|------|---------|
+| OS | Ubuntu 26.04 LTS / Kubuntu 26.04 LTS |
+| RAM | 16 GB (32 GB recommended for AOSP builds) |
+| Disk | 300 GB free (AOSP source + build output) |
+| CPU | Any x86_64 (optimised for Intel i7-12700KF / 20 threads) |
+| Internet | Required (downloads ~2–3 GB) |
+| Privileges | `sudo` / root |
+
+---
+
+## Quick Start
 
 ```bash
-#!/bin/bash
+# 1. Clone or download the script
+wget https://your-host/setup_aosp_kubuntu_2604.sh
 
-# Make System Ready to Build Custom ROM on Kubuntu 24.04.3 LTS
+# 2. Make executable
+chmod +x setup_aosp_kubuntu_2604.sh
 
-set -e
-echo "Updating and Upgrading System..."
-sudo apt-get update && sudo apt-get upgrade -y
+# 3. Run as root
+sudo bash setup_aosp_kubuntu_2604.sh
 
-echo "Adding git-core PPA..."
-sudo add-apt-repository ppa:git-core/ppa -y
-sudo apt-get update && sudo apt-get upgrade -y
+# 4. Reload shell environment after the script finishes
+source ~/.bashrc
+```
 
-echo "Installing Essential Build Tools..."
-sudo apt-get install -y bc bison build-essential ccache curl flex git \
-g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev \
-lib32z1-dev libc6-dev-i386 libgl1-mesa-dev libssl-dev libx11-dev
+> **Tip:** Run inside a `tmux` or `screen` session for long installs.
 
-echo "Installing Additional Libraries and Utilities..."
-sudo apt-get install -y libxml2-utils unzip xorg-dev xsltproc zip zlib1g-dev \
-default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpkg-dev \
-libcurl4-openssl-dev git-lfs patchelf policycoreutils-python-utils
+---
 
-echo "Installing Kernel-Related Packages..."
-sudo apt-get install -y git automake flex lzop bison gperf build-essential zip curl \
-zlib1g-dev g++-multilib python3-networkx libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
-libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool \
-make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom \
-libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 xorg-dev libx11-dev \
-lib32z1-dev libgl1-mesa-dev xsltproc unzip
+## What the Script Does (Step by Step)
 
-echo "Installing Archive and Compression Tools..."
-sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar \
-uudeview mpack arj cabextract rename liblzma-dev brotli lz4 \
-libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x
+| Step | Description |
+|------|-------------|
+| 1/9 | Optional: enable Universe & Multiverse repositories |
+| 2/9 | `apt-get update && apt-get upgrade` – full system refresh |
+| 3/9 | Add/verify **git-core PPA** for latest Git |
+| 4/9 | Install all AOSP **build dependencies** in 11 labelled sections with wait timers |
+| 5/9 | Install **KVM / libvirt** and add user to `kvm` & `libvirt` groups |
+| 6/9 | Install **Flatpak** + Telegram, Google Chrome, Android Studio via Flathub |
+| 7/9 | Inject **AOSP SDK/NDK PATH** block into `~/.bashrc` (stale-entry safe) |
+| 8/9 | Download **Google git-repo** → `~/.bin/repo` + set Git identity |
+| 9/9 | Download **51-android udev rules** from `snowdream/51-android` + reload udev |
+| ✦ | Install **Apktool 3.0.2** (JAR + wrapper) into `/usr/local/bin/` |
 
-echo "Installing Python Dependencies and Dev Tools..."
-sudo apt-get install -y python3 python3-full python3-pip python3-protobuf \
-python-is-python3 python3-venv libncurses6 fontconfig rsync openssl clang cmake ninja-build \
-libncurses-dev lib32stdc++6 libelf-dev libsdl2-dev
+### Dependency Install Sections (Step 4)
 
-echo "Fixing libncurses5 compatibility issues..."
-sudo ln -sf /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/x86_64-linux-gnu/libncurses.so.5
-sudo ln -sf /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libtinfo.so.5
-sudo ln -sf /usr/lib32/libncurses.so.6 /usr/lib32/libncurses.so.5
-sudo ln -sf /usr/lib32/libtinfo.so.6 /usr/lib32/libtinfo.so.5
+| Section | Packages |
+|---------|----------|
+| 4a – Core build tools | `bc bison build-essential ccache curl flex make schedtool zip unzip wget` |
+| 4b – Git & VCS | `git git-core git-lfs` |
+| 4c – Java | `default-jre default-jdk` (Java 8+ validated) |
+| 4d – Compression | `bzip2 lz4 lzop liblzma-dev squashfs-tools p7zip-full rar brotli …` |
+| 4e – 32-bit libs | `libc6-dev-i386 lib32ncurses-dev lib32z1-dev lib32stdc++6` |
+| 4f – Image/graphics | `imagemagick libgl1-mesa-dev libsdl2-dev pngcrush optipng fontconfig` |
+| 4g – SSL/XML/Network | `libssl-dev libcurl4-openssl-dev libxml2-utils nghttp2 rsync aria2` |
+| 4h – Misc build tools | `fakeroot patchelf automake maven pwgen minicom …` |
+| 4i – Python 3 | `python3 python3-pip python3-venv python-is-python3 python3-protobuf` |
+| 4j – Clang/CMake/Ninja | `clang cmake ninja-build libncurses-dev libelf-dev` |
+| 4k – Android tools | `android-sdk-libsparse-utils erofs-utils` |
 
-echo "Setting up Android SDK Platform Tools Path..."
-if ! grep -q "ANDROID_HOME" ~/.bashrc; then
-cat <<EOL >> ~/.bashrc
-# AOSP Build Configuration
+---
+
+## Setting ccache Size (100 GB)
+
+ccache dramatically speeds up repeated AOSP builds by caching compiled objects.
+
+### Option A – Set in `~/.bashrc` (Recommended, Persistent)
+
+Add these lines to your `~/.bashrc` (the script already adds `USE_CCACHE` and `CCACHE_EXEC`):
+
+```bash
+# --- AOSP ENV START --- (already present, add CCACHE_SIZE below it)
 export USE_CCACHE=1
-ccache -M 150G
-PATH="\${HOME}/.bin:\${PATH}"
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR="${HOME}/.ccache"   # custom cache location (optional)
+export CCACHE_SIZE=100G               # 100 GB cache limit
+```
 
-# Android SDK Configuration
-export ANDROID_HOME=\${HOME}/Android/Sdk
-export PATH=\${PATH}:\${ANDROID_HOME}/platform-tools
-export PATH=\${PATH}:\${ANDROID_HOME}/cmdline-tools/latest/bin:\${ANDROID_HOME}/build-tools/34.0.0
-EOL
-fi
+Then reload:
+
+```bash
+source ~/.bashrc
+```
+
+Apply the size to the ccache database immediately:
+
+```bash
+ccache -M 100G
+```
+
+### Option B – Apply Once (Session Only)
+
+```bash
+ccache -M 100G
+```
+
+### Verify ccache Is Working
+
+```bash
+# Show current config and stats
+ccache -s
+
+# Expected output includes:
+#   Cache directory   ~/.ccache
+#   Max cache size    100.0 GB
+```
+
+### During AOSP Build
+
+AOSP's build system honours `USE_CCACHE=1` automatically. To also set it inline:
+
+```bash
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+ccache -M 100G
+source build/envsetup.sh
+lunch aosp_x86_64-eng
+make -j$(nproc)
+```
+
+---
+
+## Apktool
+
+Installed automatically by the script.
+
+| File | Path | Permissions |
+|------|------|-------------|
+| JAR | `/usr/local/bin/apktool.jar` | `644 root:root` |
+| Wrapper | `/usr/local/bin/apktool` | `755 root:root` |
+
+**Sources used:**
+- Wrapper: `https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool`
+- JAR: `https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_3.0.2.jar`
+
+```bash
+# Verify
+apktool --version
+
+# Decode an APK
+apktool d app.apk -o output_dir
+
+# Rebuild an APK
+apktool b output_dir -o rebuilt.apk
+```
+
+---
+
+## Android udev Rules
+
+The script downloads the community-maintained `51-android.rules` from:
+
+```
+https://raw.githubusercontent.com/snowdream/51-android/refs/heads/master/51-android.rules
+```
+
+Installed to `/etc/udev/rules.d/51-android.rules` and activated immediately via:
+
+```bash
+udevadm control --reload-rules && udevadm trigger
+```
+
+This enables ADB/Fastboot access for **all major Android device vendors** without needing `sudo adb`.
+
+---
+
+## Post-Install Checklist
+
+```bash
+# 1. Reload environment
 source ~/.bashrc
 
-echo "Setting up git-repo..."
-mkdir -p ~/.bin
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-chmod a+rx ~/.bin/repo
+# 2. Verify tools
+git --version
+java -version
+apktool --version
+adb version
+ccache --version
+ccache -s          # check cache stats & size
 
-echo "Configuring Git (Set your name and email on next step)..."
-git config --global user.name "Your Name"
-git config --global user.email "youremail@example.com"
+# 3. Verify KVM (reboot or re-login first for group changes to apply)
+kvm-ok
 
-echo "Flatpak Installation (optional)..."
-sudo apt install -y flatpak plasma-discover-backend-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-echo "Telegram PPA Installation..."
-sudo add-apt-repository ppa:atareao/telegram -y
-sudo apt-get update
-sudo apt-get install -y telegram
-
-echo "Installation Complete. Please reboot your system to finalize setup."
+# 4. Check Android Studio (Flatpak)
+flatpak list | grep AndroidStudio
 ```
 
-**Instructions:**
+---
 
-1. Copy this script to a file named `setup_aosp_env.sh`
-2. Run:
+## Notes
 
-```bash
-chmod +x setup_aosp_env.sh
-sudo ./setup_aosp_env.sh
-```
+- **Group changes** (`kvm`, `libvirt`) require a **logout/login** or reboot to take effect.
+- The `~/.bashrc` AOSP block is **idempotent** — re-running the script safely removes and rewrites it.
+- Ubuntu 26.04 ships Python 3 by default; `python-is-python3` makes `python` point to `python3`.
+- For full AOSP source sync, ensure at least **300 GB** of free disk space and run `repo init` / `repo sync` after setup.
 
-3. Follow additional prompts for Git configuration.
+---
 
-This script will set up all necessary packages, symlinks, and environment variables needed to build AOSP ROMs on Kubuntu 24.04.3 LTS.[^1][^2][^3]
+## License
 
-<div align="center">⁂</div>
-
-[^1]: https://stackoverflow.com/questions/78857564/unable-to-compile-aosp-source-code-on-ubuntu-24-04-system
-
-[^2]: Make-System-Ready-to-Build-Custom-Rom-on-Ubuntu-24.04.2.md
-
-[^3]: https://source.android.com/docs/setup/start/requirements
-
+MIT — free to use and modify.  
+Maintained by **Omkar Parte · Digimend Labs**, Mumbai, Maharashtra 🇮🇳

@@ -1,230 +1,370 @@
 #!/usr/bin/env bash
 
 # ==============================================================================
-# Ultimate AOSP 16.2 Build Environment Setup & Updater for Kubuntu 24.04 LTS
-# Target: Android 16.2 / android-16.0.0_r4
-# Hardware Optimization: Intel i7-12700KF (20 Threads) & AMD RX 6800 XT
-# Description: Automates the installation of dependencies, validates existing
-# tools, forcefully updates outdated components, and optimizes network.
+# Ultimate AOSP Build Environment Setup & Updater
+# Target OS : Ubuntu / Kubuntu 26.04 LTS
+# Target     : Android 16.x / AOSP Latest
+# Hardware   : Intel i7-12700KF (20 Threads) & AMD RX 6800 XT
+# Author     : Omkar Parte (Digimend Labs)
+# Description: All-in-one installer – validates, updates, and configures the
+#              complete AOSP build environment including Apktool, udev rules,
+#              KVM, Flatpak apps, git-repo, and Android SDK paths.
 # ==============================================================================
 
-set -e
+set -euo pipefail
 
-echo "=========================================================="
-echo " Initiating AOSP Build Setup & Validator for Kubuntu 24.04 LTS"
-echo "=========================================================="
-echo ""
+# ── Colour helpers ─────────────────────────────────────────────────────────────
+RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'
+CYAN='\033[0;36m'; BOLD='\033[1m'; RESET='\033[0m'
+
+info()    { echo -e "${CYAN}[INFO]${RESET}  $*"; }
+success() { echo -e "${GREEN}[OK]${RESET}    $*"; }
+warn()    { echo -e "${YELLOW}[WARN]${RESET}  $*"; }
+error()   { echo -e "${RED}[ERROR]${RESET} $*" >&2; }
+header()  { echo -e "\n${BOLD}${CYAN}╔══════════════════════════════════════════════╗${RESET}"; \
+            echo -e "${BOLD}${CYAN}║  $*${RESET}"; \
+            echo -e "${BOLD}${CYAN}╚══════════════════════════════════════════════╝${RESET}"; }
+
+wait_bar() {
+    local seconds="${1:-3}"
+    local label="${2:-Waiting}"
+    for ((i=seconds; i>0; i--)); do
+        echo -ne "\r${CYAN}  ⏳ ${label} … ${i}s remaining   ${RESET}"
+        sleep 1
+    done
+    echo -e "\r${GREEN}  ✔  ${label} complete.            ${RESET}"
+}
+
+# ── Root check ─────────────────────────────────────────────────────────────────
+if [[ "$EUID" -ne 0 ]]; then
+    error "Please run with sudo:  sudo bash setup_aosp_kubuntu.sh"
+    exit 1
+fi
 
 ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(getent passwd "$ACTUAL_USER" | cut -d: -f6)
 
-if [ "$EUID" -ne 0 ]; then
-echo "ERROR: Please run this script with sudo (e.g., sudo bash setup_aosp_kubuntu.sh)"
-exit 1
-fi
+echo -e "\n${BOLD}${CYAN}"
+echo "  ╔══════════════════════════════════════════════════════════╗"
+echo "  ║   AOSP Build Environment – Ubuntu / Kubuntu 26.04 LTS   ║"
+echo "  ║          All-in-one Installer  •  Digimend Labs           ║"
+echo "  ╚══════════════════════════════════════════════════════════╝"
+echo -e "${RESET}"
 
-echo "--> 1/9 Optional Repository Setup"
-# BACKGROUND: Check if Universe/Multiverse should be added.
-read -p "Do you want to enable Universe and Multiverse repositories? [y/N]: " ENABLE_REPOS
-ENABLE_REPOS=${ENABLE_REPOS:-N}
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 1 – Optional Repository Setup
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 1/9 · Optional Repository Setup"
+
+read -rp "  Enable Universe and Multiverse repositories? [y/N]: " ENABLE_REPOS
+ENABLE_REPOS="${ENABLE_REPOS:-N}"
 
 if [[ "$ENABLE_REPOS" =~ ^[Yy]$ ]]; then
-echo "--> Enabling universe and multiverse repositories..."
-add-apt-repository universe -y
-add-apt-repository multiverse -y
-wait
+    info "Enabling Universe and Multiverse …"
+    add-apt-repository universe  -y
+    add-apt-repository multiverse -y
+    wait_bar 3 "Repos added"
 else
-echo "--> Skipping repository enablement (Default)."
+    info "Skipping Universe/Multiverse (default)."
 fi
 
-echo "--> 2/9 Verifying System Packages & Forcing Updates..."
-# BACKGROUND: Updates the APT cache and forcefully upgrades all existing system packages.
-apt-get update -y
-apt-get upgrade -y
-wait
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 2 – System Package Update & Upgrade
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 2/9 · System Package Update & Upgrade"
 
-echo "--> 3/9 Verifying & Updating official git-core PPA..."
+info "Running apt-get update …"
+apt-get update -y
+info "Running apt-get upgrade …"
+apt-get upgrade -y
+wait_bar 5 "System packages updated"
+success "System packages are up to date."
+
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 3 – git-core PPA
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 3/9 · Verifying & Updating git-core PPA"
+
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -y
-wait
+wait_bar 3 "git-core PPA ready"
+success "git-core PPA verified."
 
-echo "--> 4/9 Verifying Build Tools, Dependencies, and Libraries..."
-# BACKGROUND: Installs required compilers and tools. 'ninja-build' will heavily utilize
-# the 20 threads on your i7-12700KF to blaze through the AOSP source.
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 4 – Build Dependencies
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 4/9 · Installing Build Dependencies"
+
+# ── 4a: Core build tools ──────────────────────────────────────────────────────
+info "Installing core build tools …"
 apt-get install -y \
-bc bison build-essential ccache curl flex git git-core gnupg gperf \
-imagemagick lib32ncurses-dev lib32z1-dev libc6-dev-i386 libgl1-mesa-dev \
-libssl-dev libx11-dev libxml2-utils unzip xorg-dev xsltproc zip zlib1g-dev \
-default-jre default-jdk nghttp2 libnghttp2-dev fakeroot dpkg-dev \
-libcurl4-openssl-dev git-lfs patchelf policycoreutils-python-utils \
-automake lzop python3-networkx bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev \
-squashfs-tools pngcrush schedtool lz4 make optipng maven pwgen libswitch-perl \
-policycoreutils minicom libxml-sax-base-perl libxml-simple-perl p7zip-full \
-p7zip-rar sharutils rar uudeview mpack arj cabextract rename liblzma-dev brotli \
-libexpat1-dev gettext libz-dev asciidoc xmlto docbook2x \
-python3 python3-full python3-pip python3-protobuf python-is-python3 python3-venv \
-libncurses6 fontconfig rsync openssl clang cmake ninja-build libncurses-dev \
-lib32stdc++6 libelf-dev libsdl2-dev android-sdk-libsparse-utils erofs-utils aria2 \
-wget apt-transport-https software-properties-common
-wait
+    bc bison build-essential ccache curl flex \
+    gnupg gperf make schedtool zip unzip \
+    apt-transport-https software-properties-common wget
+wait_bar 5 "Core build tools"
+success "Core build tools installed."
 
-echo "--> 5/9 Verifying Virtualization Support (KVM / Cuttlefish / Emulator)..."
-# BACKGROUND: Sets up Virtualization so your RX 6800 XT can be utilized via hardware
-# acceleration for the Android Emulator and AOSP Cuttlefish.
+info "Setting ccache max size to 100 GB …"
+ccache -M 100G
+success "ccache max cache size → 100 GB"
+
+# ── 4b: Git & version control ─────────────────────────────────────────────────
+info "Installing git, git-core, git-lfs …"
+apt-get install -y git git-core git-lfs
+wait_bar 3 "Git tools"
+success "Git and git-lfs installed."
+
+# ── 4c: Java (JDK / JRE) ──────────────────────────────────────────────────────
+info "Installing default JDK / JRE …"
+apt-get install -y default-jre default-jdk
+wait_bar 5 "Java JDK/JRE"
+success "Java installed."
+
+JAVA_MAJOR="$(java -version 2>&1 | grep -oP '(?<=version ")\d+' | head -1)"
+if [[ "$JAVA_MAJOR" -lt 8 ]]; then
+    error "Apktool and AOSP require Java 8+. Found Java $JAVA_MAJOR. Aborting."
+    exit 1
+fi
+info "Java version: $JAVA_MAJOR (compatible ✔)"
+
+# ── 4d: Compression & archive libraries ───────────────────────────────────────
+info "Installing compression & archive libraries …"
+apt-get install -y \
+    bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev brotli \
+    lz4 lzop liblzma-dev squashfs-tools \
+    p7zip-full p7zip-rar rar sharutils uudeview mpack arj cabextract rename
+wait_bar 4 "Compression & archive libs"
+success "Compression libraries installed."
+
+# ── 4e: 32-bit & multi-arch libraries ─────────────────────────────────────────
+info "Installing 32-bit & multi-arch libraries …"
+dpkg --add-architecture i386 || true
+apt-get update -y
+apt-get install -y \
+    libc6-dev-i386 lib32ncurses-dev lib32z1-dev lib32stdc++6
+wait_bar 4 "32-bit libs"
+success "32-bit libraries installed."
+
+# ── 4f: Image & graphics libraries ────────────────────────────────────────────
+info "Installing image & graphics libraries …"
+apt-get install -y \
+    imagemagick libgl1-mesa-dev libx11-dev libsdl2-dev \
+    pngcrush optipng fontconfig
+wait_bar 3 "Image/graphics libs"
+success "Image libraries installed."
+
+# ── 4g: SSL, XML & network libraries ──────────────────────────────────────────
+info "Installing SSL, XML & network libraries …"
+apt-get install -y \
+    libssl-dev openssl \
+    libxml2-utils xsltproc libexpat1-dev \
+    libcurl4-openssl-dev nghttp2 libnghttp2-dev \
+    rsync aria2
+wait_bar 3 "SSL/XML/network libs"
+success "Network libraries installed."
+
+# ── 4h: Misc build & scripting tools ──────────────────────────────────────────
+info "Installing misc build & scripting tools …"
+apt-get install -y \
+    fakeroot dpkg-dev patchelf policycoreutils \
+    policycoreutils-python-utils automake \
+    python3-networkx asciidoc xmlto docbook2x \
+    libxml-sax-base-perl libxml-simple-perl libswitch-perl \
+    maven pwgen minicom \
+    xorg-dev zlib1g-dev libz-dev gettext
+wait_bar 4 "Misc build tools"
+success "Misc build tools installed."
+
+# ── 4i: Python environment ────────────────────────────────────────────────────
+info "Installing Python 3 environment …"
+apt-get install -y \
+    python3 python3-full python3-pip python3-protobuf \
+    python-is-python3 python3-venv
+wait_bar 3 "Python 3 environment"
+success "Python 3 environment installed."
+
+# ── 4j: Clang, CMake, Ninja & compiler extras ─────────────────────────────────
+info "Installing Clang, CMake, Ninja, and compiler extras …"
+apt-get install -y \
+    clang cmake ninja-build \
+    libncurses-dev libncurses6 libelf-dev
+wait_bar 4 "Clang / Ninja / CMake"
+success "Clang, CMake, and Ninja installed."
+
+# ── 4k: Android-specific tools ────────────────────────────────────────────────
+info "Installing Android-specific tools …"
+apt-get install -y \
+    android-sdk-libsparse-utils erofs-utils
+wait_bar 3 "Android tools"
+success "Android-specific tools installed."
+
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 5 – KVM / Virtualization
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 5/9 · KVM / Virtualization Support (Cuttlefish / Emulator)"
+
 apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils cpu-checker
-usermod -aG kvm "$ACTUAL_USER"
+usermod -aG kvm     "$ACTUAL_USER"
 usermod -aG libvirt "$ACTUAL_USER"
-wait
+wait_bar 3 "KVM setup"
+success "KVM and libvirt configured for user: $ACTUAL_USER"
 
-echo "--> 6/9 Verifying Flatpak & Apps (Telegram, Google Chrome)..."
-# BACKGROUND: Ensures Flatpak is installed and actively updates Telegram/Chrome if they exist.
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 6 – Flatpak & Apps
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 6/9 · Flatpak & Apps (Telegram, Chrome, Android Studio)"
+
 apt-get install -y flatpak plasma-discover-backend-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-echo "--> Checking Flathub for app updates/installations..."
-flatpak install -y --or-update flathub org.telegram.desktop com.google.Chrome com.google.AndroidStudio
+info "Installing / updating Flatpak apps from Flathub …"
+flatpak install -y --or-update flathub \
+    org.telegram.desktop \
+    com.google.Chrome \
+    com.google.AndroidStudio
 flatpak update -y
-wait
+wait_bar 4 "Flatpak apps"
+success "Flatpak apps installed and updated."
 
-echo "=========================================================="
-echo " Hardware-Specific Limits & Network Fixes"
-echo "=========================================================="
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 7 – Android SDK Environment Variables in ~/.bashrc
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 7/9 · AOSP Environment Variables (~/.bashrc)"
 
-echo "--> Configuring Open File Limits (i7-12700KF Hardware Optimization)..."
-# BACKGROUND: Your 20-thread CPU will try to open thousands of files simultaneously.
-# The standard Linux file limit (1,024) will cause a crash. Setting this to 1,048,576
-# prevents IO throttling and crashes during heavy parallel compilation.
-read -p "Do you want to configure Open File Limits for high-thread (i7-12700KF) builds?[Y/n]: " SET_FILE_LIMITS
-SET_FILE_LIMITS=${SET_FILE_LIMITS:-Y}
-
-if [[ "$SET_FILE_LIMITS" =~ ^[Yy]$ ]]; then
-echo "--> Applying 1048576 open file limit for $ACTUAL_USER..."
-cat > /etc/security/limits.d/99-aosp.conf <<EOF
-$ACTUAL_USER soft nofile 1048576
-$ACTUAL_USER hard nofile 1048576
-root soft nofile 1048576
-root hard nofile 1048576
-EOF
-else
-echo "--> Skipping Open File Limits configuration."
-fi
-
-echo "--> Updating TCP Window Scaling and Network Tweaks..."
-cat > /etc/sysctl.d/99-aosp-net.conf <<EOF
-net.ipv4.tcp_window_scaling=1
-net.core.rmem_max=134217728
-net.core.wmem_max=134217728
-net.ipv4.tcp_rmem=4096 87380 134217728
-net.ipv4.tcp_wmem=4096 65536 134217728
-EOF
-sysctl --system > /dev/null
-
-echo "--> Validating ~/.bashrc for stale SDK Paths..."
-# BACKGROUND: Searches for our block, deletes it if found, and injects a fresh one.
 if grep -q "# --- AOSP ENV START ---" "$ACTUAL_HOME/.bashrc"; then
-echo "--> Old AOSP paths found. Scrubbing and rewriting to ensure they are up to date..."
-sed -i '/# --- AOSP ENV START ---/,/# --- AOSP ENV END ---/d' "$ACTUAL_HOME/.bashrc"
+    info "Existing AOSP env block found – removing stale entries …"
+    sed -i '/# --- AOSP ENV START ---/,/# --- AOSP ENV END ---/d' "$ACTUAL_HOME/.bashrc"
 fi
 
 cat >> "$ACTUAL_HOME/.bashrc" <<'EOL'
 # --- AOSP ENV START ---
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR="${HOME}/.ccache"
+export CCACHE_SIZE=100G
 
-# Base SDK and NDK Directories
-export ANDROID_HOME=${HOME}/Android/Sdk
-export ANDROID_SDK_ROOT=${HOME}/Android/Sdk
-export NDK_HOME=${ANDROID_HOME}/ndk/29.0.14206865
+# Android SDK / NDK base directories
+export ANDROID_HOME="${HOME}/Android/Sdk"
+export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
+export NDK_HOME="${ANDROID_HOME}/ndk/30.0.14904198"
 
-# Appending Tools to PATH so they can be run redundantly from any terminal
-export PATH=${HOME}/.bin:${PATH}
-export PATH=${ANDROID_HOME}/platform-tools:${PATH}
-export PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}
-export PATH=${ANDROID_HOME}/build-tools/36.1.0:${PATH}
-export PATH=${ANDROID_HOME}/emulator:${PATH}
+# PATH – custom bin, platform-tools, cmdline-tools, build-tools, emulator
+export PATH="${HOME}/.bin:${PATH}"
+export PATH="${ANDROID_HOME}/platform-tools:${PATH}"
+export PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}"
+export PATH="${ANDROID_HOME}/build-tools/37.0.0:${PATH}"
+export PATH="${ANDROID_HOME}/emulator:${PATH}"
 # --- AOSP ENV END ---
 EOL
+
 chown "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME/.bashrc"
-echo "✓ AOSP Environment variables verified and forcefully written to ~/.bashrc"
+wait_bar 2 "bashrc updated"
+success "AOSP environment variables written to ~/.bashrc"
 
-echo "=========================================================="
-echo " Source Control (Repo & Git) Configuration"
-echo "=========================================================="
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 8 – git-repo Tool + Git Identity
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 8/9 · git-repo Tool & Git Identity"
 
-echo "--> 7/9 Verifying and forcefully updating Google's git-repo tool..."
+info "Downloading latest Google git-repo …"
 sudo -u "$ACTUAL_USER" mkdir -p "$ACTUAL_HOME/.bin"
 rm -f "$ACTUAL_HOME/.bin/repo"
-sudo -u "$ACTUAL_USER" curl -s -o "$ACTUAL_HOME/.bin/repo" https://storage.googleapis.com/git-repo-downloads/repo
+sudo -u "$ACTUAL_USER" curl -fsSL \
+    https://storage.googleapis.com/git-repo-downloads/repo \
+    -o "$ACTUAL_HOME/.bin/repo"
 chmod a+rx "$ACTUAL_HOME/.bin/repo"
 chown "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME/.bin/repo"
+wait_bar 3 "git-repo downloaded"
+success "git-repo installed to ~/.bin/repo"
 
-echo "--> 8/9 Enforcing Git Identity and Network Workarounds..."
-sudo -u "$ACTUAL_USER" git config --global user.name "Omkar Parte"
+info "Configuring Git identity …"
+sudo -u "$ACTUAL_USER" git config --global user.name  "Omkar Parte"
 sudo -u "$ACTUAL_USER" git config --global user.email "88646966+RAM-UNLOK@users.noreply.github.com"
-sudo -u "$ACTUAL_USER" git config --global color.ui true
+sudo -u "$ACTUAL_USER" git config --global color.ui   true
+success "Git identity configured."
 
-sudo -u "$ACTUAL_USER" git config --global http.postBuffer 524288000
-sudo -u "$ACTUAL_USER" git config --global http.maxRequestBuffer 100M
-sudo -u "$ACTUAL_USER" git config --global core.compression 0
-sudo -u "$ACTUAL_USER" git config --global fetch.prune true
-sudo -u "$ACTUAL_USER" git config --global pack.windowMemory 10m
-sudo -u "$ACTUAL_USER" git config --global pack.packSizeLimit 20m
+# ═════════════════════════════════════════════════════════════════════════════
+# STEP 9 – Android udev Rules (51-android) via snowdream upstream
+# ═════════════════════════════════════════════════════════════════════════════
+header "Step 9/9 · Android udev Rules (51-android)"
 
-echo "=========================================================="
-echo " Android udev Rules Configuration"
-echo "=========================================================="
-
-echo "--> 9/9 Forcing Update of USB (udev) Rules for Fastboot / ADB Devices..."
 RULES_FILE="/etc/udev/rules.d/51-android.rules"
+RULES_URL="https://raw.githubusercontent.com/snowdream/51-android/refs/heads/master/51-android.rules"
 
-cat > "$RULES_FILE" <<'EOF'
-# Android udev rules for adb/fastboot connectivity
-SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="plugdev" # Acer
-SUBSYSTEM=="usb", ATTR{idVendor}=="0B05", MODE="0666", GROUP="plugdev" # ASUS
-SUBSYSTEM=="usb", ATTR{idVendor}=="413C", MODE="0666", GROUP="plugdev" # Dell
-SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0666", GROUP="plugdev" # Foxconn
-SUBSYSTEM=="usb", ATTR{idVendor}=="18D1", MODE="0666", GROUP="plugdev" # Google
-SUBSYSTEM=="usb", ATTR{idVendor}=="0BB4", MODE="0666", GROUP="plugdev" # HTC
-SUBSYSTEM=="usb", ATTR{idVendor}=="12D1", MODE="0666", GROUP="plugdev" # Huawei
-SUBSYSTEM=="usb", ATTR{idVendor}=="17EF", MODE="0666", GROUP="plugdev" # Lenovo
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="plugdev" # LG
-SUBSYSTEM=="usb", ATTR{idVendor}=="22B8", MODE="0666", GROUP="plugdev" # Motorola
-SUBSYSTEM=="usb", ATTR{idVendor}=="0955", MODE="0666", GROUP="plugdev" # Nvidia
-SUBSYSTEM=="usb", ATTR{idVendor}=="04E8", MODE="0666", GROUP="plugdev" # Samsung
-SUBSYSTEM=="usb", ATTR{idVendor}=="0FCE", MODE="0666", GROUP="plugdev" # Sony
-SUBSYSTEM=="usb", ATTR{idVendor}=="0930", MODE="0666", GROUP="plugdev" # Toshiba
-SUBSYSTEM=="usb", ATTR{idVendor}=="19D2", MODE="0666", GROUP="plugdev" # ZTE
-SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0666", GROUP="plugdev" # MediaTek phone
-SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev" # Xiaomi
-SUBSYSTEM=="usb", ATTR{idVendor}=="2A70", MODE="0666", GROUP="plugdev" # OnePlus
-SUBSYSTEM=="usb", ATTR{idVendor}=="1D91", MODE="0666", GROUP="plugdev" # Vivo
-SUBSYSTEM=="usb", ATTR{idVendor}=="2D95", MODE="0666", GROUP="plugdev" # Realme/Oppo
-EOF
+info "Downloading 51-android.rules from snowdream/51-android …"
+curl -fsSL "$RULES_URL" -o "$RULES_FILE"
 
-if ! getent group plugdev >/dev/null 2>&1; then
-groupadd plugdev
+if [[ ! -s "$RULES_FILE" ]]; then
+    error "Download failed or file is empty: $RULES_FILE"
+    exit 1
 fi
 
-usermod -aG plugdev "$ACTUAL_USER"
 chmod a+r "$RULES_FILE"
+chown root:root "$RULES_FILE"
+wait_bar 3 "udev rules installed"
+success "51-android.rules installed to $RULES_FILE"
 
-# Reload the Linux device manager to apply the rules immediately
+info "Reloading udev rules …"
 udevadm control --reload-rules
 udevadm trigger
-wait
+success "udev rules reloaded."
 
-echo "=========================================================="
-echo " ✓ ALL VERIFICATIONS AND UPDATES COMPLETE!"
-echo "=========================================================="
+# ═════════════════════════════════════════════════════════════════════════════
+# APKTOOL – All-in-one Install
+# ═════════════════════════════════════════════════════════════════════════════
+header "Bonus · Apktool Installation"
+
+INSTALL_DIR="/usr/local/bin"
+APKTOOL_JAR="$INSTALL_DIR/apktool.jar"
+APKTOOL_WRAPPER="$INSTALL_DIR/apktool"
+APKTOOL_VERSION="3.0.2"
+APKTOOL_JAR_URL="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_${APKTOOL_VERSION}.jar"
+APKTOOL_WRAPPER_URL="https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool"
+
+info "Downloading apktool wrapper script …"
+curl -fsSL "$APKTOOL_WRAPPER_URL" -o "$APKTOOL_WRAPPER"
+
+info "Downloading apktool_${APKTOOL_VERSION}.jar from Bitbucket …"
+curl -fsSL --progress-bar "$APKTOOL_JAR_URL" -o "$APKTOOL_JAR"
+
+if [[ ! -s "$APKTOOL_JAR" ]]; then
+    error "Apktool JAR download failed or file is empty."
+    exit 1
+fi
+
+# Set permissions
+# JAR: 644 rw-r--r--   (Java only needs read, not execute on JARs)
+# Wrapper: 755 rwxr-xr-x
+chown root:root "$APKTOOL_JAR"
+chmod 644       "$APKTOOL_JAR"
+chown root:root "$APKTOOL_WRAPPER"
+chmod 755       "$APKTOOL_WRAPPER"
+wait_bar 3 "Apktool installed"
+
+INSTALLED_APKTOOL_VER="$(apktool --version 2>&1 | head -1)"
+success "Apktool $INSTALLED_APKTOOL_VER is ready!"
+
+# ═════════════════════════════════════════════════════════════════════════════
+# DONE
+# ═════════════════════════════════════════════════════════════════════════════
 echo ""
-echo " REMINDER: Set your CCACHE limit inside your specific build directory:"
-echo " Example: export USE_CCACHE=1 && ccache -M 150G"
+echo -e "${BOLD}${GREEN}"
+echo "  ╔══════════════════════════════════════════════════════════╗"
+echo "  ║         ✅  Setup Complete – All Steps Finished!         ║"
+echo "  ╚══════════════════════════════════════════════════════════╝"
+echo -e "${RESET}"
+echo -e " ${BOLD}What was configured:${RESET}"
+echo "  ✔  Universe / Multiverse repos (if selected)"
+echo "  ✔  System packages updated & upgraded"
+echo "  ✔  git-core PPA (latest Git)"
+echo "  ✔  AOSP build dependencies (split into sections with timers)"
+echo "  ✔  KVM / libvirt for Cuttlefish & Android Emulator"
+echo "  ✔  Flatpak – Telegram, Chrome, Android Studio"
+echo "  ✔  AOSP SDK / NDK PATH injected into ~/.bashrc"
+echo "  ✔  Google git-repo installed to ~/.bin/repo"
+echo "  ✔  Git identity set"
+echo "  ✔  51-android.rules downloaded from snowdream/51-android"
+echo "  ✔  Apktool ${APKTOOL_VERSION} + wrapper installed to /usr/local/bin/"
 echo ""
-echo " IMPORTANT NEXT STEPS:"
-echo " 1. SYSTEM REBOOT is highly recommended. KVM (Virtualization), Linux limits,"
-echo " and plugdev groups strictly require a fresh login."
+echo -e " ${CYAN}Next step:${RESET}  source ~/.bashrc  (or open a new terminal)"
 echo ""
-echo " 2. Verify Android tool installations post-reboot:"
-echo " $ adb --version"
-echo " $ fastboot --version"
-echo " $ repo version"
