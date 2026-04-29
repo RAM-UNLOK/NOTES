@@ -123,9 +123,8 @@ The script appends the following block (replacing any previous version):
 ```bash
 # --- AOSP ENV START ---
 export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR="${HOME}/.ccache"
-export CCACHE_MAXSIZE=100G          # ← correct var (not CCACHE_SIZE)
+export PATH="/usr/lib/ccache:$PATH"
+export CCACHE_MAXSIZE=50G
 
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
