@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="preferred_network_type_pref_entries_4g_preferred">LTE网络优先</string>
-    <string name="preferred_network_type_pref_entries_only_2g">仅使用2G网络</string>
-</resources>
