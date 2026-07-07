@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <public type="anim" name="wallpaper_open_exit" id="0x7f010000" />
-    <public type="bool" name="config_showBuiltinWirelessChargingAnim" id="0x7f020000" />
-    <public type="bool" name="config_showSysuiShutdown" id="0x7f020001" />
-    <public type="bool" name="config_volume_down_to_enter_silent" id="0x7f020002" />
+    <public type="bool" name="config_dozeSupportsAodWallpaper" id="0x7f020000" />
+    <public type="bool" name="config_showBuiltinWirelessChargingAnim" id="0x7f020001" />
+    <public type="bool" name="config_showSysuiShutdown" id="0x7f020002" />
+    <public type="bool" name="config_volume_down_to_enter_silent" id="0x7f020003" />
     <public type="color" name="lock_pattern_view_regular_color" id="0x7f030000" />
     <public type="color" name="lock_pattern_view_success_color" id="0x7f030001" />
     <public type="dimen" name="config_wallpaperMaxScale" id="0x7f040000" />

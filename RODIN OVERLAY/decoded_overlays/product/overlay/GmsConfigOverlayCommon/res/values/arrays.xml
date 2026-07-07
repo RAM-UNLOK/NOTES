@@ -3,9 +3,6 @@
     <string-array name="config_accessibility_allowed_install_source">
         <item>com.android.vending</item>
     </string-array>
-    <string-array name="config_biometric_protected_package_names">
-        <item>com.google.android.gms</item>
-    </string-array>
     <string-array name="config_disabledUntilUsedPreinstalledImes">
         <item>com.google.android.inputmethod.latin</item>
     </string-array>
@@ -51,6 +48,12 @@
         <item>com.android.server.telecom</item>
         <item>android</item>
         <item>com.android.systemui</item>
+    </string-array>
+    <string-array name="config_rawContactsEligibleDefaultAccountTypes">
+        <item>com.google</item>
+    </string-array>
+    <string-array name="config_setContactsDefaultAccountKnownSigners">
+        <item>F0FD6C5B410F25CB25C3B53346C8972FAE30F8EE7411DF910480AD6B2D60DB83</item>
     </string-array>
     <string-array name="vendor_cross_profile_apps">
         <item>com.google.android.googlequicksearchbox</item>

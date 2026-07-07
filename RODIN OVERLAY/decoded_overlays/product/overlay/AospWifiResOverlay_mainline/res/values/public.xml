@@ -20,6 +20,7 @@
     <public type="integer" name="config_disconnectedP2pIfaceLowPriorityTimeoutMs" id="0x7f030000" />
     <public type="integer" name="config_wifiDisableReasonAssociationRejectionThreshold" id="0x7f030001" />
     <public type="integer" name="config_wifiDisableReasonAuthenticationFailureThreshold" id="0x7f030002" />
-    <public type="integer" name="config_wifiPnoScanIntervalMultiplier" id="0x7f030003" />
+    <public type="integer" name="config_wifiMaxNumWifiConfigurations" id="0x7f030003" />
+    <public type="integer" name="config_wifiPnoScanIntervalMultiplier" id="0x7f030004" />
     <public type="string" name="config_wifi_tcp_buffers" id="0x7f040000" />
 </resources>

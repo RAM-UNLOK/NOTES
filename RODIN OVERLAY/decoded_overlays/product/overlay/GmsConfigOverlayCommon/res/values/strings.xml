@@ -17,12 +17,14 @@
     <string name="config_devicePolicyManagement">com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58</string>
     <string name="config_devicePolicyManagementUpdater">com.google.android.gms</string>
     <string name="config_healthConnectMigratorPackageName">com.google.android.apps.healthdata</string>
+    <string name="config_help_url_action_disabled_by_advanced_protection">intent:#Intent;action=com.google.android.gms.settings.ADVANCED_PROTECTION;package=com.google.android.gms;end</string>
     <string name="config_oemCredentialManagerDialogComponent">com.google.android.gms/.identitycredentials.ui.CredentialChooserActivity</string>
     <string name="config_persistentDataPackageName">com.google.android.gms</string>
     <string name="config_systemActivityRecognizer">com.google.android.gms</string>
     <string name="config_systemAutomotiveProjection">com.google.android.projection.gearhead</string>
     <string name="config_systemCallStreaming">com.google.android.gms</string>
     <string name="config_systemCompanionDeviceProvider">com.google.android.gms</string>
+    <string name="config_systemDependencyInstaller">com.google.android.gms</string>
     <string name="config_systemFinancedDeviceController">com.google.android.devicelockcontroller</string>
     <string name="config_systemGameService">com.google.android.gms</string>
     <string name="config_systemSettingsIntelligence">com.android.settings.intelligence</string>

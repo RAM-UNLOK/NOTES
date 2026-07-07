@@ -3,8 +3,11 @@
     <public type="bool" name="support_round_corner" id="0x7f010000" />
     <public type="color" name="dark_mode_icon_color_single_tone" id="0x7f020000" />
     <public type="color" name="light_mode_icon_color_single_tone" id="0x7f020001" />
-    <public type="dimen" name="rounded_corner_content_padding" id="0x7f030000" />
-    <public type="dimen" name="status_bar_padding_top" id="0x7f030001" />
+    <public type="color" name="tint_mode_icon_color_single_tone" id="0x7f020002" />
+    <public type="dimen" name="cut_out_center_y" id="0x7f030000" />
+    <public type="dimen" name="rounded_corner_content_padding" id="0x7f030001" />
+    <public type="dimen" name="status_bar_padding_bottom" id="0x7f030002" />
+    <public type="dimen" name="status_bar_padding_top" id="0x7f030003" />
     <public type="drawable" name="gxzw_a_recognizing_anim" id="0x7f040000" />
     <public type="drawable" name="gxzw_a_recognizing_anim_1" id="0x7f040001" />
     <public type="drawable" name="gxzw_a_recognizing_anim_10" id="0x7f040002" />

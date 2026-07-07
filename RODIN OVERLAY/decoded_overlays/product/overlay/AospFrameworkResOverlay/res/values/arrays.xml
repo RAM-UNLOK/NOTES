@@ -434,6 +434,10 @@
         <item>/system/framework/arm/boot-framework.oat</item>
         <item>/system/framework/arm64/boot-core-libart.oat</item>
         <item>/system/framework/arm/boot-core-libart.oat</item>
+        <item>/system_ext/framework/miui-services.jar</item>
+        <item>/system_ext/framework/miui-framework.jar</item>
+        <item>/system/fonts/NotoSansCJK-Regular.ttc</item>
+        <item>/product/fonts/MiSansVF.ttf</item>
         <item>/system/lib64/libRScpp.so</item>
         <item>/system/lib64/libRS.so</item>
         <item>/system/lib64/libRS_internal.so</item>
@@ -441,8 +445,6 @@
         <item>/system/lib64/libRSDriver.so</item>
         <item>/system/lib64/libRSCpuRef.so</item>
         <item>/system/lib64/libblas.so</item>
-        <item>/system_ext/priv-app/MiuiSystemUI/MiuiSystemUI.apk</item>
-        <item>/product/app/MIUISystemUIPlugin/MIUISystemUIPlugin.apk</item>
     </string-array>
     <integer-array name="config_screenBrighteningThresholds">
         <item>0</item>

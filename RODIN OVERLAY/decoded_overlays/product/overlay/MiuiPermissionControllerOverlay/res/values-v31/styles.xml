@@ -13,11 +13,12 @@
         <item name="android:textColor">@color/miuix_theme_dialog_button_default_text_color</item>
         <item name="android:background">@drawable/miuix_btn_bg_normal_selector</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/miuix_theme_dialog_negative_button_height</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/miuix_theme_dialog_negative_button_left</item>
         <item name="android:layout_marginTop">12.0dp</item>
         <item name="android:layout_marginRight">@dimen/miuix_theme_dialog_negative_button_left</item>
         <item name="android:layout_marginBottom">0.0dp</item>
+        <item name="android:minHeight">@dimen/miuix_theme_dialog_negative_button_height</item>
         <item name="android:fontFamily">google-sans-medium</item>
     </style>
     <style name="MIUIPermissionGrantButtonNoUpgradeMaterial3" parent="@style/MIUIPermissionGrantButtonBottom" />
@@ -26,11 +27,12 @@
         <item name="android:textColor">@color/miuix_theme_dialog_button_blue_text_color</item>
         <item name="android:background">@drawable/miuix_btn_bg_suggest_selector</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/miuix_theme_dialog_negative_button_height</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/miuix_theme_dialog_negative_button_left</item>
         <item name="android:layout_marginTop">16.0dp</item>
         <item name="android:layout_marginRight">@dimen/miuix_theme_dialog_negative_button_left</item>
         <item name="android:layout_marginBottom">0.0dp</item>
+        <item name="android:minHeight">@dimen/miuix_theme_dialog_negative_button_height</item>
         <item name="android:fontFamily">google-sans-medium</item>
     </style>
     <style name="MIUIPermissionGrantDialogMaterial3">
