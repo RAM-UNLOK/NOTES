@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alphabet">ھەرپ</string>
+    <string name="app_name">SIM كارتا قورال بوغچىسى</string>
+    <string name="button_cancel">بىكار قىلىش</string>
+    <string name="button_no">ياق</string>
+    <string name="button_ok">جەزملەش</string>
+    <string name="button_yes">ھەئە</string>
+    <string name="default_call_setup_msg">ئۇلىنىۋاتىدۇ...</string>
+    <string name="default_close_channel_msg">قانال تاقالدى</string>
+    <string name="default_open_channel_msg">ئۆتەڭنى ئاچامسىز؟</string>
+    <string name="default_receive_data_msg">سانلىق مەلۇمات قۇبۇللىنۋاتىدۇ</string>
+    <string name="default_send_data_msg">سانلىق مەلۇمات يوللىنىۋاتىدۇ</string>
+    <string name="default_setup_call_msg">سۆزلىشىش تەڭشىلىۋاتىدۇ</string>
+    <string name="digits">رەقەم (0-9、*、#、+)</string>
+    <string name="disable_app">چەكلەنگەن</string>
+    <string name="enable_app">قوزغىتىلدى</string>
+    <string name="help">ياردەم</string>
+    <string name="menu_back">قايتىش</string>
+    <string name="menu_end_session">سۆزلىشىش تامام</string>
+    <string name="no_sim_card_inserted">SIM كارتىسى قىستۇرۇپ ئاندىن SIM كارتا قورال بولىقىنى قوزغىتىڭ</string>
+    <string name="service_name">مۇلازىمەت ئىسمى</string>
+    <string name="sim_type_sim_name">SIM كارتا قورال بوغچىسى</string>
+    <string name="sim_type_uim_name">UIMكارتا قوراللىرى</string>
+    <string name="sim_type_usim_name">USIMكارتا ئىشلىتىش</string>
+    <string name="stk_app_state">ئىشلىتىش ھالىتى</string>
+    <string name="stk_dialog_accept">ھەئە</string>
+    <string name="stk_dialog_reject">ياق</string>
+    <string name="stk_dialog_title">SIM كارتا قورال بوغچىسى</string>
+    <string name="stk_no_service">ئىشلىتىلىشچان مۇلازىمەت يوق</string>
+</resources>

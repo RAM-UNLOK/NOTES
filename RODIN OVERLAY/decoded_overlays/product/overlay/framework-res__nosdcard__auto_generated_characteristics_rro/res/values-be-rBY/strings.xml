@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">Дазваляе праграме счытваць змесціва вашага USB-сховішча.</string>
+    <string name="permdesc_sdcardWrite">Дазваляе прыкладаням выконваць запіс ва USB-назапашвальнік.</string>
+    <string name="permlab_sdcardRead">чытанне змесціва USB-назапашв.</string>
+    <string name="permlab_sdcardWrite">зм. або выд. змес. USB-назап.</string>
+    <string name="progress_erasing">Выдаленне дадзеных з USB-назапашвальнiка...</string>
+</resources>

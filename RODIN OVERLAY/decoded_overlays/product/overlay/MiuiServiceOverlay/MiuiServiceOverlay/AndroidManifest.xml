@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="31" android:compileSdkVersionCodename="12" package="com.miui.core.internal.services" platformBuildVersionCode="31" platformBuildVersionName="12">
+    <application android:hasCode="false"/>
+    <overlay android:isStatic="true" android:priority="0" android:targetPackage="android"/>
+</manifest>

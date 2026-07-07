@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="bool" name="config_adaptive_sleep_available" id="0x7f010000" />
+    <public type="bool" name="config_systemCaptionsServiceCallsEnabled" id="0x7f010001" />
+    <public type="string" name="config_defaultAppPredictionService" id="0x7f020000" />
+    <public type="string" name="config_defaultAttentionService" id="0x7f020001" />
+    <public type="string" name="config_defaultAugmentedAutofillService" id="0x7f020002" />
+    <public type="string" name="config_defaultContentCaptureService" id="0x7f020003" />
+    <public type="string" name="config_defaultOnDeviceSpeechRecognitionService" id="0x7f020004" />
+    <public type="string" name="config_defaultSystemCaptionsManagerService" id="0x7f020005" />
+    <public type="string" name="config_defaultTextClassifierPackage" id="0x7f020006" />
+    <public type="string" name="config_systemAudioIntelligence" id="0x7f020007" />
+    <public type="string" name="config_systemNotificationIntelligence" id="0x7f020008" />
+    <public type="string" name="config_systemTextIntelligence" id="0x7f020009" />
+    <public type="string" name="config_systemUiIntelligence" id="0x7f02000a" />
+    <public type="string" name="config_systemVisualIntelligence" id="0x7f02000b" />
+</resources>

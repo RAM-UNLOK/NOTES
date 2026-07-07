@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="data_type_name_mcc_key">
+        <item>1</item>
+        <item>2</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+    <string-array name="data_type_name_mcc_value">
+        <item>2G</item>
+        <item>2G</item>
+        <item>LTE</item>
+        <item>LTE+</item>
+    </string-array>
+</resources>

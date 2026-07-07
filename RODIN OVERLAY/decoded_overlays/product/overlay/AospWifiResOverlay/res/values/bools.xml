@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_showConfirmationDialogForThirdPartyAppsEnablingWifi">false</bool>
+    <bool name="config_tether_enable_legacy_wifi_p2p_dedicated_ip">true</bool>
+    <bool name="config_wifiAllowInsecureEnterpriseConfigurationsForSettingsAndSUW">true</bool>
+    <bool name="config_wifiDisableUnwantedNetworkOnLowRssi">true</bool>
+    <bool name="config_wifiEnableApfOnNonPrimarySta">true</bool>
+    <bool name="config_wifiEnableLinkedNetworkRoaming">false</bool>
+    <bool name="config_wifiMultiStaLocalOnlyConcurrencyEnabled">false</bool>
+    <bool name="config_wifiMultiStaMultiInternetConcurrencyEnabled">true</bool>
+    <bool name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">false</bool>
+    <bool name="config_wifiMultiStaRestrictedConcurrencyEnabled">false</bool>
+    <bool name="config_wifiP2pGoIpAddressAllocationInEapolFrames">true</bool>
+    <bool name="config_wifiSoftapAutoAppendLowerBandsToBandConfigurationEnabled">false</bool>
+    <bool name="config_wifiSoftapIeee80211axSupported">true</bool>
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+</resources>

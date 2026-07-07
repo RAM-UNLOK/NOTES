@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permdesc_sdcardRead">Lejon aplikacionin të lexojë përmbajtjet e USB-së tënde.</string>
+    <string name="permdesc_sdcardWrite">Lejon aplikacionin të shkruajë në hapësirën ruajtëse të USB-së.</string>
+    <string name="permlab_sdcardRead">lexo përmbajtjet e USB-së</string>
+    <string name="permlab_sdcardWrite">modifiko ose fshi përmbajtjet e USB-së</string>
+    <string name="progress_erasing">Po fshin USB-në...</string>
+</resources>

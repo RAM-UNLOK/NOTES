@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_brightness_curve_algo_available">true</bool>
+    <bool name="config_brightness_reset_policy">true</bool>
+    <bool name="config_brightness_useassistsensor">true</bool>
+    <bool name="config_brightness_usenonui">true</bool>
+    <bool name="config_celluar_shared_support">false</bool>
+    <bool name="config_connsys_thermal_ctrl_support">true</bool>
+    <bool name="config_displayFeatureCallbackSupported">true</bool>
+    <bool name="config_enableWifiPowerOptimize">true</bool>
+    <bool name="config_frontcamera_circle_black">false</bool>
+    <bool name="config_net_slm_supported">true</bool>
+    <bool name="config_opr_brt_control_available">true</bool>
+    <bool name="config_support_hbm">true</bool>
+    <bool name="config_support_led_strip">false</bool>
+    <bool name="config_support_touch_cover_protection">true</bool>
+    <bool name="config_thermal_brt_control_available">true</bool>
+</resources>

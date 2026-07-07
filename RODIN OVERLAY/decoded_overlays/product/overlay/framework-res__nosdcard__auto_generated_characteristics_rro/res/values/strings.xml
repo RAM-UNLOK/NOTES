@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usb_storage_error_message">"There's a problem using your USB storage for USB mass storage."</string>
+    <string name="usb_storage_message">"You've connected to your computer via USB. Touch the button below if you want to copy files between your computer and your Android's USB storage."</string>
+    <string name="usb_storage_stop_message">"Before turning off USB storage, unmount (\"eject\") your Android's USB storage from your computer."</string>
+</resources>

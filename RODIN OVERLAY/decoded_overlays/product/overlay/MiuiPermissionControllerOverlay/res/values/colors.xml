@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="miuix_color_background_icon">#1a000000</color>
+    <color name="miuix_color_blue_primary_default">#3482ff</color>
+    <color name="miuix_color_blue_primary_pressed">#3078eb</color>
+    <color name="miuix_color_grey_primary_default">#0f000000</color>
+    <color name="miuix_color_grey_primary_pressed">#dddddd</color>
+    <color name="miuix_color_icon">#ff3c3c3c</color>
+    <color name="miuix_theme_dialog_bg">#ffffffff</color>
+    <color name="miuix_theme_dialog_button_blue_text_color">#ffffffff</color>
+    <color name="miuix_theme_dialog_button_default_text_color">#cc000000</color>
+    <color name="miuix_theme_dialog_detail_text_color">#cc000000</color>
+    <color name="miuix_theme_dialog_title_text_color">#000000</color>
+</resources>

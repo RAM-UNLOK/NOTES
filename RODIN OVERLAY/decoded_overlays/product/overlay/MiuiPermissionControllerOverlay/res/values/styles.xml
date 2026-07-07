@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MIUIPermissionGrantButton" parent="@android:style/Widget.DeviceDefault.Button.Borderless.Colored">
+        <item name="android:textSize">@dimen/miuix_theme_dialog_negative_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/miuix_theme_dialog_button_blue_text_color</item>
+        <item name="android:background">@drawable/miuix_btn_bg_normal_selector</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/miuix_theme_dialog_negative_button_height</item>
+        <item name="android:layout_marginTop">12.0dp</item>
+        <item name="android:layout_marginBottom">0.0dp</item>
+        <item name="android:layout_marginStart">28.0dp</item>
+        <item name="android:layout_marginEnd">28.0dp</item>
+    </style>
+    <style name="MIUIPermissionGrantButtonAllow" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonAllowAll" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonAllowForeground" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonAllowOneTime" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonAllowSelected" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonDeny" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonDontAllowMore" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantButtonNoUpgrade" parent="@style/MIUIPermissionGrantButton" />
+    <style name="MIUIPermissionGrantContent">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">36.0dp</item>
+        <item name="android:paddingTop">28.0dp</item>
+        <item name="android:paddingRight">36.0dp</item>
+        <item name="android:paddingBottom">16.0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MIUIPermissionGrantDialog">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/miuix_per_dialog_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+    <style name="MIUIPermissionGrantPermissionRationaleContent">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/miuix_grant_dialog_permission_rationale_background</item>
+        <item name="android:paddingTop">12.0dp</item>
+        <item name="android:paddingBottom">12.0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">24.0dp</item>
+        <item name="android:paddingStart">16.0dp</item>
+        <item name="android:paddingEnd">16.0dp</item>
+        <item name="android:layout_marginStart">24.0dp</item>
+        <item name="android:layout_marginEnd">24.0dp</item>
+    </style>
+    <style name="MIUIPermissionGrantPermissionRationaleIcon">
+        <item name="android:layout_gravity">start|center</item>
+        <item name="android:layout_width">20.0dp</item>
+        <item name="android:layout_height">20.0dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">?android:textColorSecondary</item>
+    </style>
+    <style name="MIUIPermissionGrantPermissionRationaleMessage" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+        <item name="android:layout_marginStart">12.0dp</item>
+        <item name="android:layout_marginEnd">12.0dp</item>
+        <item name="android:lineHeight">20.0sp</item>
+    </style>
+    <style name="MIUIPermissionGrantPermissionRationaleMoreInfoIcon">
+        <item name="android:layout_gravity">end|center</item>
+        <item name="android:layout_width">20.0dp</item>
+        <item name="android:layout_height">20.0dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">?android:textColorSecondary</item>
+    </style>
+    <style name="MIUIPermissionGrantSingleton">
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12.0dp</item>
+    </style>
+    <style name="MIUIPermissionGrantTitleIcon">
+        <item name="android:background">@drawable/miuix_per_dialog_icon_bg</item>
+        <item name="android:layout_width">32.0dp</item>
+        <item name="android:layout_height">32.0dp</item>
+        <item name="android:layout_marginBottom">14.0dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/miuix_color_icon</item>
+    </style>
+    <style name="MIUIPermissionGrantTitleMessage" parent="@android:style/TextAppearance.DeviceDefault.WindowTitle">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/miuix_theme_dialog_title_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="config_hightGrayBrightnessLevels">
+        <item>600</item>
+        <item>2000</item>
+        <item>4800</item>
+        <item>6000</item>
+        <item>8191</item>
+    </integer-array>
+    <integer-array name="config_lowGrayBrightnessLevels">
+        <item>400</item>
+        <item>600</item>
+        <item>2800</item>
+        <item>3200</item>
+        <item>8191</item>
+    </integer-array>
+    <integer-array name="config_opr_grayscale_threshold">
+        <item>160</item>
+        <item>170</item>
+        <item>180</item>
+        <item>190</item>
+        <item>200</item>
+        <item>210</item>
+        <item>220</item>
+        <item>230</item>
+    </integer-array>
+    <integer-array name="config_opr_nit_threshold">
+        <item>1400</item>
+        <item>1350</item>
+        <item>1300</item>
+        <item>1250</item>
+        <item>1200</item>
+        <item>1150</item>
+        <item>1100</item>
+        <item>1050</item>
+        <item>1000</item>
+    </integer-array>
+    <integer-array name="config_touch_cover_protection_rect">
+        <item>0</item>
+        <item>0</item>
+        <item>1220</item>
+        <item>750</item>
+    </integer-array>
+    <string-array name="country_codes_hid_sap_5GHz_band">
+        <item>JP</item>
+        <item>KZ</item>
+    </string-array>
+</resources>

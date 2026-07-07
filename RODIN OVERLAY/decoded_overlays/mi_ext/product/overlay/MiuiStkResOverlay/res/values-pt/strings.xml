@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lable_sim_not_ready">SIM Toolkit não está pronto ou não suportado</string>
+</resources>

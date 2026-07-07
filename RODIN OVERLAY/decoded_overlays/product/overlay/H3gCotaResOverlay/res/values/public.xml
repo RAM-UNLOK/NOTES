@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="string" name="preferred_network_type_pref_entries_3g_preferred" id="0x7f010000" />
+    <public type="string" name="preferred_network_type_pref_entries_4g_preferred" id="0x7f010001" />
+    <public type="string" name="preferred_network_type_pref_entries_5g_preferred" id="0x7f010002" />
+    <public type="string" name="preferred_network_type_pref_entries_only_2g" id="0x7f010003" />
+</resources>

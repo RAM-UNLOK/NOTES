@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="mipmap" name="ic_launcher_phone" id="0x7f010000" />
+    <public type="string" name="accessibility_speakerphone_enabled" id="0x7f020000" />
+    <public type="string" name="alert_place_outgoing_call_with_redirection" id="0x7f020001" />
+    <public type="string" name="alert_place_unredirect_outgoing_call" id="0x7f020002" />
+    <public type="string" name="alert_redirect_outgoing_call_or_not" id="0x7f020003" />
+    <public type="string" name="alert_redirect_outgoing_call_timeout" id="0x7f020004" />
+    <public type="string" name="blocked_numbers_butter_bar_title" id="0x7f020005" />
+    <public type="string" name="cant_call_due_to_no_supported_service" id="0x7f020006" />
+    <public type="string" name="cant_call_due_to_ongoing_call" id="0x7f020007" />
+    <public type="string" name="cant_call_due_to_ongoing_calls" id="0x7f020008" />
+    <public type="string" name="cant_call_due_to_ongoing_unknown_call" id="0x7f020009" />
+    <public type="string" name="change_default_call_screening_dialog_affirmative" id="0x7f02000a" />
+    <public type="string" name="change_default_call_screening_dialog_negative" id="0x7f02000b" />
+    <public type="string" name="change_default_call_screening_dialog_title" id="0x7f02000c" />
+    <public type="string" name="change_default_call_screening_warning_message" id="0x7f02000d" />
+    <public type="string" name="change_default_call_screening_warning_message_for_disable_old_app" id="0x7f02000e" />
+    <public type="string" name="change_default_dialer_dialog_affirmative" id="0x7f02000f" />
+    <public type="string" name="developer_title" id="0x7f020010" />
+    <public type="string" name="dialer_default_class" id="0x7f020011" />
+    <public type="string" name="duplicate_video_call_not_allowed" id="0x7f020012" />
+    <public type="string" name="notification_channel_call_blocking" id="0x7f020013" />
+    <public type="string" name="outgoing_call_not_allowed_no_permission" id="0x7f020014" />
+    <public type="string" name="phone_settings_call_blocking_txt" id="0x7f020015" />
+    <public type="string" name="phone_settings_number_not_in_contact_summary_txt" id="0x7f020016" />
+    <public type="string" name="phone_settings_number_not_in_contact_txt" id="0x7f020017" />
+    <public type="string" name="phone_settings_payphone_summary_txt" id="0x7f020018" />
+    <public type="string" name="phone_settings_payphone_txt" id="0x7f020019" />
+    <public type="string" name="phone_settings_private_num_summary_txt" id="0x7f02001a" />
+    <public type="string" name="phone_settings_private_num_txt" id="0x7f02001b" />
+    <public type="string" name="phone_settings_unknown_summary_txt" id="0x7f02001c" />
+    <public type="string" name="phone_settings_unknown_txt" id="0x7f02001d" />
+    <public type="string" name="phone_strings_call_blocking_turned_off_notification_text_txt" id="0x7f02001e" />
+    <public type="string" name="phone_strings_call_blocking_turned_off_notification_title_txt" id="0x7f02001f" />
+    <public type="string" name="phone_strings_emergency_call_made_dialog_call_blocking_text_txt" id="0x7f020020" />
+    <public type="string" name="phone_strings_emergency_call_made_dialog_title_txt" id="0x7f020021" />
+    <public type="string" name="respond_via_sms_failure_format" id="0x7f020022" />
+    <public type="string" name="telecommAppLabel" id="0x7f020023" />
+    <public type="string" name="ui_default_package" id="0x7f020024" />
+    <public type="string" name="ui_default_package_dialer" id="0x7f020025" />
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_defaultAppPredictionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService</string>
+    <string name="config_defaultAttentionService">com.google.android.as/com.google.android.apps.miphone.aiai.attention.service.AiAiAttentionService</string>
+    <string name="config_defaultAugmentedAutofillService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService</string>
+    <string name="config_defaultContentCaptureService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService</string>
+    <string name="config_defaultOnDeviceSpeechRecognitionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSpeechRecognitionService</string>
+    <string name="config_defaultSystemCaptionsManagerService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.SystemCaptionsManagerService</string>
+    <string name="config_defaultTextClassifierPackage">com.google.android.as</string>
+    <string name="config_systemAudioIntelligence">com.google.android.as</string>
+    <string name="config_systemNotificationIntelligence">com.google.android.as</string>
+    <string name="config_systemTextIntelligence">com.google.android.as</string>
+    <string name="config_systemUiIntelligence">com.google.android.as</string>
+    <string name="config_systemVisualIntelligence">com.google.android.as</string>
+</resources>

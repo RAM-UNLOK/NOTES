@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_globalActionsList">
+        <item>emergency</item>
+        <item>lockdown</item>
+        <item>power</item>
+        <item>restart</item>
+        <item>logout</item>
+        <item>screenshot</item>
+        <item>bugreport</item>
+        <item>standby</item>
+    </string-array>
+</resources>

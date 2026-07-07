@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="config_is_kddi_odds_customized" id="0x7f010000" />
+    <public type="array" name="config_load_only_fiveg_apns" id="0x7f010001" />
+    <public type="string" name="app_label" id="0x7f020000" />
+    <public type="string" name="mms_provider_label" id="0x7f020001" />
+    <public type="string" name="mms_sms_provider_label" id="0x7f020002" />
+    <public type="string" name="ppp_number" id="0x7f020003" />
+    <public type="string" name="read_only" id="0x7f020004" />
+    <public type="string" name="sms_provider_label" id="0x7f020005" />
+</resources>

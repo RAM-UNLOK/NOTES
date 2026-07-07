@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ANDROID_U_BLE_MMA_FEATURE_VERSION">
+        <item>rodin+20230731</item>
+    </string-array>
+    <string-array name="BLE_MMA_FEATURE_VERSION">
+        <item>rodin+20220110</item>
+    </string-array>
+    <string-array name="TIME_STAMP">
+        <item>1721919600</item>
+    </string-array>
+</resources>

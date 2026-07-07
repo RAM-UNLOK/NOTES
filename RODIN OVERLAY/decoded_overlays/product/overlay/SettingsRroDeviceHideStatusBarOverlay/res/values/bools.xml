@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_device_is_hole_type">true</bool>
+</resources>

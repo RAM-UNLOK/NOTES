@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="bool" name="config_enableGeolocationTimeZoneDetection" id="0x7f010000" />
+    <public type="bool" name="config_enablePrimaryLocationTimeZoneProvider" id="0x7f010001" />
+    <public type="bool" name="config_enableSecondaryLocationTimeZoneProvider" id="0x7f010002" />
+    <public type="string" name="config_primaryLocationTimeZoneProviderPackageName" id="0x7f020000" />
+    <public type="string" name="config_secondaryLocationTimeZoneProviderPackageName" id="0x7f020001" />
+</resources>

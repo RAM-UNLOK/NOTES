@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alphabet">ຈົດໝາຍ</string>
+    <string name="app_name">ຊຸດເຄື່ອງມື SIM</string>
+    <string name="button_cancel">ຍົກເລີກ</string>
+    <string name="button_no">ບໍ່</string>
+    <string name="button_ok">​ຕົກລົງ</string>
+    <string name="button_yes">​ແມ່ນ</string>
+    <string name="default_call_setup_msg">ກຳລັງໂທ…</string>
+    <string name="default_close_channel_msg">ຊ່ອງປິດແລ້ວ</string>
+    <string name="default_open_channel_msg">ເປີດຊ່ອງ?</string>
+    <string name="default_receive_data_msg">ກຳລັງຮັບຂໍ້ມູນ…</string>
+    <string name="default_send_data_msg">​​ກຳ​ລັງສົ່ງຂໍ້ມູນ…</string>
+    <string name="default_setup_call_msg">ກຳລັງຕັ້ງຄ່າການໂທ…</string>
+    <string name="default_tone_dialog_msg">ກຳລັງຫຼິ້ນໂທນສຽງ…</string>
+    <string name="digits">ຕົວເລກ (0-9, *, #, +)</string>
+    <string name="disable_app">ປິດໃຊ້ງານແລ້ວ</string>
+    <string name="enable_app">ເປີດໃຊ້ງານແລ້ວ</string>
+    <string name="help">ຊ່ວຍເຫຼືອ</string>
+    <string name="menu_back">​ກັບ​ຄືນ</string>
+    <string name="menu_end_session">ສິ້ນສຸດເວລາການນຳໃຊ້</string>
+    <string name="no_sim_card_inserted">ໃສ່ SIM ເພື່ອເປີດຊຸດເຄື່ອງມື SIM.</string>
+    <string name="service_name">ຊື່ບໍລິການ</string>
+    <string name="sim_type_sim_name">ຊຸດເຄື່ອງມື SIM</string>
+    <string name="sim_type_uim_name">ຊຸດເຄື່ອງມື UIM</string>
+    <string name="sim_type_usim_name">ຊຸດເຄື່ອງມື USIM</string>
+    <string name="stk_app_state">ສະຖານະແອັບ</string>
+    <string name="stk_dialog_accept">​ແມ່ນ</string>
+    <string name="stk_dialog_reject">ບໍ່</string>
+    <string name="stk_dialog_title">ຊຸດເຄື່ອງມື SIM</string>
+    <string name="stk_intent_permission">​ຈຳ​ເປັນ​ຕ້ອງ​ມີ​ການ​ອະ​ນຸ​ຍາດ</string>
+    <string name="stk_no_service">ບໍ່ມີບໍລິການທີ່ໃຊ້ງານໄດ້</string>
+</resources>

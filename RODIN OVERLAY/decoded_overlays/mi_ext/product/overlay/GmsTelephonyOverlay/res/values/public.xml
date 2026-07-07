@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="bool" name="vvm3_enabled" id="0x7f010000" />
+    <public type="string" name="dialer_default_class" id="0x7f020000" />
+    <public type="string" name="platform_number_verification_package" id="0x7f020001" />
+</resources>

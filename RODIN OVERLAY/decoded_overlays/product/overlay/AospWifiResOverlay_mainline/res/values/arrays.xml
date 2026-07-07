@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_wifiCharsetsForSsidTranslation">
+        <item>all,GBK</item>
+    </string-array>
+    <integer-array name="config_wifiDisconnectedScanIntervalScheduleSec">
+        <item>20</item>
+    </integer-array>
+</resources>

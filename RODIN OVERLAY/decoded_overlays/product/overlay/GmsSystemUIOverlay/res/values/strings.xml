@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_preferredEmergencySosPackage">com.google.android.apps.safetyhub</string>
+    <string name="quick_settings_tiles_default">internet,bt,flashlight,dnd,alarm,airplane,controls,wallet,rotation,qr_code_scanner,battery,cast,screenrecord,custom(com.google.android.gms/.nearby.sharing.SharingTileService),mictoggle,cameratoggle,custom(com.google.android.permissioncontroller/com.android.permissioncontroller.permission.service.v33.SafetyCenterQsTileService)</string>
+</resources>

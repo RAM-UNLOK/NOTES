@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.mediatek.FrameworkResOverlayExt" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <overlay android:isStatic="true" android:priority="2" android:targetPackage="android"/>
+    <application android:extractNativeLibs="false" android:hasCode="false"/>
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="string" name="config_recentsComponentName" id="0x7f010000" />
+    <public type="string" name="config_secondaryHomeComponent" id="0x7f010001" />
+    <public type="string" name="config_secondaryHomePackage" id="0x7f010002" />
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="dimen" name="keyboard_demo_width_and_height_ratio" id="0x7f010000" />
+    <public type="dimen" name="keyboard_demo_x_ratio" id="0x7f010001" />
+    <public type="dimen" name="keyboard_demo_y_ratio" id="0x7f010002" />
+    <public type="dimen" name="keyboard_key_text_sp" id="0x7f010003" />
+    <public type="dimen" name="ks_radio_button_preference_width" id="0x7f010004" />
+    <public type="drawable" name="keyboard_show_icon" id="0x7f020000" />
+    <public type="drawable" name="keyboard_show_icon_white" id="0x7f020001" />
+</resources>

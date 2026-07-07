@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="DoubleCustomRingtoneBlackListDevices" id="0x7f010000" />
+    <public type="array" name="MIUI12SuperWallpaperBlackList" id="0x7f010001" />
+    <public type="array" name="MiSansIds" id="0x7f010002" />
+    <public type="array" name="PocoThemeIds" id="0x7f010003" />
+    <public type="array" name="PreCustomThemeConfig" id="0x7f010004" />
+    <public type="array" name="RedmiPocoDevices" id="0x7f010005" />
+</resources>

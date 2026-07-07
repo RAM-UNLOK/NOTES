@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_global_support_slm">true</bool>
+    <bool name="config_show_mtk_hotspot_identification">true</bool>
+    <bool name="config_show_softap_wifi6">true</bool>
+    <bool name="credentials_image_24129rt7cc">true</bool>
+    <bool name="credentials_image_2412dpc0ag">true</bool>
+    <bool name="credentials_image_2412dpc0ag_art">true</bool>
+    <bool name="credentials_image_2412dpc0ai_india_15">true</bool>
+</resources>

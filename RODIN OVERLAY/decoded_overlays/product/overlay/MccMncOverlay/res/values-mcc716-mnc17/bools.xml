@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="status_bar_show_volte_when_satellite_enabled">true</bool>
+</resources>

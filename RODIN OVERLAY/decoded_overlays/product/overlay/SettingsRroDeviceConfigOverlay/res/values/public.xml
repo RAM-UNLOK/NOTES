@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="ANDROID_U_BLE_MMA_FEATURE_VERSION" id="0x7f010000" />
+    <public type="array" name="BLE_MMA_FEATURE_VERSION" id="0x7f010001" />
+    <public type="array" name="TIME_STAMP" id="0x7f010002" />
+</resources>

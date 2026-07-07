@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_healthConnectMigrationKnownSigners">
+        <item>B2C0A80E485934BFB08F902CA27505813DF3159E4E6DD4A4DF078D66CB1C2003</item>
+    </string-array>
+    <string-array name="config_healthConnectRestoreKnownSigners">
+        <item>56BE132B780656FE2444CD34326EB5D7AAC91D2096ABF0FE673A99270622EC87</item>
+    </string-array>
+</resources>
