@@ -4,6 +4,46 @@
      file is read after any specific config file from the assets folder, so it
      must use explicit filters for MCC ad MNC if that is desired. -->
 <carrier_config_list>
+<!--丹麦 H3G-->
+<carrier_config mcc="238" mnc="06">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--瑞典 H3G-->
+<carrier_config mcc="240" mnc="02">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--瑞典 Tele2-->
+<carrier_config mcc="240" mnc="07">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--瑞典 Telenor-->
+<carrier_config mcc="240" mnc="08">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--瑞典 Telavox-->
+<carrier_config mcc="240" mnc="50">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--瑞典 LycaMobile-->
+<carrier_config mcc="240" mnc="12">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--挪威 Telia-->
+<carrier_config mcc="242" mnc="02">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--冰岛 ISL Siminn-->
+<carrier_config mcc="274" mnc="01">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--冰岛 ISL Vodafone-->
+<carrier_config mcc="274" mnc="02">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--冰岛 ISL Nova-->
+<carrier_config mcc="274" mnc="11">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
 <!--以色列 IL Partner-->
 <carrier_config mcc="425" mnc="01,10">
     <boolean name="carrier_volte_available_bool" value="true" />

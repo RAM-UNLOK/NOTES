@@ -9,6 +9,7 @@
     <bool name="config_is_nsa_thermal_control_supported">true</bool>
     <bool name="config_is_sa_thermal_control_supported">true</bool>
     <bool name="config_is_use_mipc_for_throttle_level">true</bool>
+    <bool name="config_mtk_call_drop_stats_supported">true</bool>
     <bool name="config_mtk_cloud_modem_feature_supported">true</bool>
     <bool name="config_mtk_disable_n8_n28_supported">true</bool>
     <bool name="config_mtk_modem_status_track_supported">true</bool>

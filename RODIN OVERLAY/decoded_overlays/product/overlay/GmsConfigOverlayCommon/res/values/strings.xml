@@ -24,7 +24,6 @@
     <string name="config_systemAutomotiveProjection">com.google.android.projection.gearhead</string>
     <string name="config_systemCallStreaming">com.google.android.gms</string>
     <string name="config_systemCompanionDeviceProvider">com.google.android.gms</string>
-    <string name="config_systemDependencyInstaller">com.google.android.gms</string>
     <string name="config_systemFinancedDeviceController">com.google.android.devicelockcontroller</string>
     <string name="config_systemGameService">com.google.android.gms</string>
     <string name="config_systemSettingsIntelligence">com.android.settings.intelligence</string>

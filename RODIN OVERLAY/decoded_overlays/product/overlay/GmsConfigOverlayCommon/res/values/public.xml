@@ -57,16 +57,15 @@
     <public type="string" name="config_systemAutomotiveProjection" id="0x7f040015" />
     <public type="string" name="config_systemCallStreaming" id="0x7f040016" />
     <public type="string" name="config_systemCompanionDeviceProvider" id="0x7f040017" />
-    <public type="string" name="config_systemDependencyInstaller" id="0x7f040018" />
-    <public type="string" name="config_systemFinancedDeviceController" id="0x7f040019" />
-    <public type="string" name="config_systemGameService" id="0x7f04001a" />
-    <public type="string" name="config_systemSettingsIntelligence" id="0x7f04001b" />
-    <public type="string" name="config_systemSpeechRecognizer" id="0x7f04001c" />
-    <public type="string" name="config_systemSupervision" id="0x7f04001d" />
-    <public type="string" name="config_systemWellbeing" id="0x7f04001e" />
-    <public type="string" name="harmful_app_warning_title" id="0x7f04001f" />
-    <public type="string" name="vendor_required_attestation_revocation_list_url" id="0x7f040020" />
-    <public type="string" name="widget_default_class_name" id="0x7f040021" />
-    <public type="string" name="widget_default_package_name" id="0x7f040022" />
+    <public type="string" name="config_systemFinancedDeviceController" id="0x7f040018" />
+    <public type="string" name="config_systemGameService" id="0x7f040019" />
+    <public type="string" name="config_systemSettingsIntelligence" id="0x7f04001a" />
+    <public type="string" name="config_systemSpeechRecognizer" id="0x7f04001b" />
+    <public type="string" name="config_systemSupervision" id="0x7f04001c" />
+    <public type="string" name="config_systemWellbeing" id="0x7f04001d" />
+    <public type="string" name="harmful_app_warning_title" id="0x7f04001e" />
+    <public type="string" name="vendor_required_attestation_revocation_list_url" id="0x7f04001f" />
+    <public type="string" name="widget_default_class_name" id="0x7f040020" />
+    <public type="string" name="widget_default_package_name" id="0x7f040021" />
     <public type="xml" name="config_webview_packages" id="0x7f050000" />
 </resources>

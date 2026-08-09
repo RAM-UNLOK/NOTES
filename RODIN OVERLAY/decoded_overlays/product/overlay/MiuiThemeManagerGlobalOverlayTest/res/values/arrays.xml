@@ -84,6 +84,13 @@
         <item>aeef0453-c5dc-44f4-8c6b-a67db50a126e</item>
         <item>45d58f60-4346-43c6-b9cd-b602d552af17</item>
         <item>f5262588-88fa-4188-b2f5-e74125e8f76a</item>
+        <item>b6257aca-e494-4ec4-a4d6-c39e2703cc03</item>
+        <item>5466de23-0c46-4cea-adef-028e35b898f5</item>
+        <item>54d82902-1624-416d-96f1-92d8091d8205</item>
+        <item>0b53eb88-90f4-4c20-93d6-4299a2192c90</item>
+        <item>d3d194b5-15c6-481d-b71c-ccc0247f5f0f</item>
+        <item>915cb22a-8127-476b-938c-d1e233474249</item>
+        <item>1495e960-5c5a-43db-bebe-eef9895d9b45</item>
     </string-array>
     <string-array name="PreCustomThemeConfig">
         <item>13.12.1</item>
@@ -104,6 +111,18 @@
         <item>8965a737-2fbf-4bc8-bbb1-d273d8a1bc66</item>
         <item>2.19.3</item>
         <item>8965a737-2fbf-4bc8-bbb1-d273d8a1bc66</item>
+        <item>2.11.3</item>
+        <item>efa3658c-025e-40da-8392-1dfc151ed5d0</item>
+        <item>2.12.3</item>
+        <item>efa3658c-025e-40da-8392-1dfc151ed5d0</item>
+        <item>2.19.3</item>
+        <item>efa3658c-025e-40da-8392-1dfc151ed5d0</item>
+        <item>2.11.3</item>
+        <item>c421f171-b6ba-4bd7-9cee-030ad4b6fa00</item>
+        <item>2.12.3</item>
+        <item>c421f171-b6ba-4bd7-9cee-030ad4b6fa00</item>
+        <item>2.19.3</item>
+        <item>c421f171-b6ba-4bd7-9cee-030ad4b6fa00</item>
         <item>5.11.6</item>
         <item>da255843-2f44-421a-8003-097f02491e4a</item>
         <item>5.11.6</item>
@@ -164,6 +183,102 @@
         <item>e320ea7c-1218-41e0-be11-3813f0e1fb03</item>
         <item>5.19.9</item>
         <item>2812c2c9-e79d-4d7c-b7b8-19b402e9f507</item>
+        <item>5.11.6</item>
+        <item>3fd33cb6-4a75-4147-b6e6-07fbbf64e6d9</item>
+        <item>5.11.6</item>
+        <item>99d9a161-5a2c-45ab-8e62-b5ca27adcb74</item>
+        <item>5.12.6</item>
+        <item>3fd33cb6-4a75-4147-b6e6-07fbbf64e6d9</item>
+        <item>5.12.6</item>
+        <item>99d9a161-5a2c-45ab-8e62-b5ca27adcb74</item>
+        <item>5.19.9</item>
+        <item>3fd33cb6-4a75-4147-b6e6-07fbbf64e6d9</item>
+        <item>5.19.9</item>
+        <item>99d9a161-5a2c-45ab-8e62-b5ca27adcb74</item>
+        <item>5.11.6</item>
+        <item>5b99aab3-8150-4ad1-9948-dc3a7f8f07bd</item>
+        <item>5.11.6</item>
+        <item>83c892a4-dcf7-47ef-b2a2-fc7e5ba03156</item>
+        <item>5.12.6</item>
+        <item>5b99aab3-8150-4ad1-9948-dc3a7f8f07bd</item>
+        <item>5.12.6</item>
+        <item>83c892a4-dcf7-47ef-b2a2-fc7e5ba03156</item>
+        <item>5.19.9</item>
+        <item>5b99aab3-8150-4ad1-9948-dc3a7f8f07bd</item>
+        <item>5.19.9</item>
+        <item>83c892a4-dcf7-47ef-b2a2-fc7e5ba03156</item>
+        <item>5.11.6</item>
+        <item>ea8e793e-ca62-47d1-a425-c59056f2bba7</item>
+        <item>5.11.6</item>
+        <item>7e710285-1f6a-49c0-beed-99f5c387a6eb</item>
+        <item>5.12.6</item>
+        <item>ea8e793e-ca62-47d1-a425-c59056f2bba7</item>
+        <item>5.12.6</item>
+        <item>7e710285-1f6a-49c0-beed-99f5c387a6eb</item>
+        <item>5.19.9</item>
+        <item>ea8e793e-ca62-47d1-a425-c59056f2bba7</item>
+        <item>5.19.9</item>
+        <item>7e710285-1f6a-49c0-beed-99f5c387a6eb</item>
+        <item>5.11.6</item>
+        <item>11a9dd2e-10fd-4678-85fb-0c7115ffa565</item>
+        <item>5.11.6</item>
+        <item>0b61f630-af91-4c9e-81d5-d7e4088e02a0</item>
+        <item>5.12.6</item>
+        <item>11a9dd2e-10fd-4678-85fb-0c7115ffa565</item>
+        <item>5.12.6</item>
+        <item>0b61f630-af91-4c9e-81d5-d7e4088e02a0</item>
+        <item>5.19.9</item>
+        <item>11a9dd2e-10fd-4678-85fb-0c7115ffa565</item>
+        <item>5.19.9</item>
+        <item>0b61f630-af91-4c9e-81d5-d7e4088e02a0</item>
+        <item>5.11.6</item>
+        <item>1fb7fa4c-30e4-4546-a5f3-9e0587d33b34</item>
+        <item>5.11.6</item>
+        <item>f23a95a1-0c6a-49ac-8827-1960765b27e1</item>
+        <item>5.12.6</item>
+        <item>1fb7fa4c-30e4-4546-a5f3-9e0587d33b34</item>
+        <item>5.12.6</item>
+        <item>f23a95a1-0c6a-49ac-8827-1960765b27e1</item>
+        <item>5.19.9</item>
+        <item>1fb7fa4c-30e4-4546-a5f3-9e0587d33b34</item>
+        <item>5.19.9</item>
+        <item>f23a95a1-0c6a-49ac-8827-1960765b27e1</item>
+        <item>5.11.6</item>
+        <item>a0c96ac8-1141-47e7-b8c1-3bdd455818ea</item>
+        <item>5.11.6</item>
+        <item>7f47404c-c27f-4abd-8f75-f5b3d2a9f803</item>
+        <item>5.12.6</item>
+        <item>a0c96ac8-1141-47e7-b8c1-3bdd455818ea</item>
+        <item>5.12.6</item>
+        <item>7f47404c-c27f-4abd-8f75-f5b3d2a9f803</item>
+        <item>5.19.9</item>
+        <item>a0c96ac8-1141-47e7-b8c1-3bdd455818ea</item>
+        <item>5.19.9</item>
+        <item>7f47404c-c27f-4abd-8f75-f5b3d2a9f803</item>
+        <item>5.11.6</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.11.6</item>
+        <item>992e35a9-efd5-4ed0-99d1-7496dd9ebaf0</item>
+        <item>5.12.6</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.12.6</item>
+        <item>992e35a9-efd5-4ed0-99d1-7496dd9ebaf0</item>
+        <item>5.19.9</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.19.9</item>
+        <item>992e35a9-efd5-4ed0-99d1-7496dd9ebaf0</item>
+        <item>5.11.6</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.11.6</item>
+        <item>6fe154e4-1125-4614-965e-241c55d35349</item>
+        <item>5.12.6</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.12.6</item>
+        <item>6fe154e4-1125-4614-965e-241c55d35349</item>
+        <item>5.19.9</item>
+        <item>d1fbd988-6e3a-463e-9f0c-5d73c24aa921</item>
+        <item>5.19.9</item>
+        <item>6fe154e4-1125-4614-965e-241c55d35349</item>
         <item>7.11.3</item>
         <item>fb65fcf5-b848-4bb1-87d3-35ddf2f55a5b</item>
         <item>7.21.3</item>
@@ -176,6 +291,18 @@
         <item>fb65fcf5-b848-4bb1-87d3-35ddf2f55a5b</item>
         <item>7.29.3</item>
         <item>fb65fcf5-b848-4bb1-87d3-35ddf2f55a5b</item>
+        <item>7.11.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
+        <item>7.21.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
+        <item>7.12.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
+        <item>7.22.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
+        <item>7.19.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
+        <item>7.29.3</item>
+        <item>21cddc05-b8b5-4956-b096-8454a2ef0bd1</item>
     </string-array>
     <string-array name="RedmiPocoDevices">
         <item>beryl</item>
@@ -235,5 +362,6 @@
         <item>somalia</item>
         <item>arctic</item>
         <item>mist</item>
+        <item>klee</item>
     </string-array>
 </resources>
