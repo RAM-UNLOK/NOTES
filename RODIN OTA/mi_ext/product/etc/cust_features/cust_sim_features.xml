@@ -76,6 +76,9 @@
     <cust_feature mcc="505">
         <bool name="is_2g_disabled_for_sim">true</bool>
     </cust_feature>
+    <cust_feature mcc="440">
+        <bool name="always_enable_data_roaming">true</bool>
+    </cust_feature>
     <cust_feature mcc="404">
         <string name="operator_considered_non_roaming_mcclist">404,405</string>
     </cust_feature>
@@ -367,6 +370,9 @@
         <string name="spn_override_name">TATA DOCOMO</string>
     </cust_feature>
     <cust_feature mcc="655" mnc="10">
+        <string-array name="preferred_network_type_list_for_fiveg_device">
+            <item>33,preferred_network_type_pref_entries_5g_preferred_za_mtn</item>
+        </string-array>
         <string-array name="preferred_network_type_list">
             <item>33,preferred_network_type_pref_entries_5g_preferred_za_mtn</item>
             <item>9,preferred_network_type_pref_entries_4g_preferred_za_mtn</item>
@@ -546,9 +552,10 @@
     </cust_feature>
     <cust_feature mcc="420" mnc="01">
         <string-array name="preferred_network_type_list">
-            <item>32,preferred_network_type_pref_entries_5g_preferred</item>
-            <item>20,preferred_network_type_pref_entries_4g_preferred</item>
+            <item>33,preferred_network_type_pref_entries_5g_preferred</item>
+            <item>9,preferred_network_type_pref_entries_4g_preferred</item>
         </string-array>
+        <bool name="is_only_show_plmn">true</bool>
         <string name="spn_override_name">STC</string>
     </cust_feature>
     <cust_feature mcc="419" mnc="02">
@@ -584,11 +591,13 @@
     <cust_feature mcc="460" mnc="07">
         <string name="spn_override_name">China Mobile</string>
     </cust_feature>
-    <cust_feature mcc="214" mnc="06">
-        <bool name="config_statusbar_hide_volte">true</bool>
-    </cust_feature>
     <cust_feature mcc="292" mnc="01">
         <string name="spn_override_name">SMT</string>
+    </cust_feature>
+    <cust_feature mcc="214" mnc="06">
+        <bool name="always_show_plmn">true</bool>
+        <bool name="spn_show_pnn_or_operator_name">true</bool>
+        <bool name="config_statusbar_hide_volte">true</bool>
     </cust_feature>
     <cust_feature mcc="283" mnc="10">
         <string name="spn_override_name">Ucom AM</string>
@@ -629,6 +638,7 @@
         <string name="spn_override_name">TM CELL</string>
     </cust_feature>
     <cust_feature mcc="722" mnc="310">
+        <bool name="config_claro_vowifi_promt_supported">true</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="7">4.5G</item>
         </map>
@@ -2708,6 +2718,8 @@
         <string name="spn_override_name">Vodafone IN</string>
     </cust_feature>
     <cust_feature mcc="262" mnc="03">
+        <bool name="config_show_vowifi_qs">true</bool>
+        <bool name="config_vowifi_promt_supported">true</bool>
         <string name="spn_override_name">o2 - de</string>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">LTE</item>
@@ -3074,6 +3086,12 @@
         </map>
     </cust_feature>
     <cust_feature mcc="730" mnc="09">
+        <map name="manual_network_spn_rule">
+            <item name="73001">3,WOM</item>
+            <item name="73002">3,WOM</item>
+            <item name="73003">3,WOM</item>
+        </map>
+        <integer name="config_status_bar_vowifi_drawable_type">2</integer>
         <string name="spn_override_name">WOM</string>
         <map name="plmn_network_display_rule">
             <item name="network_display_config">1,2</item>
@@ -3082,7 +3100,6 @@
             <item name="73003">4,2,WOM</item>
         </map>
         <integer name="config_status_bar_volte_drawable_type">1</integer>
-        <integer name="config_status_bar_vowifi_drawable_type">0</integer>
     </cust_feature>
     <cust_feature mcc="293" mnc="40">
         <string name="spn_override_name">A1 SI</string>
@@ -3295,6 +3312,9 @@
         <string name="spn_override_name">IND airtel</string>
     </cust_feature>
     <cust_feature mcc="214" mnc="04">
+        <bool name="config_show_vowifi_qs">true</bool>
+        <integer name="config_status_bar_vowifi_drawable_type">1</integer>
+        <bool name="show_wifi_calling_notification">true</bool>
         <string name="spn_override_name">YOIGO</string>
         <map name="plmn_network_display_rule">
             <item name="20820">4,1,F-Bouygues Telecom</item>
@@ -3315,6 +3335,7 @@
         <string name="spn_override_name">IR KISH</string>
     </cust_feature>
     <cust_feature mcc="262" mnc="11">
+        <bool name="config_vowifi_promt_supported">true</bool>
         <string name="spn_override_name">o2 - de</string>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">LTE</item>
@@ -3767,6 +3788,7 @@
         <string name="spn_override_name">KT, VIVA</string>
     </cust_feature>
     <cust_feature mcc="748" mnc="10">
+        <bool name="config_claro_vowifi_promt_supported">true</bool>
         <string name="spn_override_name">CLARO URUGUAY</string>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">LTE</item>
@@ -3954,6 +3976,11 @@
         <string name="spn_override_name">IS SIMINN</string>
     </cust_feature>
     <cust_feature mcc="708" mnc="001">
+        <map name="config_data_type_name_mcc_mnc">
+            <item name="4">3G</item>
+            <item name="6">LTE</item>
+            <item name="7">4.5G</item>
+        </map>
         <string name="spn_override_name">CLARO HND</string>
     </cust_feature>
     <cust_feature mcc="547" mnc="20">
@@ -4175,16 +4202,6 @@
     <cust_feature mcc="738" mnc="01">
         <string name="spn_override_name">Digicel</string>
     </cust_feature>
-    <cust_feature mcc="286" mnc="01">
-        <bool name="unuse_voice_class_for_cb">true</bool>
-        <string name="spn_override_name">TR TURKCELL</string>
-        <map name="config_data_type_name_mcc_mnc">
-            <item name="6">4.5G</item>
-            <item name="7">4.5G</item>
-            <item name="9">4.5G</item>
-        </map>
-        <bool name="config_status_bar_hide_national_roaming">true</bool>
-    </cust_feature>
     <cust_feature mcc="405" mnc="867">
         <bool name="support_lte_and_above_only">true</bool>
         <bool name="remove_network_mode_non_fiveg_device">true</bool>
@@ -4194,6 +4211,17 @@
             <item name="11">5G+</item>
             <item name="12">5G++</item>
         </map>
+    </cust_feature>
+    <cust_feature mcc="286" mnc="01">
+        <bool name="remove_network_mode_all_device">false</bool>
+        <bool name="unuse_voice_class_for_cb">true</bool>
+        <string name="spn_override_name">TR TURKCELL</string>
+        <map name="config_data_type_name_mcc_mnc">
+            <item name="6">4.5G</item>
+            <item name="7">4.5G</item>
+            <item name="9">4.5G</item>
+        </map>
+        <bool name="config_status_bar_hide_national_roaming">true</bool>
     </cust_feature>
     <cust_feature mcc="730" mnc="02">
         <bool name="config_operator_disable_imsRegOpt">true</bool>
@@ -4257,7 +4285,6 @@
             <item>*778</item>
             <item>*777</item>
         </string-array>
-        <bool name="support_force_cs_dial">true</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="4">3G</item>
             <item name="7">4.5G</item>
@@ -4581,6 +4608,7 @@
             <item>9,preferred_network_type_pref_entries_4g_preferred</item>
             <item>0,preferred_network_type_pref_entries_3g_preferred</item>
         </string-array>
+        <bool name="is_only_show_plmn">true</bool>
         <bool name="is_sim_restricted">true</bool>
         <integer name="config_operator_wifi_eap_method">4</integer>
         <string name="config_customized_wifi_ssid">  AIS SMART Login</string>
@@ -4748,6 +4776,8 @@
         <string name="spn_override_name">alfa</string>
     </cust_feature>
     <cust_feature mcc="262" mnc="07">
+        <bool name="config_show_vowifi_qs">true</bool>
+        <bool name="config_vowifi_promt_supported">true</bool>
         <string name="spn_override_name">o2 - de</string>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">LTE</item>
@@ -4763,8 +4793,8 @@
         <string name="spn_override_name">TATA DOCOMO</string>
     </cust_feature>
     <cust_feature mcc="740" mnc="00">
+        <bool name="is_only_show_plmn">true</bool>
         <bool name="config_operator_disable_imsRegOpt">true</bool>
-        <string name="spn_override_name">Movistar</string>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">LTE</item>
             <item name="7">LTE+</item>

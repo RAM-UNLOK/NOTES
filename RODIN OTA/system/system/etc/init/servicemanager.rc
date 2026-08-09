@@ -11,6 +11,9 @@ service servicemanager /system/bin/servicemanager
     onrestart restart --only-if-running apexd
     onrestart restart audioserver
     onrestart restart gatekeeperd
+    # MIUI ADD: Performance_DecoupledSprd
+    onrestart restart vold
+    # END Performance_DecoupledSprd
     onrestart class_restart --only-enabled main
     onrestart class_restart --only-enabled hal
     onrestart class_restart --only-enabled early_hal

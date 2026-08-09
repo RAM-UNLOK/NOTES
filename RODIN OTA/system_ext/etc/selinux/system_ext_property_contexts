@@ -106,6 +106,9 @@ persist.vendor.device.orientation u:object_r:exported_system_prop:s0 exact strin
 persist.vendor.freeform.3appcam u:object_r:exported_system_prop:s0 exact string
 persist.vendor.freeform.cam.orientation u:object_r:exported_system_prop:s0 exact string
 
+# activity embedding
+persist.settings.large_screen_opt.enabled u:object_r:exported_system_prop:s0 exact bool
+
 ro.boot.hwc             u:object_r:exported_default_prop:s0
 
 persist.dalvik.vm.flush_tcache  u:object_r:dalvik_prop:s0
@@ -142,6 +145,9 @@ persist.sys.lockzone.channel  u:object_r:exported_system_prop:s0
 # persist prop for miupdater
 persist.sys.cota.package  u:object_r:exported_system_prop:s0
 persist.sys.cota.partition  u:object_r:exported_system_prop:s0
+
+# persist prop for updater
+persist.sys.xms.version  u:object_r:xms_prop:s0
 
 #support set prop for COTA
 persist.sys.facebook.partnerid  u:object_r:exported_system_prop:s0
@@ -216,6 +222,9 @@ persist.vendor.usb.camerahandle       u:object_r:exported_system_prop:s0
 
 #persist prop for moisture detection
 persist.vendor.moisture.detection      u:object_r:exported_system_prop:s0
+
+#persist prop for remove shutdown phone
+persist.vendor.usb.reversechg.enable       u:object_r:exported_system_prop:s0
 
 #persist prop for battery health
 persist.vendor.battery.health      u:object_r:exported_system_prop:s0
@@ -405,7 +414,12 @@ vendor.audio.wps.resume        u:object_r:vendor_audio_wps_prop:s0
 
 # MIUI ADD:Memory_UFSSnapshot
 persist.sys.memory.snapshot.otastatus  u:object_r:snapshot_prop:s0
-# END Memory_UFSSnapshot 
+# END Memory_UFSSnapshot
+
+# MIUI ADD:Memory_UFSwriteprotect
+persist.sys.memory.writepprotect.set   u:object_r:sys_wp_prop:s0
+persist.sys.memory.writepprotect.clear   u:object_r:sys_wp_prop:s0
+# END Memory_UFSwriteprotect
 
 persist.sys.sf.dynamic.log u:object_r:sf_dynamic_log_prop:s0 exact int
 persist.vendor.mi_sf.dynamic.log u:object_r:sf_dynamic_log_prop:s0 exact int
@@ -421,16 +435,20 @@ persist.sys.theme.ai_hd_icon.status  u:object_r:exported_system_prop:s0
 # persist prop for btsoclog
 persist.vendor.service.bdroid.soclog u:object_r:vendor_bluetooth_milog_prop:s0
 
-# MIUI ADD: BSPSecurity_FaceUnlock
 # Properties for Face Verification
 sys.miface.auth.package    u:object_r:exported_system_prop:s0 exact string
-# END BSPSecurity_FaceUnlock
 
 # systemui set persist.sys.feature.island prop
 persist.sys.feature.island   u:object_r:exported_system_prop:s0
 
 # wifi set sys.wifi.island_notification_reason prop
 sys.wifi.island_notification_reason   u:object_r:exported_system_prop:s0
+#line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
+
+#line 1 "miui/system/sepolicy/mediatek/private/property_contexts"
+# Properties for clipboard
+persist.sys.debug.app.clipdata     u:object_r:exported_system_prop:s0
+
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 
 #line 1 "vendor/xiaomi/proprietary/cameraopt_release/sepolicy/miui/common/private/property_contexts"
@@ -816,6 +834,10 @@ hbt. u:object_r:system_mtk_hbt_prop:s0
 #line 1 "device/xiaomi/sepolicy/generic/private/property_contexts"
 # perfetto customize
 persist.sys.traced.default_bpf_trace_on u:object_r:traced_bpf_trace_prop:s0
+
+#MIUI ADD: FaceCenter
+persist.vendor.camera.facetracker.support  u:object_r:camera_config_prop:s0 exact int
+#END FaceCenter
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 
 #line 1 "device/xiaomi/sepolicy/mediatek/private/property_contexts"
@@ -835,12 +857,23 @@ persist.sys.force_32bit_install                u:object_r:force_32bit_install_pr
 # add street capture setting
 persist.vendor.camera.IsStreetModeSupported u:object_r:camera_config_prop:s0 exact bool
 
-#MIUI ADD: FaceCenter
-persist.vendor.camera.facetracker.support  u:object_r:camera_config_prop:s0 exact int
-#END FaceCenter
+#MIUI ADD: offline_log
+persist.vendor.dpm.     u:object_r:vendor_persist_dpm_prop:s0
+persist.dpm.feature     u:object_r:vendor_persist_dpm_prop:s0
+#END offline_log
 
 #audio CID
 vendor.audio.usb_cctoggle                  u:object_r:audio_prop:s0 exact string
+
+# MIUI ADD: Camera_PerformanceEnhance
+persist.vendor.camera.cameramind.supported  u:object_r:camera_config_prop:s0 exact bool
+# END Camera_PerformanceEnhance
+#line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
+
+#line 1 "vendor/xiaomi/proprietary/offline_log/sepolicy_mtk/property_contexts"
+persist.offlinelog.           u:object_r:log_prop:s0
+persist.sys.offlinelog.       u:object_r:log_prop:s0
+service.offlinelog.bootloader u:object_r:log_prop:s0
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 
 #line 1 "vendor/xiaomi/proprietary/misys/hypsys/hypsys_ssi/aidl/common/default/sepolicy/private/common/modules_policy/property_contexts"
@@ -856,10 +889,12 @@ vendor.blackbox.write.status       u:object_r:system_mtk_debug_mtk_aee_prop:s0
 persist.mtk.fw.minidump.existed  u:object_r:mtk_blackbox_persist_fw_minidump_prop:s0
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 
-#line 1 "device/xiaomi/sepolicy/generic/leagcy/private/property_contexts"
-# offline_log
-persist.vendor.dpm.                        u:object_r:vendor_persist_dpm_prop:s0
-persist.dpm.feature                        u:object_r:vendor_persist_dpm_prop:s0
-
+#line 1 "vendor/xiaomi/proprietary/mslg/keeper_gl/1.0/default/sepolicy/ssi/private/property_contexts"
+persist.sys.unzip.mslgrootfs    u:object_r:mslg_prop:s0
+sys.mslgrootfs.isready    u:object_r:mslg_prop:s0
+sys.mslgrootfs.version    u:object_r:mslg_prop:s0
+sys.setup.mslgrootfs    u:object_r:mslg_prop:s0
+sys.mslg.    u:object_r:mslg_prop:s0
+ro.mslg.rootfs.version    u:object_r:mslg_prop:s0
 #line 1 "out_sys/soong/.intermediates/system/sepolicy/contexts/system_ext_property_contexts/android_common/missi/newline"
 

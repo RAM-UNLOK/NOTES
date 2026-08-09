@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
   <if condition="getPlatform();!=mt6765,mt6762,mt6761,mt6739,mt6768,mt6769,mt6771,mt6779,mt6781,mt6783,mt6785,mt6789"/>
-  <dualsim>true</dualsim>
   <ui>
     <element ui_type="Spinner" label="Force ANT Mode">
       <field>tas_mode</field>

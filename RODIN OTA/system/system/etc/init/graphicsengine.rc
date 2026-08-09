@@ -1,0 +1,7 @@
+# MIUI ADD: SF_EnhanceVkPipelineCache
+service graphicsengine /system/bin/graphicsengine
+    class core animation
+    user system
+    group system graphics
+    oneshot
+# END SF_EnhanceVkPipelineCache

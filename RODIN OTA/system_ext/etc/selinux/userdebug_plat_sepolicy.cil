@@ -32859,8 +32859,10 @@
 (allowx vold file_type (ioctl dir (0x5879)))
 (allowx vold data_file_type (ioctl dir (0x6613 (range 0x6615 0x6618) 0x661a)))
 (allowx vold vold_metadata_file (ioctl file (0x660b)))
+(allowx vold unencrypted_data_file (ioctl file (0x660b)))
 (allowx vold vold_data_file (ioctl file (0x660b)))
 (allowx vold vold_metadata_file (ioctl file (0xf514)))
+(allowx vold unencrypted_data_file (ioctl file (0xf514)))
 (allowx vold vold_data_file (ioctl file (0xf514)))
 (allow vold self (process (setfscreate)))
 (allow vold system_file (file (getattr map execute execute_no_trans)))
@@ -32962,14 +32964,14 @@
 (allow vold servicemanager (binder (call transfer)))
 (allow servicemanager vold (binder (call transfer)))
 (allow vold vold_service (service_manager (add find)))
-;;* lmx 296 system/sepolicy/private/vold.te
+;;* lmx 299 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_304 vold_service (service_manager (add)))
 ;;* lme
 
 (allow vold su (tcp_socket (read write accept getopt)))
 (allow vold fwk_vold_service (service_manager (add find)))
-;;* lmx 297 system/sepolicy/private/vold.te
+;;* lmx 300 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_304 fwk_vold_service (service_manager (add)))
 ;;* lme
@@ -33018,44 +33020,44 @@
 (allow vold proc_bootconfig (file (ioctl read getattr lock map open watch watch_reads)))
 (allow vold proc_cmdline (file (ioctl read getattr lock map open watch watch_reads)))
 (allow vold vendor_apex_file (file (ioctl read getattr lock map open watch watch_reads)))
-;;* lmx 388 system/sepolicy/private/vold.te
+;;* lmx 391 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1078 vold_service (service_manager (find)))
 ;;* lme
 
-;;* lmx 405 system/sepolicy/private/vold.te
+;;* lmx 408 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_304 system_userdir_file (dir (write add_name remove_name)))
 (neverallow base_typeattr_304 vendor_userdir_file (dir (write add_name remove_name)))
 (neverallow base_typeattr_304 media_userdir_file (dir (write add_name remove_name)))
 ;;* lme
 
-;;* lmx 414 system/sepolicy/private/vold.te
+;;* lmx 417 system/sepolicy/private/vold.te
 
 (neverallowx base_typeattr_456 data_file_type (ioctl dir (0x6613)))
 ;;* lme
 
-;;* lmx 420 system/sepolicy/private/vold.te
+;;* lmx 423 system/sepolicy/private/vold.te
 
 (neverallowx base_typeattr_304 data_file_type (ioctl dir ((range 0x6617 0x6618) 0x661a)))
 ;;* lme
 
-;;* lmx 426 system/sepolicy/private/vold.te
+;;* lmx 429 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1079 vold_data_file (dir (write lock append map unlink link rename execute quotaon mounton audit_access execmod watch watch_mount watch_sb watch_with_perm watch_reads add_name remove_name reparent rmdir)))
 ;;* lme
 
-;;* lmx 433 system/sepolicy/private/vold.te
+;;* lmx 436 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1080 vold_data_file (dir (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads add_name remove_name reparent search rmdir)))
 ;;* lme
 
-;;* lmx 439 system/sepolicy/private/vold.te
+;;* lmx 442 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_532 vold_metadata_file (dir (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads add_name remove_name reparent search rmdir)))
 ;;* lme
 
-;;* lmx 446 system/sepolicy/private/vold.te
+;;* lmx 449 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1081 vold_data_file (file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads execute_no_trans entrypoint)))
 (neverallow base_typeattr_1081 vold_data_file (lnk_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
@@ -33063,7 +33065,7 @@
 (neverallow base_typeattr_1081 vold_data_file (fifo_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 453 system/sepolicy/private/vold.te
+;;* lmx 456 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1080 vold_metadata_file (file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads execute_no_trans entrypoint)))
 (neverallow base_typeattr_1080 vold_metadata_file (lnk_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
@@ -33071,7 +33073,7 @@
 (neverallow base_typeattr_1080 vold_metadata_file (fifo_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 461 system/sepolicy/private/vold.te
+;;* lmx 464 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_1082 vold_metadata_file (file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads execute_no_trans entrypoint)))
 (neverallow base_typeattr_1082 vold_metadata_file (lnk_file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
@@ -33083,32 +33085,32 @@
 (neverallow base_typeattr_1082 vold_data_file (fifo_file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 463 system/sepolicy/private/vold.te
+;;* lmx 466 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_532 restorecon_prop (property_service (set)))
 ;;* lme
 
-;;* lmx 477 system/sepolicy/private/vold.te
+;;* lmx 480 system/sepolicy/private/vold.te
 
 (neverallow vold base_typeattr_1083 (binder (call)))
 ;;* lme
 
-;;* lmx 479 system/sepolicy/private/vold.te
+;;* lmx 482 system/sepolicy/private/vold.te
 
 (neverallow vold fsck_exec (file (execute_no_trans)))
 ;;* lme
 
-;;* lmx 480 system/sepolicy/private/vold.te
+;;* lmx 483 system/sepolicy/private/vold.te
 
 (neverallow base_typeattr_238 vold (process (transition dyntransition)))
 ;;* lme
 
-;;* lmx 481 system/sepolicy/private/vold.te
+;;* lmx 484 system/sepolicy/private/vold.te
 
 (neverallow vold base_typeattr_239 (process (ptrace)))
 ;;* lme
 
-;;* lmx 482 system/sepolicy/private/vold.te
+;;* lmx 485 system/sepolicy/private/vold.te
 
 (neverallow vold base_typeattr_239 (rawip_socket (ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind)))
 ;;* lme

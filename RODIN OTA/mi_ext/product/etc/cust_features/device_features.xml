@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cust_features>
     <cust_feature>
+        <bool name="config_modem_call_fail_info_support">true</bool>
+        <bool name="persist.vendor.bluetooth.voip.hangup.disabled">true</bool>
+        <bool name="support_tp_mqs_report_once_a_day">true</bool>
+        <bool name="support_tp_mqs_gl_report">true</bool>
+        <bool name="support_audio_share_ui">true</bool>
+        <bool name="u_show_auracast_profile_phone_list">true</bool>
         <bool name="powerkeeper_ExtremeScenarioAware">true</bool>
         <bool name="support_virtual_call">true</bool>
         <integer name="config_wifi_sar_pattern">8</integer>
         <bool name="config_supported_aon_devices">true</bool>
+        <string-array name="miui_mtk_perf_boost_config">
+            <item>0x00400000</item>
+            <item>1000000</item>
+            <item>0x00400100</item>
+            <item>1000000</item>
+            <item>0x00c00000</item>
+            <item>39</item>
+        </string-array>
         <bool name="input_scroller_optimization_normal_support">true</bool>
     </cust_feature>
 </cust_features>

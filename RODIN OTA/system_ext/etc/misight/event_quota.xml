@@ -12,8 +12,12 @@
 <Event  eventId="908003001" dailyCnt="24000" />
 <Event  eventId="905004001" dailyCnt="2000" />
 <Domain name="hpl" eventMin="2" eventMax="2" maxLogCnt="5"/>
-<Domain name="wifi" eventMin="916000000" eventMax="916999999" logSpace="3600" logSame="true"  maxLogCnt="5"/>
+<Domain name="wifi" eventMin="916000000" eventMax="916999999" logSpace="7200" logSame="true"  maxLogCnt="1"/>
 <Domain name="performance" eventMin="902000000" eventMax="902050999" maxLogCnt="100"/>
+<Domain name="displayflicker" eventMin="907410000" eventMax="907410999" dailyCnt="1000" logSpace="86400" logSame="true" maxLogCnt="5"/>
+<Domain name="power" eventMin="903000000" eventMax="903999999" logSpace="7200" logSame="true"  maxLogCnt="11">
+    <SubDomain eventMin="903000000" eventMax="903114999" logSpace="1200" logSame="true"  maxLogCnt="10"/>
+</Domain>
 </Dev>
 
 <Stable>
@@ -28,7 +32,10 @@
 <Event  eventId="908003001" dailyCnt="24000" />
 <Event  eventId="905004001" dailyCnt="1000" />
 <Domain name="hpl" eventMin="2" eventMax="2" maxLogCnt="5"/>
-    <Domain name="wifi" eventMin="916000000" eventMax="916999999" logSpace="3600" logSame="true" maxLogCnt="5"/>
+<Domain name="wifi" eventMin="916000000" eventMax="916999999" logSpace="7200" logSame="true"  maxLogCnt="1"/>
 <Domain name="performance" eventMin="902000000" eventMax="902050999" maxLogCnt="100"/>
+<Domain name="power" eventMin="903000000" eventMax="903999999" logSpace="7200" logSame="true"  maxLogCnt="11">
+    <SubDomain eventMin="903000000" eventMax="903114999" logSpace="1200" logSame="true"  maxLogCnt="10"/>
+</Domain>
 </Stable>
 </EventQuota>

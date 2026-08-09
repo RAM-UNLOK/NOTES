@@ -132,6 +132,7 @@ on property:sys.boot_completed=1
     write /dev/memcg/freeze-app/memory.anno_writeback_enable 1
     write /dev/memcg/protected-app/memory.anno_writeback_protected 1
     write /dev/memcg/protected-app/memory.anno_writeback_control 1
+    write /dev/memcg/mimd/critical1/memory.anno_writeback_protected 1
 # END Performance_MemoryEnhance
 
 # MIUI ADD: FileSystem_Lz4asm
@@ -233,6 +234,32 @@ on init
     chmod 0664 /dev/cpuctl/camera-daemon/tasks
     chmod 0664 /dev/cpuctl/camera-daemon/cgroup.procs
 
+    # MIUI ADD: Performance_PerformanceEnhance
+    # Create sched cgroup for display processes
+    mkdir /dev/cpuctl/display
+    chown system system /dev/cpuctl/display
+    chown system system /dev/cpuctl/display/tasks
+    chown system system /dev/cpuctl/display/cgroup.procs
+    chmod 0664 /dev/cpuctl/display/tasks
+    chmod 0664 /dev/cpuctl/display/cgroup.procs
+
+    # Create sched cgroup for audio processes
+    mkdir /dev/cpuctl/audio
+    chown system system /dev/cpuctl/audio
+    chown system system /dev/cpuctl/audio/tasks
+    chown system system /dev/cpuctl/audio/cgroup.procs
+    chmod 0664 /dev/cpuctl/audio/tasks
+    chmod 0664 /dev/cpuctl/audio/cgroup.procs
+
+    # Create sched cgroup for touch processes
+    mkdir /dev/cpuctl/touch
+    chown system system /dev/cpuctl/touch
+    chown system system /dev/cpuctl/touch/tasks
+    chown system system /dev/cpuctl/touch/cgroup.procs
+    chmod 0664 /dev/cpuctl/touch/tasks
+    chmod 0664 /dev/cpuctl/touch/cgroup.procs
+    # END Performance_PerformanceEnhance
+
     # Create blkio group and apply initial settings.
     # This feature needs kernel to support it, and the
     # device's init.rc must actually set the correct values.
@@ -253,6 +280,10 @@ on init
     write /dev/blkio/blkio.group_idle 0
     write /dev/blkio/background/blkio.group_idle 0
     write /dev/blkio/background/blkio.prio.class restrict-to-be
+
+    # MIUI ADD: Init_DecoupledSprd
+# Xiaomi init.rc for MTK platform
+    # END Init_DecoupledSprd
 
     restorecon_recursive /mnt
 
@@ -630,7 +661,6 @@ on late-init
 # MIUI ADD: Performance_MemoryEnhance
 on perf_pin_init && property:persist.sys.systemui.compress=on
     trigger perf_pin_overlay
-
 on perf_pin_overlay
     mkdir /mnt/perf_pin
     mkdir /mnt/perf_pin/system_ext
@@ -666,6 +696,8 @@ on post-fs
     chmod 0664 /sys/devices/system/cpu/dcvs_arbi/ddr/dcvs_arbi_enable
     chown system system /sys/devices/system/cpu/dcvs_arbi/ddr/dcvs_arbi_partial_on
     chmod 0664 /sys/devices/system/cpu/dcvs_arbi/ddr/dcvs_arbi_partial_on
+    chown system system /sys/devices/system/cpu/dcvs_arbi/ddr/dcvs_arbi_second
+    chmod 0664 /sys/devices/system/cpu/dcvs_arbi/ddr/dcvs_arbi_second
     # END Power_BatteryEnhance
 
     # Once everything is setup, no need to modify /.
@@ -1370,6 +1402,14 @@ on boot
     chown root system /dev/memcg/memory.xswapd.stop_swap
     chmod 0664 /dev/memcg/memory.xswapd.stop_swap
     chown root system /sys/kernel/mi_mempool/general_stat_info
+    chown root system /sys/kernel/mm/mthp_compact/enabled
+    chmod 0664 /sys/kernel/mm/mthp_compact/enabled
+    chown root system /sys/kernel/mm/mthp_compact/busy_threshold
+    chmod 0664 /sys/kernel/mm/mthp_compact/busy_threshold
+    chown root system /sys/kernel/mm/mthp_compact/low_threshold
+    chmod 0664 /sys/kernel/mm/mthp_compact/low_threshold
+    chown root system /sys/kernel/mm/mthp_compact/ratio
+    chmod 0664 /sys/kernel/mm/mthp_compact/ratio
     # END Performance_MemoryEnhance
 
     # to access F2FS sysfs on dm-<num> directly
@@ -1590,6 +1630,16 @@ service ueventd /system/bin/ueventd
     user root
     shutdown critical
 
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+    setenv HOSTNAME console
+    shutdown critical
+
 on property:ro.debuggable=1
     # Give writes to the same group for the trace folder on debug builds,
     # it's further protected by selinux policy.
@@ -1626,6 +1676,9 @@ on property:ro.vendor.miui.region=*
 on property:persist.audio.cloud_ce=1
     start audioshell_system
 #END Audio_VolumeCurve CE volumecurve
+
+on init && property:ro.debuggable=1
+    start console
 
 # MIUI ADD: BSPSecurity_IMEIProtection
 on property:persist.vendor.radio.write.cache=1 && property:persist.vendor.ssr.restart_level=ALL_ENABLE

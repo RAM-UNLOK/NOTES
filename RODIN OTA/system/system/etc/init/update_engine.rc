@@ -2,7 +2,14 @@
 service update_engine /system/bin/update_engine --logtostderr --logtofile --foreground
     class late_start
     user root
+# MIUI ADD: Build_DecoupledSprd
+#    group root system wakelock inet cache media_rw everybody audio
+# Xiaomi update_engine.rc for not SPRD platform
+
+# MIUI MOD: Build_DecoupledSprd
     group root system wakelock inet cache media_rw
+# END Build_DecoupledSprd
+# END Build_DecoupledSprd
     task_profiles OtaProfiles
     disabled
 

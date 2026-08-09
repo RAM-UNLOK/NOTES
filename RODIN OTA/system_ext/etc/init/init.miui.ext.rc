@@ -31,6 +31,8 @@ on late-init
     mkdir /dev/memcg/protect_memcg_1 0750 system system
     mkdir /dev/memcg/protect_memcg_2 0750 system system
     mkdir /dev/memcg/protect_memcg_3 0750 system system
+
+on  zygote-start
     chown system system /dev/memcg/protect_memcg_1/memory.mctrl.level
     chown system system /dev/memcg/protect_memcg_1/memory.mctrl.max
     chown system system /dev/memcg/protect_memcg_2/memory.mctrl.level
@@ -108,11 +110,13 @@ on post-fs-data
 # MIUI ADD: SF_MIUIRenderEngine
 on post-fs-data
     mkdir /data/misc/lut 0770 system system
-    restorecon_recursive /data/misc/lut
     copy /product/etc/lut/lutForPrimeShaderCache.txt /data/misc/lut/lutForPrimeShaderCache.txt
     chown system system /data/misc/lut/lutForPrimeShaderCache.txt
     chmod 0660 /data/misc/lut/lutForPrimeShaderCache.txt
-    restorecon /data/misc/lut/lutForPrimeShaderCache.txt
+    copy /product/etc/lut/SfPqSetting.bin /data/misc/lut/SfPqSetting.bin
+    chown system system /data/misc/lut/SfPqSetting.bin
+    chmod 0660 /data/misc/lut/SfPqSetting.bin
+    restorecon_recursive /data/misc/lut
 # END SF_MIUIRenderEngine
 
 # rtmm
@@ -158,9 +162,11 @@ service stability_setup /system_ext/bin/init.stabilitysetup.sh
     oneshot
     disabled
 
-on post-fs
+on post-fs-data
    start stability_setup
-   start  mqsasd
+
+on post-fs
+    start  mqsasd
 
 on post-fs && property:ro.debuggable=1 && property:ro.bionic.arch=arm64
    start  inject_mgr
@@ -199,18 +205,23 @@ on post-fs-data
     mkdir /data/miuilog/keyguard 0775 system system
     # create hyperlogmanager dir
     mkdir /data/miuilog/hyperlogmanager 0775 system system
+    # create window dir
+    mkdir /data/miuilog/window 0775 system system
+    mkdir /data/miuilog/window/pftrace 0775 system system
     # Setup /data/extm as per_boot directory
     exec - system system -- /bin/rm -rf /data/extm
     mkdir /data/extm 2770 root system encryption=Require key=per_boot_ref
     restorecon_recursive /data/extm
-    mkdir /data/system/surfaceflinger 0775 system system
-    chown system system /data/system/surfaceflinger
-    chmod 0775 /data/system/surfaceflinger
-    restorecon /data/system/surfaceflinger
-    mkdir /data/system/surfaceflinger/pipelinecache 0775 system system
-    chown system system /data/system/surfaceflinger/pipelinecache
-    chmod 0775 /data/system/surfaceflinger/pipelinecache
-    restorecon /data/system/surfaceflinger/pipelinecache
+# MIUI ADD: SF_EnhanceVkPipelineCache
+    mkdir /data/system/graphicsengine 0775 system system
+    chown system system /data/system/graphicsengine
+    chmod 0775 /data/system/graphicsengine
+    restorecon /data/system/graphicsengine
+    mkdir /data/system/graphicsengine/pipelinecache 0775 system system
+    chown system system /data/system/graphicsengine/pipelinecache
+    chmod 0775 /data/system/graphicsengine/pipelinecache
+    restorecon /data/system/graphicsengine/pipelinecache
+# END SF_EnhanceVkPipelineCache
 
 # system_perf_init: after load_persist_props_action && before zygote-start
 on load-bpf-programs

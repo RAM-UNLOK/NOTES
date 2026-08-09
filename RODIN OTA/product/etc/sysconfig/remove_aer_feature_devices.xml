@@ -24,4 +24,6 @@
     <remove-aer-feature-device device="spring_p" />  <!--O19P, BUGOS2-551499-->
     <remove-aer-feature-device device="tornado_p" />  <!--P15P, LCFEAT-162774-->
     <remove-aer-feature-device device="flourite_p" />  <!--P16UP, PROJFEAT-692607-->
+    <remove-aer-feature-device device="kunzite_p" />  <!--P17P, LCFEAT-136989-->
+    <remove-aer-feature-device device="guitar_p" />  <!--P85P, LCFEAT-301416-->
 </config>

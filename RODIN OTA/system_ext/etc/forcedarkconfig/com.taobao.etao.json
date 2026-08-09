@@ -882,6 +882,31 @@
               "id": "tab_container"
             }
           ]
+        },
+        {
+          "viewName": "com.taobao.android.AliUrlImageView",
+          "forceDark": true,
+          "usage": 105,
+          "backgroundUsage": 105,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "com.taobao.android.dinamicx.DXRootView",
+              "index": -1
+            },
+            {
+              "parent": 1,
+              "viewName": "com.taobao.android.icart.widget.CartRecyclerView",
+              "index": -1,
+              "id": "cart_recycler_view"
+            },
+            {
+              "parent": 2,
+              "viewName": "com.taobao.ptr.PtrBase",
+              "index": -1,
+              "id": "cart_refresh"
+            }
+          ]
         }
       ]
     },

@@ -700,4 +700,7 @@ applications that come with the platform
         <permission name="android.permission.SYSTEM_CAMERA"/>
     </privapp-permissions>
     <!-- END Adapt_DecoupledXring -->
+    <privapp-permissions package="com.android.providers.partnerbookmarks">
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
 </permissions>

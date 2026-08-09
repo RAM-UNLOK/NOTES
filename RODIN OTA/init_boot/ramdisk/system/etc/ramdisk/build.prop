@@ -7,16 +7,18 @@ ro.product.bootimage.device=missi
 ro.product.bootimage.manufacturer=unknown
 ro.product.bootimage.model=missi
 ro.product.bootimage.name=missi
-ro.bootimage.build.date=Tue Mar 17 15:20:51 CST 2026
-ro.bootimage.build.date.utc=1773732051
-ro.bootimage.build.fingerprint=Xiaomi/missi/missi:16/BP2A.250605.031.A3/OS3.0.10.0.WOJMIXM:user/release-keys
+ro.product.exaid.supported=false
+ro.bootimage.build.date=Wed Jul  1 22:25:30 CST 2026
+ro.bootimage.build.date.utc=1782915930
+ro.bootimage.build.fingerprint=Xiaomi/missi/missi:16/BP2A.250605.031.A3/16OS3.1.260701.221429865.MTPEGL.S:user/release-keys
 ro.bootimage.build.id=BP2A.250605.031.A3
 ro.bootimage.build.tags=release-keys
 ro.bootimage.build.type=user
-ro.bootimage.build.version.incremental=OS3.0.10.0.WOJMIXM
+ro.bootimage.build.version.incremental=16OS3.1.260701.221429865.MTPEGL.S
 ro.bootimage.build.version.release=16
 ro.bootimage.build.version.release_or_codename=16
 ro.bootimage.build.version.sdk=36
 ro.bootimage.build.version.sdk_full=36.0
 # end of file
+
 

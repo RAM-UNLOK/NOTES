@@ -1,0 +1,13 @@
+on post-fs-data
+	mkdir /data/local/log 0771 system system
+	mkdir /data/local/bootlog 0777 system system
+	chown system system /dev/mtd0
+	
+service mtdoopslog /system/bin/sh /system_ext/bin/mtdoopslog.sh
+	class main
+	user system
+	group system
+	disabled
+	oneshot
+	seclabel u:r:mtdoopslog:s0
+	writepid  /dev/cpuset/background/tasks

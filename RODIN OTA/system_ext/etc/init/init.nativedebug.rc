@@ -17,7 +17,7 @@ on property:sys.miui.ndcd=on
     write /proc/sys/kernel/core_pattern "|/system/bin/micd %e %p"
 
 on property:sys.miui.ndcd=off
-    write /proc/sys/kernel/core_pattern "/dev/null"
+    write /proc/sys/kernel/core_pattern "|/bin/false"
 
 
 on property:sys.miui.gki_ndcd=on
@@ -27,4 +27,4 @@ on property:sys.miui.gki_ndcd=on
     write /proc/sys/kernel/core_pattern "/data/miuilog/stability/nativecrash/coredump/core-%e-%p"
 
 on property:sys.miui.gki_ndcd=off
-    write /proc/sys/kernel/core_pattern "/dev/null"
+    write /proc/sys/kernel/core_pattern "|/bin/false"

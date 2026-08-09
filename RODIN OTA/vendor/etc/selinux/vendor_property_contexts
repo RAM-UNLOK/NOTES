@@ -1012,16 +1012,6 @@ ro.vendor.oem.meid             u:object_r:vendor_deviceid_prop:s0
 vendor.camera.sensor.logsystem  u:object_r:vendor_camera_skynet_prop:s0
 vendor.camera.sensor.logsystem.unrelease  u:object_r:vendor_camera_skynet_prop:s0
 
-# for camera trace
-vendor.dp.systrace.enable  u:object_r:vendor_camera_skynet_prop:s0
-vendor.debug.camera.ulog.mode  u:object_r:vendor_camera_skynet_prop:s0
-vendor.debug.camera.ulog.filter  u:object_r:vendor_camera_skynet_prop:s0
-vendor.debug.camera.ulog.func  u:object_r:vendor_camera_skynet_prop:s0
-vendor.mtk.c2.venc.async.systrace  u:object_r:vendor_camera_skynet_prop:s0
-vendor.debug.hal3av3.systrace  u:object_r:vendor_camera_skynet_prop:s0
-vendor.debug.camera.p1.enable_systrace_log  u:object_r:vendor_camera_skynet_prop:s0
-persist.vendor.camera.mialgo.tracegroups  u:object_r:vendor_camera_skynet_prop:s0
-
 # for camera log
 persist.vendor.camera.mivi.loglevel  u:object_r:vendor_camera_skynet_prop:s0
 persist.vendor.camera.mivi.offlineloglevel  u:object_r:vendor_camera_skynet_prop:s0

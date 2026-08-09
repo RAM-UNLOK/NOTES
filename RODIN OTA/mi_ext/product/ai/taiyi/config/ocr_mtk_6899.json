@@ -1,0 +1,19 @@
+{
+  "parent" : "framework_compat",
+  "api" : "ocr",
+  "name" : "ocr_mtk_6899",
+  "version" : 6,
+  "models" : [ {
+    "id" : "ocr_model_mtk_6899",
+    "version" : 1,
+    "required" : true
+  } ],
+  "plugin" : {
+    "id" : "ocr_qnn",
+    "version" : 1,
+    "entry" : "com.xiaomi.taiyi.plugin.ocr.OcrPlugin"
+  },
+  "isLLM" : false,
+  "disabled" : false,
+  "type" : 0
+}

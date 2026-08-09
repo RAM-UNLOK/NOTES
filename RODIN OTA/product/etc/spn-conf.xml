@@ -167,6 +167,7 @@
     <spnOverride numeric="26207" spn="o2 - de"/>
     <spnOverride numeric="26208" spn="o2 - de"/>
     <spnOverride numeric="26211" spn="o2 - de"/>
+    <spnOverride numeric="26223" spn="1&amp;1"/>
     <spnOverride numeric="26601" spn="GIBTEL"/>
     <spnOverride numeric="26606" spn="CTS"/>
     <spnOverride numeric="26609" spn="Shine"/>
@@ -1165,7 +1166,6 @@
     <spnOverride numeric="738002" spn="GUY GTT + Do More"/>
     <spnOverride numeric="73801" spn="Digicel"/>
     <spnOverride numeric="73802" spn="GUY CLNK PLS"/>
-    <spnOverride numeric="74000" spn="Movistar"/>
     <spnOverride numeric="74001" spn="CLARO"/>
     <spnOverride numeric="74002" spn="CNT"/>
     <spnOverride numeric="74401" spn="VOX"/>

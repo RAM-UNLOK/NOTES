@@ -107,6 +107,10 @@
                 "NodeInstance": "JpegInstance"
             },
             {
+                "NodeName": "com.xiaomi.plugin.hwjpeg",
+                "NodeInstance": "JpegInstance1"
+            },
+            {
                 "NodeName": "com.xiaomi.plugin.virtual",
                 "NodeInstance": "virtualInstanceRawToGainmap",
                 "NodeProperty":[
@@ -153,6 +157,43 @@
                     {
                         "NodePropertyName":"NodeMask",
                         "NodePropertyValue":128
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.virtual",
+                "NodeInstance": "virtualInstanceGainmapSplitForWatermark",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"NodeMask",
+                        "NodePropertyValue":512
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.gainmapPostProc",
+                "NodeInstance": "GainMapPostProcInstanceSharp",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"NodeMask",
+                        "NodePropertyValue":128,
+                        "__comment__":"CUSTOMSIZE_MODE"
+                    },
+                    {
+                        "NodePropertyName":"pluginMode",
+                        "NodePropertyValue":1,
+                        "__comment__":"disable watermark"
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.jpegrAggr",
+                "NodeInstance": "jpegrAggrInstanceSharp",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"pluginMode",
+                        "NodePropertyValue":5,
+                        "__comment__":"DISABLE_WARTERMARK|NO_DEBUG"
                     }
                 ]
             }
@@ -322,6 +363,39 @@
             },
             {
                 "SrcPort": {
+                    "PortId": 5,
+                    "NodeInstance": "WatermarkInstance0"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "JpegInstance1",
+                    "PortFormat": "YUV420_NV12"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "JpegInstance1",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "jpegrAggrInstanceSharp"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "jpegrAggrInstanceSharp",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 8,
+                    "NodeInstance": "jpegrAggrInstance"
+                }
+            },
+            {
+                "SrcPort": {
                     "PortId": 1,
                     "NodeInstance": "WatermarkInstance0"
                 },
@@ -428,6 +502,18 @@
                     "PortFormat": "Y8"
                 },
                 "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "virtualInstanceGainmapSplitForWatermark",
+                    "PortFormat": "Y8"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "virtualInstanceGainmapSplitForWatermark",
+                    "PortFormat": "Y8"
+                },
+                "DstPort": {
                     "PortId": 4,
                     "NodeInstance": "WatermarkInstance0",
                     "PortFormat": "Y8"
@@ -468,6 +554,30 @@
                     "ChildJsonName": "sdksnapshot.json",
                     "ChildSrcNodePortId":0,
                     "ChildSrcNode":"virtualInstanceSdk"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 1,
+                    "NodeInstance": "virtualInstanceGainmapSplitForWatermark",
+                    "PortFormat": "Y8"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "GainMapPostProcInstanceSharp",
+                    "PortFormat": "Y8"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "GainMapPostProcInstanceSharp",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 2,
+                    "NodeInstance": "jpegrAggrInstanceSharp",
+                    "PortFormat": "BLOB"
                 }
             }
         ]

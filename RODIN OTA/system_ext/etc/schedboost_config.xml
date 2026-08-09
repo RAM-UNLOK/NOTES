@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf8"?>
+<schedboost_config>
+    <scene_groups>
+        <boost_scene coding="15" name="SCROLL_EVENT"/>
+        <boost_scene coding="17" name="APP_STARTUP_EVENT"/>
+
+        <boost_scene coding="272" name="EXPAND_NOTIFICATION_PANEL_ANIMATION"   hintId="1" mode="6"/>
+        <boost_scene coding="276" name="COLLAPSE_NOTIFICATION_PANEL_ANIMATION" hintId="1" mode="6"/>
+
+        <boost_scene coding="278" name="EXPAND_CONTROL_CENTER_ANIMATION"       hintId="1" mode="6"/>
+        <boost_scene coding="280" name="COLLAPSE_CONTROL_CENTER_ANIMATION"     hintId="1" mode="6"/>
+
+        <!-- ****************** HOME ****************** -->
+        <boost_scene coding="258" name="HOME_TO_RECENTS_ANIMATION"            hintId="11" mode="4"/>
+        <boost_scene coding="260" name="APP_TO_RECENTS_ANIMATION"             hintId="11" mode="4"/>
+        <boost_scene coding="262" name="RECENTS_SCROLLING_ANIMATION"/>
+        <boost_scene coding="264" name="RECENTS_TO_HOME_ANIMATION"            hintId="11" mode="4"/>
+        <boost_scene coding="265" name="RECENTS_CLICK_ANIMATION"/>
+        <boost_scene coding="267" name="GESTURELINE_SWITCH_ANIMATION"         hintId="11" mode="4"/>
+        <boost_scene coding="269" name="REMOVE_APP_FROM_RECENTS_ANIMATION"/>
+        <boost_scene coding="270" name="CLEAR_RECENTS"                       hintId="10" mode="11"/>
+        <boost_scene coding="297" name="UNLOCK_ANIMATION"                     hintId="2" mode="5"/>
+        <boost_scene coding="317" name="APP_TO_RECENT_ANIMATION"              hintId="11" mode="4"/>
+        <boost_scene coding="318" name="HOME_TO_RECENT_ANIMATION"             hintId="11" mode="4"/>
+        <boost_scene coding="319" name="FULL_APP_TO_HOME_ANIMATION"           hintId="11" mode="4"/>
+        <boost_scene coding="320" name="NAVIGATION_APP_TO_HOME_ANIMATION"     hintId="11" mode="4"/>
+        <boost_scene coding="321" name="HOME_START_APP_ANIMATION"/>
+        <!-- ****************** HOME ****************** -->
+
+        <!-- ****************** SYSTEMUI ****************** -->
+        <boost_scene coding="467" name="VOLUME_PANEL_SHOW_JANK" hintId="1" mode="6"/>
+        <boost_scene coding="468" name="VOLUME_PANEL_HIDE_JANK" hintId="1" mode="6"/>
+        <!-- ****************** SYSTEMUI ****************** -->
+
+        <!-- ****************** ISLAND ****************** -->
+        <boost_scene coding="358" name="ISLAND_OPEN_APP_JANK"/>
+        <boost_scene coding="359" name="ISLAND_CLOSE_APP_JANK"/>
+        <boost_scene coding="360" name="ISLAND_OPEN_FREEFORM_JANK"/>
+        <boost_scene coding="361" name="ISLAND_CLOSE_FREEFORM_JANK"/>
+        <boost_scene coding="434" name="ISLAND_SHOW_BIG_ISLAND_JANK"/>
+        <boost_scene coding="435" name="ISLAND_CLOSE_BIG_ISLAND_JANK"/>
+        <boost_scene coding="436" name="ISLAND_SWITCH_BIG_TO_SMALL_JANK"/>
+        <boost_scene coding="437" name="ISLAND_SWITCH_BIG_TO_EXPAND_JANK"/>
+        <boost_scene coding="438" name="ISLAND_SHOW_SMALL_ISLAND_JANK"/>
+        <boost_scene coding="439" name="ISLAND_CLOSE_SMALL_ISLAND_JANK"/>
+        <boost_scene coding="440" name="ISLAND_SWITCH_SMALL_TO_BIG_JANK"/>
+        <boost_scene coding="474" name="ISLAND_SWITCH_SMALL_TO_EXPAND_JANK"/>
+        <boost_scene coding="475" name="ISLAND_SHOW_EXPAND_JANK"/>
+        <boost_scene coding="476" name="ISLAND_CLOSE_EXPAND_JANK"/>
+        <boost_scene coding="477" name="ISLAND_SWITCH_EXPAND_TO_BIG_JANK"/>
+        <boost_scene coding="478" name="ISLAND_SWITCH_EXPAND_TO_SMALL_JANK"/>
+        <!-- ****************** ISLAND ****************** -->
+
+        <boost_scene coding="472" name="SIDE_TOOLBOX_APPEAR_JANK"/>
+        <boost_scene coding="473" name="SIDE_TOOLBOX_EXIT_JANK"/>
+
+    </scene_groups>
+
+
+
+    <!-- ****************** QCOM ****************** -->
+    <ConfigGroup name="QCOM_GPU_AND_CPU_BOOST_LIST">
+        <param key="0x40400001">0x1</param>
+        <param key="0x40C00000">0x1</param>
+        <param key="0x40804000">0xFFF</param>
+        <param key="0x40804100">0xFFF</param>
+        <param key="0x40804300">0xFFF</param>
+        <param key="0x40800000">1700</param>
+        <param key="0x40800100">1700</param>
+        <param key="0x40800300">1700</param>
+        <param key="0x42804000">2</param>
+        <param key="0x42C20000">1</param>
+    </ConfigGroup>
+
+    <ConfigGroup name="DEFAULT_QCOM_PERF_LIST">
+        <param key="0x40800000">1500</param>
+        <param key="0x40800300">1500</param>
+        <param key="0x42804000">7</param>
+        <param key="0x42C20000">1</param>
+    </ConfigGroup>
+
+    <ConfigGroup name="QCOM_GPU_AND_CPU_HIGHER_FREQ">
+        <param key="0x40400001">0x1</param>
+        <param key="0x40C00000">0x1</param>
+        <param key="0x40804000">0xFFF</param>
+        <param key="0x40804100">0xFFF</param>
+        <param key="0x40804300">0xFFF</param>
+        <param key="0x40800000">2300</param>
+        <param key="0x40800100">0xFFF</param>
+        <param key="0x40800300">2300</param>
+        <param key="0x42804000">2</param>
+        <param key="0x42C20000">1</param>
+    </ConfigGroup>
+    <!-- ****************** QCOM ****************** -->
+
+    <!-- ****************** MTK ****************** -->
+    <ConfigGroup name="MTK_GPU_AND_CPU_BOOST_LIST">
+        <param key="0x00400000">1800000</param>
+        <param key="0x00400100">2000000</param>
+        <param key="0x00400200">2000000</param>
+        <param key="0x01438400">100</param>
+        <param key="0x01438500">100</param>
+        <param key="0x00c00000">35</param>
+        <param key="0x00c0c200">18743356</param>
+        <param key="0x00c0c300">771</param>
+        <param key="0x01404100">1</param>
+        <param key="0x01404300">0</param>
+        <param key="0x01404400">1</param>
+    </ConfigGroup>
+
+    <ConfigGroup name="MTK_GAME_POLICY_OPEN_LIST">
+        <param key="0x02064a00">3000000</param>
+        <param key="0x02064b00">2800000</param>
+        <param key="0x02064c00">1</param>
+        <param key="0x10008000">0</param>
+    </ConfigGroup>
+    <!-- ****************** MTK ****************** -->
+
+</schedboost_config>

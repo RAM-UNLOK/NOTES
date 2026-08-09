@@ -5,6 +5,7 @@
     <system_scene flag_index="13" name="Low_Power" />
     <system_scene flag_index="16" name="Low_Mem" />
     <system_scene flag_index="17" name="Screen_Landscape" />
+    <system_scene flag_index="19" name="APP_FREEFORM" />
     <system_scene flag_index="20" name="Mi_Small_Window" />
     <system_scene flag_index="21" name="Floating_Window" />
     <system_scene flag_index="22" name="Voice_Call" />
@@ -18,6 +19,17 @@
     <system_scene flag_index="30" name="External_Casting" />
     <system_scene flag_index="31" name="Split_Screen" />
     <system_scene flag_index="32" name="Camera_Using" />
+    <system_scene flag_index="33" name="Picture In_Picture" />
+    <system_scene flag_index="34" name="Video_Decoder" />
+    <system_scene flag_index="35" name="Recording" />
+    <system_scene flag_index="36" name="Shock" />
+    <system_scene flag_index="37" name="Bluetooth_Scanning" />
+    <system_scene flag_index="38" name="TTS_Service" />
+    <system_scene flag_index="39" name="VPN" />
+    <system_scene flag_index="40" name="TTS_Client" />
+    <system_scene flag_index="41" name="Virtual_Screen" />
+    <system_scene flag_index="42" name="Backup" />
+    <system_scene flag_index="43" name="Adaptive_Refresh_Rate" />
     <response_event code="296" threshold="245"/>
     <response_event code="304" threshold="245"/>
     <response_event code="307" threshold="1000"/>
@@ -29,15 +41,79 @@
     <response_event code="315" threshold="245"/>
     <response_event code="316" threshold="245"/>
     <response_event code="323" threshold="245"/>
-    <response_event code="324" threshold="245"/>
+    <response_event code="325" threshold="245"/>
     <response_event code="330" threshold="245"/>
     <response_event code="331" threshold="245"/>
     <response_event code="335" threshold="245"/>
-    <response_event code="341" threshold="400"/>
-    <response_event code="345" threshold="400"/>
-    <response_event code="346" threshold="400"/>
+    <response_event code="341" threshold="30000"/>
+    <response_event code="342" threshold="30000"/>
+    <response_event code="343" threshold="30000"/>
+    <response_event code="344" threshold="30000"/>
+    <response_event code="345" threshold="30000"/>
+    <response_event code="346" threshold="30000"/>
+    <response_event code="347" threshold="30000"/>
     <response_event code="410" threshold="245"/>
     <response_event code="411" threshold="1000"/>
+    <response_event code="426" threshold="1000"/>
+    <response_event code="427" threshold="1000"/>
+    <response_event code="428" threshold="1000"/>
+    <response_event code="442" threshold="1000"/>
+    <response_event code="443" threshold="1000"/>
+    <response_event code="444" threshold="1000"/>
+    <response_event code="445" threshold="1000"/>
+    <response_event code="486" threshold="1000"/>
+    <response_event code="487" threshold="1000"/>
+    <response_event code="488" threshold="1000"/>
+    <response_event code="489" threshold="1000"/>
+    <response_event code="1027" threshold="1000"/>
+    <response_event code="1047" threshold="1000"/>
+    <response_event_new code="441" threshold="1000"/>
+    <response_event_new code="1025" threshold="1000"/>
+    <response_event_new code="1026" threshold="1000"/>
+    <response_event_new code="1028" threshold="1000"/>
+    <response_event_new code="1029" threshold="1000"/>
+    <response_event_new code="1030" threshold="1000"/>
+    <response_event_new code="1031" threshold="1000"/>
+    <response_event_new code="1032" threshold="1000"/>
+    <response_event_new code="1033" threshold="1000"/>
+    <response_event_new code="1034" threshold="1000"/>
+    <response_event_new code="1035" threshold="1000"/>
+    <response_event_new code="1036" threshold="1000"/>
+    <response_event_new code="1037" threshold="1000"/>
+    <response_event_new code="1038" threshold="1000"/>
+    <response_event_new code="1039" threshold="1000"/>
+    <response_event_new code="1040" threshold="1000"/>
+    <response_event_new code="1041" threshold="1000"/>
+    <response_event_new code="1042" threshold="1000"/>
+    <response_event_new code="1043" threshold="1000"/>
+    <response_event_new code="1044" threshold="1000"/>
+    <response_event_new code="1045" threshold="1000"/>
+    <response_event_new code="1046" threshold="1000"/>
+    <response_event_new code="1048" threshold="1000"/>
+    <response_event_new code="1049" threshold="1000"/>
+    <response_event_new code="1050" threshold="1000"/>
+    <response_event_new code="1051" threshold="1000"/>
+    <response_event_new code="1052" threshold="1000"/>
+    <response_event_new code="1053" threshold="1000"/>
+    <response_event_new code="1054" threshold="1000"/>
+    <response_event_new code="1055" threshold="1000"/>
+    <response_event_new code="1056" threshold="1000"/>
+    <response_event_new code="1057" threshold="1000"/>
+    <response_event_new code="1058" threshold="1000"/>
+    <response_event_new code="1059" threshold="1000"/>
+    <response_event_new code="1060" threshold="1000"/>
+    <response_event_new code="1061" threshold="1000"/>
+    <response_event_new code="1062" threshold="1000"/>
+    <response_event_new code="1063" threshold="1000"/>
+    <response_event_new code="1064" threshold="1000"/>
+    <response_event_new code="1065" threshold="1000"/>
+    <response_event_new code="1066" threshold="1000"/>
+    <response_event_new code="1067" threshold="1000"/>
+    <response_event_new code="1068" threshold="1000"/>
+    <response_event_new code="1069" threshold="1000"/>
+    <response_event_new code="1070" threshold="1000"/>
+    <response_event_new code="1071" threshold="1000"/>
+    <response_event_new code="1072" threshold="2000"/>
     <base_scene coding="258" name="HOME_TO_RECENTS_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="260" name="APP_TO_RECENTS_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="262" name="RECENTS_SCROLLING_ANIMATION" dump="com.miui.home"/>
@@ -46,84 +122,203 @@
     <base_scene coding="267" name="GESTURELINE_SWITCH_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="269" name="REMOVE_APP_FROM_RECENTS_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="270" name="CLEAR_RECENTS" dump="com.miui.home"/>
-    <base_scene coding="272" name="EXPAND_NOTIFICATION_PANEL_ANIMATION" dump="com.android.systemui"/>
+    <base_scene coding="272" name="NOTIFICATION_EXPAND_PANEL_ANIMATION_JANK" dump="com.android.systemui"/>
     <base_scene coding="274" name="REMOVE_NOTIFICATION_ANIMATION" dump="com.android.systemui"/>
     <base_scene coding="276" name="COLLAPSE_NOTIFICATION_PANEL_ANIMATION" dump="com.android.systemui"/>
     <base_scene coding="278" name="EXPAND_CONTROL_CENTER_ANIMATION" dump="com.android.systemui"/>
     <base_scene coding="280" name="COLLAPSE_CONTROL_CENTER_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="282" name="NUMBER_PASSWORD_UNLOCK_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="283" name="MIX_PASSWORD_UNLOCK_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="284" name="SCREEN_OFF_FINGERPRINT_UNLOCK_MOTION" dump="com.miui.home"/>
-    <base_scene coding="285" name="SCREEN_OFF_FINGERPRINT_UNLOCK_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="286" name="SCREEN_ON_FINGERPRINT_UNLOCK_MOTION" dump="com.miui.home"/>
-    <base_scene coding="287" name="SCREEN_ON_FINGERPRINT_UNLOCK_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="288" name="FACE_UNLOCK_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="289" name="LOCKSCREEN_SCREEN_ON_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="290" name="LOCKSCREEN_SCREEN_OFF_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="291" name="RHOMBUS_SCREEN_ON_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="292" name="RHOMBUS_SCREEN_OFF_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="293" name="MAGAZINE_SCREEN_ON_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="294" name="MAGAZINE_SCREEN_OFF_ANIMATION" dump="com.android.systemui"/>
-    <base_scene coding="296" name="HOME_START_APP_ANIMATION_RESPONSE" />
+    <base_scene coding="281" name="UNLOCK_HOME_ANIMATION_ANIMATION" dump="com.miui.home"/>
+    <base_scene coding="282" name="KEYGUARD_NUMBER_PASSWORD_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="283" name="KEYGUARD_MIX_PASSWORD_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="284" name="KEYGUARD_SCREEN_OFF_FINGERPRINT_GXZW_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="285" name="KEYGUARD_SCREEN_OFF_FINGERPRINT_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="286" name="KEYGUARD_SCREEN_ON_FINGERPRINT_GXZW_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="287" name="KEYGUARD_SCREEN_ON_FINGERPRINT_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="288" name="KEYGUARD_FACE_UNLOCK_JANK" dump="com.miui.home"/>
+    <base_scene coding="289" name="KEYGUARD_CLASSIC_SCREEN_ON_JANK" dump="com.android.systemui"/>
+    <base_scene coding="290" name="KEYGUARD_CLASSIC_SCREEN_OFF_JANK" dump="com.android.systemui"/>
+    <base_scene coding="291" name="KEYGUARD_RHOMBUS_SCREEN_ON_JANK" dump="com.android.systemui"/>
+    <base_scene coding="292" name="KEYGUARD_RHOMBUS_SCREEN_OFF_JANK" dump="com.android.systemui"/>
+    <base_scene coding="293" name="KEYGUARD_MAGAZINE_SCREEN_ON_JANK" dump="com.android.systemui"/>
+    <base_scene coding="294" name="KEYGUARD_MAGAZINE_SCREEN_OFF_JANK" dump="com.android.systemui"/>
+    <base_scene coding="296" name="HOME_START_APP_ANIMATION_RESPONSE" dump="com.miui.home"/>
     <base_scene coding="297" name="UNLOCK_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="299" name="CONTACTDETAIL_LOADER_DATA" />
     <base_scene coding="300" name="CONTACTDETAIL_VIEW_INFLATED" />
     <base_scene coding="301" name="CONTACTDETAIL_PHOTO" />
     <base_scene coding="302" name="CONTACTDETAIL_UPDATEPHOTO" />
     <base_scene coding="303" name="CONTACTDETAIL_SHOWQRCODE" />
-    <base_scene coding="304" name="TWELVEKEY_START_DELAY" />
-    <base_scene coding="305" name="TWELVEKEY_FLUENCY" />
-    <base_scene coding="306" name="TWELVEKEY_DIALERPAD_SHOW" />
-    <base_scene coding="307" name="CONTROL_CENTER_CLICK_RESPONSE_MUTE" />
-    <base_scene coding="308" name="CONTROL_CENTER_CLICK_RESPONSE_TIME_MIUIBLUETOOTH" />
-    <base_scene coding="309" name="CONTROL_CENTER_CLICK_RESPONSE_TIME_MIUICELLULAR" />
-    <base_scene coding="310" name="CONTROL_CENTER_CLICK_RESPONSE_TIME_MIUIWIFI" />
-    <base_scene coding="311" name="CONTROL_CENTER_CLICK_RESPONSE_TIME_MIUIAIRPLANEMOOD" />
-    <base_scene coding="314" name="SLIDE_BAR_SWITCH_APP_RESPONSE" />
-    <base_scene coding="315" name="RECENT_SWIPE_REMOVE_APP_RESPONSE" />
-    <base_scene coding="316" name="SWIPE_UP_TO_RECENT_RESPONSE" />
+    <base_scene coding="304" name="TWELVEKEY_START_DELAY" dump="com.android.contacts"/>
+    <base_scene coding="305" name="TWELVEKEY_FLUENCY" dump="com.android.contacts"/>
+    <base_scene coding="306" name="TWELVEKEY_DIALERPAD_SHOW" dump="com.android.contacts"/>
+    <base_scene coding="307" name="CONTROL_CENTER_CLICK_MUTE_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="308" name="CONTROL_CENTER_CLICK_BLUETOOTH_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="309" name="CONTROL_CENTER_CLICK_CELL_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="310" name="CONTROL_CENTER_CLICK_WIFI_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="311" name="CONTROL_CENTER_CLICK_AIRPLANEMODE_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="314" name="SLIDE_BAR_SWITCH_APP_RESPONSE" dump="com.miui.home"/>
+    <base_scene coding="315" name="RECENT_SWIPE_REMOVE_APP_RESPONSE" dump="com.miui.home"/>
+    <base_scene coding="316" name="SWIPE_UP_TO_RECENT_RESPONSE" dump="com.miui.home"/>
     <base_scene coding="317" name="APP_TO_RECENT_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="318" name="HOME_TO_RECENT_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="319" name="FULL_APP_TO_HOME_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="320" name="NAVIGATION_APP_TO_HOME_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="321" name="HOME_START_APP_ANIMATION" dump="com.miui.home"/>
-    <base_scene coding="323" name="EXPAND_CONTROL_CENTER_RESPONSE_TIME" />
-    <base_scene coding="324" name="COLLAPSE_CONTROL_CENTER_RESPONSE_TIME" />
-    <base_scene coding="330" name="EXPAND_NOTIFICATION_PANEL_RESPOND" />
-    <base_scene coding="331" name="COLLAPSE_NOTIFICATION_PANEL_RESPOND" />
-    <base_scene coding="332" name="ALARM_LOADER_DATA" />
-    <base_scene coding="333" name="WORLD_CLOCK_LOADER_DATA" />
+    <base_scene coding="323" name="CONTROL_CENTER_EXPAND_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="324" name="CONTROL_CENTER_EXPAND_JANK" dump="com.android.systemui"/>
+    <base_scene coding="325" name="CONTROL_CENTER_COLLAPSE_LATENCY" dump="com.android.systemui"/>
+    <base_scene coding="326" name="CONTROL_CENTER_COLLAPSE_JANK" dump="com.android.systemui"/>
+    <base_scene coding="330" name="EXPAND_NOTIFICATION_PANEL_RESPOND" dump="com.android.systemui"/>
+    <base_scene coding="331" name="COLLAPSE_NOTIFICATION_PANEL_RESPOND" dump="com.android.systemui"/>
+    <base_scene coding="332" name="ALARM_LOADER_DATA" dump="com.android.deskclock"/>
+    <base_scene coding="333" name="WORLD_CLOCK_LOADER_DATA" dump="com.android.deskclock"/>
     <base_scene coding="334" name="ALARM_DIALOG_SHOW" />
-    <base_scene coding="335" name="ALARM_LIST_START_DELAY" />
-    <base_scene coding="336" name="ALARM_LIST_FLUENCY" />
+    <base_scene coding="335" name="ALARM_LIST_START_DELAY" dump="com.android.deskclock"/>
+    <base_scene coding="336" name="ALARM_LIST_FLUENCY" dump="com.android.deskclock"/>
     <base_scene coding="337" name="ALARM_DIALOG_HIDE" />
     <base_scene coding="338" name="SETTING_WALLPAPER_LIST_FLUENCY" />
     <base_scene coding="339" name="THEME_DETAIL_RECOMMEND_LIST_VIEW_FLUENCY" />
     <base_scene coding="340" name="HOMEPAGE_RECOMMEND_LIST_VIEW_FLUENCY" />
-    <base_scene coding="341" name="GALLERY_HOME_PAGE_INITIALIZATION_TIME" />
-    <base_scene coding="342" name="GALLERY_HOME_PAGE_DATA_LOAD_FLUENCY" />
-    <base_scene coding="343" name="GALLERY_HOME_PAGE_DATA_SHOW_FLUENCYT" />
-    <base_scene coding="344" name="GALLERY_INTERNAL_PHOTO_PAGE_DATA_SHOW_FLUENCY" />
-    <base_scene coding="345" name="GALLERY_EXTERNAL_PHOTO_PAGE_DATA_LOAD_TIME" />
-    <base_scene coding="346" name="GALLERY_EXTERNAL_PHOTO_PAGE_INITIALIZATION_TIME" />
-    <base_scene coding="347" name="GALLERY_EXTERNAL_PHOTO_PAGE_DATA_SHOW_FLUENCY" />
+    <base_scene coding="341" name="GALLERY_HOME_PAGE_INITIALIZATION_TIME" dump="com.miui.gallery"/>
+    <base_scene coding="342" name="GALLERY_HOME_PAGE_DATA_LOAD_FLUENCY" dump="com.miui.gallery"/>
+    <base_scene coding="343" name="GALLERY_HOME_PAGE_DATA_SHOW_FLUENCYT" dump="com.miui.gallery"/>
+    <base_scene coding="344" name="GALLERY_INTERNAL_PHOTO_PAGE_DATA_SHOW_FLUENCY" dump="com.miui.gallery"/>
+    <base_scene coding="345" name="GALLERY_EXTERNAL_PHOTO_PAGE_DATA_LOAD_TIME" dump="com.miui.gallery"/>
+    <base_scene coding="346" name="GALLERY_EXTERNAL_PHOTO_PAGE_INITIALIZATION_TIME" dump="com.miui.gallery"/>
+    <base_scene coding="347" name="GALLERY_EXTERNAL_PHOTO_PAGE_DATA_SHOW_FLUENCY" dump="com.miui.gallery"/>
     <base_scene coding="348" name="IME_ANIMATION_SHOW" />
     <base_scene coding="349" name="IME_ANIMATION_HIDE" />
     <base_scene coding="355" name="VOLUME_PAGE_EXPANDED" />
     <base_scene coding="356" name="WONDER_BROAD_PAGE_EXPANDED" />
     <base_scene coding="357" name="SWITCH_MULTI_ISLANDS" dump="com.android.systemui"/>
-    <base_scene coding="358" name="ISLANDS_START_APP" dump="com.android.systemui"/>
-    <base_scene coding="359" name="SLIDE_RETURN_ISLANDS" dump="com.android.systemui"/>
-    <base_scene coding="360" name="ISLANDS_TO_SMALLWINDOW" dump="com.android.systemui"/>
-    <base_scene coding="361" name="SMALLWINDOW_TO_ISLANDS" dump="com.android.systemui"/>
+    <base_scene coding="358" name="ISLAND_OPEN_APP_JANK" dump="com.android.systemui"/>
+    <base_scene coding="359" name="ISLAND_CLOSE_APP_JANK" dump="com.android.systemui"/>
+    <base_scene coding="360" name="ISLAND_OPEN_FREEFORM_JANK" dump="com.android.systemui"/>
+    <base_scene coding="361" name="ISLAND_CLOSE_FREEFORM_JANK" dump="com.android.systemui"/>
+    <base_scene coding="362" name="FREEFORM_OPEN_JANK" />
+    <base_scene coding="363" name="FREEFORM_CLOSE_JANK" />
+    <base_scene coding="364" name="FREEFORM_MOVE_JANK" />
+    <base_scene coding="365" name="FreeformResize" />
+    <base_scene coding="366" name="FreeformMove" />
+    <base_scene coding="367" name="FREEFORM_EXPAND_FULLSCREEN_JANK" />
+    <base_scene coding="368" name="FREEFORM_COLLAPSE_JANK" />
+    <base_scene coding="369" name="MINI_FREEFORM_CLICK_JANK" />
+    <base_scene coding="370" name="FREEFORM_DRAG_MINI_FREEFORM_JANK" />
+    <base_scene coding="371" name="FULLSCREEN_DRAG_MINI_FREEFORM_JANK" />
+    <base_scene coding="372" name="FREEFORM_AVOID_JANK" />
+    <base_scene coding="373" name="FreeFromOrientationChanged" />
+    <base_scene coding="374" name="FreeformPin" />
+    <base_scene coding="375" name="FreeformUnPin" />
+    <base_scene coding="376" name="FreeformForeGroundPin" />
+    <base_scene coding="377" name="FreeformForeGroundUnPin" />
+    <base_scene coding="378" name="SwitchWMSMove" />
+    <base_scene coding="379" name="SwitchFreeformToTarget" />
+    <base_scene coding="380" name="SwitchAnimateToPosition" />
+    <base_scene coding="381" name="SwitchAnimateFollow" />
+    <base_scene coding="382" name="SwitchAnimateFollowHide" />
+    <base_scene coding="383" name="SwitchToFull" />
+    <base_scene coding="384" name="SwitchToFreeform" />
+    <base_scene coding="385" name="SwitchToSplit" />
+    <base_scene coding="386" name="SwitchTaskClose" />
+    <base_scene coding="387" name="SwitchTaskCloseSOSC" />
+    <base_scene coding="388" name="SwitchTaskScale" />
+    <base_scene coding="389" name="SwitchSplitSwap" />
+    <base_scene coding="390" name="SwitchBackToOriginal" />
+    <base_scene coding="391" name="IconDragStartAnimation" />
+    <base_scene coding="392" name="IconDragHideAnimation" />
+    <base_scene coding="393" name="IconDragResizeAnimation" />
     <base_scene coding="410" name="CONTROL_CENTER_ENTER_SECONDARY_RESPONSE" />
     <base_scene coding="411" name="CONTROL_CENTER_ENTER_SECONDARY_ANIMATION" />
     <base_scene coding="412" name="SIDE_TOOLBOX_APPEAR" />
-    <base_scene coding="513" name="STARTUP_APP" />
-    <base_scene coding="514" name="EXIT_APP" />
+    <base_scene coding="413" name="SUBSCREEN_DRAG_ASSIST_ANIM_JANK" />
+    <base_scene coding="414" name="SUBSCREEN_DRAG_CAMERA_ANIM_JANK" />
+    <base_scene coding="415" name="SUBSCREEN_SHOW_PIN_MAIN_ANIM_JANK" />
+    <base_scene coding="416" name="SUBSCREEN_SHOW_PIN_ANIM_JANK" />
+    <base_scene coding="417" name="SUBSCREEN_CLOSE_CAMERA_ANIM_JANK" />
+    <base_scene coding="418" name="SUBSCREEN_COLLAPSE_ASSIST_ANIM_JANK" />
+    <base_scene coding="419" name="SUBSCREEN_SWITCH_WALLPAPER_ANIM_JANK" />
+    <base_scene coding="420" name="SUBSCREEN_SWITCH_ASSIST_ANIM_JANK" />
+    <base_scene coding="421" name="SUBSCREEN_LONG_CLICK_WALLPAPER_EDIT_ENTER_ANIM_JANK" />
+    <base_scene coding="422" name="SUBSCREEN_SWITCH_CASE_GAME_CENTER_ANIM_JANK" />
+    <base_scene coding="423" name="SUBSCREEN_SWITCH_CASE_ANIM_JANK" />
+    <base_scene coding="424" name="SUBSCREEN_SWITCH_CASE_OFF_ANIM_JANK" />
+    <base_scene coding="425" name="SUBSCREEN_SWITCH_AOD_POWER_ANIM_JANK" />
+    <base_scene coding="426" name="WALLPAPER_UNLOCK_JANK_1" />
+    <base_scene coding="427" name="WALLPAPER_UNLOCK_JANK_2" />
+    <base_scene coding="428" name="WALLPAPER_SCREEN_ON_JANK_1" />
+    <base_scene coding="429" name="WALLPAPER_LAUNCHER_JANK_1" />
+    <base_scene coding="431" name="SUBSCREEN_CLOSE_CAMERA_DRAG_UP_ANIM_JANK" />
+    <base_scene coding="432" name="SUBSCREEN_SWITCH_CASE_GAME_CENTER_EXIT_ANIM_JANK" />
+    <base_scene coding="433" name="NOTIFICATION_PANEL_OPEN_APP_JANK" />
+    <base_scene coding="434" name="ISLAND_SHOW_BIG_ISLAND_JANK" />
+    <base_scene coding="435" name="ISLAND_CLOSE_BIG_ISLAND_JANK" />
+    <base_scene coding="436" name="ISLAND_SWITCH_BIG_TO_SMALL_JANK" />
+    <base_scene coding="437" name="ISLAND_SWITCH_BIG_TO_EXPAND_JANK" />
+    <base_scene coding="438" name="ISLAND_SHOW_SMALL_ISLAND_JANK" />
+    <base_scene coding="439" name="ISLAND_CLOSE_SMALL_ISLAND_JANK" />
+    <base_scene coding="440" name="ISLAND_SWITCH_SMALL_TO_BIG_JANK" />
+    <base_scene coding="441" name="KEYGUARDEDITOR_OPEN_PICKER_LATENCY" />
+    <base_scene coding="442" name="KEYGUARDEDITOR_HORIZONTAL_MOVE_JANK" />
+    <base_scene coding="443" name="KEYGUARDEDITOR_VERTICAL_MOVE_JANK" />
+    <base_scene coding="444" name="KEYGUARDEDITOR_OPEN_TEMPLATEVIEW_JANK" />
+    <base_scene coding="445" name="KEYGUARDEDITOR_CLOSE_TEMPLATEVIEW_JANK" />
+    <base_scene coding="446" name="CONTROL_CENTER_CLICK_NIGHTMODE_JANK" />
+    <base_scene coding="447" name="CONTROL_CENTER_SLIDE_BRIGHTNESS_JANK" />
+    <base_scene coding="448" name="CONTROL_CENTER_SLIDE_VOLUME_JANK" />
+    <base_scene coding="449" name="CONTROL_CENTER_SLIDE_LIST_JANK" />
+    <base_scene coding="450" name="CONTROL_CENTER_ENTER_WIFI_SECONDARY_JANK" />
+    <base_scene coding="451" name="CONTROL_CENTER_EXIT_WIFI_SECONDARY_JANK" />
+    <base_scene coding="452" name="CONTROL_CENTER_ENTER_CELL_SECONDARY_JANK" />
+    <base_scene coding="453" name="CONTROL_CENTER_EXIT_CELL_SECONDARY_JANK" />
+    <base_scene coding="454" name="CONTROL_CENTER_ENTER_MEDIA_SECONDARY_JANK" />
+    <base_scene coding="455" name="CONTROL_CENTER_EXIT_MEDIA_SECONDARY_JANK" />
+    <base_scene coding="456" name="CONTROL_CENTER_ENTER_BT_SECONDARY_JANK" />
+    <base_scene coding="457" name="CONTROL_CENTER_EXIT_BT_SECONDARY_JANK" />
+    <base_scene coding="458" name="CONTROL_CENTER_ENTER_BRIGHTNESS_SECONDARY_JANK" />
+    <base_scene coding="459" name="CONTROL_CENTER_EXIT_BRIGHTNESS_SECONDARY_JANK" />
+    <base_scene coding="460" name="CONTROL_CENTER_ENTER_VOLUME_SECONDARY_JANK" />
+    <base_scene coding="461" name="CONTROL_CENTER_EXIT_VOLUME_SECONDARY_JANK" />
+    <base_scene coding="462" name="CONTROL_CENTER_ENTER_EDIT_PANEL_JANK" />
+    <base_scene coding="463" name="CONTROL_CENTER_EXIT_EDIT_PANEL_JANK" />
+    <base_scene coding="464" name="CONTROL_CENTER_ADD_REMOVE_TILE_JANK" />
+    <base_scene coding="465" name="CONTROL_CENTER_SLIDE_EDIT_PANEL_JANK" />
+    <base_scene coding="466" name="CONTROL_CENTER_DRAG_EDIT_PANEL_JANK" />
+    <base_scene coding="467" name="VOLUME_PANEL_SHOW_JANK" />
+    <base_scene coding="468" name="VOLUME_PANEL_HIDE_JANK" />
+    <base_scene coding="469" name="VOLUME_PANEL_SLIDE_SLIDER_JANK" />
+    <base_scene coding="470" name="VOLUME_PANEL_ENTER_SECONDARY_JANK" />
+    <base_scene coding="471" name="VOLUME_PANEL_EXIT_SECONDARY_JANK" />
+    <base_scene coding="472" name="SIDE_TOOLBOX_APPEAR_JANK" />
+    <base_scene coding="473" name="SIDE_TOOLBOX_EXIT_JANK" />
+    <base_scene coding="474" name="ISLAND_SWITCH_SMALL_TO_EXPAND_JANK" />
+    <base_scene coding="475" name="ISLAND_SHOW_EXPAND_JANK" />
+    <base_scene coding="476" name="ISLAND_CLOSE_EXPAND_JANK" />
+    <base_scene coding="477" name="ISLAND_SWITCH_EXPAND_TO_BIG_JANK" />
+    <base_scene coding="478" name="ISLAND_SWITCH_EXPAND_TO_SMALL_JANK" />
+    <base_scene coding="479" name="KEYGUARD_PATTERN_PASSWORD_UNLOCK_JANK" />
+    <base_scene coding="480" name="KEYGUARD_MAX_SCREEN_ON_JANK" />
+    <base_scene coding="481" name="KEYGUARD_MAX_SCREEN_OFF_JANK" />
+    <base_scene coding="482" name="KEYGUARD_OVERSIZEA_SCREEN_ON_JANK" />
+    <base_scene coding="483" name="KEYGUARD_OVERSIZEA_SCREEN_OFF_JANK" />
+    <base_scene coding="484" name="KEYGUARD_SHORTCUT_OPEN_JANK" />
+    <base_scene coding="485" name="KEYGUARD_SHORTCUT_CLOSE_JANK" />
+    <base_scene coding="486" name="KEYGUARDEDITOR_OPEN_EDITORACTIVITY_UNLOCKED_ENTER_JANK" />
+    <base_scene coding="487" name="KEYGUARDEDITOR_OPEN_EDITORACTIVITY_LOCKED_UNLOCK_JANK" />
+    <base_scene coding="488" name="KEYGUARDEDITOR_OPEN_EDITORACTIVITY_LOCKED_ENTER_JANK" />
+    <base_scene coding="489" name="KEYGUARDEDITOR_CLOSE_EDITORACTIVITY_JANK" />
+    <base_scene coding="490" name="SUBSCREEN_CLICK_WALLPAPER_EDIT_EXIT_ANIM_JANK" />
+    <base_scene coding="491" name="NOTIFICATION_SHADE_SCROLL_FLING_BACK_JANK" />
+    <base_scene coding="492" name="NOTIFICATION_SWITCH_TO_CONTROL_CENTER_JANK" />
+    <base_scene coding="493" name="CONTROL_CENTER_SWITCH_TO_NOTIFICATION_JANK" />
+    <base_scene coding="494" name="ISLAND_SWIPE_IN_BIG_JANK" />
+    <base_scene coding="495" name="ISLAND_SWIPE_IN_SMALL_JANK" />
+    <base_scene coding="496" name="ISLAND_SWIPE_IN_EXPAND_JANK" />
+    <base_scene coding="497" name="CONTROL_CENTER_SECONDARY_SLIDE_BRIGHTNESS_JANK" />
+    <base_scene coding="513" name="STARTUP_APP" dump="com.miui.home"/>
+    <base_scene coding="514" name="EXIT_APP" dump="com.miui.home"/>
     <base_scene coding="515" name="SWITCH_ACTIVITY" />
     <base_scene coding="516" name="SCROLLING" />
-    <base_scene coding="517" name="SCREEN_TURNING_ON" />
+    <base_scene coding="517" name="SCREEN_TURNING_ON" dump="com.android.systemui"/>
     <base_scene coding="518" name="SCREEN_TURNING_OFF" />
     <base_scene coding="519" name="SCREEN_ROTATION_ANIMATION" />
     <base_scene coding="520" name="HOT_START" />
@@ -134,35 +329,35 @@
     <base_scene coding="525" name="SMARTWINDOW_ANIMATION" />
     <base_scene coding="526" name="RECENTS_ANIMATION" />
     <base_scene coding="527" name="REMOTE_ANIMATION" />
-    <base_scene coding="769" name="NOTIFICATION_SHADE_EXPAND_COLLAPSE" />
-    <base_scene coding="771" name="NOTIFICATION_SHADE_SCROLL_FLING" />
-    <base_scene coding="772" name="NOTIFICATION_SHADE_ROW_EXPAND" />
-    <base_scene coding="773" name="NOTIFICATION_SHADE_ROW_SWIPE" />
-    <base_scene coding="774" name="NOTIFICATION_SHADE_QS_EXPAND_COLLAPSE" />
-    <base_scene coding="775" name="NOTIFICATION_SHADE_QS_SCROLL_SWIPE" />
-    <base_scene coding="776" name="LAUNCHER_APP_LAUNCH_FROM_RECENTS" />
+    <base_scene coding="769" name="NOTIFICATION_SHADE_EXPAND_COLLAPSE" dump="com.android.systemui"/>
+    <base_scene coding="771" name="NOTIFICATION_SHADE_SCROLL_FLING" dump="com.android.systemui"/>
+    <base_scene coding="772" name="NOTIFICATION_SHADE_ROW_EXPAND" dump="com.android.systemui"/>
+    <base_scene coding="773" name="NOTIFICATION_SHADE_ROW_SWIPE" dump="com.android.systemui"/>
+    <base_scene coding="774" name="NOTIFICATION_SHADE_QS_EXPAND_COLLAPSE" dump="com.android.systemui"/>
+    <base_scene coding="775" name="NOTIFICATION_SHADE_QS_SCROLL_SWIPE" dump="com.android.systemui"/>
+    <base_scene coding="776" name="LAUNCHER_APP_LAUNCH_FROM_RECENTS" dump="com.miui.home"/>
     <base_scene coding="777" name="LAUNCHER_APP_LAUNCH_FROM_ICON" dump="com.miui.home"/>
-    <base_scene coding="778" name="LAUNCHER_APP_CLOSE_TO_HOME" />
-    <base_scene coding="779" name="LAUNCHER_APP_CLOSE_TO_PIP" />
-    <base_scene coding="780" name="LAUNCHER_QUICK_SWITCH" />
-    <base_scene coding="781" name="NOTIFICATION_HEADS_UP_APPEAR" />
-    <base_scene coding="782" name="NOTIFICATION_HEADS_UP_DISAPPEAR" />
-    <base_scene coding="783" name="NOTIFICATION_ADD" />
-    <base_scene coding="784" name="NOTIFICATION_REMOVE" />
-    <base_scene coding="785" name="NOTIFICATION_APP_START" />
-    <base_scene coding="786" name="LOCKSCREEN_PASSWORD_APPEAR" />
-    <base_scene coding="787" name="LOCKSCREEN_PATTERN_APPEAR" />
-    <base_scene coding="788" name="LOCKSCREEN_PIN_APPEAR" />
-    <base_scene coding="789" name="LOCKSCREEN_PASSWORD_DISAPPEAR" />
-    <base_scene coding="790" name="LOCKSCREEN_PATTERN_DISAPPEAR" />
-    <base_scene coding="791" name="LOCKSCREEN_PIN_DISAPPEAR" />
-    <base_scene coding="792" name="LOCKSCREEN_TRANSITION_FROM_AOD" />
-    <base_scene coding="793" name="LOCKSCREEN_TRANSITION_TO_AOD" />
-    <base_scene coding="794" name="LAUNCHER_OPEN_ALL_APPS" />
-    <base_scene coding="795" name="LAUNCHER_ALL_APPS_SCROLL" />
-    <base_scene coding="796" name="LAUNCHER_APP_LAUNCH_FROM_WIDGET" />
+    <base_scene coding="778" name="LAUNCHER_APP_CLOSE_TO_HOME" dump="com.miui.home"/>
+    <base_scene coding="779" name="LAUNCHER_APP_CLOSE_TO_PIP" dump="com.miui.home"/>
+    <base_scene coding="780" name="LAUNCHER_QUICK_SWITCH" dump="com.miui.home"/>
+    <base_scene coding="781" name="NOTIFICATION_HEADS_UP_APPEAR" dump="com.android.systemui"/>
+    <base_scene coding="782" name="NOTIFICATION_HEADS_UP_DISAPPEAR" dump="com.android.systemui"/>
+    <base_scene coding="783" name="NOTIFICATION_ADD" dump="com.android.systemui"/>
+    <base_scene coding="784" name="NOTIFICATION_REMOVE" dump="com.android.systemui"/>
+    <base_scene coding="785" name="NOTIFICATION_APP_START" dump="com.android.systemui"/>
+    <base_scene coding="786" name="LOCKSCREEN_PASSWORD_APPEAR" dump="com.android.systemui"/>
+    <base_scene coding="787" name="LOCKSCREEN_PATTERN_APPEAR" dump="com.android.systemui"/>
+    <base_scene coding="788" name="LOCKSCREEN_PIN_APPEAR" dump="com.android.systemui"/>
+    <base_scene coding="789" name="LOCKSCREEN_PASSWORD_DISAPPEAR" dump="com.android.systemui"/>
+    <base_scene coding="790" name="LOCKSCREEN_PATTERN_DISAPPEAR" dump="com.android.systemui"/>
+    <base_scene coding="791" name="LOCKSCREEN_PIN_DISAPPEAR" dump="com.android.systemui"/>
+    <base_scene coding="792" name="LOCKSCREEN_TRANSITION_FROM_AOD" dump="com.android.systemui"/>
+    <base_scene coding="793" name="LOCKSCREEN_TRANSITION_TO_AOD" dump="com.android.systemui"/>
+    <base_scene coding="794" name="LAUNCHER_OPEN_ALL_APPS" dump="com.miui.home"/>
+    <base_scene coding="795" name="LAUNCHER_ALL_APPS_SCROLL" dump="com.miui.home"/>
+    <base_scene coding="796" name="LAUNCHER_APP_LAUNCH_FROM_WIDGET" dump="com.miui.home"/>
     <base_scene coding="797" name="SETTINGS_PAGE_SCROLL" />
-    <base_scene coding="798" name="LOCKSCREEN_UNLOCK_ANIMATION" />
+    <base_scene coding="798" name="LOCKSCREEN_UNLOCK_ANIMATION" dump="com.miui.home"/>
     <base_scene coding="799" name="SHADE_APP_LAUNCH_FROM_HISTORY_BUTTON" />
     <base_scene coding="800" name="SHADE_APP_LAUNCH_FROM_MEDIA_PLAYER" />
     <base_scene coding="801" name="SHADE_APP_LAUNCH_FROM_QS_TILE" />
@@ -195,38 +390,38 @@
     <base_scene coding="828" name="USER_DIALOG_OPEN" />
     <base_scene coding="829" name="TASKBAR_EXPAND" />
     <base_scene coding="830" name="TASKBAR_COLLAPSE" />
-    <base_scene coding="831" name="SHADE_CLEAR_ALL" />
-    <base_scene coding="832" name="LAUNCHER_UNLOCK_ENTRANCE_ANIMATION" />
-    <base_scene coding="833" name="LOCKSCREEN_OCCLUSION" />
-    <base_scene coding="834" name="RECENTS_SCROLLING" />
-    <base_scene coding="835" name="LAUNCHER_APP_SWIPE_TO_RECENTS" />
-    <base_scene coding="836" name="LAUNCHER_CLOSE_ALL_APPS_SWIPE" />
-    <base_scene coding="837" name="LAUNCHER_CLOSE_ALL_APPS_TO_HOME" />
-    <base_scene coding="839" name="LOCKSCREEN_CLOCK_MOVE_ANIMATION" />
-    <base_scene coding="840" name="LAUNCHER_OPEN_SEARCH_RESULT" />
-    <base_scene coding="847" name="LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK" />
+    <base_scene coding="831" name="SHADE_CLEAR_ALL" dump="com.android.systemui"/>
+    <base_scene coding="832" name="LAUNCHER_UNLOCK_ENTRANCE_ANIMATION" dump="com.miui.home"/>
+    <base_scene coding="833" name="LOCKSCREEN_OCCLUSION" dump="com.miui.home"/>
+    <base_scene coding="834" name="RECENTS_SCROLLING" dump="com.miui.home"/>
+    <base_scene coding="835" name="LAUNCHER_APP_SWIPE_TO_RECENTS" dump="com.miui.home"/>
+    <base_scene coding="836" name="LAUNCHER_CLOSE_ALL_APPS_SWIPE" dump="com.miui.home"/>
+    <base_scene coding="837" name="LAUNCHER_CLOSE_ALL_APPS_TO_HOME" dump="com.miui.home"/>
+    <base_scene coding="839" name="LOCKSCREEN_CLOCK_MOVE_ANIMATION" dump="com.miui.home"/>
+    <base_scene coding="840" name="LAUNCHER_OPEN_SEARCH_RESULT" dump="com.miui.home"/>
+    <base_scene coding="847" name="LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK" dump="com.miui.home"/>
     <base_scene coding="849" name="IME_INSETS_SHOW_ANIMATION" />
     <base_scene coding="850" name="IME_INSETS_HIDE_ANIMATION" />
     <base_scene coding="851" name="SPLIT_SCREEN_DOUBLE_TAP_DIVIDER" />
-    <base_scene coding="852" name="LAUNCHER_UNFOLD_ANIM" />
+    <base_scene coding="852" name="LAUNCHER_UNFOLD_ANIM" dump="com.miui.home"/>
     <base_scene coding="853" name="PREDICTIVE_BACK_CROSS_ACTIVITY" />
     <base_scene coding="854" name="PREDICTIVE_BACK_CROSS_TASK" />
     <base_scene coding="855" name="PREDICTIVE_BACK_HOME" />
     <base_scene coding="857" name="BACK_PANEL_ARROW" />
-    <base_scene coding="858" name="LAUNCHER_CLOSE_ALL_APPS_BACK" />
-    <base_scene coding="859" name="LAUNCHER_SEARCH_QSB_WEB_SEARCH" />
-    <base_scene coding="860" name="LAUNCHER_LAUNCH_APP_PAIR_FROM_WORKSPACE" />
-    <base_scene coding="861" name="LAUNCHER_LAUNCH_APP_PAIR_FROM_TASKBAR" />
-    <base_scene coding="862" name="LAUNCHER_SAVE_APP_PAIR" />
-    <base_scene coding="864" name="LAUNCHER_ALL_APPS_SEARCH_BACK" />
-    <base_scene coding="865" name="LAUNCHER_TASKBAR_ALL_APPS_CLOSE_BACK" />
-    <base_scene coding="866" name="LAUNCHER_TASKBAR_ALL_APPS_SEARCH_BACK" />
-    <base_scene coding="867" name="LAUNCHER_WIDGET_PICKER_CLOSE_BACK" />
-    <base_scene coding="868" name="LAUNCHER_WIDGET_PICKER_SEARCH_BACK" />
-    <base_scene coding="869" name="LAUNCHER_WIDGET_BOTTOM_SHEET_CLOSE_BACK" />
-    <base_scene coding="870" name="CUJ_LAUNCHER_WIDGET_EDU_SHEET_CLOSE_BACK" />
-    <base_scene coding="871" name="LAUNCHER_PRIVATE_SPACE_LOCK" />
-    <base_scene coding="872" name="LAUNCHER_PRIVATE_SPACE_UNLOCK" />
+    <base_scene coding="858" name="LAUNCHER_CLOSE_ALL_APPS_BACK" dump="com.miui.home"/>
+    <base_scene coding="859" name="LAUNCHER_SEARCH_QSB_WEB_SEARCH" dump="com.miui.home"/>
+    <base_scene coding="860" name="LAUNCHER_LAUNCH_APP_PAIR_FROM_WORKSPACE" dump="com.miui.home"/>
+    <base_scene coding="861" name="LAUNCHER_LAUNCH_APP_PAIR_FROM_TASKBAR" dump="com.miui.home"/>
+    <base_scene coding="862" name="LAUNCHER_SAVE_APP_PAIR" dump="com.miui.home"/>
+    <base_scene coding="864" name="LAUNCHER_ALL_APPS_SEARCH_BACK" dump="com.miui.home"/>
+    <base_scene coding="865" name="LAUNCHER_TASKBAR_ALL_APPS_CLOSE_BACK" dump="com.miui.home"/>
+    <base_scene coding="866" name="LAUNCHER_TASKBAR_ALL_APPS_SEARCH_BACK" dump="com.miui.home"/>
+    <base_scene coding="867" name="LAUNCHER_WIDGET_PICKER_CLOSE_BACK" dump="com.miui.home"/>
+    <base_scene coding="868" name="LAUNCHER_WIDGET_PICKER_SEARCH_BACK" dump="com.miui.home"/>
+    <base_scene coding="869" name="LAUNCHER_WIDGET_BOTTOM_SHEET_CLOSE_BACK" dump="com.miui.home"/>
+    <base_scene coding="870" name="CUJ_LAUNCHER_WIDGET_EDU_SHEET_CLOSE_BACK" dump="com.miui.home"/>
+    <base_scene coding="871" name="LAUNCHER_PRIVATE_SPACE_LOCK" dump="com.miui.home"/>
+    <base_scene coding="872" name="LAUNCHER_PRIVATE_SPACE_UNLOCK" dump="com.miui.home"/>
     <base_scene coding="873" name="DESKTOP_MODE_MAXIMIZE_WINDOW" />
     <base_scene coding="874" name="FOLD_ANIM" />
     <base_scene coding="875" name="DESKTOP_MODE_RESIZE_WINDOW" />
@@ -236,22 +431,82 @@
     <base_scene coding="878" name="DESKTOP_MODE_MINIMIZE_WINDOW" />
     <base_scene coding="879" name="DESKTOP_MODE_DRAG_WINDOW" />
     <base_scene coding="880" name="STATUS_BAR_LAUNCH_DIALOG_FROM_CHIP" />
-    <base_scene coding="882" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_OPEN" />
-    <base_scene coding="883" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_CLOSE" />
-    <base_scene coding="884" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_APP_LAUNCH" />
+    <base_scene coding="882" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_OPEN" dump="com.miui.home"/>
+    <base_scene coding="883" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_CLOSE" dump="com.miui.home"/>
+    <base_scene coding="884" name="LAUNCHER_KEYBOARD_QUICK_SWITCH_APP_LAUNCH" dump="com.miui.home"/>
     <base_scene coding="885" name="DESKTOP_MODE_ENTER_APP_HANDLE_DRAG_RELEASE" />
     <base_scene coding="886" name="DESKTOP_MODE_EXIT_MODE_ON_LAST_WINDOW_CLOSE" />
     <base_scene coding="887" name="DESKTOP_MODE_SNAP_RESIZE" />
     <base_scene coding="888" name="DESKTOP_MODE_UNMAXIMIZE_WINDOW" />
     <base_scene coding="889" name="DESKTOP_MODE_ENTER_FROM_OVERVIEW_MENU" />
-    <base_scene coding="890" name="LAUNCHER_OVERVIEW_TASK_DISMISS" />
+    <base_scene coding="890" name="LAUNCHER_OVERVIEW_TASK_DISMISS" dump="com.miui.home"/>
     <base_scene coding="891" name="DESKTOP_MODE_CLOSE_TASK" />
     <base_scene coding="892" name="DESKTOP_MODE_APP_LAUNCH_FROM_INTENT" />
     <base_scene coding="893" name="DESKTOP_MODE_APP_LAUNCH_FROM_ICON" />
     <base_scene coding="894" name="DESKTOP_MODE_KEYBOARD_QUICK_SWITCH_APP_LAUNCH" />
-    <base_scene coding="895" name="LAUNCHER_WORK_UTILITY_VIEW_EXPAND" />
-    <base_scene coding="896" name="LAUNCHER_WORK_UTILITY_VIEW_SHRINK" />
-    <base_scene coding="897" name="DEFAULT_TASK_TO_TASK_ANIMATION" />
+    <base_scene coding="895" name="LAUNCHER_WORK_UTILITY_VIEW_EXPAND" dump="com.miui.home"/>
+    <base_scene coding="896" name="LAUNCHER_WORK_UTILITY_VIEW_SHRINK" dump="com.miui.home"/>
+    <base_scene coding="897" name="DEFAULT_TASK_TO_TASK_ANIMATION" dump="com.android.systemui"/>
     <base_scene coding="898" name="DESKTOP_MODE_MOVE_WINDOW_TO_DISPLAY" />
     <base_scene coding="899" name="STATUS_BAR_APP_RETURN_TO_CALL_CHIP" />
+    <base_scene coding="1025" name="FREEFORM_OPEN_LATENCY" />
+    <base_scene coding="1026" name="FREEFORM_CLOSE_LATENCY" />
+    <base_scene coding="1027" name="MINI_FREEFORM_CLICK_LATENCY" />
+    <base_scene coding="1028" name="SUBSCREEN_SWITCH_CASE_ANIM_LATENCY" />
+    <base_scene coding="1029" name="SUBSCREEN_SHOW_PIN_MAIN_LATENCY" />
+    <base_scene coding="1030" name="SUBSCREEN_DRAG_ASSIST_LATENCY" />
+    <base_scene coding="1031" name="SUBSCREEN_LONG_CLICK_WALLPAPER_EDIT_ENTER_LATENCY" />
+    <base_scene coding="1032" name="SUBSCREEN_DRAG_CAMERA_LATENCY" />
+    <base_scene coding="1033" name="SUBSCREEN_CLICK_WALLPAPER_EDIT_EXIT_LATENCY" />
+    <base_scene coding="1034" name="WALLPAPER_UNLOCK_LATENCY_1" />
+    <base_scene coding="1035" name="WALLPAPER_SCREEN_ON_LATENCY_1" />
+    <base_scene coding="1036" name="NOTIFICATION_PANEL_OPEN_APP_LATENCY" />
+    <base_scene coding="1037" name="NOTIFICATION_APP_START_LATENCY" />
+    <base_scene coding="1038" name="ISLAND_OPEN_APP_LATENCY" />
+    <base_scene coding="1039" name="ISLAND_CLOSE_APP_LATENCY" />
+    <base_scene coding="1040" name="ISLAND_SHOW_ISLAND_LATENCY" />
+    <base_scene coding="1041" name="ISLAND_CLOSE_ISLAND_LATENCY" />
+    <base_scene coding="1042" name="ISLAND_SHOW_EXPAND_LATENCY" />
+    <base_scene coding="1043" name="ISLAND_CLOSE_EXPAND_LATENCY" />
+    <base_scene coding="1044" name="ISLAND_SWITCH_ISLAND_EXPAND_LATENCY" />
+    <base_scene coding="1045" name="NOTIFICATION_SHADE_CLEAR_ALL_LATENCY" />
+    <base_scene coding="1046" name="NOTIFICATION_SHADE_SCROLL_FLING_LATENCY" />
+    <base_scene coding="1047" name="CONTROL_CENTER_CLICK_SETTINGS_LATENCY" />
+    <base_scene coding="1048" name="CONTROL_CENTER_ENTER_WIFI_SECONDARY_LATENCY" />
+    <base_scene coding="1049" name="CONTROL_CENTER_EXIT_WIFI_SECONDARY_LATENCY" />
+    <base_scene coding="1050" name="CONTROL_CENTER_ENTER_CELL_SECONDARY_LATENCY" />
+    <base_scene coding="1051" name="CONTROL_CENTER_EXIT_CELL_SECONDARY_LATENCY" />
+    <base_scene coding="1052" name="CONTROL_CENTER_ENTER_MEDIA_SECONDARY_LATENCY" />
+    <base_scene coding="1053" name="CONTROL_CENTER_EXIT_MEDIA_SECONDARY_LATENCY" />
+    <base_scene coding="1054" name="CONTROL_CENTER_ENTER_BT_SECONDARY_LATENCY" />
+    <base_scene coding="1055" name="CONTROL_CENTER_EXIT_BT_SECONDARY_LATENCY" />
+    <base_scene coding="1056" name="CONTROL_CENTER_ENTER_BRIGHTNESS_SECONDARY_LATENCY" />
+    <base_scene coding="1057" name="CONTROL_CENTER_EXIT_BRIGHTNESS_SECONDARY_LATENCY" />
+    <base_scene coding="1058" name="CONTROL_CENTER_ENTER_VOLUME_SECONDARY_LATENCY" />
+    <base_scene coding="1059" name="CONTROL_CENTER_EXIT_VOLUME_SECONDARY_LATENCY" />
+    <base_scene coding="1060" name="CONTROL_CENTER_ENTER_EDIT_PANEL_LATENCY" />
+    <base_scene coding="1061" name="CONTROL_CENTER_EXIT_EDIT_PANEL_LATENCY" />
+    <base_scene coding="1062" name="VOLUME_PANEL_SHOW_LATENCY" />
+    <base_scene coding="1063" name="VOLUME_PANEL_HIDE_LATENCY" />
+    <base_scene coding="1064" name="VOLUME_PANEL_ENTER_SECONDARY_LATENCY" />
+    <base_scene coding="1065" name="VOLUME_PANEL_EXIT_SECONDARY_LATENCY" />
+    <base_scene coding="1066" name="KEYGUARD_PASSWORD_UNLOCK_COMPLETE_LATENCY" />
+    <base_scene coding="1067" name="KEYGUARD_FACE_UNLOCK_COMPLETE_LATENCY" />
+    <base_scene coding="1068" name="KEYGUARD_FINGEER_UNLOCK_COMPLETE_LATENCY" />
+    <base_scene coding="1069" name="KEYGUARD_SCREEN_OFF_COMPLETE_LATENCY" />
+    <base_scene coding="1070" name="KEYGUARD_SCREEN_ON_COMPLETE_LATENCY" />
+    <base_scene coding="1071" name="KEYGUARDEDITOR_CLOSE_EDITORACTIVITY_LATENCY" />
+    <base_scene coding="1072" name="KEYGUARDEDITOR_APPLY_EDITORACTIVITY_LATENCY" />
+    <fps_abnormal_event code="260" enable="Y"/>
+    <fps_abnormal_event code="272" enable="Y"/>
+    <fps_abnormal_event code="276" enable="Y"/>
+    <fps_abnormal_event code="278" enable="Y"/>
+    <fps_abnormal_event code="280" enable="Y"/>
+    <fps_abnormal_event code="317" enable="Y"/>
+    <fps_abnormal_event code="319" enable="Y"/>
+    <fps_abnormal_event code="320" enable="Y"/>
+    <fps_abnormal_event code="321" enable="Y"/>
+    <fps_abnormal_event code="776" enable="Y"/>
+    <fps_abnormal_event code="777" enable="Y"/>
+    <fps_abnormal_event code="778" enable="Y"/>
 </scene_groups>

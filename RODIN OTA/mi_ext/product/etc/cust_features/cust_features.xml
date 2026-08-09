@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cust_features>
     <cust_feature>
-        <bool name="settings_is_need_remove_art_from_model_name">true</bool>
+        <bool name="ticket_snatching_enabled">true</bool>
         <bool name="gnss_enhance_interface_version2">true</bool>
-        <bool name="config_greezer_global_net_enable">true</bool>
         <bool name="config_greezer_launchMode_global_enable">true</bool>
+        <bool name="settings_support_hyper_ai_device">true</bool>
+        <bool name="settings_is_support_qingshan_eyecare">true</bool>
+        <bool name="settings_is_need_remove_art_from_model_name">true</bool>
+        <bool name="config_greezer_global_net_enable">true</bool>
         <bool name="config_greezer_dfs_monitor_enable">true</bool>
         <bool name="config_greezer_dfs_enable">true</bool>
-        <bool name="config_greezer_launchMode_enable">true</bool>
         <bool name="support_modem_cloud_controller">true</bool>
         <bool name="support_elevator_mode_v3">true</bool>
         <bool name="support_special_sim_do_action">true</bool>
         <bool name="is_modem_volte_enabled">true</bool>
         <bool name="config_drop_fg_call_devices">true</bool>
+        <string-array name="config_double_hand_app">
+            <item>com.tencent.tmgp.sgame</item>
+            <item>com.miHoYo.Yuanshen</item>
+            <item>com.tencent.tmgp.pubgmhd</item>
+        </string-array>
+        <integer name="vowifi_ims_prefer_mode_value">4</integer>
         <string-array name="sar_scan_code_white_list_activity">
             <item>com.xiaomi.scanner.app.ScanActivity</item>
             <item>com.tencent.mm.plugin.scanner.ui.BaseScanUI</item>
@@ -100,6 +108,52 @@
             <item>-123</item>
             <item>-121</item>
         </integer-array>
+        <bool name="config_need_support_lock_global">true</bool>
+        <bool name="config_need_support_lock">true</bool>
+        <string-array name="config_firewall_white_list">
+            <item>com.trustonic.telecoms.client.standard.dlc.playground</item>
+            <item>com.trustonic.telecoms.standard.dlc</item>
+            <item>com.trustonic.telecoms.standard.dpc</item>
+            <item>com.trustonic.telecoms.setup</item>
+            <item>com.payjoy.status.df</item>
+            <item>com.kistpay.finance</item>
+            <item>com.trustonic.telecoms.xti.dpc</item>
+            <item>com.payjoy.status</item>
+            <item>com.payjoy.access</item>
+            <item>ofm.onfonmobile.dpc</item>
+            <item>app.afriloc.dpc</item>
+            <item>com.airtelx.airtelkiosk</item>
+            <item>jp.netstar.familysmile</item>
+            <item>jp.softbank.mb.parentalcontrols</item>
+            <item>jp.softbank.security</item>
+        </string-array>
+        <string-array name="config_disabled_update_autostart_apps">
+            <item>com.trustonic.telecoms.standard.dlc</item>
+            <item>com.trustonic.telecoms.client.standard.dlc.playground</item>
+            <item>com.kistpay.finance</item>
+        </string-array>
+        <string-array name="config_bg_white_list">
+            <item>com.xiaomi.xmsf</item>
+            <item>com.miui.guardprovider</item>
+            <item>com.xiaomi.account</item>
+            <item>com.lbe.security.miui</item>
+            <item>com.miui.securityadd</item>
+            <item>com.trustonic.telecoms.xti.dpc</item>
+            <item>com.trustonic.telecoms.setup</item>
+            <item>com.trustonic.telecoms.standard.dpc</item>
+            <item>com.trustonic.telecoms.standard.dlc</item>
+            <item>com.trustonic.telecoms.client.standard.dlc.playground</item>
+            <item>com.miui.analytics</item>
+            <item>com.kistpay.finance</item>
+            <item>com.payjoy.status.df</item>
+            <item>com.payjoy.status</item>
+            <item>com.payjoy.access</item>
+            <item>com.airtelx.airtelkiosk</item>
+            <item>ofm.onfonmobile.dpc</item>
+            <item>app.afriloc.dpc</item>
+        </string-array>
+        <bool name="disable_multi_statusbar_navigationbar">true</bool>
+        <bool name="config_device_finance_version">true</bool>
         <string-array name="sns_hdr_opt_white_list_for_c6c7">
             <item>com.autonavi.minimap</item>
             <item>com.tencent.tmgp.sgame</item>
@@ -554,18 +608,6 @@
             <item>SK</item>
             <item>KR</item>
         </string-array>
-        <string-array name="config_firewall_white_list">
-            <item>com.trustonic.telecoms.client.standard.dlc.playground</item>
-            <item>com.trustonic.telecoms.standard.dlc</item>
-            <item>com.trustonic.telecoms.standard.dpc</item>
-            <item>com.trustonic.telecoms.setup</item>
-            <item>com.payjoy.status.df</item>
-            <item>com.kistpay.finance</item>
-            <item>com.trustonic.telecoms.xti.dpc</item>
-            <item> com.airtelx.airtelkiosk</item>
-            <item>com.payjoy.status</item>
-            <item>com.payjoy.access</item>
-        </string-array>
         <map name="config_disable_background_apps">
             <item name="com.android.phone">true</item>
             <item name="com.android.deskclock">true</item>
@@ -575,24 +617,6 @@
             <item name="com.kddi.android.cmail">true</item>
             <item name="com.payjoy.status">true</item>
         </map>
-        <string-array name="config_bg_white_list">
-            <item>com.xiaomi.xmsf</item>
-            <item>com.miui.guardprovider</item>
-            <item>com.xiaomi.account</item>
-            <item>com.lbe.security.miui</item>
-            <item>com.miui.securityadd</item>
-            <item>com.trustonic.telecoms.xti.dpc</item>
-            <item>com.trustonic.telecoms.setup</item>
-            <item>com.trustonic.telecoms.standard.dpc</item>
-            <item>com.trustonic.telecoms.standard.dlc</item>
-            <item>com.trustonic.telecoms.client.standard.dlc.playground</item>
-            <item>com.miui.analytics</item>
-            <item>com.kistpay.finance</item>
-            <item>com.payjoy.status.df</item>
-            <item>com.payjoy.status</item>
-            <item>com.payjoy.access</item>
-            <item>com.airtelx.airtelkiosk</item>
-        </string-array>
         <map name="plmn_network_display_rule">
             <item name="network_display_config">5,26806,MEO</item>
             <item name="45006">3</item>

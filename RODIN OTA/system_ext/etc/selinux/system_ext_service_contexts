@@ -42,7 +42,7 @@ MultiWifiP2pService u:object_r:multi_p2p_service:s0
 AmlMiuiWifiService u:object_r:miui_wifi_service:s0
 AmlSlaveWifiService u:object_r:slave_wifi_service:s0
 AmlConnectivityService u:object_r:slave_wifi_service:s0
-BpfService u:object_r:miui_bpf_service:s0
+MiuiNetPathOptimizerService u:object_r:miui_netpathoptimizer_service:s0
 AppDebug u:object_r:app_debug_service:s0
 miui.restore.service   u:object_r:miui_restore_service:s0
 pc_mode_service u:object_r:pc_mode_service:s0
@@ -110,6 +110,7 @@ miui.downscale u:object_r:miui_downscale_service:s0
 ssru                                      u:object_r:ssru_service:s0
 FramerateFineControlService         u:object_r:miui_frameratefinecontrol_service:s0
 miui.appadaptation u:object_r:miui_appadaptation_service:s0
+thermalqos             u:object_r:thermalqos_service:s0
 cross_device_service                      u:object_r:cross_device_service:s0
 vendor.virtual_keyboard                   u:object_r:virtual_keyboard_service:s0
 cameraopt               u:object_r:cameraopt_service:s0

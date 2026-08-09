@@ -40,4 +40,7 @@
     <package name="com.axis.net" enable="false" />
     <package name="android.text.cts" enable="true" activityRule="android.text.method.cts.CtsActivity:false;android.text.method.cts.KeyListenerCtsActivity:false" />
     <package name="android.widget.cts" enable="false" />
+    <package name="android.server.wm.app" enable="false" />
+    <package name="com.google.android.gms" enable="false" />
+    <package name="com.google.android.permissioncontroller" enable="false" />
 </adaptiveAppRule>

@@ -48,7 +48,7 @@
     <package name="com.facebook.katana"
         defaultSettings="true"
         forceKillWhenSwitch="true"
-        source="2"
+        source="3"
         relaunchRule="ProjectionDisplaySwitch:*:false" />
     <package name="com.snapchat.android"
         defaultSettings="true"
@@ -96,11 +96,6 @@
         defaultSettings="true"
         disableCameraPreview="com.smile.gifmaker/com.yxcorp.plugin.qrcode.api.QRCodeScanActivity"
         source="1" />
-    <package name="com.ss.android.ugc.aweme"
-        defaultSettings="true"
-        forceKillWhenSwitch="true"
-        isScale="true"
-        source="1" />
     <package name="com.ss.android.article.video"
         defaultSettings="true"
         source="1"
@@ -108,10 +103,6 @@
         forceKillWhenSwitch="true"
         relaunchRule="ProjectionDisplaySwitch:*:false:com.ixigua.homepage.v2.CreateHomeWrapperActivity"
         isScale="true" />
-    <package name="cn.kuwo.player"
-        defaultSettings="true"
-        forceKillWhenSwitch="true"
-        source="1" />
     <package name="com.kuaishou.nebula"
         defaultSettings="true"
         source="1" />
@@ -120,4 +111,9 @@
         forceKillWhenSwitch="true"
         isScale="true"
         source="1" />
+    <package name="com.duowan.kiwi"
+        defaultSettings="true"
+        source="1"
+        disable="false"
+        skipSelfAdaptive="true"/>
 </package_config>

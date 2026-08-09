@@ -222,6 +222,10 @@ applications that come with the platform
         <permission name="com.mediatek.INTENT.IMS_STATE_CHANGED"/>
         <permission name="android.permission.TETHER_PRIVILEGED" />
         <permission name="android.permission.SET_DEBUG_APP" />
+        <!-- MIUI MOD: Telephony_SimFrame -->
+        <permission name="android.permission.NFC" />
+        <permission name="android.permission.SECURE_ELEMENT_PRIVILEGED_OPERATION" />
+        <!-- END Telephony_SimFrame -->
     </privapp-permissions>
 
     <privapp-permissions package="com.mediatek.wfo.impl">

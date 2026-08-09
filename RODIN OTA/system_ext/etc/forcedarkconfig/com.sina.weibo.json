@@ -1544,6 +1544,36 @@
           ]
         }
       ]
+    },
+    {
+      "activityName": "com.sina.weibo.search.middle.SearchMiddleActivity",
+      "forceDark": true,
+      "forceDarkViewConfigList": [
+        {
+          "viewName": "com.sina.weibo.card.widget.GridView",
+          "forceDark": true,
+          "usage": 103,
+          "backgroundUsage": 103,
+          "conditions": [
+            {
+              "parent": 0,
+              "viewName": "android.widget.LinearLayout",
+              "index": -1
+            },
+            {
+              "parent": 1,
+              "viewName": "com.sina.weibo.pagecard.protect.card.CardGridViewNew",
+              "index": -1
+            },
+            {
+              "parent": 2,
+              "viewName": "androidx.recyclerview.widget.RecyclerView",
+              "index": -1,
+              "id": "view_recycler"
+            }
+          ]
+        }
+      ]
     }
   ],
   "forceDarkViewGlobalConfigList": [

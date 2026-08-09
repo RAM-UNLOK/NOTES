@@ -480,6 +480,7 @@ service boottrace /system/bin/atrace --async_start -f /data/misc/boottrace/categ
 
 # MIUI ADD: Performance_PerformanceEnhance
 on property:persist.traced.enable=1 && property:persist.debug.atrace_mtk.enable=1
+    chmod 0666 /sys/kernel/tracing/events/metis/metis_vip_task_flag/enable
     chmod 0666 /sys/kernel/tracing/events/ged/gpu_frequency_mtk/enable
     chmod 0666 /sys/kernel/tracing/events/sched/sched_migrate_task/enable
     chmod 0666 /sys/kernel/tracing/events/sched/sched_stat_blocked/enable

@@ -152,6 +152,7 @@ on early-boot
 on boot
     chown system system /sys/kernel/mi_mempool/enable_cam_provider
     chown system system /sys/kernel/mi_mempool/pool_size
+    chown system system /sys/kernel/reserve_pool/cam_reserved_pages
     chown system system /sys/module/xr_heaps/parameters/system_pool_low_mark
     chown system system /sys/module/xr_heaps/parameters/system_pool_fill_mark
     chown system system /sys/module/xr_heaps/parameters/system_pool_resv_pages
@@ -160,6 +161,7 @@ on boot
 
     chmod 0660 /sys/kernel/mi_mempool/enable_cam_provider
     chmod 0660 /sys/kernel/mi_mempool/pool_size
+    chmod 0660 /sys/kernel/reserve_pool/cam_reserved_pages
     chmod 0660 /sys/module/xr_heaps/parameters/system_pool_fill_mark
     chmod 0660 /sys/module/xr_heaps/parameters/system_pool_low_mark
     chmod 0660 /sys/module/xr_heaps/parameters/page_pool_dump

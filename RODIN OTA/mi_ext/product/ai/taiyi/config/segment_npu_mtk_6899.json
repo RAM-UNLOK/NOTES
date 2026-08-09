@@ -1,0 +1,19 @@
+{
+  "parent" : "framework_compat",
+  "api" : "segment",
+  "name" : "segment_npu_mtk_6899",
+  "version" : 6,
+  "models" : [ {
+    "id" : "segment_model_npu_mtk_6899",
+    "version" : 1,
+    "required" : true
+  } ],
+  "plugin" : {
+    "id" : "segment_v3_npu",
+    "version" : 3,
+    "entry" : "com.xiaomi.taiyi.plugin.segment.SegmentPlugin"
+  },
+  "isLLM" : false,
+  "disabled" : false,
+  "type" : 0
+}

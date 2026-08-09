@@ -64,13 +64,7 @@
       "singlePress": [
         {
           "type": "longPress",
-          "action": "long_press_menu_key",
-          "functions": [
-            {
-              "function": "show_menu",
-              "global": 2
-            }
-          ]
+          "action": "long_press_menu_key"
         }
       ]
     },
@@ -166,6 +160,15 @@
       ]
     },
     {
+      "action": "three_gesture_up",
+      "functions": [
+        {
+          "function": "launch_ai_memory",
+          "global": 2
+        }
+      ]
+    },
+    {
       "action": "three_gesture_long_press",
       "functions": [
         {
@@ -175,7 +178,7 @@
       ]
     },
     {
-      "action": "system_input_gesture",
+      "action": "two_gesture_long_press",
       "functions": [
         {
           "function": "launch_xiaoai_screen_identification",

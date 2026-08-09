@@ -380,4 +380,7 @@
          devices. -->
     <allow-in-power-save package="com.android.devicelockcontroller" />
     <allow-in-data-usage-save package="com.android.devicelockcontroller" />
+    <!-- MIUI ADD: Build_DecoupledSprd -->
+    <allow-in-power-save package="com.sprd.engineerinternal" />
+    <!-- END Build_DecoupledSprd  -->
 </permissions>

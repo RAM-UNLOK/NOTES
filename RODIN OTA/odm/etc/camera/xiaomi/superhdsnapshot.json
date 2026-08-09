@@ -175,6 +175,47 @@
             {
                 "NodeName": "com.xiaomi.plugin.hwjpeg",
                 "NodeInstance": "JpegInstance"
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.hwjpeg",
+                "NodeInstance": "JpegInstance1"
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.virtual",
+                "NodeInstance": "virtualInstanceGainmapSplitForWatermark",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"NodeMask",
+                        "NodePropertyValue":512
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.gainmapPostProc",
+                "NodeInstance": "GainMapPostProcInstanceSharp",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"NodeMask",
+                        "NodePropertyValue":128,
+                        "__comment__":"CUSTOMSIZE_MODE"
+                    },
+                    {
+                        "NodePropertyName":"pluginMode",
+                        "NodePropertyValue":1,
+                        "__comment__":"disable watermark"
+                    }
+                ]
+            },
+            {
+                "NodeName": "com.xiaomi.plugin.jpegrAggr",
+                "NodeInstance": "jpegrAggrInstanceSharp",
+                "NodeProperty":[
+                    {
+                        "NodePropertyName":"pluginMode",
+                        "NodePropertyValue":5,
+                        "__comment__":"DISABLE_WARTERMARK|NO_DEBUG"
+                    }
+                ]
             }
         ]
     },
@@ -468,6 +509,50 @@
                 },
                 "DstPort": {
                     "PortId": 4,
+                    "NodeInstance": "HeifEditInstance"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 5,
+                    "NodeInstance": "WatermarkInstance0"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "JpegInstance1",
+                    "PortFormat": "YUV420_NV12"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "JpegInstance1",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 0,
+                    "NodeInstance": "jpegrAggrInstanceSharp"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "jpegrAggrInstanceSharp",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 8,
+                    "NodeInstance": "jpegrAggrInstance"
+                }
+            },
+            {
+                "SrcPort": {
+                    "PortId": 0,
+                    "NodeInstance": "JpegInstance1",
+                    "PortFormat": "BLOB"
+                },
+                "DstPort": {
+                    "PortId": 8,
                     "NodeInstance": "HeifEditInstance"
                 }
             },

@@ -35,7 +35,10 @@
             "name": "protect_list",
             "config": [
                 "com.tencent.mobileqq",
-                "com.ss.android.lark.kami"
+                "com.ss.android.lark.kami",
+                "com.miui.home",
+                "com.miui.gallery",
+                "com.mi.android.globallauncher"
             ]
         },
         {

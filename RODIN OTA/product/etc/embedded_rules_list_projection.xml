@@ -36,7 +36,7 @@
         splitPairRule="com.ss.android.article.news.activity.MainActivity:*"
         relaunchRule="ProjectionDisplaySwitch:*:false:com.bytedance.ugc.publishaggr.AggrPublishActivity"
         forcePortraitWhenSwitch="com.ss.android.article.news.activity.MainActivity"
-        transitionRules="com.ss.android.article.base.feature.isolation.view.IsolationActivity,com.ss.android.tma.view.TmgPluginLoadingActivity,com.bytedance.ugc.publishaggr.AggrPublishActivity" />
+        transitionRules="com.ss.android.article.base.feature.isolation.view.IsolationActivity,com.ss.android.tma.view.TmgPluginLoadingActivity" />
     <package name="com.tencent.news"
         defaultSettings="true"
         transitionRules="com.tencent.news.startup.InitAppActivity, com.tencent.news.ui.visitmode.VisitModeNewsDetailActivity,com.tencent.news.activity.SplashActivity,com.tencent.news.visitor.home.VisitorModeHomeActivity" />
@@ -106,7 +106,7 @@
         relaunchRule="ProjectionDisplaySwitch:*:false:com.alipay.android.phone.preinstall.channel.ChannelActivity"
         activityRule="com.alipay.android.phone.wallet.snscontenteditor.ui.activity.BaseHalfContentEditor"
         disableCameraPreview="com.eg.android.AlipayGphone/com.alipay.mobile.scan.as.main.MainCaptureActivity"
-        flags="ignoreActivityBelowWhenJudgeMiddle:com.ali.user.mobile.loginupgrade.activity.GuideActivity" />
+        flags="ignoreActivityBelowWhenJudgeMiddle:com.ali.user.mobile.loginupgrade.activity.GuideActivity;reusePreContainer:com.alipay.mobile.scan.as.main.MainCaptureActivity" />
     <package name="com.xunmeng.pinduoduo"
         defaultSettings="true"
         source="2"
@@ -152,7 +152,7 @@
         defaultSettings="true"
         forceKillWhenSwitch="true"
         scaleMode="1"
-        source="2" />
+        source="3" />
     <package name="me.ele"
         defaultSettings="true"
         skipSelfAdaptive="true"
@@ -263,7 +263,7 @@
         splitPairRule="com.achievo.vipshop.homepage.activity.MainActivity:*" />
     <package name="com.kuaiduizuoye.scan"
         defaultSettings="true"
-        source="2"
+        source="3"
         isShowDivider="true"
         splitPairRule="com.kuaiduizuoye.scan.activity.main.activity.MainActivity:*"
         supportCameraPreview="true" />
@@ -366,7 +366,7 @@
         splitPairRule="com.xt.retouch.uilauncher.MainActivity:*" />
     <package name="ctrip.android.view"
         defaultSettings="true"
-        source="2" />
+        source="3" />
     <package name="com.jd.jrapp"
         defaultSettings="true"
         source="2"
@@ -396,7 +396,7 @@
         source="2" />
     <package name="com.kugou.android.lite"
         defaultSettings="true"
-        source="2" />
+        source="3" />
     <package name="com.anjuke.android.app"
         defaultSettings="true"
         source="2"
@@ -487,7 +487,7 @@
         transitionRules="dev.xesam.chelaile.app.module.city.CityGuideActivity, dev.xesam.chelaile.app.module.func.SplashActivity" />
     <package name="com.netease.gl"
         defaultSettings="true"
-        source="2" />
+        source="3" />
     <package name="com.zhaopin.social"
         defaultSettings="true"
         source="3"
@@ -581,7 +581,7 @@
         source="2" />
     <package name="com.tencent.weishi"
         defaultSettings="true"
-        source="2"
+        source="3"
         splitPairRule="com.tencent.oscar.module.main.MainActivity:*"
         activityRule="com.tencent.weseevideo.schema.MovieTemplateDownloadActivity" />
     <package name="com.jjwxc.reader"
@@ -697,15 +697,6 @@
         supportCameraPreview="false"
         forcePortraitActivity="com.ss.android.ugc.live/com.ss.android.ugc.aweme.qrcode.view.QRCodeScanActivity,com.ss.android.ugc.live/com.ss.android.ugc.aweme.shortvideo.ui.VideoRecordNewActivity"
         transitionRules="com.ss.android.ugc.aweme.shortvideo.ui.VideoRecordNewActivity,com.ss.android.ugc.aweme.account.business.login.DYLoginActivity" />
-    <package name="com.taobao.taobao"
-        defaultSettings="true"
-        source="2"
-        scaleMode="3"
-        forceKillWhenSwitch="true"
-        placeholder="com.taobao.tao.welcome.Welcome:com.taobao.tao.MagicWindowActivity,com.taobao.tao.TBMainActivity:com.taobao.tao.MagicWindowActivity"
-        splitPairRule="com.ali.user.mobile.login.ui.UserLoginActivity:*,com.taobao.tao.MagicWindowActivity:*"
-        transitionRules="com.taobao.taolivehome.TaoLiveHomepageActivity,com.taobao.tao.TBMainActivity,com.taobao.android.shop.activity.ShopUrlRouterActivity,com.taobao.linkmanager.afc.TbFlowInActivity,com.taobao.cun.bundle.community.ui.activity.CuntaoRouterActivity,com.taobao.tao.rushpromotion.luaview.activity.LuaOrH5RouterActivity,com.taobao.browser.router.FromH5RouterActivity,com.taobao.android.shop.activity.ShopUrlRouterActivity,com.taobao.taolive.room.TaoLiveRouterActivity"
-        relaunchRule="ProjectionDisplaySwitch:*:false" />
     <package name="com.tencent.qqlive"
         defaultSettings="true"
         splitPairRule="com.tencent.qqlive.ona.activity.SplashHomeActivity:*"

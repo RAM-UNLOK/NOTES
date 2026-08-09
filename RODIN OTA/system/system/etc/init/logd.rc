@@ -4,6 +4,9 @@ service logd /system/bin/logd
     socket logdw dgram+passcred 0222 logd logd
     file /proc/kmsg r
     file /dev/kmsg w
+    # MIUI ADD: Stability_DecoupledSprd
+    file /dev/ylog_buffer w
+    # END Stability_DecoupledSprd
     user logd
     group logd system package_info readproc
     capabilities SYSLOG AUDIT_CONTROL
@@ -31,6 +34,10 @@ on fs
 "
     chown logd logd /dev/event-log-tags
     chmod 0644 /dev/event-log-tags
+    # MIUI ADD: Stability_DecoupledSprd
+    chown system logd /dev/ylog_buffer
+    chmod 0660 /dev/ylog_buffer
+    # END Stability_DecoupledSprd
 
 on property:sys.boot_completed=1
     start logd-auditctl

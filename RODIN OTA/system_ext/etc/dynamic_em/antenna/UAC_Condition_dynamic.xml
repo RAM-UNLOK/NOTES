@@ -4,7 +4,12 @@
   <ui>
     <lifecycle>
       <action type="onCreate">
-        <cmd name="read_cmd" cmd_type="at_cmd">AT+EANTFRCTUNER?;+EANTFRCTUNER:&lt;12&gt;[,lte_ii,],&lt;12&gt;[,nr_ii,]</cmd>
+        <if condition="getPlatform();=mt6881">
+          <cmd name="read_cmd" cmd_type="at_cmd">AT+EANTFRCTUNER?;+EANTFRCTUNER:&lt;15&gt;[,lte_ii,],&lt;15&gt;[,nr_ii,]</cmd>
+        </if>
+        <else>
+          <cmd name="read_cmd" cmd_type="at_cmd">AT+EANTFRCTUNER?;+EANTFRCTUNER:&lt;12&gt;[,lte_ii,],&lt;12&gt;[,nr_ii,]</cmd>
+        </else>
       </action>
     </lifecycle>
     <element ui_type="GroupView" label="LTE">
@@ -51,7 +56,12 @@
       <sub_element column="2"/>
       <element ui_type="Button" label="Read">
         <action>
+        <if condition="getPlatform();=mt6881">
+          <cmd name="read_cmd" cmd_type="at_cmd">AT+EANTFRCTUNER?;+EANTFRCTUNER:&lt;15&gt;[,lte_ii,],&lt;15&gt;[,nr_ii,]</cmd>
+        </if>
+        <else>
           <cmd name="read_cmd" cmd_type="at_cmd">AT+EANTFRCTUNER?;+EANTFRCTUNER:&lt;12&gt;[,lte_ii,],&lt;12&gt;[,nr_ii,]</cmd>
+        </else>
         </action>
       </element>
       <element ui_type="Button" label="Write">

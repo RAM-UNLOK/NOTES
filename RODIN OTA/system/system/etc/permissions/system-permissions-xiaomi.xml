@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.android.phone">
+        <permission name="android.permission.NFC" />
+        <permission name="android.permission.SECURE_ELEMENT_PRIVILEGED_OPERATION" />
+    </privapp-permissions>
+</permissions>

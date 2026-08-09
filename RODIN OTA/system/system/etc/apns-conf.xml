@@ -2668,6 +2668,42 @@
 
   <apn carrier="Internet"
        mcc="214"
+       mnc="03"
+       apn="datos"
+       type="default,xcap"
+       protocol="IPV4V6"
+       roaming_protocol="IPV4V6"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
+  />
+
+  <apn carrier="XCAP(wifi)"
+       mcc="214"
+       mnc="03"
+       apn="datos"
+       type="xcap"
+       protocol="IPV4V6"
+       roaming_protocol="IPV4V6"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
+       network_type_bitmask="18"
+  />
+
+  <apn carrier="IMS"
+       mcc="214"
+       mnc="03"
+       apn="ims"
+       type="ims"
+       protocol="IPV4V6"
+       roaming_protocol="IPV4V6"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
+  />
+
+  <apn carrier="Internet"
+       mcc="214"
        mnc="04"
        apn="internet"
        type="default,supl,ia"
@@ -2879,8 +2915,21 @@
        type="default,xcap"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
-       mvno_type="imsi"
-       mvno_match_data="2140619"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
+  />
+
+  <apn carrier="XCAP(wifi)"
+       mcc="214"
+       mnc="06"
+       apn="datos"
+       type="xcap"
+       protocol="IPV4V6"
+       roaming_protocol="IPV4V6"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
+       network_type_bitmask="18"
   />
 
   <apn carrier="IMS"
@@ -2890,9 +2939,9 @@
        type="ims"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
+       mvno_type="spn"
+       mvno_match_data="PTV Telecom"
        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
-       mvno_type="imsi"
-       mvno_match_data="2140619"
   />
 
   <apn carrier="Movistar"
@@ -2998,6 +3047,17 @@
        type="default,xcap"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
+  />
+
+  <apn carrier="XCAP(wifi)"
+       mcc="214"
+       mnc="15"
+       apn="datos"
+       type="xcap"
+       protocol="IPV4V6"
+       roaming_protocol="IPV4V6"
+       network_type_bitmask="18"
   />
 
   <apn carrier="IMS"
@@ -39108,6 +39168,8 @@
        mnc="02"
        apn="etisalat.ae"
        type="default,ia,supl"
+       protocol="IPV4V6"
+       roaming_protocol="IP"
   />
 
   <apn carrier="Etisalat ims"
@@ -39115,7 +39177,7 @@
        mnc="02"
        apn="ims"
        type="ims"
-       protocol="IP"
+       protocol="IPV4V6"
        roaming_protocol="IP"
        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
@@ -39128,6 +39190,8 @@
        mmsproxy="10.12.0.32"
        mmsport="8080"
        type="mms"
+       protocol="IPV4V6"
+       roaming_protocol="IP"
   />
 
   <apn carrier="Etisalat XCAP"
@@ -39135,7 +39199,7 @@
        mnc="02"
        apn="ut"
        type="xcap"
-       protocol="IP"
+       protocol="IPV4V6"
        roaming_protocol="IP"
        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
@@ -40294,7 +40358,7 @@
        apn="uqmobile.jp"
        user="uq@uqmobile.jp"
        password="uq"
-       type="default,mms,supl,hipri,dun"
+       type="default,mms,supl,hipri"
        mmsc="http://mms.ezweb.ne.jp/MMS"
        mmsport="80"
        authtype="2"
@@ -40360,7 +40424,7 @@
        mcc="440"
        mnc="51"
        apn="povo.jp"
-       type="default,mms,supl,hipri,dun"
+       type="default,mms,supl,hipri"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
        mvno_type="gid"
@@ -40660,7 +40724,7 @@
        mcc="440"
        mnc="54"
        apn="povo.jp"
-       type="default,mms,supl,hipri,dun"
+       type="default,mms,supl,hipri"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
        mvno_type="gid"
@@ -48660,6 +48724,8 @@
        mnc="04"
        apn="internet.movistar.cr"
        type="default"
+       user="movistarcr"
+       password="movistarcr"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
        user_editable="false"
@@ -49480,10 +49546,9 @@
        apn="java.claro.com.br"
        user="claro"
        password="claro"
-       type="default,ia,supl,xcap"
+       type="default,ia,supl"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
-       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
   />
 
   <apn carrier="Claro MMS"
@@ -49510,17 +49575,15 @@
        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
 
-  <apn carrier="Claro XCAP(wifi)"
+  <apn carrier="Claro XCAP"
        mcc="724"
        mnc="05"
-       apn="java.claro.com.br"
-       user="claro"
-       password="claro"
+       apn="xcap"
        type="xcap"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
-       network_type_bitmask="18"
        user_visible="false"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
 
   <apn carrier="Vivo Internet"
@@ -50020,10 +50083,9 @@
        apn="java.claro.com.br"
        user="claro"
        password="claro"
-       type="default,ia,supl,xcap"
+       type="default,ia,supl"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
-       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
   />
 
   <apn carrier="Claro MMS"
@@ -50050,17 +50112,15 @@
        network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
 
-  <apn carrier="Claro XCAP(wifi)"
+  <apn carrier="Claro XCAP"
        mcc="724"
        mnc="38"
-       apn="java.claro.com.br"
-       user="claro"
-       password="claro"
+       apn="xcap"
        type="xcap"
        protocol="IPV4V6"
        roaming_protocol="IPV4V6"
-       network_type_bitmask="18"
        user_visible="false"
+       network_type_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20"
   />
 
   <apn carrier="TIM Internet"
