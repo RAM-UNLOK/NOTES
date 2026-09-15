@@ -180,9 +180,9 @@ run_as_user mkdir -p "$CCACHE_USER_DIR"
 
 # FIX 3: Run ccache -M as the actual build user, pointing at their CCACHE_DIR,
 #         so the max_size is written to the correct user's ccache.conf.
-info "Setting ccache max size to 50G for user $ACTUAL_USER …"
-if ! CCACHE_DIR="$CCACHE_USER_DIR" run_as_user ccache -M 50G >> "$LOG_FILE" 2>&1; then
-  error "ccache -M 50G failed. Check $LOG_FILE for details."
+info "Setting ccache max size to 100G for user $ACTUAL_USER …"
+if ! CCACHE_DIR="$CCACHE_USER_DIR" run_as_user ccache -M 100G >> "$LOG_FILE" 2>&1; then
+  error "ccache -M 100G failed. Check $LOG_FILE for details."
   exit 1
 fi
 
@@ -193,8 +193,8 @@ success "ccache configured → $(CCACHE_DIR="$CCACHE_USER_DIR" run_as_user ccach
 info "ccache binary: $(command -v ccache)  version: $(ccache --version | head -1)"
 
 # ── 4b: Git & version control ─────────────────────────────────────────────────
-info "Installing git, git-lfs …"
-apt_install git git-lfs
+info "Installing git, git-core, git-lfs …"
+apt_install git git-core git-lfs
 wait_bar 3 "Git tools"
 success "Git and git-lfs installed."
 
@@ -220,7 +220,7 @@ info "Installing compression & archive libraries …"
 apt_install \
   bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev brotli \
   lz4 lzop liblzma-dev squashfs-tools \
-  p7zip-full 7zip unrar-free sharutils uudeview mpack arj cabextract rename
+  7zip 7zip-rar unrar rar sharutils uudeview mpack arj cabextract rename
 wait_bar 4 "Compression & archive libs"
 success "Compression libraries installed."
 
@@ -258,7 +258,7 @@ apt_install \
   python3-networkx asciidoc xmlto docbook2x \
   libxml-sax-base-perl libxml-simple-perl libswitch-perl \
   maven pwgen minicom \
-  xorg-dev zlib1g-dev gettext
+  xorg-dev zlib1g-dev libz-dev gettext
 wait_bar 4 "Misc build tools"
 success "Misc build tools installed."
 
@@ -289,17 +289,7 @@ success "Android-specific tools installed."
 # ═════════════════════════════════════════════════════════════════════════════
 header "Step 5/9 · KVM / Virtualization Support (Cuttlefish / Emulator)"
 
-# qemu-kvm is a virtual package on Ubuntu 26.04 — auto-detect the real provider
-if apt-cache show qemu-system-x86-hwe &>/dev/null 2>&1; then
-  QEMU_PKG="qemu-system-x86-hwe"
-elif apt-cache show qemu-system-x86 &>/dev/null 2>&1; then
-  QEMU_PKG="qemu-system-x86"
-else
-  error "Neither qemu-system-x86-hwe nor qemu-system-x86 found. Check your apt sources."
-  exit 1
-fi
-info "Using QEMU package: $QEMU_PKG"
-apt_install "$QEMU_PKG" libvirt-daemon-system libvirt-clients bridge-utils cpu-checker virtinst
+apt_install qemu-system-x86 libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 usermod -aG kvm     "$ACTUAL_USER"
 usermod -aG libvirt "$ACTUAL_USER"
 wait_bar 3 "KVM setup"
@@ -317,6 +307,7 @@ info "Installing / updating Flatpak apps from Flathub …"
 flatpak install -y --or-update flathub \
   org.telegram.desktop \
   com.google.Chrome \
+  org.mozilla.firefox \
   com.google.AndroidStudio >> "$LOG_FILE" 2>&1
 flatpak update -y >> "$LOG_FILE" 2>&1
 wait_bar 4 "Flatpak apps"
@@ -340,24 +331,21 @@ fi
 cat >> "$BASHRC_FILE" <<'EOL'
 # --- AOSP ENV START ---
 export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR="${HOME}/.ccache"
-export CCACHE_MAXSIZE=50G          # Correct env var (not CCACHE_SIZE)
+export PATH="/usr/lib/ccache:$PATH"
+export CCACHE_MAXSIZE=100G
 
 # Android SDK / NDK base directories
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
-export NDK_HOME="${ANDROID_HOME}/ndk/30.0.14904198"
+export NDK_HOME="${ANDROID_HOME}/ndk/30.0.16248370"
 
 # PATH – custom bin, platform-tools, cmdline-tools, build-tools, emulator
 export PATH="${HOME}/.bin:${PATH}"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ANDROID_HOME}/platform-tools:${PATH}"
 export PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}"
 export PATH="${ANDROID_HOME}/build-tools/37.0.0:${PATH}"
 export PATH="${ANDROID_HOME}/emulator:${PATH}"
-
-# ccache compiler symlinks (speeds up detection by AOSP build system)
-export PATH="/usr/lib/ccache:$PATH"
 # --- AOSP ENV END ---
 EOL
 
@@ -392,7 +380,7 @@ success "git-repo installed to ~/.bin/repo"
 
 info "Configuring Git identity …"
 run_as_user git config --global user.name  "Omkar Parte"
-run_as_user git config --global user.email "88646966+RAM-UNLOK@users.noreply.github.com"
+run_as_user git config --global user.email "rakmoparte@gmail.com"
 run_as_user git config --global color.ui   true
 success "Git identity configured."
 
@@ -437,7 +425,7 @@ header "Bonus · Apktool Installation"
 INSTALL_DIR="/usr/local/bin"
 APKTOOL_JAR="$INSTALL_DIR/apktool.jar"
 APKTOOL_WRAPPER="$INSTALL_DIR/apktool"
-APKTOOL_VERSION="3.0.2"
+APKTOOL_VERSION="2.12.1"
 APKTOOL_JAR_URL="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_${APKTOOL_VERSION}.jar"
 APKTOOL_WRAPPER_URL="https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool"
 
@@ -483,7 +471,7 @@ echo "   ✔  Universe / Multiverse repos (if selected)"
 echo "   ✔  System packages updated & upgraded"
 echo "   ✔  git-core PPA (latest Git)"
 echo "   ✔  AOSP build dependencies (split into sections with timers)"
-echo "   ✔  ccache → max 50G at $CCACHE_USER_DIR (owned by $ACTUAL_USER)"
+echo "   ✔  ccache → max 100G at $CCACHE_USER_DIR (owned by $ACTUAL_USER)"
 echo "   ✔  KVM / libvirt for Cuttlefish & Android Emulator"
 echo "   ✔  Flatpak – Telegram, Chrome, Android Studio"
 echo "   ✔  AOSP SDK / NDK PATH + CCACHE_MAXSIZE injected into ~/.bashrc"

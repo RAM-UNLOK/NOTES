@@ -123,8 +123,9 @@ The script appends the following block (replacing any previous version):
 ```bash
 # --- AOSP ENV START ---
 export USE_CCACHE=1
-export PATH="/usr/lib/ccache:$PATH"
-export CCACHE_MAXSIZE=50G
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR="${HOME}/.ccache"
+export CCACHE_MAXSIZE=100G
 
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
@@ -135,7 +136,7 @@ export PATH="${ANDROID_HOME}/platform-tools:${PATH}"
 export PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${PATH}"
 export PATH="${ANDROID_HOME}/build-tools/37.0.0:${PATH}"
 export PATH="${ANDROID_HOME}/emulator:${PATH}"
-export PATH="/usr/lib/ccache:${PATH}"   # ← ccache compiler symlinks
+export PATH="/usr/lib/ccache:${PATH}"
 # --- AOSP ENV END ---
 ```
 
