@@ -16,6 +16,7 @@ init_boot/ramdisk/system/etc/init/snapuserd.rc
 init_boot/ramdisk/system/etc/ramdisk/build.prop
 init_boot/ramdisk/init
 init_boot/info.txt
+mi_ext/etc/init/clinetid_rsa_terr_gio3_1234.rc
 mi_ext/etc/init/init.miui.google_revenue_share_v4_tier2.rc
 mi_ext/etc/init/init.miui.mi_ext.rc
 mi_ext/etc/NOTICE.xml.gz

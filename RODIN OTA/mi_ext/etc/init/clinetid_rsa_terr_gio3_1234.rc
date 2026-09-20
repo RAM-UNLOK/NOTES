@@ -1,0 +1,4 @@
+
+# Use the default value for new product.
+on property:ro.miui.customized_clientid=2
+    setprop ro.com.google.clientidbase.pg3 android-xiaomi-terr1-gio3x1234
