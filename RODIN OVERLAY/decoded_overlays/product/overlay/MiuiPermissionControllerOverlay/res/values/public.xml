@@ -31,33 +31,33 @@
     <public type="style" name="MIUIPermissionGrantButton" id="0x7f040000" />
     <public type="style" name="MIUIPermissionGrantButtonAllow" id="0x7f040001" />
     <public type="style" name="MIUIPermissionGrantButtonAllowAll" id="0x7f040002" />
-    <public type="style" name="MIUIPermissionGrantButtonAllowAllMaterial3" id="0x7f040003" />
     <public type="style" name="MIUIPermissionGrantButtonAllowForeground" id="0x7f040004" />
-    <public type="style" name="MIUIPermissionGrantButtonAllowForegroundMaterial3" id="0x7f040005" />
-    <public type="style" name="MIUIPermissionGrantButtonAllowMaterial3" id="0x7f040006" />
     <public type="style" name="MIUIPermissionGrantButtonAllowOneTime" id="0x7f040007" />
-    <public type="style" name="MIUIPermissionGrantButtonAllowOneTimeMaterial3" id="0x7f040008" />
     <public type="style" name="MIUIPermissionGrantButtonAllowSelected" id="0x7f040009" />
-    <public type="style" name="MIUIPermissionGrantButtonAllowSelectedMaterial3" id="0x7f04000a" />
-    <public type="style" name="MIUIPermissionGrantButtonBottom" id="0x7f04000b" />
     <public type="style" name="MIUIPermissionGrantButtonDeny" id="0x7f04000c" />
-    <public type="style" name="MIUIPermissionGrantButtonDenyMaterial3" id="0x7f04000d" />
     <public type="style" name="MIUIPermissionGrantButtonDontAllowMore" id="0x7f04000e" />
-    <public type="style" name="MIUIPermissionGrantButtonDontAllowMoreMaterial3" id="0x7f04000f" />
-    <public type="style" name="MIUIPermissionGrantButtonMiddle" id="0x7f040010" />
     <public type="style" name="MIUIPermissionGrantButtonNoUpgrade" id="0x7f040011" />
-    <public type="style" name="MIUIPermissionGrantButtonNoUpgradeMaterial3" id="0x7f040012" />
-    <public type="style" name="MIUIPermissionGrantButtonTop" id="0x7f040013" />
     <public type="style" name="MIUIPermissionGrantContent" id="0x7f040014" />
     <public type="style" name="MIUIPermissionGrantDialog" id="0x7f040015" />
-    <public type="style" name="MIUIPermissionGrantDialogMaterial3" id="0x7f040016" />
     <public type="style" name="MIUIPermissionGrantPermissionRationaleContent" id="0x7f040017" />
     <public type="style" name="MIUIPermissionGrantPermissionRationaleIcon" id="0x7f040018" />
     <public type="style" name="MIUIPermissionGrantPermissionRationaleMessage" id="0x7f040019" />
     <public type="style" name="MIUIPermissionGrantPermissionRationaleMoreInfoIcon" id="0x7f04001a" />
     <public type="style" name="MIUIPermissionGrantSingleton" id="0x7f04001b" />
     <public type="style" name="MIUIPermissionGrantTitleIcon" id="0x7f04001c" />
-    <public type="style" name="MIUIPermissionGrantTitleIconMaterial3" id="0x7f04001d" />
     <public type="style" name="MIUIPermissionGrantTitleMessage" id="0x7f04001e" />
+    <public type="style" name="MIUIPermissionGrantButtonAllowAllMaterial3" id="0x7f040003" />
+    <public type="style" name="MIUIPermissionGrantButtonAllowForegroundMaterial3" id="0x7f040005" />
+    <public type="style" name="MIUIPermissionGrantButtonAllowMaterial3" id="0x7f040006" />
+    <public type="style" name="MIUIPermissionGrantButtonAllowOneTimeMaterial3" id="0x7f040008" />
+    <public type="style" name="MIUIPermissionGrantButtonAllowSelectedMaterial3" id="0x7f04000a" />
+    <public type="style" name="MIUIPermissionGrantButtonBottom" id="0x7f04000b" />
+    <public type="style" name="MIUIPermissionGrantButtonDenyMaterial3" id="0x7f04000d" />
+    <public type="style" name="MIUIPermissionGrantButtonDontAllowMoreMaterial3" id="0x7f04000f" />
+    <public type="style" name="MIUIPermissionGrantButtonMiddle" id="0x7f040010" />
+    <public type="style" name="MIUIPermissionGrantButtonNoUpgradeMaterial3" id="0x7f040012" />
+    <public type="style" name="MIUIPermissionGrantButtonTop" id="0x7f040013" />
+    <public type="style" name="MIUIPermissionGrantDialogMaterial3" id="0x7f040016" />
+    <public type="style" name="MIUIPermissionGrantTitleIconMaterial3" id="0x7f04001d" />
     <public type="xml" name="overlays" id="0x7f050000" />
 </resources>
