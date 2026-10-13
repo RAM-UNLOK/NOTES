@@ -15,12 +15,6 @@
         <bool name="support_special_sim_do_action">true</bool>
         <bool name="is_modem_volte_enabled">true</bool>
         <bool name="config_drop_fg_call_devices">true</bool>
-        <string-array name="config_double_hand_app">
-            <item>com.tencent.tmgp.sgame</item>
-            <item>com.miHoYo.Yuanshen</item>
-            <item>com.tencent.tmgp.pubgmhd</item>
-        </string-array>
-        <integer name="vowifi_ims_prefer_mode_value">4</integer>
         <string-array name="sar_scan_code_white_list_activity">
             <item>com.xiaomi.scanner.app.ScanActivity</item>
             <item>com.tencent.mm.plugin.scanner.ui.BaseScanUI</item>
@@ -30,6 +24,7 @@
             <item>com.etao.feimagesearch.capture.CaptureActivity</item>
             <item>com.tencent.mobileqq.qrscan.activity.ScannerActivity</item>
             <item>com.tencent.mobileqq.olympic.activity.ScanTorchActivity</item>
+            <item>com.tencent.mobileqq.olympic.activity.QQScanActivity</item>
             <item>com.bytedance.mira.stub.p0.StubSingleTaskActivity1</item>
             <item>com.yxcorp.plugin.qrcode.api.QRCodeScanActivity</item>
             <item>com.meituan.android.scan.NewArActivity</item>
@@ -48,6 +43,12 @@
             <item>com.baidu.tieba.qrcode.activity.QRCodeScanActivity</item>
             <item>com.baidu.tieba.sdkcode.scan.ScanActivity</item>
         </string-array>
+        <string-array name="config_double_hand_app">
+            <item>com.tencent.tmgp.sgame</item>
+            <item>com.miHoYo.Yuanshen</item>
+            <item>com.tencent.tmgp.pubgmhd</item>
+        </string-array>
+        <integer name="vowifi_ims_prefer_mode_value">4</integer>
         <string-array name="is_always_set_nitz_name_mtk">
             <item>62124</item>
             <item>41406</item>
@@ -108,6 +109,28 @@
             <item>-123</item>
             <item>-121</item>
         </integer-array>
+        <string-array name="benchmark_restrict_apps">
+            <item>com.primatelabs.geekbench6</item>
+            <item>com.futuremark.dmandroid.application</item>
+            <item>org.benchmark.demo</item>
+            <item>org.zwanoo.android.speedtest</item>
+            <item>com.syyh.deviceinfo</item>
+            <item>com.shuaiyin.sodapro</item>
+            <item>com.godhitech.speedtest</item>
+            <item>com.fftools.speedtest.internet</item>
+            <item>com.vtool.speedtest.speedcheck.internet</item>
+            <item>com.internet.speedtest.check.wifi.meter</item>
+            <item>com.newgenerationhub.speedtest.meter.wifi.coverage.speed.test</item>
+            <item>com.topzonestudio.internet.speed.test.meter.speedx</item>
+            <item>mobi.freeapp.internet.speed.test</item>
+            <item>com.dev.speedtest.internet</item>
+            <item>speed.test.speedcheck.speedtest</item>
+            <item>com.runtime.fast.speedtest</item>
+            <item>com.sr.cewangsu</item>
+            <item>com.galaxy.internet.speed.test</item>
+            <item>com.gallaoui.speedtest</item>
+            <item>com.atlasv.android.speedtest.lite</item>
+        </string-array>
         <bool name="config_need_support_lock_global">true</bool>
         <bool name="config_need_support_lock">true</bool>
         <string-array name="config_firewall_white_list">

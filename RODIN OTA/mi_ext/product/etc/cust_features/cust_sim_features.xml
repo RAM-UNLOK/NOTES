@@ -197,7 +197,6 @@
         </map>
         <bool name="config_show_mms_data_icon">true</bool>
         <bool name="wifi_call_help_view_france">true</bool>
-        <bool name="display_network_title">false</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="12">5G</item>
         </map>
@@ -264,6 +263,7 @@
         <string name="spn_override_name">Safaricom</string>
     </cust_feature>
     <cust_feature mcc="460" mnc="01">
+        <bool name="support_video_background_call">true</bool>
         <string name="spn_override_name">CHN-UNICOM</string>
     </cust_feature>
     <cust_feature mcc="734" mnc="06">
@@ -388,7 +388,7 @@
         <string name="spn_override_name">Zain KSA</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="30">
-        <string name="spn_override_name">AT&amp;amp;T</string>
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="645" mnc="01">
         <string name="spn_override_name">Airtel</string>
@@ -519,6 +519,9 @@
         <string name="spn_override_name">USA Proximiti</string>
     </cust_feature>
     <cust_feature mcc="268" mnc="06">
+        <map name="config_data_type_name_mcc_mnc">
+            <item name="12">5G</item>
+        </map>
         <string name="spn_override_name">MEO</string>
         <bool name="empty_initial_attach_apn">true</bool>
         <bool name="config_statusbar_hide_volte">true</bool>
@@ -730,6 +733,7 @@
         </map>
     </cust_feature>
     <cust_feature mcc="454" mnc="30">
+        <bool name="is_only_show_plmn">true</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="12">5G</item>
         </map>
@@ -834,7 +838,7 @@
         <string name="spn_override_name">CUBACEL</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="150">
-        <string name="spn_override_name">AT&amp;amp;T</string>
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="404" mnc="93">
         <string name="spn_override_name">IND airtel</string>
@@ -1053,6 +1057,9 @@
     <cust_feature mcc="404" mnc="82">
         <string name="spn_override_name">IDEA</string>
     </cust_feature>
+    <cust_feature mcc="334" mnc="240">
+        <string name="spn_override_name">Movistar</string>
+    </cust_feature>
     <cust_feature mcc="608" mnc="02">
         <string name="spn_override_name">SN-SENTEL SG</string>
     </cust_feature>
@@ -1146,9 +1153,6 @@
     </cust_feature>
     <cust_feature mcc="638" mnc="01">
         <string name="spn_override_name">DJ EVATIS</string>
-    </cust_feature>
-    <cust_feature mcc="208" mnc="26">
-        <bool name="display_network_title">false</bool>
     </cust_feature>
     <cust_feature mcc="212" mnc="01">
         <string name="spn_override_name">vala</string>
@@ -1469,9 +1473,6 @@
     <cust_feature mcc="640" mnc="05">
         <string name="spn_override_name">Airtel</string>
     </cust_feature>
-    <cust_feature mcc="730" mnc="08">
-        <string name="spn_override_name">CHL VTR</string>
-    </cust_feature>
     <cust_feature mcc="226" mnc="15">
         <string name="spn_override_name">RO 2K Telecom</string>
     </cust_feature>
@@ -1499,13 +1500,14 @@
     <cust_feature mcc="405" mnc="882">
         <string name="spn_override_name">Reliance</string>
     </cust_feature>
-    <cust_feature mcc="310" mnc="560">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="437" mnc="09">
         <string name="spn_override_name">O!</string>
     </cust_feature>
+    <cust_feature mcc="310" mnc="560">
+        <string name="spn_override_name">AT&amp;T</string>
+    </cust_feature>
     <cust_feature mcc="460" mnc="09">
+        <bool name="support_video_background_call">true</bool>
         <string name="spn_override_name">CHN-UNICOM</string>
     </cust_feature>
     <cust_feature mcc="404" mnc="31">
@@ -1676,14 +1678,14 @@
     <cust_feature mcc="414" mnc="01">
         <string name="spn_override_name">MPT</string>
     </cust_feature>
-    <cust_feature mcc="334" mnc="50">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="641" mnc="14">
         <string name="spn_override_name">Africell Uganda</string>
     </cust_feature>
     <cust_feature mcc="510" mnc="21">
         <string name="spn_override_name">INDOSAT</string>
+    </cust_feature>
+    <cust_feature mcc="334" mnc="50">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="520" mnc="47">
         <string name="spn_override_name">True-T</string>
@@ -1767,7 +1769,7 @@
         <string name="spn_override_name">Orange SN</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="680">
-        <string name="spn_override_name">AT&amp;amp;T</string>
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="231" mnc="02">
         <string-array name="preferred_network_type_list">
@@ -2027,9 +2029,6 @@
     <cust_feature mcc="311" mnc="080">
         <string name="spn_override_name">Pine Cellular</string>
     </cust_feature>
-    <cust_feature mcc="310" mnc="090">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="214" mnc="07">
         <bool name="is_call_barring_no_need_password">true</bool>
         <string name="spn_override_name">Movistar</string>
@@ -2040,6 +2039,9 @@
             <item name="12">5G</item>
         </map>
         <bool name="config_statusbar_hide_volte">true</bool>
+    </cust_feature>
+    <cust_feature mcc="310" mnc="090">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="218" mnc="05">
         <string name="spn_override_name">m:tel</string>
@@ -2178,15 +2180,6 @@
     <cust_feature mcc="310" mnc="290">
         <string name="spn_override_name">NEP Wireless</string>
     </cust_feature>
-    <cust_feature mcc="334" mnc="050">
-        <string name="config_customized_wifi_fqdn">attmexwifi.com</string>
-        <string name="config_customized_wifi_realmName">wlan.mnc050.mcc334.3gppnetwork.org</string>
-        <string name="config_customized_wifi_provider_friendly_name">AT&amp;T MX Wi-Fi</string>
-        <integer name="config_operator_wifi_eap_constants">23</integer>
-        <string name="spn_override_name">AT&amp;amp;T</string>
-        <bool name="config_support_wifi_customization">true</bool>
-        <bool name="show_wifi_calling_first_avaliable_dialog">true</bool>
-    </cust_feature>
     <cust_feature mcc="450" mnc="06">
         <string-array name="preferred_network_type_list">
             <item>33,preferred_network_type_pref_entries_5g_preferred</item>
@@ -2208,6 +2201,16 @@
             <item name="9">LTE</item>
         </map>
     </cust_feature>
+    <cust_feature mcc="334" mnc="050">
+        <bool name="config_show_2g_protection_switch">true</bool>
+        <string name="spn_override_name">AT&amp;T</string>
+        <string name="config_customized_wifi_fqdn">attmexwifi.com</string>
+        <string name="config_customized_wifi_realmName">wlan.mnc050.mcc334.3gppnetwork.org</string>
+        <string name="config_customized_wifi_provider_friendly_name">AT&amp;T MX Wi-Fi</string>
+        <integer name="config_operator_wifi_eap_constants">23</integer>
+        <bool name="config_support_wifi_customization">true</bool>
+        <bool name="show_wifi_calling_first_avaliable_dialog">true</bool>
+    </cust_feature>
     <cust_feature mcc="404" mnc="12">
         <string name="spn_override_name">IDEA</string>
     </cust_feature>
@@ -2224,6 +2227,7 @@
         <string name="spn_override_name">Algar Telecom</string>
     </cust_feature>
     <cust_feature mcc="460" mnc="06">
+        <bool name="support_video_background_call">true</bool>
         <string name="spn_override_name">China Unicom</string>
     </cust_feature>
     <cust_feature mcc="405" mnc="863">
@@ -2267,11 +2271,11 @@
     <cust_feature mcc="308" mnc="01">
         <string name="spn_override_name">SPM AMERIS</string>
     </cust_feature>
-    <cust_feature mcc="311" mnc="180">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="310" mnc="190">
         <string name="spn_override_name">USA Dutch Harbor</string>
+    </cust_feature>
+    <cust_feature mcc="311" mnc="180">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="432">
         <map name="config_data_type_name_mcc">
@@ -2324,7 +2328,7 @@
         <string name="spn_override_name">RUS15, RUS SMARTS</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="030">
-        <string name="spn_override_name">AT&amp;amp;T</string>
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="525" mnc="08">
         <string name="spn_override_name">StarHub</string>
@@ -2337,13 +2341,12 @@
     <cust_feature mcc="288" mnc="01">
         <string name="spn_override_name">Foroya Tele</string>
     </cust_feature>
-    <cust_feature mcc="647" mnc="01">
-        <string name="spn_override_name">MAORE MOBILE</string>
-    </cust_feature>
     <cust_feature mcc="206" mnc="01">
-        <bool name="display_network_title">false</bool>
         <string name="spn_override_name">Proximus</string>
         <bool name="empty_initial_attach_apn">true</bool>
+    </cust_feature>
+    <cust_feature mcc="647" mnc="01">
+        <string name="spn_override_name">MAORE MOBILE</string>
     </cust_feature>
     <cust_feature mcc="652" mnc="02">
         <string name="spn_override_name">Orange</string>
@@ -2562,6 +2565,7 @@
         </map>
     </cust_feature>
     <cust_feature mcc="454" mnc="383">
+        <bool name="is_only_show_plmn">true</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="12">5G</item>
         </map>
@@ -3061,9 +3065,6 @@
             <item name="12">5G++</item>
         </map>
     </cust_feature>
-    <cust_feature mcc="310" mnc="170">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="450" mnc="08">
         <string-array name="preferred_network_type_list">
             <item>33,preferred_network_type_pref_entries_5g_preferred</item>
@@ -3084,6 +3085,9 @@
             <item name="7">LTE</item>
             <item name="9">LTE</item>
         </map>
+    </cust_feature>
+    <cust_feature mcc="310" mnc="170">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="730" mnc="09">
         <map name="manual_network_spn_rule">
@@ -3133,10 +3137,6 @@
             <item>33,preferred_network_type_pref_entries_5g_preferred_dtag</item>
             <item>9,preferred_network_type_pref_entries_4g_preferred_dtag</item>
         </string-array>
-        <string name="spn_override_name">COSMOTE</string>
-        <map name="manual_network_spn_rule">
-            <item name="20201">3,COSMOTE</item>
-        </map>
         <string name="config_wfc_display_spn_name">COSMOTE WiFi Calling</string>
         <integer name="config_operator_wifi_eap_method">5</integer>
         <string name="config_customized_wifi_ssid">COSMOTEWiFiAuto</string>
@@ -3170,7 +3170,7 @@
         <string name="spn_override_name">SWAN SK</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="070">
-        <string name="spn_override_name">AT&amp;amp;T</string>
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="278" mnc="77">
         <string name="spn_override_name">Melita Mobile</string>
@@ -3365,11 +3365,11 @@
     <cust_feature mcc="250" mnc="37">
         <string name="spn_override_name">KODOTEL</string>
     </cust_feature>
-    <cust_feature mcc="334" mnc="90">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="338" mnc="50">
         <string name="spn_override_name">DIGICEL</string>
+    </cust_feature>
+    <cust_feature mcc="334" mnc="90">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="311" mnc="30">
         <string name="spn_override_name">Indigo</string>
@@ -3418,11 +3418,11 @@
     <cust_feature mcc="311" mnc="370">
         <string name="spn_override_name">GCI</string>
     </cust_feature>
-    <cust_feature mcc="310" mnc="380">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="405" mnc="853">
         <string name="spn_override_name">IDEA</string>
+    </cust_feature>
+    <cust_feature mcc="310" mnc="380">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="344" mnc="30">
         <string name="spn_override_name">APUA imobile</string>
@@ -3442,7 +3442,6 @@
     </cust_feature>
     <cust_feature mcc="502" mnc="12">
         <string name="spn_override_name">MY MAXIS</string>
-        <bool name="is_only_show_plmn">true</bool>
     </cust_feature>
     <cust_feature mcc="467" mnc="05">
         <string name="spn_override_name">Koryolink</string>
@@ -3544,6 +3543,7 @@
         <string name="spn_override_name">CT Macao</string>
     </cust_feature>
     <cust_feature mcc="454" mnc="12">
+        <bool name="is_only_show_plmn">true</bool>
         <map name="config_data_type_name_mcc_mnc">
             <item name="12">5G</item>
         </map>
@@ -3682,6 +3682,9 @@
             <item>2,preferred_network_type_pref_entries_only_3g</item>
             <item>1,preferred_network_type_pref_entries_only_2g</item>
         </string-array>
+        <map name="config_data_type_name_mcc_mnc">
+            <item name="12">5G</item>
+        </map>
         <string name="spn_override_name">F SFR</string>
         <bool name="empty_initial_attach_apn">true</bool>
         <bool name="config_statusbar_hide_volte">true</bool>
@@ -3890,11 +3893,12 @@
         <string name="spn_override_name">Digicel</string>
     </cust_feature>
     <cust_feature mcc="334" mnc="090">
+        <bool name="config_show_2g_protection_switch">true</bool>
+        <string name="spn_override_name">AT&amp;T</string>
         <string name="config_customized_wifi_fqdn">attmexwifi.com</string>
         <string name="config_customized_wifi_realmName">wlan.mnc050.mcc334.3gppnetwork.org</string>
         <string name="config_customized_wifi_provider_friendly_name">AT&amp;T MX Wi-Fi</string>
         <integer name="config_operator_wifi_eap_constants">23</integer>
-        <string name="spn_override_name">AT&amp;amp;T</string>
         <bool name="config_support_wifi_customization">true</bool>
         <bool name="config_prefer_2g_bool">false</bool>
         <bool name="show_wifi_calling_first_avaliable_dialog">true</bool>
@@ -3931,11 +3935,11 @@
     <cust_feature mcc="312" mnc="260">
         <string name="spn_override_name">USACL</string>
     </cust_feature>
-    <cust_feature mcc="310" mnc="280">
-        <string name="spn_override_name">AT&amp;amp;T</string>
-    </cust_feature>
     <cust_feature mcc="311" mnc="270">
         <string name="spn_override_name">Verizon</string>
+    </cust_feature>
+    <cust_feature mcc="310" mnc="280">
+        <string name="spn_override_name">AT&amp;T</string>
     </cust_feature>
     <cust_feature mcc="352" mnc="30">
         <string name="spn_override_name">DIGICEL</string>
@@ -4078,6 +4082,7 @@
         <string name="spn_override_name">VIDEOCON</string>
     </cust_feature>
     <cust_feature mcc="460" mnc="02">
+        <bool name="support_fdn_data_enable">true</bool>
         <string name="spn_override_name">CHINA MOBILE</string>
     </cust_feature>
     <cust_feature mcc="614" mnc="04">
@@ -4213,14 +4218,16 @@
         </map>
     </cust_feature>
     <cust_feature mcc="286" mnc="01">
-        <bool name="remove_network_mode_all_device">false</bool>
-        <bool name="unuse_voice_class_for_cb">true</bool>
-        <string name="spn_override_name">TR TURKCELL</string>
+        <integer name="config_status_bar_volte_drawable_type">6</integer>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">4.5G</item>
             <item name="7">4.5G</item>
             <item name="9">4.5G</item>
+            <item name="12">5G</item>
         </map>
+        <bool name="remove_network_mode_all_device">false</bool>
+        <bool name="unuse_voice_class_for_cb">true</bool>
+        <string name="spn_override_name">TR TURKCELL</string>
         <bool name="config_status_bar_hide_national_roaming">true</bool>
     </cust_feature>
     <cust_feature mcc="730" mnc="02">
@@ -4332,6 +4339,9 @@
         <string name="spn_override_name">FLOW</string>
     </cust_feature>
     <cust_feature mcc="515" mnc="02">
+        <map name="manual_network_title_rule">
+            <item name="51501">2,G Starlink</item>
+        </map>
         <string name="spn_override_name">GLOBE</string>
     </cust_feature>
     <cust_feature mcc="460" mnc="00">
@@ -4691,17 +4701,20 @@
     <cust_feature mcc="603" mnc="01">
         <string name="spn_override_name">ALG Mobilis</string>
     </cust_feature>
+    <cust_feature mcc="405" mnc="821">
+        <string name="spn_override_name">IN UNITECH</string>
+    </cust_feature>
     <cust_feature mcc="286" mnc="03">
-        <string name="spn_override_name">Turk Telekom</string>
+        <integer name="config_status_bar_volte_drawable_type">7</integer>
         <map name="config_data_type_name_mcc_mnc">
             <item name="6">4.5G</item>
             <item name="7">4.5G</item>
             <item name="9">4.5G</item>
+            <item name="10">5G+</item>
+            <item name="11">5G+</item>
         </map>
+        <string name="spn_override_name">Turk Telekom</string>
         <bool name="config_status_bar_hide_national_roaming">true</bool>
-    </cust_feature>
-    <cust_feature mcc="405" mnc="821">
-        <string name="spn_override_name">IN UNITECH</string>
     </cust_feature>
     <cust_feature mcc="250" mnc="27">
         <string name="spn_override_name">LETAI</string>
@@ -4872,11 +4885,11 @@
         <string name="spn_override_name">TATA INDICOM</string>
     </cust_feature>
     <cust_feature mcc="310" mnc="410">
+        <string name="spn_override_name">AT&amp;T</string>
         <string name="config_customized_wifi_fqdn">attwifi.com</string>
         <string name="config_customized_wifi_realmName">wlan.mnc410.mcc310.3gppnetwork.org</string>
         <string name="config_customized_wifi_provider_friendly_name">AT&amp;T MX Wi-Fi</string>
         <integer name="config_operator_wifi_eap_constants">23</integer>
-        <string name="spn_override_name">AT&amp;amp;T</string>
         <bool name="config_support_wifi_customization">true</bool>
     </cust_feature>
     <cust_feature mcc="404" mnc="78">
@@ -4941,6 +4954,7 @@
         </map>
     </cust_feature>
     <cust_feature gid1="4E524A31" mcc="208" mnc="01">
+        <bool name="display_network_title">false</bool>
         <bool name="is_match_customized_mvno">true</bool>
         <bool name="spn_no_need_override">true</bool>
         <map name="plmn_network_display_rule">
@@ -4951,6 +4965,7 @@
         <string name="config_wfc_display_spn_name"> </string>
     </cust_feature>
     <cust_feature gid1="4E524A31" mcc="206" mnc="01">
+        <bool name="display_network_title">false</bool>
         <bool name="is_match_customized_mvno">true</bool>
         <bool name="spn_no_need_override">true</bool>
         <map name="plmn_network_display_rule">
@@ -4961,6 +4976,7 @@
         <bool name="show_choose_apn_dialog">false</bool>
     </cust_feature>
     <cust_feature gid1="4E524A31" mcc="208" mnc="26">
+        <bool name="display_network_title">false</bool>
         <bool name="is_match_customized_mvno">true</bool>
         <bool name="spn_no_need_override">true</bool>
         <map name="plmn_network_display_rule">

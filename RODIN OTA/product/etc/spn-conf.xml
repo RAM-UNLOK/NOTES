@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <spnOverrides version="1">
-    <spnOverride numeric="20201" spn="COSMOTE"/>
     <spnOverride numeric="20205" spn="vodafone GR"/>
     <spnOverride numeric="20209" spn="NOVA"/>
     <spnOverride numeric="20210" spn="NOVA"/>
