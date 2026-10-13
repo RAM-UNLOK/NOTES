@@ -1,6 +1,7 @@
 # ============================================================
 # File: base_typeattr.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -12,34 +13,34 @@
 neverallow base_typeattr_224 vendor_mi_32bit_prop:property_service set;
 
 # --- base_typeattr_225 ---
-neverallow base_typeattr_225 vendor_mtk_applist_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ccci2_fsd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ccci2_rpcd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ccci3_fsd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ccci_fsd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ccci_rpcd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_fusion_ril_mtk_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_gsm0710muxd_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_muxreport-daemon_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ril-daemon-mtk_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_ril-proxy_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_ctl_viarild_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_eara_io_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_factory_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_factory_start_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_mdl_coll_restart_type_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_powerhal_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_rpmb_ready_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_mtk_wfc_serv_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_nfc_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_strongbox_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_system_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_trustonic_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_225 vendor_wifi_version:file { create_file_perms link relabelfrom };
+neverallow base_typeattr_225 vendor_mtk_applist_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ccci2_fsd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ccci2_rpcd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ccci3_fsd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ccci_fsd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ccci_rpcd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_fusion_ril_mtk_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_gsm0710muxd_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_muxreport-daemon_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ril-daemon-mtk_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_ril-proxy_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_ctl_viarild_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_eara_io_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_factory_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_factory_start_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_mdl_coll_restart_type_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_powerhal_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_rpmb_ready_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_mtk_wfc_serv_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_nfc_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_strongbox_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_system_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_trustonic_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_225 vendor_wifi_version:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- base_typeattr_226 ---
-neverallow base_typeattr_226 vendor_miface_debug_prop:file { create_file_perms link relabelfrom };
-neverallow base_typeattr_226 virtual_face_hal_prop:file { create_file_perms link relabelfrom };
+neverallow base_typeattr_226 vendor_miface_debug_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+neverallow base_typeattr_226 virtual_face_hal_prop:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- base_typeattr_227 ---
 neverallow base_typeattr_227 vendor_miface_debug_prop:property_service set;
@@ -689,13 +690,13 @@ neverallow base_typeattr_353 tsa_hal_hdcp_service:service_manager add;
 neverallow base_typeattr_354 tsa_hal_hdcp_service:service_manager find;
 
 # --- base_typeattr_355 ---
-neverallow base_typeattr_355 mobicore_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
+neverallow base_typeattr_355 mobicore_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- base_typeattr_356 ---
-neverallow base_typeattr_356 base_typeattr_355:file { create_file_perms link relabelfrom };
+neverallow base_typeattr_356 base_typeattr_355:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- base_typeattr_357 ---
-neverallow base_typeattr_357 mobicore_app:file { create_file_perms link relabelfrom };
+neverallow base_typeattr_357 mobicore_app:file { append create ioctl link lock open read relabelfrom rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- base_typeattr_358 ---
 neverallow base_typeattr_358 mobicore_app:process ptrace;

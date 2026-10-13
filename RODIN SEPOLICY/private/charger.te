@@ -1,6 +1,7 @@
 # ============================================================
 # File: charger.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Battery & Charging
@@ -11,7 +12,6 @@
 # --- charger ---
 typeattribute charger coredomain;
 typeattribute charger domain;
-typeattribute charger halclientdomain;
 
 hal_client_domain(charger, hal_health)
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediaswcodec.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -17,7 +18,7 @@ allow mediaswcodec dri_device:chr_file rw_file_perms;
 allow mediaswcodec gpu_device:chr_file rw_file_perms;
 allow mediaswcodec gpu_device:dir rw_dir_perms;
 allow mediaswcodec proc_ged:file rw_file_perms;
-allowxperm mediaswcodec proc_ged:file ioctl { (range 0x6700 0x6711) (range 0x6764 0x676b) 0x67c8 };
+allowxperm mediaswcodec proc_ged:file ioctl { 0x6700-0x6711 0x6764-0x676b 0x67c8 };
 
 # --- mediaswcodec_exec ---
 typeattribute mediaswcodec_exec exec_type;

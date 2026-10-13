@@ -1,6 +1,7 @@
 # ============================================================
 # File: shell.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -9,13 +10,12 @@
 # ============================================================
 
 # --- shell ---
+typeattribute shell appdomain;
 typeattribute shell coredomain;
 typeattribute shell domain;
 typeattribute shell halclientdomain;
 typeattribute shell mlstrustedsubject;
 
-app_domain(shell)
-binder_call(shell, logturbo)
 get_prop(shell, deviceid_prop)
 get_prop(shell, miui_deviceid_prop)
 get_prop(shell, sno_prop)
@@ -28,28 +28,27 @@ get_prop(shell, vendor_factoryid_prop)
 get_prop(shell, vendor_initprop_bin_prop)
 get_prop(shell, vendor_wifimac_prop)
 net_domain(shell)
-allow shell auto_test_file:dir { write remove_name search };
-allow shell auto_test_file:file { rw_file_perms unlink };
-allow shell crash_dump_exec:file { rx_file_perms entrypoint };
+allow shell auto_test_file:dir { remove_name search write };
+allow shell auto_test_file:file { getattr open read unlink write };
+allow shell crash_dump_exec:file { entrypoint execute getattr map open read };
 allow shell data_log_stability_file:dir search;
 allow shell debuglog_data_file:dir r_dir_perms;
-allow shell debuglog_data_file:file r_file_perms;
-allow shell debuglog_data_file:lnk_file r_file_perms;
+allow shell debuglog_data_file:{ file lnk_file } r_file_perms;
+allow shell logturbo:binder call;
 allow shell logturbo_service:service_manager find;
-allow shell mcd:process transition;
-allow shell mcd:process { siginh rlimitinh };
-allow shell mcd_exec:file rx_file_perms;
-allow shell miui_coredump_file:dir { write add_name search };
-allow shell miui_coredump_file:file create_file_perms;
-allow shell miui_hprof_file:dir { write getattr setattr add_name search };
-allow shell miui_hprof_file:file create_file_perms;
+allow shell mcd:process { rlimitinh siginh transition };
+allow shell mcd_exec:file { execute getattr map open read };
+allow shell miui_coredump_file:dir { add_name search write };
+allow shell miui_coredump_file:file { create open read write };
+allow shell miui_hprof_file:dir { add_name getattr search setattr write };
+allow shell miui_hprof_file:file { create getattr open read setattr write };
 allow shell miui_native_file:dir search;
-allow shell perfetto_traces_data_file:dir { read create setattr add_name };
+allow shell perfetto_traces_data_file:dir { add_name create read setattr };
 allow shell perfetto_traces_data_file:file { create_file_perms relabelfrom };
 allow shell shelld:fifo_file rw_file_perms;
 allow shell sysfs_rtmm:dir search;
 allow shell trace_data_file:dir add_name;
-allow shell trace_data_file:file { write create setattr relabelfrom relabelto };
+allow shell trace_data_file:file { create relabelfrom relabelto setattr write };
 dontaudit shell fs_sys_miui:dir r_dir_perms;
 dontaudit shell mcd:process noatsecure;
 type_transition shell mcd_exec:process mcd;

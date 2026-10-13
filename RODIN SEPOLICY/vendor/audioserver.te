@@ -1,6 +1,7 @@
 # ============================================================
 # File: audioserver.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Audio HAL
@@ -10,9 +11,7 @@
 
 # --- audioserver ---
 typeattribute audioserver domain;
-typeattribute audioserver halclientdomain;
 
-binder_call(audioserver, hal_mediaeventgatherservice)
 binder_call(audioserver, hal_mediaeventgatherservice_service)
 binder_call(audioserver, vtservice)
 binder_use(audioserver)
@@ -22,11 +21,12 @@ hal_client_domain(audioserver, hal_mediaeventgatherservice)
 hal_client_domain(audioserver, hal_mtk_audio)
 hal_client_domain(audioserver, hal_mtk_power)
 hal_client_domain(audioserver, hal_power)
-set_prop(audioserver, audio_prop)
 allow audioserver adsp_device:chr_file rw_file_perms;
 allow audioserver ancservice_device:chr_file rw_file_perms;
+allow audioserver audio_prop:property_service set;
 allow audioserver crash_dump:unix_stream_socket connectto;
 allow audioserver fuse:file w_file_perms;
+allow audioserver hal_mediaeventgatherservice:binder call;
 allow audioserver hal_mediaeventgatherservice_service:service_manager find;
 allow audioserver offloadservice_device:chr_file rw_file_perms;
 allow audioserver proc_ged:file rw_file_perms;

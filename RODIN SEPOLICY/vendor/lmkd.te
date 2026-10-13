@@ -1,6 +1,7 @@
 # ============================================================
 # File: lmkd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -10,7 +11,6 @@
 
 # --- lmkd ---
 typeattribute lmkd domain;
-typeattribute lmkd halclientdomain;
 typeattribute lmkd mlstrustedsubject;
 
 get_prop(lmkd, vendor_mtk_mbrain_prop)
@@ -18,7 +18,7 @@ get_prop(lmkd, vendor_mtk_mbrain_support_prop)
 hal_client_domain(lmkd, hal_mtk_mbrain)
 hal_client_domain(lmkd, hal_mtk_power)
 hal_client_domain(lmkd, hal_power)
-allow lmkd camlog_device:chr_file rw_file_perms;
+allow lmkd camlog_device:chr_file { ioctl open read write };
 allow lmkd system_server:unix_stream_socket connectto;
 dontaudit lmkd platform_app:fd use;
 dontaudit lmkd zygote:dir rw_dir_perms;

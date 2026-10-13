@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_nvramagent.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Storage & Memory
 # Subcategory: NVRAM & Calibration
@@ -10,14 +11,16 @@
 
 # --- hal_mtk_nvramagent_client ---
 binder_call(hal_mtk_nvramagent_client, hal_mtk_nvramagent_server)
-binder_use(hal_mtk_nvramagent_client)
 allow hal_mtk_nvramagent_client mtk_hal_nvramagent_hwservice:hwservice_manager find;
 allow hal_mtk_nvramagent_client mtk_hal_nvramagent_service:service_manager find;
+allow hal_mtk_nvramagent_client servicemanager:binder { call transfer };
+allow hal_mtk_nvramagent_client servicemanager:fd use;
 
 # --- hal_mtk_nvramagent_server ---
-add_hwservice(hal_mtk_nvramagent_server, hidl_base_hwservice)
 add_hwservice(hal_mtk_nvramagent_server, mtk_hal_nvramagent_hwservice)
-add_service(hal_mtk_nvramagent_server, mtk_hal_nvramagent_service)
-binder_call(hal_mtk_nvramagent_server, hal_mtk_nvramagent_client)
-binder_use(hal_mtk_nvramagent_server)
+allow hal_mtk_nvramagent_server hal_mtk_nvramagent_client:binder call;
+allow hal_mtk_nvramagent_server hal_mtk_nvramagent_client:fd use;
+allow hal_mtk_nvramagent_server mtk_hal_nvramagent_service:service_manager { add find };
+allow hal_mtk_nvramagent_server servicemanager:binder { call transfer };
+allow hal_mtk_nvramagent_server servicemanager:fd use;
 

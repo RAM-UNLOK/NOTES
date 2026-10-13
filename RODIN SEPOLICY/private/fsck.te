@@ -1,6 +1,7 @@
 # ============================================================
 # File: fsck.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,7 +14,7 @@ typeattribute fsck coredomain;
 typeattribute fsck domain;
 
 allow fsck cache_file:dir create_dir_perms;
-allow fsck cache_file:file create_file_perms;
+allow fsck cache_file:file { rw_file_perms create rename unlink };
 
 # --- fsck_exec ---
 typeattribute fsck_exec exec_type;

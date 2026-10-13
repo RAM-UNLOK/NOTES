@@ -1,6 +1,7 @@
 # ============================================================
 # File: dex2oat.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -12,9 +13,8 @@
 typeattribute dex2oat coredomain;
 typeattribute dex2oat domain;
 
-allow dex2oat init_tmpfs:file r_file_perms;
-allow dex2oat tmpfs:dir r_file_perms;
-allow dex2oat tmpfs:file r_file_perms;
+allow dex2oat init_tmpfs:file { getattr map open read };
+allow dex2oat tmpfs:{ dir file } { getattr map open read };
 allow dex2oat trace_data_file:dir rw_dir_perms;
 allow dex2oat trace_data_file:file create_file_perms;
 

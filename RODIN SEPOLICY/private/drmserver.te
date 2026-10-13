@@ -1,6 +1,7 @@
 # ============================================================
 # File: drmserver.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -19,14 +20,13 @@ net_domain(drmserver)
 allow drmserver access_sys_file:file r_file_perms;
 allow drmserver bluetooth_data_file:file read;
 allow drmserver hypsys_ssi_default:fd use;
-allow drmserver init_tmpfs:file r_file_perms;
+allow drmserver init_tmpfs:file { getattr map open read };
 allow drmserver mediaprovider_app:dir search;
 allow drmserver mqsas_data_file:file append;
 allow drmserver mqsasd:fd use;
 allow drmserver nvram_agent_service:service_manager find;
 allow drmserver smartplatformserver:fd use;
-allow drmserver tmpfs:dir r_file_perms;
-allow drmserver tmpfs:file r_file_perms;
+allow drmserver tmpfs:{ dir file } { getattr map open read };
 
 # --- drmserver_exec ---
 typeattribute drmserver_exec exec_type;

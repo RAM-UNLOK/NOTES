@@ -1,6 +1,7 @@
 # ============================================================
 # File: trace_redactor.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

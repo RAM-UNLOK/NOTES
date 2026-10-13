@@ -1,6 +1,7 @@
 # ============================================================
 # File: lmkd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -13,20 +14,20 @@ typeattribute lmkd coredomain;
 typeattribute lmkd domain;
 typeattribute lmkd mlstrustedsubject;
 
-binder_call(lmkd, platform_app)
-binder_call(lmkd, system_app)
-binder_use(lmkd)
-allow lmkd cameramind_app:unix_stream_socket { r_file_perms connectto write };
+allow lmkd cameramind_app:unix_stream_socket { connectto getattr read write };
 allow lmkd data_log_stability_file:dir create_dir_perms;
 allow lmkd data_log_stability_file:file create_file_perms;
-allow lmkd miui_coredump_file:dir { write add_name search };
-allow lmkd miui_coredump_file:file create_file_perms;
+allow lmkd miui_coredump_file:dir { add_name search write };
+allow lmkd miui_coredump_file:file { create open read write };
 allow lmkd miui_native_file:dir search;
 allow lmkd mqs_service:service_manager find;
+allow lmkd platform_app:binder call;
+allow lmkd servicemanager:binder call;
 allow lmkd sysfs_camreclaim:dir r_dir_perms;
 allow lmkd sysfs_camreclaim:file rw_file_perms;
 allow lmkd sysfs_perf:dir r_dir_perms;
 allow lmkd sysfs_perf:file rw_file_perms;
+allow lmkd system_app:binder call;
 allow lmkd system_server:unix_stream_socket connectto;
 
 # --- lmkd_exec ---

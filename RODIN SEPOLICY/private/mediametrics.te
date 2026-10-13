@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediametrics.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -12,9 +13,6 @@
 typeattribute mediametrics binderservicedomain;
 typeattribute mediametrics coredomain;
 typeattribute mediametrics domain;
-
-allow mediametrics mslgd:binder transfer;
-allow mediametrics wae_daemon:binder transfer;
 
 # --- mediametrics_exec ---
 typeattribute mediametrics_exec exec_type;

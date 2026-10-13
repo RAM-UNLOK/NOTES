@@ -1,6 +1,7 @@
 # ============================================================
 # File: file.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,10 +10,16 @@
 # ============================================================
 
 # --- MPED_data_file ---
-type MPED_data_file, data_file_type, file_type;
+type MPED_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- abreuse_back_file ---
+typeattribute abreuse_back_file base_typeattr_242;
+
+# --- access_sys_file ---
+typeattribute access_sys_file base_typeattr_242;
 
 # --- acdapi_data_file ---
-type acdapi_data_file, data_file_type, file_type;
+type acdapi_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- aconfig_storage_flags_metadata_file ---
 typeattribute aconfig_storage_flags_metadata_file file_type;
@@ -31,31 +38,31 @@ typeattribute adb_keys_file data_file_type;
 typeattribute adb_keys_file file_type;
 
 # --- adbd_data_file ---
-type adbd_data_file, core_data_file_type, data_file_type, file_type;
+type adbd_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- aee_core_data_file ---
-type aee_core_data_file, core_data_file_type, data_file_type, file_type;
+type aee_core_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- aee_core_vendor_file ---
-type aee_core_vendor_file, data_file_type, file_type;
+type aee_core_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- aee_dipdebug_vendor_file ---
-type aee_dipdebug_vendor_file, data_file_type, file_type;
+type aee_dipdebug_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- aee_dumpsys_data_file ---
-type aee_dumpsys_data_file, core_data_file_type, data_file_type, file_type;
+type aee_dumpsys_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- aee_dumpsys_vendor_file ---
-type aee_dumpsys_vendor_file, data_file_type, file_type;
+type aee_dumpsys_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- aee_exp_data_file ---
-type aee_exp_data_file, core_data_file_type, data_file_type, file_type, mlstrustedobject;
+type aee_exp_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type, mlstrustedobject;
 
 # --- aee_exp_vendor_file ---
-type aee_exp_vendor_file, data_file_type, file_type;
+type aee_exp_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- agpsd_data_file ---
-type agpsd_data_file, data_file_type, file_type;
+type agpsd_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- anr_data_file ---
 typeattribute anr_data_file core_data_file_type;
@@ -85,6 +92,12 @@ typeattribute apk_tmp_file data_file_type;
 typeattribute apk_tmp_file file_type;
 typeattribute apk_tmp_file mlstrustedobject;
 
+# --- apmsrv_app_data_file ---
+typeattribute apmsrv_app_data_file base_typeattr_242;
+
+# --- app_cache_optimization_file ---
+typeattribute app_cache_optimization_file base_typeattr_242;
+
 # --- app_data_file ---
 typeattribute app_data_file core_data_file_type;
 typeattribute app_data_file data_file_type;
@@ -95,6 +108,9 @@ typeattribute app_fuse_file core_data_file_type;
 typeattribute app_fuse_file data_file_type;
 typeattribute app_fuse_file file_type;
 typeattribute app_fuse_file mlstrustedobject;
+
+# --- app_launch_preload_file ---
+typeattribute app_launch_preload_file base_typeattr_242;
 
 # --- appcompat_data_file ---
 typeattribute appcompat_data_file core_data_file_type;
@@ -121,6 +137,12 @@ typeattribute asec_public_file core_data_file_type;
 typeattribute asec_public_file data_file_type;
 typeattribute asec_public_file file_type;
 
+# --- atci_data_file ---
+typeattribute atci_data_file base_typeattr_242;
+
+# --- atomic_data_file ---
+typeattribute atomic_data_file base_typeattr_242;
+
 # --- audio_data_file ---
 typeattribute audio_data_file core_data_file_type;
 typeattribute audio_data_file data_file_type;
@@ -131,8 +153,11 @@ typeattribute audioserver_data_file core_data_file_type;
 typeattribute audioserver_data_file data_file_type;
 typeattribute audioserver_data_file file_type;
 
+# --- auto_test_file ---
+typeattribute auto_test_file base_typeattr_242;
+
 # --- autokd_data_file ---
-type autokd_data_file, data_file_type, file_type;
+type autokd_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- backup_data_file ---
 typeattribute backup_data_file core_data_file_type;
@@ -141,10 +166,10 @@ typeattribute backup_data_file file_type;
 typeattribute backup_data_file mlstrustedobject;
 
 # --- batteryantiaging_cache_file ---
-type batteryantiaging_cache_file, data_file_type, file_type;
+type batteryantiaging_cache_file, base_typeattr_242, data_file_type, file_type;
 
 # --- batteryantiaging_cfg_file ---
-type batteryantiaging_cfg_file, file_type, vendor_file_type;
+type batteryantiaging_cfg_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- bluetooth_data_file ---
 typeattribute bluetooth_data_file core_data_file_type;
@@ -178,14 +203,23 @@ typeattribute boottrace_data_file core_data_file_type;
 typeattribute boottrace_data_file data_file_type;
 typeattribute boottrace_data_file file_type;
 
+# --- bpf_sys_kprobe_file ---
+typeattribute bpf_sys_kprobe_file base_typeattr_242;
+
+# --- bpf_sys_vmlinux_file ---
+typeattribute bpf_sys_vmlinux_file base_typeattr_242;
+
+# --- bsp_data_log_file ---
+typeattribute bsp_data_log_file base_typeattr_242;
+
 # --- bt_data_file ---
-type bt_data_file, data_file_type, file_type;
+type bt_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- bt_dump_data_file ---
-type bt_dump_data_file, data_file_type, file_type;
+type bt_dump_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- c2k_file ---
-type c2k_file, data_file_type, file_type;
+type c2k_file, base_typeattr_242, data_file_type, file_type;
 
 # --- cache_backup_file ---
 typeattribute cache_backup_file core_data_file_type;
@@ -215,32 +249,35 @@ typeattribute camera_data_file core_data_file_type;
 typeattribute camera_data_file data_file_type;
 typeattribute camera_data_file file_type;
 
+# --- camera_mind_data_file ---
+typeattribute camera_mind_data_file base_typeattr_242;
+
 # --- camera_persist_file ---
-type camera_persist_file, file_type;
+type camera_persist_file, base_typeattr_242, file_type;
 
 # --- ccci_cfg_file ---
-type ccci_cfg_file, data_file_type, file_type;
+type ccci_cfg_file, base_typeattr_242, data_file_type, file_type;
 
 # --- ccci_data_md1_file ---
-type ccci_data_md1_file, data_file_type, file_type;
+type ccci_data_md1_file, base_typeattr_242, data_file_type, file_type;
 
 # --- cct_data_file ---
-type cct_data_file, data_file_type, file_type;
+type cct_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- chre_data_file ---
-type chre_data_file, data_file_type, file_type;
+type chre_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- cldma_data_file ---
-type cldma_data_file, data_file_type, file_type;
+type cldma_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- connsys_vendor_file ---
-type connsys_vendor_file, file_type, vendor_file_type;
+type connsys_vendor_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- connsyslog_data_vendor_file ---
-type connsyslog_data_vendor_file, data_file_type, file_type;
+type connsyslog_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- consyslog_data_file ---
-type consyslog_data_file, core_data_file_type, data_file_type, file_type;
+type consyslog_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- coredump_file ---
 typeattribute coredump_file file_type;
@@ -251,51 +288,78 @@ typeattribute credstore_data_file data_file_type;
 typeattribute credstore_data_file file_type;
 
 # --- custom_file ---
-type custom_file, data_file_type, file_type;
+type custom_file, base_typeattr_242, data_file_type, file_type;
 
 # --- dalvikcache_data_file ---
 typeattribute dalvikcache_data_file core_data_file_type;
 typeattribute dalvikcache_data_file data_file_type;
 typeattribute dalvikcache_data_file file_type;
 
+# --- data_log_camera_file ---
+typeattribute data_log_camera_file base_typeattr_242;
+
+# --- data_log_file ---
+typeattribute data_log_file base_typeattr_242;
+
+# --- data_log_hyperlogmanager_file ---
+typeattribute data_log_hyperlogmanager_file base_typeattr_242;
+
+# --- data_log_keyguard_file ---
+typeattribute data_log_keyguard_file base_typeattr_242;
+
 # --- data_log_misight_file ---
-type data_log_misight_file, core_data_file_type, data_file_type, file_type, mlstrustedobject;
+type data_log_misight_file, base_typeattr_242, core_data_file_type, data_file_type, file_type, mlstrustedobject;
+
+# --- data_log_power_file ---
+typeattribute data_log_power_file base_typeattr_242;
+
+# --- data_log_stability_file ---
+typeattribute data_log_stability_file base_typeattr_242;
+
+# --- data_log_thermal_file ---
+typeattribute data_log_thermal_file base_typeattr_242;
+
+# --- data_log_window_file ---
+typeattribute data_log_window_file base_typeattr_242;
 
 # --- data_tmpfs_log_file ---
-type data_tmpfs_log_file, core_data_file_type, data_file_type, file_type;
+type data_tmpfs_log_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- data_vendor_AAObitTrue_file ---
-type data_vendor_AAObitTrue_file, data_file_type, file_type;
+type data_vendor_AAObitTrue_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_aaoHwBuf_file ---
-type data_vendor_aaoHwBuf_file, data_file_type, file_type;
+type data_vendor_aaoHwBuf_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_aao_file ---
-type data_vendor_aao_file, data_file_type, file_type;
+type data_vendor_aao_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_afo_file ---
-type data_vendor_afo_file, data_file_type, file_type;
+type data_vendor_afo_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_de_md_file ---
-type data_vendor_de_md_file, data_file_type, file_type;
+type data_vendor_de_md_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_flash_file ---
-type data_vendor_flash_file, data_file_type, file_type;
+type data_vendor_flash_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_flicker_file ---
-type data_vendor_flicker_file, data_file_type, file_type;
+type data_vendor_flicker_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_hmp_file ---
-type data_vendor_hmp_file, data_file_type, file_type;
+type data_vendor_hmp_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_nn_file ---
-type data_vendor_nn_file, data_file_type, file_type;
+type data_vendor_nn_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_pdo_file ---
-type data_vendor_pdo_file, data_file_type, file_type;
+type data_vendor_pdo_file, base_typeattr_242, data_file_type, file_type;
 
 # --- data_vendor_raw_file ---
-type data_vendor_raw_file, data_file_type, file_type;
+type data_vendor_raw_file, base_typeattr_242, data_file_type, file_type;
+
+# --- debuglog_data_file ---
+typeattribute debuglog_data_file base_typeattr_242;
 
 # --- dhcp_data_file ---
 typeattribute dhcp_data_file core_data_file_type;
@@ -303,10 +367,10 @@ typeattribute dhcp_data_file data_file_type;
 typeattribute dhcp_data_file file_type;
 
 # --- doe_vendor_data_file ---
-type doe_vendor_data_file, data_file_type, file_type;
+type doe_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- dontpanic_data_file ---
-type dontpanic_data_file, data_file_type, file_type;
+type dontpanic_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- drm_data_file ---
 typeattribute drm_data_file core_data_file_type;
@@ -319,26 +383,38 @@ typeattribute dropbox_data_file data_file_type;
 typeattribute dropbox_data_file file_type;
 
 # --- duraspeed_data_file ---
-type duraspeed_data_file, core_data_file_type, data_file_type, file_type;
+type duraspeed_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- eara_io_data_file ---
-type eara_io_data_file, data_file_type, file_type;
+type eara_io_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- efs_file ---
 typeattribute efs_file file_type;
+
+# --- em_app_data_file ---
+typeattribute em_app_data_file base_typeattr_242;
+
+# --- emsensor_app_data_file ---
+typeattribute emsensor_app_data_file base_typeattr_242;
+
+# --- extm_data_file ---
+typeattribute extm_data_file base_typeattr_242;
 
 # --- face_vendor_data_file ---
 typeattribute face_vendor_data_file data_file_type;
 typeattribute face_vendor_data_file file_type;
 
 # --- factory_data_file ---
-type factory_data_file, core_data_file_type, data_file_type, file_type;
+type factory_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- factory_vendor_file ---
-type factory_vendor_file, data_file_type, file_type;
+type factory_vendor_file, base_typeattr_242, data_file_type, file_type;
+
+# --- fbo_file ---
+typeattribute fbo_file base_typeattr_242;
 
 # --- ffu_data_file ---
-type ffu_data_file, data_file_type, file_type;
+type ffu_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- file_contexts_file ---
 typeattribute file_contexts_file file_type;
@@ -354,7 +430,7 @@ typeattribute fingerprintd_data_file data_file_type;
 typeattribute fingerprintd_data_file file_type;
 
 # --- fon_image_data_file ---
-type fon_image_data_file, data_file_type, file_type;
+type fon_image_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- game_mode_intervention_list_file ---
 typeattribute game_mode_intervention_list_file core_data_file_type;
@@ -367,22 +443,22 @@ typeattribute gatekeeper_data_file data_file_type;
 typeattribute gatekeeper_data_file file_type;
 
 # --- gnss_config_data_vendor_file ---
-type gnss_config_data_vendor_file, data_file_type, file_type;
+type gnss_config_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gnss_data_file ---
-type gnss_data_file, data_file_type, file_type;
+type gnss_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gnss_fw_log_data_vendor_file ---
-type gnss_fw_log_data_vendor_file, data_file_type, file_type;
+type gnss_fw_log_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gps_data_file ---
-type gps_data_file, data_file_type, file_type;
+type gps_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gpu_dump_vendor_file ---
-type gpu_dump_vendor_file, data_file_type, file_type;
+type gpu_dump_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gpunn_data_file ---
-type gpunn_data_file, data_file_type, file_type;
+type gpunn_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- gsi_data_file ---
 typeattribute gsi_data_file core_data_file_type;
@@ -402,10 +478,13 @@ typeattribute heapdump_data_file file_type;
 typeattribute heapdump_data_file mlstrustedobject;
 
 # --- hostapd_data_file ---
-type hostapd_data_file, data_file_type, file_type;
+type hostapd_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- http_proxy_cfg_data_file ---
-type http_proxy_cfg_data_file, data_file_type, file_type;
+type http_proxy_cfg_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- hwconf_data_file ---
+typeattribute hwconf_data_file base_typeattr_242;
 
 # --- hwservice_contexts_file ---
 typeattribute hwservice_contexts_file file_type;
@@ -417,7 +496,7 @@ typeattribute icon_file data_file_type;
 typeattribute icon_file file_type;
 
 # --- ims_ipsec_data_file ---
-type ims_ipsec_data_file, data_file_type, file_type;
+type ims_ipsec_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- incident_data_file ---
 typeattribute incident_data_file core_data_file_type;
@@ -434,15 +513,21 @@ typeattribute install_data_file core_data_file_type;
 typeattribute install_data_file data_file_type;
 typeattribute install_data_file file_type;
 
+# --- io_monitor_file ---
+typeattribute io_monitor_file base_typeattr_242;
+
+# --- iorapd_data_file ---
+typeattribute iorapd_data_file base_typeattr_242;
+
 # --- iris_vendor_data_file ---
 typeattribute iris_vendor_data_file data_file_type;
 typeattribute iris_vendor_data_file file_type;
 
 # --- irqmon_vendor_file ---
-type irqmon_vendor_file, data_file_type, file_type;
+type irqmon_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- key_install_data_file ---
-type key_install_data_file, data_file_type, file_type;
+type key_install_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- keychain_data_file ---
 typeattribute keychain_data_file core_data_file_type;
@@ -462,53 +547,59 @@ typeattribute keystore_data_file file_type;
 typeattribute linkerconfig_file file_type;
 
 # --- logmisc_data_file ---
-type logmisc_data_file, core_data_file_type, data_file_type, file_type;
+type logmisc_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- logmuch_data_file ---
-type logmuch_data_file, core_data_file_type, data_file_type, file_type;
+type logmuch_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- logtemp_data_file ---
-type logtemp_data_file, core_data_file_type, data_file_type, file_type;
+type logtemp_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- lost_found_data_file ---
-type lost_found_data_file, data_file_type, file_type;
+type lost_found_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mac_perms_file ---
 typeattribute mac_perms_file file_type;
 typeattribute mac_perms_file system_file_type;
 
 # --- mal_data_file ---
-type mal_data_file, data_file_type, file_type;
+type mal_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- mcd_data_file ---
+typeattribute mcd_data_file base_typeattr_242;
 
 # --- mcf_ota_file ---
-type mcf_ota_file, data_file_type, file_type;
+type mcf_ota_file, base_typeattr_242, data_file_type, file_type;
 
 # --- md_monitor_vendor_file ---
-type md_monitor_vendor_file, data_file_type, file_type;
+type md_monitor_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- md_rfs_data_vendor_file ---
-type md_rfs_data_vendor_file, data_file_type, file_type;
+type md_rfs_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- md_rfs_mdlpm_file ---
-type md_rfs_mdlpm_file, data_file_type, file_type;
+type md_rfs_mdlpm_file, base_typeattr_242, data_file_type, file_type;
 
 # --- md_rfs_mdota2_file ---
-type md_rfs_mdota2_file, data_file_type, file_type;
+type md_rfs_mdota2_file, base_typeattr_242, data_file_type, file_type;
 
 # --- md_sec_file ---
-type md_sec_file, data_file_type, file_type;
+type md_sec_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mddb_data_file ---
-type mddb_data_file, data_file_type, file_type;
+type mddb_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- mddb_filter_data_file ---
+typeattribute mddb_filter_data_file base_typeattr_242;
 
 # --- mdl_coll_data_vendor_file ---
-type mdl_coll_data_vendor_file, data_file_type, file_type;
+type mdl_coll_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mdlog_data_file ---
-type mdlog_data_file, core_data_file_type, data_file_type, file_type;
+type mdlog_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- mdlog_data_vendor_file ---
-type mdlog_data_vendor_file, data_file_type, file_type;
+type mdlog_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- media_data_file ---
 typeattribute media_data_file core_data_file_type;
@@ -527,16 +618,19 @@ typeattribute media_userdir_file data_file_type;
 typeattribute media_userdir_file file_type;
 
 # --- mediacodec_data_file ---
-type mediacodec_data_file, data_file_type, file_type;
+type mediacodec_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mediadrm_vendor_data_file ---
-type mediadrm_vendor_data_file, data_file_type, file_type;
+type mediadrm_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mediaserver_data_file ---
-type mediaserver_data_file, data_file_type, file_type;
+type mediaserver_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- memgreezer_data_file ---
+typeattribute memgreezer_data_file base_typeattr_242;
 
 # --- met_data_file ---
-type met_data_file, data_file_type, file_type;
+type met_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- metadata_bootstat_file ---
 typeattribute metadata_bootstat_file file_type;
@@ -551,13 +645,22 @@ typeattribute method_trace_data_file file_type;
 typeattribute method_trace_data_file mlstrustedobject;
 
 # --- mi_ic_data_file ---
-type mi_ic_data_file, data_file_type, file_type;
+type mi_ic_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- mibbr_config_file ---
+typeattribute mibbr_config_file base_typeattr_242;
+
+# --- migard_data_file ---
+typeattribute migard_data_file base_typeattr_242;
+
+# --- migt_file ---
+typeattribute migt_file base_typeattr_242;
 
 # --- minidump_data_file ---
-type minidump_data_file, data_file_type, file_type;
+type minidump_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- miperf_data_file ---
-type miperf_data_file, data_file_type, file_type;
+type miperf_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mirror_data_file ---
 typeattribute mirror_data_file core_data_file_type;
@@ -575,16 +678,34 @@ typeattribute misc_user_data_file data_file_type;
 typeattribute misc_user_data_file file_type;
 
 # --- mitee_control_file ---
-type mitee_control_file, fs_type, sysfs_type;
+type mitee_control_file, base_typeattr_242, fs_type, sysfs_type;
 
 # --- mitee_data_file ---
-type mitee_data_file, data_file_type, file_type;
+type mitee_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mitee_sfs_file ---
-type mitee_sfs_file, file_type;
+type mitee_sfs_file, base_typeattr_242, file_type;
+
+# --- miui_coredump_file ---
+typeattribute miui_coredump_file base_typeattr_242;
+
+# --- miui_hprof_file ---
+typeattribute miui_hprof_file base_typeattr_242;
+
+# --- miui_native_file ---
+typeattribute miui_native_file base_typeattr_242;
+
+# --- miui_pai_file ---
+typeattribute miui_pai_file base_typeattr_242;
+
+# --- miuibooster_file ---
+typeattribute miuibooster_file base_typeattr_242;
+
+# --- miuilog_data_file ---
+typeattribute miuilog_data_file base_typeattr_242;
 
 # --- mnld_data_file ---
-type mnld_data_file, data_file_type, file_type;
+type mnld_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mnt_expand_file ---
 typeattribute mnt_expand_file file_type;
@@ -611,37 +732,49 @@ typeattribute mnt_user_file file_type;
 typeattribute mnt_vendor_file file_type;
 
 # --- mobicore_data_file ---
-type mobicore_data_file, data_file_type, file_type;
+type mobicore_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mobicore_vendor_file ---
-type mobicore_vendor_file, file_type, vendor_file_type;
+type mobicore_vendor_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- monitor_ee_crash_data_file ---
-type monitor_ee_crash_data_file, data_file_type, file_type;
+type monitor_ee_crash_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- mota_proc_file ---
+typeattribute mota_proc_file base_typeattr_242;
 
 # --- mpbe_data_file ---
-type mpbe_data_file, data_file_type, file_type;
+type mpbe_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mqsas_common_file ---
-type mqsas_common_file, data_file_type, file_type;
+type mqsas_common_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mqsas_data_file ---
-type mqsas_data_file, core_data_file_type, data_file_type, file_type, mlstrustedobject;
+type mqsas_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type, mlstrustedobject;
+
+# --- mslg_rootfs_file ---
+typeattribute mslg_rootfs_file base_typeattr_242;
+
+# --- mslg_socket_file ---
+typeattribute mslg_socket_file base_typeattr_242;
 
 # --- mtee_trusty_file ---
-type mtee_trusty_file, fs_type, sysfs_type;
+type mtee_trusty_file, base_typeattr_242, fs_type, sysfs_type;
 
 # --- mtk_disp_pq_data_file ---
-type mtk_disp_pq_data_file, data_file_type, file_type;
+type mtk_disp_pq_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mtk_radio_data_file ---
-type mtk_radio_data_file, data_file_type, file_type;
+type mtk_radio_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mtk_thp_data_file ---
-type mtk_thp_data_file, data_file_type, file_type;
+type mtk_thp_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- mtkdump_data_file ---
-type mtkdump_data_file, data_file_type, file_type;
+type mtkdump_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- nativehang_file ---
+typeattribute nativehang_file base_typeattr_242;
 
 # --- nativetest_data_file ---
 typeattribute nativetest_data_file core_data_file_type;
@@ -654,7 +787,7 @@ typeattribute net_data_file data_file_type;
 typeattribute net_data_file file_type;
 
 # --- net_log_data_file ---
-type net_log_data_file, data_file_type, file_type;
+type net_log_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- network_watchlist_data_file ---
 typeattribute network_watchlist_data_file core_data_file_type;
@@ -672,28 +805,34 @@ typeattribute nfc_logs_data_file data_file_type;
 typeattribute nfc_logs_data_file file_type;
 
 # --- nfc_socket_file ---
-type nfc_socket_file, core_data_file_type, data_file_type, file_type;
+type nfc_socket_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- nfc_vendor_data_file ---
-type nfc_vendor_data_file, data_file_type, file_type;
+type nfc_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- nfc_vendor_debug_data_file ---
-type nfc_vendor_debug_data_file, data_file_type, file_type;
+type nfc_vendor_debug_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- nvcfg_file ---
-type nvcfg_file, data_file_type, file_type;
+type nvcfg_file, base_typeattr_242, data_file_type, file_type;
 
 # --- nvdata_file ---
-type nvdata_file, data_file_type, file_type;
+type nvdata_file, base_typeattr_242, data_file_type, file_type;
 
 # --- nvram_data_file ---
-type nvram_data_file, data_file_type, file_type;
+type nvram_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- offlinedb_data_file ---
+typeattribute offlinedb_data_file base_typeattr_242;
+
+# --- offlinelog_file ---
+typeattribute offlinelog_file base_typeattr_242;
 
 # --- omadm_data_file ---
-type omadm_data_file, data_file_type, file_type;
+type omadm_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- omadm_misc_file ---
-type omadm_misc_file, data_file_type, file_type;
+type omadm_misc_file, base_typeattr_242, data_file_type, file_type;
 
 # --- ota_data_file ---
 typeattribute ota_data_file core_data_file_type;
@@ -710,7 +849,7 @@ typeattribute ota_package_file file_type;
 typeattribute ota_package_file mlstrustedobject;
 
 # --- otrp_data_file ---
-type otrp_data_file, data_file_type, file_type;
+type otrp_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- overlayfs_file ---
 typeattribute overlayfs_file core_data_file_type;
@@ -726,10 +865,16 @@ typeattribute packages_list_file file_type;
 typeattribute password_slot_metadata_file file_type;
 
 # --- persist_data_file ---
-type persist_data_file, data_file_type, file_type;
+type persist_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- persist_file ---
-type persist_file, file_type;
+type persist_file, base_typeattr_242, file_type;
+
+# --- pipelinecache_data_file ---
+typeattribute pipelinecache_data_file base_typeattr_242;
+
+# --- pipelineinfos_etc_data_file ---
+typeattribute pipelineinfos_etc_data_file base_typeattr_242;
 
 # --- postinstall_apex_mnt_dir ---
 typeattribute postinstall_apex_mnt_dir file_type;
@@ -741,7 +886,7 @@ typeattribute postinstall_file file_type;
 typeattribute postinstall_mnt_dir file_type;
 
 # --- ppp_data_file ---
-type ppp_data_file, data_file_type, file_type;
+type ppp_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- preloads_data_file ---
 typeattribute preloads_data_file core_data_file_type;
@@ -769,13 +914,13 @@ typeattribute profman_dump_data_file data_file_type;
 typeattribute profman_dump_data_file file_type;
 
 # --- protect_f_data_file ---
-type protect_f_data_file, data_file_type, file_type;
+type protect_f_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- protect_s_data_file ---
-type protect_s_data_file, data_file_type, file_type;
+type protect_s_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- provision_file ---
-type provision_file, data_file_type, file_type;
+type provision_file, base_typeattr_242, data_file_type, file_type;
 
 # --- radio_core_data_file ---
 typeattribute radio_core_data_file core_data_file_type;
@@ -789,7 +934,7 @@ typeattribute radio_data_file file_type;
 typeattribute radio_data_file mlstrustedobject;
 
 # --- radvd_data_file ---
-type radvd_data_file, data_file_type, file_type;
+type radvd_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- recovery_data_file ---
 typeattribute recovery_data_file core_data_file_type;
@@ -800,7 +945,7 @@ typeattribute recovery_data_file file_type;
 typeattribute repair_mode_metadata_file file_type;
 
 # --- resource_cache_data_file ---
-type resource_cache_data_file, data_file_type, file_type;
+type resource_cache_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- resourcecache_data_file ---
 typeattribute resourcecache_data_file core_data_file_type;
@@ -817,20 +962,29 @@ typeattribute ringtone_file mlstrustedobject;
 typeattribute runtime_event_log_tags_file file_type;
 
 # --- sap_config_data_file ---
-type sap_config_data_file, data_file_type, file_type;
+type sap_config_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- sap_log_data_vendor_file ---
-type sap_log_data_vendor_file, data_file_type, file_type;
+type sap_log_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- sap_remotefs_data_file ---
-type sap_remotefs_data_file, data_file_type, file_type;
+type sap_remotefs_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- seapp_contexts_file ---
 typeattribute seapp_contexts_file file_type;
 typeattribute seapp_contexts_file system_file_type;
 
+# --- secure_storage_persist_system_file ---
+typeattribute secure_storage_persist_system_file base_typeattr_242;
+
+# --- secure_storage_rpmb_system_file ---
+typeattribute secure_storage_rpmb_system_file base_typeattr_242;
+
+# --- secure_storage_system_file ---
+typeattribute secure_storage_system_file base_typeattr_242;
+
 # --- sensor_data_file ---
-type sensor_data_file, data_file_type, file_type;
+type sensor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- sepolicy_file ---
 typeattribute sepolicy_file file_type;
@@ -846,10 +1000,13 @@ typeattribute service_contexts_file file_type;
 typeattribute service_contexts_file system_file_type;
 
 # --- sf_bqdump_data_file ---
-type sf_bqdump_data_file, core_data_file_type, data_file_type, file_type;
+type sf_bqdump_data_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
+
+# --- sf_cache_data_file ---
+typeattribute sf_cache_data_file base_typeattr_242;
 
 # --- sf_rtt_file ---
-type sf_rtt_file, core_data_file_type, data_file_type, file_type;
+type sf_rtt_file, base_typeattr_242, core_data_file_type, data_file_type, file_type;
 
 # --- shared_relro_file ---
 typeattribute shared_relro_file core_data_file_type;
@@ -874,7 +1031,7 @@ typeattribute shutdown_checkpoints_system_data_file data_file_type;
 typeattribute shutdown_checkpoints_system_data_file file_type;
 
 # --- sla_data_file ---
-type sla_data_file, data_file_type, file_type;
+type sla_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- snapshotctl_log_data_file ---
 typeattribute snapshotctl_log_data_file core_data_file_type;
@@ -911,7 +1068,16 @@ typeattribute storage_file file_type;
 typeattribute storage_stub_file file_type;
 
 # --- stp_dump_data_file ---
-type stp_dump_data_file, data_file_type, file_type;
+type stp_dump_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- surfaceflinger_lut_file ---
+typeattribute surfaceflinger_lut_file base_typeattr_242;
+
+# --- sys_game_plaid_file ---
+typeattribute sys_game_plaid_file base_typeattr_242;
+
+# --- sys_power_file ---
+typeattribute sys_power_file base_typeattr_242;
 
 # --- system_app_data_file ---
 typeattribute system_app_data_file core_data_file_type;
@@ -960,6 +1126,12 @@ typeattribute system_lib_file system_file_type;
 typeattribute system_linker_config_file file_type;
 typeattribute system_linker_config_file system_file_type;
 
+# --- system_mtk_pmb_file ---
+typeattribute system_mtk_pmb_file base_typeattr_242;
+
+# --- system_optimize_data_file ---
+typeattribute system_optimize_data_file base_typeattr_242;
+
 # --- system_passwd_file ---
 typeattribute system_passwd_file file_type;
 typeattribute system_passwd_file system_file_type;
@@ -987,10 +1159,10 @@ typeattribute systemkeys_data_file data_file_type;
 typeattribute systemkeys_data_file file_type;
 
 # --- t_taglog_data_vendor_file ---
-type t_taglog_data_vendor_file, data_file_type, file_type, mlstrustedobject;
+type t_taglog_data_vendor_file, base_typeattr_242, data_file_type, file_type, mlstrustedobject;
 
 # --- ta_data_file ---
-type ta_data_file, data_file_type, file_type;
+type ta_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- task_profiles_api_file ---
 typeattribute task_profiles_api_file file_type;
@@ -1004,46 +1176,55 @@ typeattribute task_profiles_file system_file_type;
 typeattribute tee_data_file data_file_type;
 typeattribute tee_data_file file_type;
 
+# --- teed_app_data_file ---
+typeattribute teed_app_data_file base_typeattr_242;
+
 # --- teei_control_file ---
-type teei_control_file, fs_type, sysfs_type;
+type teei_control_file, base_typeattr_242, fs_type, sysfs_type;
 
 # --- teei_data_file ---
-type teei_data_file, data_file_type, file_type;
+type teei_data_file, base_typeattr_242, data_file_type, file_type;
+
+# --- temp_apk_data_file ---
+typeattribute temp_apk_data_file base_typeattr_242;
 
 # --- textclassifier_data_file ---
 typeattribute textclassifier_data_file core_data_file_type;
 typeattribute textclassifier_data_file data_file_type;
 typeattribute textclassifier_data_file file_type;
 
+# --- theme_data_file ---
+typeattribute theme_data_file base_typeattr_242;
+
 # --- thermal_core_data_file ---
-type thermal_core_data_file, data_file_type, file_type;
+type thermal_core_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- thermal_data_file ---
-type thermal_data_file, data_file_type, file_type;
+type thermal_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- thermal_manager_data_file ---
-type thermal_manager_data_file, data_file_type, file_type;
+type thermal_manager_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- thinmd_data_vendor_file ---
-type thinmd_data_vendor_file, data_file_type, file_type;
+type thinmd_data_vendor_file, base_typeattr_242, data_file_type, file_type;
 
 # --- thinmd_fw_file ---
-type thinmd_fw_file, data_file_type, file_type;
+type thinmd_fw_file, base_typeattr_242, data_file_type, file_type;
 
 # --- tkcore_data_file ---
-type tkcore_data_file, data_file_type, file_type, mlstrustedobject;
+type tkcore_data_file, base_typeattr_242, data_file_type, file_type, mlstrustedobject;
 
 # --- tkcore_log_file ---
-type tkcore_log_file, data_file_type, file_type;
+type tkcore_log_file, base_typeattr_242, data_file_type, file_type;
 
 # --- tkcore_protect_data_file ---
-type tkcore_protect_data_file, data_file_type, file_type;
+type tkcore_protect_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- tkcore_spta_file ---
-type tkcore_spta_file, data_file_type, file_type, mlstrustedobject;
+type tkcore_spta_file, base_typeattr_242, data_file_type, file_type, mlstrustedobject;
 
 # --- tkcore_systa_file ---
-type tkcore_systa_file, file_type, vendor_file_type;
+type tkcore_systa_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- tombstone_data_file ---
 typeattribute tombstone_data_file core_data_file_type;
@@ -1056,7 +1237,7 @@ typeattribute tombstone_wifi_data_file data_file_type;
 typeattribute tombstone_wifi_data_file file_type;
 
 # --- touchreport_data_file ---
-type touchreport_data_file, data_file_type, file_type;
+type touchreport_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- trace_data_file ---
 typeattribute trace_data_file core_data_file_type;
@@ -1064,8 +1245,14 @@ typeattribute trace_data_file data_file_type;
 typeattribute trace_data_file file_type;
 typeattribute trace_data_file mlstrustedobject;
 
+# --- trace_package_file ---
+typeattribute trace_package_file base_typeattr_242;
+
+# --- ufs_error_data_file ---
+typeattribute ufs_error_data_file base_typeattr_242;
+
 # --- ufsext_data_file ---
-type ufsext_data_file, data_file_type, file_type;
+type ufsext_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- unencrypted_data_file ---
 typeattribute unencrypted_data_file core_data_file_type;
@@ -1097,7 +1284,7 @@ typeattribute user_profile_root_file file_type;
 typeattribute userspace_reboot_metadata_file file_type;
 
 # --- vcodec_file ---
-type vcodec_file, data_file_type, file_type, mlstrustedobject;
+type vcodec_file, base_typeattr_242, data_file_type, file_type, mlstrustedobject;
 
 # --- vendor_apex_file ---
 typeattribute vendor_apex_file file_type;
@@ -1112,29 +1299,29 @@ typeattribute vendor_app_file file_type;
 typeattribute vendor_app_file vendor_file_type;
 
 # --- vendor_audio_data_file ---
-type vendor_audio_data_file, data_file_type, file_type;
+type vendor_audio_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_bin_crossbuild_file ---
-type vendor_bin_crossbuild_file, file_type, vendor_file_type;
+type vendor_bin_crossbuild_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- vendor_bsp_data_log_file ---
-type vendor_bsp_data_log_file, data_file_type, file_type;
+type vendor_bsp_data_log_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_camera_data_file ---
-type vendor_camera_data_file, data_file_type, file_type;
+type vendor_camera_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_camera_dump_file ---
-type vendor_camera_dump_file, data_file_type, file_type;
+type vendor_camera_dump_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_camera_update_db_file ---
-type vendor_camera_update_db_file, file_type, vendor_file_type;
+type vendor_camera_update_db_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- vendor_cgroup_desc_file ---
 typeattribute vendor_cgroup_desc_file file_type;
 typeattribute vendor_cgroup_desc_file vendor_file_type;
 
 # --- vendor_charge_log_file ---
-type vendor_charge_log_file, data_file_type, file_type;
+type vendor_charge_log_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_configs_file ---
 typeattribute vendor_configs_file file_type;
@@ -1145,20 +1332,20 @@ typeattribute vendor_data_file data_file_type;
 typeattribute vendor_data_file file_type;
 
 # --- vendor_data_touchreport_file ---
-type vendor_data_touchreport_file, data_file_type, file_type;
+type vendor_data_touchreport_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_display_vendor_data_file ---
-type vendor_display_vendor_data_file, data_file_type, file_type;
+type vendor_display_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_etc_md_file ---
-type vendor_etc_md_file, file_type, vendor_file_type;
+type vendor_etc_md_file, base_typeattr_242, file_type, vendor_file_type;
 
 # --- vendor_file ---
 typeattribute vendor_file file_type;
 typeattribute vendor_file vendor_file_type;
 
 # --- vendor_fingerprint_data_file ---
-type vendor_fingerprint_data_file, data_file_type, file_type;
+type vendor_fingerprint_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_framework_file ---
 typeattribute vendor_framework_file file_type;
@@ -1169,10 +1356,10 @@ typeattribute vendor_idc_file file_type;
 typeattribute vendor_idc_file vendor_file_type;
 
 # --- vendor_imgsys_dump_file ---
-type vendor_imgsys_dump_file, data_file_type, file_type;
+type vendor_imgsys_dump_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_ins_vendor_data_file ---
-type vendor_ins_vendor_data_file, data_file_type, file_type;
+type vendor_ins_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_keychars_file ---
 typeattribute vendor_keychars_file file_type;
@@ -1183,24 +1370,24 @@ typeattribute vendor_keylayout_file file_type;
 typeattribute vendor_keylayout_file vendor_file_type;
 
 # --- vendor_mfp-daemon_data_file ---
-type vendor_mfp-daemon_data_file, data_file_type, file_type;
+type vendor_mfp-daemon_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_microdroid_file ---
 typeattribute vendor_microdroid_file file_type;
 typeattribute vendor_microdroid_file vendor_file_type;
 
 # --- vendor_nfc_socket_file ---
-type vendor_nfc_socket_file, data_file_type, file_type;
+type vendor_nfc_socket_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_overlay_file ---
 typeattribute vendor_overlay_file file_type;
 typeattribute vendor_overlay_file vendor_file_type;
 
 # --- vendor_persist_display_file ---
-type vendor_persist_display_file, file_type;
+type vendor_persist_display_file, base_typeattr_242, file_type;
 
 # --- vendor_persist_drm_file ---
-type vendor_persist_drm_file, file_type;
+type vendor_persist_drm_file, base_typeattr_242, file_type;
 
 # --- vendor_public_framework_file ---
 typeattribute vendor_public_framework_file file_type;
@@ -1211,7 +1398,7 @@ typeattribute vendor_public_lib_file file_type;
 typeattribute vendor_public_lib_file vendor_file_type;
 
 # --- vendor_ramdump_vendor_data_file ---
-type vendor_ramdump_vendor_data_file, data_file_type, file_type, mlstrustedobject;
+type vendor_ramdump_vendor_data_file, base_typeattr_242, data_file_type, file_type, mlstrustedobject;
 
 # --- vendor_service_contexts_file ---
 typeattribute vendor_service_contexts_file file_type;
@@ -1222,7 +1409,7 @@ typeattribute vendor_task_profiles_file file_type;
 typeattribute vendor_task_profiles_file vendor_file_type;
 
 # --- vendor_tmpfs_log_file ---
-type vendor_tmpfs_log_file, data_file_type, file_type;
+type vendor_tmpfs_log_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vendor_userdir_file ---
 typeattribute vendor_userdir_file core_data_file_type;
@@ -1242,7 +1429,7 @@ typeattribute vendor_vm_file file_type;
 typeattribute vendor_vm_file vendor_file_type;
 
 # --- vendor_wifi_vendor_data_file ---
-type vendor_wifi_vendor_data_file, data_file_type, file_type;
+type vendor_wifi_vendor_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- vndk_sp_file ---
 typeattribute vndk_sp_file file_type;
@@ -1264,6 +1451,9 @@ typeattribute vpn_data_file core_data_file_type;
 typeattribute vpn_data_file data_file_type;
 typeattribute vpn_data_file file_type;
 
+# --- wae_data_file ---
+typeattribute wae_data_file base_typeattr_242;
+
 # --- wallpaper_file ---
 typeattribute wallpaper_file core_data_file_type;
 typeattribute wallpaper_file data_file_type;
@@ -1273,17 +1463,20 @@ typeattribute wallpaper_file mlstrustedobject;
 # --- watchdog_metadata_file ---
 typeattribute watchdog_metadata_file file_type;
 
+# --- whetstone_data_file ---
+typeattribute whetstone_data_file base_typeattr_242;
+
 # --- wifi_data_file ---
 typeattribute wifi_data_file core_data_file_type;
 typeattribute wifi_data_file data_file_type;
 typeattribute wifi_data_file file_type;
 
 # --- wifi_dump_data_file ---
-type wifi_dump_data_file, data_file_type, file_type;
+type wifi_dump_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- wpa_data_file ---
-type wpa_data_file, data_file_type, file_type;
+type wpa_data_file, base_typeattr_242, data_file_type, file_type;
 
 # --- wpa_supplicant_data_file ---
-type wpa_supplicant_data_file, data_file_type, file_type;
+type wpa_supplicant_data_file, base_typeattr_242, data_file_type, file_type;
 

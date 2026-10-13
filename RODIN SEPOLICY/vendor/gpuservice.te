@@ -1,6 +1,7 @@
 # ============================================================
 # File: gpuservice.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Display & Graphics
 # Subcategory: GPU Stack

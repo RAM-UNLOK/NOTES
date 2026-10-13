@@ -1,6 +1,7 @@
 # ============================================================
 # File: platform_app.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,25 +10,11 @@
 # ============================================================
 
 typeattribute platform_app domain;
-typeattribute platform_app halclientdomain;
 typeattribute platform_app vendor_hal_displayfeature_xiaomi_client;
 
-add_hwservice(platform_app, vendor_hal_fingerprint_hwservice_xiaomi)
-add_service(platform_app, goodix_fingerprint_service)
-binder_call(platform_app, hal_aidlbgservice)
-binder_call(platform_app, hal_camera_default)
-binder_call(platform_app, hal_fingerprint_default)
-binder_call(platform_app, hal_mediaeventgatherservice)
-binder_call(platform_app, hal_mediaeventgatherservice_service)
-binder_call(platform_app, mtk_hal_camera)
-binder_call(platform_app, mtk_hal_neuralnetworks)
 binder_call(platform_app, rild)
-binder_call(platform_app, vendor_dtool)
-binder_call(platform_app, vendor_hal_displayfeature_xiaomi_default)
-binder_call(platform_app, volte_clientapi_ua)
 binder_use(platform_app)
 get_prop(platform_app, exported_system_prop)
-get_prop(platform_app, system_prop)
 get_prop(platform_app, vendor_chipid_prop)
 get_prop(platform_app, vendor_color_prop)
 get_prop(platform_app, vendor_cpuid_prop)
@@ -84,8 +71,6 @@ hal_client_domain(platform_app, hal_touchfeature_xiaomi)
 hal_client_domain(platform_app, hal_videoservice)
 hal_client_domain(platform_app, hal_vsimapp)
 set_prop(platform_app, system_prop)
-set_prop(platform_app, vendor_miui_wifi_p2p_feature_prop)
-set_prop(platform_app, vendor_wlan_logs_prop)
 allow platform_app aee_dumpsys_data_file:file r_file_perms;
 allow platform_app aee_exp_data_file:dir r_dir_perms;
 allow platform_app aee_exp_data_file:file r_file_perms;
@@ -95,15 +80,24 @@ allow platform_app apusys_device:chr_file rw_file_perms;
 allow platform_app bluetooth:unix_stream_socket connectto;
 allow platform_app connsyslogger:unix_stream_socket connectto;
 allow platform_app data_vendor_mbrain:dir r_dir_perms;
-allow platform_app data_vendor_mbrain:file r_file_perms;
-allow platform_app data_vendor_mbrain:lnk_file r_file_perms;
+allow platform_app data_vendor_mbrain:{ file lnk_file } r_file_perms;
 allow platform_app debugfs_ion:dir search;
 allow platform_app emdlogger:unix_stream_socket connectto;
 allow platform_app fm_device:chr_file rw_file_perms;
 allow platform_app fuseblk:dir create_dir_perms;
 allow platform_app fuseblk:file create_file_perms;
+allow platform_app goodix_fingerprint_service:service_manager { add find };
+allow platform_app hal_aidlbgservice:binder call;
+allow platform_app hal_aidlbgservice:fd use;
 allow platform_app hal_aidlbgservice_service:service_manager find;
+allow platform_app hal_camera_default:binder call;
+allow platform_app hal_camera_default:fd use;
 allow platform_app hal_dynamic_camera_service:service_manager find;
+allow platform_app hal_fingerprint_default:binder call;
+allow platform_app hal_fingerprint_default:fd use;
+allow platform_app hal_mediaeventgatherservice:binder call;
+allow platform_app hal_mediaeventgatherservice_service:binder call;
+allow platform_app hal_mediaeventgatherservice_service:fd use;
 allow platform_app hal_mediaeventgatherservice_service:service_manager find;
 allow platform_app hal_miperf_service:service_manager find;
 allow platform_app hal_touchfeature_xiaomi_service:service_manager find;
@@ -116,24 +110,27 @@ allow platform_app mobicore_data_file:file r_file_perms;
 allow platform_app mobicore_tui_device:chr_file r_file_perms;
 allow platform_app mobicore_user_device:chr_file rw_file_perms;
 allow platform_app mobile_log_d:unix_stream_socket connectto;
+allow platform_app mtk_hal_camera:binder call;
+allow platform_app mtk_hal_camera:fd use;
+allow platform_app mtk_hal_neuralnetworks:binder { call transfer };
 allow platform_app netdiag:unix_stream_socket connectto;
 allow platform_app netdiag_socket:sock_file write;
 allow platform_app nfc_service:service_manager find;
 allow platform_app nfc_vendor_data_file:dir r_dir_perms;
-allow platform_app nfc_vendor_debug_data_file:dir r_dir_perms;
+allow platform_app nfc_vendor_debug_data_file:dir { getattr open read search };
 allow platform_app proc_ccci_sib:file r_file_perms;
 allow platform_app proc_mtk_jpeg:file rw_file_perms;
 allow platform_app radio:unix_stream_socket connectto;
 allow platform_app rootfs:dir getattr;
 allow platform_app sdcard_type:dir create_dir_perms;
 allow platform_app sdcard_type:file create_file_perms;
-allow platform_app self:netlink_kobject_uevent_socket { read create bind setopt };
-allow platform_app self:udp_socket { ioctl create };
+allow platform_app self:netlink_kobject_uevent_socket { bind create read setopt };
+allow platform_app self:udp_socket { create ioctl };
 allow platform_app sw_sync_device:chr_file rw_file_perms;
-allow platform_app sys_thermal_market_download_limit:file r_file_perms;
-allow platform_app sys_thermal_voice_limit:file r_file_perms;
+allow platform_app sys_thermal_market_download_limit:file { getattr open read watch watch_reads };
+allow platform_app sys_thermal_voice_limit:file { getattr open read watch watch_reads };
 allow platform_app sysfs_therm:dir search;
-allow platform_app sysfs_therm:file r_file_perms;
+allow platform_app sysfs_therm:file { getattr open read watch watch_reads };
 allow platform_app t_taglog_data_vendor_file:dir create_dir_perms;
 allow platform_app t_taglog_data_vendor_file:file create_file_perms;
 allow platform_app teei_data_file:dir create_dir_perms;
@@ -142,14 +139,18 @@ allow platform_app ttySDIO_device:chr_file rw_file_perms;
 allow platform_app vcodec_file:dir create_dir_perms;
 allow platform_app vcodec_file:file create_file_perms;
 allow platform_app vendor_configs_file:file r_file_perms;
+allow platform_app vendor_dtool:binder call;
 allow platform_app vendor_fingerprint_data_file_fpdump:file read;
+allow platform_app vendor_hal_displayfeature_xiaomi_default:binder call;
 allow platform_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
 allow platform_app vendor_hal_fingerprint_dtool1_service:service_manager find;
+allow platform_app vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { add find };
 allow platform_app vendor_hal_fingerprint_service_xiaomi:service_manager find;
+allow platform_app vendor_miui_wifi_p2p_feature_prop:property_service set;
+allow platform_app vendor_wlan_logs_prop:property_service set;
+allow platform_app volte_clientapi_ua:binder call;
 allow platform_app volte_clientapi_ua_hwservice:hwservice_manager find;
 allow platform_app vpu_device:chr_file rw_file_perms;
-allow platform_app vtservice:binder transfer;
-allowxperm platform_app proc_mtk_jpeg:file ioctl { (range 0x7812 0x7814) };
-allowxperm platform_app self:udp_socket ioctl 0x89f2;
-allowxperm platform_app self:udp_socket ioctl { 0x8b06 0x8be1 0x8be9 0x8beb 0x8bef };
+allowxperm platform_app proc_mtk_jpeg:file ioctl 0x7812-0x7814;
+allowxperm platform_app self:udp_socket ioctl { 0x89f2 0x8b06 0x8be1 0x8be9 0x8beb 0x8bef };
 

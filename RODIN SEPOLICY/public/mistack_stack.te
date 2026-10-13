@@ -1,6 +1,7 @@
 # ============================================================
 # File: mistack_stack.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

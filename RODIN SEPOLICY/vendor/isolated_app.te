@@ -1,6 +1,7 @@
 # ============================================================
 # File: isolated_app.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps

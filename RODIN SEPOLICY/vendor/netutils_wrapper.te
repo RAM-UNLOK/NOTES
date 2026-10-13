@@ -1,6 +1,7 @@
 # ============================================================
 # File: netutils_wrapper.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,29 +12,26 @@
 # --- netutils_wrapper ---
 typeattribute netutils_wrapper domain;
 
-init_daemon_domain(netutils_wrapper)
-allow netutils_wrapper devpts:chr_file { r_file_perms write };
+allow netutils_wrapper devpts:chr_file { getattr ioctl read write };
 allow netutils_wrapper ipsec_mon:fd use;
-allow netutils_wrapper ipsec_mon:netlink_route_socket { read write };
-allow netutils_wrapper ipsec_mon:netlink_xfrm_socket { read write };
+allow netutils_wrapper ipsec_mon:{ netlink_route_socket netlink_xfrm_socket } { read write };
 allow netutils_wrapper minetd:fd use;
 allow netutils_wrapper minetd:fifo_file write;
 allow netutils_wrapper minetd:unix_stream_socket { read write };
 allow netutils_wrapper miwild:fd use;
 allow netutils_wrapper miwild:fifo_file write;
 allow netutils_wrapper miwild:unix_stream_socket { read write };
-allow netutils_wrapper mtk_wwan_device:chr_file rw_file_perms;
+allow netutils_wrapper mtk_wwan_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow netutils_wrapper netdagent:fd use;
 allow netutils_wrapper netdagent:process sigchld;
 allow netutils_wrapper netdagent:unix_stream_socket { read write };
+allow netutils_wrapper netutils_wrapper_exec:file { entrypoint execute getattr map open read };
 allow netutils_wrapper rild:fd use;
 allow netutils_wrapper rild:fifo_file rw_file_perms;
 allow netutils_wrapper rild:unix_stream_socket { read write };
 allow netutils_wrapper slad:fd use;
 allow netutils_wrapper slad:fifo_file write;
-allow netutils_wrapper slad:rawip_socket { read write };
-allow netutils_wrapper slad:tcp_socket { read write };
-allow netutils_wrapper slad:unix_stream_socket { read write };
+allow netutils_wrapper slad:{ rawip_socket tcp_socket unix_stream_socket } { read write };
 allow netutils_wrapper wo_ipsec:process sigchld;
 
 # --- netutils_wrapper_exec ---

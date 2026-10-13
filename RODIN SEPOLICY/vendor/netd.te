@@ -1,6 +1,7 @@
 # ============================================================
 # File: netd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Wi-Fi Stack
@@ -14,35 +15,32 @@ typeattribute netd mlstrustedsubject;
 
 get_prop(netd, vendor_mtk_app_prop)
 allow netd bip_ap:fd use;
-allow netd bip_ap:tcp_socket { read write getopt setopt };
-allow netd bip_ap:udp_socket { read write getopt setopt };
+allow netd bip_ap:{ tcp_socket udp_socket } { getopt read setopt write };
 allow netd gnss_daemon:fd use;
-allow netd gnss_daemon:tcp_socket { read write getopt setopt };
+allow netd gnss_daemon:tcp_socket { getopt read setopt write };
 allow netd mdlogger:fd use;
-allow netd mdlogger:tcp_socket { r_file_perms w_file_perms bind connect getopt setattr setopt shutdown };
+allow netd mdlogger:tcp_socket rw_socket_perms_no_ioctl;
 allow netd meta_tst:fd use;
-allow netd meta_tst:tcp_socket { read write getopt setopt };
+allow netd meta_tst:tcp_socket { getopt read setopt write };
 allow netd metad:fd use;
-allow netd metad:tcp_socket { read write getopt setopt };
+allow netd metad:tcp_socket { getopt read setopt write };
 allow netd netdiag:fd use;
-allow netd netdiag:udp_socket { r_file_perms w_file_perms bind connect getopt setattr setopt shutdown };
+allow netd netdiag:udp_socket rw_socket_perms_no_ioctl;
 allow netd platform_app:fd use;
 allow netd ppp:process sigkill;
 allow netd rcs_volte_stack:fd use;
-allow netd rcs_volte_stack:tcp_socket { read write getopt setopt };
-allow netd rcs_volte_stack:udp_socket { read write getopt setopt };
+allow netd rcs_volte_stack:{ tcp_socket udp_socket } { getopt read setopt write };
 allow netd self:capability { fsetid setgid setuid };
 allow netd slad:fd use;
-allow netd slad:udp_socket { read write getopt setopt };
-allow netd slad:unix_stream_socket { r_file_perms write };
-allow netd slad_socket:sock_file { r_file_perms write };
+allow netd slad:udp_socket { getopt read setopt write };
+allow netd slad:unix_stream_socket { getattr read write };
+allow netd slad_socket:sock_file { getattr read write };
 allow netd untrusted_app:fd use;
 allow netd vtservice:fd use;
-allow netd vtservice:udp_socket { read write getopt setopt };
+allow netd vtservice:udp_socket { getopt read setopt write };
 allow netd wmtWifi_device:chr_file w_file_perms;
 allow netd wo_ipsec:fd use;
-allow netd wo_ipsec:tcp_socket { read write getopt setopt };
-allow netd wo_ipsec:udp_socket { read write getopt setopt };
+allow netd wo_ipsec:{ tcp_socket udp_socket } { getopt read setopt write };
 
 # --- netd_exec ---
 typeattribute netd_exec exec_type;
@@ -50,5 +48,5 @@ typeattribute netd_exec file_type;
 typeattribute netd_exec system_file_type;
 
 # --- netd_socket ---
-type netd_socket, coredomain_socket, file_type;
+type netd_socket, base_typeattr_242, coredomain_socket, file_type;
 

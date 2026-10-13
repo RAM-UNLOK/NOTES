@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_bgs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,9 +15,10 @@ allow hal_mtk_bgs_client mtk_hal_bgs_hwservice:hwservice_manager find;
 allow hal_mtk_bgs_client mtk_hal_bgs_service:service_manager find;
 
 # --- hal_mtk_bgs_server ---
-add_hwservice(hal_mtk_bgs_server, hidl_base_hwservice)
 add_hwservice(hal_mtk_bgs_server, mtk_hal_bgs_hwservice)
-add_service(hal_mtk_bgs_server, mtk_hal_bgs_service)
-binder_call(hal_mtk_bgs_server, hal_mtk_bgs_client)
-binder_use(hal_mtk_bgs_server)
+allow hal_mtk_bgs_server hal_mtk_bgs_client:binder call;
+allow hal_mtk_bgs_server hal_mtk_bgs_client:fd use;
+allow hal_mtk_bgs_server mtk_hal_bgs_service:service_manager { add find };
+allow hal_mtk_bgs_server servicemanager:binder { call transfer };
+allow hal_mtk_bgs_server servicemanager:fd use;
 

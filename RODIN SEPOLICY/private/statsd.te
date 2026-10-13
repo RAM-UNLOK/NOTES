@@ -1,6 +1,7 @@
 # ============================================================
 # File: statsd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Logging
@@ -11,7 +12,6 @@
 # --- statsd ---
 typeattribute statsd coredomain;
 typeattribute statsd domain;
-typeattribute statsd halclientdomain;
 typeattribute statsd mlstrustedsubject;
 
 hal_client_domain(statsd, hal_health)

@@ -1,6 +1,7 @@
 # ============================================================
 # File: pbtombstone.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools

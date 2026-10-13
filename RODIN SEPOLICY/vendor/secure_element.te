@@ -1,7 +1,8 @@
 # ============================================================
 # File: secure_element.te
 # Tier: vendor
-# Vendor: Samsung
+# Partitions: odm, vendor
+# Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Proximity & Short-range
 # Role: NATIVE / MISC

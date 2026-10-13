@@ -1,6 +1,7 @@
 # ============================================================
 # File: app_zygote.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -13,10 +14,9 @@ typeattribute app_zygote coredomain;
 typeattribute app_zygote domain;
 
 get_prop(app_zygote, system_mtk_hbt_prop)
-allow app_zygote app_zygote_tmpfs:file rw_file_perms;
-allow app_zygote hbt_device:chr_file ioctl;
+allow app_zygote app_zygote_tmpfs:file { getattr map open read write };
 allow app_zygote hbt_device:chr_file rw_file_perms;
-allowxperm app_zygote hbt_device:chr_file ioctl { (range 0x74a3 0x74a7) };
+allowxperm app_zygote hbt_device:chr_file ioctl 0x74a3-0x74a7;
 
 # --- app_zygote_tmpfs ---
 typeattribute app_zygote_tmpfs file_type;

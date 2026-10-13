@@ -1,6 +1,7 @@
 # ============================================================
 # File: dev_cpu_variant.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

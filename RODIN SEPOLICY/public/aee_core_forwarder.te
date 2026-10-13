@@ -1,6 +1,7 @@
 # ============================================================
 # File: aee_core_forwarder.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,20 +10,16 @@
 # ============================================================
 
 # --- aee_core_forwarder ---
-type aee_core_forwarder;
-
-typeattribute aee_core_forwarder coredomain;
-typeattribute aee_core_forwarder domain;
+type aee_core_forwarder, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain;
 
 get_prop(aee_core_forwarder, system_mtk_persist_aee_prop)
 init_daemon_domain(aee_core_forwarder)
-wakelock_use(aee_core_forwarder)
 allow aee_core_forwarder domain:dir r_dir_perms;
 allow aee_core_forwarder domain:file r_file_perms;
 allow aee_core_forwarder kernel:fd use;
 allow aee_core_forwarder kernel:fifo_file r_file_perms;
 allow aee_core_forwarder kernel:process sigchld;
-allow aee_core_forwarder media_rw_data_file:dir { write lock open add_name remove_name search };
+allow aee_core_forwarder media_rw_data_file:dir w_dir_perms;
 allow aee_core_forwarder media_rw_data_file:file create_file_perms;
 allow aee_core_forwarder mnt_user_file:dir search;
 allow aee_core_forwarder mnt_user_file:lnk_file r_file_perms;
@@ -33,6 +30,7 @@ allow aee_core_forwarder self:capability { fsetid setgid sys_admin sys_nice };
 allow aee_core_forwarder self:capability2 block_suspend;
 allow aee_core_forwarder storage_file:dir search;
 allow aee_core_forwarder storage_file:lnk_file r_file_perms;
+allow aee_core_forwarder sysfs_wake_lock:file rw_file_perms;
 allow aee_core_forwarder tmpfs:dir search;
 dontaudit aee_core_forwarder self:capability sys_ptrace;
 dontaudit aee_core_forwarder untrusted_app:dir search;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: gpuservice.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Display & Graphics
 # Subcategory: GPU Stack
@@ -11,10 +12,6 @@
 # --- gpuservice ---
 typeattribute gpuservice coredomain;
 typeattribute gpuservice domain;
-
-allow gpuservice em_app:binder transfer;
-allow gpuservice mslg_app:binder transfer;
-allow gpuservice wae_app:binder transfer;
 
 # --- gpuservice_exec ---
 typeattribute gpuservice_exec exec_type;

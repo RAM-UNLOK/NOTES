@@ -1,6 +1,7 @@
 # ============================================================
 # File: mqsasd.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,75 +10,61 @@
 # ============================================================
 
 # --- mqsasd ---
-type mqsasd;
+type mqsasd, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute mqsasd binderservicedomain;
-typeattribute mqsasd coredomain;
-typeattribute mqsasd domain;
-typeattribute mqsasd mlstrustedsubject;
-
-add_service(mqsasd, mqsasd_service)
 binder_call(mqsasd, appdomain)
 binder_call(mqsasd, binderservicedomain)
-binder_call(mqsasd, fdpp)
 binder_call(mqsasd, system_server)
-binder_call(mqsasd, wificond)
-binder_use(mqsasd)
-get_prop(mqsasd, ctl_start_prop)
 get_prop(mqsasd, ctl_stop_prop)
 get_prop(mqsasd, safemode_prop)
 init_daemon_domain(mqsasd)
 net_domain(mqsasd)
-set_prop(mqsasd, ctl_default_prop)
-set_prop(mqsasd, ctl_dumpstate_prop)
 set_prop(mqsasd, ctl_start_prop)
-set_prop(mqsasd, ctl_stop_prop)
-set_prop(mqsasd, powerctl_prop)
-set_prop(mqsasd, safemode_prop)
-set_prop(mqsasd, system_prop)
 allow mqsasd activity_service:service_manager find;
 allow mqsasd activity_task_service:service_manager find;
 allow mqsasd adb_keys_file:file setattr;
 allow mqsasd alarm_service:service_manager find;
-allow mqsasd anr_data_file:dir create;
-allow mqsasd anr_data_file:dir { rw_dir_perms relabelto };
+allow mqsasd anr_data_file:dir { rw_dir_perms create relabelto };
 allow mqsasd anr_data_file:file create_file_perms;
 allow mqsasd appdomain:process signal;
 allow mqsasd batterystats_service:service_manager find;
 allow mqsasd block_device:dir search;
-allow mqsasd cache_file:dir create_dir_perms;
-allow mqsasd cache_file:file create_file_perms;
-allow mqsasd cache_recovery_file:dir create_dir_perms;
-allow mqsasd cache_recovery_file:file create_file_perms;
+allow mqsasd cache_file:dir { add_name create getattr open read remove_name search setattr write };
+allow mqsasd cache_file:file { append create getattr open read setattr unlink write };
+allow mqsasd cache_recovery_file:dir { add_name create getattr open read remove_name search setattr write };
+allow mqsasd cache_recovery_file:file { append create getattr open read setattr unlink write };
 allow mqsasd cameraserver_service:service_manager find;
 allow mqsasd configfs:dir search;
 allow mqsasd connectivity_service:service_manager find;
 allow mqsasd connmetrics_service:service_manager find;
 allow mqsasd cpuinfo_service:service_manager find;
+allow mqsasd ctl_default_prop:property_service set;
+allow mqsasd ctl_dumpstate_prop:property_service set;
+allow mqsasd ctl_stop_prop:property_service set;
 allow mqsasd dalvikcache_data_file:dir search;
-allow mqsasd data_log_camera_file:dir rw_dir_perms;
-allow mqsasd data_log_camera_file:file { rw_file_perms setattr };
+allow mqsasd data_log_camera_file:dir { getattr open read search write };
+allow mqsasd data_log_camera_file:file { getattr open read setattr write };
 allow mqsasd data_log_file:dir search;
 allow mqsasd data_log_stability_file:dir create_dir_perms;
 allow mqsasd data_log_stability_file:file create_file_perms;
 allow mqsasd debuglog_data_file:dir r_dir_perms;
-allow mqsasd debuglog_data_file:file { r_file_perms setattr };
+allow mqsasd debuglog_data_file:file { getattr open read setattr };
 allow mqsasd display_service:service_manager find;
-allow mqsasd dm_device:blk_file r_file_perms;
-allow mqsasd domain:dir r_dir_perms;
-allow mqsasd domain:file r_file_perms;
-allow mqsasd domain:lnk_file r_file_perms;
+allow mqsasd dm_device:blk_file { getattr ioctl open read };
+allow mqsasd domain:dir { getattr open read search };
 allow mqsasd domain:process getattr;
+allow mqsasd domain:{ file lnk_file } { getattr open read };
 allow mqsasd drmserver:process signal;
 allow mqsasd dropbox_service:service_manager find;
 allow mqsasd dumpstate:unix_stream_socket connectto;
 allow mqsasd dumpstate_socket:sock_file write;
 allow mqsasd ethernet_service:service_manager find;
-allow mqsasd fuse:dir create_dir_perms;
-allow mqsasd fuse:file create_file_perms;
+allow mqsasd fdpp:binder call;
+allow mqsasd fuse:dir { add_name create getattr open read remove_name search setattr write };
+allow mqsasd fuse:file { append create getattr open read setattr unlink write };
 allow mqsasd gfxinfo_service:service_manager find;
 allow mqsasd greeze_service:service_manager find;
-allow mqsasd init:unix_stream_socket { read write connectto };
+allow mqsasd init:unix_stream_socket { read write };
 allow mqsasd input_method_service:service_manager find;
 allow mqsasd input_service:service_manager find;
 allow mqsasd inputflinger_service:service_manager find;
@@ -87,61 +74,59 @@ allow mqsasd logcat_exec:file rx_file_perms;
 allow mqsasd logd:unix_stream_socket connectto;
 allow mqsasd logd_socket:sock_file write;
 allow mqsasd logdr_socket:sock_file write;
-allow mqsasd media_rw_data_file:dir create_dir_perms;
-allow mqsasd media_rw_data_file:file create_file_perms;
+allow mqsasd media_rw_data_file:dir { add_name create getattr open read remove_name search setattr write };
+allow mqsasd media_rw_data_file:file { append create getattr open read setattr unlink write };
 allow mqsasd mediaserver:process signal;
 allow mqsasd meminfo_service:service_manager find;
 allow mqsasd miui_coredump_file:dir { create_dir_perms relabelto };
 allow mqsasd miui_coredump_file:file create_file_perms;
-allow mqsasd miui_hprof_file:dir { write getattr setattr add_name search };
-allow mqsasd miui_hprof_file:file create_file_perms;
+allow mqsasd miui_hprof_file:dir { add_name getattr search setattr write };
+allow mqsasd miui_hprof_file:file { create getattr open read setattr write };
 allow mqsasd miui_native_file:dir { create_dir_perms relabelto };
 allow mqsasd mnt_user_file:dir search;
 allow mqsasd mnt_user_file:lnk_file read;
 allow mqsasd mqsas_data_file:dir { create_dir_perms relabelto };
 allow mqsasd mqsas_data_file:file create_file_perms;
+allow mqsasd mqsasd_service:service_manager { add find };
 allow mqsasd netd_listener_service:service_manager find;
 allow mqsasd netpolicy_service:service_manager find;
 allow mqsasd netstats_service:service_manager find;
-allow mqsasd netutils_wrapper:process transition;
-allow mqsasd netutils_wrapper:process { siginh rlimitinh };
-allow mqsasd netutils_wrapper_exec:file rx_file_perms;
+allow mqsasd netutils_wrapper:process { rlimitinh siginh transition };
+allow mqsasd netutils_wrapper_exec:file { execute getattr map open read };
 allow mqsasd network_management_service:service_manager find;
 allow mqsasd network_stack_service:service_manager find;
 allow mqsasd network_watchlist_service:service_manager find;
-allow mqsasd offlinedb_data_file:dir { create_dir_perms relabelfrom };
-allow mqsasd offlinedb_data_file:dir { rw_dir_perms relabelto };
+allow mqsasd offlinedb_data_file:dir { create_dir_perms relabelfrom relabelto };
 allow mqsasd offlinedb_data_file:file create_file_perms;
-allow mqsasd offlinedb_data_file:file rw_file_perms;
 allow mqsasd package_native_service:service_manager find;
 allow mqsasd package_service:service_manager find;
 allow mqsasd platform_app:dir search;
 allow mqsasd platform_app:file write;
 allow mqsasd power_service:service_manager find;
+allow mqsasd powerctl_prop:property_service set;
 allow mqsasd priv_app:file write;
-allow mqsasd proc_cmdline:file { read open };
-allow mqsasd proc_meminfo:file { read open };
-allow mqsasd proc_net_tcp_udp:file r_file_perms;
+allow mqsasd proc_cmdline:file { open read };
+allow mqsasd proc_meminfo:file { open read };
+allow mqsasd proc_net_tcp_udp:file { getattr open read };
 allow mqsasd proc_pressure_cpu:file rw_file_perms;
 allow mqsasd proc_pressure_io:file rw_file_perms;
 allow mqsasd proc_pressure_mem:file rw_file_perms;
-allow mqsasd proc_zoneinfo:file rw_file_perms;
+allow mqsasd proc_zoneinfo:file { open read write };
 allow mqsasd property_data_file:dir r_dir_perms;
 allow mqsasd property_data_file:file r_file_perms;
 allow mqsasd pstorefs:dir search;
-allow mqsasd rootfs:lnk_file getattr;
-allow mqsasd rootfs:lnk_file r_file_perms;
+allow mqsasd rootfs:lnk_file { getattr open read };
+allow mqsasd safemode_prop:property_service set;
 allow mqsasd sdcardd:process signal;
-allow mqsasd sdcardfs:dir create_dir_perms;
-allow mqsasd sdcardfs:file create_file_perms;
-allow mqsasd self:capability net_admin;
-allow mqsasd self:capability { chown fowner fsetid };
-allow mqsasd self:capability { net_bind_service net_admin net_raw };
+allow mqsasd sdcardfs:dir { add_name create getattr open read remove_name search setattr write };
+allow mqsasd sdcardfs:file { append create getattr open read setattr unlink write };
+allow mqsasd self:capability { chown fowner fsetid net_admin net_bind_service net_raw };
 allow mqsasd self:capability2 syslog;
-allow mqsasd self:netlink_generic_socket { r_file_perms bind create setopt write };
-allow mqsasd self:netlink_tcpdiag_socket { create_socket_perms r_file_perms w_file_perms nlmsg_read nlmsg_write };
-allow mqsasd self:packet_socket { create_socket_perms r_file_perms w_file_perms };
-allow mqsasd self:udp_socket { ioctl create };
+allow mqsasd self:netlink_generic_socket { bind create getattr read setopt write };
+allow mqsasd self:netlink_tcpdiag_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow mqsasd self:packet_socket create_socket_perms_no_ioctl;
+allow mqsasd self:udp_socket { create ioctl };
+allow mqsasd servicemanager:binder { call transfer };
 allow mqsasd servicemanager:service_manager list;
 allow mqsasd shell_exec:file rx_file_perms;
 allow mqsasd storage_file:dir search;
@@ -152,41 +137,41 @@ allow mqsasd system_app:file write;
 allow mqsasd system_data_file:file r_file_perms;
 allow mqsasd system_data_root_file:dir read;
 allow mqsasd system_file:file execute_no_trans;
-allow mqsasd system_optimize_data_file:dir { rw_dir_perms setattr unlink };
+allow mqsasd system_optimize_data_file:dir { getattr open read remove_name search setattr unlink write };
 allow mqsasd system_optimize_data_file:file { getattr setattr unlink };
+allow mqsasd system_prop:property_service set;
 allow mqsasd system_server:file write;
 allow mqsasd system_server:process signal;
-allow mqsasd system_server:unix_stream_socket { read write connectto };
+allow mqsasd system_server:unix_stream_socket { connectto read write };
 allow mqsasd tethering_service:service_manager find;
-allow mqsasd tombstone_data_file:dir r_dir_perms;
-allow mqsasd tombstone_data_file:dir write;
+allow mqsasd tombstone_data_file:dir { r_dir_perms write };
 allow mqsasd tombstone_data_file:file r_file_perms;
-allow mqsasd toolbox_exec:file map;
-allow mqsasd toolbox_exec:file rx_file_perms;
+allow mqsasd toolbox_exec:file { x_file_perms open read };
 allow mqsasd trace_data_file:dir search;
-allow mqsasd trace_data_file:file r_file_perms;
+allow mqsasd trace_data_file:file { getattr open read };
 allow mqsasd turbosched_service:service_manager find;
 allow mqsasd uncrypt:unix_stream_socket connectto;
 allow mqsasd uncrypt_socket:sock_file write;
 allow mqsasd untrusted_app:dir search;
 allow mqsasd untrusted_app:file write;
-allow mqsasd update_engine_data_file:dir r_dir_perms;
-allow mqsasd update_engine_data_file:file { r_file_perms setattr };
-allow mqsasd update_engine_log_data_file:dir { rw_dir_perms setattr unlink };
-allow mqsasd update_engine_log_data_file:file { r_file_perms setattr unlink };
-allow mqsasd userdata_block_device:blk_file r_file_perms;
+allow mqsasd update_engine_data_file:dir { getattr open read search };
+allow mqsasd update_engine_data_file:file { getattr open read setattr };
+allow mqsasd update_engine_log_data_file:dir { getattr open read remove_name search setattr unlink write };
+allow mqsasd update_engine_log_data_file:file { getattr open read setattr unlink };
+allow mqsasd userdata_block_device:blk_file { getattr ioctl open read };
 allow mqsasd vendor_file:dir read;
 allow mqsasd vpn_management_service:service_manager find;
 allow mqsasd wallpaper_service:service_manager find;
 allow mqsasd wifi_service:service_manager find;
+allow mqsasd wificond:binder call;
 allow mqsasd wifip2p_service:service_manager find;
 allow mqsasd wifiscanner_service:service_manager find;
 allow mqsasd window_service:service_manager find;
 allow mqsasd zygote_exec:file rx_file_perms;
+dontaudit mqsasd netutils_wrapper:process noatsecure;
 allowxperm mqsasd proc_pressure_cpu:file ioctl 0x7001;
 allowxperm mqsasd proc_pressure_io:file ioctl 0x7001;
 allowxperm mqsasd proc_pressure_mem:file ioctl 0x7001;
-dontaudit mqsasd netutils_wrapper:process noatsecure;
 type_transition mqsasd netutils_wrapper_exec:process netutils_wrapper;
 
 # --- mqsasd_exec ---

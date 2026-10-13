@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_aov.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,6 +14,7 @@ binder_call(hal_mtk_aov_client, hal_mtk_aov_server)
 allow hal_mtk_aov_client mtk_hal_aov_service:service_manager find;
 
 # --- hal_mtk_aov_server ---
-add_service(hal_mtk_aov_server, mtk_hal_aov_service)
-binder_call(hal_mtk_aov_server, hal_mtk_aov_client)
+allow hal_mtk_aov_server hal_mtk_aov_client:binder call;
+allow hal_mtk_aov_server hal_mtk_aov_client:fd use;
+allow hal_mtk_aov_server mtk_hal_aov_service:service_manager { add find };
 

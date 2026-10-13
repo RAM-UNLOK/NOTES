@@ -1,6 +1,7 @@
 # ============================================================
 # File: fs_sys_miui.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: Xiaomi
 # Category: Uncategorized
 # Subcategory: Misc

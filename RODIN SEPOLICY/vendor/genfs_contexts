@@ -91,6 +91,8 @@ genfscon proc /cpu_loading/core_cpus_overThrhld                                 
 genfscon proc /cpu_loading/curr_cpu_loading                                                                                                    u:object_r:proc_curr_cpu_loading:s0
 genfscon proc /cpu_loading/onoff                                                                                                               u:object_r:proc_cpu_loading:s0
 genfscon proc /cpu_loading/overThrhld                                                                                                          u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/poltime_nsecs                                                                                                       u:object_r:proc_cpu_loading:s0
+genfscon proc /cpu_loading/poltime_secs                                                                                                        u:object_r:proc_cpu_loading:s0
 genfscon proc /cpu_loading/specify_cpus                                                                                                        u:object_r:proc_cpu_loading:s0
 genfscon proc /cpu_loading/specify_overThrhld                                                                                                  u:object_r:proc_cpu_loading:s0
 genfscon proc /cpu_loading/uevent_enable                                                                                                       u:object_r:proc_cpu_loading:s0
@@ -1022,11 +1024,6 @@ genfscon sysfs /class/qcom-battery/fg_vendor                                    
 
 # --- System Core & Framework ---
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                                                       u:object_r:sysfs_wakeup:s0
-
-# [ Vendor: Samsung ]
-# --- Misc ---
-genfscon proc /cpu_loading/poltime_nsecs                                                                                                       u:object_r:proc_cpu_loading:s0
-genfscon proc /cpu_loading/poltime_secs                                                                                                        u:object_r:proc_cpu_loading:s0
 
 # [ Vendor: Xiaomi ]
 # --- System Core & Framework ---

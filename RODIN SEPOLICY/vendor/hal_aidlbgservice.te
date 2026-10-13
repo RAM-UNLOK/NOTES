@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_aidlbgservice.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -19,5 +20,6 @@ binder_call(hal_aidlbgservice_client, hal_aidlbgservice_server)
 allow hal_aidlbgservice_client hal_aidlbgservice_service:service_manager find;
 
 # --- hal_aidlbgservice_server ---
-binder_call(hal_aidlbgservice_server, hal_aidlbgservice_client)
+allow hal_aidlbgservice_server hal_aidlbgservice_client:binder call;
+allow hal_aidlbgservice_server hal_aidlbgservice_client:fd use;
 

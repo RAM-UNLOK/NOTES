@@ -1,6 +1,7 @@
 # ============================================================
 # File: debugfs.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools

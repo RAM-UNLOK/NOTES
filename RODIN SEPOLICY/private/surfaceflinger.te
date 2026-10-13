@@ -1,6 +1,7 @@
 # ============================================================
 # File: surfaceflinger.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Display & Graphics
 # Subcategory: Compositing
@@ -13,10 +14,9 @@ typeattribute surfaceflinger binderservicedomain;
 typeattribute surfaceflinger coredomain;
 typeattribute surfaceflinger domain;
 typeattribute surfaceflinger hal_mtk_sf;
-typeattribute surfaceflinger halclientdomain;
+typeattribute surfaceflinger hal_mtk_sf_server;
 typeattribute surfaceflinger mlstrustedsubject;
 
-add_service(surfaceflinger, fpspolicy-server_service)
 get_prop(surfaceflinger, debug_prop)
 get_prop(surfaceflinger, system_mtk_debug_bq_dump_prop)
 get_prop(surfaceflinger, system_mtk_debug_bq_prop)
@@ -31,59 +31,51 @@ hal_client_domain(surfaceflinger, hal_graphics_allocator)
 hal_client_domain(surfaceflinger, hal_graphics_composer)
 hal_client_domain(surfaceflinger, hal_omx)
 hal_client_domain(surfaceflinger, hal_power)
-hal_server_domain(surfaceflinger, hal_mtk_sf)
-set_prop(surfaceflinger, debug_prop)
-set_prop(surfaceflinger, system_mtk_graphics_sf_gll_prop)
-set_prop(surfaceflinger, system_mtk_sf_debug_prop)
 allow surfaceflinger automotive_display_service:dir search;
-allow surfaceflinger camera_intentaware_filesys_driver:chr_file rw_file_perms;
-allow surfaceflinger cameramind_app:binder transfer;
-allow surfaceflinger camerapostalgo:binder transfer;
-allow surfaceflinger cammsger_device:chr_file rw_file_perms;
+allow surfaceflinger camera_intentaware_filesys_driver:chr_file { append getattr ioctl open read watch watch_reads write };
+allow surfaceflinger cammsger_device:chr_file { getattr ioctl open read watch watch_reads write };
 allow surfaceflinger data_log_hyperlogmanager_file:dir create_dir_perms;
 allow surfaceflinger data_log_hyperlogmanager_file:file create_file_perms;
 allow surfaceflinger data_log_stability_file:dir create_dir_perms;
 allow surfaceflinger data_log_stability_file:file create_file_perms;
-allow surfaceflinger em_svr:binder transfer;
+allow surfaceflinger debug_prop:property_service set;
 allow surfaceflinger file_contexts_file:file r_file_perms;
+allow surfaceflinger fpspolicy-server_service:service_manager add;
 allow surfaceflinger hypsys_ssi_default:fifo_file write;
-allow surfaceflinger init_tmpfs:file r_file_perms;
-allow surfaceflinger magt:binder transfer;
+allow surfaceflinger init_tmpfs:file { getattr map open read };
 allow surfaceflinger mi_sw_sync_dev:chr_file rw_file_perms;
 allow surfaceflinger migt_dev:chr_file rw_file_perms;
 allow surfaceflinger migt_file:dir search;
-allow surfaceflinger miui_coredump_file:dir { write add_name search };
-allow surfaceflinger miui_coredump_file:file create_file_perms;
+allow surfaceflinger miui_coredump_file:dir { add_name search write };
+allow surfaceflinger miui_coredump_file:file { create open read write };
 allow surfaceflinger miui_native_file:dir search;
 allow surfaceflinger mqs_service:service_manager find;
 allow surfaceflinger mqsas_data_file:dir search;
-allow surfaceflinger mqsas_data_file:file append;
-allow surfaceflinger mqsas_data_file:file r_file_perms;
-allow surfaceflinger mqsasd:fifo_file create_file_perms;
+allow surfaceflinger mqsas_data_file:file { append getattr open read };
+allow surfaceflinger mqsasd:fifo_file { create open read write };
 allow surfaceflinger mtk_perf_service:service_manager find;
 allow surfaceflinger mtk_power_hal_mgr_service:service_manager find;
-allow surfaceflinger mtkbootanimation:binder transfer;
 allow surfaceflinger proc_mi_mem:dir search;
 allow surfaceflinger proc_mi_mem:file rw_file_perms;
 allow surfaceflinger proc_union_power:dir search;
-allow surfaceflinger proc_union_power:file r_file_perms;
+allow surfaceflinger proc_union_power:file { getattr ioctl open read };
 allow surfaceflinger sf_cache_data_file:dir rw_dir_perms;
-allow surfaceflinger sf_cache_data_file:file create_file_perms;
-allow surfaceflinger smartplatformserver:binder transfer;
+allow surfaceflinger sf_cache_data_file:file { rw_file_perms create setattr unlink };
 allow surfaceflinger surfaceflinger_lut_file:dir rw_dir_perms;
-allow surfaceflinger surfaceflinger_lut_file:file create_file_perms;
-allow surfaceflinger sysfs_dmabuf_stats:dir r_dir_perms;
-allow surfaceflinger sysfs_dmabuf_stats:file r_file_perms;
+allow surfaceflinger surfaceflinger_lut_file:file { rw_file_perms create setattr unlink };
+allow surfaceflinger sysfs_dmabuf_stats:dir { open read search };
+allow surfaceflinger sysfs_dmabuf_stats:file { getattr open read };
 allow surfaceflinger sysfs_ion:dir search;
-allow surfaceflinger sysfs_ion:file r_file_perms;
+allow surfaceflinger sysfs_ion:file { getattr open read };
 allow surfaceflinger sysfs_migt:dir search;
-allow surfaceflinger sysfs_migt:file rw_file_perms;
+allow surfaceflinger sysfs_migt:file { getattr open read write };
 allow surfaceflinger system_app_data_file:file write;
-allow surfaceflinger tmpfs:dir r_file_perms;
-allow surfaceflinger tmpfs:file r_file_perms;
+allow surfaceflinger system_mtk_graphics_sf_gll_prop:property_service set;
+allow surfaceflinger system_mtk_sf_debug_prop:property_service set;
+allow surfaceflinger tmpfs:{ dir file } { getattr map open read };
 allow surfaceflinger turbosched_service:service_manager find;
 allow surfaceflinger wm_trace_data_file:dir rw_dir_perms;
-allow surfaceflinger wm_trace_data_file:file create_file_perms;
+allow surfaceflinger wm_trace_data_file:file { rw_file_perms create setattr };
 allowxperm surfaceflinger proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- surfaceflinger_exec ---

@@ -1,6 +1,7 @@
 # ============================================================
 # File: fwk_bufferhub.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,7 +12,6 @@
 # --- fwk_bufferhub ---
 typeattribute fwk_bufferhub coredomain;
 typeattribute fwk_bufferhub domain;
-typeattribute fwk_bufferhub halclientdomain;
 
 hal_client_domain(fwk_bufferhub, hal_graphics_allocator)
 

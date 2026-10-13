@@ -1,6 +1,7 @@
 # ============================================================
 # File: simpleperf.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management
@@ -9,10 +10,9 @@
 # ============================================================
 
 # --- simpleperf ---
+typeattribute simpleperf appdomain;
 typeattribute simpleperf coredomain;
 typeattribute simpleperf domain;
-
-app_domain(simpleperf)
 
 # --- simpleperf_exec ---
 typeattribute simpleperf_exec exec_type;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: system_unsolzygote.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons

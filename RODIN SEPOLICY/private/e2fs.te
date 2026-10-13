@@ -1,6 +1,7 @@
 # ============================================================
 # File: e2fs.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -12,8 +13,8 @@
 typeattribute e2fs coredomain;
 typeattribute e2fs domain;
 
-allow e2fs vold:fifo_file rw_file_perms;
-allow e2fs vold_device:blk_file rw_file_perms;
+allow e2fs vold:fifo_file { getattr open read write };
+allow e2fs vold_device:blk_file { getattr ioctl open read write };
 
 # --- e2fs_exec ---
 typeattribute e2fs_exec exec_type;

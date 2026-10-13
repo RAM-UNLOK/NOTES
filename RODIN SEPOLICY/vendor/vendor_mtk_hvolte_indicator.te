@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_mtk_hvolte_indicator.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Radio & Telephony
 # Subcategory: IMS & VoLTE
@@ -9,6 +10,6 @@
 # ============================================================
 
 vendor_restricted_prop(vendor_mtk_hvolte_indicator)
-
+typeattribute vendor_mtk_hvolte_indicator base_typeattr_242;
 typeattribute vendor_mtk_hvolte_indicator mtk_core_property_type;
 

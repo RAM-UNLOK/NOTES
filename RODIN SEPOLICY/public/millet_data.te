@@ -1,6 +1,7 @@
 # ============================================================
 # File: millet_data.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

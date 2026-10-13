@@ -1,6 +1,7 @@
 # ============================================================
 # File: appdomain.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,24 +15,15 @@ get_prop(appdomain, system_cta_prop)
 get_prop(appdomain, system_mtk_amslog_prop)
 get_prop(appdomain, system_mtk_hbt_prop)
 get_prop(appdomain, xms_prop)
-allow appdomain appdomain:unix_dgram_socket { r_file_perms getopt write };
-allow appdomain appdomain_tmpfs:file rw_file_perms;
-allow appdomain facemiui:binder transfer;
+allow appdomain appdomain:unix_dgram_socket { getattr getopt read write };
+allow appdomain appdomain_tmpfs:file { getattr map open read write };
 allow appdomain hbt_device:chr_file rw_file_perms;
-allow appdomain hypsys_ssi_default:binder transfer;
-allow appdomain mcd:binder transfer;
-allow appdomain misight:binder transfer;
-allow appdomain mqsas:binder transfer;
-allow appdomain mqsasd:binder transfer;
-allow appdomain pipelinecache_data_file:dir r_dir_perms;
-allow appdomain pipelinecache_data_file:file r_file_perms;
-allow appdomain shelld:binder transfer;
-allow appdomain system_mtk_pmb_file:file rx_file_perms;
-allow appdomain system_server:unix_dgram_socket { r_file_perms getopt write };
+allow appdomain pipelinecache_data_file:dir { getattr map open read search };
+allow appdomain pipelinecache_data_file:file { getattr map open read };
+allow appdomain system_mtk_pmb_file:file { execute getattr map open read };
+allow appdomain system_server:unix_dgram_socket { getattr getopt read write };
 allow appdomain theme_data_file:dir { r_dir_perms relabelfrom relabelto };
-allow appdomain theme_data_file:file { r_file_perms relabelfrom relabelto };
-allow appdomain theme_data_file:lnk_file { r_file_perms relabelfrom relabelto };
-allow appdomain whetstone:binder transfer;
+allow appdomain theme_data_file:{ file lnk_file } { r_file_perms relabelfrom relabelto };
 
 # --- appdomain_tmpfs ---
 typeattribute appdomain_tmpfs file_type;

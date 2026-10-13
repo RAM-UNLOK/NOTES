@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_touchll.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Input & Touch
 # Subcategory: Touchscreen
@@ -13,7 +14,7 @@ binder_call(hal_mtk_touchll_client, hal_mtk_touchll_server)
 allow hal_mtk_touchll_client mtk_hal_touchll_hwservice:hwservice_manager find;
 
 # --- hal_mtk_touchll_server ---
-add_hwservice(hal_mtk_touchll_server, hidl_base_hwservice)
 add_hwservice(hal_mtk_touchll_server, mtk_hal_touchll_hwservice)
-binder_call(hal_mtk_touchll_server, hal_mtk_touchll_client)
+allow hal_mtk_touchll_server hal_mtk_touchll_client:binder call;
+allow hal_mtk_touchll_server hal_mtk_touchll_client:fd use;
 

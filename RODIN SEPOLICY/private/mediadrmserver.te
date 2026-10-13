@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediadrmserver.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -12,7 +13,6 @@
 typeattribute mediadrmserver binderservicedomain;
 typeattribute mediadrmserver coredomain;
 typeattribute mediadrmserver domain;
-typeattribute mediadrmserver halclientdomain;
 typeattribute mediadrmserver mlstrustedsubject;
 
 hal_client_domain(mediadrmserver, hal_graphics_allocator)

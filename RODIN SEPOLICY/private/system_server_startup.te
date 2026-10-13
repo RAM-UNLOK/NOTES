@@ -1,6 +1,7 @@
 # ============================================================
 # File: system_server_startup.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: System Services

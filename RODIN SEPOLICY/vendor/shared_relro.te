@@ -1,6 +1,7 @@
 # ============================================================
 # File: shared_relro.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

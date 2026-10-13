@@ -1,6 +1,7 @@
 # ============================================================
 # File: mcd.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,18 +10,10 @@
 # ============================================================
 
 # --- mcd ---
-type mcd;
+type mcd, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute mcd binderservicedomain;
-typeattribute mcd coredomain;
-typeattribute mcd domain;
-typeattribute mcd mlstrustedsubject;
-
-add_service(mcd, mcd_service)
 binder_call(mcd, appdomain)
 binder_call(mcd, binderservicedomain)
-binder_use(mcd)
-get_prop(mcd, debug_prop)
 get_prop(mcd, exported_system_prop)
 get_prop(mcd, powerctl_prop)
 get_prop(mcd, system_prop)
@@ -28,11 +21,6 @@ get_prop(mcd, vendor_mtk_gpu_aisr_prop)
 init_daemon_domain(mcd)
 net_domain(mcd)
 set_prop(mcd, debug_prop)
-set_prop(mcd, exported_system_prop)
-set_prop(mcd, powerctl_prop)
-set_prop(mcd, system_prop)
-set_prop(mcd, vendor_mtk_gpu_aisr_prop)
-wakelock_use(mcd)
 allow mcd anr_data_file:dir r_dir_perms;
 allow mcd anr_data_file:file r_file_perms;
 allow mcd base_typeattr_1080:process { sigkill signal };
@@ -44,11 +32,11 @@ allow mcd data_log_stability_file:dir create_dir_perms;
 allow mcd data_log_stability_file:file create_file_perms;
 allow mcd debugfs_subsys:dir r_dir_perms;
 allow mcd device:dir { getattr search };
-allow mcd dnsmasq_exec:file rx_file_perms;
+allow mcd dnsmasq_exec:file { execute execute_no_trans open read };
 allow mcd domain:dir r_dir_perms;
-allow mcd domain:file r_file_perms;
-allow mcd domain:lnk_file r_file_perms;
+allow mcd domain:{ file lnk_file } r_file_perms;
 allow mcd ephemeral_app:process setsched;
+allow mcd exported_system_prop:property_service set;
 allow mcd input_device:chr_file rw_file_perms;
 allow mcd input_device:dir r_dir_perms;
 allow mcd isolated_app:process setsched;
@@ -63,54 +51,53 @@ allow mcd logd_socket:sock_file write;
 allow mcd logdr_socket:sock_file write;
 allow mcd mcd_data_file:dir create_dir_perms;
 allow mcd mcd_data_file:file create_file_perms;
-allow mcd mcd_device:chr_file create_file_perms;
+allow mcd mcd_device:chr_file { rw_file_perms create setattr unlink };
+allow mcd mcd_exec:file { execute_no_trans ioctl lock watch watch_reads };
+allow mcd mcd_service:service_manager add;
 allow mcd mediaprovider:process setsched;
 allow mcd mediaprovider_app:process setsched;
 allow mcd migt_file:dir search;
 allow mcd migt_file:file { getattr setattr };
 allow mcd mqs_service:service_manager find;
 allow mcd mqsas_data_file:file append;
-allow mcd node:tcp_socket node_bind;
-allow mcd node:udp_socket node_bind;
-allow mcd port:tcp_socket name_bind;
-allow mcd port:udp_socket name_bind;
+allow mcd node:{ tcp_socket udp_socket } node_bind;
+allow mcd port:{ tcp_socket udp_socket } name_bind;
+allow mcd powerctl_prop:property_service set;
 allow mcd proc:dir r_dir_perms;
-allow mcd proc_meminfo:file { read open };
-allow mcd proc_mi_sched_ext:dir r_dir_perms;
-allow mcd proc_mi_sched_ext:file rw_file_perms;
+allow mcd proc_meminfo:file { open read };
+allow mcd proc_mi_sched_ext:dir { getattr open read search };
+allow mcd proc_mi_sched_ext:file { getattr open read write };
 allow mcd proc_sched:file rw_file_perms;
-allow mcd proc_stat:file { read open };
+allow mcd proc_stat:file { open read };
 allow mcd pstorefs:dir search;
 allow mcd sdcard_type:dir create_dir_perms;
 allow mcd sdcard_type:file create_file_perms;
-allow mcd self:capability { chown fowner fsetid setgid setuid setpcap };
-allow mcd self:capability { kill net_bind_service net_admin net_raw };
-allow mcd self:capability { sys_admin sys_nice sys_resource sys_time };
-allow mcd self:capability2 { syslog block_suspend };
-allow mcd self:netlink_route_socket { r_file_perms bind create nlmsg_read write };
-allow mcd self:tcp_socket { r_file_perms accept bind create getopt listen setopt shutdown write };
-allow mcd self:udp_socket { ioctl create bind getopt setopt };
+allow mcd self:capability { chown fowner fsetid kill net_admin net_bind_service net_raw setgid setpcap setuid sys_admin sys_nice sys_resource sys_time };
+allow mcd self:capability2 { block_suspend syslog };
+allow mcd self:netlink_route_socket { bind create getattr nlmsg_read read write };
+allow mcd self:tcp_socket { accept bind create getattr getopt listen read setopt shutdown write };
+allow mcd self:udp_socket { bind create getopt ioctl setopt };
+allow mcd servicemanager:binder { call transfer };
 allow mcd shell:process sigchld;
 allow mcd shell_exec:file rx_file_perms;
 allow mcd swap_block_device:blk_file rw_file_perms;
 allow mcd sysfs:dir r_dir_perms;
 allow mcd sysfs_devices_system_cpu:file rw_file_perms;
 allow mcd sysfs_fpsgo:dir r_dir_perms;
-allow mcd sysfs_fpsgo:file rw_file_perms;
-allow mcd sysfs_fpsgo:lnk_file rw_file_perms;
-allow mcd sysfs_fs_f2fs:dir r_dir_perms;
-allow mcd sysfs_fs_f2fs:file rw_file_perms;
+allow mcd sysfs_fpsgo:{ file lnk_file } rw_file_perms;
+allow mcd sysfs_fs_f2fs:dir { getattr open read search };
+allow mcd sysfs_fs_f2fs:file { getattr open read write };
 allow mcd sysfs_migt:dir r_dir_perms;
-allow mcd sysfs_migt:file rw_file_perms;
-allow mcd sysfs_migt:lnk_file rw_file_perms;
+allow mcd sysfs_migt:{ file lnk_file } rw_file_perms;
 allow mcd sysfs_mtk_fpsgo:dir r_dir_perms;
-allow mcd sysfs_mtk_fpsgo:file rw_file_perms;
-allow mcd sysfs_mtk_fpsgo:lnk_file rw_file_perms;
+allow mcd sysfs_mtk_fpsgo:{ file lnk_file } rw_file_perms;
+allow mcd sysfs_wake_lock:file rw_file_perms;
 allow mcd sysfs_zram:dir r_dir_perms;
 allow mcd sysfs_zram:file rw_file_perms;
 allow mcd system_data_file:file read;
-allow mcd system_file:dir r_file_perms;
+allow mcd system_file:dir { getattr ioctl lock map open read watch watch_reads };
 allow mcd system_file:file rx_file_perms;
+allow mcd system_prop:property_service set;
 allow mcd theme_data_file:file r_file_perms;
 allow mcd tmpfs:dir r_dir_perms;
 allow mcd tombstone_data_file:dir r_dir_perms;
@@ -122,6 +109,7 @@ allow mcd untrusted_app_27:process setsched;
 allow mcd untrusted_app_29:process setsched;
 allow mcd untrusted_app_30:process setsched;
 allow mcd untrusted_app_all:process setsched;
+allow mcd vendor_mtk_gpu_aisr_prop:property_service set;
 allow mcd vfat:filesystem { mount remount unmount };
 allow mcd whetstone_data_file:dir { create_dir_perms mounton };
 allow mcd whetstone_data_file:file create_file_perms;

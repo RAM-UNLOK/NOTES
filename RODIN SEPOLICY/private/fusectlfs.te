@@ -1,7 +1,8 @@
 # ============================================================
 # File: fusectlfs.te
 # Tier: private
-# Vendor: Samsung
+# Partitions: product, system_ext
+# Vendor: AOSP / Generic
 # Category: Storage & Memory
 # Subcategory: Volume Management
 # Role: NATIVE / MISC

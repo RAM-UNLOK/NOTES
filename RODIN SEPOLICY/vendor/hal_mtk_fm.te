@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_fm.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -10,14 +11,13 @@
 
 # --- hal_mtk_fm ---
 vndbinder_use(hal_mtk_fm)
-allow hal_mtk_fm vndbinder_device:chr_file rw_file_perms;
 
 # --- hal_mtk_fm_client ---
 binder_call(hal_mtk_fm_client, hal_mtk_fm_server)
 allow hal_mtk_fm_client mtk_hal_fm_hwservice:hwservice_manager find;
 
 # --- hal_mtk_fm_server ---
-add_hwservice(hal_mtk_fm_server, hidl_base_hwservice)
 add_hwservice(hal_mtk_fm_server, mtk_hal_fm_hwservice)
-binder_call(hal_mtk_fm_server, hal_mtk_fm_client)
+allow hal_mtk_fm_server hal_mtk_fm_client:binder call;
+allow hal_mtk_fm_server hal_mtk_fm_client:fd use;
 

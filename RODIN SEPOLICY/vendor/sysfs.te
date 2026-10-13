@@ -1,6 +1,7 @@
 # ============================================================
 # File: sysfs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,34 +14,49 @@ typeattribute sysfs fs_type;
 typeattribute sysfs mlstrustedobject;
 typeattribute sysfs sysfs_type;
 
+# --- sysfs_HDMI_audio_extcon_state ---
+typeattribute sysfs_HDMI_audio_extcon_state base_typeattr_242;
+
 # --- sysfs_adsp ---
-type sysfs_adsp, fs_type, sysfs_type;
+type sysfs_adsp, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_aee_enable ---
-type sysfs_aee_enable, fs_type, sysfs_type;
+type sysfs_aee_enable, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_aee_encrypt ---
-type sysfs_aee_encrypt, fs_type, sysfs_type;
+type sysfs_aee_encrypt, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_android0_usb ---
+typeattribute sysfs_android0_usb base_typeattr_242;
 
 # --- sysfs_android_usb ---
 typeattribute sysfs_android_usb fs_type;
 typeattribute sysfs_android_usb sysfs_type;
 
 # --- sysfs_apusys ---
-type sysfs_apusys, fs_type, sysfs_type;
+type sysfs_apusys, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_apusys_queue ---
-type sysfs_apusys_queue, fs_type, sysfs_type;
+type sysfs_apusys_queue, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_battery_consumption ---
+typeattribute sysfs_battery_consumption base_typeattr_242;
 
 # --- sysfs_battery_supply ---
-type sysfs_battery_supply, fs_type, sysfs_type;
+type sysfs_battery_supply, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_battery_temp ---
+typeattribute sysfs_battery_temp base_typeattr_242;
+
+# --- sysfs_battery_warning ---
+typeattribute sysfs_battery_warning base_typeattr_242;
 
 # --- sysfs_batteryinfo ---
 typeattribute sysfs_batteryinfo fs_type;
 typeattribute sysfs_batteryinfo sysfs_type;
 
 # --- sysfs_blockio ---
-type sysfs_blockio, fs_type, sysfs_type;
+type sysfs_blockio, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_bluetooth_writable ---
 typeattribute sysfs_bluetooth_writable fs_type;
@@ -48,76 +64,85 @@ typeattribute sysfs_bluetooth_writable mlstrustedobject;
 typeattribute sysfs_bluetooth_writable sysfs_type;
 
 # --- sysfs_boot_info ---
-type sysfs_boot_info, fs_type, sysfs_type;
+type sysfs_boot_info, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_boot_mode ---
-type sysfs_boot_mode, fs_type, sysfs_type;
+type sysfs_boot_mode, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_boot_type ---
-type sysfs_boot_type, fs_type, sysfs_type;
+type sysfs_boot_type, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_bootinfo ---
-type sysfs_bootinfo, fs_type, sysfs_type;
+type sysfs_bootinfo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_c2ps ---
-type sysfs_c2ps, fs_type, sysfs_type;
+type sysfs_c2ps, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_cache_ctrl ---
-type sysfs_cache_ctrl, fs_type, sysfs_type;
+type sysfs_cache_ctrl, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_cache_status ---
-type sysfs_cache_status, fs_type, sysfs_type;
+type sysfs_cache_status, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_camera_max_bw ---
-type sysfs_camera_max_bw, fs_type, sysfs_type;
+type sysfs_camera_max_bw, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_camera_max_bw_v2 ---
-type sysfs_camera_max_bw_v2, fs_type, sysfs_type;
+type sysfs_camera_max_bw_v2, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_camreclaim ---
+typeattribute sysfs_camreclaim base_typeattr_242;
 
 # --- sysfs_ccb_gear ---
-type sysfs_ccb_gear, fs_type, sysfs_type;
+type sysfs_ccb_gear, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_ccci ---
-type sysfs_ccci, fs_type, sysfs_type;
+type sysfs_ccci, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_change_rate ---
-type sysfs_change_rate, fs_type, sysfs_type;
+type sysfs_change_rate, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_charger_cooler ---
-type sysfs_charger_cooler, fs_type, sysfs_type;
+type sysfs_charger_cooler, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_chg2_present ---
-type sysfs_chg2_present, fs_type, sysfs_type;
+type sysfs_chg2_present, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_chg_cfg ---
-type sysfs_chg_cfg, fs_type, sysfs_type;
+type sysfs_chg_cfg, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_chip_vendor ---
-type sysfs_chip_vendor, fs_type, sysfs_type;
+type sysfs_chip_vendor, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_chipid ---
-type sysfs_chipid, fs_type, sysfs_type;
+type sysfs_chipid, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_cm_mgr ---
-type sysfs_cm_mgr, fs_type, sysfs_type;
+type sysfs_cm_mgr, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_comport_type ---
-type sysfs_comport_type, fs_type, sysfs_type;
+type sysfs_comport_type, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_concurrency_scenario ---
-type sysfs_concurrency_scenario, fs_type, sysfs_type;
+type sysfs_concurrency_scenario, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_cpu0maxfreq ---
+typeattribute sysfs_cpu0maxfreq base_typeattr_242;
 
 # --- sysfs_cpu_map ---
-type sysfs_cpu_map, fs_type, sysfs_type;
+type sysfs_cpu_map, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_damon ---
+typeattribute sysfs_damon base_typeattr_242;
 
 # --- sysfs_dcm ---
-type sysfs_dcm, fs_type, sysfs_type;
+type sysfs_dcm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dcs ---
-type sysfs_dcs, fs_type, sysfs_type;
+type sysfs_dcs, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dcxo ---
-type sysfs_dcxo, fs_type, sysfs_type;
+type sysfs_dcxo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_devfreq_cur ---
 typeattribute sysfs_devfreq_cur fs_type;
@@ -128,7 +153,7 @@ typeattribute sysfs_devfreq_dir fs_type;
 typeattribute sysfs_devfreq_dir sysfs_type;
 
 # --- sysfs_device_tree_model ---
-type sysfs_device_tree_model, fs_type, sysfs_type;
+type sysfs_device_tree_model, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_devices_block ---
 typeattribute sysfs_devices_block fs_type;
@@ -143,10 +168,13 @@ typeattribute sysfs_devices_system_cpu fs_type;
 typeattribute sysfs_devices_system_cpu sysfs_type;
 
 # --- sysfs_devinfo ---
-type sysfs_devinfo, fs_type, mlstrustedobject, sysfs_type;
+type sysfs_devinfo, base_typeattr_242, fs_type, mlstrustedobject, sysfs_type;
+
+# --- sysfs_dis_nafg ---
+typeattribute sysfs_dis_nafg base_typeattr_242;
 
 # --- sysfs_disp_plat_dbg ---
-type sysfs_disp_plat_dbg, fs_type, sysfs_type;
+type sysfs_disp_plat_dbg, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dm ---
 typeattribute sysfs_dm fs_type;
@@ -160,68 +188,77 @@ typeattribute sysfs_dm_verity sysfs_type;
 typeattribute sysfs_dma_heap fs_type;
 typeattribute sysfs_dma_heap sysfs_type;
 
+# --- sysfs_dmabuf ---
+typeattribute sysfs_dmabuf base_typeattr_242;
+
 # --- sysfs_dmabuf_stats ---
 typeattribute sysfs_dmabuf_stats fs_type;
 typeattribute sysfs_dmabuf_stats sysfs_type;
 
 # --- sysfs_dpswitch ---
-type sysfs_dpswitch, fs_type, sysfs_type;
+type sysfs_dpswitch, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dt_firmware_android ---
 typeattribute sysfs_dt_firmware_android fs_type;
 typeattribute sysfs_dt_firmware_android sysfs_type;
 
 # --- sysfs_dvfsrc_dbg ---
-type sysfs_dvfsrc_dbg, fs_type, sysfs_type;
+type sysfs_dvfsrc_dbg, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dvfsrc_devfreq ---
-type sysfs_dvfsrc_devfreq, fs_type, sysfs_type;
+type sysfs_dvfsrc_devfreq, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_dvfsrc_freq ---
-type sysfs_dvfsrc_freq, fs_type, sysfs_type;
+type sysfs_dvfsrc_freq, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_eara_thermal ---
-type sysfs_eara_thermal, fs_type, sysfs_type;
+type sysfs_eara_thermal, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_edpswitch ---
-type sysfs_edpswitch, fs_type, sysfs_type;
+type sysfs_edpswitch, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_emi_ctrl_concurrency_scenario ---
-type sysfs_emi_ctrl_concurrency_scenario, fs_type, sysfs_type;
+type sysfs_emi_ctrl_concurrency_scenario, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_emiisu ---
-type sysfs_emiisu, fs_type, sysfs_type;
+type sysfs_emiisu, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_execstate ---
-type sysfs_execstate, fs_type, sysfs_type;
+type sysfs_execstate, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_ext4_disable_barrier ---
-type sysfs_ext4_disable_barrier, fs_type, sysfs_type;
+type sysfs_ext4_disable_barrier, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_extcon ---
 typeattribute sysfs_extcon fs_type;
 typeattribute sysfs_extcon sysfs_type;
 
 # --- sysfs_extdev ---
-type sysfs_extdev, fs_type, sysfs_type;
+type sysfs_extdev, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_f0_value ---
-type sysfs_f0_value, fs_type, sysfs_type;
+type sysfs_f0_value, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_fbt_cpu ---
-type sysfs_fbt_cpu, fs_type, sysfs_type;
+type sysfs_fbt_cpu, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_fbt_fteh ---
-type sysfs_fbt_fteh, fs_type, sysfs_type;
+type sysfs_fbt_fteh, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_fg_disable ---
+typeattribute sysfs_fg_disable base_typeattr_242;
 
 # --- sysfs_fps ---
-type sysfs_fps, fs_type, sysfs_type;
+type sysfs_fps, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_fpsgo ---
-type sysfs_fpsgo, fs_type, sysfs_type;
+type sysfs_fpsgo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_fs_chg_file ---
-type sysfs_fs_chg_file, fs_type, sysfs_type;
+type sysfs_fs_chg_file, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_fs_erofs ---
+typeattribute sysfs_fs_erofs base_typeattr_242;
 
 # --- sysfs_fs_ext4_features ---
 typeattribute sysfs_fs_ext4_features fs_type;
@@ -248,28 +285,29 @@ typeattribute sysfs_fs_incfs_metrics fs_type;
 typeattribute sysfs_fs_incfs_metrics sysfs_type;
 
 # --- sysfs_fsm_f0 ---
-type sysfs_fsm_f0, fs_type, sysfs_type;
+type sysfs_fsm_f0, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_fsm_re25 ---
-type sysfs_fsm_re25, fs_type, sysfs_type;
+type sysfs_fsm_re25, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_gbe ---
-type sysfs_gbe, fs_type, sysfs_type;
+type sysfs_gbe, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_ged ---
-type sysfs_ged, fs_type, sysfs_type;
+type sysfs_ged, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_gf_spi_tee ---
-type sysfs_gf_spi_tee, fs_type, sysfs_type;
+type sysfs_gf_spi_tee, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_gpu ---
 typeattribute sysfs_gpu fs_type;
 typeattribute sysfs_gpu sysfs_type;
 
 # --- sysfs_gpu_fwpath ---
-type sysfs_gpu_fwpath, fs_type, sysfs_type;
+type sysfs_gpu_fwpath, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_headset ---
+typeattribute sysfs_headset base_typeattr_242;
 typeattribute sysfs_headset fs_type;
 typeattribute sysfs_headset sysfs_type;
 
@@ -286,7 +324,7 @@ typeattribute sysfs_ipv4 fs_type;
 typeattribute sysfs_ipv4 sysfs_type;
 
 # --- sysfs_jank_detection_sram ---
-type sysfs_jank_detection_sram, fs_type, sysfs_type;
+type sysfs_jank_detection_sram, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_kernel_notes ---
 typeattribute sysfs_kernel_notes fs_type;
@@ -294,27 +332,30 @@ typeattribute sysfs_kernel_notes mlstrustedobject;
 typeattribute sysfs_kernel_notes sysfs_type;
 
 # --- sysfs_keypad_file ---
-type sysfs_keypad_file, fs_type, sysfs_type;
+type sysfs_keypad_file, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_ktrace ---
+typeattribute sysfs_ktrace base_typeattr_242;
 
 # --- sysfs_led_torch ---
-type sysfs_led_torch, fs_type, sysfs_type;
+type sysfs_led_torch, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_leds ---
 typeattribute sysfs_leds fs_type;
 typeattribute sysfs_leds sysfs_type;
 
 # --- sysfs_leds_setting ---
-type sysfs_leds_setting, fs_type, sysfs_type;
+type sysfs_leds_setting, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_logstore ---
-type sysfs_logstore, fs_type, sysfs_type;
+type sysfs_logstore, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_loop ---
 typeattribute sysfs_loop fs_type;
 typeattribute sysfs_loop sysfs_type;
 
 # --- sysfs_low_battery ---
-type sysfs_low_battery, fs_type, sysfs_type;
+type sysfs_low_battery, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_lowmemorykiller ---
 typeattribute sysfs_lowmemorykiller fs_type;
@@ -325,70 +366,76 @@ typeattribute sysfs_lru_gen_enabled fs_type;
 typeattribute sysfs_lru_gen_enabled sysfs_type;
 
 # --- sysfs_mali_power_policy ---
-type sysfs_mali_power_policy, fs_type, sysfs_type;
+type sysfs_mali_power_policy, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mali_poweroff ---
-type sysfs_mali_poweroff, fs_type, sysfs_type;
+type sysfs_mali_poweroff, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mbraink_gpu ---
-type sysfs_mbraink_gpu, fs_type, sysfs_type;
+type sysfs_mbraink_gpu, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mcupm ---
-type sysfs_mcupm, fs_type, sysfs_type;
+type sysfs_mcupm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_md32 ---
-type sysfs_md32, fs_type, sysfs_type;
+type sysfs_md32, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mdinfo ---
-type sysfs_mdinfo, fs_type, sysfs_type;
+type sysfs_mdinfo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_memory ---
-type sysfs_memory, fs_type, sysfs_type;
+type sysfs_memory, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_meta_info ---
-type sysfs_meta_info, fs_type, sysfs_type;
+type sysfs_meta_info, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mi_gps_pwr ---
-type sysfs_mi_gps_pwr, fs_type, sysfs_type;
+type sysfs_mi_gps_pwr, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mi_mempool ---
-type sysfs_mi_mempool, fs_type, sysfs_type;
+type sysfs_mi_mempool, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_migt ---
+typeattribute sysfs_migt base_typeattr_242;
 
 # --- sysfs_mimdtrigger ---
-type sysfs_mimdtrigger, fs_type, sysfs_type;
+type sysfs_mimdtrigger, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mm ---
-type sysfs_mm, fs_type, sysfs_type;
+type sysfs_mm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mmcblk ---
-type sysfs_mmcblk, fs_type, sysfs_type;
+type sysfs_mmcblk, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mmcblk1 ---
-type sysfs_mmcblk1, fs_type, sysfs_type;
+type sysfs_mmcblk1, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_model_option ---
-type sysfs_model_option, fs_type, sysfs_type;
+type sysfs_model_option, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mrdump ---
-type sysfs_mrdump, fs_type, sysfs_type;
+type sysfs_mrdump, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_mthp_control ---
+typeattribute sysfs_mthp_control base_typeattr_242;
 
 # --- sysfs_mtk_c2ps ---
-type sysfs_mtk_c2ps, fs_type, sysfs_type;
+type sysfs_mtk_c2ps, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mtk_core_ctl ---
-type sysfs_mtk_core_ctl, fs_type, sysfs_type;
+type sysfs_mtk_core_ctl, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mtk_fpsgo ---
-type sysfs_mtk_fpsgo, fs_type, sysfs_type;
+type sysfs_mtk_fpsgo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mtk_mmqos_scen ---
-type sysfs_mtk_mmqos_scen, fs_type, sysfs_type;
+type sysfs_mtk_mmqos_scen, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mtk_mmqos_scen_v2 ---
-type sysfs_mtk_mmqos_scen_v2, fs_type, sysfs_type;
+type sysfs_mtk_mmqos_scen_v2, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_mtk_nanohub_state ---
-type sysfs_mtk_nanohub_state, fs_type, sysfs_type;
+type sysfs_mtk_nanohub_state, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_net ---
 typeattribute sysfs_net fs_type;
@@ -400,39 +447,40 @@ typeattribute sysfs_nfc_power_writable mlstrustedobject;
 typeattribute sysfs_nfc_power_writable sysfs_type;
 
 # --- sysfs_pa_num ---
-type sysfs_pa_num, fs_type, sysfs_type;
+type sysfs_pa_num, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pages_shared ---
-type sysfs_pages_shared, fs_type, sysfs_type;
+type sysfs_pages_shared, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pages_sharing ---
-type sysfs_pages_sharing, fs_type, sysfs_type;
+type sysfs_pages_sharing, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pages_unshared ---
-type sysfs_pages_unshared, fs_type, sysfs_type;
+type sysfs_pages_unshared, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pages_volatile ---
-type sysfs_pages_volatile, fs_type, sysfs_type;
+type sysfs_pages_volatile, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pen_connect_strategy_node ---
-type sysfs_pen_connect_strategy_node, fs_type, sysfs_type;
+type sysfs_pen_connect_strategy_node, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_perf ---
-type sysfs_perf, fs_type, sysfs_type;
+type sysfs_perf, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_perfmgr ---
-type sysfs_perfmgr, fs_type, sysfs_type;
+type sysfs_perfmgr, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pftch_qos ---
-type sysfs_pftch_qos, fs_type, sysfs_type;
+type sysfs_pftch_qos, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pgboost ---
-type sysfs_pgboost, fs_type, sysfs_type;
+type sysfs_pgboost, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pmic_pon_log ---
-type sysfs_pmic_pon_log, fs_type, sysfs_type;
+type sysfs_pmic_pon_log, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pmu ---
+typeattribute sysfs_pmu base_typeattr_242;
 typeattribute sysfs_pmu fs_type;
 typeattribute sysfs_pmu sysfs_type;
 
@@ -440,57 +488,78 @@ typeattribute sysfs_pmu sysfs_type;
 typeattribute sysfs_power fs_type;
 typeattribute sysfs_power sysfs_type;
 
+# --- sysfs_power_off_vol ---
+typeattribute sysfs_power_off_vol base_typeattr_242;
+
+# --- sysfs_power_on_vol ---
+typeattribute sysfs_power_on_vol base_typeattr_242;
+
 # --- sysfs_power_save ---
-type sysfs_power_save, fs_type, sysfs_type;
+type sysfs_power_save, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_power_supply ---
-type sysfs_power_supply, fs_type, sysfs_type;
+type sysfs_power_supply, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_poweraware ---
-type sysfs_poweraware, fs_type, sysfs_type;
+type sysfs_poweraware, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_pump_express ---
-type sysfs_pump_express, fs_type, sysfs_type;
+type sysfs_pump_express, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_re25_calib ---
-type sysfs_re25_calib, fs_type, sysfs_type;
+type sysfs_re25_calib, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_reclaim ---
+typeattribute sysfs_reclaim base_typeattr_242;
 
 # --- sysfs_reset_dsp ---
-type sysfs_reset_dsp, fs_type, sysfs_type;
+type sysfs_reset_dsp, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_ro ---
+typeattribute sysfs_ro base_typeattr_242;
 
 # --- sysfs_rt_calib ---
-type sysfs_rt_calib, fs_type, sysfs_type;
+type sysfs_rt_calib, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_rt_param ---
-type sysfs_rt_param, fs_type, sysfs_type;
+type sysfs_rt_param, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_rtc ---
 typeattribute sysfs_rtc fs_type;
 typeattribute sysfs_rtc sysfs_type;
 
+# --- sysfs_rtmm ---
+typeattribute sysfs_rtmm base_typeattr_242;
+
 # --- sysfs_scp ---
-type sysfs_scp, fs_type, sysfs_type;
+type sysfs_scp, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_sensor ---
-type sysfs_sensor, fs_type, sysfs_type;
+type sysfs_sensor, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_simtray_status ---
-type sysfs_simtray_status, fs_type, sysfs_type;
+type sysfs_simtray_status, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_smartcache ---
+typeattribute sysfs_smartcache base_typeattr_242;
 
 # --- sysfs_soc ---
-type sysfs_soc, fs_type, sysfs_type;
+type sysfs_soc, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_soc_ccb_gear ---
-type sysfs_soc_ccb_gear, fs_type, sysfs_type;
+type sysfs_soc_ccb_gear, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_speedui ---
+typeattribute sysfs_speedui base_typeattr_242;
 
 # --- sysfs_spm ---
-type sysfs_spm, fs_type, sysfs_type;
+type sysfs_spm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_sspm ---
-type sysfs_sspm, fs_type, sysfs_type;
+type sysfs_sspm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_ssw ---
-type sysfs_ssw, fs_type, sysfs_type;
+type sysfs_ssw, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_suspend_stats ---
 typeattribute sysfs_suspend_stats fs_type;
@@ -505,51 +574,54 @@ typeattribute sysfs_sync_on_suspend fs_type;
 typeattribute sysfs_sync_on_suspend sysfs_type;
 
 # --- sysfs_systracker ---
-type sysfs_systracker, fs_type, sysfs_type;
+type sysfs_systracker, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_task_turbo ---
-type sysfs_task_turbo, fs_type, sysfs_type;
+type sysfs_task_turbo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_therm ---
-type sysfs_therm, fs_type, sysfs_type;
+type sysfs_therm, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_thermal ---
 typeattribute sysfs_thermal fs_type;
 typeattribute sysfs_thermal sysfs_type;
 
 # --- sysfs_thermal_sram ---
-type sysfs_thermal_sram, fs_type, sysfs_type;
+type sysfs_thermal_sram, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_thermald ---
+typeattribute sysfs_thermald base_typeattr_242;
 
 # --- sysfs_ti_battery ---
-type sysfs_ti_battery, fs_type, sysfs_type;
+type sysfs_ti_battery, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_touch_hostprocess ---
-type sysfs_touch_hostprocess, fs_type, sysfs_type;
+type sysfs_touch_hostprocess, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_touch_suspend ---
-type sysfs_touch_suspend, fs_type, sysfs_type;
+type sysfs_touch_suspend, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_touchraw_update ---
-type sysfs_touchraw_update, fs_type, sysfs_type;
+type sysfs_touchraw_update, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_tp_fodstatus ---
-type sysfs_tp_fodstatus, fs_type, sysfs_type;
+type sysfs_tp_fodstatus, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_tp_virtual_prox ---
-type sysfs_tp_virtual_prox, fs_type, sysfs_type;
+type sysfs_tp_virtual_prox, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_tpd_setting ---
-type sysfs_tpd_setting, fs_type, sysfs_type;
+type sysfs_tpd_setting, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_transparent_hugepage ---
 typeattribute sysfs_transparent_hugepage fs_type;
 typeattribute sysfs_transparent_hugepage sysfs_type;
 
 # --- sysfs_uart_info ---
-type sysfs_uart_info, fs_type, sysfs_type;
+type sysfs_uart_info, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_ufs ---
-type sysfs_ufs, fs_type, sysfs_type;
+type sysfs_ufs, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_uhid ---
 typeattribute sysfs_uhid fs_type;
@@ -559,35 +631,42 @@ typeattribute sysfs_uhid sysfs_type;
 typeattribute sysfs_uio fs_type;
 typeattribute sysfs_uio sysfs_type;
 
+# --- sysfs_union_power ---
+typeattribute sysfs_union_power base_typeattr_242;
+
 # --- sysfs_usb ---
 typeattribute sysfs_usb fs_type;
 typeattribute sysfs_usb sysfs_type;
 
 # --- sysfs_usb_nonplat ---
-type sysfs_usb_nonplat, fs_type, sysfs_type;
+type sysfs_usb_nonplat, base_typeattr_242, fs_type, sysfs_type;
+
+# --- sysfs_usb_plat ---
+typeattribute sysfs_usb_plat base_typeattr_242;
 
 # --- sysfs_usb_supply ---
-type sysfs_usb_supply, fs_type, sysfs_type;
+type sysfs_usb_supply, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_usbpd_device ---
-type sysfs_usbpd_device, fs_type, sysfs_type;
+type sysfs_usbpd_device, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_usermodehelper ---
 typeattribute sysfs_usermodehelper fs_type;
 typeattribute sysfs_usermodehelper sysfs_type;
 
 # --- sysfs_vbus ---
+typeattribute sysfs_vbus base_typeattr_242;
 typeattribute sysfs_vbus fs_type;
 typeattribute sysfs_vbus sysfs_type;
 
 # --- sysfs_vcore_debug ---
-type sysfs_vcore_debug, fs_type, sysfs_type;
+type sysfs_vcore_debug, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_vcorefs_pwrctrl ---
-type sysfs_vcorefs_pwrctrl, fs_type, sysfs_type;
+type sysfs_vcorefs_pwrctrl, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_vcp ---
-type sysfs_vcp, fs_type, sysfs_type;
+type sysfs_vcp, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_vendor_sched ---
 typeattribute sysfs_vendor_sched fs_type;
@@ -598,10 +677,10 @@ typeattribute sysfs_vibrator fs_type;
 typeattribute sysfs_vibrator sysfs_type;
 
 # --- sysfs_vibrator_setting ---
-type sysfs_vibrator_setting, fs_type, sysfs_type;
+type sysfs_vibrator_setting, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_vpd ---
-type sysfs_vpd, fs_type, sysfs_type;
+type sysfs_vpd, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_wake_lock ---
 typeattribute sysfs_wake_lock fs_type;
@@ -616,20 +695,20 @@ typeattribute sysfs_wakeup_reasons fs_type;
 typeattribute sysfs_wakeup_reasons sysfs_type;
 
 # --- sysfs_wireless_supply ---
-type sysfs_wireless_supply, fs_type, sysfs_type;
+type sysfs_wireless_supply, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_wlan_fwpath ---
 typeattribute sysfs_wlan_fwpath fs_type;
 typeattribute sysfs_wlan_fwpath sysfs_type;
 
 # --- sysfs_wwan_fsm_state ---
-type sysfs_wwan_fsm_state, fs_type, sysfs_type;
+type sysfs_wwan_fsm_state, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_wwan_mtk_device_ctrl ---
-type sysfs_wwan_mtk_device_ctrl, fs_type, sysfs_type;
+type sysfs_wwan_mtk_device_ctrl, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_xgf ---
-type sysfs_xgf, fs_type, sysfs_type;
+type sysfs_xgf, base_typeattr_242, fs_type, sysfs_type;
 
 # --- sysfs_zram ---
 typeattribute sysfs_zram fs_type;
@@ -640,32 +719,32 @@ typeattribute sysfs_zram_uevent fs_type;
 typeattribute sysfs_zram_uevent sysfs_type;
 
 # --- vendor_sysfs_battery ---
-type vendor_sysfs_battery, fs_type, sysfs_type;
+type vendor_sysfs_battery, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_battery_supply ---
-type vendor_sysfs_battery_supply, fs_type, sysfs_type;
+type vendor_sysfs_battery_supply, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_displayfeature ---
-type vendor_sysfs_displayfeature, fs_type, sysfs_type;
+type vendor_sysfs_displayfeature, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_fp ---
-type vendor_sysfs_fp, fs_type, sysfs_type;
+type vendor_sysfs_fp, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_graphics ---
-type vendor_sysfs_graphics, fs_type, sysfs_type;
+type vendor_sysfs_graphics, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_hardwareinfo ---
-type vendor_sysfs_hardwareinfo, fs_type, sysfs_type;
+type vendor_sysfs_hardwareinfo, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_led_file ---
-type vendor_sysfs_led_file, fs_type, sysfs_type;
+type vendor_sysfs_led_file, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_soc ---
-type vendor_sysfs_soc, fs_type, sysfs_type;
+type vendor_sysfs_soc, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_usb_supply ---
-type vendor_sysfs_usb_supply, fs_type, sysfs_type;
+type vendor_sysfs_usb_supply, base_typeattr_242, fs_type, sysfs_type;
 
 # --- vendor_sysfs_xm_power ---
-type vendor_sysfs_xm_power, fs_type, sysfs_type;
+type vendor_sysfs_xm_power, base_typeattr_242, fs_type, sysfs_type;
 

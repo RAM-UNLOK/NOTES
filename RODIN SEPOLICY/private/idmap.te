@@ -1,6 +1,7 @@
 # ============================================================
 # File: idmap.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,8 +14,8 @@ typeattribute idmap binderservicedomain;
 typeattribute idmap coredomain;
 typeattribute idmap domain;
 
-allow idmap init_tmpfs:file r_file_perms;
-allow idmap tmpfs:file r_file_perms;
+allow idmap init_tmpfs:file { getattr map open read };
+allow idmap tmpfs:file { getattr map open read };
 
 # --- idmap_exec ---
 typeattribute idmap_exec exec_type;

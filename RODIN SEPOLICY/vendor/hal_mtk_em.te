@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_em.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,9 +15,10 @@ allow hal_mtk_em_client mtk_hal_em_hwservice:hwservice_manager find;
 allow hal_mtk_em_client mtk_hal_em_service:service_manager find;
 
 # --- hal_mtk_em_server ---
-add_hwservice(hal_mtk_em_server, hidl_base_hwservice)
 add_hwservice(hal_mtk_em_server, mtk_hal_em_hwservice)
-add_service(hal_mtk_em_server, mtk_hal_em_service)
-binder_call(hal_mtk_em_server, hal_mtk_em_client)
-binder_use(hal_mtk_em_server)
+allow hal_mtk_em_server hal_mtk_em_client:binder call;
+allow hal_mtk_em_server hal_mtk_em_client:fd use;
+allow hal_mtk_em_server mtk_hal_em_service:service_manager { add find };
+allow hal_mtk_em_server servicemanager:binder { call transfer };
+allow hal_mtk_em_server servicemanager:fd use;
 

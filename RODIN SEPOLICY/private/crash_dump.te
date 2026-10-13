@@ -1,6 +1,7 @@
 # ============================================================
 # File: crash_dump.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -13,9 +14,6 @@ typeattribute crash_dump coredomain;
 typeattribute crash_dump domain;
 typeattribute crash_dump mlstrustedsubject;
 
-binder_call(crash_dump, system_server)
-binder_use(crash_dump)
-get_prop(crash_dump, ctl_start_prop)
 get_prop(crash_dump, system_mtk_aee_basic_prop)
 get_prop(crash_dump, system_mtk_debug_mtk_aee_prop)
 get_prop(crash_dump, system_mtk_hbt_prop)
@@ -23,10 +21,6 @@ get_prop(crash_dump, system_mtk_mobile_log_prop)
 get_prop(crash_dump, system_mtk_persist_aee_prop)
 get_prop(crash_dump, system_mtk_persist_mtk_aee_prop)
 set_prop(crash_dump, ctl_start_prop)
-set_prop(crash_dump, system_mtk_debug_mtk_aee_prop)
-set_prop(crash_dump, system_mtk_persist_aee_prop)
-set_prop(crash_dump, system_mtk_persist_mtk_aee_prop)
-set_prop(crash_dump, system_prop)
 allow crash_dump anr_data_file:dir create_dir_perms;
 allow crash_dump anr_data_file:file create_file_perms;
 allow crash_dump appdomain:dir r_dir_perms;
@@ -38,26 +32,23 @@ allow crash_dump crash_dump:file r_file_perms;
 allow crash_dump dalvikcache_data_file:dir r_dir_perms;
 allow crash_dump debuglog_data_file:dir create_dir_perms;
 allow crash_dump debuglog_data_file:file create_file_perms;
-allow crash_dump domain:process setrlimit;
-allow crash_dump domain:process { getsched getattr };
-allow crash_dump dropbox_data_file:file r_file_perms;
+allow crash_dump domain:process { getattr getsched setrlimit };
+allow crash_dump dropbox_data_file:file { getattr read };
 allow crash_dump dropbox_service:service_manager find;
 allow crash_dump dumpstate:dir search;
 allow crash_dump dumpstate:file r_file_perms;
-allow crash_dump dumpstate:process transition;
-allow crash_dump dumpstate:process { siginh rlimitinh };
-allow crash_dump dumpstate:unix_stream_socket connectto;
-allow crash_dump dumpstate:unix_stream_socket { r_file_perms w_file_perms bind connect getopt setattr setopt shutdown };
-allow crash_dump dumpstate_exec:file rx_file_perms;
+allow crash_dump dumpstate:process { rlimitinh siginh transition };
+allow crash_dump dumpstate:unix_stream_socket { rw_socket_perms connectto };
+allow crash_dump dumpstate_exec:file { execute getattr map open read };
 allow crash_dump dumpstate_socket:sock_file w_file_perms;
 allow crash_dump hbt_device:chr_file rw_file_perms;
 allow crash_dump init:process getsched;
-allow crash_dump init_tmpfs:file r_file_perms;
+allow crash_dump init_tmpfs:file { getattr map open read };
 allow crash_dump kernel:process getsched;
 allow crash_dump logcat_exec:file rx_file_perms;
 allow crash_dump logdr_socket:sock_file w_file_perms;
-allow crash_dump miui_native_file:dir { write add_name };
-allow crash_dump miui_native_file:file create_file_perms;
+allow crash_dump miui_native_file:dir { add_name write };
+allow crash_dump miui_native_file:file { create open write };
 allow crash_dump mnt_user_file:dir search;
 allow crash_dump mnt_user_file:lnk_file r_file_perms;
 allow crash_dump packages_list_file:file r_file_perms;
@@ -65,8 +56,9 @@ allow crash_dump perfetto_exec:file x_file_perms;
 allow crash_dump proc_version:file r_file_perms;
 allow crash_dump sdcard_type:dir create_dir_perms;
 allow crash_dump sdcard_type:file create_file_perms;
-allow crash_dump self:capability { chown fowner fsetid kill setgid setuid net_admin sys_module sys_nice sys_resource };
+allow crash_dump self:capability { chown fowner fsetid kill net_admin setgid setuid sys_module sys_nice sys_resource };
 allow crash_dump self:process execmem;
+allow crash_dump servicemanager:binder call;
 allow crash_dump shell_exec:file rx_file_perms;
 allow crash_dump storage_file:dir search;
 allow crash_dump storage_file:lnk_file r_file_perms;
@@ -74,10 +66,14 @@ allow crash_dump sysfs_vibrator:file w_file_perms;
 allow crash_dump system_app:unix_stream_socket connectto;
 allow crash_dump system_file:file x_file_perms;
 allow crash_dump system_file_type:file r_file_perms;
-allow crash_dump tmpfs:dir r_file_perms;
-allow crash_dump tmpfs:file r_file_perms;
-allow crash_dump tmpfs:file rw_file_perms;
-allow crash_dump tombstone_data_file:dir { write lock open add_name remove_name search };
+allow crash_dump system_mtk_debug_mtk_aee_prop:property_service set;
+allow crash_dump system_mtk_persist_aee_prop:property_service set;
+allow crash_dump system_mtk_persist_mtk_aee_prop:property_service set;
+allow crash_dump system_prop:property_service set;
+allow crash_dump system_server:binder call;
+allow crash_dump tmpfs:dir { getattr map open read };
+allow crash_dump tmpfs:file { getattr map open read write };
+allow crash_dump tombstone_data_file:dir w_dir_perms;
 allow crash_dump tombstone_data_file:file create_file_perms;
 allow crash_dump toolbox_exec:file rx_file_perms;
 allow crash_dump usermodehelper:file r_file_perms;

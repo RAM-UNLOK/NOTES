@@ -1,6 +1,7 @@
 # ============================================================
 # File: e2fs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -25,12 +26,12 @@ allow e2fs sysfs_fs_ext4_features:dir search;
 allow e2fs system_block_device:blk_file getattr;
 allow e2fs userdata_block_device:blk_file rw_file_perms;
 allow e2fs vendor_block_device:blk_file getattr;
-allowxperm e2fs md_sec_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
-allowxperm e2fs nvcfg_block_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
-allowxperm e2fs nvdata_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
-allowxperm e2fs persist_block_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
-allowxperm e2fs protect1_block_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
-allowxperm e2fs protect2_block_device:blk_file ioctl { 0x125e 0x1277 (range 0x127b 0x127d) };
+allowxperm e2fs md_sec_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
+allowxperm e2fs nvcfg_block_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
+allowxperm e2fs nvdata_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
+allowxperm e2fs persist_block_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
+allowxperm e2fs protect1_block_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
+allowxperm e2fs protect2_block_device:blk_file ioctl { 0x125e 0x1277 0x127b-0x127d };
 
 # --- e2fs_exec ---
 typeattribute e2fs_exec exec_type;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: zygote.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -11,7 +12,6 @@
 # --- zygote ---
 typeattribute zygote domain;
 
-binder_use(zygote)
 get_prop(zygote, vendor_fp_prop)
 get_prop(zygote, vendor_mi_32bit_prop)
 allow zygote cgroup:file setattr;
@@ -24,6 +24,7 @@ allow zygote proc_bootprof:file rw_file_perms;
 allow zygote proc_ged:file rw_file_perms;
 allow zygote proc_uptime:file rw_file_perms;
 allow zygote radio:fd use;
+allow zygote servicemanager:binder call;
 allow zygote sysfs_chipid:file r_file_perms;
 allow zygote untrusted_app:fd use;
 dontaudit zygote untrusted_app_all:process ptrace;

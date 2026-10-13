@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_miperf.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management
@@ -13,16 +14,8 @@ binder_call(hal_miperf_client, hal_miperf_server)
 allow hal_miperf_client hal_miperf_service:service_manager find;
 
 # --- hal_miperf_default ---
-type hal_miperf_default;
+type hal_miperf_default, base_typeattr_226, base_typeattr_227, base_typeattr_228, base_typeattr_229, base_typeattr_230, base_typeattr_231, base_typeattr_235, base_typeattr_236, base_typeattr_237, base_typeattr_238, base_typeattr_240, base_typeattr_241, base_typeattr_242, base_typeattr_243, base_typeattr_244, base_typeattr_245, base_typeattr_246, base_typeattr_247, base_typeattr_248, base_typeattr_250, base_typeattr_251, base_typeattr_252, base_typeattr_253, base_typeattr_254, base_typeattr_255, base_typeattr_256, base_typeattr_257, base_typeattr_258, base_typeattr_259, base_typeattr_260, base_typeattr_261, base_typeattr_262, base_typeattr_263, base_typeattr_264, base_typeattr_265, base_typeattr_266, base_typeattr_267, base_typeattr_268, base_typeattr_269, base_typeattr_270, base_typeattr_271, base_typeattr_272, base_typeattr_273, base_typeattr_274, base_typeattr_275, base_typeattr_276, base_typeattr_277, base_typeattr_278, base_typeattr_279, base_typeattr_280, base_typeattr_281, base_typeattr_282, base_typeattr_283, base_typeattr_284, base_typeattr_285, base_typeattr_286, base_typeattr_287, base_typeattr_288, base_typeattr_289, base_typeattr_290, base_typeattr_291, base_typeattr_292, base_typeattr_293, base_typeattr_294, base_typeattr_295, base_typeattr_296, base_typeattr_297, base_typeattr_298, base_typeattr_299, base_typeattr_300, base_typeattr_301, base_typeattr_302, base_typeattr_303, base_typeattr_304, base_typeattr_305, base_typeattr_306, base_typeattr_307, base_typeattr_308, base_typeattr_310, base_typeattr_311, base_typeattr_312, base_typeattr_313, base_typeattr_314, base_typeattr_315, base_typeattr_316, base_typeattr_317, base_typeattr_318, base_typeattr_319, base_typeattr_320, base_typeattr_321, base_typeattr_322, base_typeattr_323, base_typeattr_324, base_typeattr_325, base_typeattr_326, base_typeattr_327, base_typeattr_328, base_typeattr_329, base_typeattr_330, base_typeattr_331, base_typeattr_333, base_typeattr_334, base_typeattr_335, base_typeattr_336, base_typeattr_337, base_typeattr_338, base_typeattr_339, base_typeattr_340, base_typeattr_341, base_typeattr_342, base_typeattr_343, base_typeattr_344, base_typeattr_345, base_typeattr_346, base_typeattr_347, base_typeattr_348, base_typeattr_349, base_typeattr_350, base_typeattr_351, base_typeattr_352, base_typeattr_353, base_typeattr_354, base_typeattr_355, base_typeattr_358, base_typeattr_359, base_typeattr_360, base_typeattr_361, base_typeattr_362, base_typeattr_363, base_typeattr_364, base_typeattr_365, base_typeattr_366, base_typeattr_367, base_typeattr_368, base_typeattr_369, base_typeattr_370, base_typeattr_371, base_typeattr_372, base_typeattr_373, base_typeattr_374, base_typeattr_375, base_typeattr_376, base_typeattr_377, base_typeattr_378, base_typeattr_379, base_typeattr_380, base_typeattr_381, base_typeattr_382, base_typeattr_383, base_typeattr_384, base_typeattr_385, base_typeattr_386, base_typeattr_387, base_typeattr_388, base_typeattr_391, base_typeattr_392, base_typeattr_393, base_typeattr_394, base_typeattr_395, base_typeattr_396, base_typeattr_397, base_typeattr_398, base_typeattr_399, base_typeattr_400, base_typeattr_401, base_typeattr_402, base_typeattr_403, base_typeattr_404, base_typeattr_405, base_typeattr_406, base_typeattr_407, base_typeattr_408, base_typeattr_409, base_typeattr_410, base_typeattr_411, base_typeattr_412, base_typeattr_413, base_typeattr_414, base_typeattr_415, base_typeattr_416, base_typeattr_417, domain, mlstrustedsubject;
 
-typeattribute hal_miperf_default domain;
-typeattribute hal_miperf_default hal_miperf;
-typeattribute hal_miperf_default halclientdomain;
-typeattribute hal_miperf_default halserverdomain;
-typeattribute hal_miperf_default mlstrustedsubject;
-
-binder_call(hal_miperf_default, mtk_hal_power)
-binder_call(hal_miperf_default, system_server)
 binder_use(hal_miperf_default)
 hal_client_domain(hal_miperf_default, hal_miperf)
 hal_client_domain(hal_miperf_default, hal_mtk_power)
@@ -31,33 +24,31 @@ hal_server_domain(hal_miperf_default, hal_miperf)
 init_daemon_domain(hal_miperf_default)
 allow hal_miperf_default cgroup:file rw_file_perms;
 allow hal_miperf_default hal_power_hwservice:hwservice_manager find;
-allow hal_miperf_default miperf_data_file:dir rw_dir_perms;
-allow hal_miperf_default miperf_data_file:file create_file_perms;
-allow hal_miperf_default mnt_vendor_file:dir r_dir_perms;
-allow hal_miperf_default mnt_vendor_file:dir write;
-allow hal_miperf_default mnt_vendor_file:dir { add_name remove_name rmdir };
-allow hal_miperf_default mnt_vendor_file:file r_file_perms;
-allow hal_miperf_default mnt_vendor_file:file write;
-allow hal_miperf_default mnt_vendor_file:file { create unlink };
+allow hal_miperf_default miperf_data_file:dir { add_name read remove_name search watch write };
+allow hal_miperf_default miperf_data_file:file { create getattr open read rename setattr unlink write };
+allow hal_miperf_default mnt_vendor_file:dir { add_name getattr open read remove_name rmdir search write };
+allow hal_miperf_default mnt_vendor_file:file { create getattr open read unlink write };
 allow hal_miperf_default mtk_audiohal_data_file:dir create_dir_perms;
 allow hal_miperf_default mtk_audiohal_data_file:file create_file_perms;
+allow hal_miperf_default mtk_hal_power:binder call;
 allow hal_miperf_default mtk_hal_power_service:service_manager find;
-allow hal_miperf_default proc:file { rw_file_perms setattr };
+allow hal_miperf_default proc:file { getattr open read setattr write };
 allow hal_miperf_default proc_perfmgr:dir search;
-allow hal_miperf_default proc_perfmgr:file r_file_perms;
+allow hal_miperf_default proc_perfmgr:file { getattr ioctl open read };
 allow hal_miperf_default sysfs:file rw_file_perms;
 allow hal_miperf_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_miperf_default sysfs_mtk_fpsgo:dir r_dir_perms;
-allow hal_miperf_default sysfs_mtk_fpsgo:file rw_file_perms;
-allow hal_miperf_default sysfs_mtk_fpsgo:lnk_file rw_file_perms;
-allowxperm hal_miperf_default proc_perfmgr:file ioctl { 0x6701 0x670f };
+allow hal_miperf_default sysfs_mtk_fpsgo:{ file lnk_file } rw_file_perms;
+allow hal_miperf_default system_server:binder call;
 dontaudit hal_miperf_default default_prop:file read;
+allowxperm hal_miperf_default proc_perfmgr:file ioctl { 0x6701 0x670f };
 
 # --- hal_miperf_default_exec ---
-type hal_miperf_default_exec, exec_type, file_type, vendor_file_type;
+type hal_miperf_default_exec, base_typeattr_242, exec_type, file_type, vendor_file_type;
 
 # --- hal_miperf_server ---
-add_service(hal_miperf_server, hal_miperf_service)
-binder_call(hal_miperf_server, hal_miperf_client)
 binder_use(hal_miperf_server)
+allow hal_miperf_server hal_miperf_client:binder call;
+allow hal_miperf_server hal_miperf_client:fd use;
+allow hal_miperf_server hal_miperf_service:service_manager { add find };
 

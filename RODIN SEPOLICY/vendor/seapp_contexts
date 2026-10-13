@@ -4,7 +4,5 @@
 # Partition: vendor
 # ========================================
 
-# [ Security & TEE ]
-# --- Trustonic TEE Core ---
-user=_app seinfo=platform name=com.trustonic.tuiservice domain=mobicore_app type=app_data_file    levelFrom=user
+user=_app seinfo=platform name=com.trustonic.tuiservice domain=mobicore_app type=app_data_file levelFrom=user
 

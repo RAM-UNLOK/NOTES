@@ -1,6 +1,7 @@
 # ============================================================
 # File: smartplatformserver.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,30 +10,20 @@
 # ============================================================
 
 # --- smartplatformserver ---
-type smartplatformserver;
+type smartplatformserver, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute smartplatformserver binderservicedomain;
-typeattribute smartplatformserver coredomain;
-typeattribute smartplatformserver domain;
-typeattribute smartplatformserver halclientdomain;
-typeattribute smartplatformserver mlstrustedsubject;
-
-add_service(smartplatformserver, smartplatformserver_service)
 binder_call(smartplatformserver, binderservicedomain)
 binder_call(smartplatformserver, mediaserver)
 binder_call(smartplatformserver, mediaswcodec)
 binder_call(smartplatformserver, platform_app)
 binder_call(smartplatformserver, surfaceflinger)
 binder_call(smartplatformserver, system_server)
-binder_use(smartplatformserver)
 get_prop(smartplatformserver, hwservicemanager_prop)
 get_prop(smartplatformserver, media_config_prop)
-get_prop(smartplatformserver, system_mtk_collision_prop)
 hal_client_domain(smartplatformserver, hal_allocator)
 hal_client_domain(smartplatformserver, hal_codec2)
 hal_client_domain(smartplatformserver, hal_graphics_allocator)
 hal_client_domain(smartplatformserver, hal_omx)
-hwbinder_use(smartplatformserver)
 init_daemon_domain(smartplatformserver)
 set_prop(smartplatformserver, system_mtk_collision_prop)
 allow smartplatformserver activity_service:service_manager find;
@@ -40,7 +31,7 @@ allow smartplatformserver audio_service:service_manager find;
 allow smartplatformserver audioserver_service:service_manager find;
 allow smartplatformserver batterystats_service:service_manager find;
 allow smartplatformserver cameraserver_service:service_manager find;
-allow smartplatformserver dmabuf_system_heap_device:chr_file { ioctl read open };
+allow smartplatformserver dmabuf_system_heap_device:chr_file { ioctl open read };
 allow smartplatformserver drmserver:fd use;
 allow smartplatformserver drmserver_service:service_manager find;
 allow smartplatformserver gpu_device:chr_file rw_file_perms;
@@ -49,7 +40,9 @@ allow smartplatformserver hal_allocator_default:fd use;
 allow smartplatformserver hal_graphics_mapper_hwservice:hwservice_manager find;
 allow smartplatformserver hidl_memory_hwservice:hwservice_manager find;
 allow smartplatformserver hidl_token_hwservice:hwservice_manager find;
-allow smartplatformserver ion_device:chr_file { ioctl read open };
+allow smartplatformserver hwservicemanager:binder { call transfer };
+allow smartplatformserver hwservicemanager:fd use;
+allow smartplatformserver ion_device:chr_file { ioctl open read };
 allow smartplatformserver kernel:system module_request;
 allow smartplatformserver media_data_file:dir rw_dir_perms;
 allow smartplatformserver media_data_file:file create_file_perms;
@@ -64,15 +57,16 @@ allow smartplatformserver mnt_user_file:lnk_file read;
 allow smartplatformserver package_native_service:service_manager find;
 allow smartplatformserver sdcardfs:dir create_dir_perms;
 allow smartplatformserver sdcardfs:file create_file_perms;
-allow smartplatformserver self:capability net_admin;
-allow smartplatformserver self:capability sys_admin;
-allow smartplatformserver self:netlink_socket { create_socket_perms r_file_perms w_file_perms };
+allow smartplatformserver self:capability { net_admin sys_admin };
+allow smartplatformserver self:netlink_socket create_socket_perms_no_ioctl;
 allow smartplatformserver sensorservice_service:service_manager find;
-allow smartplatformserver shell_exec:file rx_file_perms;
+allow smartplatformserver servicemanager:binder { call transfer };
+allow smartplatformserver shell_exec:file { execute getattr open read };
+allow smartplatformserver smartplatformserver_service:service_manager { add find };
 allow smartplatformserver storage_file:lnk_file read;
 allow smartplatformserver sysfs:dir read;
 allow smartplatformserver sysfs_devices_block:dir search;
-allow smartplatformserver sysfs_devices_block:file r_file_perms;
+allow smartplatformserver sysfs_devices_block:file { getattr open read };
 allow smartplatformserver system_file:file execute_no_trans;
 allow smartplatformserver system_server:unix_stream_socket { read write };
 allow smartplatformserver vfat:dir create_dir_perms;

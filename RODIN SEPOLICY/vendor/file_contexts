@@ -292,6 +292,7 @@
 /(vendor|system/vendor)/bin/hw/vtservice_aidl                                                                                                   u:object_r:mtk_hal_videotelephony_exec:s0
 /(vendor|system/vendor)/bin/hw/vtservice_hidl                                                                                                   u:object_r:vtservice_hidl_exec:s0
 /(vendor|system/vendor)/bin/hypsys_vendor                                                                                                       u:object_r:hal_misys_vendor_default_exec:s0
+/(vendor|system/vendor)/bin/ipsec_mon                                                                                                           u:object_r:ipsec_mon_exec:s0
 /(vendor|system/vendor)/bin/ise_apploader                                                                                                       u:object_r:ise_apploader_exec:s0
 /(vendor|system/vendor)/bin/jxnosfastswitch                                                                                                     u:object_r:mtk_hal_jxnosfastswitch_exec:s0
 /(vendor|system/vendor)/bin/kisd                                                                                                                u:object_r:kisd_exec:s0
@@ -312,6 +313,7 @@
 /(vendor|system/vendor)/bin/statusd                                                                                                             u:object_r:statusd_exec:s0
 /(vendor|system/vendor)/bin/wmt_loader                                                                                                          u:object_r:wmt_loader_exec:s0
 /(vendor|system/vendor)/bin/wo_charon                                                                                                           u:object_r:wo_charon_exec:s0
+/(vendor|system/vendor)/bin/wo_ipsec                                                                                                            u:object_r:wo_ipsec_exec:s0
 /(vendor|system/vendor)/bin/wo_starter                                                                                                          u:object_r:wo_starter_exec:s0
 /(vendor|system/vendor)/bin/wo_stroke                                                                                                           u:object_r:wo_stroke_exec:s0
 /(vendor|system/vendor)/etc/iobooster.conf                                                                                                      u:object_r:vendor_configs_file:s0
@@ -541,6 +543,9 @@
 /dev/block/by-name/rescue                                                                                                                       u:object_r:rescue_block_device:s0
 /dev/block/by-name/rotfw(_[ab])?                                                                                                                u:object_r:rotfw_block_device:s0
 /dev/block/by-name/scp(_[ab])?                                                                                                                  u:object_r:scp_block_device:s0
+/dev/block/by-name/sec1                                                                                                                         u:object_r:sec1_block_device:s0
+/dev/block/by-name/seccfg                                                                                                                       u:object_r:seccfg_block_device:s0
+/dev/block/by-name/secro                                                                                                                        u:object_r:secro_block_device:s0
 /dev/block/by-name/spmfw(_[ab])?                                                                                                                u:object_r:spmfw_block_device:s0
 /dev/block/by-name/sspm(_[ab])?                                                                                                                 u:object_r:sspm_block_device:s0
 /dev/block/by-name/super                                                                                                                        u:object_r:super_block_device:s0
@@ -608,6 +613,7 @@
 /dev/ion(/.*)?                                                                                                                                  u:object_r:ion_device:s0
 /dev/ir_spi                                                                                                                                     u:object_r:ir_spi_device:s0
 /dev/irtx                                                                                                                                       u:object_r:irtx_device:s0
+/dev/isee_tee0                                                                                                                                  u:object_r:teei_client_device:s0
 /dev/lirc[0-9]+                                                                                                                                 u:object_r:irtx_device:s0
 /dev/logo(/.*)?                                                                                                                                 u:object_r:logo_device:s0
 /dev/loop-control(/.*)?                                                                                                                         u:object_r:loop-control_device:s0
@@ -676,6 +682,7 @@
 /dev/scp(/.*)?                                                                                                                                  u:object_r:scp_device:s0
 /dev/scp_B(/.*)?                                                                                                                                u:object_r:scp_device:s0
 /dev/scp_chre_manager                                                                                                                           u:object_r:scp_device:s0
+/dev/seccfg(/.*)?                                                                                                                               u:object_r:seccfg_device:s0
 /dev/seninf(/.*)?                                                                                                                               u:object_r:seninf_device:s0
 /dev/seninf_n3d                                                                                                                                 u:object_r:seninf_n3d_device:s0
 /dev/shf                                                                                                                                        u:object_r:shf_device:s0
@@ -687,6 +694,12 @@
 /dev/socket/mal-mfi(/.*)?                                                                                                                       u:object_r:mal_mfi_socket:s0
 /dev/socket/mal-mfi-dongle(/.*)?                                                                                                                u:object_r:mal_mfi_socket:s0
 /dev/socket/miwild                                                                                                                              u:object_r:miwild_socket:s0
+/dev/socket/msap_c2k_socket1(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket2(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket3(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
+/dev/socket/msap_c2k_socket4(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
+/dev/socket/msap_uim_socket1(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
+/dev/socket/msap_uim_socket2(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
 /dev/socket/rpc                                                                                                                                 u:object_r:rpc_socket:s0
 /dev/socket/slad                                                                                                                                u:object_r:slad_socket:s0
 /dev/socket/soc_vt_stk(/.*)?                                                                                                                    u:object_r:soc_vt_stk_socket:s0
@@ -694,6 +707,7 @@
 /dev/socket/soc_vt_tcv(/.*)?                                                                                                                    u:object_r:soc_vt_tcv_socket:s0
 /dev/socket/statusd                                                                                                                             u:object_r:statusd_socket:s0
 /dev/socket/sysctl(/.*)?                                                                                                                        u:object_r:sysctl_socket:s0
+/dev/socket/wo_epdg_ipsec(/.*)?                                                                                                                 u:object_r:wo_epdg_ipsec_socket:s0
 /dev/spm(/.*)?                                                                                                                                  u:object_r:spm_device:s0
 /dev/sspm(/.*)?                                                                                                                                 u:object_r:sspm_device:s0
 /dev/st54spi                                                                                                                                    u:object_r:st54spi_device:s0
@@ -702,6 +716,10 @@
 /dev/stpwmt(/.*)?                                                                                                                               u:object_r:stpwmt_device:s0
 /dev/sw_sync(/.*)?                                                                                                                              u:object_r:sw_sync_device:s0
 /dev/t-base-tui                                                                                                                                 u:object_r:mobicore_tui_device:s0
+/dev/tee0                                                                                                                                       u:object_r:mitee_client_device:s0
+/dev/tee1                                                                                                                                       u:object_r:tee_part_device:s0
+/dev/tee2                                                                                                                                       u:object_r:tee_part_device:s0
+/dev/teepriv0                                                                                                                                   u:object_r:mitee_client_device:s0
 /dev/tgt(/.*)?                                                                                                                                  u:object_r:tgt_device:s0
 /dev/thinmd_ee(/.*)?                                                                                                                            u:object_r:thinmd_ee_device:s0
 /dev/thp                                                                                                                                        u:object_r:gdix_thp_device:s0
@@ -787,6 +805,7 @@
 /vendor/bin/md_monitor                                                                                                                          u:object_r:md_monitor_exec:s0
 /vendor/bin/t_taglog                                                                                                                            u:object_r:t_taglog_exec:s0
 /vendor/bin/tcpdump-vendor                                                                                                                      u:object_r:vendor_tcpdump_exec:s0
+/vendor/bin/teed                                                                                                                                u:object_r:tee_exec:s0
 /vendor/bin/wallpapercolor                                                                                                                      u:object_r:wallpapercolor_exec:s0
 /vendor/etc/gralloc(/.*)?                                                                                                                       u:object_r:same_process_hal_file:s0
 /vendor/etc/md(/.*)?                                                                                                                            u:object_r:vendor_etc_md_file:s0
@@ -854,17 +873,23 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth\.finder-service\.default                                                            u:object_r:hal_bluetooth_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth\.lmp_event-service\.default                                                         u:object_r:hal_bluetooth_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth\.ranging-service\.default                                                           u:object_r:hal_bluetooth_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.macsec-service                                                                                u:object_r:hal_macsec_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service-st                                                                                u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.0-service                                                                              u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.1-service                                                                              u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service                                                                              u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service-st                                                                           u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element-service.example                                                                u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.0-service                                                                   u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.2-service-st54spi                                                           u:object_r:st54spi_hal_secure_element_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element_snxxx@1\.2-service                                                             u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.uwb-service                                                                                   u:object_r:hal_uwb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi-service                                                                                  u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi-service-lazy                                                                             u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@1\.0-service                                                                             u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@1\.0-service-lazy                                                                        u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/wpa_supplicant                                                                                                   u:object_r:hal_wifi_supplicant_default_exec:s0
+/(vendor|system/vendor)/bin/hw/wpa_supplicant_macsec                                                                                            u:object_r:wpa_supplicant_macsec_exec:s0
 /(vendor|system/vendor)/bin/minetd                                                                                                              u:object_r:minetd_exec:s0
 /(vendor|system/vendor)/bin/netdagent                                                                                                           u:object_r:netdagent_exec:s0
 /(vendor|system/vendor)/bin/wifi_dump                                                                                                           u:object_r:wifi_dump_exec:s0
@@ -876,6 +901,7 @@
 /data/vendor/nfc(/.*)?                                                                                                                          u:object_r:nfc_vendor_data_file:s0
 /data/vendor/nfc/debug(/.*)?                                                                                                                    u:object_r:nfc_vendor_debug_data_file:s0
 /data/vendor/nfc_socket(/.*)?                                                                                                                   u:object_r:vendor_nfc_socket_file:s0
+/data/vendor/secure_element(/.*)?                                                                                                               u:object_r:nfc_vendor_data_file:s0
 /data/vendor/wifi/hostapd(/.*)?                                                                                                                 u:object_r:hostapd_data_file:s0
 /data/vendor/wifi/wpa(/.*)?                                                                                                                     u:object_r:wpa_data_file:s0
 /data/vendor/wlan_logs(/.*)?                                                                                                                    u:object_r:vendor_wifi_vendor_data_file:s0
@@ -895,6 +921,7 @@
 
 # --- Power & Thermal ---
 /(vendor|odm|system/vendor)/etc/charger(/.*)?                                                                                                   u:object_r:batteryantiaging_cfg_file:s0
+/(vendor|system/vendor)/bin/batterysecret                                                                                                       u:object_r:batterysecret_exec:s0
 /(vendor|system/vendor)/bin/charge_logger                                                                                                       u:object_r:charge_logger_exec:s0
 /(vendor|system/vendor)/bin/fuelgauged                                                                                                          u:object_r:fuelgauged_exec:s0
 /(vendor|system/vendor)/bin/fuelgauged_nvram                                                                                                    u:object_r:fuelgauged_nvram_exec:s0
@@ -957,12 +984,6 @@
 /dev/socket/mrild(/.*)?                                                                                                                         u:object_r:gsmrild_socket:s0
 /dev/socket/mrild2(/.*)?                                                                                                                        u:object_r:gsmrild_socket:s0
 /dev/socket/mrild3(/.*)?                                                                                                                        u:object_r:gsmrild_socket:s0
-/dev/socket/msap_c2k_socket1(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
-/dev/socket/msap_c2k_socket2(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
-/dev/socket/msap_c2k_socket3(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
-/dev/socket/msap_c2k_socket4(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
-/dev/socket/msap_uim_socket1(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
-/dev/socket/msap_uim_socket2(/.*)?                                                                                                              u:object_r:gsmrild_socket:s0
 /dev/socket/rcs_rild(/.*)?                                                                                                                      u:object_r:rcs_rild_socket:s0
 /dev/socket/rcs_ua_proxy(/.*)?                                                                                                                  u:object_r:rcs_ua_proxy_socket:s0
 /dev/socket/rcs_volte_stack(/.*)?                                                                                                               u:object_r:rcs_volte_stack_socket:s0
@@ -1031,20 +1052,21 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.1-service\.beanpod                                                               u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.1-service\.beanpod\.lite                                                         u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.1-service\.mtee                                                                  u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.authgraph-service\.nonsecure                                                        u:object_r:hal_authgraph_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service                                                                     u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@1\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.secretkeeper-service.nonsecure                                                      u:object_r:hal_secretkeeper_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.mitee                                                                    u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.identity-service\.mitee@5\.0                                                                 u:object_r:hal_identity_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.mitee                                                        u:object_r:hal_keymint_default_exec:s0
 /(vendor|system\/vendor)/bin/miteelog                                                                                                           u:object_r:tee_exec:s0
 /data/vendor/mitee(/.*)?                                                                                                                        u:object_r:mitee_data_file:s0
 /dev/block/by-name/keystore                                                                                                                     u:object_r:keystore_block_device:s0
 /dev/block/by-name/tee([12]|_[ab])                                                                                                              u:object_r:tee_block_device:s0
-/dev/isee_tee0                                                                                                                                  u:object_r:teei_client_device:s0
-/dev/tee0                                                                                                                                       u:object_r:mitee_client_device:s0
-/dev/tee1                                                                                                                                       u:object_r:tee_part_device:s0
-/dev/tee2                                                                                                                                       u:object_r:tee_part_device:s0
-/dev/teepriv0                                                                                                                                   u:object_r:mitee_client_device:s0
 /dev/ut_keymaster                                                                                                                               u:object_r:ut_keymaster_device:s0
 /mnt/vendor/protect_f/tee(/.*)?                                                                                                                 u:object_r:tkcore_protect_data_file:s0
-/vendor/bin/teed                                                                                                                                u:object_r:tee_exec:s0
 
 # --- Sensors & Location ---
 /(odm|vendor/odm|vendor|system/vendor)/bin/ear_sensor                                                                                           u:object_r:touchreport_exec:s0
@@ -1345,6 +1367,11 @@
 /dev/dma_heap/mtk_prot_page-uncached                                                                                                            u:object_r:dmabuf_system_secure_heap_device:s0
 /dev/dma_heap/mtk_prot_region                                                                                                                   u:object_r:dmabuf_system_secure_heap_device:s0
 /dev/dma_heap/mtk_prot_region-aligned                                                                                                           u:object_r:dmabuf_system_secure_heap_device:s0
+/dev/dma_heap/mtk_sapu_data_shm_region                                                                                                          u:object_r:dmabuf_system_secure_heap_device:s0
+/dev/dma_heap/mtk_sapu_data_shm_region-aligned                                                                                                  u:object_r:dmabuf_system_secure_heap_device:s0
+/dev/dma_heap/mtk_sapu_engine_shm_region                                                                                                        u:object_r:dmabuf_system_secure_heap_device:s0
+/dev/dma_heap/mtk_sapu_engine_shm_region-aligned                                                                                                u:object_r:dmabuf_system_secure_heap_device:s0
+/dev/dma_heap/mtk_sapu_page-uncached                                                                                                            u:object_r:dmabuf_mtk_sapu_page_device:s0
 /dev/dma_heap/mtk_slc                                                                                                                           u:object_r:dmabuf_mtk_slc_heap_device:s0
 /dev/dma_heap/mtk_svp_page-uncached                                                                                                             u:object_r:dmabuf_system_secure_heap_device:s0
 /dev/dma_heap/mtk_svp_region                                                                                                                    u:object_r:dmabuf_system_secure_heap_device:s0
@@ -1410,11 +1437,6 @@
 /(vendor|system/vendor)/bin/mtkrild                                                                                                             u:object_r:mtkrild_exec:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/modem(_[ab])?                                                        u:object_r:md_block_device:s0
 /dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/modem_1(_[ab])?                                                      u:object_r:md_block_device:s0
-/dev/dma_heap/mtk_sapu_data_shm_region                                                                                                          u:object_r:dmabuf_system_secure_heap_device:s0
-/dev/dma_heap/mtk_sapu_data_shm_region-aligned                                                                                                  u:object_r:dmabuf_system_secure_heap_device:s0
-/dev/dma_heap/mtk_sapu_engine_shm_region                                                                                                        u:object_r:dmabuf_system_secure_heap_device:s0
-/dev/dma_heap/mtk_sapu_engine_shm_region-aligned                                                                                                u:object_r:dmabuf_system_secure_heap_device:s0
-/dev/dma_heap/mtk_sapu_page-uncached                                                                                                            u:object_r:dmabuf_mtk_sapu_page_device:s0
 /dev/socket/rild-mtk-modem(/.*)?                                                                                                                u:object_r:rild_mtk_modem_socket:s0
 /dev/socket/rild-mtk-modem-md2(/.*)?                                                                                                            u:object_r:rild_mtk_modem_md2_socket:s0
 /dev/socket/rild-mtk-ut(/.*)?                                                                                                                   u:object_r:rild_mtk_ut_socket:s0
@@ -1517,44 +1539,13 @@
 
 # [ Vendor: Samsung ]
 # --- Misc ---
-/(vendor|system/vendor)/bin/ipsec_mon                                                                                                           u:object_r:ipsec_mon_exec:s0
-/(vendor|system/vendor)/bin/wo_ipsec                                                                                                            u:object_r:wo_ipsec_exec:s0
 /dev/block/by-name/md_sec                                                                                                                       u:object_r:md_sec_device:s0
-/dev/block/by-name/sec1                                                                                                                         u:object_r:sec1_block_device:s0
-/dev/block/by-name/seccfg                                                                                                                       u:object_r:seccfg_block_device:s0
-/dev/block/by-name/secro                                                                                                                        u:object_r:secro_block_device:s0
 /dev/sec(/.*)?                                                                                                                                  u:object_r:sec_device:s0
 /dev/sec_ro(/.*)?                                                                                                                               u:object_r:sec_ro_device:s0
-/dev/seccfg(/.*)?                                                                                                                               u:object_r:seccfg_device:s0
-/dev/socket/wo_epdg_ipsec(/.*)?                                                                                                                 u:object_r:wo_epdg_ipsec_socket:s0
 /mnt/vendor/md_sec(/.*)?                                                                                                                        u:object_r:md_sec_file:s0
 /vendor/lib(64)?/libaal_sec\.so                                                                                                                 u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libpq_sec\.so                                                                                                                  u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/mt[0-9]+[a-z]*/libpq_sec\.so                                                                                                   u:object_r:same_process_hal_file:s0
-
-# --- Network (Wi-Fi, BT, NFC) ---
-/(vendor|system/vendor)/bin/hw/android\.hardware\.macsec-service                                                                                u:object_r:hal_macsec_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element-service.example                                                                u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.0-service                                                                   u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.2-service-st54spi                                                           u:object_r:st54spi_hal_secure_element_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element_snxxx@1\.2-service                                                             u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/hw/wpa_supplicant_macsec                                                                                            u:object_r:wpa_supplicant_macsec_exec:s0
-/data/vendor/secure_element(/.*)?                                                                                                               u:object_r:nfc_vendor_data_file:s0
-
-# --- Power & Thermal ---
-/(vendor|system/vendor)/bin/batterysecret                                                                                                       u:object_r:batterysecret_exec:s0
-
-# --- Security & TEE ---
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.authgraph-service\.nonsecure                                                        u:object_r:hal_authgraph_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service                                                                     u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service\.trustonic                                                          u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@1\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-service\.trustonic                                                     u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.beanpod                                                       u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.trustonic                                                     u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.secretkeeper-service.nonsecure                                                      u:object_r:hal_secretkeeper_default_exec:s0
-/(vendor|system\/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.mitee                                                        u:object_r:hal_keymint_default_exec:s0
 
 # [ Vendor: Trustonic ]
 # --- Fingerprint & Biometrics ---
@@ -1566,6 +1557,9 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service\.trustonic                                                             u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.trustonic                                                             u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.1-service\.trustonic                                                             u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service\.trustonic                                                          u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@2\.0-service\.trustonic                                                     u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.trustonic                                                     u:object_r:hal_keymint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.capi@2\.0-service                                                                  u:object_r:teei_hal_capi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.ifaa@1\.0-service                                                                  u:object_r:teei_hal_ifaa_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.ifaa@2\.0-service                                                                  u:object_r:teei_hal_ifaa_exec:s0

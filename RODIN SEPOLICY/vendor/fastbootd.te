@@ -1,6 +1,7 @@
 # ============================================================
 # File: fastbootd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Update & Provisioning
 # Subcategory: OTA & Partitions
@@ -15,6 +16,5 @@ allow fastbootd para_block_device:blk_file rw_file_perms;
 allow fastbootd self:capability sys_rawio;
 allow fastbootd self:process setfscreate;
 allow fastbootd sysfs_boot_type:file rw_file_perms;
-allowxperm fastbootd bootdevice_block_device:blk_file ioctl 0xb300;
-allowxperm fastbootd bootdevice_block_device:blk_file ioctl { 0x1277 0x127d };
+allowxperm fastbootd bootdevice_block_device:blk_file ioctl { 0x1277 0x127d 0xb300 };
 

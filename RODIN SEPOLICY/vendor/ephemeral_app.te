@@ -1,6 +1,7 @@
 # ============================================================
 # File: ephemeral_app.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps
@@ -11,5 +12,5 @@
 typeattribute ephemeral_app domain;
 
 allow ephemeral_app proc_mtk_jpeg:file rw_file_perms;
-allowxperm ephemeral_app proc_mtk_jpeg:file ioctl { (range 0x7812 0x7814) };
+allowxperm ephemeral_app proc_mtk_jpeg:file ioctl 0x7812-0x7814;
 

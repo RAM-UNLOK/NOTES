@@ -1,6 +1,7 @@
 # ============================================================
 # File: wificond.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Wi-Fi Stack
@@ -16,8 +17,8 @@ typeattribute wificond halclientdomain;
 allow wificond data_log_stability_file:dir search;
 allow wificond hypsys_ssi_default:fd use;
 allow wificond hypsys_ssi_default:fifo_file write;
-allow wificond miui_coredump_file:dir { write add_name search };
-allow wificond miui_coredump_file:file create_file_perms;
+allow wificond miui_coredump_file:dir { add_name search write };
+allow wificond miui_coredump_file:file { create open read write };
 allow wificond miui_native_file:dir search;
 allow wificond mqsasd:fd use;
 allow wificond mqsasd:fifo_file write;

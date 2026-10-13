@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_telephony.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Radio & Telephony
 # Subcategory: Modem & RIL
@@ -12,6 +13,6 @@
 allow hal_telephony_client vendor_hal_telephony_service2:service_manager find;
 
 # --- hal_telephony_server ---
-add_service(hal_telephony_server, vendor_hal_telephony_service2)
 allow hal_telephony_server servicemanager:fd use;
+allow hal_telephony_server vendor_hal_telephony_service2:service_manager { add find };
 

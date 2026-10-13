@@ -1,6 +1,7 @@
 # ============================================================
 # File: traced.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Logging
@@ -52,7 +53,6 @@ typeattribute traced_perf_socket mlstrustedobject;
 # --- traced_probes ---
 typeattribute traced_probes coredomain;
 typeattribute traced_probes domain;
-typeattribute traced_probes halclientdomain;
 typeattribute traced_probes mlstrustedsubject;
 
 get_prop(traced_probes, traced_bpf_trace_prop)

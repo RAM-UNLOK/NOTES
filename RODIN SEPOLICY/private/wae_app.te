@@ -1,6 +1,7 @@
 # ============================================================
 # File: wae_app.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,27 +10,17 @@
 # ============================================================
 
 # --- wae_app ---
-type wae_app;
+type wae_app, appdomain, base_typeattr_1062, base_typeattr_1064, base_typeattr_1065, base_typeattr_1066, base_typeattr_1068, base_typeattr_1069, base_typeattr_1070, base_typeattr_1072, base_typeattr_1073, base_typeattr_1075, base_typeattr_1077, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1085, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1090, base_typeattr_1091, base_typeattr_1092, base_typeattr_1094, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1099, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1104, base_typeattr_1105, base_typeattr_1106, base_typeattr_1108, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1115, base_typeattr_1116, base_typeattr_1117, base_typeattr_1119, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1124, base_typeattr_1125, base_typeattr_1126, base_typeattr_1128, base_typeattr_1131, base_typeattr_1133, base_typeattr_1134, coredomain, domain, hypsys_ssi_client;
 
-typeattribute wae_app coredomain;
-typeattribute wae_app domain;
-typeattribute wae_app hypsys_ssi_client;
-
-app_domain(wae_app)
 binder_call(wae_app, gpuservice)
-binder_use(wae_app)
-get_prop(wae_app, system_prop)
 get_prop(wae_app, wae_prop)
 net_domain(wae_app)
 set_prop(wae_app, system_prop)
-set_prop(wae_app, wae_prop)
 allow wae_app app_api_service:service_manager find;
 allow wae_app app_data_file:dir rw_dir_perms;
-allow wae_app app_data_file:fifo_file create_file_perms;
-allow wae_app app_data_file:file { rx_file_perms w_file_perms };
-allow wae_app app_data_file:lnk_file create_file_perms;
-allow wae_app app_data_file:sock_file create_file_perms;
-allow wae_app appdomain_tmpfs:file { rx_file_perms write };
+allow wae_app app_data_file:file rwx_file_perms;
+allow wae_app app_data_file:{ fifo_file lnk_file sock_file } create_file_perms;
+allow wae_app appdomain_tmpfs:file { execute getattr ioctl map read write };
 allow wae_app audioserver_service:service_manager find;
 allow wae_app cameraserver_service:service_manager find;
 allow wae_app drmserver_service:service_manager find;
@@ -44,47 +35,46 @@ allow wae_app mnt_media_rw_file:dir search;
 allow wae_app nfc_service:service_manager find;
 allow wae_app privapp_data_file:lnk_file r_file_perms;
 allow wae_app radio_service:service_manager find;
-allow wae_app rs:process transition;
-allow wae_app rs:process { siginh rlimitinh };
-allow wae_app rs_exec:file rx_file_perms;
+allow wae_app rs:process { rlimitinh siginh transition };
+allow wae_app rs_exec:file { execute getattr map open read };
 allow wae_app runas_app:process sigchld;
 allow wae_app runas_app:unix_stream_socket connectto;
 allow wae_app self:process ptrace;
 allow wae_app self:tcp_socket { read write };
+allow wae_app servicemanager:binder { call transfer };
 allow wae_app servicemanager:service_manager list;
 allow wae_app simpleperf:process signal;
-allow wae_app system_app_data_file:file { r_file_perms write };
+allow wae_app system_app_data_file:file { getattr read write };
 allow wae_app system_app_service:service_manager find;
 allow wae_app system_linker_exec:file execute_no_trans;
-allow wae_app system_server:udp_socket { r_file_perms connect getopt recvfrom sendto setopt write };
+allow wae_app system_server:udp_socket { connect getattr getopt read recvfrom sendto setopt write };
 allow wae_app tmpfs:file create_file_perms;
-allow wae_app tmpfs:sock_file { write create };
+allow wae_app tmpfs:sock_file { create write };
 allow wae_app traced_perf:unix_stream_socket connectto;
 allow wae_app traced_perf_socket:sock_file write;
 allow wae_app vr_manager_service:service_manager find;
-allow wae_app wae_app_devpts:chr_file rw_file_perms;
-allow wae_app wae_app_userfaultfd:anon_inode { ioctl read create };
+allow wae_app wae_app_devpts:chr_file { getattr ioctl open read write };
+allow wae_app wae_app_userfaultfd:anon_inode { create ioctl read };
 allow wae_app wae_daemon:fd use;
 allow wae_app wae_daemon:unix_dgram_socket sendto;
 allow wae_app wae_daemon:unix_stream_socket connectto;
 allow wae_app wae_data_file:dir create_dir_perms;
-allow wae_app wae_data_file:fifo_file create_file_perms;
-allow wae_app wae_data_file:file create_file_perms;
-allow wae_app wae_data_file:lnk_file r_file_perms;
-allow wae_app wae_data_file:sock_file create_file_perms;
+allow wae_app wae_data_file:lnk_file { getattr read };
+allow wae_app wae_data_file:{ fifo_file file sock_file } create_file_perms;
 allow wae_app wae_dev_socket:dir r_dir_perms;
 allow wae_app wae_dev_socket:sock_file create_file_perms;
-allowxperm wae_app appdomain_tmpfs:file ioctl { (range 0x7701 0x770b) };
-allowxperm wae_app wae_app_devpts:chr_file ioctl { (range 0x5401 0x5404) 0x540b (range 0x540e 0x5411) (range 0x5413 0x5414) (range 0x5450 0x5451) };
+allow wae_app wae_prop:property_service set;
 dontaudit wae_app proc_net:file read;
 dontaudit wae_app proc_stat:file read;
 dontaudit wae_app proc_uptime:file read;
 dontaudit wae_app proc_vmstat:file read;
 dontaudit wae_app rs:process noatsecure;
+allowxperm wae_app appdomain_tmpfs:file ioctl 0x7701-0x770b;
+allowxperm wae_app wae_app_devpts:chr_file ioctl { 0x5401-0x5404 0x540b 0x540e-0x5411 0x5413-0x5414 0x5450-0x5451 };
 type_transition wae_app devpts:chr_file wae_app_devpts;
 type_transition wae_app rs_exec:process rs;
 type_transition wae_app tmpfs:file appdomain_tmpfs;
-type_transition wae_app wae_app:anon_inode "[userfaultfd]" wae_app_userfaultfd;
+type_transition wae_app wae_app:anon_inode wae_app_userfaultfd "[userfaultfd]";
 
 # --- wae_app_devpts ---
 type wae_app_devpts, fs_type;

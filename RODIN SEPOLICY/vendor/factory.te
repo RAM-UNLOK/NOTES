@@ -1,6 +1,7 @@
 # ============================================================
 # File: factory.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Storage & Memory
 # Subcategory: NVRAM & Calibration
@@ -9,17 +10,11 @@
 # ============================================================
 
 # --- factory ---
-type factory;
+type factory, base_typeattr_226, base_typeattr_227, base_typeattr_228, base_typeattr_229, base_typeattr_230, base_typeattr_231, base_typeattr_235, base_typeattr_236, base_typeattr_237, base_typeattr_238, base_typeattr_240, base_typeattr_241, base_typeattr_242, base_typeattr_243, base_typeattr_244, base_typeattr_245, base_typeattr_246, base_typeattr_247, base_typeattr_248, base_typeattr_250, base_typeattr_251, base_typeattr_252, base_typeattr_253, base_typeattr_254, base_typeattr_255, base_typeattr_256, base_typeattr_257, base_typeattr_258, base_typeattr_259, base_typeattr_260, base_typeattr_261, base_typeattr_262, base_typeattr_263, base_typeattr_264, base_typeattr_265, base_typeattr_266, base_typeattr_267, base_typeattr_268, base_typeattr_269, base_typeattr_270, base_typeattr_271, base_typeattr_272, base_typeattr_273, base_typeattr_274, base_typeattr_275, base_typeattr_276, base_typeattr_277, base_typeattr_278, base_typeattr_279, base_typeattr_280, base_typeattr_281, base_typeattr_282, base_typeattr_283, base_typeattr_284, base_typeattr_285, base_typeattr_286, base_typeattr_287, base_typeattr_288, base_typeattr_289, base_typeattr_290, base_typeattr_291, base_typeattr_292, base_typeattr_293, base_typeattr_294, base_typeattr_295, base_typeattr_296, base_typeattr_297, base_typeattr_298, base_typeattr_299, base_typeattr_300, base_typeattr_301, base_typeattr_302, base_typeattr_303, base_typeattr_304, base_typeattr_305, base_typeattr_306, base_typeattr_307, base_typeattr_308, base_typeattr_310, base_typeattr_311, base_typeattr_312, base_typeattr_313, base_typeattr_314, base_typeattr_315, base_typeattr_316, base_typeattr_317, base_typeattr_318, base_typeattr_319, base_typeattr_320, base_typeattr_321, base_typeattr_322, base_typeattr_323, base_typeattr_324, base_typeattr_325, base_typeattr_326, base_typeattr_327, base_typeattr_328, base_typeattr_329, base_typeattr_330, base_typeattr_331, base_typeattr_333, base_typeattr_334, base_typeattr_335, base_typeattr_336, base_typeattr_337, base_typeattr_338, base_typeattr_339, base_typeattr_340, base_typeattr_341, base_typeattr_342, base_typeattr_343, base_typeattr_344, base_typeattr_345, base_typeattr_346, base_typeattr_347, base_typeattr_348, base_typeattr_349, base_typeattr_350, base_typeattr_351, base_typeattr_352, base_typeattr_353, base_typeattr_354, base_typeattr_355, base_typeattr_358, base_typeattr_359, base_typeattr_360, base_typeattr_361, base_typeattr_362, base_typeattr_363, base_typeattr_364, base_typeattr_365, base_typeattr_366, base_typeattr_367, base_typeattr_368, base_typeattr_369, base_typeattr_370, base_typeattr_371, base_typeattr_372, base_typeattr_373, base_typeattr_374, base_typeattr_375, base_typeattr_376, base_typeattr_377, base_typeattr_378, base_typeattr_379, base_typeattr_380, base_typeattr_381, base_typeattr_382, base_typeattr_383, base_typeattr_384, base_typeattr_385, base_typeattr_386, base_typeattr_387, base_typeattr_388, base_typeattr_389, base_typeattr_390, base_typeattr_391, base_typeattr_392, base_typeattr_393, base_typeattr_394, base_typeattr_395, base_typeattr_396, base_typeattr_397, base_typeattr_398, base_typeattr_399, base_typeattr_400, base_typeattr_401, base_typeattr_402, base_typeattr_403, base_typeattr_404, base_typeattr_405, base_typeattr_406, base_typeattr_407, base_typeattr_408, base_typeattr_409, base_typeattr_410, base_typeattr_411, base_typeattr_412, base_typeattr_413, base_typeattr_414, base_typeattr_415, base_typeattr_416, base_typeattr_417, domain;
 
-typeattribute factory domain;
-typeattribute factory halclientdomain;
-
-binder_call(factory, merged_hal_service)
 binder_call(factory, mtk_hal_audio)
-binder_call(factory, mtk_hal_light)
 binder_call(factory, system_suspend_server)
 binder_use(factory)
-get_prop(factory, ctl_default_prop)
 get_prop(factory, hwservicemanager_prop)
 get_prop(factory, powerctl_prop)
 get_prop(factory, radio_control_prop)
@@ -42,16 +37,6 @@ hal_client_domain(factory, hal_power)
 hwbinder_use(factory)
 init_daemon_domain(factory)
 set_prop(factory, ctl_default_prop)
-set_prop(factory, powerctl_prop)
-set_prop(factory, system_mtk_ctl_emdlogger1_prop)
-set_prop(factory, system_mtk_ctl_mdlogger_prop)
-set_prop(factory, vendor_mtk_audiohal_prop)
-set_prop(factory, vendor_mtk_ctl_ccci_fsd_prop)
-set_prop(factory, vendor_mtk_factory_idle_state_prop)
-set_prop(factory, vendor_mtk_factory_prop)
-set_prop(factory, vendor_mtk_mnld_prop)
-set_prop(factory, vendor_mtk_nfc_nfcstackp_enable_prop)
-wakelock_use(factory)
 allow factory AD5820AF_device:chr_file rw_file_perms;
 allow factory BU6429AF_device:chr_file rw_file_perms;
 allow factory BU64745GWZAF_device:chr_file rw_file_perms;
@@ -79,7 +64,7 @@ allow factory apusys_device:chr_file rw_file_perms;
 allow factory ashmem_device:chr_file x_file_perms;
 allow factory ashmem_libcutils_device:chr_file x_file_perms;
 allow factory audio_device:chr_file rw_file_perms;
-allow factory audio_device:dir { write lock open add_name remove_name search };
+allow factory audio_device:dir w_dir_perms;
 allow factory audio_ipi_device:chr_file rw_file_perms;
 allow factory audio_scp_device:chr_file r_file_perms;
 allow factory barometer_device:chr_file r_file_perms;
@@ -106,7 +91,7 @@ allow factory cct_data_file:dir create_dir_perms;
 allow factory cct_data_file:file create_file_perms;
 allow factory ccu_device:chr_file rw_file_perms;
 allow factory charger_ftm_device:chr_file r_file_perms;
-allow factory conn_dbg_dev_device:chr_file rw_file_perms;
+allow factory conn_dbg_dev_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow factory debugfs_ion:dir search;
 allow factory device:dir r_dir_perms;
 allow factory devmap_device:chr_file r_file_perms;
@@ -116,18 +101,18 @@ allow factory dmabuf_system_heap_device:chr_file rw_file_perms;
 allow factory dri_device:chr_file rw_file_perms;
 allow factory ebc_device:chr_file rw_file_perms;
 allow factory eemcs_device:chr_file rw_file_perms;
-allow factory factory_vendor_file:dir { write lock open add_name remove_name search };
+allow factory factory_vendor_file:dir w_dir_perms;
 allow factory factory_vendor_file:file create_file_perms;
 allow factory fingerprint_device:chr_file rw_file_perms;
 allow factory flashlight_device:chr_file rw_file_perms;
 allow factory fm_device:chr_file rw_file_perms;
 allow factory gnss_daemon:unix_dgram_socket sendto;
-allow factory gps_data_file:dir { write lock unlink open add_name remove_name search };
+allow factory gps_data_file:dir { w_dir_perms unlink };
 allow factory gps_data_file:file create_file_perms;
 allow factory gps_data_file:lnk_file r_file_perms;
 allow factory gpu_device:dir search;
 allow factory graphics_device:chr_file rw_file_perms;
-allow factory graphics_device:dir { write lock open add_name remove_name search };
+allow factory graphics_device:dir w_dir_perms;
 allow factory gsensor_device:chr_file r_file_perms;
 allow factory gsi_metadata_file_type:dir search;
 allow factory gsi_public_metadata_file:file r_file_perms;
@@ -150,6 +135,7 @@ allow factory labeledfs:filesystem unmount;
 allow factory mddb_data_file:dir create_dir_perms;
 allow factory mddb_data_file:file create_file_perms;
 allow factory mdla_device:chr_file rw_file_perms;
+allow factory merged_hal_service:binder call;
 allow factory metadata_file:dir search;
 allow factory misc_sd_device:chr_file r_file_perms;
 allow factory mmcblk1_block_device:blk_file rw_file_perms;
@@ -163,19 +149,20 @@ allow factory mnt_vendor_file:dir search;
 allow factory msensor_device:chr_file r_file_perms;
 allow factory mtd_device:chr_file rw_file_perms;
 allow factory mtd_device:dir search;
-allow factory mtk_aov_device:chr_file rw_file_perms;
+allow factory mtk_aov_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow factory mtk_audiohal_data_file:dir create_dir_perms;
 allow factory mtk_audiohal_data_file:file create_file_perms;
 allow factory mtk_ccd_device:chr_file rw_file_perms;
 allow factory mtk_cmdq_device:chr_file r_file_perms;
+allow factory mtk_hal_light:binder call;
 allow factory mtk_hcp_device:chr_file rw_file_perms;
 allow factory mtk_kpd_device:chr_file r_file_perms;
 allow factory mtk_mdp_device:chr_file r_file_perms;
 allow factory mtk_mdp_sync_device:chr_file r_file_perms;
-allow factory mtk_usb_offload_device:chr_file r_file_perms;
+allow factory mtk_usb_offload_device:chr_file { getattr ioctl lock open read watch watch_reads };
 allow factory mtk_v4l2_media_device:chr_file rw_file_perms;
 allow factory mtk_v4l2_media_device:dir r_dir_perms;
-allow factory mtk_wwan_device:chr_file rw_file_perms;
+allow factory mtk_wwan_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow factory nfcstackp_vendor:unix_stream_socket connectto;
 allow factory node:tcp_socket node_bind;
 allow factory nvdata_device:blk_file rw_file_perms;
@@ -185,11 +172,11 @@ allow factory nvdata_file:lnk_file r_file_perms;
 allow factory nvram_data_file:dir create_dir_perms;
 allow factory nvram_data_file:file create_file_perms;
 allow factory nvram_data_file:lnk_file r_file_perms;
-allow factory nvram_device:blk_file rw_file_perms;
-allow factory nvram_device:chr_file rw_file_perms;
-allow factory pcie_smt_device:chr_file rw_file_perms;
+allow factory nvram_device:{ blk_file chr_file } rw_file_perms;
+allow factory pcie_smt_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow factory pmic_ftm_device:chr_file rw_file_perms;
 allow factory port:tcp_socket { name_bind name_connect };
+allow factory powerctl_prop:property_service set;
 allow factory pro_info_device:chr_file rw_file_perms;
 allow factory proc_asound:dir r_dir_perms;
 allow factory proc_asound:file rw_file_perms;
@@ -210,14 +197,13 @@ allow factory rtc_device:chr_file rw_file_perms;
 allow factory sdcard_type:dir { create_dir_perms mounton };
 allow factory sdcard_type:file create_file_perms;
 allow factory sdcard_type:filesystem unmount;
-allow factory self:cap2_userns block_suspend;
-allow factory self:capability { chown fsetid net_admin net_raw ipc_lock sys_module sys_admin sys_boot sys_nice sys_resource sys_time };
-allow factory self:capability2 block_suspend;
-allow factory self:netlink_route_socket { create_socket_perms r_file_perms w_file_perms nlmsg_read nlmsg_write };
-allow factory self:netlink_socket { create_socket_perms r_file_perms w_file_perms };
+allow factory self:capability { chown fsetid ipc_lock net_admin net_raw sys_admin sys_boot sys_module sys_nice sys_resource sys_time };
+allow factory self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow factory self:netlink_socket create_socket_perms_no_ioctl;
 allow factory self:process execmem;
-allow factory self:tcp_socket { create_socket_perms r_file_perms w_file_perms accept listen };
-allow factory self:udp_socket { create_socket_perms r_file_perms w_file_perms };
+allow factory self:tcp_socket create_stream_socket_perms;
+allow factory self:udp_socket create_socket_perms;
+allow factory self:{ cap2_userns capability2 } block_suspend;
 allow factory selinuxfs:file open;
 allow factory seninf_device:chr_file rw_file_perms;
 allow factory st21nfc_device:chr_file rw_file_perms;
@@ -234,8 +220,7 @@ allow factory sysfs_android_usb:file r_file_perms;
 allow factory sysfs_apusys_queue:dir r_dir_perms;
 allow factory sysfs_apusys_queue:file r_file_perms;
 allow factory sysfs_batteryinfo:dir r_dir_perms;
-allow factory sysfs_batteryinfo:file r_file_perms;
-allow factory sysfs_batteryinfo:lnk_file r_file_perms;
+allow factory sysfs_batteryinfo:{ file lnk_file } r_file_perms;
 allow factory sysfs_boot_info:file r_file_perms;
 allow factory sysfs_boot_mode:file r_file_perms;
 allow factory sysfs_boot_type:file r_file_perms;
@@ -266,8 +251,7 @@ allow factory sysfs_rt_calib:file rw_file_perms;
 allow factory sysfs_rt_param:dir r_dir_perms;
 allow factory sysfs_rt_param:file rw_file_perms;
 allow factory sysfs_switch:dir r_dir_perms;
-allow factory sysfs_switch:file r_file_perms;
-allow factory sysfs_switch:lnk_file r_file_perms;
+allow factory sysfs_switch:{ file lnk_file } r_file_perms;
 allow factory sysfs_therm:dir search;
 allow factory sysfs_therm:file rw_file_perms;
 allow factory sysfs_tpd_setting:dir search;
@@ -278,9 +262,12 @@ allow factory sysfs_usb_nonplat:file r_file_perms;
 allow factory sysfs_vbus:file r_file_perms;
 allow factory sysfs_vibrator:dir search;
 allow factory sysfs_vibrator:file rw_file_perms;
+allow factory sysfs_wake_lock:file rw_file_perms;
 allow factory sysfs_wwan_fsm_state:dir r_dir_perms;
 allow factory sysfs_wwan_fsm_state:file r_file_perms;
 allow factory system_block_device:blk_file getattr;
+allow factory system_mtk_ctl_emdlogger1_prop:property_service set;
+allow factory system_mtk_ctl_mdlogger_prop:property_service set;
 allow factory system_suspend_hwservice:hwservice_manager find;
 allow factory tmpfs:chr_file rw_file_perms;
 allow factory tmpfs:filesystem unmount;
@@ -293,11 +280,17 @@ allow factory usb_device:dir r_dir_perms;
 allow factory userdata_block_device:blk_file rw_file_perms;
 allow factory vendor_block_device:blk_file getattr;
 allow factory vendor_file:file x_file_perms;
-allow factory vendor_nfc_socket_file:dir { write lock open add_name remove_name search };
+allow factory vendor_mtk_audiohal_prop:property_service set;
+allow factory vendor_mtk_ctl_ccci_fsd_prop:property_service set;
+allow factory vendor_mtk_factory_idle_state_prop:property_service set;
+allow factory vendor_mtk_factory_prop:property_service set;
+allow factory vendor_mtk_mnld_prop:property_service set;
+allow factory vendor_mtk_nfc_nfcstackp_enable_prop:property_service set;
+allow factory vendor_nfc_socket_file:dir w_dir_perms;
 allow factory vendor_nfc_socket_file:sock_file write;
 allow factory vendor_shell_exec:file rx_file_perms;
 allow factory vendor_toolbox_exec:file x_file_perms;
-allow factory vfat:dir { write lock mounton open add_name remove_name search };
+allow factory vfat:dir { w_dir_perms mounton };
 allow factory vfat:filesystem { mount unmount };
 allow factory video_device:chr_file rw_file_perms;
 allow factory video_device:dir r_dir_perms;
@@ -307,10 +300,8 @@ allow factory wmtWifi_device:chr_file rw_file_perms;
 allowxperm factory bootdevice_block_device:blk_file ioctl 0x1260;
 allowxperm factory mmcblk1_block_device:blk_file ioctl 0x1260;
 allowxperm factory proc_m4u:file ioctl { 0x670b 0x6732 };
-allowxperm factory self:udp_socket ioctl { (range 0x890b 0x890d) 0x8911 (range 0x8913 0x8914) 0x8916 0x8918 0x891a (range 0x891c 0x8920) (range 0x8922 0x8927) 0x8929 (range 0x8930 0x8932) (range 0x8934 0x8937) 0x8939 (range 0x8940 0x8941) 0x8943 (range 0x8946 0x894b) (range 0x8953 0x8955) (range 0x8960 0x8962) (range 0x8970 0x8971) (range 0x8980 0x8983) (range 0x8990 0x8995) (range 0x89a0 0x89a3) 0x89b0 (range 0x89e0 0x89ff) };
-allowxperm factory self:udp_socket ioctl { 0x6900 0x6902 };
-allowxperm factory self:udp_socket ioctl { 0x8b00 (range 0x8b02 0x8b04) 0x8b06 0x8b08 0x8b0a 0x8b0c 0x8b0e 0x8b10 (range 0x8b14 0x8b1d) 0x8b20 0x8b22 0x8b24 0x8b26 0x8b28 (range 0x8b2a 0x8b2c) (range 0x8b30 0x8b36) (range 0x8be0 0x8bff) };
+allowxperm factory self:udp_socket ioctl { 0x6900 0x6902 0x890b-0x890d 0x8911 0x8913-0x8914 0x8916 0x8918 0x891a 0x891c-0x8920 0x8922-0x8927 0x8929 0x8930-0x8932 0x8934-0x8937 0x8939 0x8940-0x8941 0x8943 0x8946-0x894b 0x8953-0x8955 0x8960-0x8962 0x8970-0x8971 0x8980-0x8983 0x8990-0x8995 0x89a0-0x89a3 0x89b0 0x89e0-0x89ff 0x8b00 0x8b02-0x8b04 0x8b06 0x8b08 0x8b0a 0x8b0c 0x8b0e 0x8b10 0x8b14-0x8b1d 0x8b20 0x8b22 0x8b24 0x8b26 0x8b28 0x8b2a-0x8b2c 0x8b30-0x8b36 0x8be0-0x8bff };
 
 # --- factory_exec ---
-type factory_exec, exec_type, file_type, vendor_file_type;
+type factory_exec, base_typeattr_242, exec_type, file_type, vendor_file_type;
 

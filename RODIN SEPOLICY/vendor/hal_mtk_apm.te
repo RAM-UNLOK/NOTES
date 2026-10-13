@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_apm.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -10,10 +11,12 @@
 
 # --- hal_mtk_apm_client ---
 binder_call(hal_mtk_apm_client, hal_mtk_apm_server)
-binder_use(hal_mtk_apm_client)
 allow hal_mtk_apm_client mtk_hal_apm_service:service_manager find;
+allow hal_mtk_apm_client servicemanager:binder { call transfer };
+allow hal_mtk_apm_client servicemanager:fd use;
 
 # --- hal_mtk_apm_server ---
-add_service(hal_mtk_apm_server, mtk_hal_apm_service)
-binder_call(hal_mtk_apm_server, hal_mtk_apm_client)
+allow hal_mtk_apm_server hal_mtk_apm_client:binder call;
+allow hal_mtk_apm_server hal_mtk_apm_client:fd use;
+allow hal_mtk_apm_server mtk_hal_apm_service:service_manager { add find };
 

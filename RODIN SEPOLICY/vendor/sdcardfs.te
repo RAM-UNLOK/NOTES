@@ -1,6 +1,7 @@
 # ============================================================
 # File: sdcardfs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Storage & Memory
 # Subcategory: Volume Management

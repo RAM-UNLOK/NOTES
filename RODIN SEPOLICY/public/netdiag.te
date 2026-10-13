@@ -1,6 +1,7 @@
 # ============================================================
 # File: netdiag.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Wi-Fi Stack
@@ -9,27 +10,16 @@
 # ============================================================
 
 # --- netdiag ---
-type netdiag;
+type netdiag, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain, mlstrustedsubject;
 
-typeattribute netdiag coredomain;
-typeattribute netdiag domain;
-typeattribute netdiag mlstrustedsubject;
-
-binder_call(netdiag, netd)
-binder_call(netdiag, network_stack)
-binder_call(netdiag, system_server)
-binder_use(netdiag)
 get_prop(netdiag, apexd_prop)
 get_prop(netdiag, device_logging_prop)
 get_prop(netdiag, mmc_prop)
 get_prop(netdiag, safemode_prop)
-get_prop(netdiag, system_mtk_debug_mtklog_prop)
 get_prop(netdiag, system_mtk_debug_netlog_prop)
 get_prop(netdiag, system_mtk_persist_mtklog_prop)
 init_daemon_domain(netdiag)
 set_prop(netdiag, system_mtk_debug_mtklog_prop)
-set_prop(netdiag, system_mtk_debug_netlog_prop)
-set_prop(netdiag, system_mtk_persist_mtklog_prop)
 allow netdiag connectivity_service:service_manager find;
 allow netdiag connmetrics_service:service_manager find;
 allow netdiag debuglog_data_file:dir { create_dir_perms relabelto };
@@ -41,25 +31,29 @@ allow netdiag fuse:dir create_dir_perms;
 allow netdiag fuse:file create_file_perms;
 allow netdiag fwmarkd_socket:sock_file w_file_perms;
 allow netdiag kernel:system module_request;
+allow netdiag netd:binder call;
 allow netdiag netd:unix_stream_socket connectto;
 allow netdiag netpolicy_service:service_manager find;
 allow netdiag netstats_service:service_manager find;
 allow netdiag network_management_service:service_manager find;
+allow netdiag network_stack:binder call;
 allow netdiag network_stack_service:service_manager find;
 allow netdiag proc_net:dir r_dir_perms;
 allow netdiag proc_net:file r_file_perms;
 allow netdiag proc_net_tcp_udp:file r_file_perms;
 allow netdiag proc_qtaguid_stat:dir r_dir_perms;
 allow netdiag proc_qtaguid_stat:file r_file_perms;
-allow netdiag self:capability { setgid setuid net_admin net_raw };
-allow netdiag self:netlink_route_socket { create_socket_perms r_file_perms w_file_perms nlmsg_read };
-allow netdiag self:netlink_xfrm_socket { create_socket_perms r_file_perms w_file_perms nlmsg_read };
-allow netdiag self:packet_socket { create_socket_perms r_file_perms w_file_perms };
-allow netdiag self:rawip_socket { create_socket_perms r_file_perms w_file_perms };
-allow netdiag self:udp_socket { create_socket_perms r_file_perms w_file_perms };
+allow netdiag self:capability { net_admin net_raw setgid setuid };
+allow netdiag self:rawip_socket create_socket_perms_no_ioctl;
+allow netdiag self:{ netlink_route_socket netlink_xfrm_socket } { create_socket_perms_no_ioctl nlmsg_read };
+allow netdiag self:{ packet_socket udp_socket } create_socket_perms;
+allow netdiag servicemanager:binder { call transfer };
 allow netdiag settings_service:service_manager find;
 allow netdiag shell_exec:file rx_file_perms;
 allow netdiag system_file:file rx_file_perms;
+allow netdiag system_mtk_debug_netlog_prop:property_service set;
+allow netdiag system_mtk_persist_mtklog_prop:property_service set;
+allow netdiag system_server:binder call;
 allow netdiag toolbox_exec:file rx_file_perms;
 allowxperm netdiag self:packet_socket ioctl { 0x8906 0x8933 };
 

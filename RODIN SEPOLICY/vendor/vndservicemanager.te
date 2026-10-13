@@ -1,6 +1,7 @@
 # ============================================================
 # File: vndservicemanager.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: System Services
@@ -11,19 +12,20 @@
 # --- vndservicemanager ---
 typeattribute vndservicemanager domain;
 
-add_service(vndservicemanager, service_manager_vndservice)
-get_prop(vndservicemanager, ctl_interface_start_prop)
 init_daemon_domain(vndservicemanager)
 set_prop(vndservicemanager, ctl_interface_start_prop)
+allow vndservicemanager base_typeattr_230:binder transfer;
 allow vndservicemanager kernel:security compute_av;
 allow vndservicemanager kmsg_device:chr_file rw_file_perms;
 allow vndservicemanager self:binder set_context_mgr;
-allow vndservicemanager self:netlink_selinux_socket { create_socket_perms r_file_perms w_file_perms accept listen name_bind recvfrom relabelfrom relabelto sendto };
+allow vndservicemanager self:netlink_selinux_socket { accept append bind connect create getattr getopt listen lock name_bind read recvfrom relabelfrom relabelto sendto setattr setopt shutdown write };
 allow vndservicemanager selinuxfs:dir r_dir_perms;
-allow vndservicemanager selinuxfs:file w_file_perms;
+allow vndservicemanager selinuxfs:file rw_file_perms;
 allow vndservicemanager selinuxfs:lnk_file r_file_perms;
+allow vndservicemanager service_manager_vndservice:service_manager { add find };
 allow vndservicemanager vndbinder_device:chr_file rw_file_perms;
+allow vndservicemanager vndservice_contexts_file:file r_file_perms;
 
 # --- vndservicemanager_exec ---
-type vndservicemanager_exec, exec_type, file_type, vendor_file_type;
+type vndservicemanager_exec, base_typeattr_242, exec_type, file_type, vendor_file_type;
 

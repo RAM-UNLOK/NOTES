@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediaextractor.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -12,16 +13,13 @@
 typeattribute mediaextractor binderservicedomain;
 typeattribute mediaextractor coredomain;
 typeattribute mediaextractor domain;
-typeattribute mediaextractor halclientdomain;
 typeattribute mediaextractor mlstrustedsubject;
 
-get_prop(mediaextractor, vendor_audio_wanos_prop)
 hal_client_domain(mediaextractor, hal_allocator)
 set_prop(mediaextractor, vendor_audio_wanos_prop)
-allow mediaextractor bluetooth_data_file:file r_file_perms;
-allow mediaextractor init_tmpfs:file r_file_perms;
-allow mediaextractor tmpfs:dir r_file_perms;
-allow mediaextractor tmpfs:file r_file_perms;
+allow mediaextractor bluetooth_data_file:file { getattr read };
+allow mediaextractor init_tmpfs:file { getattr map open read };
+allow mediaextractor tmpfs:{ dir file } { getattr map open read };
 
 # --- mediaextractor_exec ---
 typeattribute mediaextractor_exec exec_type;

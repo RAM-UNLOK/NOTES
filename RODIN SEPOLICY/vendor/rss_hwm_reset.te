@@ -1,6 +1,7 @@
 # ============================================================
 # File: rss_hwm_reset.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

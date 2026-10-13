@@ -1,6 +1,7 @@
 # ============================================================
 # File: watchdogd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons

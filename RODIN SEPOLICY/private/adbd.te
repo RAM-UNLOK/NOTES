@@ -1,6 +1,7 @@
 # ============================================================
 # File: adbd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -11,16 +12,14 @@
 # --- adbd ---
 typeattribute adbd coredomain;
 typeattribute adbd domain;
-typeattribute adbd halclientdomain;
 typeattribute adbd mlstrustedsubject;
 
 hal_client_domain(adbd, hal_graphics_allocator)
 net_domain(adbd)
 allow adbd auto_test_file:dir search;
-allow adbd auto_test_file:file r_file_perms;
+allow adbd auto_test_file:file { getattr open read };
 allow adbd debuglog_data_file:dir r_dir_perms;
-allow adbd debuglog_data_file:file r_file_perms;
-allow adbd debuglog_data_file:lnk_file r_file_perms;
+allow adbd debuglog_data_file:{ file lnk_file } r_file_perms;
 
 # --- adbd_exec ---
 typeattribute adbd_exec exec_type;

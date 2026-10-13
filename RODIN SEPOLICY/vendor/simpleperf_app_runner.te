@@ -1,6 +1,7 @@
 # ============================================================
 # File: simpleperf_app_runner.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management

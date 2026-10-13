@@ -1,6 +1,7 @@
 # ============================================================
 # File: odrefresh.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -12,9 +13,8 @@
 typeattribute odrefresh coredomain;
 typeattribute odrefresh domain;
 
-allow odrefresh init_tmpfs:file r_file_perms;
-allow odrefresh tmpfs:dir r_file_perms;
-allow odrefresh tmpfs:file r_file_perms;
+allow odrefresh init_tmpfs:file { getattr map open read };
+allow odrefresh tmpfs:{ dir file } { getattr map open read };
 
 # --- odrefresh_exec ---
 typeattribute odrefresh_exec exec_type;

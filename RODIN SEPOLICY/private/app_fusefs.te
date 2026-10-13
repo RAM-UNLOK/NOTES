@@ -1,6 +1,7 @@
 # ============================================================
 # File: app_fusefs.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Storage & Memory
 # Subcategory: Volume Management

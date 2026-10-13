@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_sf.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,6 +14,7 @@ binder_call(hal_mtk_sf_client, hal_mtk_sf_server)
 allow hal_mtk_sf_client mtk_hal_sf_service:service_manager find;
 
 # --- hal_mtk_sf_server ---
-add_service(hal_mtk_sf_server, mtk_hal_sf_service)
-binder_call(hal_mtk_sf_server, hal_mtk_sf_client)
+allow hal_mtk_sf_server hal_mtk_sf_client:binder call;
+allow hal_mtk_sf_server hal_mtk_sf_client:fd use;
+allow hal_mtk_sf_server mtk_hal_sf_service:service_manager { add find };
 

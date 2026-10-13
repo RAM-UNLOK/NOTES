@@ -1,6 +1,7 @@
 # ============================================================
 # File: virtual_touchpad.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Input & Touch
 # Subcategory: Touchscreen

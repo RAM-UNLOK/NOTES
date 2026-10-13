@@ -1,6 +1,7 @@
 # ============================================================
 # File: recovery.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Update & Provisioning
 # Subcategory: OTA & Partitions
@@ -12,22 +13,19 @@
 typeattribute recovery coredomain;
 typeattribute recovery domain;
 
-get_prop(recovery, boottime_prop)
 set_prop(recovery, boottime_prop)
 allow recovery block_device:dir search;
 allow recovery cache_file:dir create_dir_perms;
 allow recovery cache_file:file create_file_perms;
-allow recovery dm_device:chr_file rw_file_perms;
-allow recovery kmsg_device:chr_file w_file_perms;
+allow recovery dm_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
+allow recovery kmsg_device:chr_file { append lock open write };
 allow recovery mtd_device:chr_file rw_file_perms;
 allow recovery mtd_device:dir search;
 allow recovery proc_bootconfig:file r_file_perms;
 allow recovery proc_cmdline:file r_file_perms;
-allow recovery self:capability sys_admin;
-allow recovery self:capability { fsetid sys_rawio sys_resource };
-allow recovery userdata_block_device:blk_file rw_file_perms;
-allowxperm recovery userdata_block_device:blk_file ioctl 0x301;
-allowxperm recovery userdata_block_device:blk_file ioctl { 0x1260 0x1272 };
+allow recovery self:capability { fsetid sys_admin sys_rawio sys_resource };
+allow recovery userdata_block_device:blk_file { append getattr ioctl lock open read watch watch_reads write };
+allowxperm recovery userdata_block_device:blk_file ioctl { 0x1260 0x1272 0x301 };
 
 # --- recovery_socket ---
 typeattribute recovery_socket coredomain_socket;

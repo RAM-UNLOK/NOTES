@@ -1,6 +1,7 @@
 # ============================================================
 # File: charger.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Battery & Charging
@@ -10,14 +11,13 @@
 
 # --- charger ---
 typeattribute charger domain;
-typeattribute charger halclientdomain;
 
 hal_client_domain(charger, hal_light)
-init_daemon_domain(charger)
 allow charger app_data_file:file write;
 allow charger charger:capability { sys_admin sys_boot };
 allow charger charger:capability2 block_suspend;
-allow charger device:dir { read open };
+allow charger charger_exec:file { entrypoint execute getattr map read };
+allow charger device:dir { open read };
 allow charger dri_device:chr_file rw_file_perms;
 allow charger gpu_device:dir search;
 allow charger graphics_device:chr_file rw_file_perms;
@@ -25,22 +25,16 @@ allow charger graphics_device:dir r_dir_perms;
 allow charger input_device:chr_file r_file_perms;
 allow charger input_device:dir r_dir_perms;
 allow charger kmsg_device:chr_file read;
-allow charger proc_last_kmsg:file getattr;
 allow charger proc_last_kmsg:file rw_file_perms;
-allow charger sysfs:dir open;
-allow charger sysfs:dir read;
+allow charger sysfs:dir { open read };
 allow charger sysfs_battery_supply:dir r_dir_perms;
-allow charger sysfs_battery_supply:dir search;
-allow charger sysfs_battery_supply:file r_file_perms;
-allow charger sysfs_battery_supply:lnk_file r_file_perms;
+allow charger sysfs_battery_supply:{ file lnk_file } r_file_perms;
 allow charger sysfs_power_supply:dir search;
 allow charger sysfs_power_supply:file r_file_perms;
 allow charger sysfs_ti_battery:dir search;
 allow charger sysfs_ti_battery:file r_file_perms;
 allow charger sysfs_usb_supply:dir r_dir_perms;
-allow charger sysfs_usb_supply:dir search;
-allow charger sysfs_usb_supply:file r_file_perms;
-allow charger sysfs_usb_supply:lnk_file r_file_perms;
+allow charger sysfs_usb_supply:{ file lnk_file } r_file_perms;
 allow charger sysfs_vcorefs_pwrctrl:file write;
 
 # --- charger_exec ---

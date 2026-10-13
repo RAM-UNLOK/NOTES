@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediatranscoding.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -12,14 +13,15 @@
 typeattribute mediatranscoding binderservicedomain;
 typeattribute mediatranscoding coredomain;
 typeattribute mediatranscoding domain;
-typeattribute mediatranscoding halclientdomain;
 
 hal_client_domain(mediatranscoding, hal_allocator)
 hal_client_domain(mediatranscoding, hal_codec2)
 hal_client_domain(mediatranscoding, hal_configstore)
 hal_client_domain(mediatranscoding, hal_graphics_allocator)
 hal_client_domain(mediatranscoding, hal_omx)
-set_prop(mediatranscoding, debug_prop)
+allow mediatranscoding debug_prop:property_service set;
+allow mediatranscoding init:unix_stream_socket connectto;
+allow mediatranscoding property_socket:sock_file write;
 allow mediatranscoding surfaceflinger_service:service_manager find;
 
 # --- mediatranscoding_exec ---

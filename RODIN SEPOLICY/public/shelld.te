@@ -1,6 +1,7 @@
 # ============================================================
 # File: shelld.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -9,29 +10,20 @@
 # ============================================================
 
 # --- shelld ---
-type shelld;
+type shelld, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute shelld binderservicedomain;
-typeattribute shelld coredomain;
-typeattribute shelld domain;
-typeattribute shelld mlstrustedsubject;
-
-add_service(shelld, shelld_service)
 binder_call(shelld, appdomain)
 binder_call(shelld, binderservicedomain)
-binder_use(shelld)
 init_daemon_domain(shelld)
-set_prop(shelld, ctl_dumpstate_prop)
-set_prop(shelld, debug_prop)
-set_prop(shelld, powerctl_prop)
-set_prop(shelld, shell_prop)
-set_prop(shelld, system_prop)
 allow shelld anr_data_file:dir r_dir_perms;
 allow shelld anr_data_file:file r_file_perms;
+allow shelld ctl_dumpstate_prop:property_service set;
 allow shelld data_log_stability_file:dir create_dir_perms;
 allow shelld data_log_stability_file:file create_file_perms;
+allow shelld debug_prop:property_service set;
 allow shelld dumpstate:unix_stream_socket connectto;
 allow shelld dumpstate_socket:sock_file write;
+allow shelld init:unix_stream_socket connectto;
 allow shelld kernel:system syslog_read;
 allow shelld logcat_exec:file rx_file_perms;
 allow shelld logd:unix_stream_socket connectto;
@@ -42,25 +34,27 @@ allow shelld media_rw_data_file:file create_file_perms;
 allow shelld mnt_user_file:dir search;
 allow shelld mnt_user_file:lnk_file read;
 allow shelld mqs_service:service_manager find;
-allow shelld mqsas_data_file:dir create;
-allow shelld mqsas_data_file:dir setattr;
-allow shelld mqsas_data_file:dir { rw_dir_perms relabelto };
-allow shelld mqsas_data_file:file append;
+allow shelld mqsas_data_file:dir { rw_dir_perms create relabelto setattr };
 allow shelld mqsas_data_file:file create_file_perms;
+allow shelld powerctl_prop:property_service set;
+allow shelld property_socket:sock_file write;
 allow shelld sdcard_type:dir { create_dir_perms relabelfrom relabelto };
 allow shelld sdcard_type:file { create_file_perms relabelfrom relabelto };
 allow shelld self:capability { chown fowner fsetid setgid setuid };
+allow shelld servicemanager:binder { call transfer };
 allow shelld shell_exec:file rx_file_perms;
+allow shelld shell_prop:property_service set;
+allow shelld shelld_exec:file { execute_no_trans ioctl lock watch watch_reads };
+allow shelld shelld_service:service_manager add;
 allow shelld storage_file:dir search;
 allow shelld storage_file:lnk_file read;
 allow shelld sysfs_leds:dir search;
 allow shelld sysfs_leds:lnk_file read;
 allow shelld system_file:file rx_file_perms;
+allow shelld system_prop:property_service set;
 allow shelld theme_data_file:dir { create_dir_perms relabelfrom relabelto };
-allow shelld theme_data_file:file { create_file_perms relabelfrom relabelto };
-allow shelld theme_data_file:lnk_file { create_file_perms relabelfrom relabelto };
-allow shelld toolbox_exec:file execute;
-allow shelld toolbox_exec:file rx_file_perms;
+allow shelld theme_data_file:{ file lnk_file } { create_file_perms relabelfrom relabelto };
+allow shelld toolbox_exec:file { execute execute_no_trans getattr open read };
 allow shelld wifi_data_file:dir rw_dir_perms;
 allow shelld wifi_data_file:file r_file_perms;
 

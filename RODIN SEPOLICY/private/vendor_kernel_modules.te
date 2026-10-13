@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_kernel_modules.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Kernel & Devices

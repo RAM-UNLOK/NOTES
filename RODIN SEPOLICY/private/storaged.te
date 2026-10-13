@@ -1,6 +1,7 @@
 # ============================================================
 # File: storaged.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Storage & Memory
 # Subcategory: Volume Management
@@ -11,14 +12,13 @@
 # --- storaged ---
 typeattribute storaged coredomain;
 typeattribute storaged domain;
-typeattribute storaged halclientdomain;
 typeattribute storaged mlstrustedsubject;
 
 hal_client_domain(storaged, hal_health)
 allow storaged data_log_stability_file:dir create_dir_perms;
 allow storaged data_log_stability_file:file create_file_perms;
-allow storaged miui_coredump_file:dir { write add_name search };
-allow storaged miui_coredump_file:file create_file_perms;
+allow storaged miui_coredump_file:dir { add_name search write };
+allow storaged miui_coredump_file:file { create open read write };
 allow storaged miui_native_file:dir search;
 allow storaged mqs_service:service_manager find;
 

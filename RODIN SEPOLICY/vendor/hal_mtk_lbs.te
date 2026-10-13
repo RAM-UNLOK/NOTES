@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_lbs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Sensors & Location
 # Subcategory: Location Stack
@@ -14,7 +15,8 @@ binder_use(hal_mtk_lbs_client)
 allow hal_mtk_lbs_client mtk_hal_lbs_service:service_manager find;
 
 # --- hal_mtk_lbs_server ---
-add_service(hal_mtk_lbs_server, mtk_hal_lbs_service)
-binder_call(hal_mtk_lbs_server, hal_mtk_lbs_client)
 binder_use(hal_mtk_lbs_server)
+allow hal_mtk_lbs_server hal_mtk_lbs_client:binder call;
+allow hal_mtk_lbs_server hal_mtk_lbs_client:fd use;
+allow hal_mtk_lbs_server mtk_hal_lbs_service:service_manager { add find };
 

@@ -6,6 +6,8 @@
 
 # [ Vendor: AOSP / Generic ]
 # --- Apps & UX ---
+/(system_ext|system/system_ext)/bin/trusty_security_vm_launcher                                          u:object_r:trusty_security_vm_launcher_exec:s0
+/(system_ext|system/system_ext)/bin/trusty_security_vm_launcher_protected                                u:object_r:trusty_security_vm_launcher_exec:s0
 /system/bin/boot_logo_updater                                                                            u:object_r:boot_logo_updater_exec:s0
 /system_ext/bin/miupdater                                                                                u:object_r:miupdater_exec:s0
 
@@ -145,6 +147,7 @@
 /dev/socket/rpmb_mock_system                                                                             u:object_r:rpmb_dev_system_socket:s0
 /dev/socket/rpmb_mock_test_system                                                                        u:object_r:rpmb_dev_system_socket:s0
 /dev/socket/rpmb_mock_wv_system                                                                          u:object_r:rpmb_dev_system_socket:s0
+/dev/socket/usap_pool_tertiary                                                                           u:object_r:zygote_socket:s0
 /dev/tll                                                                                                 u:object_r:tll_device:s0
 /dev/ubi[_0-9]*                                                                                          u:object_r:mtd_device:s0
 /dev/ubi_ctrl                                                                                            u:object_r:mtd_device:s0
@@ -213,19 +216,30 @@
 /sys/power/wake_times                                                                                    u:object_r:sys_power_file:s0
 
 # --- Radio & Telephony ---
-/dev/socket/usap_pool_tertiary                                                                           u:object_r:zygote_socket:s0
 /system/bin/modemdbfilter_client                                                                         u:object_r:modemdbfilter_client_exec:s0
+
+# --- Security & TEE ---
+/(system_ext|system/system_ext)/bin/hw/android\.hardware\.security\.keymint-service\.trusty_system_vm    u:object_r:hal_keymint_system_exec:s0
 
 # --- Sensors & Location ---
 /(system_ext|system/system_ext)/bin/lbs_dbg_ext                                                          u:object_r:lbs_dbg_ext_exec:s0
 
 # --- Storage & Memory ---
 /(system_ext|system/system_ext)/bin/storageproxyd\.system                                                u:object_r:storageproxyd_system_exec:s0
+/data/secure_storage_system(/.*)?                                                                        u:object_r:secure_storage_system_file:s0
+/data/secure_storage_test_system(/.*)?                                                                   u:object_r:secure_storage_system_file:s0
+/data/secure_storage_wv_system(/.*)?                                                                     u:object_r:secure_storage_system_file:s0
 /data/vendor/memory/error_history/ufs_errlog(/.*)?                                                       u:object_r:ufs_error_data_file:s0
 /dev/block/mtd(.*)?                                                                                      u:object_r:mtd_device:s0
 /dev/block/zram.*                                                                                        u:object_r:zram_device:s0
 /dev/mtd0                                                                                                u:object_r:mtdblock_device:s0
 /dev/zram-control                                                                                        u:object_r:zram_control_device:s0
+/mnt/secure_storage_persist_system(/.*)?                                                                 u:object_r:secure_storage_persist_system_file:s0
+/mnt/secure_storage_persist_test_system(/.*)?                                                            u:object_r:secure_storage_persist_system_file:s0
+/mnt/secure_storage_persist_wv_system(/.*)?                                                              u:object_r:secure_storage_persist_system_file:s0
+/mnt/secure_storage_rpmb_system(/.*)?                                                                    u:object_r:secure_storage_rpmb_system_file:s0
+/mnt/secure_storage_rpmb_test_system(/.*)?                                                               u:object_r:secure_storage_rpmb_system_file:s0
+/mnt/secure_storage_rpmb_wv_system(/.*)?                                                                 u:object_r:secure_storage_rpmb_system_file:s0
 /system/bin/mkfs\.exfat                                                                                  u:object_r:e2fs_exec:s0
 /system/bin/storagemanagerd                                                                              u:object_r:vold_exec:s0
 /system_ext/bin/mtdoopslog.sh                                                                            u:object_r:mtdoopslog_exec:s0
@@ -267,25 +281,6 @@
 # --- Misc ---
 /(system|system/system_ext|system_ext)/bin/mtk_plpath_utils                                              u:object_r:mtk_plpath_utils_exec:s0
 /system/bin/mtkbootanimation                                                                             u:object_r:mtkbootanimation_exec:s0
-
-# [ Vendor: Samsung ]
-# --- Apps & UX ---
-/(system_ext|system/system_ext)/bin/trusty_security_vm_launcher                                          u:object_r:trusty_security_vm_launcher_exec:s0
-/(system_ext|system/system_ext)/bin/trusty_security_vm_launcher_protected                                u:object_r:trusty_security_vm_launcher_exec:s0
-
-# --- Security & TEE ---
-/(system_ext|system/system_ext)/bin/hw/android\.hardware\.security\.keymint-service\.trusty_system_vm    u:object_r:hal_keymint_system_exec:s0
-
-# --- Storage & Memory ---
-/data/secure_storage_system(/.*)?                                                                        u:object_r:secure_storage_system_file:s0
-/data/secure_storage_test_system(/.*)?                                                                   u:object_r:secure_storage_system_file:s0
-/data/secure_storage_wv_system(/.*)?                                                                     u:object_r:secure_storage_system_file:s0
-/mnt/secure_storage_persist_system(/.*)?                                                                 u:object_r:secure_storage_persist_system_file:s0
-/mnt/secure_storage_persist_test_system(/.*)?                                                            u:object_r:secure_storage_persist_system_file:s0
-/mnt/secure_storage_persist_wv_system(/.*)?                                                              u:object_r:secure_storage_persist_system_file:s0
-/mnt/secure_storage_rpmb_system(/.*)?                                                                    u:object_r:secure_storage_rpmb_system_file:s0
-/mnt/secure_storage_rpmb_test_system(/.*)?                                                               u:object_r:secure_storage_rpmb_system_file:s0
-/mnt/secure_storage_rpmb_wv_system(/.*)?                                                                 u:object_r:secure_storage_rpmb_system_file:s0
 
 # [ Vendor: Xiaomi ]
 # --- Camera ---

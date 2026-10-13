@@ -1,6 +1,7 @@
 # ============================================================
 # File: audiohal_data_file.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Audio HAL

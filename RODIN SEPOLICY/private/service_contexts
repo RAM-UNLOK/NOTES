@@ -43,27 +43,7 @@ GpuAppSpectatorService                                                      u:ob
 miui_multi_display                                                          u:object_r:miui_multi_display:s0
 
 # [ Radio & Telephony ]
-# --- IMS & VoLTE ---
-android.hardware.radio.modem.IRadioModem/imsSlot1                           u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot2                           u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot3                           u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot4                           u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot1                       u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot2                       u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot3                       u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot4                       u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot1                               u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot2                               u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot3                               u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot4                               u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot1                           u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot2                           u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot3                           u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot4                           u:object_r:hal_radio_service:s0
-imsa                                                                        u:object_r:radio_service:s0
-
 # --- MediaTek IMS & VoLTE ---
-mtkIms                                                                      u:object_r:radio_service:s0
 vendor.mediatek.hardware.mtkradioex.ims.IMtkRadioExIms/slot1                u:object_r:hal_radio_service:s0
 vendor.mediatek.hardware.mtkradioex.ims.IMtkRadioExIms/slot2                u:object_r:hal_radio_service:s0
 vendor.mediatek.hardware.mtkradioex.ims.IMtkRadioExIms/slot3                u:object_r:hal_radio_service:s0
@@ -105,14 +85,30 @@ vendor.mediatek.hardware.mtkradioex.voice.IMtkRadioExVoice/slot4            u:ob
 
 # --- Modem & RIL ---
 ModemSmartEngine                                                            u:object_r:radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot1                           u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot2                           u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot3                           u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot4                           u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se1                                u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se2                                u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se3                                u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se4                                u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot1                       u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot2                       u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot3                       u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot4                       u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot1                               u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot2                               u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot3                               u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot4                               u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se1                                    u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se2                                    u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se3                                    u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se4                                    u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot1                           u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot2                           u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot3                           u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot4                           u:object_r:hal_radio_service:s0
 fm_radio_service                                                            u:object_r:mtk_fm_radio_service:s0
 mi.radio.extphone                                                           u:object_r:radio_service:s0
 xm.radio.cdc                                                                u:object_r:radio_service:s0
@@ -186,6 +182,7 @@ miui.shell                                                                  u:ob
 # --- MediaTek Misc ---
 mediatek.campostalgo                                                        u:object_r:camerapostalgo_service:s0
 mtk.smartplatform                                                           u:object_r:smartplatformserver_service:s0
+mtkIms                                                                      u:object_r:radio_service:s0
 mtkconnmetrics                                                              u:object_r:mtk_connmetrics_service:s0
 mtksimphonebook                                                             u:object_r:mtk_simphonebook_service:s0
 vendor.mediatek.framework.mtksf_ext.IMtkSF_ext/default                      u:object_r:mtk_hal_sf_service:s0
@@ -227,6 +224,7 @@ greezer                                                                     u:ob
 gwsd                                                                        u:object_r:mtk_gwsd_service:s0
 hyper.stability.sdk.service                                                 u:object_r:hyper_stability_sdk_service:s0
 ifaa_service                                                                u:object_r:teei_ifaa_service:s0
+imsa                                                                        u:object_r:radio_service:s0
 iorapd                                                                      u:object_r:iorapd_service:s0
 iphonesubinfoEx                                                             u:object_r:mtk_phonesubinfo_service:s0
 isubstub                                                                    u:object_r:radio_service:s0
@@ -256,6 +254,7 @@ procprophet                                                                 u:ob
 rns                                                                         u:object_r:mtk_rns_service:s0
 scenariorecognition                                                         u:object_r:scenariorecognition_service:s0
 search_engine_service                                                       u:object_r:mtk_search_engine_service:s0
+security                                                                    u:object_r:security_service:s0
 shoulderkey                                                                 u:object_r:shoulderkey_service:s0
 smart_app_assistant                                                         u:object_r:smart_app_assistant_service:s0
 smartratswitch                                                              u:object_r:mtk_radio_service:s0
@@ -268,9 +267,6 @@ userperception                                                              u:ob
 vodata                                                                      u:object_r:mtk_vodata_service:s0
 vow_bridge                                                                  u:object_r:mtk_vowbridge_service:s0
 wfo                                                                         u:object_r:radio_service:s0
-
-# --- Samsung Misc ---
-security                                                                    u:object_r:security_service:s0
 
 # --- Xiaomi Misc ---
 MiuiBackup                                                                  u:object_r:miui_backup_service:s0

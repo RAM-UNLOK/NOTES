@@ -1,6 +1,7 @@
 # ============================================================
 # File: recovery.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Update & Provisioning
 # Subcategory: OTA & Partitions
@@ -12,7 +13,7 @@
 typeattribute recovery domain;
 
 allow recovery bootdevice_block_device:blk_file rw_file_perms;
-allow recovery bsg_device:chr_file rw_file_perms;
+allow recovery bsg_device:chr_file { append getattr ioctl lock open read watch watch_reads write };
 allow recovery devpts:chr_file rw_file_perms;
 allow recovery dri_device:chr_file rw_file_perms;
 allow recovery exfat:dir r_dir_perms;
@@ -33,8 +34,7 @@ allow recovery sysfs_therm:file r_file_perms;
 allow recovery tmpfs:lnk_file r_file_perms;
 allow recovery vfat:dir r_dir_perms;
 allow recovery vfat:file r_file_perms;
-allowxperm recovery bootdevice_block_device:blk_file ioctl 0x5388;
-allowxperm recovery bootdevice_block_device:blk_file ioctl 0xb300;
+allowxperm recovery bootdevice_block_device:blk_file ioctl { 0x5388 0xb300 };
 allowxperm recovery cache_block_device:blk_file ioctl 0x127b;
 allowxperm recovery md_sec_device:blk_file ioctl 0x127b;
 allowxperm recovery nvdata_device:blk_file ioctl 0x127b;

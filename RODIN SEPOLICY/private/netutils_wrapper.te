@@ -1,6 +1,7 @@
 # ============================================================
 # File: netutils_wrapper.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -16,13 +17,11 @@ allow netutils_wrapper fs_bpf_miui:dir search;
 allow netutils_wrapper fs_bpf_miui:file { read write };
 allow netutils_wrapper hypsys_ssi_default:fd use;
 allow netutils_wrapper hypsys_ssi_default:process sigchld;
-allow netutils_wrapper hypsys_ssi_default:unix_dgram_socket { read write };
-allow netutils_wrapper hypsys_ssi_default:unix_stream_socket { read write };
-allow netutils_wrapper mqsas_data_file:file { getattr append };
+allow netutils_wrapper hypsys_ssi_default:{ unix_dgram_socket unix_stream_socket } { read write };
+allow netutils_wrapper mqsas_data_file:file { append getattr };
 allow netutils_wrapper mqsasd:fd use;
 allow netutils_wrapper mqsasd:process sigchld;
-allow netutils_wrapper mqsasd:unix_dgram_socket { read write };
-allow netutils_wrapper mqsasd:unix_stream_socket { read write };
+allow netutils_wrapper mqsasd:{ unix_dgram_socket unix_stream_socket } { read write };
 
 # --- netutils_wrapper_exec ---
 typeattribute netutils_wrapper_exec exec_type;

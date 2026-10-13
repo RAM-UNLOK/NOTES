@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_shell.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -11,7 +12,6 @@
 # --- vendor_shell ---
 typeattribute vendor_shell domain;
 
-get_prop(vendor_shell, vendor_mtk_vonr_force_prop)
 set_prop(vendor_shell, vendor_mtk_vonr_force_prop)
 allow vendor_shell aee_aedv_exec:file x_file_perms;
 

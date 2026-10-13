@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediaserver.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework
@@ -12,10 +13,8 @@
 typeattribute mediaserver binderservicedomain;
 typeattribute mediaserver coredomain;
 typeattribute mediaserver domain;
-typeattribute mediaserver halclientdomain;
 typeattribute mediaserver mlstrustedsubject;
 
-binder_call(mediaserver, bootanim)
 get_prop(mediaserver, debug_prop)
 get_prop(mediaserver, system_mtk_media_wfd_prop)
 get_prop(mediaserver, system_prop)
@@ -26,34 +25,31 @@ hal_client_domain(mediaserver, hal_configstore)
 hal_client_domain(mediaserver, hal_graphics_allocator)
 hal_client_domain(mediaserver, hal_omx)
 net_domain(mediaserver)
-set_prop(mediaserver, debug_prop)
-set_prop(mediaserver, system_mtk_media_wfd_prop)
-set_prop(mediaserver, system_prop)
-allow mediaserver bluetooth_data_file:file r_file_perms;
-allow mediaserver bsp_data_log_file:dir { write add_name search };
-allow mediaserver bsp_data_log_file:file { read create append open };
+allow mediaserver bluetooth_data_file:file { getattr read };
+allow mediaserver bootanim:binder call;
+allow mediaserver bootanim:fd use;
+allow mediaserver bsp_data_log_file:dir { add_name search write };
+allow mediaserver bsp_data_log_file:file { append create open read };
 allow mediaserver data_log_stability_file:dir create_dir_perms;
 allow mediaserver data_log_stability_file:file create_file_perms;
+allow mediaserver debug_prop:property_service set;
 allow mediaserver gas_srv_service:service_manager find;
-allow mediaserver init_tmpfs:file r_file_perms;
+allow mediaserver init_tmpfs:file { getattr map open read };
 allow mediaserver mediahelper:fd use;
 allow mediaserver mediahelper:process sigchld;
-allow mediaserver miui_coredump_file:dir { write add_name search };
-allow mediaserver miui_coredump_file:file create_file_perms;
+allow mediaserver miui_coredump_file:dir { add_name search write };
+allow mediaserver miui_coredump_file:file { create open read write };
 allow mediaserver miui_native_file:dir search;
 allow mediaserver mqs_service:service_manager find;
-allow mediaserver mqsas_data_file:file { getattr append };
+allow mediaserver mqsas_data_file:file { append getattr };
 allow mediaserver mtk_perf_service:service_manager find;
-allow mediaserver mtkbootanimation:binder transfer;
 allow mediaserver proc_union_power:dir search;
-allow mediaserver proc_union_power:file r_file_perms;
-allow mediaserver smartplatformserver:binder transfer;
+allow mediaserver proc_union_power:file { getattr ioctl open read };
+allow mediaserver system_mtk_media_wfd_prop:property_service set;
+allow mediaserver system_prop:property_service set;
 allow mediaserver theme_data_file:dir { r_dir_perms relabelfrom relabelto };
-allow mediaserver theme_data_file:file { r_file_perms relabelfrom relabelto };
-allow mediaserver theme_data_file:lnk_file { r_file_perms relabelfrom relabelto };
-allow mediaserver tmpfs:dir r_file_perms;
-allow mediaserver tmpfs:file r_file_perms;
-allow mediaserver vtservice:binder transfer;
+allow mediaserver theme_data_file:{ file lnk_file } { r_file_perms relabelfrom relabelto };
+allow mediaserver tmpfs:{ dir file } { getattr map open read };
 allowxperm mediaserver proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- mediaserver_exec ---

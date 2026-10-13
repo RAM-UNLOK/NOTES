@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_videotelephony.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Radio & Telephony
 # Subcategory: Modem & RIL
@@ -9,13 +10,15 @@
 # ============================================================
 
 # --- hal_mtk_videotelephony ---
-binder_use(hal_mtk_videotelephony)
+allow hal_mtk_videotelephony servicemanager:binder { call transfer };
+allow hal_mtk_videotelephony servicemanager:fd use;
 
 # --- hal_mtk_videotelephony_client ---
 binder_call(hal_mtk_videotelephony_client, hal_mtk_videotelephony_server)
 allow hal_mtk_videotelephony_client mtk_hal_videotelephony_service:service_manager find;
 
 # --- hal_mtk_videotelephony_server ---
-add_service(hal_mtk_videotelephony_server, mtk_hal_videotelephony_service)
-binder_call(hal_mtk_videotelephony_server, hal_mtk_videotelephony_client)
+allow hal_mtk_videotelephony_server hal_mtk_videotelephony_client:binder call;
+allow hal_mtk_videotelephony_server hal_mtk_videotelephony_client:fd use;
+allow hal_mtk_videotelephony_server mtk_hal_videotelephony_service:service_manager { add find };
 

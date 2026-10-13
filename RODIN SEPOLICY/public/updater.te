@@ -1,6 +1,7 @@
 # ============================================================
 # File: updater.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Privileged/OEM Apps
@@ -9,28 +10,21 @@
 # ============================================================
 
 # --- updater ---
-type updater;
+type updater, appdomain, base_typeattr_1062, base_typeattr_1064, base_typeattr_1065, base_typeattr_1066, base_typeattr_1068, base_typeattr_1069, base_typeattr_1070, base_typeattr_1072, base_typeattr_1073, base_typeattr_1075, base_typeattr_1077, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1085, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1090, base_typeattr_1091, base_typeattr_1093, base_typeattr_1096, base_typeattr_1097, base_typeattr_1099, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1104, base_typeattr_1105, base_typeattr_1106, base_typeattr_1108, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1115, base_typeattr_1116, base_typeattr_1117, base_typeattr_1119, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1124, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1129, base_typeattr_1130, base_typeattr_1131, base_typeattr_1133, base_typeattr_1134, coredomain, domain;
 
-typeattribute updater coredomain;
-typeattribute updater domain;
-
-app_domain(updater)
-binder_call(updater, update_engine)
 bluetooth_domain(updater)
-get_prop(updater, exported_system_prop)
 get_prop(updater, xms_prop)
 net_domain(updater)
 set_prop(updater, exported_system_prop)
-set_prop(updater, xms_prop)
 allow updater app_api_service:service_manager find;
-allow updater appdomain_tmpfs:file { rx_file_perms write };
+allow updater appdomain_tmpfs:file { execute getattr ioctl map read write };
 allow updater asec_apk_file:dir create_dir_perms;
 allow updater asec_apk_file:file create_file_perms;
 allow updater audioserver_service:service_manager find;
 allow updater cache_file:dir create_dir_perms;
 allow updater cache_file:file create_file_perms;
-allow updater cache_recovery_file:dir rw_dir_perms;
-allow updater cache_recovery_file:file create_file_perms;
+allow updater cache_recovery_file:dir { add_name read remove_name search write };
+allow updater cache_recovery_file:file { rw_file_perms create setattr unlink };
 allow updater cameraserver_service:service_manager find;
 allow updater data_log_stability_file:dir search;
 allow updater drmserver_service:service_manager find;
@@ -42,15 +36,15 @@ allow updater mediadrmserver_service:service_manager find;
 allow updater mediaextractor_service:service_manager find;
 allow updater mediametrics_service:service_manager find;
 allow updater mediaserver_service:service_manager find;
-allow updater miui_coredump_file:dir { write add_name search };
-allow updater miui_coredump_file:file create_file_perms;
-allow updater miui_hprof_file:dir { write getattr setattr add_name search };
-allow updater miui_hprof_file:file create_file_perms;
+allow updater miui_coredump_file:dir { add_name search write };
+allow updater miui_coredump_file:file { create open read write };
+allow updater miui_hprof_file:dir { add_name getattr search setattr write };
+allow updater miui_hprof_file:file { create getattr open read setattr write };
 allow updater miui_init_service:service_manager find;
 allow updater miui_native_file:dir search;
 allow updater miui_snapshot_service:service_manager find;
-allow updater miuilog_data_file:dir r_dir_perms;
-allow updater miuilog_data_file:file rw_file_perms;
+allow updater miuilog_data_file:dir { getattr read search };
+allow updater miuilog_data_file:file { getattr open read write };
 allow updater mqs_service:service_manager find;
 allow updater mqsasd_service:service_manager find;
 allow updater nfc_service:service_manager find;
@@ -58,22 +52,24 @@ allow updater radio_service:service_manager find;
 allow updater recovery_service:service_manager find;
 allow updater servicemanager:service_manager list;
 allow updater shell_data_file:dir search;
-allow updater shell_data_file:file r_file_perms;
+allow updater shell_data_file:file { getattr open read };
 allow updater smart_app_assistant_service:service_manager find;
 allow updater system_api_service:service_manager find;
 allow updater system_app_service:service_manager find;
 allow updater theme_data_file:dir { r_dir_perms relabelfrom relabelto };
-allow updater theme_data_file:file { r_file_perms relabelfrom relabelto };
-allow updater theme_data_file:lnk_file { r_file_perms relabelfrom relabelto };
-allow updater unlabeled:dir { write search };
-allow updater unlabeled:file { rw_file_perms setattr };
-allow updater unlabeled:filesystem { mount remount unmount getattr relabelfrom associate quotamod quotaget watch };
+allow updater theme_data_file:{ file lnk_file } { r_file_perms relabelfrom relabelto };
+allow updater unlabeled:dir { search write };
+allow updater unlabeled:file { getattr open read setattr write };
+allow updater unlabeled:filesystem { associate getattr mount quotaget quotamod relabelfrom remount unmount watch };
+allow updater update_engine:binder call;
+allow updater update_engine:fd use;
 allow updater update_engine_service:service_manager find;
-allow updater updater_userfaultfd:anon_inode { ioctl read create };
+allow updater updater_userfaultfd:anon_inode { create ioctl read };
 allow updater vr_manager_service:service_manager find;
-allowxperm updater appdomain_tmpfs:file ioctl { (range 0x7701 0x770b) };
+allow updater xms_prop:property_service set;
+allowxperm updater appdomain_tmpfs:file ioctl 0x7701-0x770b;
 type_transition updater tmpfs:file appdomain_tmpfs;
-type_transition updater updater:anon_inode "[userfaultfd]" updater_userfaultfd;
+type_transition updater updater:anon_inode updater_userfaultfd "[userfaultfd]";
 
 # --- updater_userfaultfd ---
 type updater_userfaultfd;

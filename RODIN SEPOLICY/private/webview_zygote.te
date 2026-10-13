@@ -1,6 +1,7 @@
 # ============================================================
 # File: webview_zygote.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -14,10 +15,10 @@ typeattribute webview_zygote domain;
 typeattribute webview_zygote mlstrustedsubject;
 
 allow webview_zygote data_log_stability_file:dir search;
-allow webview_zygote miui_coredump_file:dir { write add_name search };
-allow webview_zygote miui_coredump_file:file create_file_perms;
-allow webview_zygote miui_hprof_file:dir { write getattr setattr add_name search };
-allow webview_zygote miui_hprof_file:file create_file_perms;
+allow webview_zygote miui_coredump_file:dir { add_name search write };
+allow webview_zygote miui_coredump_file:file { create open read write };
+allow webview_zygote miui_hprof_file:dir { add_name getattr search setattr write };
+allow webview_zygote miui_hprof_file:file { create getattr open read setattr write };
 allow webview_zygote miui_native_file:dir search;
 dontaudit webview_zygote zygote_tmpfs:file map;
 

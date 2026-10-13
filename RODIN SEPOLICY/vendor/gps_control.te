@@ -1,6 +1,7 @@
 # ============================================================
 # File: gps_control.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Sensors & Location
 # Subcategory: Location Stack

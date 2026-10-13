@@ -1,6 +1,7 @@
 # ============================================================
 # File: theme.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,21 +10,16 @@
 # ============================================================
 
 # --- theme ---
-type theme;
+type theme, appdomain, base_typeattr_1062, base_typeattr_1064, base_typeattr_1065, base_typeattr_1066, base_typeattr_1068, base_typeattr_1069, base_typeattr_1070, base_typeattr_1072, base_typeattr_1073, base_typeattr_1075, base_typeattr_1077, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1085, base_typeattr_1086, base_typeattr_1087, base_typeattr_1089, base_typeattr_1092, base_typeattr_1094, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1099, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1104, base_typeattr_1105, base_typeattr_1106, base_typeattr_1108, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1115, base_typeattr_1116, base_typeattr_1117, base_typeattr_1119, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1124, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1129, base_typeattr_1130, base_typeattr_1131, base_typeattr_1133, base_typeattr_1134, coredomain, domain;
 
-typeattribute theme coredomain;
-typeattribute theme domain;
-
-app_domain(theme)
 bluetooth_domain(theme)
-get_prop(theme, exported_system_prop)
 get_prop(theme, vendor_color_prop)
 get_prop(theme, vendor_fp_prop)
 net_domain(theme)
 set_prop(theme, exported_system_prop)
 allow theme app_api_service:service_manager find;
 allow theme app_data_file:file execute;
-allow theme appdomain_tmpfs:file { rx_file_perms write };
+allow theme appdomain_tmpfs:file { execute getattr ioctl map read write };
 allow theme audioserver_service:service_manager find;
 allow theme cameraserver_service:service_manager find;
 allow theme data_log_stability_file:dir create_dir_perms;
@@ -37,19 +33,19 @@ allow theme mediadrmserver_service:service_manager find;
 allow theme mediaextractor_service:service_manager find;
 allow theme mediametrics_service:service_manager find;
 allow theme mediaserver_service:service_manager find;
-allow theme miui_coredump_file:dir { write add_name search };
-allow theme miui_coredump_file:file create_file_perms;
+allow theme miui_coredump_file:dir { add_name search write };
+allow theme miui_coredump_file:file { create open read write };
 allow theme miui_font_service:service_manager find;
 allow theme miui_init_service:service_manager find;
 allow theme miui_native_file:dir search;
-allow theme miuilog_data_file:dir r_dir_perms;
-allow theme miuilog_data_file:file rw_file_perms;
+allow theme miuilog_data_file:dir { getattr read search };
+allow theme miuilog_data_file:file { getattr open read write };
 allow theme mqs_service:service_manager find;
 allow theme nfc_service:service_manager find;
-allow theme privapp_data_file:dir { r_dir_perms x_file_perms };
-allow theme privapp_data_file:file rx_file_perms;
+allow theme privapp_data_file:dir { execute getattr open read search };
+allow theme privapp_data_file:file { execute getattr map open read };
 allow theme proc_union_power:dir search;
-allow theme proc_union_power:file r_file_perms;
+allow theme proc_union_power:file { getattr ioctl open read };
 allow theme radio_service:service_manager find;
 allow theme rs_exec:file rx_file_perms;
 allow theme servicemanager:service_manager list;
@@ -57,17 +53,16 @@ allow theme shelld_service:service_manager find;
 allow theme smart_app_assistant_service:service_manager find;
 allow theme system_api_service:service_manager find;
 allow theme system_app_service:service_manager find;
-allow theme system_data_file:file r_file_perms;
+allow theme system_data_file:file { getattr read };
 allow theme theme_data_file:dir { create_dir_perms relabelfrom relabelto };
-allow theme theme_data_file:file { create_file_perms relabelfrom relabelto };
-allow theme theme_data_file:lnk_file { create_file_perms relabelfrom relabelto };
-allow theme theme_userfaultfd:anon_inode { ioctl read create };
+allow theme theme_data_file:{ file lnk_file } { create_file_perms relabelfrom relabelto };
+allow theme theme_userfaultfd:anon_inode { create ioctl read };
 allow theme vfat:dir create_dir_perms;
 allow theme vfat:file create_file_perms;
 allow theme vr_manager_service:service_manager find;
-allowxperm theme appdomain_tmpfs:file ioctl { (range 0x7701 0x770b) };
+allowxperm theme appdomain_tmpfs:file ioctl 0x7701-0x770b;
 allowxperm theme proc_union_power:file ioctl { 0x6701 0x6705 };
-type_transition theme theme:anon_inode "[userfaultfd]" theme_userfaultfd;
+type_transition theme theme:anon_inode theme_userfaultfd "[userfaultfd]";
 type_transition theme tmpfs:file appdomain_tmpfs;
 
 # --- theme_userfaultfd ---

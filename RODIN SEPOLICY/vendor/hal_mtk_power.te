@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_power.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Power & Thermal
 # Subcategory: Power Management
@@ -13,7 +14,9 @@ binder_call(hal_mtk_power_client, hal_mtk_power_server)
 allow hal_mtk_power_client mtk_hal_power_service:service_manager find;
 
 # --- hal_mtk_power_server ---
-add_service(hal_mtk_power_server, mtk_hal_power_service)
-binder_call(hal_mtk_power_server, hal_mtk_power_client)
-binder_use(hal_mtk_power_server)
+allow hal_mtk_power_server hal_mtk_power_client:binder call;
+allow hal_mtk_power_server hal_mtk_power_client:fd use;
+allow hal_mtk_power_server mtk_hal_power_service:service_manager { add find };
+allow hal_mtk_power_server servicemanager:binder { call transfer };
+allow hal_mtk_power_server servicemanager:fd use;
 

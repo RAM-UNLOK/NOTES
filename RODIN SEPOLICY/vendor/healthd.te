@@ -1,6 +1,7 @@
 # ============================================================
 # File: healthd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,12 +10,11 @@
 # ============================================================
 
 typeattribute healthd domain;
-typeattribute healthd halclientdomain;
 
 hal_client_domain(healthd, hal_light)
 allow healthd app_data_file:file write;
-allow healthd charger_exec:file { rx_file_perms entrypoint };
-allow healthd device:dir { read open };
+allow healthd charger_exec:file { entrypoint execute getattr map read };
+allow healthd device:dir { open read };
 allow healthd dri_device:chr_file rw_file_perms;
 allow healthd gpu_device:dir search;
 allow healthd graphics_device:chr_file rw_file_perms;
@@ -24,10 +24,8 @@ allow healthd input_device:chr_file r_file_perms;
 allow healthd input_device:dir r_dir_perms;
 allow healthd proc_last_kmsg:file rw_file_perms;
 allow healthd sysfs_battery_supply:dir r_dir_perms;
-allow healthd sysfs_battery_supply:file r_file_perms;
-allow healthd sysfs_battery_supply:lnk_file r_file_perms;
+allow healthd sysfs_battery_supply:{ file lnk_file } r_file_perms;
 allow healthd sysfs_usb_supply:dir r_dir_perms;
-allow healthd sysfs_usb_supply:file r_file_perms;
-allow healthd sysfs_usb_supply:lnk_file r_file_perms;
+allow healthd sysfs_usb_supply:{ file lnk_file } r_file_perms;
 allow healthd sysfs_vcorefs_pwrctrl:file write;
 

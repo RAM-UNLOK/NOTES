@@ -1,6 +1,7 @@
 # ============================================================
 # File: sdk_sandbox.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps

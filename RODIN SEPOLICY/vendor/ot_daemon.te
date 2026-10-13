@@ -1,6 +1,7 @@
 # ============================================================
 # File: ot_daemon.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

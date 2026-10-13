@@ -1,6 +1,7 @@
 # ============================================================
 # File: virtual_camera.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Camera
 # Subcategory: Camera HAL
@@ -11,7 +12,6 @@
 # --- virtual_camera ---
 typeattribute virtual_camera coredomain;
 typeattribute virtual_camera domain;
-typeattribute virtual_camera halclientdomain;
 
 hal_client_domain(virtual_camera, hal_codec2)
 hal_client_domain(virtual_camera, hal_graphics_allocator)

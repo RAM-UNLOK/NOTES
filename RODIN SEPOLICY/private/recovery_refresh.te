@@ -1,6 +1,7 @@
 # ============================================================
 # File: recovery_refresh.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Update & Provisioning
 # Subcategory: OTA & Partitions

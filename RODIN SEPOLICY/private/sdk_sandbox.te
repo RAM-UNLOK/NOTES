@@ -1,6 +1,7 @@
 # ============================================================
 # File: sdk_sandbox.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps
@@ -9,17 +10,17 @@
 # ============================================================
 
 # --- sdk_sandbox_34 ---
+typeattribute sdk_sandbox_34 appdomain;
 typeattribute sdk_sandbox_34 coredomain;
 typeattribute sdk_sandbox_34 domain;
 
-app_domain(sdk_sandbox_34)
 net_domain(sdk_sandbox_34)
 
 # --- sdk_sandbox_audit ---
+typeattribute sdk_sandbox_audit appdomain;
 typeattribute sdk_sandbox_audit coredomain;
 typeattribute sdk_sandbox_audit domain;
 
-app_domain(sdk_sandbox_audit)
 net_domain(sdk_sandbox_audit)
 
 # --- sdk_sandbox_data_file ---
@@ -29,10 +30,10 @@ typeattribute sdk_sandbox_data_file data_file_type;
 typeattribute sdk_sandbox_data_file file_type;
 
 # --- sdk_sandbox_next ---
+typeattribute sdk_sandbox_next appdomain;
 typeattribute sdk_sandbox_next coredomain;
 typeattribute sdk_sandbox_next domain;
 
-app_domain(sdk_sandbox_next)
 net_domain(sdk_sandbox_next)
 
 # --- sdk_sandbox_service ---

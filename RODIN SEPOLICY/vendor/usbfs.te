@@ -1,6 +1,7 @@
 # ============================================================
 # File: usbfs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Hardware & Peripheral
 # Subcategory: USB

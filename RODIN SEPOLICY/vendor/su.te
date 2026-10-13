@@ -1,6 +1,7 @@
 # ============================================================
 # File: su.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,7 +12,7 @@
 # --- su ---
 typeattribute su domain;
 
-dontaudit su mobicore_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
+dontaudit su mobicore_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- su_exec ---
 typeattribute su_exec exec_type;

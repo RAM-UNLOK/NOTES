@@ -1,6 +1,7 @@
 # ============================================================
 # File: zygote.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Init & Core Daemons
@@ -17,27 +18,24 @@ get_prop(zygote, system_mtk_app32_boost_prop)
 get_prop(zygote, system_mtk_hbt_prop)
 get_prop(zygote, system_mtk_rsc_sys_prop)
 allow zygote atomic_data_file:dir search;
-allow zygote atomic_data_file:file r_file_perms;
+allow zygote atomic_data_file:file { getattr open read };
 allow zygote data_log_stability_file:dir search;
 allow zygote hbt_device:chr_file rw_file_perms;
-allow zygote init_tmpfs:file r_file_perms;
-allow zygote miui_coredump_file:dir { write add_name search };
-allow zygote miui_coredump_file:file create_file_perms;
-allow zygote miui_hprof_file:dir { write getattr setattr add_name search };
-allow zygote miui_hprof_file:file create_file_perms;
+allow zygote init_tmpfs:file { getattr map open read };
+allow zygote miui_coredump_file:dir { add_name search write };
+allow zygote miui_coredump_file:file { create open read write };
+allow zygote miui_hprof_file:dir { add_name getattr search setattr write };
+allow zygote miui_hprof_file:file { create getattr open read setattr write };
 allow zygote miui_native_file:dir search;
-allow zygote proc_meminfo:file { read open };
+allow zygote proc_meminfo:file { open read };
 allow zygote theme_data_file:dir { r_dir_perms relabelfrom relabelto };
-allow zygote theme_data_file:file { r_file_perms relabelfrom relabelto };
-allow zygote theme_data_file:lnk_file { r_file_perms relabelfrom relabelto };
-allow zygote tmpfs:dir r_file_perms;
-allow zygote tmpfs:file r_file_perms;
-allow zygote zygote_tmpfs:file rw_file_perms;
+allow zygote theme_data_file:{ file lnk_file } { r_file_perms relabelfrom relabelto };
+allow zygote tmpfs:{ dir file } { getattr map open read };
+allow zygote zygote_tmpfs:file { getattr map open read write };
 dontaudit zygote proc_security:file read;
 dontaudit zygote self:capability sys_nice;
 dontaudit zygote system_file:dir write;
-dontaudit zygote vendor_apex_file:dir read;
-dontaudit zygote vendor_apex_file:file read;
+dontaudit zygote vendor_apex_file:{ dir file } read;
 dontaudit zygote vendor_file:dir read;
 
 # --- zygote_exec ---

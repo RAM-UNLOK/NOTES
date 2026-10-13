@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_hal_telephony_service2.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Radio & Telephony
 # Subcategory: Modem & RIL

@@ -1,6 +1,7 @@
 # ============================================================
 # File: uncrypt.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,14 +15,13 @@ typeattribute uncrypt mlstrustedsubject;
 
 allow uncrypt media_rw_data_file:dir { getattr search };
 allow uncrypt media_rw_data_file:file r_file_perms;
-allow uncrypt misc_device:chr_file { create_file_perms x_file_perms audit_access entrypoint execmod link mounton quotaon relabelfrom relabelto };
-allow uncrypt mtd_device:blk_file rw_file_perms;
-allow uncrypt mtd_device:chr_file rw_file_perms;
+allow uncrypt misc_device:chr_file { rwx_file_perms audit_access create entrypoint execmod link mounton quotaon relabelfrom relabelto setattr unlink watch_mount watch_sb watch_with_perm };
 allow uncrypt mtd_device:dir search;
+allow uncrypt mtd_device:{ blk_file chr_file } rw_file_perms;
 allow uncrypt ota_package_file:file w_file_perms;
 allow uncrypt para_block_device:blk_file w_file_perms;
 allow uncrypt system_app_data_file:dir { getattr search };
-allow uncrypt system_app_data_file:file r_file_perms;
+allow uncrypt system_app_data_file:file { getattr read };
 allow uncrypt userdata_block_device:blk_file w_file_perms;
 
 # --- uncrypt_exec ---

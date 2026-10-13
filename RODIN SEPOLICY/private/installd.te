@@ -1,6 +1,7 @@
 # ============================================================
 # File: installd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,82 +14,62 @@ typeattribute installd coredomain;
 typeattribute installd domain;
 typeattribute installd mlstrustedsubject;
 
-add_service(installd, fbo_native_service)
-add_service(installd, swap_native_service)
 get_prop(installd, system_mtk_dalvik_prop)
-init_daemon_domain(installd)
-set_prop(installd, system_prop)
 allow installd app_data_file:dir create_dir_perms;
-allow installd app_data_file:file { r_file_perms link unlink };
+allow installd app_data_file:file { getattr link open read unlink };
 allow installd backup:fd use;
 allow installd backup:fifo_file { read write };
 allow installd cache_file:dir create_dir_perms;
 allow installd data_log_stability_file:dir create_dir_perms;
 allow installd data_log_stability_file:file create_file_perms;
 allow installd dex2oat:process sigkill;
-allow installd dm_device:blk_file rw_file_perms;
-allow installd extm_data_file:dir create_dir_perms;
-allow installd extm_data_file:file create_file_perms;
-allow installd fbo_file:dir create_dir_perms;
-allow installd fbo_file:file create_file_perms;
-allow installd fbo_file:file { ioctl setattr lock unlink };
-allow installd fbo_file:file { ioctl unlink };
-allow installd fuse:dir create_dir_perms;
-allow installd fuse:dir create_dir_perms;
-allow installd fuse:dir mounton;
-allow installd fuse:file create_file_perms;
-allow installd fuse:file create_file_perms;
-allow installd fuse:lnk_file create_file_perms;
-allow installd media_rw_data_file:dir mounton;
-allow installd media_rw_data_file:dir { create_dir_perms relabelfrom relabelto };
-allow installd media_rw_data_file:file create_file_perms;
-allow installd media_rw_data_file:file { create_file_perms relabelfrom relabelto };
-allow installd media_rw_data_file:file { r_file_perms link unlink };
+allow installd dm_device:blk_file { getattr ioctl open read write };
+allow installd extm_data_file:dir { rw_dir_perms create };
+allow installd extm_data_file:file { append create getattr open read write };
+allow installd fbo_file:dir { rw_dir_perms create rmdir };
+allow installd fbo_file:file { append create getattr ioctl lock open read setattr unlink write };
+allow installd fbo_native_service:service_manager { add find };
+allow installd fuse:dir { create_dir_perms mounton };
+allow installd fuse:{ file lnk_file } create_file_perms;
+allow installd init:unix_stream_socket connectto;
+allow installd installd_exec:file { entrypoint execute getattr map read };
+allow installd media_rw_data_file:dir { create_dir_perms mounton relabelfrom relabelto };
+allow installd media_rw_data_file:file { create_file_perms link relabelfrom relabelto };
 allow installd media_rw_data_file:lnk_file create_file_perms;
-allow installd miui_coredump_file:dir { write add_name search };
-allow installd miui_coredump_file:file create_file_perms;
+allow installd miui_coredump_file:dir { add_name search write };
+allow installd miui_coredump_file:file { create open read write };
 allow installd miui_native_file:dir search;
 allow installd mnt_user_file:dir search;
 allow installd mnt_user_file:lnk_file read;
 allow installd mqs_service:service_manager find;
 allow installd proc_drop_caches:file w_file_perms;
 allow installd profman:process sigkill;
-allow installd sdcardfs:dir create_dir_perms;
-allow installd sdcardfs:dir mounton;
-allow installd sdcardfs:file create_file_perms;
-allow installd sdcardfs:lnk_file create_file_perms;
+allow installd property_socket:sock_file write;
+allow installd sdcardfs:dir { create_dir_perms mounton };
+allow installd sdcardfs:{ file lnk_file } create_file_perms;
 allow installd self:capability kill;
+allow installd swap_native_service:service_manager { add find };
 allow installd sysfs_dm:dir search;
-allow installd sysfs_dm:file r_file_perms;
+allow installd sysfs_dm:file { getattr open read };
 allow installd sysfs_fs_f2fs:dir search;
-allow installd sysfs_fs_f2fs:file create_file_perms;
+allow installd sysfs_fs_f2fs:file { append create getattr open read write };
 allow installd system_data_file:dir relabelto;
-allow installd system_data_file:file { r_file_perms unlink };
+allow installd system_data_file:file { getattr open read unlink };
+allow installd system_prop:property_service set;
 allow installd system_server:unix_stream_socket connectto;
-allow installd temp_apk_data_file:dir { rw_dir_perms rmdir };
+allow installd temp_apk_data_file:dir { getattr open read remove_name rmdir search write };
 allow installd temp_apk_data_file:file { setattr unlink };
 allow installd theme_data_file:dir { create_dir_perms relabelfrom relabelto };
-allow installd theme_data_file:lnk_file { create getattr setattr relabelfrom relabelto unlink rename };
+allow installd theme_data_file:lnk_file { create getattr relabelfrom relabelto rename setattr unlink };
 allow installd tmpfs:dir relabelfrom;
 allow installd userdata_block_device:blk_file getattr;
-allowxperm installd apk_data_file:file ioctl 0x660b;
-allowxperm installd apk_data_file:file ioctl 0xf508;
-allowxperm installd app_data_file:file ioctl 0x660b;
-allowxperm installd app_data_file:file ioctl 0xf508;
-allowxperm installd app_data_file:file ioctl { (range 0x581f 0x5820) };
-allowxperm installd app_data_file:file ioctl { (range 0x6601 0x6602) };
-allowxperm installd dalvikcache_data_file:file ioctl 0x660b;
-allowxperm installd dalvikcache_data_file:file ioctl 0xf508;
-allowxperm installd dm_device:blk_file ioctl { 0x1277 0x127d };
-allowxperm installd dm_device:blk_file ioctl { 0x6601 0x660b };
-allowxperm installd fbo_file:file ioctl { (range 0xf50d 0xf50e) };
-allowxperm installd fbo_file:file ioctl { 0x6601 0x660b };
-allowxperm installd system_data_file:file ioctl 0x660b;
-allowxperm installd system_data_file:file ioctl 0xf508;
-allowxperm installd user_profile_data_file:file ioctl 0x660b;
-allowxperm installd user_profile_data_file:file ioctl 0xf508;
-allowxperm installd user_profile_data_file:file ioctl { (range 0x581f 0x5820) };
-allowxperm installd user_profile_data_file:file ioctl { (range 0x6601 0x6602) };
+allowxperm installd apk_data_file:file ioctl { 0x660b 0xf508 };
+allowxperm installd app_data_file:file ioctl { 0x581f-0x5820 0x6601-0x6602 0x660b 0xf508 };
+allowxperm installd dalvikcache_data_file:file ioctl { 0x660b 0xf508 };
+allowxperm installd dm_device:blk_file ioctl { 0x1277 0x127d 0x6601 0x660b };
+allowxperm installd fbo_file:file ioctl { 0x6601 0x660b 0xf50d-0xf50e };
+allowxperm installd system_data_file:file ioctl { 0x660b 0xf508 };
+allowxperm installd user_profile_data_file:file ioctl { 0x581f-0x5820 0x6601-0x6602 0x660b 0xf508 };
 
 # --- installd_exec ---
 typeattribute installd_exec exec_type;

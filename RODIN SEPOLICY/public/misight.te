@@ -1,6 +1,7 @@
 # ============================================================
 # File: misight.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,32 +10,17 @@
 # ============================================================
 
 # --- misight ---
-type misight;
+type misight, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute misight binderservicedomain;
-typeattribute misight coredomain;
-typeattribute misight domain;
-typeattribute misight mlstrustedsubject;
-
-add_service(misight, misight_service)
 binder_call(misight, appdomain)
 binder_call(misight, binderservicedomain)
-binder_call(misight, fdpp)
-binder_use(misight)
 get_prop(misight, abreuse_prop)
-get_prop(misight, ctl_start_prop)
 get_prop(misight, ctl_stop_prop)
 get_prop(misight, safemode_prop)
 get_prop(misight, sno_prop)
 get_prop(misight, system_prop)
 init_daemon_domain(misight)
-set_prop(misight, ctl_default_prop)
-set_prop(misight, ctl_dumpstate_prop)
 set_prop(misight, ctl_start_prop)
-set_prop(misight, ctl_stop_prop)
-set_prop(misight, powerctl_prop)
-set_prop(misight, safemode_prop)
-set_prop(misight, system_prop)
 allow misight activity_service:service_manager find;
 allow misight adb_keys_file:file setattr;
 allow misight anr_data_file:dir { rw_dir_perms relabelto };
@@ -44,18 +30,21 @@ allow misight audioserver_service:service_manager find;
 allow misight batterystats_service:service_manager find;
 allow misight block_device:dir search;
 allow misight bluetooth_data_file:dir search;
-allow misight bluetooth_logs_data_file:dir r_dir_perms;
-allow misight bluetooth_logs_data_file:file r_file_perms;
+allow misight bluetooth_logs_data_file:dir { open read search };
+allow misight bluetooth_logs_data_file:file { getattr open read };
 allow misight bluetooth_manager_service:service_manager find;
 allow misight bsp_data_log_file:dir { create_dir_perms relabelto };
 allow misight bsp_data_log_file:file create_file_perms;
-allow misight cache_file:dir create_dir_perms;
-allow misight cache_file:file create_file_perms;
+allow misight cache_file:dir { add_name create getattr open read remove_name search setattr write };
+allow misight cache_file:file { append create getattr open read setattr unlink write };
 allow misight cache_file:lnk_file read;
-allow misight cache_recovery_file:dir create_dir_perms;
-allow misight cache_recovery_file:file create_file_perms;
+allow misight cache_recovery_file:dir { add_name create getattr open read remove_name search setattr write };
+allow misight cache_recovery_file:file { append create getattr open read setattr unlink write };
 allow misight configfs:dir search;
 allow misight cpuinfo_service:service_manager find;
+allow misight ctl_default_prop:property_service set;
+allow misight ctl_dumpstate_prop:property_service set;
+allow misight ctl_stop_prop:property_service set;
 allow misight dalvikcache_data_file:dir search;
 allow misight data_log_file:dir { create_dir_perms relabelto };
 allow misight data_log_file:file create_file_perms;
@@ -67,20 +56,20 @@ allow misight data_log_stability_file:dir create_dir_perms;
 allow misight data_log_stability_file:file create_file_perms;
 allow misight data_log_window_file:dir create_dir_perms;
 allow misight data_log_window_file:file create_file_perms;
-allow misight dm_device:blk_file r_file_perms;
-allow misight domain:dir r_dir_perms;
-allow misight domain:file r_file_perms;
-allow misight domain:lnk_file r_file_perms;
+allow misight dm_device:blk_file { getattr ioctl open read };
+allow misight domain:dir { getattr open read search };
 allow misight domain:process getattr;
+allow misight domain:{ file lnk_file } { getattr open read };
 allow misight drmserver:process signal;
 allow misight dumpstate:unix_stream_socket connectto;
 allow misight dumpstate_socket:sock_file write;
+allow misight fdpp:binder call;
 allow misight fuse:dir rw_dir_perms;
 allow misight fuse:file { rw_file_perms setattr unlink };
 allow misight greeze_service:service_manager find;
-allow misight init:unix_stream_socket { read write connectto };
+allow misight init:unix_stream_socket { read write };
 allow misight kernel:system syslog_read;
-allow misight kmsg_device:chr_file { read open };
+allow misight kmsg_device:chr_file { open read };
 allow misight location_service:service_manager find;
 allow misight logcat_exec:file rx_file_perms;
 allow misight logd:unix_stream_socket connectto;
@@ -88,16 +77,17 @@ allow misight logd_socket:sock_file write;
 allow misight logdr_socket:sock_file write;
 allow misight mediaserver:process signal;
 allow misight miev_device:chr_file read;
+allow misight misight_service:service_manager { add find };
 allow misight miui_coredump_file:dir { create_dir_perms relabelto };
 allow misight miui_coredump_file:file create_file_perms;
-allow misight miui_hprof_file:dir { write getattr setattr add_name search };
-allow misight miui_hprof_file:file create_file_perms;
+allow misight miui_hprof_file:dir { add_name getattr search setattr write };
+allow misight miui_hprof_file:file { create getattr open read setattr write };
 allow misight miui_native_file:dir { create_dir_perms relabelto };
 allow misight mnt_user_file:dir search;
 allow misight mnt_user_file:lnk_file read;
 allow misight mqs_service:service_manager find;
-allow misight mqsas_data_file:dir r_dir_perms;
-allow misight mqsas_data_file:file r_file_perms;
+allow misight mqsas_data_file:dir { open read search };
+allow misight mqsas_data_file:file { getattr open read };
 allow misight netpolicy_service:service_manager find;
 allow misight network_stack_service:service_manager find;
 allow misight network_time_update_service:service_manager find;
@@ -105,27 +95,28 @@ allow misight nfc_service:service_manager find;
 allow misight platform_app:dir search;
 allow misight platform_app:file write;
 allow misight power_service:service_manager find;
+allow misight powerctl_prop:property_service set;
 allow misight priv_app:file write;
-allow misight proc_cmdline:file { read open };
-allow misight proc_meminfo:file { read open };
-allow misight proc_pid_max:file { read open };
+allow misight proc_cmdline:file { open read };
+allow misight proc_meminfo:file { open read };
+allow misight proc_pid_max:file { open read };
 allow misight proc_pressure_cpu:file rw_file_perms;
 allow misight proc_pressure_io:file rw_file_perms;
 allow misight proc_pressure_mem:file rw_file_perms;
-allow misight proc_stat:file { read open };
-allow misight proc_zoneinfo:file rw_file_perms;
+allow misight proc_stat:file { open read };
+allow misight proc_zoneinfo:file { open read write };
 allow misight property_data_file:dir r_dir_perms;
 allow misight property_data_file:file r_file_perms;
 allow misight pstorefs:dir search;
 allow misight registry_service:service_manager find;
-allow misight rootfs:lnk_file getattr;
-allow misight rootfs:lnk_file r_file_perms;
+allow misight rootfs:lnk_file { getattr open read };
+allow misight safemode_prop:property_service set;
 allow misight sdcardd:process signal;
-allow misight self:capability { chown fowner fsetid };
-allow misight self:capability { net_bind_service net_admin net_raw };
+allow misight self:capability { chown fowner fsetid net_admin net_bind_service net_raw };
 allow misight self:capability2 syslog;
-allow misight self:packet_socket { create_socket_perms r_file_perms w_file_perms };
+allow misight self:packet_socket create_socket_perms_no_ioctl;
 allow misight sensorservice_service:service_manager find;
+allow misight servicemanager:binder { call transfer };
 allow misight servicemanager:service_manager list;
 allow misight settings_service:service_manager find;
 allow misight shell_exec:file rx_file_perms;
@@ -134,33 +125,32 @@ allow misight system_app:file write;
 allow misight system_app_service:service_manager find;
 allow misight system_data_file:file r_file_perms;
 allow misight system_file:file execute_no_trans;
+allow misight system_prop:property_service set;
 allow misight system_server:file write;
 allow misight system_server:process signal;
 allow misight tethering_service:service_manager find;
 allow misight timedetector_service:service_manager find;
-allow misight tombstone_data_file:dir r_dir_perms;
-allow misight tombstone_data_file:dir write;
+allow misight tombstone_data_file:dir { r_dir_perms write };
 allow misight tombstone_data_file:file r_file_perms;
-allow misight toolbox_exec:file map;
-allow misight toolbox_exec:file rx_file_perms;
+allow misight toolbox_exec:file { x_file_perms open read };
 allow misight trace_data_file:dir search;
-allow misight trace_data_file:file r_file_perms;
+allow misight trace_data_file:file { getattr open read };
 allow misight turbosched_service:service_manager find;
 allow misight uncrypt:unix_stream_socket connectto;
 allow misight uncrypt_socket:sock_file write;
 allow misight untrusted_app:dir search;
 allow misight untrusted_app:file write;
-allow misight userdata_block_device:blk_file r_file_perms;
+allow misight userdata_block_device:blk_file { getattr ioctl open read };
 allow misight vfat:dir create_dir_perms;
 allow misight vfat:file create_file_perms;
 allow misight vpn_management_service:service_manager find;
 allow misight wifi_service:service_manager find;
 allow misight window_service:service_manager find;
 allow misight zygote_exec:file rx_file_perms;
+dontaudit misight self:capability sys_ptrace;
 allowxperm misight proc_pressure_cpu:file ioctl 0x7001;
 allowxperm misight proc_pressure_io:file ioctl 0x7001;
 allowxperm misight proc_pressure_mem:file ioctl 0x7001;
-dontaudit misight self:capability sys_ptrace;
 
 # --- misight_exec ---
 type misight_exec, exec_type, file_type, system_file_type;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: mediaextractor.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Media Framework

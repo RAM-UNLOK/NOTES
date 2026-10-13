@@ -1,6 +1,7 @@
 # ============================================================
 # File: kernel.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Kernel & Devices
@@ -11,14 +12,13 @@
 typeattribute kernel domain;
 typeattribute kernel mlstrustedsubject;
 
-allow kernel block_device:dir search;
 allow kernel block_device:dir { getattr search };
 allow kernel connsys_vendor_file:file r_file_perms;
 allow kernel fon_image_data_file:file read;
 allow kernel fuseblk:dir create_dir_perms;
 allow kernel fuseblk:file create_file_perms;
 allow kernel init_pstore_blk_sh:fd use;
-allow kernel kernel:key { write search setattr };
+allow kernel kernel:key { search setattr write };
 allow kernel loop_device:blk_file r_file_perms;
 allow kernel misc2_block_device:blk_file rw_file_perms;
 allow kernel mnt_media_rw_file:dir create_dir_perms;
@@ -27,7 +27,7 @@ allow kernel mnt_user_file:dir search;
 allow kernel mnt_user_file:lnk_file r_file_perms;
 allow kernel platform_app:process setsched;
 allow kernel proc_thermal:dir search;
-allow kernel pstore_block_device:blk_file rw_file_perms;
+allow kernel pstore_block_device:blk_file { append getattr ioctl lock open read watch watch_reads write };
 allow kernel same_process_hal_file:file r_file_perms;
 allow kernel sdcard_type:dir search;
 allow kernel sdcard_type:file open;

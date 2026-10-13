@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_hal_file.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

@@ -1,6 +1,7 @@
 # ============================================================
 # File: cameraserver.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Camera
 # Subcategory: Camera HAL
@@ -12,9 +13,7 @@
 typeattribute cameraserver binderservicedomain;
 typeattribute cameraserver coredomain;
 typeattribute cameraserver domain;
-typeattribute cameraserver halclientdomain;
 
-get_prop(cameraserver, debug_prop)
 get_prop(cameraserver, exported_system_prop)
 get_prop(cameraserver, system_mtk_logmuch_prop)
 get_prop(cameraserver, system_prop)
@@ -24,27 +23,26 @@ hal_client_domain(cameraserver, hal_graphics_allocator)
 hal_client_domain(cameraserver, hal_omx)
 hal_client_domain(cameraserver, hal_wifi_supplicant)
 set_prop(cameraserver, debug_prop)
-set_prop(cameraserver, exported_system_prop)
-set_prop(cameraserver, nfc_prop)
-set_prop(cameraserver, system_mtk_logmuch_prop)
-set_prop(cameraserver, system_prop)
-allow cameraserver camera_intentaware_filesys_driver:chr_file rw_file_perms;
-allow cameraserver cameramind_app:unix_stream_socket { r_file_perms connectto write };
+allow cameraserver camera_intentaware_filesys_driver:chr_file { append getattr ioctl open read watch watch_reads write };
+allow cameraserver cameramind_app:unix_stream_socket { connectto getattr read write };
 allow cameraserver cameraopt_service:service_manager find;
 allow cameraserver cameraserver:process execmem;
-allow cameraserver cammsger_device:chr_file rw_file_perms;
+allow cameraserver cammsger_device:chr_file { getattr ioctl open read watch watch_reads write };
 allow cameraserver data_log_stability_file:dir create_dir_perms;
-allow cameraserver data_log_stability_file:dir search;
 allow cameraserver data_log_stability_file:file create_file_perms;
-allow cameraserver miui_coredump_file:dir { write add_name search };
-allow cameraserver miui_coredump_file:file create_file_perms;
+allow cameraserver exported_system_prop:property_service set;
+allow cameraserver miui_coredump_file:dir { add_name search write };
+allow cameraserver miui_coredump_file:file { create open read write };
 allow cameraserver miui_native_file:dir search;
 allow cameraserver mqs_service:service_manager find;
 allow cameraserver mtk_perf_service:service_manager find;
+allow cameraserver nfc_prop:property_service set;
 allow cameraserver nfc_service:service_manager find;
 allow cameraserver proc_union_power:dir search;
-allow cameraserver proc_union_power:file r_file_perms;
+allow cameraserver proc_union_power:file { getattr ioctl open read };
 allow cameraserver radio_service:service_manager find;
+allow cameraserver system_mtk_logmuch_prop:property_service set;
+allow cameraserver system_prop:property_service set;
 allowxperm cameraserver proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- cameraserver_exec ---

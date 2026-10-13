@@ -1,6 +1,7 @@
 # ============================================================
 # File: hypsys_ssi_default.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,27 +10,14 @@
 # ============================================================
 
 # --- hypsys_ssi_default ---
-type hypsys_ssi_default;
-
-typeattribute hypsys_ssi_default binderservicedomain;
-typeattribute hypsys_ssi_default coredomain;
-typeattribute hypsys_ssi_default domain;
-typeattribute hypsys_ssi_default hypsys_ssi;
-typeattribute hypsys_ssi_default hypsys_ssi_client;
-typeattribute hypsys_ssi_default hypsys_ssi_server;
-typeattribute hypsys_ssi_default mlstrustedsubject;
+type hypsys_ssi_default, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, binderservicedomain, coredomain, domain, hypsys_ssi, hypsys_ssi_client, hypsys_ssi_server, mlstrustedsubject;
 
 binder_call(hypsys_ssi_default, appdomain)
 binder_call(hypsys_ssi_default, binderservicedomain)
-binder_call(hypsys_ssi_default, fdpp)
-binder_call(hypsys_ssi_default, su)
 binder_call(hypsys_ssi_default, system_server)
-binder_call(hypsys_ssi_default, wificond)
-binder_use(hypsys_ssi_default)
 get_prop(hypsys_ssi_default, abreuse_prop)
 get_prop(hypsys_ssi_default, boot_status_prop)
 get_prop(hypsys_ssi_default, bootloader_prop)
-get_prop(hypsys_ssi_default, ctl_dumpstate_prop)
 get_prop(hypsys_ssi_default, ctl_start_prop)
 get_prop(hypsys_ssi_default, ctl_stop_prop)
 get_prop(hypsys_ssi_default, log_manager_prop)
@@ -41,22 +29,12 @@ get_prop(hypsys_ssi_default, system_prop)
 get_prop(hypsys_ssi_default, wae_prop)
 init_daemon_domain(hypsys_ssi_default)
 net_domain(hypsys_ssi_default)
-set_prop(hypsys_ssi_default, ctl_default_prop)
 set_prop(hypsys_ssi_default, ctl_dumpstate_prop)
-set_prop(hypsys_ssi_default, ctl_start_prop)
-set_prop(hypsys_ssi_default, ctl_stop_prop)
-set_prop(hypsys_ssi_default, mtk_blackbox_persist_fw_minidump_prop)
-set_prop(hypsys_ssi_default, powerctl_prop)
-set_prop(hypsys_ssi_default, safemode_prop)
-set_prop(hypsys_ssi_default, system_mtk_debug_mtk_aee_prop)
-set_prop(hypsys_ssi_default, system_prop)
-set_prop(hypsys_ssi_default, wae_prop)
 allow hypsys_ssi_default activity_service:service_manager find;
 allow hypsys_ssi_default activity_task_service:service_manager find;
 allow hypsys_ssi_default adb_keys_file:file setattr;
 allow hypsys_ssi_default alarm_service:service_manager find;
-allow hypsys_ssi_default anr_data_file:dir create;
-allow hypsys_ssi_default anr_data_file:dir { rw_dir_perms relabelto };
+allow hypsys_ssi_default anr_data_file:dir { rw_dir_perms create relabelto };
 allow hypsys_ssi_default anr_data_file:file create_file_perms;
 allow hypsys_ssi_default appdomain:process signal;
 allow hypsys_ssi_default batterystats_service:service_manager find;
@@ -64,59 +42,56 @@ allow hypsys_ssi_default blackbox_block_device:blk_file rw_file_perms;
 allow hypsys_ssi_default block_device:dir search;
 allow hypsys_ssi_default bsp_data_log_file:dir { create_dir_perms relabelto };
 allow hypsys_ssi_default bsp_data_log_file:file create_file_perms;
-allow hypsys_ssi_default cache_file:dir create_dir_perms;
-allow hypsys_ssi_default cache_file:file create_file_perms;
-allow hypsys_ssi_default cache_recovery_file:dir create_dir_perms;
-allow hypsys_ssi_default cache_recovery_file:file create_file_perms;
+allow hypsys_ssi_default cache_file:dir { add_name create getattr open read remove_name search setattr write };
+allow hypsys_ssi_default cache_file:file { append create getattr open read setattr unlink write };
+allow hypsys_ssi_default cache_recovery_file:dir { add_name create getattr open read remove_name search setattr write };
+allow hypsys_ssi_default cache_recovery_file:file { append create getattr open read setattr unlink write };
 allow hypsys_ssi_default cameraserver_service:service_manager find;
 allow hypsys_ssi_default configfs:dir search;
 allow hypsys_ssi_default connectivity_service:service_manager find;
 allow hypsys_ssi_default connmetrics_service:service_manager find;
 allow hypsys_ssi_default cpuinfo_service:service_manager find;
+allow hypsys_ssi_default ctl_default_prop:property_service set;
+allow hypsys_ssi_default ctl_start_prop:property_service set;
+allow hypsys_ssi_default ctl_stop_prop:property_service set;
 allow hypsys_ssi_default dalvikcache_data_file:dir search;
-allow hypsys_ssi_default data_log_camera_file:dir { create_dir_perms unlink };
-allow hypsys_ssi_default data_log_camera_file:file create_file_perms;
-allow hypsys_ssi_default data_log_file:dir search;
+allow hypsys_ssi_default data_log_camera_file:dir { add_name create getattr open read remove_name search setattr unlink write };
+allow hypsys_ssi_default data_log_camera_file:file { append create getattr open read rename setattr unlink write };
 allow hypsys_ssi_default data_log_file:dir { create_dir_perms relabelto };
 allow hypsys_ssi_default data_log_file:file create_file_perms;
-allow hypsys_ssi_default data_log_misight_file:dir { rw_dir_perms setattr unlink };
-allow hypsys_ssi_default data_log_misight_file:file { rw_file_perms setattr unlink };
+allow hypsys_ssi_default data_log_misight_file:dir { getattr open read remove_name search setattr unlink write };
+allow hypsys_ssi_default data_log_misight_file:file { getattr open read setattr unlink write };
 allow hypsys_ssi_default data_log_stability_file:dir create_dir_perms;
-allow hypsys_ssi_default data_log_stability_file:dir r_dir_perms;
 allow hypsys_ssi_default data_log_stability_file:file create_file_perms;
-allow hypsys_ssi_default data_log_stability_file:file r_file_perms;
 allow hypsys_ssi_default debuglog_data_file:dir r_dir_perms;
-allow hypsys_ssi_default debuglog_data_file:file { r_file_perms setattr };
+allow hypsys_ssi_default debuglog_data_file:file { getattr open read setattr };
 allow hypsys_ssi_default display_service:service_manager find;
-allow hypsys_ssi_default dm_device:blk_file r_file_perms;
-allow hypsys_ssi_default domain:dir r_dir_perms;
-allow hypsys_ssi_default domain:file r_file_perms;
-allow hypsys_ssi_default domain:lnk_file r_file_perms;
+allow hypsys_ssi_default dm_device:blk_file { getattr ioctl open read };
+allow hypsys_ssi_default domain:dir { getattr open read search };
 allow hypsys_ssi_default domain:process getattr;
+allow hypsys_ssi_default domain:{ file lnk_file } { getattr open read };
 allow hypsys_ssi_default drmserver:process signal;
 allow hypsys_ssi_default dropbox_service:service_manager find;
 allow hypsys_ssi_default dumpstate:unix_stream_socket connectto;
 allow hypsys_ssi_default dumpstate_socket:sock_file write;
 allow hypsys_ssi_default ethernet_service:service_manager find;
-allow hypsys_ssi_default fuse:dir create_dir_perms;
-allow hypsys_ssi_default fuse:dir rw_dir_perms;
-allow hypsys_ssi_default fuse:file create_file_perms;
-allow hypsys_ssi_default fuse:file { rw_file_perms setattr unlink };
+allow hypsys_ssi_default fdpp:binder call;
+allow hypsys_ssi_default fuse:dir { rw_dir_perms create setattr };
+allow hypsys_ssi_default fuse:file { rw_file_perms create setattr unlink };
 allow hypsys_ssi_default gfxinfo_service:service_manager find;
 allow hypsys_ssi_default greeze_service:service_manager find;
-allow hypsys_ssi_default init:unix_stream_socket { read write connectto };
+allow hypsys_ssi_default init:unix_stream_socket { read write };
 allow hypsys_ssi_default input_method_service:service_manager find;
 allow hypsys_ssi_default input_service:service_manager find;
 allow hypsys_ssi_default inputflinger_service:service_manager find;
 allow hypsys_ssi_default jobscheduler_service:service_manager find;
 allow hypsys_ssi_default kernel:system syslog_read;
 allow hypsys_ssi_default logcat_exec:file rx_file_perms;
-allow hypsys_ssi_default logcat_exec:file rx_file_perms;
 allow hypsys_ssi_default logd:unix_stream_socket connectto;
 allow hypsys_ssi_default logd_socket:sock_file write;
 allow hypsys_ssi_default logdr_socket:sock_file write;
-allow hypsys_ssi_default media_rw_data_file:dir create_dir_perms;
-allow hypsys_ssi_default media_rw_data_file:file create_file_perms;
+allow hypsys_ssi_default media_rw_data_file:dir { add_name create getattr open read remove_name search setattr write };
+allow hypsys_ssi_default media_rw_data_file:file { append create getattr open read setattr unlink write };
 allow hypsys_ssi_default mediaserver:process signal;
 allow hypsys_ssi_default meminfo_service:service_manager find;
 allow hypsys_ssi_default miui_coredump_file:dir { create_dir_perms relabelto };
@@ -130,121 +105,116 @@ allow hypsys_ssi_default mnt_user_file:lnk_file read;
 allow hypsys_ssi_default mqs_service:service_manager find;
 allow hypsys_ssi_default mqsas_data_file:dir { create_dir_perms relabelto };
 allow hypsys_ssi_default mqsas_data_file:file create_file_perms;
-allow hypsys_ssi_default mqsasd_pr_socket:sock_file { read write setattr };
+allow hypsys_ssi_default mqsasd_pr_socket:sock_file { read setattr write };
+allow hypsys_ssi_default mtk_blackbox_persist_fw_minidump_prop:property_service set;
 allow hypsys_ssi_default netd_listener_service:service_manager find;
 allow hypsys_ssi_default netpolicy_service:service_manager find;
 allow hypsys_ssi_default netstats_service:service_manager find;
-allow hypsys_ssi_default netutils_wrapper:process transition;
-allow hypsys_ssi_default netutils_wrapper:process { siginh rlimitinh };
-allow hypsys_ssi_default netutils_wrapper_exec:file rx_file_perms;
+allow hypsys_ssi_default netutils_wrapper:process { rlimitinh siginh transition };
+allow hypsys_ssi_default netutils_wrapper_exec:file { execute getattr map open read };
 allow hypsys_ssi_default network_management_service:service_manager find;
 allow hypsys_ssi_default network_stack_service:service_manager find;
 allow hypsys_ssi_default network_watchlist_service:service_manager find;
-allow hypsys_ssi_default offlinedb_data_file:dir { create_dir_perms relabelfrom };
-allow hypsys_ssi_default offlinedb_data_file:dir { rw_dir_perms relabelto };
+allow hypsys_ssi_default offlinedb_data_file:dir { create_dir_perms relabelfrom relabelto };
 allow hypsys_ssi_default offlinedb_data_file:file create_file_perms;
-allow hypsys_ssi_default offlinedb_data_file:file rw_file_perms;
 allow hypsys_ssi_default package_native_service:service_manager find;
 allow hypsys_ssi_default package_service:service_manager find;
 allow hypsys_ssi_default platform_app:dir search;
 allow hypsys_ssi_default platform_app:file write;
 allow hypsys_ssi_default power_service:service_manager find;
+allow hypsys_ssi_default powerctl_prop:property_service set;
 allow hypsys_ssi_default priv_app:file write;
 allow hypsys_ssi_default proc:dir r_dir_perms;
-allow hypsys_ssi_default proc_buddyinfo:file { read open };
-allow hypsys_ssi_default proc_cmdline:file { read open };
-allow hypsys_ssi_default proc_f2fs_status:file r_file_perms;
-allow hypsys_ssi_default proc_meminfo:file read;
-allow hypsys_ssi_default proc_meminfo:file { read open };
-allow hypsys_ssi_default proc_net_tcp_udp:file r_file_perms;
-allow hypsys_ssi_default proc_pagetypeinfo:file { read open };
-allow hypsys_ssi_default proc_pid_max:file { read open };
+allow hypsys_ssi_default proc_buddyinfo:file { open read };
+allow hypsys_ssi_default proc_cmdline:file { open read };
+allow hypsys_ssi_default proc_f2fs_status:file { getattr open read };
+allow hypsys_ssi_default proc_meminfo:file { open read };
+allow hypsys_ssi_default proc_net_tcp_udp:file { getattr open read };
+allow hypsys_ssi_default proc_pagetypeinfo:file { open read };
+allow hypsys_ssi_default proc_pid_max:file { open read };
 allow hypsys_ssi_default proc_pl_lk:file r_file_perms;
 allow hypsys_ssi_default proc_pressure_cpu:file rw_file_perms;
 allow hypsys_ssi_default proc_pressure_io:file rw_file_perms;
 allow hypsys_ssi_default proc_pressure_mem:file rw_file_perms;
-allow hypsys_ssi_default proc_slabinfo:file { read open };
+allow hypsys_ssi_default proc_slabinfo:file { open read };
 allow hypsys_ssi_default proc_stat:file r_file_perms;
-allow hypsys_ssi_default proc_vmallocinfo:file { read open };
-allow hypsys_ssi_default proc_vmstat:file { read open };
-allow hypsys_ssi_default proc_zoneinfo:file rw_file_perms;
+allow hypsys_ssi_default proc_vmallocinfo:file { open read };
+allow hypsys_ssi_default proc_vmstat:file { open read };
+allow hypsys_ssi_default proc_zoneinfo:file { open read write };
 allow hypsys_ssi_default property_data_file:dir r_dir_perms;
 allow hypsys_ssi_default property_data_file:file r_file_perms;
 allow hypsys_ssi_default pstorefs:dir search;
-allow hypsys_ssi_default rootfs:lnk_file getattr;
-allow hypsys_ssi_default rootfs:lnk_file r_file_perms;
+allow hypsys_ssi_default rootfs:lnk_file { getattr open read };
+allow hypsys_ssi_default safemode_prop:property_service set;
 allow hypsys_ssi_default sdcardd:process signal;
-allow hypsys_ssi_default sdcardfs:dir create_dir_perms;
-allow hypsys_ssi_default sdcardfs:file create_file_perms;
-allow hypsys_ssi_default self:capability net_admin;
-allow hypsys_ssi_default self:capability { chown fowner fsetid };
-allow hypsys_ssi_default self:capability { net_bind_service net_admin net_raw };
+allow hypsys_ssi_default sdcardfs:dir { add_name create getattr open read remove_name search setattr write };
+allow hypsys_ssi_default sdcardfs:file { append create getattr open read setattr unlink write };
+allow hypsys_ssi_default self:capability { chown fowner fsetid net_admin net_bind_service net_raw };
 allow hypsys_ssi_default self:capability2 syslog;
-allow hypsys_ssi_default self:netlink_generic_socket { r_file_perms bind create setopt write };
-allow hypsys_ssi_default self:netlink_socket { rw_socket_perms create };
-allow hypsys_ssi_default self:netlink_tcpdiag_socket { create_socket_perms r_file_perms w_file_perms nlmsg_read nlmsg_write };
-allow hypsys_ssi_default self:packet_socket { create_socket_perms r_file_perms w_file_perms };
-allow hypsys_ssi_default self:udp_socket { ioctl create };
+allow hypsys_ssi_default self:netlink_generic_socket { bind create getattr read setopt write };
+allow hypsys_ssi_default self:netlink_socket { bind create read write };
+allow hypsys_ssi_default self:netlink_tcpdiag_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow hypsys_ssi_default self:packet_socket create_socket_perms_no_ioctl;
+allow hypsys_ssi_default self:udp_socket { create ioctl };
+allow hypsys_ssi_default servicemanager:binder { call transfer };
 allow hypsys_ssi_default servicemanager:service_manager list;
 allow hypsys_ssi_default shell_exec:file rx_file_perms;
 allow hypsys_ssi_default storage_file:dir search;
 allow hypsys_ssi_default storage_file:lnk_file read;
+allow hypsys_ssi_default su:binder { call transfer };
 allow hypsys_ssi_default surfaceflinger:process signal;
 allow hypsys_ssi_default surfaceflinger_service:service_manager find;
-allow hypsys_ssi_default sysfs_fs_erofs:file rw_file_perms;
+allow hypsys_ssi_default sysfs_fs_erofs:file { getattr open read write };
 allow hypsys_ssi_default sysfs_fs_f2fs:dir search;
-allow hypsys_ssi_default sysfs_fs_f2fs:file rw_file_perms;
+allow hypsys_ssi_default sysfs_fs_f2fs:file { getattr open read write };
 allow hypsys_ssi_default sysfs_memory:dir search;
-allow hypsys_ssi_default sysfs_memory:file rw_file_perms;
+allow hypsys_ssi_default sysfs_memory:file { getattr open read write };
 allow hypsys_ssi_default system_app:binder transfer;
 allow hypsys_ssi_default system_app:file write;
 allow hypsys_ssi_default system_data_file:file r_file_perms;
 allow hypsys_ssi_default system_data_root_file:dir read;
 allow hypsys_ssi_default system_file:file execute_no_trans;
-allow hypsys_ssi_default system_optimize_data_file:dir { rw_dir_perms setattr unlink };
+allow hypsys_ssi_default system_mtk_debug_mtk_aee_prop:property_service set;
+allow hypsys_ssi_default system_optimize_data_file:dir { getattr open read remove_name search setattr unlink write };
 allow hypsys_ssi_default system_optimize_data_file:file { getattr setattr unlink };
+allow hypsys_ssi_default system_prop:property_service set;
 allow hypsys_ssi_default system_server:file write;
 allow hypsys_ssi_default system_server:process signal;
 allow hypsys_ssi_default system_server:unix_stream_socket connectto;
 allow hypsys_ssi_default tethering_service:service_manager find;
-allow hypsys_ssi_default tombstone_data_file:dir r_dir_perms;
-allow hypsys_ssi_default tombstone_data_file:dir write;
+allow hypsys_ssi_default tombstone_data_file:dir { r_dir_perms write };
 allow hypsys_ssi_default tombstone_data_file:file r_file_perms;
-allow hypsys_ssi_default toolbox_exec:file execute_no_trans;
-allow hypsys_ssi_default toolbox_exec:file rx_file_perms;
+allow hypsys_ssi_default toolbox_exec:file { x_file_perms open read };
 allow hypsys_ssi_default trace_data_file:dir r_dir_perms;
-allow hypsys_ssi_default trace_data_file:dir search;
-allow hypsys_ssi_default trace_data_file:file r_file_perms;
 allow hypsys_ssi_default trace_data_file:file r_file_perms;
 allow hypsys_ssi_default turbosched_service:service_manager find;
 allow hypsys_ssi_default uncrypt:unix_stream_socket connectto;
 allow hypsys_ssi_default uncrypt_socket:sock_file write;
 allow hypsys_ssi_default untrusted_app:dir search;
 allow hypsys_ssi_default untrusted_app:file write;
-allow hypsys_ssi_default update_engine_data_file:dir r_dir_perms;
-allow hypsys_ssi_default update_engine_data_file:file { r_file_perms setattr };
-allow hypsys_ssi_default update_engine_log_data_file:dir r_dir_perms;
-allow hypsys_ssi_default update_engine_log_data_file:dir { rw_dir_perms setattr unlink };
-allow hypsys_ssi_default update_engine_log_data_file:file r_file_perms;
+allow hypsys_ssi_default update_engine_data_file:dir { getattr open read search };
+allow hypsys_ssi_default update_engine_data_file:file { getattr open read setattr };
+allow hypsys_ssi_default update_engine_log_data_file:dir { r_dir_perms remove_name setattr unlink write };
 allow hypsys_ssi_default update_engine_log_data_file:file { r_file_perms setattr unlink };
-allow hypsys_ssi_default userdata_block_device:blk_file r_file_perms;
+allow hypsys_ssi_default userdata_block_device:blk_file { getattr ioctl open read };
 allow hypsys_ssi_default vendor_file:dir read;
 allow hypsys_ssi_default vfat:dir create_dir_perms;
 allow hypsys_ssi_default vfat:file create_file_perms;
 allow hypsys_ssi_default vpn_management_service:service_manager find;
 allow hypsys_ssi_default wae_data_file:dir create_dir_perms;
-allow hypsys_ssi_default wae_data_file:file create_file_perms;
-allow hypsys_ssi_default wae_data_file:lnk_file create_file_perms;
+allow hypsys_ssi_default wae_data_file:{ file lnk_file } create_file_perms;
+allow hypsys_ssi_default wae_prop:property_service set;
 allow hypsys_ssi_default wallpaper_service:service_manager find;
 allow hypsys_ssi_default wifi_service:service_manager find;
+allow hypsys_ssi_default wificond:binder call;
 allow hypsys_ssi_default wifip2p_service:service_manager find;
 allow hypsys_ssi_default wifiscanner_service:service_manager find;
 allow hypsys_ssi_default window_service:service_manager find;
 allow hypsys_ssi_default zygote_exec:file rx_file_perms;
+dontaudit hypsys_ssi_default netutils_wrapper:process noatsecure;
 allowxperm hypsys_ssi_default proc_pressure_cpu:file ioctl 0x7001;
 allowxperm hypsys_ssi_default proc_pressure_io:file ioctl 0x7001;
 allowxperm hypsys_ssi_default proc_pressure_mem:file ioctl 0x7001;
-dontaudit hypsys_ssi_default netutils_wrapper:process noatsecure;
 type_transition hypsys_ssi_default netutils_wrapper_exec:process netutils_wrapper;
 
 # --- hypsys_ssi_default_exec ---

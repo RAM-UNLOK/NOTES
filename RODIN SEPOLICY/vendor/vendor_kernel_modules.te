@@ -1,6 +1,7 @@
 # ============================================================
 # File: vendor_kernel_modules.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Kernel & Devices

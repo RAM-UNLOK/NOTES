@@ -75,24 +75,6 @@ vendor.xiaomi.hardware.display.mihwcextension.IMiHwcExtension/default           
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default                 u:object_r:vendor_hal_displayfeature_xiaomi_service:s0
 
 # [ Radio & Telephony ]
-# --- IMS & VoLTE ---
-android.hardware.radio.modem.IRadioModem/imsSlot1                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot2                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot3                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.modem.IRadioModem/imsSlot4                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot1                              u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot2                              u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot3                              u:object_r:hal_radio_service:s0
-android.hardware.radio.network.IRadioNetwork/imsSlot4                              u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot1                                      u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot2                                      u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot3                                      u:object_r:hal_radio_service:s0
-android.hardware.radio.sim.IRadioSim/imsSlot4                                      u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot1                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot2                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot3                                  u:object_r:hal_radio_service:s0
-android.hardware.radio.voice.IRadioVoice/imsSlot4                                  u:object_r:hal_radio_service:s0
-
 # --- MediaTek IMS & VoLTE ---
 vendor.mediatek.hardware.mtkradioex.ims.IMtkRadioExIms/slot1                       u:object_r:hal_radio_service:s0
 vendor.mediatek.hardware.mtkradioex.ims.IMtkRadioExIms/slot2                       u:object_r:hal_radio_service:s0
@@ -137,17 +119,30 @@ vendor.mediatek.hardware.mtkradioex.voice.IMtkRadioExVoice/slot4                
 vendor.mediatek.hardware.videotelephony.IVideoTelephony/default                    u:object_r:mtk_hal_videotelephony_service:s0
 
 # --- Modem & RIL ---
+android.hardware.radio.modem.IRadioModem/imsSlot1                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot2                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot3                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.modem.IRadioModem/imsSlot4                                  u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se1                                       u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se2                                       u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se3                                       u:object_r:hal_radio_service:s0
 android.hardware.radio.modem.IRadioModem/se4                                       u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot1                              u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot2                              u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot3                              u:object_r:hal_radio_service:s0
+android.hardware.radio.network.IRadioNetwork/imsSlot4                              u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot1                                      u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot2                                      u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot3                                      u:object_r:hal_radio_service:s0
+android.hardware.radio.sim.IRadioSim/imsSlot4                                      u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se1                                           u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se2                                           u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se3                                           u:object_r:hal_radio_service:s0
 android.hardware.radio.sim.IRadioSim/se4                                           u:object_r:hal_radio_service:s0
-
-# --- Xiaomi IMS & VoLTE ---
-vendor.xiaomi.hardware.vsimapp.IVSIMService/default                                u:object_r:hal_vsimapp_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot1                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot2                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot3                                  u:object_r:hal_radio_service:s0
+android.hardware.radio.voice.IRadioVoice/imsSlot4                                  u:object_r:hal_radio_service:s0
 
 # [ Network (Wi-Fi, BT, NFC) ]
 # --- MediaTek Wi-Fi Stack ---
@@ -208,7 +203,7 @@ vendor.mediatek.hardware.lbs.ILbs/mtk_mtklogger2mnld                            
 vendor.xiaomi.sensor.citsensorservice.ICitSensorService/default                    u:object_r:vendor_hal_citsensorservice_xiaomi_service:s0
 
 # [ Security & TEE ]
-# --- Samsung Crypto Services ---
+# --- Crypto Services ---
 android.hardware.security.keymint.IKeyMintDevice/strongbox                         u:object_r:hal_keymint_service:s0
 android.hardware.security.keymint.IRemotelyProvisionedComponent/strongbox          u:object_r:hal_keymint_service:s0
 
@@ -280,13 +275,11 @@ vendor.mediatek.hardware.omadm.IOmadm/omadm                                     
 vendor.xiaomi.hardware.mtkblackbox.IMtkblackboxImpl/default                        u:object_r:hal_misys_vendor_service:s0
 
 # --- Misc ---
+android.hardware.security.sharedsecret.ISharedSecret/strongbox                     u:object_r:hal_sharedsecret_service:s0
 vendor.tsa.hdcp.IHDCPInterface/default                                             u:object_r:tsa_hal_hdcp_service:s0
 
 # --- Qualcomm Misc ---
 vendor.qti.sla.service.ISlaAIDLService/default                                     u:object_r:hal_slaaidlservice_service:s0
-
-# --- Samsung Misc ---
-android.hardware.security.sharedsecret.ISharedSecret/strongbox                     u:object_r:hal_sharedsecret_service:s0
 
 # --- Xiaomi Misc ---
 vendor.xiaomi.aidl.minet.IMiNetAIDLService/default                                 u:object_r:hal_minetaidlservice_service:s0
@@ -315,4 +308,5 @@ vendor.xiaomi.hardware.mrm.IMrmRemoteAuth/default                               
 vendor.xiaomi.hardware.otrpagent2.IOTrPAgent/default                               u:object_r:hal_otrpagent_service:s0
 vendor.xiaomi.hardware.swap.ISwap/default                                          u:object_r:hal_swap_service:s0
 vendor.xiaomi.hardware.videoservice.IVideoService/default                          u:object_r:hal_videoservice_service:s0
+vendor.xiaomi.hardware.vsimapp.IVSIMService/default                                u:object_r:hal_vsimapp_service:s0
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: gps_control.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Sensors & Location
 # Subcategory: Location Stack

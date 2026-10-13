@@ -1,6 +1,7 @@
 # ============================================================
 # File: bluetooth.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Bluetooth Stack
@@ -10,7 +11,6 @@
 
 # --- bluetooth ---
 typeattribute bluetooth domain;
-typeattribute bluetooth halclientdomain;
 
 binder_call(bluetooth, mtk_hal_bluetooth)
 binder_use(bluetooth)

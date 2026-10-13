@@ -1,6 +1,7 @@
 # ============================================================
 # File: untrusted_app.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps
@@ -9,50 +10,49 @@
 # ============================================================
 
 # --- untrusted_app ---
+typeattribute untrusted_app appdomain;
 typeattribute untrusted_app coredomain;
 typeattribute untrusted_app domain;
 
-app_domain(untrusted_app)
 bluetooth_domain(untrusted_app)
 net_domain(untrusted_app)
 allow untrusted_app atomic_data_file:dir search;
-allow untrusted_app atomic_data_file:file r_file_perms;
-allow untrusted_app init_tmpfs:file r_file_perms;
-allow untrusted_app memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app atomic_data_file:file { getattr open read };
+allow untrusted_app init_tmpfs:file { getattr map open read };
+allow untrusted_app memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app migt_dev:chr_file rw_file_perms;
 allow untrusted_app migt_file:dir r_dir_perms;
 allow untrusted_app migt_file:file r_file_perms;
 allow untrusted_app miui_face_service:service_manager find;
 allow untrusted_app miui_whetstone_service:service_manager find;
 allow untrusted_app miuibooster:unix_stream_socket connectto;
-allow untrusted_app miuilog_data_file:dir r_dir_perms;
-allow untrusted_app miuilog_data_file:file rw_file_perms;
+allow untrusted_app miuilog_data_file:dir { getattr read search };
+allow untrusted_app miuilog_data_file:file { getattr open read write };
 allow untrusted_app mqs_service:service_manager find;
 allow untrusted_app payjoy_access_service:service_manager find;
-allow untrusted_app pipelinecache_data_file:dir r_dir_perms;
-allow untrusted_app pipelinecache_data_file:file r_file_perms;
+allow untrusted_app pipelinecache_data_file:dir { getattr map open read search };
+allow untrusted_app pipelinecache_data_file:file { getattr map open read };
 allow untrusted_app proc_union_power:dir search;
-allow untrusted_app proc_union_power:file r_file_perms;
+allow untrusted_app proc_union_power:file { getattr ioctl open read };
 allow untrusted_app sysfs_migt:dir search;
-allow untrusted_app sysfs_migt:file { read open };
+allow untrusted_app sysfs_migt:file { open read };
 allow untrusted_app system_app_service:service_manager find;
-allow untrusted_app tmpfs:dir r_file_perms;
-allow untrusted_app tmpfs:file r_file_perms;
+allow untrusted_app tmpfs:{ dir file } { getattr map open read };
 allowxperm untrusted_app proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_25 ---
+typeattribute untrusted_app_25 appdomain;
 typeattribute untrusted_app_25 coredomain;
 typeattribute untrusted_app_25 domain;
 
-app_domain(untrusted_app_25)
 bluetooth_domain(untrusted_app_25)
 net_domain(untrusted_app_25)
 allow untrusted_app_25 atomic_data_file:dir search;
-allow untrusted_app_25 atomic_data_file:file r_file_perms;
-allow untrusted_app_25 init_tmpfs:file r_file_perms;
-allow untrusted_app_25 memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app_25 memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app_25 atomic_data_file:file { getattr open read };
+allow untrusted_app_25 init_tmpfs:file { getattr map open read };
+allow untrusted_app_25 memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app_25 memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app_25 migt_dev:chr_file rw_file_perms;
 allow untrusted_app_25 migt_file:dir r_dir_perms;
 allow untrusted_app_25 migt_file:file r_file_perms;
@@ -61,112 +61,108 @@ allow untrusted_app_25 miui_whetstone_service:service_manager find;
 allow untrusted_app_25 miuibooster:unix_stream_socket connectto;
 allow untrusted_app_25 mqs_service:service_manager find;
 allow untrusted_app_25 proc_union_power:dir search;
-allow untrusted_app_25 proc_union_power:file r_file_perms;
+allow untrusted_app_25 proc_union_power:file { getattr ioctl open read };
 allow untrusted_app_25 sysfs_migt:dir search;
-allow untrusted_app_25 sysfs_migt:file { read open };
+allow untrusted_app_25 sysfs_migt:file { open read };
 allow untrusted_app_25 system_app_service:service_manager find;
-allow untrusted_app_25 tmpfs:dir r_file_perms;
-allow untrusted_app_25 tmpfs:file r_file_perms;
+allow untrusted_app_25 tmpfs:{ dir file } { getattr map open read };
 allowxperm untrusted_app_25 proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_27 ---
+typeattribute untrusted_app_27 appdomain;
 typeattribute untrusted_app_27 coredomain;
 typeattribute untrusted_app_27 domain;
 
-app_domain(untrusted_app_27)
 bluetooth_domain(untrusted_app_27)
 get_prop(untrusted_app_27, apexd_prop)
 net_domain(untrusted_app_27)
 allow untrusted_app_27 atomic_data_file:dir search;
-allow untrusted_app_27 atomic_data_file:file r_file_perms;
-allow untrusted_app_27 init_tmpfs:file r_file_perms;
-allow untrusted_app_27 memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app_27 memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app_27 atomic_data_file:file { getattr open read };
+allow untrusted_app_27 init_tmpfs:file { getattr map open read };
+allow untrusted_app_27 memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app_27 memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app_27 migt_dev:chr_file rw_file_perms;
 allow untrusted_app_27 migt_file:dir r_dir_perms;
 allow untrusted_app_27 migt_file:file r_file_perms;
 allow untrusted_app_27 miuibooster:unix_stream_socket connectto;
 allow untrusted_app_27 mqs_service:service_manager find;
 allow untrusted_app_27 proc_union_power:dir search;
-allow untrusted_app_27 proc_union_power:file r_file_perms;
+allow untrusted_app_27 proc_union_power:file { getattr ioctl open read };
 allow untrusted_app_27 sys_game_plaid_file:dir search;
-allow untrusted_app_27 sys_game_plaid_file:file r_file_perms;
+allow untrusted_app_27 sys_game_plaid_file:file { getattr open read };
 allow untrusted_app_27 sysfs_migt:dir search;
-allow untrusted_app_27 sysfs_migt:file { read open };
+allow untrusted_app_27 sysfs_migt:file { open read };
 allow untrusted_app_27 system_app_service:service_manager find;
-allow untrusted_app_27 tmpfs:dir r_file_perms;
-allow untrusted_app_27 tmpfs:file r_file_perms;
+allow untrusted_app_27 tmpfs:{ dir file } { getattr map open read };
 allowxperm untrusted_app_27 proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_29 ---
+typeattribute untrusted_app_29 appdomain;
 typeattribute untrusted_app_29 coredomain;
 typeattribute untrusted_app_29 domain;
 
-app_domain(untrusted_app_29)
 bluetooth_domain(untrusted_app_29)
 net_domain(untrusted_app_29)
 allow untrusted_app_29 atomic_data_file:dir search;
-allow untrusted_app_29 atomic_data_file:file r_file_perms;
-allow untrusted_app_29 memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app_29 memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app_29 atomic_data_file:file { getattr open read };
+allow untrusted_app_29 memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app_29 memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app_29 migt_dev:chr_file rw_file_perms;
 allow untrusted_app_29 migt_file:dir r_dir_perms;
 allow untrusted_app_29 migt_file:file r_file_perms;
 allow untrusted_app_29 proc_union_power:dir search;
-allow untrusted_app_29 proc_union_power:file r_file_perms;
+allow untrusted_app_29 proc_union_power:file { getattr ioctl open read };
 allow untrusted_app_29 sys_game_plaid_file:dir search;
-allow untrusted_app_29 sys_game_plaid_file:file r_file_perms;
+allow untrusted_app_29 sys_game_plaid_file:file { getattr open read };
 allow untrusted_app_29 sysfs_migt:dir search;
-allow untrusted_app_29 sysfs_migt:file { read open };
+allow untrusted_app_29 sysfs_migt:file { open read };
 allow untrusted_app_29 system_app_service:service_manager find;
 allowxperm untrusted_app_29 proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_30 ---
+typeattribute untrusted_app_30 appdomain;
 typeattribute untrusted_app_30 coredomain;
 typeattribute untrusted_app_30 domain;
 
-app_domain(untrusted_app_30)
 bluetooth_domain(untrusted_app_30)
 get_prop(untrusted_app_30, vendor_fp_prop)
 net_domain(untrusted_app_30)
-allow untrusted_app_30 init_tmpfs:file r_file_perms;
-allow untrusted_app_30 memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app_30 memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app_30 init_tmpfs:file { getattr map open read };
+allow untrusted_app_30 memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app_30 memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app_30 migt_dev:chr_file rw_file_perms;
 allow untrusted_app_30 migt_file:dir r_dir_perms;
 allow untrusted_app_30 migt_file:file r_file_perms;
 allow untrusted_app_30 payjoy_access_service:service_manager find;
 allow untrusted_app_30 proc_union_power:dir search;
-allow untrusted_app_30 proc_union_power:file r_file_perms;
+allow untrusted_app_30 proc_union_power:file { getattr ioctl open read };
 allow untrusted_app_30 sysfs_migt:dir search;
-allow untrusted_app_30 sysfs_migt:file { read open };
+allow untrusted_app_30 sysfs_migt:file { open read };
 allow untrusted_app_30 system_app_service:service_manager find;
-allow untrusted_app_30 tmpfs:dir r_file_perms;
-allow untrusted_app_30 tmpfs:file r_file_perms;
+allow untrusted_app_30 tmpfs:{ dir file } { getattr map open read };
 allowxperm untrusted_app_30 proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_32 ---
+typeattribute untrusted_app_32 appdomain;
 typeattribute untrusted_app_32 coredomain;
 typeattribute untrusted_app_32 domain;
 
-app_domain(untrusted_app_32)
 bluetooth_domain(untrusted_app_32)
 net_domain(untrusted_app_32)
-allow untrusted_app_32 init_tmpfs:file r_file_perms;
-allow untrusted_app_32 memgreezer_data_file:dir { r_dir_perms relabelto setattr };
-allow untrusted_app_32 memgreezer_data_file:file { r_file_perms relabelto setattr };
+allow untrusted_app_32 init_tmpfs:file { getattr map open read };
+allow untrusted_app_32 memgreezer_data_file:dir { getattr open read relabelto search setattr watch };
+allow untrusted_app_32 memgreezer_data_file:file { getattr open read relabelto setattr watch };
 allow untrusted_app_32 mspc_service:service_manager find;
 allow untrusted_app_32 proc_union_power:dir search;
-allow untrusted_app_32 proc_union_power:file r_file_perms;
+allow untrusted_app_32 proc_union_power:file { getattr ioctl open read };
 allow untrusted_app_32 system_app_service:service_manager find;
-allow untrusted_app_32 tmpfs:dir r_file_perms;
-allow untrusted_app_32 tmpfs:file r_file_perms;
+allow untrusted_app_32 tmpfs:{ dir file } { getattr map open read };
 allowxperm untrusted_app_32 proc_union_power:file ioctl { 0x6701 0x6705 };
 
 # --- untrusted_app_all ---
 get_prop(untrusted_app_all, netflix_bsp_rev_prop)
 allow untrusted_app_all atomic_data_file:dir search;
-allow untrusted_app_all atomic_data_file:file r_file_perms;
+allow untrusted_app_all atomic_data_file:file { getattr open read };
 allow untrusted_app_all hyper_package_service:service_manager find;
 allow untrusted_app_all hyperos_cust_feature_resolve_service:service_manager find;
 allow untrusted_app_all mcd_data_file:dir r_dir_perms;
@@ -181,7 +177,7 @@ allow untrusted_app_all miui_pai_file:file r_file_perms;
 allow untrusted_app_all mtk_radio_service:service_manager find;
 allow untrusted_app_all smart_app_assistant_service:service_manager find;
 allow untrusted_app_all sysfs_migt:dir search;
-allow untrusted_app_all sysfs_migt:file { read open };
+allow untrusted_app_all sysfs_migt:file { open read };
 allow untrusted_app_all tee_service:service_manager find;
 
 # --- untrusted_app_all_devpts ---

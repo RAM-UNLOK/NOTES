@@ -1,6 +1,7 @@
 # ============================================================
 # File: ppp.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Connectivity & Internet
 # Subcategory: Generic Network Services

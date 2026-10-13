@@ -1,7 +1,8 @@
 # ============================================================
 # File: securityfs.te
 # Tier: vendor
-# Vendor: Samsung
+# Partitions: odm, vendor
+# Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
 # Role: NATIVE / MISC

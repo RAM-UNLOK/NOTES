@@ -1,6 +1,7 @@
 # ============================================================
 # File: audiohal_data_file.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Audio HAL

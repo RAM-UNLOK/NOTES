@@ -1,6 +1,7 @@
 # ============================================================
 # File: priv_app.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,11 +10,10 @@
 # ============================================================
 
 # --- priv_app ---
+typeattribute priv_app appdomain;
 typeattribute priv_app coredomain;
 typeattribute priv_app domain;
-typeattribute priv_app halclientdomain;
 
-app_domain(priv_app)
 bluetooth_domain(priv_app)
 get_prop(priv_app, drm_service_config_prop)
 get_prop(priv_app, system_mtk_cta_set_prop)
@@ -23,34 +23,33 @@ hal_client_domain(priv_app, hal_allocator)
 hal_client_domain(priv_app, hal_mtk_pq)
 hal_client_domain(priv_app, hal_telephony)
 net_domain(priv_app)
-allow priv_app apusys_device:chr_file rw_file_perms;
+allow priv_app apusys_device:chr_file { ioctl open read write };
 allow priv_app data_log_stability_file:dir create_dir_perms;
 allow priv_app data_log_stability_file:file create_file_perms;
-allow priv_app init_tmpfs:file r_file_perms;
+allow priv_app init_tmpfs:file { getattr map open read };
 allow priv_app miguardca_access_service:service_manager find;
-allow priv_app miui_coredump_file:dir { write add_name search };
-allow priv_app miui_coredump_file:file create_file_perms;
+allow priv_app miui_coredump_file:dir { add_name search write };
+allow priv_app miui_coredump_file:file { create open read write };
 allow priv_app miui_hprof_file:dir create_dir_perms;
 allow priv_app miui_hprof_file:file create_file_perms;
 allow priv_app miui_native_file:dir create_dir_perms;
 allow priv_app miui_native_file:file create_file_perms;
 allow priv_app miui_whetstone_service:service_manager find;
-allow priv_app miuilog_data_file:dir r_dir_perms;
-allow priv_app miuilog_data_file:file rw_file_perms;
+allow priv_app miuilog_data_file:dir { getattr read search };
+allow priv_app miuilog_data_file:file { getattr open read write };
 allow priv_app mnt_media_rw_file:dir search;
 allow priv_app mtk_radio_service:service_manager find;
 allow priv_app payjoy_access_service:service_manager find;
-allow priv_app pipelinecache_data_file:dir r_dir_perms;
-allow priv_app pipelinecache_data_file:file r_file_perms;
+allow priv_app pipelinecache_data_file:dir { getattr map open read search };
+allow priv_app pipelinecache_data_file:file { getattr map open read };
 allow priv_app proc_union_power:dir search;
-allow priv_app proc_union_power:file r_file_perms;
+allow priv_app proc_union_power:file { getattr ioctl open read };
 allow priv_app radio_data_file:file map;
 allow priv_app system_app_data_file:file { read write };
 allow priv_app system_app_service:service_manager find;
 allow priv_app temp_apk_data_file:dir create_dir_perms;
 allow priv_app temp_apk_data_file:file create_file_perms;
-allow priv_app tmpfs:dir r_file_perms;
-allow priv_app tmpfs:file r_file_perms;
+allow priv_app tmpfs:{ dir file } { getattr map open read };
 allow priv_app vfat:dir create_dir_perms;
 allow priv_app vfat:file create_file_perms;
 allow priv_app virtual_keyboard_service:service_manager find;

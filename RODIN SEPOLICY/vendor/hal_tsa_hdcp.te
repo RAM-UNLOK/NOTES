@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_tsa_hdcp.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -10,11 +11,14 @@
 
 # --- hal_tsa_hdcp_client ---
 binder_call(hal_tsa_hdcp_client, hal_tsa_hdcp_server)
-binder_use(hal_tsa_hdcp_client)
+allow hal_tsa_hdcp_client servicemanager:binder { call transfer };
+allow hal_tsa_hdcp_client servicemanager:fd use;
 allow hal_tsa_hdcp_client tsa_hal_hdcp_service:service_manager find;
 
 # --- hal_tsa_hdcp_server ---
-add_service(hal_tsa_hdcp_server, tsa_hal_hdcp_service)
-binder_call(hal_tsa_hdcp_server, hal_tsa_hdcp_client)
-binder_use(hal_tsa_hdcp_server)
+allow hal_tsa_hdcp_server hal_tsa_hdcp_client:binder call;
+allow hal_tsa_hdcp_server hal_tsa_hdcp_client:fd use;
+allow hal_tsa_hdcp_server servicemanager:binder { call transfer };
+allow hal_tsa_hdcp_server servicemanager:fd use;
+allow hal_tsa_hdcp_server tsa_hal_hdcp_service:service_manager { add find };
 

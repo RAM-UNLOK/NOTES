@@ -1,6 +1,7 @@
 # ============================================================
 # File: artd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,40 +14,38 @@ typeattribute artd coredomain;
 typeattribute artd domain;
 typeattribute artd mlstrustedsubject;
 
-add_service(artd, iorapd_service)
-allow artd apk_data_file:dir r_dir_perms;
-allow artd apk_data_file:file r_file_perms;
-allow artd app_data_file:dir r_dir_perms;
-allow artd app_data_file:file r_file_perms;
-allow artd dalvikcache_data_file:dir r_dir_perms;
-allow artd dalvikcache_data_file:file r_file_perms;
-allow artd fuse:dir r_dir_perms;
-allow artd fuse:file r_file_perms;
-allow artd init_tmpfs:file r_file_perms;
+allow artd apk_data_file:dir { open read search };
+allow artd apk_data_file:file { getattr open read };
+allow artd app_data_file:dir { open read search };
+allow artd app_data_file:file { getattr open read };
+allow artd dalvikcache_data_file:dir { open read search };
+allow artd dalvikcache_data_file:file { getattr open read };
+allow artd fuse:dir { open read search };
+allow artd fuse:file { getattr open read };
+allow artd init_tmpfs:file { getattr map open read };
 allow artd iorapd_data_file:dir create_dir_perms;
 allow artd iorapd_data_file:file create_file_perms;
-allow artd lb_device:chr_file rw_file_perms;
-allow artd media_rw_data_file:dir r_dir_perms;
-allow artd media_rw_data_file:file r_file_perms;
-allow artd resourcecache_data_file:dir r_dir_perms;
-allow artd resourcecache_data_file:file r_file_perms;
-allow artd self:cap_userns sys_nice;
-allow artd self:capability sys_nice;
+allow artd iorapd_service:service_manager { add find };
+allow artd lb_device:chr_file { ioctl open read write };
+allow artd media_rw_data_file:dir { open read search };
+allow artd media_rw_data_file:file { getattr open read };
+allow artd resourcecache_data_file:dir { open read search };
+allow artd resourcecache_data_file:file { getattr open read };
 allow artd self:process setsched;
+allow artd self:{ cap_userns capability } sys_nice;
 allow artd storage_file:dir search;
 allow artd storage_file:lnk_file read;
-allow artd system_data_file:dir r_dir_perms;
-allow artd system_data_file:file r_file_perms;
-allow artd system_file:dir r_dir_perms;
-allow artd system_file:file r_file_perms;
-allow artd tmpfs:dir r_file_perms;
-allow artd tmpfs:file r_file_perms;
-allow artd user_profile_data_file:dir r_dir_perms;
-allow artd user_profile_data_file:file r_file_perms;
-allow artd user_profile_root_file:dir r_dir_perms;
-allow artd user_profile_root_file:file r_file_perms;
-allow artd zygote_exec:dir r_dir_perms;
-allow artd zygote_exec:file r_file_perms;
+allow artd system_data_file:dir { open read search };
+allow artd system_data_file:file { getattr open read };
+allow artd system_file:dir { open read search };
+allow artd system_file:file { getattr open read };
+allow artd tmpfs:{ dir file } { getattr map open read };
+allow artd user_profile_data_file:dir { open read search };
+allow artd user_profile_data_file:file { getattr open read };
+allow artd user_profile_root_file:dir { open read search };
+allow artd user_profile_root_file:file { getattr open read };
+allow artd zygote_exec:dir { open read search };
+allow artd zygote_exec:file { getattr open read };
 
 # --- artd_exec ---
 typeattribute artd_exec exec_type;

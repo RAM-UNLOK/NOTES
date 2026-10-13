@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_mali_platform.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Display & Graphics
 # Subcategory: GPU Stack
@@ -13,6 +14,7 @@ binder_call(hal_mtk_mali_platform_default_client, hal_mtk_mali_platform_default_
 allow hal_mtk_mali_platform_default_client mtk_hal_mali_platform_default_service:service_manager find;
 
 # --- hal_mtk_mali_platform_default_server ---
-add_service(hal_mtk_mali_platform_default_server, mtk_hal_mali_platform_default_service)
-binder_call(hal_mtk_mali_platform_default_server, hal_mtk_mali_platform_default_client)
+allow hal_mtk_mali_platform_default_server hal_mtk_mali_platform_default_client:binder call;
+allow hal_mtk_mali_platform_default_server hal_mtk_mali_platform_default_client:fd use;
+allow hal_mtk_mali_platform_default_server mtk_hal_mali_platform_default_service:service_manager { add find };
 

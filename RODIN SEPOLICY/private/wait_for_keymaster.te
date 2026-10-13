@@ -1,6 +1,7 @@
 # ============================================================
 # File: wait_for_keymaster.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Security & TEE
 # Subcategory: Crypto Services

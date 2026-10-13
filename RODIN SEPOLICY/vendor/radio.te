@@ -1,6 +1,7 @@
 # ============================================================
 # File: radio.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Radio & Telephony
 # Subcategory: Modem & RIL
@@ -9,12 +10,9 @@
 # ============================================================
 
 typeattribute radio domain;
-typeattribute radio halclientdomain;
 typeattribute radio mlstrustedsubject;
 
 binder_call(radio, hal_telephony)
-binder_call(radio, mtk_hal_audio)
-binder_call(radio, vtservice)
 get_prop(radio, vendor_mtk_dc_call_prop)
 get_prop(radio, vendor_mtk_dmc_prop)
 get_prop(radio, vendor_mtk_ims_prop)
@@ -41,6 +39,8 @@ allow radio block_device:dir search;
 allow radio ccci_mdinit:dir r_dir_perms;
 allow radio media_rw_data_file:dir create_dir_perms;
 allow radio media_rw_data_file:file create_file_perms;
+allow radio mtk_hal_audio:binder call;
+allow radio mtk_hal_audio:fd use;
 allow radio proc_modem_enhance:file rw_file_perms;
 allow radio rild_mal_at_md2_socket:sock_file write;
 allow radio rild_mal_at_socket:sock_file write;
@@ -51,4 +51,5 @@ allow radio sysfs_keypad_file:file w_file_perms;
 allow radio thinmd_data_vendor_file:dir r_dir_perms;
 allow radio thinmd_data_vendor_file:file r_file_perms;
 allow radio ttyGS_device:chr_file rw_file_perms;
+allow radio vtservice:binder { call transfer };
 

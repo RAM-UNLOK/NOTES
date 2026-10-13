@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_atci.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Debug, Logging & Diagnostics
 # Subcategory: OEM Diagnostics
@@ -13,6 +14,7 @@ binder_call(hal_mtk_atci_client, hal_mtk_atci_server)
 allow hal_mtk_atci_client mtk_hal_atci_service:service_manager find;
 
 # --- hal_mtk_atci_server ---
-add_service(hal_mtk_atci_server, mtk_hal_atci_service)
-binder_call(hal_mtk_atci_server, hal_mtk_atci_client)
+allow hal_mtk_atci_server hal_mtk_atci_client:binder call;
+allow hal_mtk_atci_server hal_mtk_atci_client:fd use;
+allow hal_mtk_atci_server mtk_hal_atci_service:service_manager { add find };
 

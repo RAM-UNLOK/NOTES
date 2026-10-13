@@ -1,6 +1,7 @@
 # ============================================================
 # File: simpleperf.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management

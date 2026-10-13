@@ -1,6 +1,7 @@
 # ============================================================
 # File: fs_bpf.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -10,6 +11,9 @@
 
 # --- fs_bpf ---
 typeattribute fs_bpf fs_type;
+
+# --- fs_bpf_miui ---
+typeattribute fs_bpf_miui base_typeattr_242;
 
 # --- fs_bpf_tethering ---
 typeattribute fs_bpf_tethering fs_type;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: su.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,21 +12,21 @@
 # --- su ---
 typeattribute su domain;
 
-dontaudit su apmsrv_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su backup_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su cameramind_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su em_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su emsensor_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su facemiui_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su joyose_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su mqsas_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su mslg_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su rsu_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su teed_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su teeregistryd_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su theme_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su updater_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
-dontaudit su wae_app_userfaultfd:anon_inode { create_file_perms x_file_perms audit_access execmod link mounton quotaon relabelfrom relabelto };
+dontaudit su apmsrv_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su backup_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su cameramind_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su em_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su emsensor_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su facemiui_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su joyose_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su mqsas_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su mslg_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su rsu_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su teed_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su teeregistryd_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su theme_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su updater_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
+dontaudit su wae_app_userfaultfd:anon_inode { append audit_access create execmod execute getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink watch watch_mount watch_reads watch_sb watch_with_perm write };
 
 # --- su_exec ---
 typeattribute su_exec exec_type;

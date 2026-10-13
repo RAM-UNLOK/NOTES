@@ -1,6 +1,7 @@
 # ============================================================
 # File: mqsas.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,31 +10,23 @@
 # ============================================================
 
 # --- mqsas ---
-type mqsas;
+type mqsas, appdomain, base_typeattr_1062, base_typeattr_1064, base_typeattr_1065, base_typeattr_1066, base_typeattr_1068, base_typeattr_1069, base_typeattr_1070, base_typeattr_1072, base_typeattr_1073, base_typeattr_1075, base_typeattr_1077, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1084, base_typeattr_1087, base_typeattr_1088, base_typeattr_1090, base_typeattr_1091, base_typeattr_1092, base_typeattr_1094, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1099, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1104, base_typeattr_1105, base_typeattr_1106, base_typeattr_1108, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1115, base_typeattr_1116, base_typeattr_1117, base_typeattr_1119, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1124, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1129, base_typeattr_1130, base_typeattr_1131, base_typeattr_1133, base_typeattr_1134, binderservicedomain, coredomain, domain, mlstrustedsubject;
 
-typeattribute mqsas binderservicedomain;
-typeattribute mqsas coredomain;
-typeattribute mqsas domain;
-typeattribute mqsas mlstrustedsubject;
-
-add_service(mqsas, mqs_service)
-app_domain(mqsas)
 binder_call(mqsas, appdomain)
 binder_call(mqsas, binderservicedomain)
 binder_call(mqsas, system_server)
-binder_use(mqsas)
 net_domain(mqsas)
 allow mqsas anr_data_file:dir rw_dir_perms;
 allow mqsas anr_data_file:file create_file_perms;
-allow mqsas anr_data_file:file getattr;
-allow mqsas appdomain_tmpfs:file { rx_file_perms write };
+allow mqsas appdomain_tmpfs:file { execute getattr ioctl map read write };
+allow mqsas mqs_service:service_manager { add find };
 allow mqsas mqsas_data_file:dir rw_dir_perms;
 allow mqsas mqsas_data_file:file create_file_perms;
-allow mqsas mqsas_data_file:file getattr;
-allow mqsas mqsas_userfaultfd:anon_inode { ioctl read create };
+allow mqsas mqsas_userfaultfd:anon_inode { create ioctl read };
+allow mqsas servicemanager:binder { call transfer };
 allow mqsas system_app_data_file:dir search;
-allowxperm mqsas appdomain_tmpfs:file ioctl { (range 0x7701 0x770b) };
-type_transition mqsas mqsas:anon_inode "[userfaultfd]" mqsas_userfaultfd;
+allowxperm mqsas appdomain_tmpfs:file ioctl 0x7701-0x770b;
+type_transition mqsas mqsas:anon_inode mqsas_userfaultfd "[userfaultfd]";
 type_transition mqsas tmpfs:file appdomain_tmpfs;
 
 # --- mqsas_userfaultfd ---

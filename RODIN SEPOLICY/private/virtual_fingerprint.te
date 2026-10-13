@@ -1,6 +1,7 @@
 # ============================================================
 # File: virtual_fingerprint.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Fingerprint & Biometrics
 # Subcategory: Biometric Modalities

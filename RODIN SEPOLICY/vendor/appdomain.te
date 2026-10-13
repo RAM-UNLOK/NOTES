@@ -1,6 +1,7 @@
 # ============================================================
 # File: appdomain.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -21,11 +22,9 @@ allow appdomain gpu_device:dir search;
 allow appdomain proc_ged:file rw_file_perms;
 allow appdomain proc_perfmgr:dir search;
 allow appdomain proc_perfmgr:file r_file_perms;
-allow appdomain surfaceflinger:binder transfer;
 allow appdomain surfaceflinger:fifo_file rw_file_perms;
-allow appdomain vendor_displayfeature:binder transfer;
-allowxperm appdomain proc_ged:file ioctl { (range 0x6700 0x6711) (range 0x6764 0x676b) 0x67c8 };
-allowxperm appdomain proc_perfmgr:file ioctl { 0x6701 0x6703 (range 0x670e 0x6710) (range 0x6716 0x6718) (range 0x671b 0x671c) 0x671e };
+allowxperm appdomain proc_ged:file ioctl { 0x6700-0x6711 0x6764-0x676b 0x67c8 };
+allowxperm appdomain proc_perfmgr:file ioctl { 0x6701 0x6703 0x670e-0x6710 0x6716-0x6718 0x671b-0x671c 0x671e };
 
 # --- appdomain_tmpfs ---
 typeattribute appdomain_tmpfs file_type;

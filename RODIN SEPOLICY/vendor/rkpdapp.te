@@ -1,6 +1,7 @@
 # ============================================================
 # File: rkpdapp.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Update & Provisioning
 # Subcategory: Provisioning & Enrollment

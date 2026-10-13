@@ -1,6 +1,7 @@
 # ============================================================
 # File: hwservice.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -196,10 +197,10 @@ typeattribute hal_sensors_hwservice hwservice_manager_type;
 typeattribute hal_sensors_hwservice protected_hwservice;
 
 # --- hal_tee_hwservice ---
-type hal_tee_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_tee_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- hal_teeregistry_hwservice ---
-type hal_teeregistry_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_teeregistry_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- hal_telephony_hwservice ---
 typeattribute hal_telephony_hwservice hwservice_manager_type;
@@ -280,109 +281,82 @@ typeattribute hidl_token_hwservice hwservice_manager_type;
 typeattribute hwservicemanager domain;
 typeattribute hwservicemanager mlstrustedsubject;
 
-binder_call(hwservicemanager, aee_core_forwarder)
-binder_call(hwservicemanager, agnss_proxy)
-binder_call(hwservicemanager, base_typeattr_239)
-binder_call(hwservicemanager, batterysecret)
-binder_call(hwservicemanager, ccci_mdinit)
-binder_call(hwservicemanager, ccci_rpcd)
-binder_call(hwservicemanager, charge_logger)
-binder_call(hwservicemanager, factory)
-binder_call(hwservicemanager, hal_contexthub_default)
-binder_call(hwservicemanager, hal_miface_default)
-binder_call(hwservicemanager, hal_misys_vendor_default)
-binder_call(hwservicemanager, hal_sensors_default)
-binder_call(hwservicemanager, hal_vehicle_default)
-binder_call(hwservicemanager, hal_wifi_supplicant_default)
-binder_call(hwservicemanager, md_rfs)
-binder_call(hwservicemanager, mtk_agpsd)
-binder_call(hwservicemanager, mtk_hal_audio)
-binder_call(hwservicemanager, mtk_hal_bluetooth)
-binder_call(hwservicemanager, mtk_hal_dfps)
-binder_call(hwservicemanager, mtk_remotefsd)
-binder_call(hwservicemanager, mtkrild)
-binder_call(hwservicemanager, rild)
-binder_call(hwservicemanager, tee)
-binder_call(hwservicemanager, vendor_displayfeature)
-binder_call(hwservicemanager, viarild)
-binder_call(hwservicemanager, vtservice_hidl)
-
 # --- hwservicemanager_exec ---
 typeattribute hwservicemanager_exec exec_type;
 typeattribute hwservicemanager_exec file_type;
 typeattribute hwservicemanager_exec system_file_type;
 
 # --- mtk_hal_aee_hwservice ---
-type mtk_hal_aee_hwservice, hwservice_manager_type;
+type mtk_hal_aee_hwservice, base_typeattr_242, hwservice_manager_type;
 
 # --- mtk_hal_bgs_hwservice ---
-type mtk_hal_bgs_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_bgs_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_bluetooth_audio_hwservice ---
-type mtk_hal_bluetooth_audio_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_bluetooth_audio_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_bluetooth_hwservice ---
-type mtk_hal_bluetooth_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_bluetooth_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_composer_ext_hwservice ---
-type mtk_hal_composer_ext_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_composer_ext_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_dfps_hwservice ---
-type mtk_hal_dfps_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_dfps_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_em_hwservice ---
-type mtk_hal_em_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_em_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_fm_hwservice ---
-type mtk_hal_fm_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_fm_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_hdcpwifidisplay_hwservice ---
-type mtk_hal_hdcpwifidisplay_hwservice, hwservice_manager_type;
+type mtk_hal_hdcpwifidisplay_hwservice, base_typeattr_242, hwservice_manager_type;
 
 # --- mtk_hal_hdmi_hwservice ---
-type mtk_hal_hdmi_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_hdmi_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_keyattestation_hwservice ---
-type mtk_hal_keyattestation_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_keyattestation_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_keymanage_hwservice ---
-type mtk_hal_keymanage_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_keymanage_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_log_hwservice ---
-type mtk_hal_log_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_log_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_mmagent_hwservice ---
-type mtk_hal_mmagent_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_mmagent_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_netdagent_hwservice ---
-type mtk_hal_netdagent_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_netdagent_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_nvramagent_hwservice ---
-type mtk_hal_nvramagent_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_nvramagent_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_power_hwservice ---
-type mtk_hal_power_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_power_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_pq_hwservice ---
-type mtk_hal_pq_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_pq_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_rild_hwservice ---
-type mtk_hal_rild_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_rild_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_thp_hwservice ---
-type mtk_hal_thp_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_thp_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_touchll_hwservice ---
-type mtk_hal_touchll_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_touchll_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- mtk_hal_videotelephony_hwservice ---
-type mtk_hal_videotelephony_hwservice, hwservice_manager_type, protected_hwservice;
+type mtk_hal_videotelephony_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- nxpese_hwservice ---
-type nxpese_hwservice, hwservice_manager_type;
+type nxpese_hwservice, base_typeattr_242, hwservice_manager_type;
 
 # --- nxpnfc_hwservice ---
-type nxpnfc_hwservice, hwservice_manager_type;
+type nxpnfc_hwservice, base_typeattr_242, hwservice_manager_type;
 
 # --- system_net_netd_hwservice ---
 typeattribute system_net_netd_hwservice hwservice_manager_type;
@@ -397,23 +371,23 @@ typeattribute system_wifi_keystore_hwservice hwservice_manager_type;
 typeattribute system_wifi_keystore_hwservice protected_hwservice;
 
 # --- teei_hal_capi_hwservice ---
-type teei_hal_capi_hwservice, hwservice_manager_type, protected_hwservice;
+type teei_hal_capi_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- teei_hal_ifaa_hwservice ---
-type teei_hal_ifaa_hwservice, hwservice_manager_type, protected_hwservice;
+type teei_hal_ifaa_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- teei_hal_thh_hwservice ---
-type teei_hal_thh_hwservice, hwservice_manager_type, protected_hwservice;
+type teei_hal_thh_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- teei_hal_tui_hwservice ---
-type teei_hal_tui_hwservice, hwservice_manager_type, protected_hwservice;
+type teei_hal_tui_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- teei_hal_wechat_hwservice ---
-type teei_hal_wechat_hwservice, hwservice_manager_type, protected_hwservice;
+type teei_hal_wechat_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- volte_clientapi_ua_hwservice ---
-type volte_clientapi_ua_hwservice, hwservice_manager_type, protected_hwservice;
+type volte_clientapi_ua_hwservice, base_typeattr_242, hwservice_manager_type, protected_hwservice;
 
 # --- volte_uce_ua_hwservice ---
-type volte_uce_ua_hwservice, hwservice_manager_type;
+type volte_uce_ua_hwservice, base_typeattr_242, hwservice_manager_type;
 

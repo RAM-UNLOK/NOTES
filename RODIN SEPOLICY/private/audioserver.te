@@ -1,6 +1,7 @@
 # ============================================================
 # File: audioserver.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Audio & Video
 # Subcategory: Audio HAL
@@ -12,7 +13,6 @@
 typeattribute audioserver binderservicedomain;
 typeattribute audioserver coredomain;
 typeattribute audioserver domain;
-typeattribute audioserver halclientdomain;
 typeattribute audioserver mlstrustedsubject;
 
 binder_call(audioserver, audio_vendor_parameter_parser)
@@ -28,19 +28,15 @@ get_prop(audioserver, vendor_audio_wps_prop)
 hal_client_domain(audioserver, hal_allocator)
 hal_client_domain(audioserver, hal_audio)
 hal_client_domain(audioserver, hal_mtk_mbrain)
-set_prop(audioserver, debug_prop)
-set_prop(audioserver, system_mtk_audio_prop)
-set_prop(audioserver, vendor_audio_wanos_prop)
-set_prop(audioserver, vendor_audio_wps_prop)
 allow audioserver appdomain:process { getsched setsched };
 allow audioserver audio_vendor_parameter_parser_service:service_manager find;
 allow audioserver audioserver:capability sys_nice;
 allow audioserver binderfs_logs:dir search;
-allow audioserver bsp_data_log_file:dir { write add_name search };
-allow audioserver bsp_data_log_file:file { read create append open };
+allow audioserver bsp_data_log_file:dir { add_name search write };
+allow audioserver bsp_data_log_file:file { append create open read };
 allow audioserver data_log_stability_file:dir create_dir_perms;
-allow audioserver data_log_stability_file:dir search;
 allow audioserver data_log_stability_file:file create_file_perms;
+allow audioserver debug_prop:property_service set;
 allow audioserver debuglog_data_file:dir { create_dir_perms relabelto };
 allow audioserver debuglog_data_file:file create_file_perms;
 allow audioserver hal_audio:process { getsched setsched };
@@ -48,13 +44,12 @@ allow audioserver hal_bluetooth:process { getsched setsched };
 allow audioserver hal_codec2_server:process { getsched setsched };
 allow audioserver hal_omx_server:process { getsched setsched };
 allow audioserver kmsg_device:chr_file w_file_perms;
-allow audioserver magt:binder transfer;
 allow audioserver media_rw_data_file:dir create_dir_perms;
 allow audioserver mediaserver:process { getsched setsched };
 allow audioserver mediaswcodec:process { getsched setsched };
 allow audioserver misight:fifo_file write;
-allow audioserver miui_coredump_file:dir { write add_name search };
-allow audioserver miui_coredump_file:file create_file_perms;
+allow audioserver miui_coredump_file:dir { add_name search write };
+allow audioserver miui_coredump_file:file { create open read write };
 allow audioserver miui_lights_service:service_manager find;
 allow audioserver miui_native_file:dir search;
 allow audioserver mnt_user_file:dir rw_dir_perms;
@@ -67,12 +62,15 @@ allow audioserver radio:file r_file_perms;
 allow audioserver radio_data_file:dir search;
 allow audioserver radio_data_file:file open;
 allow audioserver sdcard_type:dir create_dir_perms;
-allow audioserver self:netlink_kobject_uevent_socket { create_socket_perms r_file_perms w_file_perms };
+allow audioserver self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow audioserver storage_file:lnk_file rw_file_perms;
 allow audioserver system_app:process { getsched setsched };
-allow audioserver system_data_file:dir { r_file_perms append };
+allow audioserver system_data_file:dir { append getattr ioctl lock map open read watch watch_reads };
 allow audioserver system_data_file:file r_file_perms;
+allow audioserver system_mtk_audio_prop:property_service set;
 allow audioserver system_server:process { getsched setsched };
+allow audioserver vendor_audio_wanos_prop:property_service set;
+allow audioserver vendor_audio_wps_prop:property_service set;
 
 # --- audioserver_exec ---
 typeattribute audioserver_exec exec_type;

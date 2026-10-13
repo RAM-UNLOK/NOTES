@@ -1,6 +1,7 @@
 # ============================================================
 # File: hypsys_ssi.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,8 +15,10 @@ allow hypsys_ssi_client hypsys_ssi_service:service_manager find;
 allow hypsys_ssi_client mqsasd_service:service_manager find;
 
 # --- hypsys_ssi_server ---
-add_service(hypsys_ssi_server, hypsys_ssi_service)
-add_service(hypsys_ssi_server, mqsasd_service)
-binder_call(hypsys_ssi_server, hypsys_ssi_client)
-binder_use(hypsys_ssi_server)
+allow hypsys_ssi_server hypsys_ssi_client:binder call;
+allow hypsys_ssi_server hypsys_ssi_client:fd use;
+allow hypsys_ssi_server hypsys_ssi_service:service_manager { add find };
+allow hypsys_ssi_server mqsasd_service:service_manager { add find };
+allow hypsys_ssi_server servicemanager:binder { call transfer };
+allow hypsys_ssi_server servicemanager:fd use;
 

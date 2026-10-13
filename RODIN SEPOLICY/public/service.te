@@ -1,6 +1,7 @@
 # ============================================================
 # File: service.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -19,7 +20,7 @@ typeattribute IProxyService_service service_manager_type;
 typeattribute IProxyService_service system_server_service;
 
 # --- MiuiInputManager_service ---
-type MiuiInputManager_service, app_api_service, service_manager_type, system_server_service;
+type MiuiInputManager_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- aal_service ---
 type aal_service, service_manager_type;
@@ -64,7 +65,7 @@ typeattribute advanced_protection_service service_manager_type;
 typeattribute advanced_protection_service system_server_service;
 
 # --- ai_input_text_service ---
-type ai_input_text_service, app_api_service, service_manager_type, system_server_service;
+type ai_input_text_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- aidl_lazy_test_service ---
 typeattribute aidl_lazy_test_service service_manager_type;
@@ -81,7 +82,7 @@ typeattribute ambient_context_service service_manager_type;
 typeattribute ambient_context_service system_server_service;
 
 # --- anrrescue_service ---
-type anrrescue_service, app_api_service, service_manager_type, system_server_service;
+type anrrescue_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- apc_service ---
 typeattribute apc_service service_manager_type;
@@ -91,7 +92,7 @@ typeattribute app_binding_service service_manager_type;
 typeattribute app_binding_service system_server_service;
 
 # --- app_debug_service ---
-type app_debug_service, service_manager_type, system_server_service;
+type app_debug_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- app_function_service ---
 typeattribute app_function_service app_api_service;
@@ -149,6 +150,48 @@ typeattribute assetatlas_service ephemeral_app_api_service;
 typeattribute assetatlas_service service_manager_type;
 typeattribute assetatlas_service system_server_service;
 
+# --- atci_service ---
+typeattribute atci_service base_typeattr_1062;
+typeattribute atci_service base_typeattr_1065;
+typeattribute atci_service base_typeattr_1066;
+typeattribute atci_service base_typeattr_1069;
+typeattribute atci_service base_typeattr_1070;
+typeattribute atci_service base_typeattr_1073;
+typeattribute atci_service base_typeattr_1075;
+typeattribute atci_service base_typeattr_1078;
+typeattribute atci_service base_typeattr_1079;
+typeattribute atci_service base_typeattr_1080;
+typeattribute atci_service base_typeattr_1081;
+typeattribute atci_service base_typeattr_1082;
+typeattribute atci_service base_typeattr_1083;
+typeattribute atci_service base_typeattr_1086;
+typeattribute atci_service base_typeattr_1088;
+typeattribute atci_service base_typeattr_1091;
+typeattribute atci_service base_typeattr_1092;
+typeattribute atci_service base_typeattr_1095;
+typeattribute atci_service base_typeattr_1096;
+typeattribute atci_service base_typeattr_1097;
+typeattribute atci_service base_typeattr_1100;
+typeattribute atci_service base_typeattr_1101;
+typeattribute atci_service base_typeattr_1102;
+typeattribute atci_service base_typeattr_1105;
+typeattribute atci_service base_typeattr_1106;
+typeattribute atci_service base_typeattr_1109;
+typeattribute atci_service base_typeattr_1110;
+typeattribute atci_service base_typeattr_1111;
+typeattribute atci_service base_typeattr_1112;
+typeattribute atci_service base_typeattr_1113;
+typeattribute atci_service base_typeattr_1116;
+typeattribute atci_service base_typeattr_1117;
+typeattribute atci_service base_typeattr_1120;
+typeattribute atci_service base_typeattr_1122;
+typeattribute atci_service base_typeattr_1125;
+typeattribute atci_service base_typeattr_1126;
+typeattribute atci_service base_typeattr_1127;
+typeattribute atci_service base_typeattr_1130;
+typeattribute atci_service base_typeattr_1131;
+typeattribute atci_service base_typeattr_1134;
+
 # --- attention_service ---
 typeattribute attention_service service_manager_type;
 typeattribute attention_service system_server_service;
@@ -192,7 +235,6 @@ typeattribute autofill_service system_server_service;
 # --- automotive_display_service ---
 typeattribute automotive_display_service coredomain;
 typeattribute automotive_display_service domain;
-typeattribute automotive_display_service halclientdomain;
 
 hal_client_domain(automotive_display_service, hal_graphics_allocator)
 hal_client_domain(automotive_display_service, hal_graphics_composer)
@@ -267,10 +309,10 @@ typeattribute cacheinfo_service system_api_service;
 typeattribute cacheinfo_service system_server_service;
 
 # --- camera_covered_service ---
-type camera_covered_service, app_api_service, service_manager_type, system_server_service;
+type camera_covered_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- cameraopt_service ---
-type cameraopt_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type cameraopt_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- camerapostalgo_service ---
 type camerapostalgo_service, service_manager_type;
@@ -363,7 +405,7 @@ typeattribute contextual_search_service service_manager_type;
 typeattribute contextual_search_service system_server_service;
 
 # --- continuity_service ---
-type continuity_service, app_api_service, service_manager_type, system_server_service;
+type continuity_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- country_detector_service ---
 typeattribute country_detector_service app_api_service;
@@ -396,7 +438,7 @@ typeattribute credstore_service app_api_service;
 typeattribute credstore_service service_manager_type;
 
 # --- cross_device_service ---
-type cross_device_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type cross_device_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- crossprofileapps_service ---
 typeattribute crossprofileapps_service app_api_service;
@@ -404,7 +446,7 @@ typeattribute crossprofileapps_service service_manager_type;
 typeattribute crossprofileapps_service system_server_service;
 
 # --- damoncontrol_service ---
-type damoncontrol_service, service_manager_type, system_server_service;
+type damoncontrol_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- dataloader_manager_service ---
 typeattribute dataloader_manager_service service_manager_type;
@@ -480,7 +522,7 @@ typeattribute display_service service_manager_type;
 typeattribute display_service system_server_service;
 
 # --- displayfeature_service ---
-type displayfeature_service, app_api_service, service_manager_type, system_server_service;
+type displayfeature_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- dnsresolver_service ---
 typeattribute dnsresolver_service service_manager_type;
@@ -514,7 +556,7 @@ typeattribute dynamic_instrumentation_service service_manager_type;
 typeattribute dynamic_instrumentation_service system_server_service;
 
 # --- dynamic_island_service ---
-type dynamic_island_service, app_api_service, service_manager_type, system_server_service;
+type dynamic_island_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- dynamic_system_service ---
 typeattribute dynamic_system_service service_manager_type;
@@ -531,7 +573,7 @@ typeattribute emergency_affordance_service service_manager_type;
 typeattribute emergency_affordance_service system_server_service;
 
 # --- ese_updatemgmt_service ---
-type ese_updatemgmt_service, service_manager_type, system_server_service;
+type ese_updatemgmt_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- ethernet_service ---
 typeattribute ethernet_service app_api_service;
@@ -553,8 +595,6 @@ typeattribute face_service system_server_service;
 # --- fbo_native_service ---
 type fbo_native_service, service_manager_type;
 
-allow fbo_native_service system_server:binder transfer;
-
 # --- fdpp_service ---
 type fdpp_service, service_manager_type;
 
@@ -575,6 +615,48 @@ typeattribute fingerprint_service system_server_service;
 
 # --- fingerprintd_service ---
 typeattribute fingerprintd_service service_manager_type;
+
+# --- fm_hidl_service ---
+typeattribute fm_hidl_service base_typeattr_1062;
+typeattribute fm_hidl_service base_typeattr_1065;
+typeattribute fm_hidl_service base_typeattr_1066;
+typeattribute fm_hidl_service base_typeattr_1069;
+typeattribute fm_hidl_service base_typeattr_1070;
+typeattribute fm_hidl_service base_typeattr_1073;
+typeattribute fm_hidl_service base_typeattr_1075;
+typeattribute fm_hidl_service base_typeattr_1078;
+typeattribute fm_hidl_service base_typeattr_1079;
+typeattribute fm_hidl_service base_typeattr_1080;
+typeattribute fm_hidl_service base_typeattr_1081;
+typeattribute fm_hidl_service base_typeattr_1082;
+typeattribute fm_hidl_service base_typeattr_1083;
+typeattribute fm_hidl_service base_typeattr_1086;
+typeattribute fm_hidl_service base_typeattr_1088;
+typeattribute fm_hidl_service base_typeattr_1091;
+typeattribute fm_hidl_service base_typeattr_1092;
+typeattribute fm_hidl_service base_typeattr_1095;
+typeattribute fm_hidl_service base_typeattr_1096;
+typeattribute fm_hidl_service base_typeattr_1097;
+typeattribute fm_hidl_service base_typeattr_1100;
+typeattribute fm_hidl_service base_typeattr_1101;
+typeattribute fm_hidl_service base_typeattr_1102;
+typeattribute fm_hidl_service base_typeattr_1105;
+typeattribute fm_hidl_service base_typeattr_1106;
+typeattribute fm_hidl_service base_typeattr_1109;
+typeattribute fm_hidl_service base_typeattr_1110;
+typeattribute fm_hidl_service base_typeattr_1111;
+typeattribute fm_hidl_service base_typeattr_1112;
+typeattribute fm_hidl_service base_typeattr_1113;
+typeattribute fm_hidl_service base_typeattr_1116;
+typeattribute fm_hidl_service base_typeattr_1117;
+typeattribute fm_hidl_service base_typeattr_1120;
+typeattribute fm_hidl_service base_typeattr_1122;
+typeattribute fm_hidl_service base_typeattr_1125;
+typeattribute fm_hidl_service base_typeattr_1126;
+typeattribute fm_hidl_service base_typeattr_1127;
+typeattribute fm_hidl_service base_typeattr_1130;
+typeattribute fm_hidl_service base_typeattr_1131;
+typeattribute fm_hidl_service base_typeattr_1134;
 
 # --- font_service ---
 typeattribute font_service app_api_service;
@@ -655,7 +737,7 @@ typeattribute graphicsstats_service service_manager_type;
 typeattribute graphicsstats_service system_server_service;
 
 # --- greeze_service ---
-type greeze_service, app_api_service, service_manager_type, system_server_service;
+type greeze_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- gsi_service ---
 typeattribute gsi_service service_manager_type;
@@ -1035,13 +1117,13 @@ typeattribute hint_service service_manager_type;
 typeattribute hint_service system_server_service;
 
 # --- hyper_package_service ---
-type hyper_package_service, service_manager_type, system_api_service, system_server_service;
+type hyper_package_service, base_typeattr_1074, service_manager_type, system_api_service, system_server_service;
 
 # --- hyper_stability_sdk_service ---
-type hyper_stability_sdk_service, service_manager_type, system_server_service;
+type hyper_stability_sdk_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- hyperos_cust_feature_resolve_service ---
-type hyperos_cust_feature_resolve_service, service_manager_type, system_api_service, system_server_service;
+type hyperos_cust_feature_resolve_service, base_typeattr_1074, service_manager_type, system_api_service, system_server_service;
 
 # --- hypsys_ssi_service ---
 type hypsys_ssi_service, service_manager_type;
@@ -1068,6 +1150,48 @@ typeattribute incidentcompanion_service system_server_service;
 typeattribute incremental_service service_manager_type;
 typeattribute incremental_service system_server_service;
 
+# --- init_thh_service ---
+typeattribute init_thh_service base_typeattr_1062;
+typeattribute init_thh_service base_typeattr_1065;
+typeattribute init_thh_service base_typeattr_1066;
+typeattribute init_thh_service base_typeattr_1069;
+typeattribute init_thh_service base_typeattr_1070;
+typeattribute init_thh_service base_typeattr_1073;
+typeattribute init_thh_service base_typeattr_1075;
+typeattribute init_thh_service base_typeattr_1078;
+typeattribute init_thh_service base_typeattr_1079;
+typeattribute init_thh_service base_typeattr_1080;
+typeattribute init_thh_service base_typeattr_1081;
+typeattribute init_thh_service base_typeattr_1082;
+typeattribute init_thh_service base_typeattr_1083;
+typeattribute init_thh_service base_typeattr_1086;
+typeattribute init_thh_service base_typeattr_1088;
+typeattribute init_thh_service base_typeattr_1091;
+typeattribute init_thh_service base_typeattr_1092;
+typeattribute init_thh_service base_typeattr_1095;
+typeattribute init_thh_service base_typeattr_1096;
+typeattribute init_thh_service base_typeattr_1097;
+typeattribute init_thh_service base_typeattr_1100;
+typeattribute init_thh_service base_typeattr_1101;
+typeattribute init_thh_service base_typeattr_1102;
+typeattribute init_thh_service base_typeattr_1105;
+typeattribute init_thh_service base_typeattr_1106;
+typeattribute init_thh_service base_typeattr_1109;
+typeattribute init_thh_service base_typeattr_1110;
+typeattribute init_thh_service base_typeattr_1111;
+typeattribute init_thh_service base_typeattr_1112;
+typeattribute init_thh_service base_typeattr_1113;
+typeattribute init_thh_service base_typeattr_1116;
+typeattribute init_thh_service base_typeattr_1117;
+typeattribute init_thh_service base_typeattr_1120;
+typeattribute init_thh_service base_typeattr_1122;
+typeattribute init_thh_service base_typeattr_1125;
+typeattribute init_thh_service base_typeattr_1126;
+typeattribute init_thh_service base_typeattr_1127;
+typeattribute init_thh_service base_typeattr_1130;
+typeattribute init_thh_service base_typeattr_1131;
+typeattribute init_thh_service base_typeattr_1134;
+
 # --- input_method_service ---
 typeattribute input_method_service app_api_service;
 typeattribute input_method_service ephemeral_app_api_service;
@@ -1089,7 +1213,7 @@ typeattribute inputflinger_service system_server_service;
 typeattribute installd_service service_manager_type;
 
 # --- interconnection_service ---
-type interconnection_service, app_api_service, service_manager_type;
+type interconnection_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- intrusion_detection_service ---
 typeattribute intrusion_detection_service app_api_service;
@@ -1099,8 +1223,6 @@ typeattribute intrusion_detection_service system_server_service;
 
 # --- iorapd_service ---
 type iorapd_service, service_manager_type;
-
-allow iorapd_service system_server:binder transfer;
 
 # --- ipsec_service ---
 typeattribute ipsec_service app_api_service;
@@ -1192,10 +1314,10 @@ typeattribute looper_stats_service system_server_service;
 typeattribute lpdump_service service_manager_type;
 
 # --- magicwindow_service ---
-type magicwindow_service, app_api_service, service_manager_type, system_server_service;
+type magicwindow_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- magt_service ---
-type magt_service, app_api_service, service_manager_type;
+type magt_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mcd_service ---
 type mcd_service, service_manager_type;
@@ -1260,7 +1382,7 @@ typeattribute mediatuner_service app_api_service;
 typeattribute mediatuner_service service_manager_type;
 
 # --- memfreeze_service ---
-type memfreeze_service, service_manager_type, system_server_service;
+type memfreeze_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- meminfo_service ---
 typeattribute meminfo_service service_manager_type;
@@ -1273,11 +1395,53 @@ typeattribute memtrackproxy_service ephemeral_app_api_service;
 typeattribute memtrackproxy_service service_manager_type;
 typeattribute memtrackproxy_service system_server_service;
 
+# --- merged_hal_service ---
+typeattribute merged_hal_service base_typeattr_1062;
+typeattribute merged_hal_service base_typeattr_1065;
+typeattribute merged_hal_service base_typeattr_1066;
+typeattribute merged_hal_service base_typeattr_1069;
+typeattribute merged_hal_service base_typeattr_1070;
+typeattribute merged_hal_service base_typeattr_1073;
+typeattribute merged_hal_service base_typeattr_1075;
+typeattribute merged_hal_service base_typeattr_1078;
+typeattribute merged_hal_service base_typeattr_1079;
+typeattribute merged_hal_service base_typeattr_1080;
+typeattribute merged_hal_service base_typeattr_1081;
+typeattribute merged_hal_service base_typeattr_1082;
+typeattribute merged_hal_service base_typeattr_1083;
+typeattribute merged_hal_service base_typeattr_1086;
+typeattribute merged_hal_service base_typeattr_1088;
+typeattribute merged_hal_service base_typeattr_1091;
+typeattribute merged_hal_service base_typeattr_1092;
+typeattribute merged_hal_service base_typeattr_1095;
+typeattribute merged_hal_service base_typeattr_1096;
+typeattribute merged_hal_service base_typeattr_1097;
+typeattribute merged_hal_service base_typeattr_1100;
+typeattribute merged_hal_service base_typeattr_1101;
+typeattribute merged_hal_service base_typeattr_1102;
+typeattribute merged_hal_service base_typeattr_1105;
+typeattribute merged_hal_service base_typeattr_1106;
+typeattribute merged_hal_service base_typeattr_1109;
+typeattribute merged_hal_service base_typeattr_1110;
+typeattribute merged_hal_service base_typeattr_1111;
+typeattribute merged_hal_service base_typeattr_1112;
+typeattribute merged_hal_service base_typeattr_1113;
+typeattribute merged_hal_service base_typeattr_1116;
+typeattribute merged_hal_service base_typeattr_1117;
+typeattribute merged_hal_service base_typeattr_1120;
+typeattribute merged_hal_service base_typeattr_1122;
+typeattribute merged_hal_service base_typeattr_1125;
+typeattribute merged_hal_service base_typeattr_1126;
+typeattribute merged_hal_service base_typeattr_1127;
+typeattribute merged_hal_service base_typeattr_1130;
+typeattribute merged_hal_service base_typeattr_1131;
+typeattribute merged_hal_service base_typeattr_1134;
+
 # --- mi_fluency_service ---
-type mi_fluency_service, service_manager_type, system_server_service;
+type mi_fluency_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miblackmask_service ---
-type miblackmask_service, app_api_service, service_manager_type, system_server_service;
+type miblackmask_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- midi_service ---
 typeattribute midi_service app_api_service;
@@ -1286,130 +1450,172 @@ typeattribute midi_service service_manager_type;
 typeattribute midi_service system_server_service;
 
 # --- migard_service ---
-type migard_service, app_api_service, service_manager_type, system_server_service;
+type migard_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miguardca_access_service ---
 type miguardca_access_service, service_manager_type;
 
 # --- mimd_service ---
-type mimd_service, service_manager_type, system_server_service;
+type mimd_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mimotion_mode_service ---
-type mimotion_mode_service, app_api_service, service_manager_type, system_server_service;
+type mimotion_mode_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- misight_service ---
 type misight_service, service_manager_type;
 
 # --- miui_appadaptation_service ---
-type miui_appadaptation_service, app_api_service, service_manager_type, system_server_service;
+type miui_appadaptation_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_backup_service ---
-type miui_backup_service, app_api_service, service_manager_type, system_server_service;
+type miui_backup_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_car_service ---
-type miui_car_service, app_api_service, service_manager_type, system_server_service;
+type miui_car_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_cld_service ---
-type miui_cld_service, service_manager_type, system_server_service;
+type miui_cld_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_dfc_service ---
-type miui_dfc_service, service_manager_type, system_server_service;
+type miui_dfc_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_downscale_service ---
-type miui_downscale_service, app_api_service, service_manager_type, system_server_service;
+type miui_downscale_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_embedding_window_projection_service ---
-type miui_embedding_window_projection_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type miui_embedding_window_projection_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- miui_embedding_window_service ---
-type miui_embedding_window_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type miui_embedding_window_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- miui_enterprise_service ---
-type miui_enterprise_service, app_api_service, service_manager_type, system_server_service;
+type miui_enterprise_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_face_service ---
 type miui_face_service, service_manager_type;
 
 # --- miui_fbo_service ---
-type miui_fbo_service, service_manager_type, system_server_service;
+type miui_fbo_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_font_service ---
-type miui_font_service, app_api_service, service_manager_type, system_server_service;
+type miui_font_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_force_vk_service ---
-type miui_force_vk_service, app_api_service, service_manager_type, system_server_service;
+type miui_force_vk_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_frameratefinecontrol_service ---
-type miui_frameratefinecontrol_service, app_api_service, service_manager_type, system_server_service;
+type miui_frameratefinecontrol_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_free_drag_service ---
-type miui_free_drag_service, app_api_service, service_manager_type, system_server_service;
+type miui_free_drag_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_init_service ---
-type miui_init_service, service_manager_type, system_api_service, system_server_service;
+type miui_init_service, base_typeattr_1074, service_manager_type, system_api_service, system_server_service;
 
 # --- miui_integratedmemory_service ---
-type miui_integratedmemory_service, service_manager_type, system_server_service;
+type miui_integratedmemory_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_lights_service ---
-type miui_lights_service, app_api_service, service_manager_type, system_server_service;
+type miui_lights_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_magic_point_service ---
-type miui_magic_point_service, app_api_service, service_manager_type, system_server_service;
+type miui_magic_point_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_memory_service ---
-type miui_memory_service, service_manager_type, system_server_service;
+type miui_memory_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_mirror_app_service ---
-type miui_mirror_app_service, app_api_service, service_manager_type;
+type miui_mirror_app_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- miui_mirror_service ---
-type miui_mirror_service, app_api_service, service_manager_type, system_server_service;
+type miui_mirror_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_nativehang_service ---
-type miui_nativehang_service, service_manager_type, system_server_service;
+type miui_nativehang_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_navigation_bar_immersive_service ---
-type miui_navigation_bar_immersive_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type miui_navigation_bar_immersive_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- miui_netpathoptimizer_service ---
-type miui_netpathoptimizer_service, app_api_service, service_manager_type, system_server_service;
+type miui_netpathoptimizer_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_process_service ---
-type miui_process_service, app_api_service, service_manager_type, system_server_service;
+type miui_process_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_restore_service ---
-type miui_restore_service, app_api_service, service_manager_type, system_server_service;
+type miui_restore_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_security_keystore_service ---
-type miui_security_keystore_service, app_api_service, service_manager_type, system_server_service;
+type miui_security_keystore_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_sentinel_service ---
-type miui_sentinel_service, service_manager_type, system_server_service;
+type miui_sentinel_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_size_compat_service ---
-type miui_size_compat_service, app_api_service, service_manager_type, system_server_service;
+type miui_size_compat_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_snapshot_service ---
-type miui_snapshot_service, service_manager_type, system_server_service;
+type miui_snapshot_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_step_counter_service ---
-type miui_step_counter_service, app_api_service, service_manager_type, system_server_service;
+type miui_step_counter_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_swap_service ---
-type miui_swap_service, service_manager_type, system_server_service;
+type miui_swap_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miui_whetstone_service ---
 type miui_whetstone_service, service_manager_type;
 
 # --- miui_wifi_service ---
-type miui_wifi_service, app_api_service, service_manager_type, system_server_service;
+type miui_wifi_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- miuibooster_service ---
-type miuibooster_service, app_api_service, service_manager_type;
+type miuibooster_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mmd_service ---
 typeattribute mmd_service service_manager_type;
+
+# --- modemdbfilter_service ---
+typeattribute modemdbfilter_service base_typeattr_1062;
+typeattribute modemdbfilter_service base_typeattr_1065;
+typeattribute modemdbfilter_service base_typeattr_1066;
+typeattribute modemdbfilter_service base_typeattr_1069;
+typeattribute modemdbfilter_service base_typeattr_1070;
+typeattribute modemdbfilter_service base_typeattr_1073;
+typeattribute modemdbfilter_service base_typeattr_1075;
+typeattribute modemdbfilter_service base_typeattr_1078;
+typeattribute modemdbfilter_service base_typeattr_1079;
+typeattribute modemdbfilter_service base_typeattr_1080;
+typeattribute modemdbfilter_service base_typeattr_1081;
+typeattribute modemdbfilter_service base_typeattr_1082;
+typeattribute modemdbfilter_service base_typeattr_1083;
+typeattribute modemdbfilter_service base_typeattr_1086;
+typeattribute modemdbfilter_service base_typeattr_1088;
+typeattribute modemdbfilter_service base_typeattr_1091;
+typeattribute modemdbfilter_service base_typeattr_1092;
+typeattribute modemdbfilter_service base_typeattr_1095;
+typeattribute modemdbfilter_service base_typeattr_1096;
+typeattribute modemdbfilter_service base_typeattr_1097;
+typeattribute modemdbfilter_service base_typeattr_1100;
+typeattribute modemdbfilter_service base_typeattr_1101;
+typeattribute modemdbfilter_service base_typeattr_1102;
+typeattribute modemdbfilter_service base_typeattr_1105;
+typeattribute modemdbfilter_service base_typeattr_1106;
+typeattribute modemdbfilter_service base_typeattr_1109;
+typeattribute modemdbfilter_service base_typeattr_1110;
+typeattribute modemdbfilter_service base_typeattr_1111;
+typeattribute modemdbfilter_service base_typeattr_1112;
+typeattribute modemdbfilter_service base_typeattr_1113;
+typeattribute modemdbfilter_service base_typeattr_1116;
+typeattribute modemdbfilter_service base_typeattr_1117;
+typeattribute modemdbfilter_service base_typeattr_1120;
+typeattribute modemdbfilter_service base_typeattr_1122;
+typeattribute modemdbfilter_service base_typeattr_1125;
+typeattribute modemdbfilter_service base_typeattr_1126;
+typeattribute modemdbfilter_service base_typeattr_1127;
+typeattribute modemdbfilter_service base_typeattr_1130;
+typeattribute modemdbfilter_service base_typeattr_1131;
+typeattribute modemdbfilter_service base_typeattr_1134;
 
 # --- mount_service ---
 typeattribute mount_service app_api_service;
@@ -1418,40 +1624,40 @@ typeattribute mount_service service_manager_type;
 typeattribute mount_service system_server_service;
 
 # --- mqs_service ---
-type mqs_service, app_api_service, service_manager_type;
+type mqs_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mqsasd_service ---
 type mqsasd_service, service_manager_type;
 
 # --- mspc_service ---
-type mspc_service, service_manager_type, system_server_service;
+type mspc_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_anrmanager_service ---
-type mtk_anrmanager_service, app_api_service, service_manager_type, system_server_service;
+type mtk_anrmanager_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_appdetection_service ---
-type mtk_appdetection_service, app_api_service, service_manager_type, system_server_service;
+type mtk_appdetection_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_autoboot_service ---
-type mtk_autoboot_service, app_api_service, service_manager_type, system_server_service;
+type mtk_autoboot_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_carrierexpress_service ---
-type mtk_carrierexpress_service, app_api_service, service_manager_type;
+type mtk_carrierexpress_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mtk_connmetrics_service ---
 type mtk_connmetrics_service, service_manager_type;
 
 # --- mtk_data_shaping_service ---
-type mtk_data_shaping_service, app_api_service, service_manager_type, system_server_service;
+type mtk_data_shaping_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_duraspeed_service ---
-type mtk_duraspeed_service, app_api_service, service_manager_type, system_server_service;
+type mtk_duraspeed_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_epdg_service ---
-type mtk_epdg_service, app_api_service, service_manager_type, system_server_service;
+type mtk_epdg_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_fm_radio_service ---
-type mtk_fm_radio_service, app_api_service, service_manager_type, system_server_service;
+type mtk_fm_radio_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_gwsd_service ---
 type mtk_gwsd_service, service_manager_type;
@@ -1460,55 +1666,139 @@ type mtk_gwsd_service, service_manager_type;
 type mtk_hal_sf_service, hal_service_type, service_manager_type;
 
 # --- mtk_jxnetworkpolicyservice_service ---
-type mtk_jxnetworkpolicyservice_service, app_api_service, service_manager_type, system_server_service;
+type mtk_jxnetworkpolicyservice_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
+
+# --- mtk_lbs_service ---
+typeattribute mtk_lbs_service base_typeattr_1062;
+typeattribute mtk_lbs_service base_typeattr_1065;
+typeattribute mtk_lbs_service base_typeattr_1066;
+typeattribute mtk_lbs_service base_typeattr_1069;
+typeattribute mtk_lbs_service base_typeattr_1070;
+typeattribute mtk_lbs_service base_typeattr_1073;
+typeattribute mtk_lbs_service base_typeattr_1075;
+typeattribute mtk_lbs_service base_typeattr_1078;
+typeattribute mtk_lbs_service base_typeattr_1079;
+typeattribute mtk_lbs_service base_typeattr_1080;
+typeattribute mtk_lbs_service base_typeattr_1081;
+typeattribute mtk_lbs_service base_typeattr_1082;
+typeattribute mtk_lbs_service base_typeattr_1083;
+typeattribute mtk_lbs_service base_typeattr_1086;
+typeattribute mtk_lbs_service base_typeattr_1088;
+typeattribute mtk_lbs_service base_typeattr_1091;
+typeattribute mtk_lbs_service base_typeattr_1092;
+typeattribute mtk_lbs_service base_typeattr_1095;
+typeattribute mtk_lbs_service base_typeattr_1096;
+typeattribute mtk_lbs_service base_typeattr_1097;
+typeattribute mtk_lbs_service base_typeattr_1100;
+typeattribute mtk_lbs_service base_typeattr_1101;
+typeattribute mtk_lbs_service base_typeattr_1102;
+typeattribute mtk_lbs_service base_typeattr_1105;
+typeattribute mtk_lbs_service base_typeattr_1106;
+typeattribute mtk_lbs_service base_typeattr_1109;
+typeattribute mtk_lbs_service base_typeattr_1110;
+typeattribute mtk_lbs_service base_typeattr_1111;
+typeattribute mtk_lbs_service base_typeattr_1112;
+typeattribute mtk_lbs_service base_typeattr_1113;
+typeattribute mtk_lbs_service base_typeattr_1116;
+typeattribute mtk_lbs_service base_typeattr_1117;
+typeattribute mtk_lbs_service base_typeattr_1120;
+typeattribute mtk_lbs_service base_typeattr_1122;
+typeattribute mtk_lbs_service base_typeattr_1125;
+typeattribute mtk_lbs_service base_typeattr_1126;
+typeattribute mtk_lbs_service base_typeattr_1127;
+typeattribute mtk_lbs_service base_typeattr_1130;
+typeattribute mtk_lbs_service base_typeattr_1131;
+typeattribute mtk_lbs_service base_typeattr_1134;
 
 # --- mtk_mobile_service ---
-type mtk_mobile_service, app_api_service, service_manager_type, system_server_service;
+type mtk_mobile_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_msg_monitor_service ---
-type mtk_msg_monitor_service, app_api_service, service_manager_type, system_server_service;
+type mtk_msg_monitor_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_omadm_service ---
-type mtk_omadm_service, app_api_service, service_manager_type, system_server_service;
+type mtk_omadm_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_perf_service ---
-type mtk_perf_service, app_api_service, service_manager_type, system_server_service;
+type mtk_perf_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_permrecords_service ---
-type mtk_permrecords_service, app_api_service, service_manager_type, system_server_service;
+type mtk_permrecords_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_phonesubinfo_service ---
-type mtk_phonesubinfo_service, app_api_service, service_manager_type;
+type mtk_phonesubinfo_service, app_api_service, base_typeattr_1074, service_manager_type;
+
+# --- mtk_pkm_service ---
+typeattribute mtk_pkm_service base_typeattr_1062;
+typeattribute mtk_pkm_service base_typeattr_1065;
+typeattribute mtk_pkm_service base_typeattr_1066;
+typeattribute mtk_pkm_service base_typeattr_1069;
+typeattribute mtk_pkm_service base_typeattr_1070;
+typeattribute mtk_pkm_service base_typeattr_1073;
+typeattribute mtk_pkm_service base_typeattr_1075;
+typeattribute mtk_pkm_service base_typeattr_1078;
+typeattribute mtk_pkm_service base_typeattr_1079;
+typeattribute mtk_pkm_service base_typeattr_1080;
+typeattribute mtk_pkm_service base_typeattr_1081;
+typeattribute mtk_pkm_service base_typeattr_1082;
+typeattribute mtk_pkm_service base_typeattr_1083;
+typeattribute mtk_pkm_service base_typeattr_1086;
+typeattribute mtk_pkm_service base_typeattr_1088;
+typeattribute mtk_pkm_service base_typeattr_1091;
+typeattribute mtk_pkm_service base_typeattr_1092;
+typeattribute mtk_pkm_service base_typeattr_1095;
+typeattribute mtk_pkm_service base_typeattr_1096;
+typeattribute mtk_pkm_service base_typeattr_1097;
+typeattribute mtk_pkm_service base_typeattr_1100;
+typeattribute mtk_pkm_service base_typeattr_1101;
+typeattribute mtk_pkm_service base_typeattr_1102;
+typeattribute mtk_pkm_service base_typeattr_1105;
+typeattribute mtk_pkm_service base_typeattr_1106;
+typeattribute mtk_pkm_service base_typeattr_1109;
+typeattribute mtk_pkm_service base_typeattr_1110;
+typeattribute mtk_pkm_service base_typeattr_1111;
+typeattribute mtk_pkm_service base_typeattr_1112;
+typeattribute mtk_pkm_service base_typeattr_1113;
+typeattribute mtk_pkm_service base_typeattr_1116;
+typeattribute mtk_pkm_service base_typeattr_1117;
+typeattribute mtk_pkm_service base_typeattr_1120;
+typeattribute mtk_pkm_service base_typeattr_1122;
+typeattribute mtk_pkm_service base_typeattr_1125;
+typeattribute mtk_pkm_service base_typeattr_1126;
+typeattribute mtk_pkm_service base_typeattr_1127;
+typeattribute mtk_pkm_service base_typeattr_1130;
+typeattribute mtk_pkm_service base_typeattr_1131;
+typeattribute mtk_pkm_service base_typeattr_1134;
 
 # --- mtk_power_hal_mgr_service ---
-type mtk_power_hal_mgr_service, app_api_service, service_manager_type, system_server_service;
+type mtk_power_hal_mgr_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_radio_service ---
 type mtk_radio_service, service_manager_type;
 
 # --- mtk_registry_service ---
-type mtk_registry_service, app_api_service, service_manager_type;
+type mtk_registry_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mtk_rns_service ---
-type mtk_rns_service, app_api_service, service_manager_type, system_server_service;
+type mtk_rns_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_search_engine_service ---
-type mtk_search_engine_service, app_api_service, service_manager_type, system_server_service;
+type mtk_search_engine_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- mtk_simphonebook_service ---
-type mtk_simphonebook_service, app_api_service, service_manager_type;
+type mtk_simphonebook_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- mtk_vodata_service ---
 type mtk_vodata_service, service_manager_type;
 
 # --- mtk_vowbridge_service ---
-type mtk_vowbridge_service, app_api_service, service_manager_type, system_server_service;
+type mtk_vowbridge_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- multi_p2p_service ---
-type multi_p2p_service, app_api_service, service_manager_type, system_server_service;
+type multi_p2p_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- multisence_service ---
-type multisence_service, app_api_service, service_manager_type, system_server_service;
+type multisence_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- music_recognition_service ---
 typeattribute music_recognition_service app_api_service;
@@ -1518,8 +1808,6 @@ typeattribute music_recognition_service system_server_service;
 
 # --- nativehang_native_service ---
 type nativehang_native_service, service_manager_type;
-
-allow nativehang_native_service system_server:binder transfer;
 
 # --- nearby_service ---
 typeattribute nearby_service app_api_service;
@@ -1631,7 +1919,7 @@ typeattribute package_service system_server_service;
 type payjoy_access_service, service_manager_type;
 
 # --- pc_mode_service ---
-type pc_mode_service, app_api_service, service_manager_type, system_server_service;
+type pc_mode_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- people_service ---
 typeattribute people_service app_api_service;
@@ -1639,7 +1927,7 @@ typeattribute people_service service_manager_type;
 typeattribute people_service system_server_service;
 
 # --- periodic_service ---
-type periodic_service, app_api_service, service_manager_type, system_server_service;
+type periodic_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- permission_checker_service ---
 typeattribute permission_checker_service app_api_service;
@@ -1682,7 +1970,7 @@ typeattribute power_service service_manager_type;
 typeattribute power_service system_server_service;
 
 # --- powerconsumption_service ---
-type powerconsumption_service, app_api_service, service_manager_type, system_server_service;
+type powerconsumption_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- powerkeeper_millet_service ---
 type powerkeeper_millet_service, service_manager_type;
@@ -1703,7 +1991,7 @@ typeattribute processinfo_service service_manager_type;
 typeattribute processinfo_service system_server_service;
 
 # --- procprophet_service ---
-type procprophet_service, service_manager_type, system_server_service;
+type procprophet_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- procstats_service ---
 typeattribute procstats_service app_api_service;
@@ -1813,10 +2101,10 @@ typeattribute samplingprofiler_service service_manager_type;
 typeattribute samplingprofiler_service system_server_service;
 
 # --- scenariorecognition_service ---
-type scenariorecognition_service, app_api_service, service_manager_type, system_server_service;
+type scenariorecognition_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- sched_boost_service ---
-type sched_boost_service, service_manager_type, system_server_service;
+type sched_boost_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- scheduling_policy_service ---
 typeattribute scheduling_policy_service service_manager_type;
@@ -1842,7 +2130,7 @@ typeattribute sec_key_att_app_id_provider_service system_server_service;
 typeattribute secure_element_service service_manager_type;
 
 # --- security_service ---
-type security_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type security_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- security_state_service ---
 typeattribute security_state_service app_api_service;
@@ -1895,50 +2183,57 @@ typeattribute servicemanager coredomain;
 typeattribute servicemanager domain;
 typeattribute servicemanager mlstrustedsubject;
 
-binder_call(servicemanager, GoogleOtaBinder)
-binder_call(servicemanager, aal)
-binder_call(servicemanager, audioshell_system)
-binder_call(servicemanager, batterywarning)
-binder_call(servicemanager, cameramind_app)
-binder_call(servicemanager, camerapostalgo)
-binder_call(servicemanager, em_app)
-binder_call(servicemanager, em_svr)
-binder_call(servicemanager, emdlogger)
-binder_call(servicemanager, emsensor_app)
-binder_call(servicemanager, facemiui)
-binder_call(servicemanager, fdpp)
-binder_call(servicemanager, hypsys_ssi_default)
-binder_call(servicemanager, hypsys_ssi_server)
-binder_call(servicemanager, ipod)
-binder_call(servicemanager, joyose_app)
-binder_call(servicemanager, logturbo)
-binder_call(servicemanager, magt)
-binder_call(servicemanager, mcd)
-binder_call(servicemanager, mdlogger)
-binder_call(servicemanager, misight)
-binder_call(servicemanager, miuibooster)
-binder_call(servicemanager, mqsas)
-binder_call(servicemanager, mqsasd)
-binder_call(servicemanager, mslgd)
-binder_call(servicemanager, mtkbootanimation)
-binder_call(servicemanager, netdiag)
-binder_call(servicemanager, platform_app)
-binder_call(servicemanager, shelld)
-binder_call(servicemanager, smartplatformserver)
-binder_call(servicemanager, teed_app)
-binder_call(servicemanager, teeregistryd_app)
-binder_call(servicemanager, terservice)
-binder_call(servicemanager, thermald)
-binder_call(servicemanager, trusty_security_vm_launcher)
-binder_call(servicemanager, virtual_keyboard)
-binder_call(servicemanager, vtservice)
-binder_call(servicemanager, wae_app)
-binder_call(servicemanager, wae_daemon)
-binder_call(servicemanager, whetstone)
-allow servicemanager millet:dir r_dir_perms;
-allow servicemanager miui_coredump_file:file create_file_perms;
-allow servicemanager self:cap_userns sys_nice;
-allow servicemanager self:capability sys_nice;
+allow servicemanager GoogleOtaBinder:binder { call transfer };
+allow servicemanager aal:binder { call transfer };
+allow servicemanager audio_vendor_parameter_parser:binder transfer;
+allow servicemanager audioshell_system:binder { call transfer };
+allow servicemanager batterywarning:binder { call transfer };
+allow servicemanager cameramind_app:binder { call transfer };
+allow servicemanager camerapostalgo:binder { call transfer };
+allow servicemanager data_log_stability_file:dir search;
+allow servicemanager em_app:binder { call transfer };
+allow servicemanager em_svr:binder { call transfer };
+allow servicemanager emdlogger:binder { call transfer };
+allow servicemanager emsensor_app:binder { call transfer };
+allow servicemanager facemiui:binder { call transfer };
+allow servicemanager fdpp:binder { call transfer };
+allow servicemanager hal_telephony_server:binder transfer;
+allow servicemanager hypsys_ssi_default:binder { call transfer };
+allow servicemanager hypsys_ssi_server:binder { call transfer };
+allow servicemanager ipod:binder { call transfer };
+allow servicemanager joyose_app:binder { call transfer };
+allow servicemanager logturbo:binder { call transfer };
+allow servicemanager magt:binder { call transfer };
+allow servicemanager mcd:binder { call transfer };
+allow servicemanager mdlogger:binder { call transfer };
+allow servicemanager millet:dir { read search };
+allow servicemanager millet:file { getattr open read };
+allow servicemanager millet:process getattr;
+allow servicemanager misight:binder { call transfer };
+allow servicemanager miui_coredump_file:dir { add_name search write };
+allow servicemanager miui_coredump_file:file { create open read write };
+allow servicemanager miui_native_file:dir search;
+allow servicemanager miuibooster:binder { call transfer };
+allow servicemanager mqsas:binder { call transfer };
+allow servicemanager mqsasd:binder { call transfer };
+allow servicemanager mslgd:binder { call transfer };
+allow servicemanager mtkbootanimation:binder { call transfer };
+allow servicemanager netd:binder transfer;
+allow servicemanager netdiag:binder { call transfer };
+allow servicemanager platform_app:binder { call transfer };
+allow servicemanager self:{ cap_userns capability } sys_nice;
+allow servicemanager shelld:binder { call transfer };
+allow servicemanager smartplatformserver:binder { call transfer };
+allow servicemanager teed_app:binder { call transfer };
+allow servicemanager teeregistryd_app:binder { call transfer };
+allow servicemanager terservice:binder { call transfer };
+allow servicemanager thermald:binder { call transfer };
+allow servicemanager trusty_security_vm_launcher:binder { call transfer };
+allow servicemanager virtual_keyboard:binder { call transfer };
+allow servicemanager vtservice:binder { call transfer };
+allow servicemanager wae_app:binder { call transfer };
+allow servicemanager wae_daemon:binder { call transfer };
+allow servicemanager whetstone:binder { call transfer };
 
 # --- servicemanager_exec ---
 typeattribute servicemanager_exec exec_type;
@@ -1960,13 +2255,13 @@ typeattribute shortcut_service service_manager_type;
 typeattribute shortcut_service system_server_service;
 
 # --- shoulderkey_service ---
-type shoulderkey_service, app_api_service, service_manager_type, system_server_service;
+type shoulderkey_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- slave_p2p_service ---
-type slave_p2p_service, app_api_service, service_manager_type, system_server_service;
+type slave_p2p_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- slave_wifi_service ---
-type slave_wifi_service, app_api_service, service_manager_type, system_server_service;
+type slave_wifi_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- slice_service ---
 typeattribute slice_service app_api_service;
@@ -1974,16 +2269,16 @@ typeattribute slice_service service_manager_type;
 typeattribute slice_service system_server_service;
 
 # --- slide_service ---
-type slide_service, app_api_service, service_manager_type, system_server_service;
+type slide_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- smart_app_assistant_service ---
-type smart_app_assistant_service, app_api_service, service_manager_type, system_server_service;
+type smart_app_assistant_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- smartplatformserver_service ---
 type smartplatformserver_service, service_manager_type;
 
 # --- smartpower_service ---
-type smartpower_service, service_manager_type, system_server_service;
+type smartpower_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- smartspace_service ---
 typeattribute smartspace_service app_api_service;
@@ -2001,7 +2296,7 @@ typeattribute speech_recognition_service service_manager_type;
 typeattribute speech_recognition_service system_server_service;
 
 # --- ssru_service ---
-type ssru_service, app_api_service, service_manager_type, system_server_service;
+type ssru_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- stats_service ---
 typeattribute stats_service service_manager_type;
@@ -2048,8 +2343,6 @@ typeattribute surfaceflinger_service service_manager_type;
 # --- swap_native_service ---
 type swap_native_service, service_manager_type;
 
-allow swap_native_service system_server:binder transfer;
-
 # --- system_app_service ---
 typeattribute system_app_service service_manager_type;
 
@@ -2089,7 +2382,7 @@ typeattribute task_service system_server_service;
 type tee_service, service_manager_type;
 
 # --- teei_ifaa_service ---
-type teei_ifaa_service, app_api_service, service_manager_type;
+type teei_ifaa_service, app_api_service, base_typeattr_1074, service_manager_type;
 
 # --- teeregistry_service ---
 type teeregistry_service, service_manager_type;
@@ -2138,7 +2431,7 @@ typeattribute thermal_service service_manager_type;
 typeattribute thermal_service system_server_service;
 
 # --- thermalqos_service ---
-type thermalqos_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type thermalqos_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- threadnetwork_service ---
 typeattribute threadnetwork_service app_api_service;
@@ -2157,7 +2450,7 @@ typeattribute timezonedetector_service service_manager_type;
 typeattribute timezonedetector_service system_server_service;
 
 # --- tof_service ---
-type tof_service, app_api_service, service_manager_type, system_api_service, system_server_service;
+type tof_service, app_api_service, base_typeattr_1074, service_manager_type, system_api_service, system_server_service;
 
 # --- tracingproxy_service ---
 typeattribute tracingproxy_service service_manager_type;
@@ -2183,7 +2476,7 @@ typeattribute trust_service service_manager_type;
 typeattribute trust_service system_server_service;
 
 # --- turbosched_service ---
-type turbosched_service, app_api_service, ephemeral_app_api_service, service_manager_type, system_server_service;
+type turbosched_service, app_api_service, base_typeattr_1074, ephemeral_app_api_service, service_manager_type, system_server_service;
 
 # --- tv_ad_service ---
 typeattribute tv_ad_service app_api_service;
@@ -2212,7 +2505,7 @@ typeattribute tv_tuner_resource_mgr_service system_server_service;
 typeattribute uce_service service_manager_type;
 
 # --- ui_service ---
-type ui_service, app_api_service, service_manager_type, system_server_service;
+type ui_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- uimode_service ---
 typeattribute uimode_service app_api_service;
@@ -2255,21 +2548,17 @@ typeattribute user_service service_manager_type;
 typeattribute user_service system_server_service;
 
 # --- userperception_service ---
-type userperception_service, app_api_service, service_manager_type, system_server_service;
+type userperception_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- usp_service ---
-type usp_service;
+type usp_service, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain;
 
-typeattribute usp_service coredomain;
-typeattribute usp_service domain;
-
-get_prop(usp_service, radio_prop)
 get_prop(usp_service, system_mtk_usp_srv_prop)
 init_daemon_domain(usp_service)
 set_prop(usp_service, radio_prop)
-set_prop(usp_service, system_mtk_usp_srv_prop)
 allow usp_service block_device:dir search;
 allow usp_service proc_net:file rw_file_perms;
+allow usp_service system_mtk_usp_srv_prop:property_service set;
 
 # --- usp_service_exec ---
 type usp_service_exec, exec_type, file_type, system_file_type;
@@ -2382,7 +2671,7 @@ typeattribute webviewupdate_service service_manager_type;
 typeattribute webviewupdate_service system_server_service;
 
 # --- whetstone_service ---
-type whetstone_service, app_api_service, service_manager_type, system_server_service;
+type whetstone_service, app_api_service, base_typeattr_1074, service_manager_type, system_server_service;
 
 # --- wifi_mainline_supplicant_service ---
 typeattribute wifi_mainline_supplicant_service service_manager_type;

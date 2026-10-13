@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_rcs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Radio & Telephony
 # Subcategory: IMS & VoLTE
@@ -13,7 +14,9 @@ binder_call(hal_mtk_rcs_client, hal_mtk_rcs_server)
 allow hal_mtk_rcs_client mtk_hal_rcs_ua_service:service_manager find;
 
 # --- hal_mtk_rcs_server ---
-add_service(hal_mtk_rcs_server, mtk_hal_rcs_ua_service)
-binder_call(hal_mtk_rcs_server, hal_mtk_rcs_client)
-binder_use(hal_mtk_rcs_server)
+allow hal_mtk_rcs_server hal_mtk_rcs_client:binder call;
+allow hal_mtk_rcs_server hal_mtk_rcs_client:fd use;
+allow hal_mtk_rcs_server mtk_hal_rcs_ua_service:service_manager { add find };
+allow hal_mtk_rcs_server servicemanager:binder { call transfer };
+allow hal_mtk_rcs_server servicemanager:fd use;
 

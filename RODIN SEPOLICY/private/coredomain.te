@@ -1,6 +1,7 @@
 # ============================================================
 # File: coredomain.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,5 +15,5 @@ get_prop(coredomain, system_mtk_boostfwk_version_prop)
 get_prop(coredomain, system_mtk_msync3_prop)
 get_prop(coredomain, system_video_framework_debug_log_prop)
 get_prop(coredomain, vendor_mtk_bt_notsupportsubrate_prop)
-allow coredomain system_mtk_pmb_file:file rx_file_perms;
+allow coredomain system_mtk_pmb_file:file { execute getattr map open read };
 

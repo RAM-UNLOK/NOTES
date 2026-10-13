@@ -1,6 +1,7 @@
 # ============================================================
 # File: crash_dump.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -10,10 +11,8 @@
 
 # --- crash_dump ---
 typeattribute crash_dump domain;
-typeattribute crash_dump halclientdomain;
 
 binder_use(crash_dump)
-get_prop(crash_dump, ctl_stop_prop)
 hal_client_domain(crash_dump, hal_mtk_aee)
 set_prop(crash_dump, ctl_stop_prop)
 allow crash_dump RT_Monitor_device:chr_file r_file_perms;

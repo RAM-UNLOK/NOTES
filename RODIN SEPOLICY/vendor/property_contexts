@@ -106,7 +106,6 @@ ro.vendor.display.dolbyvision.support                     u:object_r:vendor_disp
 vendor.audio.                                             u:object_r:vendor_audio_prop:s0
 vendor.audio.ultrasound                                   u:object_r:vendor_mtk_audiohal_prop:s0
 vendor.audiohal.                                          u:object_r:vendor_mtk_audiohal_prop:s0
-vendor.net.cdma.mdmstat                                   u:object_r:vendor_mtk_net_cdma_mdmstat_prop:s0
 
 # --- Media Framework ---
 ro.vendor.media.video.style.support                       u:object_r:vendor_displayfeature_prop:s0
@@ -165,6 +164,8 @@ ro.vendor.display.nature_mode.enable                      u:object_r:vendor_disp
 ro.vendor.display.picture_hdr.support                     u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.primary_idle_refresh_rate               u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.primary_update_dbi_by_temperature       u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.display.second_update_dbi_by_temperature        u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.display.secondary_idle_refresh_rate             u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.skip_idle_for_90hz                      u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.standard_d75_enable                     u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.support_df_v4                           u:object_r:vendor_displayfeature_prop:s0
@@ -212,8 +213,6 @@ ro.vendor.mtk.gpu.                                        u:object_r:vendor_mtk_
 
 # --- Samsung Display Pipeline ---
 ro.vendor.display.sec_screen_light_sensor_type            u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.display.second_update_dbi_by_temperature        u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.display.secondary_idle_refresh_rate             u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.set_sec_idle_timer_ms                   u:object_r:vendor_displayfeature_prop:s0
 
 # [ Radio & Telephony ]
@@ -221,17 +220,12 @@ ro.vendor.display.set_sec_idle_timer_ms                   u:object_r:vendor_disp
 persist.vendor.active.rcs.slot.id                         u:object_r:vendor_mtk_service_rcs_prop:s0
 persist.vendor.ims.simulate                               u:object_r:vendor_mtk_ims_prop:s0
 persist.vendor.ims_support                                u:object_r:vendor_mtk_ims_prop:s0
-persist.vendor.mims_support                               u:object_r:vendor_mtk_mims_prop:s0
-persist.vendor.radio.imsdisablesms                        u:object_r:vendor_mtk_imstestmode_prop:s0
-persist.vendor.radio.imstestmode                          u:object_r:vendor_mtk_imstestmode_prop:s0
-persist.vendor.radio.simswitch.emmode                     u:object_r:vendor_mtk_simswitch_emmode_prop:s0
 persist.vendor.service.rcs                                u:object_r:vendor_mtk_service_rcs_prop:s0
 persist.vendor.service.rcs.slot2                          u:object_r:vendor_mtk_service_rcs_prop:s0
 persist.vendor.service.tag.rcs                            u:object_r:vendor_mtk_service_rcs_prop:s0
 persist.vendor.service.tag.rcs.slot2                      u:object_r:vendor_mtk_service_rcs_prop:s0
 persist.vendor.volte_support                              u:object_r:vendor_mtk_volte_support_prop:s0
 ro.vendor.md_auto_setup_ims                               u:object_r:vendor_mtk_ims_prop:s0
-ro.vendor.md_mims_support                                 u:object_r:vendor_mtk_ims_prop:s0
 ro.vendor.wifi.sap.concurrent.iface                       u:object_r:vendor_mtk_wifi_hotspot_prop:s0
 ro.vendor.wifi.sap.interface                              u:object_r:vendor_mtk_wifi_hotspot_prop:s0
 vendor.ims.eims.pdn.info                                  u:object_r:vendor_mtk_ims_eims_pdn_prop:s0
@@ -246,7 +240,6 @@ persist.vendor.mtk_hvolte_indicator                       u:object_r:vendor_mtk_
 persist.vendor.mtk_rcs_ua_support                         u:object_r:vendor_mtk_rcs_ua_support_prop:s0
 ro.vendor.mtk.bt_sap_enable                               u:object_r:vendor_mtk_bt_sap_enable_prop:s0
 ro.vendor.mtk_ims_notification                            u:object_r:vendor_mtk_ims_prop:s0
-ro.vendor.mtk_imsi_switch_support                         u:object_r:vendor_mtk_ims_prop:s0
 
 # --- MediaTek Modem & RIL ---
 ctl.vendor.fusion_ril_mtk                                 u:object_r:vendor_mtk_ctl_fusion_ril_mtk_prop:s0
@@ -258,6 +251,7 @@ ro.vendor.mtk_single_bin_modem_support                    u:object_r:vendor_mtk_
 ro.vendor.mtk_telephony_add_on_policy                     u:object_r:vendor_mtk_telephony_addon_prop:s0
 
 # --- Messaging ---
+persist.vendor.radio.imsdisablesms                        u:object_r:vendor_mtk_imstestmode_prop:s0
 persist.vendor.radio.smsformat                            u:object_r:vendor_mtk_smsformat_prop:s0
 
 # --- Modem & RIL ---
@@ -275,6 +269,7 @@ persist.vendor.radio.ia.1                                 u:object_r:vendor_mtk_
 persist.vendor.radio.ia.2                                 u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.ia.3                                 u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.imei                                 u:object_r:vendor_deviceid_prop:s0
+persist.vendor.radio.imstestmode                          u:object_r:vendor_mtk_imstestmode_prop:s0
 persist.vendor.radio.last_iccid_sim                       u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.ls1icid                              u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.ls2icid                              u:object_r:vendor_mtk_telephony_sensitive_prop:s0
@@ -285,6 +280,7 @@ persist.vendor.radio.mobile.data                          u:object_r:vendor_mtk_
 persist.vendor.radio.mobile.mtu.sysenv                    u:object_r:vendor_mtk_em_mtu_prop:s0
 persist.vendor.radio.modem.warning                        u:object_r:vendor_mtk_modem_warning_prop:s0
 persist.vendor.radio.seapi.off                            u:object_r:vendor_mtk_radio_seapi_off_prop:s0
+persist.vendor.radio.simswitch.emmode                     u:object_r:vendor_mtk_simswitch_emmode_prop:s0
 persist.vendor.radio.ss.hashed_last_iccid1                u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.ss.hashed_last_iccid2                u:object_r:vendor_mtk_telephony_sensitive_prop:s0
 persist.vendor.radio.ss.hashed_last_iccid3                u:object_r:vendor_mtk_telephony_sensitive_prop:s0
@@ -296,6 +292,7 @@ ro.vendor.radio.                                          u:object_r:vendor_mtk_
 ro.vendor.ril.                                            u:object_r:vendor_mtk_radio_prop:s0
 vendor.cdma.                                              u:object_r:vendor_mtk_cdma_prop:s0
 vendor.gsm.modem.vsim.capability                          u:object_r:vendor_mtk_vsim_prop:s0
+vendor.net.cdma.mdmstat                                   u:object_r:vendor_mtk_net_cdma_mdmstat_prop:s0
 vendor.ril.                                               u:object_r:vendor_mtk_radio_prop:s0
 vendor.ril.active.md                                      u:object_r:vendor_mtk_ril_active_md_prop:s0
 vendor.ril.c2kirat.ia.sim1                                u:object_r:vendor_mtk_telephony_sensitive_prop:s0
@@ -424,12 +421,10 @@ persist.vendor.sys.keymint_configuration.status           u:object_r:vendor_paym
 # --- MediaTek TEE Core ---
 ro.vendor.mtk_microtrust_tee_support                      u:object_r:vendor_mtk_microtrust_tee_prop:s0
 ro.vendor.mtk_mitee_support                               u:object_r:vendor_mtk_mitee_prop:s0
-ro.vendor.mtk_svp_on_mtee_support                         u:object_r:vendor_mtk_svp_on_mtee_support_prop:s0
 ro.vendor.mtk_trustonic_tee_support                       u:object_r:vendor_mtk_trustonic_tee_prop:s0
 
 # --- TEE Core ---
 ro.boot.tee_type                                          u:object_r:vendor_mtk_mitee_prop:s0
-vendor.teefs_state                                        u:object_r:vendor_mtk_mitee_prop:s0
 
 # --- Trustonic TEE Core ---
 ro.vendor.trustonic.ready                                 u:object_r:vendor_trustonic_prop:s0 exact bool
@@ -551,6 +546,7 @@ persist.vendor.mi.mpbe.inference.duration                 u:object_r:vendor_mpbe
 persist.vendor.mi.mpbe.test                               u:object_r:vendor_mpbe_prop:s0
 persist.vendor.mi_sf.                                     u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.miface.                                    u:object_r:vendor_miface_prop:s0
+persist.vendor.mims_support                               u:object_r:vendor_mtk_mims_prop:s0
 persist.vendor.net.dhcp.renew                             u:object_r:vendor_mtk_default_prop:s0
 persist.vendor.omadm_support                              u:object_r:vendor_mtk_default_prop:s0
 persist.vendor.operator.optr                              u:object_r:vendor_mtk_cxp_vendor_prop:s0
@@ -663,6 +659,7 @@ ro.vendor.mtk_geofence_support                            u:object_r:vendor_mtk_
 ro.vendor.mtk_gwsd_capability                             u:object_r:vendor_mtk_gwsd_capability_prop:s0
 ro.vendor.mtk_hidl_consolidation                          u:object_r:vendor_mtk_gps_support_prop:s0
 ro.vendor.mtk_hybrid_encode_support                       u:object_r:vendor_mtk_default_prop:s0
+ro.vendor.mtk_imsi_switch_support                         u:object_r:vendor_mtk_ims_prop:s0
 ro.vendor.mtk_lte_support                                 u:object_r:vendor_mtk_tel_switch_prop:s0
 ro.vendor.mtk_mapi_support                                u:object_r:vendor_mtk_dmc_prop:s0
 ro.vendor.mtk_mcf_support                                 u:object_r:vendor_mtk_mcf_prop:s0
@@ -691,6 +688,7 @@ ro.vendor.mtk_skip_pkg_file                               u:object_r:vendor_mtk_
 ro.vendor.mtk_slow_motion_support                         u:object_r:vendor_mtk_camera_prop:s0
 ro.vendor.mtk_subsidy_lock_support                        u:object_r:vendor_mtk_subsidy_lock_support_prop:s0
 ro.vendor.mtk_support_mp2_playback                        u:object_r:vendor_mtk_default_prop:s0
+ro.vendor.mtk_svp_on_mtee_support                         u:object_r:vendor_mtk_svp_on_mtee_support_prop:s0
 ro.vendor.mtk_tdd_data_only_support                       u:object_r:vendor_mtk_default_prop:s0
 ro.vendor.mtk_uicc_clf                                    u:object_r:vendor_mtk_nfc_uicc_clf_prop:s0
 ro.vendor.mtk_ultra_dimming_support                       u:object_r:vendor_mtk_aal_ro_prop:s0
@@ -739,6 +737,10 @@ ctl.vendor.ccci_fsd                                       u:object_r:vendor_mtk_
 ctl.vendor.ccci_rpcd                                      u:object_r:vendor_mtk_ctl_ccci_rpcd_prop:s0
 ctl.vendor.gsm0710muxd                                    u:object_r:vendor_mtk_ctl_gsm0710muxd_prop:s0
 ctl.vendor.muxreport-daemon                               u:object_r:vendor_mtk_ctl_muxreport-daemon_prop:s0
+odm.security.rootpub.load                                 u:object_r:vendor_payment_security_prop:s0
+odm.security.rootpub.trigger                              u:object_r:vendor_payment_security_prop:s0
+odm.security.rotatekey.load                               u:object_r:vendor_payment_security_prop:s0
+odm.security.rotatekey.trigger                            u:object_r:vendor_payment_security_prop:s0
 ro.boot.atm                                               u:object_r:vendor_mtk_default_prop:s0
 ro.boot.chipid                                            u:object_r:vendor_chipid_prop:s0
 ro.boot.cpuid                                             u:object_r:vendor_cpuid_prop:s0
@@ -786,6 +788,7 @@ ro.vendor.jpeg_decode_sw_opt                              u:object_r:vendor_mtk_
 ro.vendor.localhbm.enable                                 u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.magt.                                           u:object_r:vendor_mtk_magt_prop:s0
 ro.vendor.mbrain.mode                                     u:object_r:vendor_mtk_mbrain_support_prop:s0
+ro.vendor.md_mims_support                                 u:object_r:vendor_mtk_ims_prop:s0
 ro.vendor.md_prop_ver                                     u:object_r:vendor_mtk_md_version_prop:s0
 ro.vendor.mi_fake_32bit_support                           u:object_r:vendor_mi_32bit_prop:s0
 ro.vendor.mi_sf.                                          u:object_r:vendor_displayfeature_prop:s0
@@ -925,6 +928,7 @@ vendor.strongbox.triggerhmac                              u:object_r:vendor_stro
 vendor.sys.feature_state                                  u:object_r:vendor_payment_security_prop:s0
 vendor.sys.rpmb_state                                     u:object_r:vendor_payment_security_prop:s0
 vendor.sys.vm.                                            u:object_r:vendor_mtk_vm_prop:s0
+vendor.teefs_state                                        u:object_r:vendor_mtk_mitee_prop:s0
 vendor.vdo.cam.effect                                     u:object_r:vendor_mtk_camera_prop:s0
 vendor.video.mode.status                                  u:object_r:vendor_displayfeature_prop:s0
 vendor.voicerecognize.noDL                                u:object_r:vendor_mtk_voicerecgnize_prop:s0
@@ -934,12 +938,6 @@ vendor.vow.                                               u:object_r:vendor_mtk_
 vendor.vt.                                                u:object_r:vendor_mtk_vendor_vt_prop:s0
 vendor.wallpaper.color.flag                               u:object_r:vendor_color_prop:s0
 vendor.wallpaper.color.start                              u:object_r:vendor_color_prop:s0
-
-# --- Samsung Misc ---
-odm.security.rootpub.load                                 u:object_r:vendor_payment_security_prop:s0
-odm.security.rootpub.trigger                              u:object_r:vendor_payment_security_prop:s0
-odm.security.rotatekey.load                               u:object_r:vendor_payment_security_prop:s0
-odm.security.rotatekey.trigger                            u:object_r:vendor_payment_security_prop:s0
 
 # --- Xiaomi Misc ---
 ro.vendor.xiaomi.bl.poll                                  u:object_r:vendor_displayfeature_prop:s0

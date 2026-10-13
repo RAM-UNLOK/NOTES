@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_audio.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Audio & Video
 # Subcategory: Audio HAL
@@ -13,6 +14,7 @@ binder_call(hal_mtk_audio_client, hal_mtk_audio_server)
 allow hal_mtk_audio_client mtk_hal_audio_service:service_manager find;
 
 # --- hal_mtk_audio_server ---
-add_service(hal_mtk_audio_server, mtk_hal_audio_service)
-binder_call(hal_mtk_audio_server, hal_mtk_audio_client)
+allow hal_mtk_audio_server hal_mtk_audio_client:binder call;
+allow hal_mtk_audio_server hal_mtk_audio_client:fd use;
+allow hal_mtk_audio_server mtk_hal_audio_service:service_manager { add find };
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: kpoc_charger.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Battery & Charging
@@ -9,19 +10,13 @@
 # ============================================================
 
 # --- kpoc_charger ---
-type kpoc_charger;
+type kpoc_charger, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain;
 
-typeattribute kpoc_charger coredomain;
-typeattribute kpoc_charger domain;
-typeattribute kpoc_charger halclientdomain;
-
-get_prop(kpoc_charger, powerctl_prop)
 get_prop(kpoc_charger, system_mtk_kpoc_prop)
 hal_client_domain(kpoc_charger, hal_health)
 hal_client_domain(kpoc_charger, hal_light)
 init_daemon_domain(kpoc_charger)
 set_prop(kpoc_charger, powerctl_prop)
-set_prop(kpoc_charger, system_mtk_kpoc_prop)
 allow kpoc_charger block_device:dir search;
 allow kpoc_charger gpu_device:dir search;
 allow kpoc_charger graphics_device:chr_file rw_file_perms;
@@ -36,16 +31,16 @@ allow kpoc_charger proc_cmdline:file r_file_perms;
 allow kpoc_charger rootfs:file r_file_perms;
 allow kpoc_charger rtc_device:chr_file rw_file_perms;
 allow kpoc_charger self:capability { net_admin sys_admin sys_boot sys_nice };
-allow kpoc_charger self:netlink_kobject_uevent_socket { read create bind setopt };
+allow kpoc_charger self:netlink_kobject_uevent_socket { bind create read setopt };
 allow kpoc_charger sysfs:dir r_dir_perms;
 allow kpoc_charger sysfs_battery_warning:file r_file_perms;
 allow kpoc_charger sysfs_batteryinfo:dir r_dir_perms;
 allow kpoc_charger sysfs_dt_firmware_android:dir r_dir_perms;
-allow kpoc_charger sysfs_dt_firmware_android:file r_file_perms;
-allow kpoc_charger sysfs_dt_firmware_android:lnk_file r_file_perms;
+allow kpoc_charger sysfs_dt_firmware_android:{ file lnk_file } r_file_perms;
 allow kpoc_charger sysfs_leds:dir r_dir_perms;
 allow kpoc_charger sysfs_power:file rw_file_perms;
 allow kpoc_charger sysfs_vbus:file r_file_perms;
+allow kpoc_charger system_mtk_kpoc_prop:property_service set;
 
 # --- kpoc_charger_exec ---
 type kpoc_charger_exec, exec_type, file_type, system_file_type;

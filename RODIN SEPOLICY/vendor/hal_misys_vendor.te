@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_misys_vendor.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,17 +14,9 @@ binder_call(hal_misys_vendor_client, hal_misys_vendor_server)
 allow hal_misys_vendor_client hal_misys_vendor_service:service_manager find;
 
 # --- hal_misys_vendor_default ---
-type hal_misys_vendor_default;
-typealias hal_misys_vendor_default hal_misys_default;
+type hal_misys_vendor_default, base_typeattr_226, base_typeattr_227, base_typeattr_228, base_typeattr_229, base_typeattr_230, base_typeattr_231, base_typeattr_235, base_typeattr_236, base_typeattr_237, base_typeattr_238, base_typeattr_240, base_typeattr_241, base_typeattr_242, base_typeattr_243, base_typeattr_244, base_typeattr_245, base_typeattr_246, base_typeattr_247, base_typeattr_248, base_typeattr_250, base_typeattr_251, base_typeattr_252, base_typeattr_253, base_typeattr_254, base_typeattr_255, base_typeattr_256, base_typeattr_257, base_typeattr_258, base_typeattr_259, base_typeattr_260, base_typeattr_261, base_typeattr_262, base_typeattr_263, base_typeattr_264, base_typeattr_265, base_typeattr_266, base_typeattr_267, base_typeattr_268, base_typeattr_269, base_typeattr_270, base_typeattr_271, base_typeattr_272, base_typeattr_273, base_typeattr_274, base_typeattr_275, base_typeattr_276, base_typeattr_277, base_typeattr_278, base_typeattr_279, base_typeattr_280, base_typeattr_281, base_typeattr_282, base_typeattr_283, base_typeattr_284, base_typeattr_285, base_typeattr_286, base_typeattr_287, base_typeattr_288, base_typeattr_289, base_typeattr_290, base_typeattr_291, base_typeattr_292, base_typeattr_293, base_typeattr_294, base_typeattr_295, base_typeattr_296, base_typeattr_297, base_typeattr_298, base_typeattr_299, base_typeattr_300, base_typeattr_301, base_typeattr_302, base_typeattr_303, base_typeattr_304, base_typeattr_305, base_typeattr_306, base_typeattr_307, base_typeattr_308, base_typeattr_309, base_typeattr_310, base_typeattr_311, base_typeattr_312, base_typeattr_313, base_typeattr_314, base_typeattr_315, base_typeattr_316, base_typeattr_317, base_typeattr_318, base_typeattr_319, base_typeattr_320, base_typeattr_321, base_typeattr_322, base_typeattr_323, base_typeattr_324, base_typeattr_325, base_typeattr_326, base_typeattr_327, base_typeattr_328, base_typeattr_329, base_typeattr_330, base_typeattr_331, base_typeattr_333, base_typeattr_334, base_typeattr_335, base_typeattr_336, base_typeattr_337, base_typeattr_338, base_typeattr_339, base_typeattr_340, base_typeattr_341, base_typeattr_342, base_typeattr_343, base_typeattr_344, base_typeattr_345, base_typeattr_346, base_typeattr_347, base_typeattr_348, base_typeattr_349, base_typeattr_350, base_typeattr_351, base_typeattr_352, base_typeattr_353, base_typeattr_354, base_typeattr_355, base_typeattr_358, base_typeattr_359, base_typeattr_360, base_typeattr_361, base_typeattr_362, base_typeattr_363, base_typeattr_364, base_typeattr_367, base_typeattr_369, base_typeattr_370, base_typeattr_371, base_typeattr_372, base_typeattr_373, base_typeattr_374, base_typeattr_375, base_typeattr_376, base_typeattr_377, base_typeattr_378, base_typeattr_379, base_typeattr_380, base_typeattr_381, base_typeattr_382, base_typeattr_383, base_typeattr_384, base_typeattr_385, base_typeattr_386, base_typeattr_387, base_typeattr_388, base_typeattr_389, base_typeattr_390, base_typeattr_391, base_typeattr_392, base_typeattr_393, base_typeattr_394, base_typeattr_395, base_typeattr_396, base_typeattr_397, base_typeattr_398, base_typeattr_399, base_typeattr_400, base_typeattr_401, base_typeattr_402, base_typeattr_403, base_typeattr_404, base_typeattr_405, base_typeattr_406, base_typeattr_407, base_typeattr_408, base_typeattr_409, base_typeattr_410, base_typeattr_411, base_typeattr_412, base_typeattr_413, base_typeattr_414, base_typeattr_415, base_typeattr_416, base_typeattr_417, domain, hypsys_ssi_client, mlstrustedsubject;
+typealias hal_misys_vendor_default alias hal_misys_default;
 
-typeattribute hal_misys_vendor_default domain;
-typeattribute hal_misys_vendor_default hal_misys_vendor;
-typeattribute hal_misys_vendor_default halclientdomain;
-typeattribute hal_misys_vendor_default halserverdomain;
-typeattribute hal_misys_vendor_default hypsys_ssi_client;
-typeattribute hal_misys_vendor_default mlstrustedsubject;
-
-binder_call(hal_misys_vendor_default, su)
 binder_call(hal_misys_vendor_default, system_suspend_server)
 binder_use(hal_misys_vendor_default)
 get_prop(hal_misys_vendor_default, abreuse_prop)
@@ -33,48 +26,36 @@ get_prop(hal_misys_vendor_default, log_manager_prop)
 get_prop(hal_misys_vendor_default, vendor_camera_sensor_prop)
 get_prop(hal_misys_vendor_default, vendor_default_prop)
 get_prop(hal_misys_vendor_default, vendor_fp_prop)
-get_prop(hal_misys_vendor_default, vendor_minidump_prop)
 get_prop(hal_misys_vendor_default, vendor_mtk_persist_aeev_prop)
 get_prop(hal_misys_vendor_default, vendor_nfc_mi_prop)
 get_prop(hal_misys_vendor_default, vendor_system_prop)
+get_prop(hal_misys_vendor_default, vendor_wifi_version)
 hal_client_domain(hal_misys_vendor_default, hal_misyscore)
 hal_server_domain(hal_misys_vendor_default, hal_misys_vendor)
 hwbinder_use(hal_misys_vendor_default)
 init_daemon_domain(hal_misys_vendor_default)
-set_prop(hal_misys_vendor_default, vendor_ffu_prop)
-set_prop(hal_misys_vendor_default, vendor_mi_ic_prop)
-set_prop(hal_misys_vendor_default, vendor_mi_ric_prop)
 set_prop(hal_misys_vendor_default, vendor_minidump_prop)
-set_prop(hal_misys_vendor_default, vendor_system_prop)
-wakelock_use(hal_misys_vendor_default)
-allow hal_misys_vendor_default aee_exp_vendor_file:blk_file { rw_file_perms setattr };
+allow hal_misys_vendor_default aee_exp_vendor_file:blk_file { getattr ioctl open read setattr write };
 allow hal_misys_vendor_default aee_exp_vendor_file:dir create_dir_perms;
-allow hal_misys_vendor_default aee_exp_vendor_file:dir r_dir_perms;
 allow hal_misys_vendor_default aee_exp_vendor_file:file create_file_perms;
-allow hal_misys_vendor_default aee_exp_vendor_file:file r_file_perms;
-allow hal_misys_vendor_default appdomain_tmpfs:file read;
-allow hal_misys_vendor_default appdomain_tmpfs:file { rw_file_perms setattr };
+allow hal_misys_vendor_default appdomain_tmpfs:file { getattr open read setattr write };
 allow hal_misys_vendor_default blackbox_block_device:blk_file rw_file_perms;
 allow hal_misys_vendor_default block_device:dir r_dir_perms;
 allow hal_misys_vendor_default camera_persist_file:dir create_dir_perms;
 allow hal_misys_vendor_default camera_persist_file:file create_file_perms;
 allow hal_misys_vendor_default cgroup:dir r_dir_perms;
-allow hal_misys_vendor_default cgroup:file r_file_perms;
-allow hal_misys_vendor_default cgroup:lnk_file r_file_perms;
+allow hal_misys_vendor_default cgroup:{ file lnk_file } r_file_perms;
 allow hal_misys_vendor_default ffu_data_file:dir search;
-allow hal_misys_vendor_default ffu_data_file:file r_file_perms;
-allow hal_misys_vendor_default fuse:dir rw_file_perms;
+allow hal_misys_vendor_default ffu_data_file:file { getattr open read };
+allow hal_misys_vendor_default fuse:dir { append getattr ioctl lock map open read watch watch_reads write };
 allow hal_misys_vendor_default fuse:file rw_file_perms;
 allow hal_misys_vendor_default hal_misys_vendor_default:capability2 block_suspend;
 allow hal_misys_vendor_default hal_system_suspend_service:service_manager find;
 allow hal_misys_vendor_default hidl_manager_hwservice:hwservice_manager find;
 allow hal_misys_vendor_default kernel:system syslog_read;
-allow hal_misys_vendor_default kmsg_device:chr_file getattr;
 allow hal_misys_vendor_default kmsg_device:chr_file rw_file_perms;
-allow hal_misys_vendor_default kmsg_device:chr_file rw_file_perms;
-allow hal_misys_vendor_default kmsg_device:chr_file w_file_perms;
 allow hal_misys_vendor_default mi_ic_data_file:dir search;
-allow hal_misys_vendor_default mi_ic_data_file:file r_file_perms;
+allow hal_misys_vendor_default mi_ic_data_file:file { getattr open read };
 allow hal_misys_vendor_default minidump_block_device:blk_file rw_file_perms;
 allow hal_misys_vendor_default minidump_data_file:dir create_dir_perms;
 allow hal_misys_vendor_default minidump_data_file:file create_file_perms;
@@ -84,18 +65,12 @@ allow hal_misys_vendor_default mnt_vendor_file:dir create_dir_perms;
 allow hal_misys_vendor_default mnt_vendor_file:file create_file_perms;
 allow hal_misys_vendor_default monitor_ee_crash_partition:blk_file rw_file_perms;
 allow hal_misys_vendor_default mtkdump_data_file:dir { getattr search };
-allow hal_misys_vendor_default mtkdump_data_file:file { rw_file_perms setattr };
+allow hal_misys_vendor_default mtkdump_data_file:file { getattr open read setattr write };
 allow hal_misys_vendor_default mtkdump_partition:blk_file rw_file_perms;
-allow hal_misys_vendor_default persist_data_file:dir r_dir_perms;
-allow hal_misys_vendor_default persist_data_file:dir write;
-allow hal_misys_vendor_default persist_data_file:dir { add_name remove_name rmdir };
-allow hal_misys_vendor_default persist_data_file:file r_file_perms;
-allow hal_misys_vendor_default persist_data_file:file setattr;
-allow hal_misys_vendor_default persist_data_file:file write;
-allow hal_misys_vendor_default persist_data_file:file { create unlink };
+allow hal_misys_vendor_default persist_data_file:dir { add_name getattr open read remove_name rmdir search write };
+allow hal_misys_vendor_default persist_data_file:file { create getattr open read setattr unlink write };
 allow hal_misys_vendor_default proc:dir r_dir_perms;
-allow hal_misys_vendor_default proc:file r_file_perms;
-allow hal_misys_vendor_default proc:file { rw_file_perms setattr };
+allow hal_misys_vendor_default proc:file { r_file_perms setattr write };
 allow hal_misys_vendor_default proc_crash_module:file rw_file_perms;
 allow hal_misys_vendor_default proc_meminfo:file read;
 allow hal_misys_vendor_default proc_tp_file:dir r_dir_perms;
@@ -108,32 +83,27 @@ allow hal_misys_vendor_default pstorefs:dir r_dir_perms;
 allow hal_misys_vendor_default pstorefs:file r_file_perms;
 allow hal_misys_vendor_default rootfs:dir r_dir_perms;
 allow hal_misys_vendor_default rootfs:file r_file_perms;
-allow hal_misys_vendor_default rootfs:lnk_file r_file_perms;
-allow hal_misys_vendor_default rootfs:lnk_file { getattr setattr };
-allow hal_misys_vendor_default self:cap2_userns block_suspend;
-allow hal_misys_vendor_default self:capability { chown fsetid };
-allow hal_misys_vendor_default self:capability { sys_boot sys_tty_config };
-allow hal_misys_vendor_default self:capability2 block_suspend;
-allow hal_misys_vendor_default self:netlink_kobject_uevent_socket { read create bind setopt };
+allow hal_misys_vendor_default rootfs:lnk_file { r_file_perms setattr };
+allow hal_misys_vendor_default self:capability { chown fsetid sys_boot sys_tty_config };
+allow hal_misys_vendor_default self:netlink_kobject_uevent_socket { bind create read setopt };
+allow hal_misys_vendor_default self:{ cap2_userns capability2 } block_suspend;
 allow hal_misys_vendor_default storage_file:lnk_file read;
+allow hal_misys_vendor_default su:binder { call transfer };
 allow hal_misys_vendor_default sysfs:dir r_dir_perms;
-allow hal_misys_vendor_default sysfs:file r_file_perms;
 allow hal_misys_vendor_default sysfs:file rw_file_perms;
 allow hal_misys_vendor_default sysfs_batteryinfo:file r_file_perms;
 allow hal_misys_vendor_default sysfs_bootinfo:dir r_dir_perms;
-allow hal_misys_vendor_default sysfs_bootinfo:file r_file_perms;
 allow hal_misys_vendor_default sysfs_bootinfo:file rw_file_perms;
 allow hal_misys_vendor_default sysfs_memory:dir r_dir_perms;
-allow hal_misys_vendor_default sysfs_memory:file r_file_perms;
-allow hal_misys_vendor_default sysfs_memory:lnk_file r_file_perms;
+allow hal_misys_vendor_default sysfs_memory:{ file lnk_file } r_file_perms;
 allow hal_misys_vendor_default sysfs_type:dir r_dir_perms;
-allow hal_misys_vendor_default sysfs_type:file r_file_perms;
-allow hal_misys_vendor_default sysfs_type:lnk_file r_file_perms;
+allow hal_misys_vendor_default sysfs_type:{ file lnk_file } r_file_perms;
 allow hal_misys_vendor_default sysfs_usb:file w_file_perms;
+allow hal_misys_vendor_default sysfs_wake_lock:file rw_file_perms;
 allow hal_misys_vendor_default system_app:binder transfer;
 allow hal_misys_vendor_default system_suspend_hwservice:hwservice_manager find;
-allow hal_misys_vendor_default thermal_data_file:dir r_dir_perms;
-allow hal_misys_vendor_default thermal_data_file:file r_file_perms;
+allow hal_misys_vendor_default thermal_data_file:dir { getattr open read search };
+allow hal_misys_vendor_default thermal_data_file:file { getattr open read };
 allow hal_misys_vendor_default tmpfs:dir search;
 allow hal_misys_vendor_default tmpfs:file rw_file_perms;
 allow hal_misys_vendor_default vendor_bsp_data_log_file:dir create_dir_perms;
@@ -141,9 +111,10 @@ allow hal_misys_vendor_default vendor_bsp_data_log_file:file create_file_perms;
 allow hal_misys_vendor_default vendor_camera_data_file:dir create_dir_perms;
 allow hal_misys_vendor_default vendor_camera_data_file:file create_file_perms;
 allow hal_misys_vendor_default vendor_data_file:dir create_dir_perms;
-allow hal_misys_vendor_default vendor_data_file:dir { write add_name };
 allow hal_misys_vendor_default vendor_data_file:file create_file_perms;
-allow hal_misys_vendor_default vendor_data_file:file create_file_perms;
+allow hal_misys_vendor_default vendor_ffu_prop:property_service set;
+allow hal_misys_vendor_default vendor_mi_ic_prop:property_service set;
+allow hal_misys_vendor_default vendor_mi_ric_prop:property_service set;
 allow hal_misys_vendor_default vendor_ramdump_vendor_data_file:dir create_dir_perms;
 allow hal_misys_vendor_default vendor_ramdump_vendor_data_file:file create_file_perms;
 allow hal_misys_vendor_default vendor_sysfs_battery:dir r_dir_perms;
@@ -156,27 +127,25 @@ allow hal_misys_vendor_default vendor_sysfs_hardwareinfo:file rw_file_perms;
 allow hal_misys_vendor_default vendor_sysfs_soc:dir r_dir_perms;
 allow hal_misys_vendor_default vendor_sysfs_soc:file r_file_perms;
 allow hal_misys_vendor_default vendor_sysfs_usb_supply:dir r_dir_perms;
-allow hal_misys_vendor_default vendor_sysfs_usb_supply:file r_file_perms;
-allow hal_misys_vendor_default vendor_sysfs_usb_supply:lnk_file r_file_perms;
+allow hal_misys_vendor_default vendor_sysfs_usb_supply:{ file lnk_file } r_file_perms;
 allow hal_misys_vendor_default vendor_sysfs_xm_power:dir r_dir_perms;
 allow hal_misys_vendor_default vendor_sysfs_xm_power:file rw_file_perms;
-allow hal_misys_vendor_default vendor_sysfs_xm_power:file rw_file_perms;
-allow hal_misys_vendor_default vendor_toolbox_exec:file rx_file_perms;
+allow hal_misys_vendor_default vendor_system_prop:property_service set;
+allow hal_misys_vendor_default vendor_toolbox_exec:file { execute getattr open read };
 allow hal_misys_vendor_default vendor_wifi_vendor_data_file:dir create_dir_perms;
 allow hal_misys_vendor_default vendor_wifi_vendor_data_file:file create_file_perms;
-allow hal_misys_vendor_default vendor_wifi_version:file r_file_perms;
 allow hal_misys_vendor_default vfat:dir create_dir_perms;
-allow hal_misys_vendor_default vfat:dir rw_dir_perms;
 allow hal_misys_vendor_default vfat:file create_file_perms;
-allow hal_misys_vendor_default vfat:file { rw_file_perms rename };
 
 # --- hal_misys_vendor_default_exec ---
-type hal_misys_vendor_default_exec, exec_type, file_type, vendor_file_type;
+type hal_misys_vendor_default_exec, base_typeattr_242, exec_type, file_type, vendor_file_type;
 
 # --- hal_misys_vendor_server ---
-add_service(hal_misys_vendor_server, hal_misys_vendor_service)
-binder_call(hal_misys_vendor_server, hal_misys_vendor_client)
-binder_use(hal_misys_vendor_server)
 allow hal_misys_vendor_server dumpstate:fd use;
 allow hal_misys_vendor_server dumpstate:fifo_file write;
+allow hal_misys_vendor_server hal_misys_vendor_client:binder call;
+allow hal_misys_vendor_server hal_misys_vendor_client:fd use;
+allow hal_misys_vendor_server hal_misys_vendor_service:service_manager { add find };
+allow hal_misys_vendor_server servicemanager:binder { call transfer };
+allow hal_misys_vendor_server servicemanager:fd use;
 

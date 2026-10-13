@@ -1,6 +1,7 @@
 # ============================================================
 # File: blank_screen.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,7 +12,6 @@
 # --- blank_screen ---
 typeattribute blank_screen coredomain;
 typeattribute blank_screen domain;
-typeattribute blank_screen halclientdomain;
 
 hal_client_domain(blank_screen, hal_light)
 

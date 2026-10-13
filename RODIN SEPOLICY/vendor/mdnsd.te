@@ -1,6 +1,7 @@
 # ============================================================
 # File: mdnsd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Connectivity & Internet
 # Subcategory: Generic Network Services

@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_uievent.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,7 +14,9 @@ binder_call(hal_mtk_uievent_client, hal_mtk_uievent_server)
 allow hal_mtk_uievent_client mtk_hal_uievent_service:service_manager find;
 
 # --- hal_mtk_uievent_server ---
-add_service(hal_mtk_uievent_server, mtk_hal_uievent_service)
-binder_call(hal_mtk_uievent_server, hal_mtk_uievent_client)
-binder_use(hal_mtk_uievent_server)
+allow hal_mtk_uievent_server hal_mtk_uievent_client:binder call;
+allow hal_mtk_uievent_server hal_mtk_uievent_client:fd use;
+allow hal_mtk_uievent_server mtk_hal_uievent_service:service_manager { add find };
+allow hal_mtk_uievent_server servicemanager:binder { call transfer };
+allow hal_mtk_uievent_server servicemanager:fd use;
 

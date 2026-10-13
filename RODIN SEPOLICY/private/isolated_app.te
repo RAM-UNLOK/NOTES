@@ -1,6 +1,7 @@
 # ============================================================
 # File: isolated_app.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps
@@ -9,10 +10,10 @@
 # ============================================================
 
 # --- isolated_app ---
+typeattribute isolated_app appdomain;
 typeattribute isolated_app coredomain;
 typeattribute isolated_app domain;
 
-app_domain(isolated_app)
 allow isolated_app migt_dev:chr_file rw_file_perms;
 allow isolated_app migt_file:dir r_dir_perms;
 allow isolated_app migt_file:file r_file_perms;

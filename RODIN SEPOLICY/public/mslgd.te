@@ -1,6 +1,7 @@
 # ============================================================
 # File: mslgd.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,29 +10,24 @@
 # ============================================================
 
 # --- mslgd ---
-type mslgd;
+type mslgd, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain, mlstrustedsubject;
 
-typeattribute mslgd coredomain;
-typeattribute mslgd domain;
-typeattribute mslgd mlstrustedsubject;
-
-binder_call(mslgd, audioserver)
 binder_call(mslgd, mediametrics)
 binder_call(mslgd, system_server)
-binder_use(mslgd)
 get_prop(mslgd, hwservicemanager_prop)
-get_prop(mslgd, mslg_prop)
 init_daemon_domain(mslgd)
 net_domain(mslgd)
 set_prop(mslgd, mslg_prop)
 allow mslgd audio_service:service_manager find;
+allow mslgd audioserver:binder call;
+allow mslgd audioserver:fd use;
 allow mslgd audioserver_service:service_manager find;
 allow mslgd batterystats_service:service_manager find;
 allow mslgd block_device:dir r_dir_perms;
 allow mslgd cgroup:dir r_dir_perms;
 allow mslgd cgroup:file rw_file_perms;
-allow mslgd devpts:chr_file { rw_file_perms setattr };
-allow mslgd devpts:dir { read open };
+allow mslgd devpts:chr_file { append getattr ioctl open read setattr write };
+allow mslgd devpts:dir { open read };
 allow mslgd dmabuf_system_heap_device:chr_file r_file_perms;
 allow mslgd fuse:dir create_dir_perms;
 allow mslgd fuse:file { create_file_perms link };
@@ -45,76 +41,72 @@ allow mslgd kernel:dir search;
 allow mslgd kernel:file r_file_perms;
 allow mslgd kernel:key link;
 allow mslgd kernel:lnk_file read;
-allow mslgd kmsg_device:chr_file { write open };
-allow mslgd loop_control_device:chr_file rw_file_perms;
+allow mslgd kmsg_device:chr_file { open write };
+allow mslgd loop_control_device:chr_file { ioctl open read write };
 allow mslgd loop_device:blk_file rw_file_perms;
 allow mslgd mediametrics_service:service_manager find;
-allow mslgd migt_dev:chr_file rw_file_perms;
+allow mslgd migt_dev:chr_file { getattr ioctl map open read write };
 allow mslgd mslg_app:process signull;
 allow mslgd mslg_app:unix_dgram_socket sendto;
 allow mslgd mslg_app:unix_stream_socket connectto;
-allow mslgd mslg_device:dir create_dir_perms;
-allow mslgd mslg_device:fifo_file create_file_perms;
-allow mslgd mslg_device:file { create_file_perms link };
-allow mslgd mslg_device:lnk_file { r_file_perms create link rename setattr unlink };
-allow mslgd mslg_device:sock_file { write create getattr setattr unlink rename };
+allow mslgd mslg_device:dir { add_name create getattr open read remove_name rename reparent rmdir search setattr watch write };
+allow mslgd mslg_device:fifo_file { create open read unlink write };
+allow mslgd mslg_device:file { w_file_perms create getattr ioctl link read rename setattr unlink watch };
+allow mslgd mslg_device:lnk_file { create getattr link read rename setattr unlink };
+allow mslgd mslg_device:sock_file { create getattr rename setattr unlink write };
 allow mslgd mslg_rootfs_file:dir create_dir_perms;
-allow mslgd mslg_rootfs_file:fifo_file create_file_perms;
-allow mslgd mslg_rootfs_file:file { create_file_perms link };
-allow mslgd mslg_rootfs_file:lnk_file { create_file_perms link };
+allow mslgd mslg_rootfs_file:fifo_file { create open read unlink write };
 allow mslgd mslg_rootfs_file:sock_file create_file_perms;
+allow mslgd mslg_rootfs_file:{ file lnk_file } { create_file_perms link };
 allow mslgd mslg_socket_file:dir create_dir_perms;
-allow mslgd mslg_socket_file:file create_file_perms;
-allow mslgd mslg_socket_file:sock_file create_file_perms;
-allow mslgd mslgd:icmp_socket { read write create getopt setopt };
-allow mslgd mslgd:key { write search };
-allow mslgd mslgd:netlink_route_socket { r_file_perms bind create nlmsg_read nlmsg_readpriv setopt write };
-allow mslgd mslgd:tcp_socket { create_socket_perms r_file_perms accept listen name_connect };
-allow mslgd mslgd:udp_socket { create_socket_perms r_file_perms };
+allow mslgd mslg_socket_file:{ file sock_file } create_file_perms;
+allow mslgd mslgd:icmp_socket { create getopt read setopt write };
+allow mslgd mslgd:key { search write };
+allow mslgd mslgd:netlink_route_socket { bind create getattr nlmsg_read nlmsg_readpriv read setopt write };
+allow mslgd mslgd:tcp_socket { accept bind connect create getattr getopt ioctl listen name_connect read setopt shutdown write };
+allow mslgd mslgd:udp_socket { bind connect create getattr ioctl read setopt write };
 allow mslgd mslgd_exec:dir r_dir_perms;
+allow mslgd mslgd_exec:file { execute_no_trans ioctl lock watch watch_reads };
 allow mslgd mslgd_exec:lnk_file r_file_perms;
 allow mslgd node:tcp_socket node_bind;
 allow mslgd permission_service:service_manager find;
 allow mslgd platform_app:process signull;
 allow mslgd port:tcp_socket { name_bind name_connect };
 allow mslgd priv_app:process signull;
-allow mslgd proc_filesystems:file r_file_perms;
+allow mslgd proc_filesystems:file { getattr open read };
 allow mslgd proc_meminfo:file r_file_perms;
-allow mslgd proc_stat:file r_file_perms;
+allow mslgd proc_stat:file { getattr open read };
 allow mslgd proc_uptime:file r_file_perms;
-allow mslgd self:cap_userns { kill sys_chroot sys_admin sys_nice sys_resource };
-allow mslgd self:capability { chown fowner fsetid kill setgid setuid setpcap net_bind_service sys_chroot sys_admin sys_nice sys_resource audit_write };
-allow mslgd self:capability { kill sys_chroot sys_admin sys_nice sys_resource };
+allow mslgd self:cap_userns { kill sys_admin sys_chroot sys_nice sys_resource };
+allow mslgd self:capability { audit_write chown fowner fsetid kill net_bind_service setgid setpcap setuid sys_admin sys_chroot sys_nice sys_resource };
 allow mslgd self:dir r_dir_perms;
-allow mslgd self:file r_file_perms;
-allow mslgd self:lnk_file r_file_perms;
-allow mslgd self:netlink_audit_socket { read write create nlmsg_relay };
-allow mslgd self:netlink_kobject_uevent_socket { write create getattr bind getopt setopt };
-allow mslgd self:process { ptrace getattr setexec execmem };
-allow mslgd self:unix_stream_socket { bind connectto };
-allow mslgd self:unix_stream_socket { create_socket_perms r_file_perms w_file_perms };
+allow mslgd self:netlink_audit_socket { create nlmsg_relay read write };
+allow mslgd self:netlink_kobject_uevent_socket { bind create getattr getopt setopt write };
+allow mslgd self:process { execmem getattr ptrace setexec };
+allow mslgd self:unix_stream_socket { create_socket_perms_no_ioctl connectto };
+allow mslgd self:{ file lnk_file } r_file_perms;
+allow mslgd servicemanager:binder { call transfer };
 allow mslgd shell_exec:file entrypoint;
 allow mslgd shmfs:dir create_dir_perms;
 allow mslgd shmfs:file create_file_perms;
-allow mslgd sysfs:dir { read open };
+allow mslgd sysfs:dir { open read };
 allow mslgd sysfs_hwrandom:dir r_dir_perms;
-allow mslgd sysfs_migt:file r_file_perms;
+allow mslgd sysfs_migt:file { getattr open read };
 allow mslgd sysfs_net:dir r_dir_perms;
 allow mslgd sysfs_net:file r_file_perms;
 allow mslgd sysfs_uhid:dir r_dir_perms;
 allow mslgd system_app:process signull;
 allow mslgd system_file:file read;
-allow mslgd tmpfs:chr_file { rw_file_perms setattr };
+allow mslgd tmpfs:chr_file { getattr ioctl open read setattr write };
 allow mslgd tmpfs:dir create_dir_perms;
 allow mslgd tmpfs:file create_file_perms;
 allow mslgd tmpfs:lnk_file read;
 allow mslgd untrusted_app:process signull;
+dontaudit mslgd mslgd_exec:file execmod;
 allowxperm mslgd fuse:dir ioctl 0x7201;
-allowxperm mslgd loop_device:blk_file ioctl 0x1261;
-allowxperm mslgd loop_device:blk_file ioctl { (range 0x4c00 0x4c01) (range 0x4c04 0x4c05) (range 0x4c08 0x4c0a) };
+allowxperm mslgd loop_device:blk_file ioctl { 0x1261 0x4c00-0x4c01 0x4c04-0x4c05 0x4c08-0x4c0a };
 allowxperm mslgd mslg_rootfs_file:dir ioctl 0x7201;
 allowxperm mslgd mslgd_exec:dir ioctl 0x7201;
-dontaudit mslgd mslgd_exec:file execmod;
 
 # --- mslgd_exec ---
 type mslgd_exec, exec_type, file_type, system_file_type;

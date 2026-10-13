@@ -1,6 +1,7 @@
 # ============================================================
 # File: device.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -9,157 +10,157 @@
 # ============================================================
 
 # --- AD5820AF_device ---
-type AD5820AF_device, dev_type;
+type AD5820AF_device, base_typeattr_242, dev_type;
 
 # --- AK7345AF_device ---
-type AK7345AF_device, dev_type;
+type AK7345AF_device, base_typeattr_242, dev_type;
 
 # --- BOOT_device ---
-type BOOT_device, dev_type;
+type BOOT_device, base_typeattr_242, dev_type;
 
 # --- BU6429AF_device ---
-type BU6429AF_device, dev_type;
+type BU6429AF_device, base_typeattr_242, dev_type;
 
 # --- BU64745GWZAF_device ---
-type BU64745GWZAF_device, dev_type;
+type BU64745GWZAF_device, base_typeattr_242, dev_type;
 
 # --- CAM_CAL_DRV1_device ---
-type CAM_CAL_DRV1_device, dev_type;
+type CAM_CAL_DRV1_device, base_typeattr_242, dev_type;
 
 # --- CAM_CAL_DRV2_device ---
-type CAM_CAL_DRV2_device, dev_type;
+type CAM_CAL_DRV2_device, base_typeattr_242, dev_type;
 
 # --- CAM_CAL_DRV_device ---
-type CAM_CAL_DRV_device, dev_type;
+type CAM_CAL_DRV_device, base_typeattr_242, dev_type;
 
 # --- DW9714AF_device ---
-type DW9714AF_device, dev_type;
+type DW9714AF_device, base_typeattr_242, dev_type;
 
 # --- DW9714A_device ---
-type DW9714A_device, dev_type;
+type DW9714A_device, base_typeattr_242, dev_type;
 
 # --- DW9718AF_device ---
-type DW9718AF_device, dev_type;
+type DW9718AF_device, base_typeattr_242, dev_type;
 
 # --- DW9814AF_device ---
-type DW9814AF_device, dev_type;
+type DW9814AF_device, base_typeattr_242, dev_type;
 
 # --- FM50AF_device ---
-type FM50AF_device, dev_type;
+type FM50AF_device, base_typeattr_242, dev_type;
 
 # --- LC898122AF_device ---
-type LC898122AF_device, dev_type;
+type LC898122AF_device, base_typeattr_242, dev_type;
 
 # --- LC898212AF_device ---
-type LC898212AF_device, dev_type;
+type LC898212AF_device, base_typeattr_242, dev_type;
 
 # --- M4U_device_device ---
-type M4U_device_device, dev_type;
+type M4U_device_device, base_typeattr_242, dev_type;
 
 # --- MAIN2AF_device ---
-type MAIN2AF_device, dev_type;
+type MAIN2AF_device, base_typeattr_242, dev_type;
 
 # --- MAIN3AF_device ---
-type MAIN3AF_device, dev_type;
+type MAIN3AF_device, base_typeattr_242, dev_type;
 
 # --- MAIN4AF_device ---
-type MAIN4AF_device, dev_type;
+type MAIN4AF_device, base_typeattr_242, dev_type;
 
 # --- MAINAF_device ---
-type MAINAF_device, dev_type;
+type MAINAF_device, base_typeattr_242, dev_type;
 
 # --- MATV_device ---
-type MATV_device, dev_type;
+type MATV_device, base_typeattr_242, dev_type;
 
 # --- MJC_device ---
-type MJC_device, dev_type;
+type MJC_device, base_typeattr_242, dev_type;
 
 # --- MT6516_H264_DEC_device ---
-type MT6516_H264_DEC_device, dev_type;
+type MT6516_H264_DEC_device, base_typeattr_242, dev_type;
 
 # --- MT6516_Int_SRAM_device ---
-type MT6516_Int_SRAM_device, dev_type;
+type MT6516_Int_SRAM_device, base_typeattr_242, dev_type;
 
 # --- MT6516_MM_QUEUE_device ---
-type MT6516_MM_QUEUE_device, dev_type;
+type MT6516_MM_QUEUE_device, base_typeattr_242, dev_type;
 
 # --- MT6516_MP4_DEC_device ---
-type MT6516_MP4_DEC_device, dev_type;
+type MT6516_MP4_DEC_device, base_typeattr_242, dev_type;
 
 # --- MT6516_MP4_ENC_device ---
-type MT6516_MP4_ENC_device, dev_type;
+type MT6516_MP4_ENC_device, base_typeattr_242, dev_type;
 
 # --- MTK_SMI_device ---
-type MTK_SMI_device, dev_type;
+type MTK_SMI_device, base_typeattr_242, dev_type;
 
 # --- MT_pmic_adc_cali_device ---
-type MT_pmic_adc_cali_device, dev_type;
+type MT_pmic_adc_cali_device, base_typeattr_242, dev_type;
 
 # --- MT_pmic_cali_device ---
-type MT_pmic_cali_device, dev_type;
+type MT_pmic_cali_device, base_typeattr_242, dev_type;
 
 # --- MT_pmic_device ---
-type MT_pmic_device, dev_type;
+type MT_pmic_device, base_typeattr_242, dev_type;
 
 # --- RT_Monitor_device ---
-type RT_Monitor_device, dev_type;
+type RT_Monitor_device, base_typeattr_242, dev_type;
 
 # --- SUB2AF_device ---
-type SUB2AF_device, dev_type;
+type SUB2AF_device, base_typeattr_242, dev_type;
 
 # --- SUBAF_device ---
-type SUBAF_device, dev_type;
+type SUBAF_device, base_typeattr_242, dev_type;
 
 # --- TV_out_device ---
-type TV_out_device, dev_type;
+type TV_out_device, base_typeattr_242, dev_type;
 
 # --- Vcodec_device ---
-type Vcodec_device, dev_type;
+type Vcodec_device, base_typeattr_242, dev_type;
 
 # --- aal_als_device ---
-type aal_als_device, dev_type;
+type aal_als_device, base_typeattr_242, dev_type;
 
 # --- accdet_device ---
-type accdet_device, dev_type;
+type accdet_device, base_typeattr_242, dev_type;
 
 # --- adsp_device ---
-type adsp_device, dev_type;
+type adsp_device, base_typeattr_242, dev_type;
 
 # --- aed_device ---
-type aed_device, dev_type;
+type aed_device, base_typeattr_242, dev_type;
 
 # --- agnss_proxy_device ---
-type agnss_proxy_device, dev_type;
+type agnss_proxy_device, base_typeattr_242, dev_type;
 
 # --- agps_device ---
-type agps_device, dev_type;
+type agps_device, base_typeattr_242, dev_type;
 
 # --- alarm_device ---
-type alarm_device, dev_type;
+type alarm_device, base_typeattr_242, dev_type;
 
 # --- als_ps_device ---
-type als_ps_device, dev_type;
+type als_ps_device, base_typeattr_242, dev_type;
 
 # --- ampc0_device ---
-type ampc0_device, dev_type;
+type ampc0_device, base_typeattr_242, dev_type;
 
 # --- ancservice_device ---
-type ancservice_device, dev_type;
+type ancservice_device, base_typeattr_242, dev_type;
 
 # --- android_device ---
-type android_device, dev_type;
+type android_device, base_typeattr_242, dev_type;
 
 # --- aol_flp_device ---
-type aol_flp_device, dev_type;
+type aol_flp_device, base_typeattr_242, dev_type;
 
 # --- aol_geofence_device ---
-type aol_geofence_device, dev_type;
+type aol_geofence_device, base_typeattr_242, dev_type;
 
 # --- apuext_device ---
-type apuext_device, dev_type;
+type apuext_device, base_typeattr_242, dev_type;
 
 # --- apusys_device ---
-type apusys_device, dev_type, mlstrustedobject;
+type apusys_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- ashmem_device ---
 typeattribute ashmem_device dev_type;
@@ -173,198 +174,204 @@ typeattribute ashmem_libcutils_device mlstrustedobject;
 typeattribute audio_device dev_type;
 
 # --- audio_dsp_block_device ---
-type audio_dsp_block_device, dev_type;
+type audio_dsp_block_device, base_typeattr_242, dev_type;
 
 # --- audio_ipi_device ---
-type audio_ipi_device, dev_type;
+type audio_ipi_device, base_typeattr_242, dev_type;
 
 # --- audio_scp_device ---
-type audio_scp_device, dev_type;
+type audio_scp_device, base_typeattr_242, dev_type;
 
 # --- audioswitch_device ---
-type audioswitch_device, dev_type;
+type audioswitch_device, base_typeattr_242, dev_type;
 
 # --- barometer_device ---
-type barometer_device, dev_type;
+type barometer_device, base_typeattr_242, dev_type;
 
 # --- binder_device ---
 typeattribute binder_device dev_type;
 typeattribute binder_device mlstrustedobject;
 
 # --- biometric_device ---
-type biometric_device, dev_type;
+type biometric_device, base_typeattr_242, dev_type;
 
 # --- blackbox_block_device ---
-type blackbox_block_device, dev_type;
+type blackbox_block_device, base_typeattr_242, dev_type;
 
 # --- block_device ---
 typeattribute block_device dev_type;
 
 # --- bmtpool_device ---
-type bmtpool_device, dev_type;
+type bmtpool_device, base_typeattr_242, dev_type;
 
 # --- boot_block_device ---
 typeattribute boot_block_device dev_type;
 
 # --- boot_para_block_device ---
-type boot_para_block_device, dev_type;
+type boot_para_block_device, base_typeattr_242, dev_type;
 
 # --- bootdevice_block_device ---
-type bootdevice_block_device, dev_type;
+type bootdevice_block_device, base_typeattr_242, dev_type;
 
 # --- bootimg_device ---
-type bootimg_device, dev_type;
+type bootimg_device, base_typeattr_242, dev_type;
 
 # --- bsg_device ---
-type bsg_device, dev_type;
+type bsg_device, base_typeattr_242, dev_type;
 
 # --- bt_device ---
 typeattribute bt_device dev_type;
 
 # --- btif_device ---
-type btif_device, dev_type;
+type btif_device, base_typeattr_242, dev_type;
 
 # --- btn_device ---
-type btn_device, dev_type;
+type btn_device, base_typeattr_242, dev_type;
 
 # --- cache_block_device ---
 typeattribute cache_block_device dev_type;
 
 # --- cache_device ---
-type cache_device, dev_type;
+type cache_device, base_typeattr_242, dev_type;
 
 # --- cam_vpu_block_device ---
-type cam_vpu_block_device, dev_type;
+type cam_vpu_block_device, base_typeattr_242, dev_type;
 
 # --- camera_device ---
 typeattribute camera_device dev_type;
 
 # --- camera_dip_device ---
-type camera_dip_device, dev_type;
+type camera_dip_device, base_typeattr_242, dev_type;
 
 # --- camera_dpe_device ---
-type camera_dpe_device, dev_type;
+type camera_dpe_device, base_typeattr_242, dev_type;
 
 # --- camera_eeprom_device ---
-type camera_eeprom_device, dev_type;
+type camera_eeprom_device, base_typeattr_242, dev_type;
 
 # --- camera_fdvt_device ---
-type camera_fdvt_device, dev_type;
+type camera_fdvt_device, base_typeattr_242, dev_type;
 
 # --- camera_gepf_device ---
-type camera_gepf_device, dev_type;
+type camera_gepf_device, base_typeattr_242, dev_type;
 
 # --- camera_isp_device ---
-type camera_isp_device, dev_type;
+type camera_isp_device, base_typeattr_242, dev_type;
 
 # --- camera_mem_device ---
-type camera_mem_device, dev_type;
+type camera_mem_device, base_typeattr_242, dev_type;
 
 # --- camera_mfb_device ---
-type camera_mfb_device, dev_type;
+type camera_mfb_device, base_typeattr_242, dev_type;
 
 # --- camera_owe_device ---
-type camera_owe_device, dev_type;
+type camera_owe_device, base_typeattr_242, dev_type;
 
 # --- camera_pda_device ---
-type camera_pda_device, dev_type;
+type camera_pda_device, base_typeattr_242, dev_type;
 
 # --- camera_pipemgr_device ---
-type camera_pipemgr_device, dev_type;
+type camera_pipemgr_device, base_typeattr_242, dev_type;
 
 # --- camera_rsc_device ---
-type camera_rsc_device, dev_type;
+type camera_rsc_device, base_typeattr_242, dev_type;
 
 # --- camera_sysram_device ---
-type camera_sysram_device, dev_type;
+type camera_sysram_device, base_typeattr_242, dev_type;
 
 # --- camera_tsf_device ---
-type camera_tsf_device, dev_type;
+type camera_tsf_device, base_typeattr_242, dev_type;
 
 # --- camera_wpe_device ---
-type camera_wpe_device, dev_type;
+type camera_wpe_device, base_typeattr_242, dev_type;
 
 # --- camlog_device ---
-type camlog_device, dev_type;
+type camlog_device, base_typeattr_242, dev_type;
+
+# --- cammsger_device ---
+typeattribute cammsger_device base_typeattr_242;
 
 # --- ccci_aud_device ---
-type ccci_aud_device, dev_type;
+type ccci_aud_device, base_typeattr_242, dev_type;
 
 # --- ccci_ccb_device ---
-type ccci_ccb_device, dev_type;
+type ccci_ccb_device, base_typeattr_242, dev_type;
 
 # --- ccci_device ---
-type ccci_device, dev_type;
+type ccci_device, base_typeattr_242, dev_type;
 
 # --- ccci_mdl_device ---
-type ccci_mdl_device, dev_type;
+type ccci_mdl_device, base_typeattr_242, dev_type;
 
 # --- ccci_mdmonitor_device ---
-type ccci_mdmonitor_device, dev_type;
+type ccci_mdmonitor_device, base_typeattr_242, dev_type;
 
 # --- ccci_monitor_device ---
-type ccci_monitor_device, dev_type;
+type ccci_monitor_device, base_typeattr_242, dev_type;
 
 # --- ccci_vts_device ---
-type ccci_vts_device, dev_type;
+type ccci_vts_device, base_typeattr_242, dev_type;
 
 # --- ccci_wifi_proxy_device ---
-type ccci_wifi_proxy_device, dev_type;
+type ccci_wifi_proxy_device, base_typeattr_242, dev_type;
 
 # --- ccu_device ---
-type ccu_device, dev_type;
+type ccu_device, base_typeattr_242, dev_type;
 
 # --- charger_ftm_device ---
-type charger_ftm_device, dev_type;
+type charger_ftm_device, base_typeattr_242, dev_type;
 
 # --- conn_dbg_dev_device ---
-type conn_dbg_dev_device, dev_type;
+type conn_dbg_dev_device, base_typeattr_242, dev_type;
 
 # --- conn_pwr_device ---
-type conn_pwr_device, dev_type;
+type conn_pwr_device, base_typeattr_242, dev_type;
 
 # --- conn_scp_device ---
-type conn_scp_device, dev_type;
+type conn_scp_device, base_typeattr_242, dev_type;
 
 # --- connfem_device ---
-type connfem_device, dev_type;
+type connfem_device, base_typeattr_242, dev_type;
 
 # --- conninfra_device ---
-type conninfra_device, dev_type;
+type conninfra_device, base_typeattr_242, dev_type;
 
 # --- connsys_bt_block_device ---
-type connsys_bt_block_device, dev_type;
+type connsys_bt_block_device, base_typeattr_242, dev_type;
 
 # --- connsys_gnss_block_device ---
-type connsys_gnss_block_device, dev_type;
+type connsys_gnss_block_device, base_typeattr_242, dev_type;
 
 # --- connsys_wifi_block_device ---
-type connsys_wifi_block_device, dev_type;
+type connsys_wifi_block_device, base_typeattr_242, dev_type;
 
 # --- console_device ---
 typeattribute console_device dev_type;
 
 # --- coredump_wifi_device ---
-type coredump_wifi_device, dev_type;
+type coredump_wifi_device, base_typeattr_242, dev_type;
 
 # --- countrycode_block_device ---
-type countrycode_block_device, dev_type;
+type countrycode_block_device, base_typeattr_242, dev_type;
 
 # --- cpu_dma_latency_device ---
-type cpu_dma_latency_device, dev_type;
+type cpu_dma_latency_device, base_typeattr_242, dev_type;
 
 # --- cust_block_device ---
-type cust_block_device, dev_type;
+type cust_block_device, base_typeattr_242, dev_type;
 
 # --- device ---
 typeattribute device dev_type;
 typeattribute device fs_type;
 
+# --- device_kperfevents_device ---
+typeattribute device_kperfevents_device base_typeattr_242;
+
 # --- devmap_device ---
-type devmap_device, dev_type;
+type devmap_device, base_typeattr_242, dev_type;
 
 # --- dkb_block_device ---
-type dkb_block_device, dev_type;
+type dkb_block_device, base_typeattr_242, dev_type;
 
 # --- dm_device ---
 typeattribute dm_device dev_type;
@@ -378,10 +385,10 @@ typeattribute dmabuf_heap_device dmabuf_heap_device_type;
 typeattribute dmabuf_heap_device mlstrustedobject;
 
 # --- dmabuf_mtk_sapu_page_device ---
-type dmabuf_mtk_sapu_page_device, dev_type, dmabuf_heap_device_type;
+type dmabuf_mtk_sapu_page_device, base_typeattr_242, dev_type, dmabuf_heap_device_type;
 
 # --- dmabuf_mtk_slc_heap_device ---
-type dmabuf_mtk_slc_heap_device, dev_type, dmabuf_heap_device_type;
+type dmabuf_mtk_slc_heap_device, base_typeattr_242, dev_type, dmabuf_heap_device_type;
 
 # --- dmabuf_system_heap_device ---
 typeattribute dmabuf_system_heap_device dev_type;
@@ -394,168 +401,171 @@ typeattribute dmabuf_system_secure_heap_device dmabuf_heap_device_type;
 typeattribute dmabuf_system_secure_heap_device mlstrustedobject;
 
 # --- dpm_block_device ---
-type dpm_block_device, dev_type;
+type dpm_block_device, base_typeattr_242, dev_type;
 
 # --- dri_device ---
-type dri_device, dev_type, mlstrustedobject;
+type dri_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- dsp_block_device ---
-type dsp_block_device, dev_type;
+type dsp_block_device, base_typeattr_242, dev_type;
 
 # --- dtbo_block_device ---
 typeattribute dtbo_block_device dev_type;
 
 # --- dummy_cam_cal_device ---
-type dummy_cam_cal_device, dev_type;
+type dummy_cam_cal_device, base_typeattr_242, dev_type;
 
 # --- ebc_device ---
-type ebc_device, dev_type;
+type ebc_device, base_typeattr_242, dev_type;
 
 # --- ebr_device ---
-type ebr_device, dev_type;
+type ebr_device, base_typeattr_242, dev_type;
 
 # --- eemcs_device ---
-type eemcs_device, dev_type;
+type eemcs_device, base_typeattr_242, dev_type;
 
 # --- emd_device ---
-type emd_device, dev_type;
+type emd_device, base_typeattr_242, dev_type;
 
 # --- etb_device ---
-type etb_device, dev_type;
+type etb_device, base_typeattr_242, dev_type;
 
 # --- expdb_block_device ---
-type expdb_block_device, dev_type;
+type expdb_block_device, base_typeattr_242, dev_type;
 
 # --- expdb_device ---
-type expdb_device, dev_type;
+type expdb_device, base_typeattr_242, dev_type;
 
 # --- fat_device ---
-type fat_device, dev_type;
+type fat_device, base_typeattr_242, dev_type;
 
 # --- fingerprint_device ---
-type fingerprint_device, dev_type;
+type fingerprint_device, base_typeattr_242, dev_type;
 
 # --- flashlight_device ---
-type flashlight_device, dev_type;
+type flashlight_device, base_typeattr_242, dev_type;
 
 # --- fm_device ---
-type fm_device, dev_type, mlstrustedobject;
+type fm_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- frp_block_device ---
 typeattribute frp_block_device dev_type;
 
 # --- fs16xx_device ---
-type fs16xx_device, dev_type;
+type fs16xx_device, base_typeattr_242, dev_type;
 
 # --- fuse_device ---
 typeattribute fuse_device dev_type;
 typeattribute fuse_device mlstrustedobject;
 
 # --- fw_log_bt_device ---
-type fw_log_bt_device, dev_type;
+type fw_log_bt_device, base_typeattr_242, dev_type;
 
 # --- fw_log_btmcu_device ---
-type fw_log_btmcu_device, dev_type;
+type fw_log_btmcu_device, base_typeattr_242, dev_type;
 
 # --- fw_log_gps_device ---
-type fw_log_gps_device, dev_type;
+type fw_log_gps_device, base_typeattr_242, dev_type;
 
 # --- fw_log_gpsmcu_device ---
-type fw_log_gpsmcu_device, dev_type;
+type fw_log_gpsmcu_device, base_typeattr_242, dev_type;
 
 # --- fw_log_ics_device ---
-type fw_log_ics_device, dev_type;
+type fw_log_ics_device, base_typeattr_242, dev_type;
 
 # --- fw_log_wifi_device ---
-type fw_log_wifi_device, dev_type;
+type fw_log_wifi_device, base_typeattr_242, dev_type;
 
 # --- fw_log_wifimcu_device ---
-type fw_log_wifimcu_device, dev_type;
+type fw_log_wifimcu_device, base_typeattr_242, dev_type;
 
 # --- fw_log_wmt_device ---
-type fw_log_wmt_device, dev_type;
+type fw_log_wmt_device, base_typeattr_242, dev_type;
 
 # --- gdix_mt_wrapper_device ---
-type gdix_mt_wrapper_device, dev_type, fs_type;
+type gdix_mt_wrapper_device, base_typeattr_242, dev_type, fs_type;
 
 # --- gdix_thp_device ---
-type gdix_thp_device, dev_type, fs_type;
+type gdix_thp_device, base_typeattr_242, dev_type, fs_type;
 
 # --- geo_device ---
-type geo_device, dev_type;
+type geo_device, base_typeattr_242, dev_type;
 
 # --- gnss_device ---
 typeattribute gnss_device dev_type;
 
 # --- gps2scp_device ---
-type gps2scp_device, dev_type;
+type gps2scp_device, base_typeattr_242, dev_type;
 
 # --- gps_emi_device ---
-type gps_emi_device, dev_type;
+type gps_emi_device, base_typeattr_242, dev_type;
 
 # --- gps_pwr_device ---
-type gps_pwr_device, dev_type;
+type gps_pwr_device, base_typeattr_242, dev_type;
 
 # --- gps_ticksync_device ---
-type gps_ticksync_device, dev_type;
+type gps_ticksync_device, base_typeattr_242, dev_type;
 
 # --- gpsdl_device ---
-type gpsdl_device, dev_type;
+type gpsdl_device, base_typeattr_242, dev_type;
 
 # --- gpsmdl_device ---
-type gpsmdl_device, dev_type;
+type gpsmdl_device, base_typeattr_242, dev_type;
 
 # --- gpsstrg_device ---
-type gpsstrg_device, dev_type;
+type gpsstrg_device, base_typeattr_242, dev_type;
 
 # --- gpu_device ---
 typeattribute gpu_device dev_type;
 typeattribute gpu_device mlstrustedobject;
 
 # --- gpueb_device ---
-type gpueb_device, dev_type;
+type gpueb_device, base_typeattr_242, dev_type;
 
 # --- graphics_device ---
 typeattribute graphics_device dev_type;
 
 # --- gsensor_device ---
-type gsensor_device, dev_type;
+type gsensor_device, base_typeattr_242, dev_type;
 
 # --- gsm0710muxd_device ---
-type gsm0710muxd_device, dev_type;
+type gsm0710muxd_device, base_typeattr_242, dev_type;
 
 # --- gsort_block_device ---
-type gsort_block_device, dev_type;
+type gsort_block_device, base_typeattr_242, dev_type;
 
 # --- gyroscope_device ---
-type gyroscope_device, dev_type;
+type gyroscope_device, base_typeattr_242, dev_type;
 
 # --- gz_block_device ---
-type gz_block_device, dev_type;
+type gz_block_device, base_typeattr_242, dev_type;
 
 # --- gz_device ---
-type gz_device, dev_type;
+type gz_device, base_typeattr_242, dev_type;
 
 # --- gzffa_device ---
-type gzffa_device, dev_type;
+type gzffa_device, base_typeattr_242, dev_type;
 
 # --- gzvm_device ---
-type gzvm_device, dev_type, mlstrustedobject, vm_manager_device_type;
+type gzvm_device, base_typeattr_242, dev_type, mlstrustedobject, vm_manager_device_type;
+
+# --- hbt_device ---
+typeattribute hbt_device base_typeattr_242;
 
 # --- hf_manager_device ---
-type hf_manager_device, dev_type;
+type hf_manager_device, base_typeattr_242, dev_type;
 
 # --- hid_keyboard_device ---
-type hid_keyboard_device, dev_type;
+type hid_keyboard_device, base_typeattr_242, dev_type;
 
 # --- hidraw_device ---
 typeattribute hidraw_device dev_type;
 
 # --- hrm_device ---
-type hrm_device, dev_type;
+type hrm_device, base_typeattr_242, dev_type;
 
 # --- humidity_device ---
-type humidity_device, dev_type;
+type humidity_device, base_typeattr_242, dev_type;
 
 # --- hw_random_device ---
 typeattribute hw_random_device dev_type;
@@ -565,19 +575,19 @@ typeattribute hwbinder_device dev_type;
 typeattribute hwbinder_device mlstrustedobject;
 
 # --- hwmsensor_device ---
-type hwmsensor_device, dev_type;
+type hwmsensor_device, base_typeattr_242, dev_type;
 
 # --- hwzram0_device ---
-type hwzram0_device, dev_type;
+type hwzram0_device, base_typeattr_242, dev_type;
 
 # --- icusb_device ---
-type icusb_device, dev_type;
+type icusb_device, base_typeattr_242, dev_type;
 
 # --- iio_device ---
 typeattribute iio_device dev_type;
 
 # --- init_boot_block_device ---
-type init_boot_block_device, dev_type;
+type init_boot_block_device, base_typeattr_242, dev_type;
 
 # --- input_device ---
 typeattribute input_device dev_type;
@@ -587,37 +597,37 @@ typeattribute ion_device dev_type;
 typeattribute ion_device mlstrustedobject;
 
 # --- ir_spi_device ---
-type ir_spi_device, dev_type;
+type ir_spi_device, base_typeattr_242, dev_type;
 
 # --- irtx_device ---
-type irtx_device, dev_type;
+type irtx_device, base_typeattr_242, dev_type;
 
 # --- ise_block_device ---
-type ise_block_device, dev_type;
+type ise_block_device, base_typeattr_242, dev_type;
 
 # --- kb_block_device ---
-type kb_block_device, dev_type;
+type kb_block_device, base_typeattr_242, dev_type;
 
 # --- kd_camera_flashlight_device ---
-type kd_camera_flashlight_device, dev_type;
+type kd_camera_flashlight_device, base_typeattr_242, dev_type;
 
 # --- kd_camera_hw_bus2_device ---
-type kd_camera_hw_bus2_device, dev_type;
+type kd_camera_hw_bus2_device, base_typeattr_242, dev_type;
 
 # --- kd_camera_hw_device ---
-type kd_camera_hw_device, dev_type;
+type kd_camera_hw_device, base_typeattr_242, dev_type;
 
 # --- keyblock_device ---
-type keyblock_device, dev_type;
+type keyblock_device, base_typeattr_242, dev_type;
 
 # --- keychord_device ---
 typeattribute keychord_device dev_type;
 
 # --- keystore_block_device ---
-type keystore_block_device, dev_type;
+type keystore_block_device, base_typeattr_242, dev_type;
 
 # --- kick_powerkey_device ---
-type kick_powerkey_device, dev_type;
+type kick_powerkey_device, base_typeattr_242, dev_type;
 
 # --- kmsg_debug_device ---
 typeattribute kmsg_debug_device dev_type;
@@ -626,23 +636,26 @@ typeattribute kmsg_debug_device dev_type;
 typeattribute kmsg_device dev_type;
 typeattribute kmsg_device mlstrustedobject;
 
+# --- lb_device ---
+typeattribute lb_device base_typeattr_242;
+
 # --- lens_device ---
-type lens_device, dev_type;
+type lens_device, base_typeattr_242, dev_type;
 
 # --- lk_block_device ---
-type lk_block_device, dev_type;
+type lk_block_device, base_typeattr_242, dev_type;
 
 # --- loader_ext_block_device ---
-type loader_ext_block_device, dev_type;
+type loader_ext_block_device, base_typeattr_242, dev_type;
 
 # --- logo_block_device ---
-type logo_block_device, dev_type;
+type logo_block_device, base_typeattr_242, dev_type;
 
 # --- logo_device ---
-type logo_device, dev_type;
+type logo_device, base_typeattr_242, dev_type;
 
 # --- loop-control_device ---
-type loop-control_device, dev_type;
+type loop-control_device, base_typeattr_242, dev_type;
 
 # --- loop_control_device ---
 typeattribute loop_control_device dev_type;
@@ -654,372 +667,397 @@ typeattribute loop_device dev_type;
 typeattribute lowpan_device dev_type;
 
 # --- m_acc_misc_device ---
-type m_acc_misc_device, dev_type;
+type m_acc_misc_device, base_typeattr_242, dev_type;
 
 # --- m_act_misc_device ---
-type m_act_misc_device, dev_type;
+type m_act_misc_device, base_typeattr_242, dev_type;
 
 # --- m_als_misc_device ---
-type m_als_misc_device, dev_type;
+type m_als_misc_device, base_typeattr_242, dev_type;
 
 # --- m_baro_misc_device ---
-type m_baro_misc_device, dev_type;
+type m_baro_misc_device, base_typeattr_242, dev_type;
 
 # --- m_batch_misc_device ---
-type m_batch_misc_device, dev_type;
+type m_batch_misc_device, base_typeattr_242, dev_type;
 
 # --- m_bio_misc_device ---
-type m_bio_misc_device, dev_type;
+type m_bio_misc_device, base_typeattr_242, dev_type;
 
 # --- m_fusion_misc_device ---
-type m_fusion_misc_device, dev_type;
+type m_fusion_misc_device, base_typeattr_242, dev_type;
 
 # --- m_gyro_misc_device ---
-type m_gyro_misc_device, dev_type;
+type m_gyro_misc_device, base_typeattr_242, dev_type;
 
 # --- m_hmdy_misc_device ---
-type m_hmdy_misc_device, dev_type;
+type m_hmdy_misc_device, base_typeattr_242, dev_type;
 
 # --- m_mag_misc_device ---
-type m_mag_misc_device, dev_type;
+type m_mag_misc_device, base_typeattr_242, dev_type;
 
 # --- m_pedo_misc_device ---
-type m_pedo_misc_device, dev_type;
+type m_pedo_misc_device, base_typeattr_242, dev_type;
 
 # --- m_ps_misc_device ---
-type m_ps_misc_device, dev_type;
+type m_ps_misc_device, base_typeattr_242, dev_type;
 
 # --- m_situ_misc_device ---
-type m_situ_misc_device, dev_type;
+type m_situ_misc_device, base_typeattr_242, dev_type;
 
 # --- m_step_c_misc_device ---
-type m_step_c_misc_device, dev_type;
+type m_step_c_misc_device, base_typeattr_242, dev_type;
 
 # --- mbim_device ---
-type mbim_device, dev_type;
+type mbim_device, base_typeattr_242, dev_type;
 
 # --- mbr_device ---
-type mbr_device, dev_type;
+type mbr_device, base_typeattr_242, dev_type;
+
+# --- mcd_device ---
+typeattribute mcd_device base_typeattr_242;
 
 # --- mcf_ota_block_device ---
-type mcf_ota_block_device, dev_type;
+type mcf_ota_block_device, base_typeattr_242, dev_type;
+
+# --- mcupm_device ---
+typeattribute mcupm_device base_typeattr_242;
 
 # --- mcupmfw_block_device ---
-type mcupmfw_block_device, dev_type;
+type mcupmfw_block_device, base_typeattr_242, dev_type;
 
 # --- md1arm7_block_device ---
-type md1arm7_block_device, dev_type;
+type md1arm7_block_device, base_typeattr_242, dev_type;
 
 # --- md1dsp_block_device ---
-type md1dsp_block_device, dev_type;
+type md1dsp_block_device, base_typeattr_242, dev_type;
 
 # --- md1img_block_device ---
-type md1img_block_device, dev_type;
+type md1img_block_device, base_typeattr_242, dev_type;
 
 # --- md32_device ---
-type md32_device, dev_type;
+type md32_device, base_typeattr_242, dev_type;
 
 # --- md3img_block_device ---
-type md3img_block_device, dev_type;
+type md3img_block_device, base_typeattr_242, dev_type;
 
 # --- md_block_device ---
-type md_block_device, dev_type;
+type md_block_device, base_typeattr_242, dev_type;
 
 # --- md_sec_device ---
-type md_sec_device, dev_type;
+type md_sec_device, base_typeattr_242, dev_type;
 
 # --- mddp_device ---
-type mddp_device, dev_type;
+type mddp_device, base_typeattr_242, dev_type;
 
 # --- mdla_device ---
-type mdla_device, dev_type, mlstrustedobject;
+type mdla_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- mdlog_device ---
-type mdlog_device, dev_type;
+type mdlog_device, base_typeattr_242, dev_type;
 
 # --- mdp_device ---
-type mdp_device, dev_type;
+type mdp_device, base_typeattr_242, dev_type;
 
 # --- met_device ---
-type met_device, dev_type;
+type met_device, base_typeattr_242, dev_type;
 
 # --- metadata_block_device ---
 typeattribute metadata_block_device dev_type;
 
+# --- miev_device ---
+typeattribute miev_device base_typeattr_242;
+
 # --- minidump_block_device ---
-type minidump_block_device, dev_type;
+type minidump_block_device, base_typeattr_242, dev_type;
 
 # --- misc2_block_device ---
-type misc2_block_device, dev_type;
+type misc2_block_device, base_typeattr_242, dev_type;
 
 # --- misc2_device ---
-type misc2_device, dev_type;
+type misc2_device, base_typeattr_242, dev_type;
 
 # --- misc_block_device ---
 typeattribute misc_block_device dev_type;
 
 # --- misc_device ---
-type misc_device, dev_type;
+type misc_device, base_typeattr_242, dev_type;
 
 # --- misc_sd_device ---
-type misc_sd_device, dev_type;
+type misc_sd_device, base_typeattr_242, dev_type;
+
+# --- misysinfofreader_device ---
+typeattribute misysinfofreader_device base_typeattr_242;
 
 # --- mitee_client_device ---
-type mitee_client_device, dev_type, mlstrustedobject;
+type mitee_client_device, base_typeattr_242, dev_type, mlstrustedobject;
+
+# --- miui_audio_device ---
+typeattribute miui_audio_device base_typeattr_242;
+
+# --- miupdate_block_device ---
+typeattribute miupdate_block_device base_typeattr_242;
 
 # --- mmcblk1_block_device ---
-type mmcblk1_block_device, dev_type;
+type mmcblk1_block_device, base_typeattr_242, dev_type;
 
 # --- mmcblk1p1_block_device ---
-type mmcblk1p1_block_device, dev_type;
+type mmcblk1p1_block_device, base_typeattr_242, dev_type;
 
 # --- mmcblk_device ---
-type mmcblk_device, dev_type;
+type mmcblk_device, base_typeattr_242, dev_type;
 
 # --- mml_pq_device ---
-type mml_pq_device, dev_type;
+type mml_pq_device, base_typeattr_242, dev_type;
 
 # --- mmp_device ---
-type mmp_device, dev_type;
+type mmp_device, base_typeattr_242, dev_type;
 
 # --- mnld_device ---
-type mnld_device, dev_type;
+type mnld_device, base_typeattr_242, dev_type;
 
 # --- mobicore_admin_device ---
-type mobicore_admin_device, dev_type;
+type mobicore_admin_device, base_typeattr_242, dev_type;
 
 # --- mobicore_tui_device ---
-type mobicore_tui_device, dev_type;
+type mobicore_tui_device, base_typeattr_242, dev_type;
 
 # --- mobicore_user_device ---
-type mobicore_user_device, dev_type, mlstrustedobject;
+type mobicore_user_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- mrdump_device ---
-type mrdump_device, dev_type;
+type mrdump_device, base_typeattr_242, dev_type;
 
 # --- msensor_device ---
-type msensor_device, dev_type;
+type msensor_device, base_typeattr_242, dev_type;
+
+# --- mslg_device ---
+typeattribute mslg_device base_typeattr_242;
 
 # --- mt6516_IDP_device ---
-type mt6516_IDP_device, dev_type;
+type mt6516_IDP_device, base_typeattr_242, dev_type;
 
 # --- mt6516_isp_device ---
-type mt6516_isp_device, dev_type;
+type mt6516_isp_device, base_typeattr_242, dev_type;
 
 # --- mt6516_jpeg_device ---
-type mt6516_jpeg_device, dev_type;
+type mt6516_jpeg_device, base_typeattr_242, dev_type;
 
 # --- mt9p012_device ---
-type mt9p012_device, dev_type;
+type mt9p012_device, base_typeattr_242, dev_type;
 
 # --- mt_mdp_device ---
-type mt_mdp_device, dev_type;
+type mt_mdp_device, base_typeattr_242, dev_type;
 
 # --- mt_otg_test_device ---
-type mt_otg_test_device, dev_type;
+type mt_otg_test_device, base_typeattr_242, dev_type;
 
 # --- mtd_device ---
+typeattribute mtd_device base_typeattr_242;
 typeattribute mtd_device dev_type;
 
+# --- mtdblock_device ---
+typeattribute mtdblock_device base_typeattr_242;
+
 # --- mtfreqhopping_device ---
-type mtfreqhopping_device, dev_type;
+type mtfreqhopping_device, base_typeattr_242, dev_type;
 
 # --- mtgpio_device ---
-type mtgpio_device, dev_type;
+type mtgpio_device, base_typeattr_242, dev_type;
 
 # --- mtk-adc-cali_device ---
-type mtk-adc-cali_device, dev_type;
+type mtk-adc-cali_device, base_typeattr_242, dev_type;
 
 # --- mtk_aov_device ---
-type mtk_aov_device, dev_type;
+type mtk_aov_device, base_typeattr_242, dev_type;
 
 # --- mtk_ccd_device ---
-type mtk_ccd_device, dev_type;
+type mtk_ccd_device, base_typeattr_242, dev_type;
 
 # --- mtk_cmdq_device ---
-type mtk_cmdq_device, dev_type;
+type mtk_cmdq_device, base_typeattr_242, dev_type;
 
 # --- mtk_dfrc_device ---
-type mtk_dfrc_device, dev_type;
+type mtk_dfrc_device, base_typeattr_242, dev_type;
 
 # --- mtk_fmt_device ---
-type mtk_fmt_device, dev_type;
+type mtk_fmt_device, base_typeattr_242, dev_type;
 
 # --- mtk_fmt_sync_device ---
-type mtk_fmt_sync_device, dev_type;
+type mtk_fmt_sync_device, base_typeattr_242, dev_type;
 
 # --- mtk_hcp_device ---
-type mtk_hcp_device, dev_type;
+type mtk_hcp_device, base_typeattr_242, dev_type;
 
 # --- mtk_jpeg_device ---
-type mtk_jpeg_device, dev_type;
+type mtk_jpeg_device, base_typeattr_242, dev_type;
 
 # --- mtk_kpd_device ---
-type mtk_kpd_device, dev_type;
+type mtk_kpd_device, base_typeattr_242, dev_type;
 
 # --- mtk_mbraink_device ---
-type mtk_mbraink_device, dev_type;
+type mtk_mbraink_device, base_typeattr_242, dev_type;
 
 # --- mtk_mdp_device ---
-type mtk_mdp_device, dev_type;
+type mtk_mdp_device, base_typeattr_242, dev_type;
 
 # --- mtk_mdp_sync_device ---
-type mtk_mdp_sync_device, dev_type;
+type mtk_mdp_sync_device, base_typeattr_242, dev_type;
 
 # --- mtk_radio_device ---
-type mtk_radio_device, dev_type;
+type mtk_radio_device, base_typeattr_242, dev_type;
 
 # --- mtk_rrc_device ---
-type mtk_rrc_device, dev_type;
+type mtk_rrc_device, base_typeattr_242, dev_type;
 
 # --- mtk_sched_device ---
-type mtk_sched_device, dev_type;
+type mtk_sched_device, base_typeattr_242, dev_type;
 
 # --- mtk_usb_offload_device ---
-type mtk_usb_offload_device, dev_type;
+type mtk_usb_offload_device, base_typeattr_242, dev_type;
 
 # --- mtk_v4l2_media_device ---
-type mtk_v4l2_media_device, dev_type;
+type mtk_v4l2_media_device, base_typeattr_242, dev_type;
 
 # --- mtk_wwan_device ---
-type mtk_wwan_device, dev_type;
+type mtk_wwan_device, base_typeattr_242, dev_type;
 
 # --- mtkg2d_device ---
-type mtkg2d_device, dev_type;
+type mtkg2d_device, base_typeattr_242, dev_type;
 
 # --- mtp_device ---
 typeattribute mtp_device dev_type;
 typeattribute mtp_device mlstrustedobject;
 
 # --- mvpu_algo_device ---
-type mvpu_algo_device, dev_type;
+type mvpu_algo_device, base_typeattr_242, dev_type;
 
 # --- network_device ---
-type network_device, dev_type;
+type network_device, base_typeattr_242, dev_type;
 
 # --- nfc_device ---
 typeattribute nfc_device dev_type;
 
 # --- nlop_device ---
-type nlop_device, dev_type;
+type nlop_device, base_typeattr_242, dev_type;
 
 # --- null_device ---
 typeattribute null_device dev_type;
 typeattribute null_device mlstrustedobject;
 
 # --- nvcfg_block_device ---
-type nvcfg_block_device, dev_type;
+type nvcfg_block_device, base_typeattr_242, dev_type;
 
 # --- nvcfg_device ---
-type nvcfg_device, dev_type;
+type nvcfg_device, base_typeattr_242, dev_type;
 
 # --- nvdata_device ---
-type nvdata_device, dev_type;
+type nvdata_device, base_typeattr_242, dev_type;
 
 # --- nvram_device ---
-type nvram_device, dev_type;
+type nvram_device, base_typeattr_242, dev_type;
 
 # --- nwkopt_device ---
-type nwkopt_device, dev_type;
+type nwkopt_device, base_typeattr_242, dev_type;
 
 # --- odm_block_device ---
-type odm_block_device, dev_type;
+type odm_block_device, base_typeattr_242, dev_type;
 
 # --- oem_block_device ---
-type oem_block_device, dev_type;
+type oem_block_device, base_typeattr_242, dev_type;
 
 # --- oemkeystore_block_device ---
-type oemkeystore_block_device, dev_type;
+type oemkeystore_block_device, base_typeattr_242, dev_type;
 
 # --- offloadservice_device ---
-type offloadservice_device, dev_type;
+type offloadservice_device, base_typeattr_242, dev_type;
 
 # --- oops_block_device ---
-type oops_block_device, dev_type;
+type oops_block_device, base_typeattr_242, dev_type;
 
 # --- otp_device ---
-type otp_device, dev_type;
+type otp_device, base_typeattr_242, dev_type;
 
 # --- otp_part_block_device ---
-type otp_part_block_device, dev_type;
+type otp_part_block_device, base_typeattr_242, dev_type;
 
 # --- owntty_device ---
 typeattribute owntty_device dev_type;
 typeattribute owntty_device mlstrustedobject;
 
 # --- para_block_device ---
-type para_block_device, dev_type;
+type para_block_device, base_typeattr_242, dev_type;
 
 # --- pcie_smt_device ---
-type pcie_smt_device, dev_type;
+type pcie_smt_device, base_typeattr_242, dev_type;
 
 # --- persist_block_device ---
-type persist_block_device, dev_type;
+type persist_block_device, base_typeattr_242, dev_type;
 
 # --- pi_img_device ---
-type pi_img_device, dev_type;
+type pi_img_device, base_typeattr_242, dev_type;
 
 # --- pmem_multimedia_device ---
-type pmem_multimedia_device, dev_type;
+type pmem_multimedia_device, base_typeattr_242, dev_type;
 
 # --- pmic_ftm_device ---
-type pmic_ftm_device, dev_type;
+type pmic_ftm_device, base_typeattr_242, dev_type;
 
 # --- pmsg_device ---
 typeattribute pmsg_device dev_type;
 typeattribute pmsg_device mlstrustedobject;
 
 # --- pmt_device ---
-type pmt_device, dev_type;
+type pmt_device, base_typeattr_242, dev_type;
 
 # --- port_device ---
 typeattribute port_device dev_type;
 
 # --- postinstall_block_device ---
-type postinstall_block_device, dev_type;
+type postinstall_block_device, base_typeattr_242, dev_type;
 
 # --- preloader_block_device ---
-type preloader_block_device, dev_type;
+type preloader_block_device, base_typeattr_242, dev_type;
 
 # --- preloader_device ---
-type preloader_device, dev_type;
+type preloader_device, base_typeattr_242, dev_type;
 
 # --- pro_info_device ---
-type pro_info_device, dev_type;
+type pro_info_device, base_typeattr_242, dev_type;
 
 # --- properties_device ---
 typeattribute properties_device dev_type;
 
 # --- protect1_block_device ---
-type protect1_block_device, dev_type;
+type protect1_block_device, base_typeattr_242, dev_type;
 
 # --- protect2_block_device ---
-type protect2_block_device, dev_type;
+type protect2_block_device, base_typeattr_242, dev_type;
 
 # --- protect_f_device ---
-type protect_f_device, dev_type;
+type protect_f_device, base_typeattr_242, dev_type;
 
 # --- protect_s_device ---
-type protect_s_device, dev_type;
+type protect_s_device, base_typeattr_242, dev_type;
 
 # --- psaux_device ---
-type psaux_device, dev_type;
+type psaux_device, base_typeattr_242, dev_type;
 
 # --- pstore_block_device ---
-type pstore_block_device, dev_type;
+type pstore_block_device, base_typeattr_242, dev_type;
 
 # --- ptmx_device ---
 typeattribute ptmx_device dev_type;
 typeattribute ptmx_device mlstrustedobject;
 
 # --- ptyp_device ---
-type ptyp_device, dev_type;
+type ptyp_device, base_typeattr_242, dev_type;
 
 # --- pvmfw_block_device ---
-type pvmfw_block_device, dev_type;
+type pvmfw_block_device, base_typeattr_242, dev_type;
 
 # --- qemu_pipe_device ---
-type qemu_pipe_device, dev_type;
+type qemu_pipe_device, base_typeattr_242, dev_type;
 
 # --- qtaguid_device ---
 typeattribute qtaguid_device dev_type;
@@ -1035,28 +1073,28 @@ typeattribute random_device dev_type;
 typeattribute random_device mlstrustedobject;
 
 # --- rebootescrow_device ---
-type rebootescrow_device, dev_type;
+type rebootescrow_device, base_typeattr_242, dev_type;
 
 # --- recovery_block_device ---
 typeattribute recovery_block_device dev_type;
 
 # --- recovery_device ---
-type recovery_device, dev_type;
+type recovery_device, base_typeattr_242, dev_type;
 
 # --- rescue_block_device ---
-type rescue_block_device, dev_type;
+type rescue_block_device, base_typeattr_242, dev_type;
 
 # --- rfkill_device ---
-type rfkill_device, dev_type;
+type rfkill_device, base_typeattr_242, dev_type;
 
 # --- root_block_device ---
 typeattribute root_block_device dev_type;
 
 # --- rotfw_block_device ---
-type rotfw_block_device, dev_type;
+type rotfw_block_device, base_typeattr_242, dev_type;
 
 # --- rpmb_device ---
-type rpmb_device, dev_type;
+type rpmb_device, base_typeattr_242, dev_type;
 
 # --- rpmsg_device ---
 typeattribute rpmsg_device dev_type;
@@ -1065,49 +1103,49 @@ typeattribute rpmsg_device dev_type;
 typeattribute rtc_device dev_type;
 
 # --- sa_log_wifi_device ---
-type sa_log_wifi_device, dev_type;
+type sa_log_wifi_device, base_typeattr_242, dev_type;
 
 # --- scp_block_device ---
-type scp_block_device, dev_type;
+type scp_block_device, base_typeattr_242, dev_type;
 
 # --- scp_device ---
-type scp_device, dev_type;
+type scp_device, base_typeattr_242, dev_type;
 
 # --- sdcard_block_device ---
 typeattribute sdcard_block_device dev_type;
 
 # --- sec1_block_device ---
-type sec1_block_device, dev_type;
+type sec1_block_device, base_typeattr_242, dev_type;
 
 # --- sec_device ---
-type sec_device, dev_type;
+type sec_device, base_typeattr_242, dev_type;
 
 # --- sec_ro_device ---
-type sec_ro_device, dev_type;
+type sec_ro_device, base_typeattr_242, dev_type;
 
 # --- seccfg_block_device ---
-type seccfg_block_device, dev_type;
+type seccfg_block_device, base_typeattr_242, dev_type;
 
 # --- seccfg_device ---
-type seccfg_device, dev_type;
+type seccfg_device, base_typeattr_242, dev_type;
 
 # --- secro_block_device ---
-type secro_block_device, dev_type;
+type secro_block_device, base_typeattr_242, dev_type;
 
 # --- secure_element_device ---
 typeattribute secure_element_device dev_type;
 
 # --- seninf_device ---
-type seninf_device, dev_type;
+type seninf_device, base_typeattr_242, dev_type;
 
 # --- seninf_n3d_device ---
-type seninf_n3d_device, dev_type;
+type seninf_n3d_device, base_typeattr_242, dev_type;
 
 # --- sensor_device ---
-type sensor_device, dev_type;
+type sensor_device, base_typeattr_242, dev_type;
 
 # --- sensorlist_device ---
-type sensorlist_device, dev_type;
+type sensorlist_device, base_typeattr_242, dev_type;
 
 # --- sensors_device ---
 typeattribute sensors_device dev_type;
@@ -1116,55 +1154,55 @@ typeattribute sensors_device dev_type;
 typeattribute serial_device dev_type;
 
 # --- shf_device ---
-type shf_device, dev_type;
+type shf_device, base_typeattr_242, dev_type;
 
 # --- smartpa1_device ---
-type smartpa1_device, dev_type;
+type smartpa1_device, base_typeattr_242, dev_type;
 
 # --- smartpa_device ---
-type smartpa_device, dev_type;
+type smartpa_device, base_typeattr_242, dev_type;
 
 # --- snapshot_device ---
-type snapshot_device, dev_type;
+type snapshot_device, base_typeattr_242, dev_type;
 
 # --- socket_device ---
 typeattribute socket_device dev_type;
 
 # --- spm_device ---
-type spm_device, dev_type;
+type spm_device, base_typeattr_242, dev_type;
 
 # --- spmfw_block_device ---
-type spmfw_block_device, dev_type;
+type spmfw_block_device, base_typeattr_242, dev_type;
 
 # --- sspm_block_device ---
-type sspm_block_device, dev_type;
+type sspm_block_device, base_typeattr_242, dev_type;
 
 # --- sspm_device ---
-type sspm_device, dev_type;
+type sspm_device, base_typeattr_242, dev_type;
 
 # --- st21nfc_device ---
-type st21nfc_device, dev_type;
+type st21nfc_device, base_typeattr_242, dev_type;
 
 # --- st54spi_device ---
-type st54spi_device, dev_type;
+type st54spi_device, base_typeattr_242, dev_type;
 
 # --- stpant_device ---
-type stpant_device, dev_type;
+type stpant_device, base_typeattr_242, dev_type;
 
 # --- stpbt_device ---
-type stpbt_device, dev_type;
+type stpbt_device, base_typeattr_242, dev_type;
 
 # --- stpgps_device ---
-type stpgps_device, dev_type;
+type stpgps_device, base_typeattr_242, dev_type;
 
 # --- stpwmt_device ---
-type stpwmt_device, dev_type;
+type stpwmt_device, base_typeattr_242, dev_type;
 
 # --- super_block_device ---
 typeattribute super_block_device dev_type;
 
 # --- sw_sync_device ---
-type sw_sync_device, dev_type, mlstrustedobject;
+type sw_sync_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- swap_block_device ---
 typeattribute swap_block_device dev_type;
@@ -1173,83 +1211,86 @@ typeattribute swap_block_device dev_type;
 typeattribute system_block_device dev_type;
 
 # --- tahiti_device ---
-type tahiti_device, dev_type;
+type tahiti_device, base_typeattr_242, dev_type;
 
 # --- tee_block_device ---
-type tee_block_device, dev_type;
+type tee_block_device, base_typeattr_242, dev_type;
 
 # --- tee_device ---
 typeattribute tee_device dev_type;
 
 # --- tee_part_device ---
-type tee_part_device, dev_type;
+type tee_part_device, base_typeattr_242, dev_type;
 
 # --- teei_client_device ---
-type teei_client_device, dev_type, mlstrustedobject;
+type teei_client_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- teei_config_device ---
-type teei_config_device, dev_type;
+type teei_config_device, base_typeattr_242, dev_type;
 
 # --- teei_fp_device ---
-type teei_fp_device, dev_type;
+type teei_fp_device, base_typeattr_242, dev_type;
 
 # --- teei_rpmb_device ---
-type teei_rpmb_device, dev_type;
+type teei_rpmb_device, base_typeattr_242, dev_type;
 
 # --- teei_vfs_device ---
-type teei_vfs_device, dev_type;
+type teei_vfs_device, base_typeattr_242, dev_type;
 
 # --- teeperf_device ---
-type teeperf_device, dev_type, mlstrustedobject;
+type teeperf_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- tgt_device ---
-type tgt_device, dev_type;
+type tgt_device, base_typeattr_242, dev_type;
 
 # --- thinmd_ee_device ---
-type thinmd_ee_device, dev_type;
+type thinmd_ee_device, base_typeattr_242, dev_type;
 
 # --- tkcore_admin_device ---
-type tkcore_admin_device, dev_type, mlstrustedobject;
+type tkcore_admin_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- tkcore_block_device ---
-type tkcore_block_device, dev_type;
+type tkcore_block_device, base_typeattr_242, dev_type;
+
+# --- tll_device ---
+typeattribute tll_device base_typeattr_242;
 
 # --- touch_device ---
-type touch_device, dev_type;
+type touch_device, base_typeattr_242, dev_type;
 
 # --- touchfeature_device ---
-type touchfeature_device, dev_type;
+type touchfeature_device, base_typeattr_242, dev_type;
 
 # --- tpd_em_log_device ---
-type tpd_em_log_device, dev_type;
+type tpd_em_log_device, base_typeattr_242, dev_type;
 
 # --- ttyACM_device ---
-type ttyACM_device, dev_type;
+type ttyACM_device, base_typeattr_242, dev_type;
 
 # --- ttyGS_device ---
-type ttyGS_device, dev_type;
+type ttyGS_device, base_typeattr_242, dev_type;
 
 # --- ttyMT_device ---
-type ttyMT_device, dev_type;
+type ttyMT_device, base_typeattr_242, dev_type;
 
 # --- ttySDIO_device ---
-type ttySDIO_device, dev_type;
+type ttySDIO_device, base_typeattr_242, dev_type;
 
 # --- ttyS_device ---
-type ttyS_device, dev_type;
+type ttyS_device, base_typeattr_242, dev_type;
 
 # --- tty_device ---
 typeattribute tty_device dev_type;
 
 # --- ttyp_device ---
-type ttyp_device, dev_type;
+type ttyp_device, base_typeattr_242, dev_type;
 
 # --- tun_device ---
 typeattribute tun_device dev_type;
 typeattribute tun_device mlstrustedobject;
 
 # --- tx_device ---
-type tx_device, dev_type;
+type tx_device, base_typeattr_242, dev_type;
 
 # --- ublk_block_device ---
 typeattribute ublk_block_device dev_type;
@@ -1258,20 +1299,20 @@ typeattribute ublk_block_device dev_type;
 typeattribute ublk_control_device dev_type;
 
 # --- uboot_device ---
-type uboot_device, dev_type;
+type uboot_device, base_typeattr_242, dev_type;
 
 # --- uhid_device ---
 typeattribute uhid_device dev_type;
 typeattribute uhid_device mlstrustedobject;
 
 # --- uibc_device ---
-type uibc_device, dev_type;
+type uibc_device, base_typeattr_242, dev_type;
 
 # --- uinput_device ---
-type uinput_device, dev_type;
+type uinput_device, base_typeattr_242, dev_type;
 
 # --- uio0_device ---
-type uio0_device, dev_type;
+type uio0_device, base_typeattr_242, dev_type;
 
 # --- uio_device ---
 typeattribute uio_device dev_type;
@@ -1291,37 +1332,37 @@ typeattribute usbaccessory_device mlstrustedobject;
 typeattribute userdata_block_device dev_type;
 
 # --- usrdata_device ---
-type usrdata_device, dev_type;
+type usrdata_device, base_typeattr_242, dev_type;
 
 # --- ut_keymaster_device ---
-type ut_keymaster_device, dev_type;
+type ut_keymaster_device, base_typeattr_242, dev_type;
 
 # --- utr_tui_device ---
-type utr_tui_device, dev_type;
+type utr_tui_device, base_typeattr_242, dev_type;
 
 # --- vbmeta_block_device ---
-type vbmeta_block_device, dev_type;
+type vbmeta_block_device, base_typeattr_242, dev_type;
 
 # --- vcp_device ---
-type vcp_device, dev_type;
+type vcp_device, base_typeattr_242, dev_type;
 
 # --- vcu_device ---
-type vcu_device, dev_type;
+type vcu_device, base_typeattr_242, dev_type;
 
 # --- vd_device ---
 typeattribute vd_device dev_type;
 
 # --- vendor_block_device ---
-type vendor_block_device, dev_type;
+type vendor_block_device, base_typeattr_242, dev_type;
 
 # --- vendor_displayfeature_device ---
-type vendor_displayfeature_device, dev_type;
+type vendor_displayfeature_device, base_typeattr_242, dev_type;
 
 # --- vendor_displaylog_device ---
-type vendor_displaylog_device, dev_type;
+type vendor_displaylog_device, base_typeattr_242, dev_type;
 
 # --- vendor_fingerprint_device ---
-type vendor_fingerprint_device, dev_type;
+type vendor_fingerprint_device, base_typeattr_242, dev_type;
 
 # --- vfio_device ---
 typeattribute vfio_device dev_type;
@@ -1330,7 +1371,7 @@ typeattribute vfio_device dev_type;
 typeattribute video_device dev_type;
 
 # --- vmodem_device ---
-type vmodem_device, dev_type;
+type vmodem_device, base_typeattr_242, dev_type;
 
 # --- vndbinder_device ---
 typeattribute vndbinder_device dev_type;
@@ -1339,28 +1380,28 @@ typeattribute vndbinder_device dev_type;
 typeattribute vold_device dev_type;
 
 # --- vow_device ---
-type vow_device, dev_type;
+type vow_device, base_typeattr_242, dev_type;
 
 # --- vpu_device ---
-type vpu_device, dev_type, mlstrustedobject;
+type vpu_device, base_typeattr_242, dev_type, mlstrustedobject;
 
 # --- vpud_device ---
-type vpud_device, dev_type;
+type vpud_device, base_typeattr_242, dev_type;
 
 # --- watchdog_device ---
 typeattribute watchdog_device dev_type;
 
 # --- widevine_drv_device ---
-type widevine_drv_device, dev_type;
+type widevine_drv_device, base_typeattr_242, dev_type;
 
 # --- wmtWifi_device ---
-type wmtWifi_device, dev_type;
+type wmtWifi_device, base_typeattr_242, dev_type;
 
 # --- wmtdetect_device ---
-type wmtdetect_device, dev_type;
+type wmtdetect_device, base_typeattr_242, dev_type;
 
 # --- xt_qtaguid_device ---
-type xt_qtaguid_device, dev_type;
+type xt_qtaguid_device, base_typeattr_242, dev_type;
 
 # --- zero_device ---
 typeattribute zero_device dev_type;
@@ -1370,5 +1411,11 @@ typeattribute zero_device mlstrustedobject;
 typeattribute zoned_block_device dev_type;
 
 # --- zram0_device ---
-type zram0_device, dev_type;
+type zram0_device, base_typeattr_242, dev_type;
+
+# --- zram_control_device ---
+typeattribute zram_control_device base_typeattr_242;
+
+# --- zram_device ---
+typeattribute zram_device base_typeattr_242;
 

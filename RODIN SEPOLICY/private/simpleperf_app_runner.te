@@ -1,6 +1,7 @@
 # ============================================================
 # File: simpleperf_app_runner.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management

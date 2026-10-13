@@ -95,9 +95,6 @@ attribute hal_teei_tui_server;
 attribute hal_teei_wechat;
 attribute hal_teei_wechat_client;
 attribute hal_teei_wechat_server;
-attribute hal_teeregistry;
-attribute hal_teeregistry_client;
-attribute hal_teeregistry_server;
 
 # [ HAL Attributes - Sensors & Location ]
 attribute hal_mtk_lbs;
@@ -192,6 +189,9 @@ attribute hal_mtk_thp_server;
 attribute hal_mtk_uievent;
 attribute hal_mtk_uievent_client;
 attribute hal_mtk_uievent_server;
+attribute hal_teeregistry;
+attribute hal_teeregistry_client;
+attribute hal_teeregistry_server;
 attribute hal_tsa_hdcp;
 attribute hal_tsa_hdcp_client;
 attribute hal_tsa_hdcp_server;

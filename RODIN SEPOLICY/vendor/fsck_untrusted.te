@@ -1,6 +1,7 @@
 # ============================================================
 # File: fsck_untrusted.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

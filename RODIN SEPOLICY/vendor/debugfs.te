@@ -1,6 +1,7 @@
 # ============================================================
 # File: debugfs.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools
@@ -13,72 +14,84 @@ typeattribute debugfs debugfs_type;
 typeattribute debugfs fs_type;
 
 # --- debugfs_blockio ---
-type debugfs_blockio, debugfs_type, fs_type;
+type debugfs_blockio, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_bootreceiver_tracing ---
 typeattribute debugfs_bootreceiver_tracing debugfs_type;
 typeattribute debugfs_bootreceiver_tracing fs_type;
 
 # --- debugfs_cam_dbg ---
-type debugfs_cam_dbg, debugfs_type, fs_type;
+type debugfs_cam_dbg, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_cam_exception ---
-type debugfs_cam_exception, debugfs_type, fs_type;
+type debugfs_cam_exception, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_cmdq ---
-type debugfs_cmdq, debugfs_type, fs_type;
+type debugfs_cmdq, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_cpuhvfs ---
-type debugfs_cpuhvfs, debugfs_type, fs_type;
+type debugfs_cpuhvfs, base_typeattr_242, debugfs_type, fs_type;
+
+# --- debugfs_dmabuf ---
+typeattribute debugfs_dmabuf base_typeattr_242;
 
 # --- debugfs_dmlog_debug ---
-type debugfs_dmlog_debug, debugfs_type, fs_type;
+type debugfs_dmlog_debug, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_dynamic_debug ---
-type debugfs_dynamic_debug, debugfs_type, fs_type;
+type debugfs_dynamic_debug, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_emi_mbw_buf ---
-type debugfs_emi_mbw_buf, debugfs_type, fs_type;
+type debugfs_emi_mbw_buf, base_typeattr_242, debugfs_type, fs_type;
+
+# --- debugfs_extfrag ---
+typeattribute debugfs_extfrag base_typeattr_242;
+
+# --- debugfs_f2fs ---
+typeattribute debugfs_f2fs base_typeattr_242;
 
 # --- debugfs_fb ---
-type debugfs_fb, debugfs_type, fs_type;
+type debugfs_fb, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_fpsgo ---
-type debugfs_fpsgo, debugfs_type, fs_type;
+type debugfs_fpsgo, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_fuseio ---
-type debugfs_fuseio, debugfs_type, fs_type;
+type debugfs_fuseio, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_gpufreqv2_history ---
-type debugfs_gpufreqv2_history, debugfs_type, fs_type;
+type debugfs_gpufreqv2_history, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_ion ---
-type debugfs_ion, debugfs_type, fs_type;
+type debugfs_ion, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_ion_mm_heap ---
-type debugfs_ion_mm_heap, debugfs_type, fs_type;
+type debugfs_ion_mm_heap, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_kmemleak ---
-type debugfs_kmemleak, debugfs_type, fs_type;
+type debugfs_kmemleak, base_typeattr_242, debugfs_type, fs_type;
+
+# --- debugfs_kperfevents ---
+typeattribute debugfs_kperfevents base_typeattr_242;
 
 # --- debugfs_kprobes ---
 typeattribute debugfs_kprobes debugfs_type;
 typeattribute debugfs_kprobes fs_type;
 
 # --- debugfs_mali_active_groups ---
-type debugfs_mali_active_groups, debugfs_type, fs_type;
+type debugfs_mali_active_groups, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_mali_ctx_cpu_queues ---
-type debugfs_mali_ctx_cpu_queues, debugfs_type, fs_type;
+type debugfs_mali_ctx_cpu_queues, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_mali_ctx_kcpu_queues ---
-type debugfs_mali_ctx_kcpu_queues, debugfs_type, fs_type;
+type debugfs_mali_ctx_kcpu_queues, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_mali_fw_traces ---
-type debugfs_mali_fw_traces, debugfs_type, fs_type;
+type debugfs_mali_fw_traces, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_mali_mem_dump ---
-type debugfs_mali_mem_dump, debugfs_type, fs_type;
+type debugfs_mali_mem_dump, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_mm_events_tracing ---
 typeattribute debugfs_mm_events_tracing debugfs_type;
@@ -89,25 +102,28 @@ typeattribute debugfs_mmc debugfs_type;
 typeattribute debugfs_mmc fs_type;
 
 # --- debugfs_mml ---
-type debugfs_mml, debugfs_type, fs_type;
+type debugfs_mml, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_page_owner_slim_debug ---
-type debugfs_page_owner_slim_debug, debugfs_type, fs_type;
+type debugfs_page_owner_slim_debug, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_printk_index ---
-type debugfs_printk_index, debugfs_type, fs_type;
+type debugfs_printk_index, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_rcu ---
-type debugfs_rcu, debugfs_type, fs_type;
+type debugfs_rcu, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_shrinker_debug ---
-type debugfs_shrinker_debug, debugfs_type, fs_type;
+type debugfs_shrinker_debug, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_smi ---
-type debugfs_smi, debugfs_type, fs_type;
+type debugfs_smi, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_smi_mon ---
-type debugfs_smi_mon, debugfs_type, fs_type;
+type debugfs_smi_mon, base_typeattr_242, debugfs_type, fs_type;
+
+# --- debugfs_subsys ---
+typeattribute debugfs_subsys base_typeattr_242;
 
 # --- debugfs_trace_marker ---
 typeattribute debugfs_trace_marker debugfs_type;
@@ -115,7 +131,7 @@ typeattribute debugfs_trace_marker fs_type;
 typeattribute debugfs_trace_marker mlstrustedobject;
 
 # --- debugfs_tracer_etb ---
-type debugfs_tracer_etb, debugfs_type, fs_type;
+type debugfs_tracer_etb, base_typeattr_242, debugfs_type, fs_type;
 
 # --- debugfs_tracing ---
 typeattribute debugfs_tracing debugfs_type;

@@ -1,6 +1,7 @@
 # ============================================================
 # File: bufferhubd.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,7 +12,6 @@
 # --- bufferhubd ---
 typeattribute bufferhubd coredomain;
 typeattribute bufferhubd domain;
-typeattribute bufferhubd halclientdomain;
 typeattribute bufferhubd mlstrustedsubject;
 
 hal_client_domain(bufferhubd, hal_graphics_allocator)

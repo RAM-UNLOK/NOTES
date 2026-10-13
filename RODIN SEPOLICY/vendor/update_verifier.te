@@ -1,6 +1,7 @@
 # ============================================================
 # File: update_verifier.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -12,7 +13,6 @@
 typeattribute update_verifier domain;
 
 allow update_verifier proc_drop_caches:file w_file_perms;
-allow update_verifier servicemanager:binder transfer;
 
 # --- update_verifier_exec ---
 typeattribute update_verifier_exec exec_type;

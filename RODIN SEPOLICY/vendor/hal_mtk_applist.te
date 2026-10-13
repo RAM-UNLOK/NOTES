@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_mtk_applist.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,7 +14,9 @@ binder_call(hal_mtk_applist_client, hal_mtk_applist_server)
 allow hal_mtk_applist_client mtk_hal_applist_service:service_manager find;
 
 # --- hal_mtk_applist_server ---
-add_service(hal_mtk_applist_server, mtk_hal_applist_service)
-binder_call(hal_mtk_applist_server, hal_mtk_applist_client)
-binder_use(hal_mtk_applist_server)
+allow hal_mtk_applist_server hal_mtk_applist_client:binder call;
+allow hal_mtk_applist_server hal_mtk_applist_client:fd use;
+allow hal_mtk_applist_server mtk_hal_applist_service:service_manager { add find };
+allow hal_mtk_applist_server servicemanager:binder { call transfer };
+allow hal_mtk_applist_server servicemanager:fd use;
 

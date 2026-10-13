@@ -1,6 +1,7 @@
 # ============================================================
 # File: bootanim.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -10,7 +11,6 @@
 
 # --- bootanim ---
 typeattribute bootanim domain;
-typeattribute bootanim halclientdomain;
 
 get_prop(bootanim, vendor_mtk_mbrain_prop)
 get_prop(bootanim, vendor_mtk_mbrain_support_prop)
@@ -18,14 +18,13 @@ hal_client_domain(bootanim, hal_mtk_mbrain)
 allow bootanim debugfs_ion:dir search;
 allow bootanim dri_device:chr_file rw_file_perms;
 allow bootanim gpu_device:dir search;
-allow bootanim mediaserver:binder transfer;
 allow bootanim proc_ged:file rw_file_perms;
 allow bootanim proc_perfmgr:dir r_dir_perms;
 allow bootanim proc_perfmgr:file r_file_perms;
 allow bootanim qemu_pipe_device:chr_file rw_file_perms;
-allowxperm bootanim proc_ged:file ioctl { (range 0x6700 0x6711) (range 0x6764 0x676b) 0x67c8 };
-allowxperm bootanim proc_perfmgr:file ioctl { 0x6701 0x6703 (range 0x670f 0x6710) (range 0x6717 0x6718) };
 dontaudit bootanim system_data_file:dir search;
+allowxperm bootanim proc_ged:file ioctl { 0x6700-0x6711 0x6764-0x676b 0x67c8 };
+allowxperm bootanim proc_perfmgr:file ioctl { 0x6701 0x6703 0x670f-0x6710 0x6717-0x6718 };
 
 # --- bootanim_exec ---
 typeattribute bootanim_exec exec_type;

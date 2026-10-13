@@ -1,6 +1,7 @@
 # ============================================================
 # File: inputflinger.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Input & Touch
 # Subcategory: Input Devices

@@ -1,6 +1,7 @@
 # ============================================================
 # File: kernel.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: System Core & Framework
 # Subcategory: Kernel & Devices
@@ -12,17 +13,14 @@ typeattribute kernel coredomain;
 typeattribute kernel domain;
 typeattribute kernel mlstrustedsubject;
 
-allow kernel aee_core_forwarder:process transition;
-allow kernel aee_core_forwarder:process { siginh rlimitinh };
-allow kernel aee_core_forwarder_exec:file rx_file_perms;
+allow kernel aee_core_forwarder:process { rlimitinh siginh transition };
+allow kernel aee_core_forwarder_exec:file { execute getattr map open read };
 allow kernel cache_file:file read;
 allow kernel extm_data_file:file read;
-allow kernel mcd:process transition;
-allow kernel mcd:process { siginh rlimitinh };
-allow kernel mcd_exec:file rx_file_perms;
-allow kernel micd:process transition;
-allow kernel micd:process { siginh rlimitinh };
-allow kernel micd_exec:file rx_file_perms;
+allow kernel mcd:process { rlimitinh siginh transition };
+allow kernel mcd_exec:file { execute getattr map open read };
+allow kernel micd:process { rlimitinh siginh transition };
+allow kernel micd_exec:file { execute getattr map open read };
 allow kernel mslg_rootfs_file:file r_file_perms;
 allow kernel mslgd:fd use;
 allow kernel system_file:file read;

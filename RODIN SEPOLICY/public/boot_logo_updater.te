@@ -1,6 +1,7 @@
 # ============================================================
 # File: boot_logo_updater.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Privileged/OEM Apps
@@ -9,21 +10,16 @@
 # ============================================================
 
 # --- boot_logo_updater ---
-type boot_logo_updater;
+type boot_logo_updater, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain;
 
-typeattribute boot_logo_updater coredomain;
-typeattribute boot_logo_updater domain;
-
-get_prop(boot_logo_updater, system_prop)
 init_daemon_domain(boot_logo_updater)
 set_prop(boot_logo_updater, system_prop)
 allow boot_logo_updater block_device:dir search;
 allow boot_logo_updater graphics_device:chr_file rw_file_perms;
 allow boot_logo_updater graphics_device:dir search;
 allow boot_logo_updater kmsg_device:chr_file w_file_perms;
-allow boot_logo_updater mtd_device:blk_file r_file_perms;
-allow boot_logo_updater mtd_device:chr_file r_file_perms;
 allow boot_logo_updater mtd_device:dir search;
+allow boot_logo_updater mtd_device:{ blk_file chr_file } r_file_perms;
 allow boot_logo_updater rootfs:file r_file_perms;
 allow boot_logo_updater sysfs:dir r_dir_perms;
 

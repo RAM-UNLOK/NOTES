@@ -1,6 +1,7 @@
 # ============================================================
 # File: mtk_plpath_utils.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: MediaTek
 # Category: Uncategorized
 # Subcategory: Misc

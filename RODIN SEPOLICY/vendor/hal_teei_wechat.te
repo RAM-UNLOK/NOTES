@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_teei_wechat.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: Trustonic
 # Category: Security & TEE
 # Subcategory: TEE Core
@@ -13,7 +14,7 @@ binder_call(hal_teei_wechat_client, hal_teei_wechat_server)
 allow hal_teei_wechat_client teei_hal_wechat_hwservice:hwservice_manager find;
 
 # --- hal_teei_wechat_server ---
-add_hwservice(hal_teei_wechat_server, hidl_base_hwservice)
 add_hwservice(hal_teei_wechat_server, teei_hal_wechat_hwservice)
-binder_call(hal_teei_wechat_server, hal_teei_wechat_client)
+allow hal_teei_wechat_server hal_teei_wechat_client:binder call;
+allow hal_teei_wechat_server hal_teei_wechat_client:fd use;
 

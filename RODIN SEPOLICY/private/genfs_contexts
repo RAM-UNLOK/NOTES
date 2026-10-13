@@ -44,6 +44,7 @@ genfscon proc /mibbr                                                            
 genfscon proc /mikblockd_enable                                                                                                     u:object_r:proc_mi_wq_dynprio:s0
 genfscon proc /partitions                                                                                                           u:object_r:proc_partition:s0
 genfscon proc /sys/binder_prio                                                                                                      u:object_r:proc_binder_prio:s0
+genfscon proc /sys/mi_asap                                                                                                          u:object_r:proc_ioturbo:s0
 genfscon proc /sys/mi_sched_ext                                                                                                     u:object_r:proc_mi_sched_ext:s0
 genfscon proc /sys/millet/freeze_pid                                                                                                u:object_r:proc_greeze:s0
 genfscon proc /sys/millet/thaw_pid                                                                                                  u:object_r:proc_greeze:s0
@@ -103,9 +104,6 @@ genfscon sysfs /dev/gauge/Power_Off_Voltage                                     
 genfscon sysfs /dev/gauge/Power_On_Voltage                                                                                          u:object_r:sysfs_power_on_vol:s0
 genfscon sysfs /powersave                                                                                                           u:object_r:sysfs_power_save:s0
 genfscon sysfs /unionpower                                                                                                          u:object_r:sysfs_union_power:s0
-
-# --- Radio & Telephony ---
-genfscon proc /sys/mi_asap                                                                                                          u:object_r:proc_ioturbo:s0
 
 # --- Storage & Memory ---
 genfscon sysfs /block/mmcblk0rpmb/size                                                                                              u:object_r:access_sys_file:s0

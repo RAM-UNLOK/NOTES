@@ -1,6 +1,7 @@
 # ============================================================
 # File: wifi_mainline_supplicant.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Wi-Fi Stack

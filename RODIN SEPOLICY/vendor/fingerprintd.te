@@ -1,6 +1,7 @@
 # ============================================================
 # File: fingerprintd.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Fingerprint & Biometrics
 # Subcategory: Biometric Modalities

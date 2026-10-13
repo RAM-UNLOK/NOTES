@@ -1,6 +1,7 @@
 # ============================================================
 # File: charger_vendor.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Battery & Charging
@@ -10,5 +11,5 @@
 
 typeattribute charger_vendor domain;
 
-allow charger_vendor hal_health_default_exec:file { rx_file_perms entrypoint };
+allow charger_vendor hal_health_default_exec:file { entrypoint execute getattr map open read };
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_clientapi.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -14,9 +15,10 @@ allow hal_clientapi_client mtk_hal_clientapi_service:service_manager find;
 allow hal_clientapi_client volte_clientapi_ua_hwservice:hwservice_manager find;
 
 # --- hal_clientapi_server ---
-add_hwservice(hal_clientapi_server, hidl_base_hwservice)
 add_hwservice(hal_clientapi_server, volte_clientapi_ua_hwservice)
-add_service(hal_clientapi_server, mtk_hal_clientapi_service)
-binder_call(hal_clientapi_server, hal_clientapi_client)
-binder_use(hal_clientapi_server)
+allow hal_clientapi_server hal_clientapi_client:binder call;
+allow hal_clientapi_server hal_clientapi_client:fd use;
+allow hal_clientapi_server mtk_hal_clientapi_service:service_manager { add find };
+allow hal_clientapi_server servicemanager:binder { call transfer };
+allow hal_clientapi_server servicemanager:fd use;
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: proc.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -17,29 +18,35 @@ typeattribute proc_abi fs_type;
 typeattribute proc_abi proc_type;
 
 # --- proc_aed ---
-type proc_aed, fs_type, proc_type;
+type proc_aed, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_aed_reboot_reason ---
-type proc_aed_reboot_reason, fs_type, proc_type;
+type proc_aed_reboot_reason, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_aov_kernel ---
-type proc_aov_kernel, fs_type, proc_type;
+type proc_aov_kernel, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_apusys_rv_debug ---
-type proc_apusys_rv_debug, fs_type, proc_type;
+type proc_apusys_rv_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_apusys_up_seq_logl ---
-type proc_apusys_up_seq_logl, fs_type, proc_type;
+type proc_apusys_up_seq_logl, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_aputag_mdw_debug ---
-type proc_aputag_mdw_debug, fs_type, proc_type;
+type proc_aputag_mdw_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_asound ---
 typeattribute proc_asound fs_type;
 typeattribute proc_asound proc_type;
 
 # --- proc_atf_log ---
-type proc_atf_log, fs_type, proc_type;
+type proc_atf_log, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_battery_cmd ---
+typeattribute proc_battery_cmd base_typeattr_242;
+
+# --- proc_binder_prio ---
+typeattribute proc_binder_prio base_typeattr_242;
 
 # --- proc_bluetooth_writable ---
 typeattribute proc_bluetooth_writable fs_type;
@@ -50,90 +57,102 @@ typeattribute proc_bootconfig fs_type;
 typeattribute proc_bootconfig proc_type;
 
 # --- proc_bootprof ---
-type proc_bootprof, fs_type, proc_type;
+type proc_bootprof, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_bpf ---
 typeattribute proc_bpf fs_type;
 typeattribute proc_bpf proc_type;
 
 # --- proc_btdbg ---
-type proc_btdbg, fs_type, proc_type;
+type proc_btdbg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_buddyinfo ---
 typeattribute proc_buddyinfo fs_type;
 typeattribute proc_buddyinfo proc_type;
 
 # --- proc_bus_input ---
-type proc_bus_input, fs_type, proc_type;
+type proc_bus_input, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_c2ps ---
-type proc_c2ps, fs_type, proc_type;
+type proc_c2ps, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_camera_mind ---
+typeattribute proc_camera_mind base_typeattr_242;
 
 # --- proc_ccci_dump ---
-type proc_ccci_dump, fs_type, proc_type;
+type proc_ccci_dump, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_ccci_lp_mem ---
+typeattribute proc_ccci_lp_mem base_typeattr_242;
 
 # --- proc_ccci_sib ---
-type proc_ccci_sib, fs_type, proc_type;
+type proc_ccci_sib, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_chip ---
-type proc_chip, fs_type, proc_type;
+type proc_chip, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_cl_cam_status ---
+typeattribute proc_cl_cam_status base_typeattr_242;
 
 # --- proc_clkdbg ---
-type proc_clkdbg, fs_type, proc_type;
+type proc_clkdbg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cm_mgr ---
-type proc_cm_mgr, fs_type, proc_type;
+type proc_cm_mgr, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cmdline ---
 typeattribute proc_cmdline fs_type;
 typeattribute proc_cmdline proc_type;
 
 # --- proc_cmdq_debug ---
-type proc_cmdq_debug, fs_type, proc_type;
+type proc_cmdq_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_conninfradbg ---
-type proc_conninfradbg, fs_type, proc_type;
+type proc_conninfradbg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpu_alignment ---
 typeattribute proc_cpu_alignment fs_type;
 typeattribute proc_cpu_alignment proc_type;
 
 # --- proc_cpu_loading ---
-type proc_cpu_loading, fs_type, proc_type;
+type proc_cpu_loading, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpufreq ---
-type proc_cpufreq, fs_type, proc_type;
+type proc_cpufreq, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpuhvfs ---
-type proc_cpuhvfs, fs_type, proc_type;
+type proc_cpuhvfs, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpuidle ---
-type proc_cpuidle, fs_type, proc_type;
+type proc_cpuidle, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpuinfo ---
 typeattribute proc_cpuinfo fs_type;
 typeattribute proc_cpuinfo proc_type;
 
 # --- proc_cpumgr ---
-type proc_cpumgr, fs_type, proc_type;
+type proc_cpumgr, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_cpuqosmgr ---
-type proc_cpuqosmgr, fs_type, proc_type;
+type proc_cpuqosmgr, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_crash_module ---
-type proc_crash_module, fs_type, proc_type;
+type proc_crash_module, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_curr_cpu_loading ---
-type proc_curr_cpu_loading, fs_type, proc_type;
+type proc_curr_cpu_loading, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_dbg_repo ---
-type proc_dbg_repo, fs_type, proc_type;
+type proc_dbg_repo, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_dbg_slbc ---
-type proc_dbg_slbc, fs_type, proc_type;
+type proc_dbg_slbc, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_deviceinfo ---
+typeattribute proc_deviceinfo base_typeattr_242;
 
 # --- proc_devinfo ---
-type proc_devinfo, fs_type, proc_type;
+type proc_devinfo, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_dirty ---
 typeattribute proc_dirty fs_type;
@@ -144,95 +163,105 @@ typeattribute proc_diskstats fs_type;
 typeattribute proc_diskstats proc_type;
 
 # --- proc_displowpower ---
-type proc_displowpower, fs_type, proc_type;
+type proc_displowpower, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_dmaheap ---
-type proc_dmaheap, fs_type, proc_type;
+type proc_dmaheap, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_dpmaif_debug ---
-type proc_dpmaif_debug, fs_type, proc_type;
+type proc_dpmaif_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_drop_caches ---
 typeattribute proc_drop_caches fs_type;
 typeattribute proc_drop_caches proc_type;
 
 # --- proc_dynamic_debug_control ---
+typeattribute proc_dynamic_debug_control base_typeattr_242;
 typeattribute proc_dynamic_debug_control fs_type;
 typeattribute proc_dynamic_debug_control proc_type;
 
 # --- proc_earaio ---
-type proc_earaio, fs_type, proc_type;
+type proc_earaio, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_easmgr ---
-type proc_easmgr, fs_type, proc_type;
+type proc_easmgr, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_extra_free_kbytes ---
 typeattribute proc_extra_free_kbytes fs_type;
 typeattribute proc_extra_free_kbytes proc_type;
 
+# --- proc_f2fs_status ---
+typeattribute proc_f2fs_status base_typeattr_242;
+
 # --- proc_filesystems ---
 typeattribute proc_filesystems fs_type;
 typeattribute proc_filesystems proc_type;
 
+# --- proc_flash ---
+typeattribute proc_flash base_typeattr_242;
+
 # --- proc_fliperfs ---
-type proc_fliperfs, fs_type, proc_type;
+type proc_fliperfs, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_freqhopping ---
-type proc_freqhopping, fs_type, proc_type;
+type proc_freqhopping, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_fs_verity ---
 typeattribute proc_fs_verity fs_type;
 typeattribute proc_fs_verity proc_type;
 
 # --- proc_ged ---
-type proc_ged, fs_type, proc_type;
+type proc_ged, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpu_memory ---
-type proc_gpu_memory, fs_type, proc_type;
+type proc_gpu_memory, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpufreqv2 ---
-type proc_gpufreqv2, fs_type, proc_type;
+type proc_gpufreqv2, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpufreqv2_gpu_working_opp_table ---
-type proc_gpufreqv2_gpu_working_opp_table, fs_type, proc_type;
+type proc_gpufreqv2_gpu_working_opp_table, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpufreqv2_gpufreq_status ---
-type proc_gpufreqv2_gpufreq_status, fs_type, proc_type;
+type proc_gpufreqv2_gpufreq_status, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpufreqv2_stack_working_opp_table ---
-type proc_gpufreqv2_stack_working_opp_table, fs_type, proc_type;
+type proc_gpufreqv2_stack_working_opp_table, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gpulog ---
-type proc_gpulog, fs_type, proc_type;
+type proc_gpulog, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_greeze ---
+typeattribute proc_greeze base_typeattr_242;
 
 # --- proc_gz_log ---
-type proc_gz_log, fs_type, proc_type;
+type proc_gz_log, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_gz_log_full ---
-type proc_gz_log_full, fs_type, proc_type;
+type proc_gz_log_full, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_hostname ---
 typeattribute proc_hostname fs_type;
 typeattribute proc_hostname proc_type;
 
 # --- proc_hps ---
-type proc_hps, fs_type, proc_type;
+type proc_hps, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_hung_task ---
 typeattribute proc_hung_task fs_type;
 typeattribute proc_hung_task proc_type;
 
 # --- proc_icusb ---
-type proc_icusb, fs_type, proc_type;
+type proc_icusb, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_img_daemon ---
-type proc_img_daemon, fs_type, proc_type;
+type proc_img_daemon, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_img_kernel ---
-type proc_img_kernel, fs_type, proc_type;
+type proc_img_kernel, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_img_stream ---
-type proc_img_stream, fs_type, proc_type;
+type proc_img_stream, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_interrupts ---
 typeattribute proc_interrupts fs_type;
@@ -243,29 +272,32 @@ typeattribute proc_iomem fs_type;
 typeattribute proc_iomem proc_type;
 
 # --- proc_iommu_debug ---
-type proc_iommu_debug, fs_type, proc_type;
+type proc_iommu_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_ion ---
-type proc_ion, fs_type, proc_type;
+type proc_ion, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_ioturbo ---
+typeattribute proc_ioturbo base_typeattr_242;
 
 # --- proc_isp_p2 ---
-type proc_isp_p2, fs_type, proc_type;
+type proc_isp_p2, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_isp_p2_dump ---
-type proc_isp_p2_dump, fs_type, proc_type;
+type proc_isp_p2_dump, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_isp_p2_kedump ---
-type proc_isp_p2_kedump, fs_type, proc_type;
+type proc_isp_p2_kedump, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_isp_pspm ---
-type proc_isp_pspm, fs_type, proc_type;
+type proc_isp_pspm, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_kallsyms ---
 typeattribute proc_kallsyms fs_type;
 typeattribute proc_kallsyms proc_type;
 
 # --- proc_kernel_debug ---
-type proc_kernel_debug, fs_type, proc_type;
+type proc_kernel_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_keys ---
 typeattribute proc_keys fs_type;
@@ -279,67 +311,88 @@ typeattribute proc_kmsg proc_type;
 typeattribute proc_kpageflags fs_type;
 typeattribute proc_kpageflags proc_type;
 
+# --- proc_kperfevents_device ---
+typeattribute proc_kperfevents_device base_typeattr_242;
+
 # --- proc_kswapd_affinity ---
-type proc_kswapd_affinity, fs_type, proc_type;
+type proc_kswapd_affinity, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_last_kmsg ---
-type proc_last_kmsg, fs_type, proc_type;
+type proc_last_kmsg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_last_touch_events ---
-type proc_last_touch_events, fs_type, proc_type;
+type proc_last_touch_events, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_lk_env ---
-type proc_lk_env, fs_type, proc_type;
+type proc_lk_env, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_loadavg ---
 typeattribute proc_loadavg fs_type;
 typeattribute proc_loadavg proc_type;
 
 # --- proc_lockdep ---
-type proc_lockdep, fs_type, proc_type;
+type proc_lockdep, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_locks ---
 typeattribute proc_locks fs_type;
 typeattribute proc_locks proc_type;
 
 # --- proc_log_much ---
-type proc_log_much, fs_type, proc_type;
+type proc_log_much, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_low_memory_hit ---
-type proc_low_memory_hit, fs_type, proc_type;
+type proc_low_memory_hit, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_lowmemorykiller ---
 typeattribute proc_lowmemorykiller fs_type;
 typeattribute proc_lowmemorykiller proc_type;
 
 # --- proc_m4u ---
-type proc_m4u, fs_type, proc_type;
+type proc_m4u, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_m4u_dbg ---
-type proc_m4u_dbg, fs_type, proc_type;
+type proc_m4u_dbg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_max_map_count ---
 typeattribute proc_max_map_count fs_type;
 typeattribute proc_max_map_count proc_type;
 
 # --- proc_mcdi ---
-type proc_mcdi, fs_type, proc_type;
+type proc_mcdi, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mdla_mdla_memory_debug ---
-type proc_mdla_mdla_memory_debug, fs_type, proc_type;
+type proc_mdla_mdla_memory_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_meminfo ---
 typeattribute proc_meminfo fs_type;
 typeattribute proc_meminfo proc_type;
 
 # --- proc_memory_usage ---
-type proc_memory_usage, fs_type, proc_type;
+type proc_memory_usage, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mgq ---
-type proc_mgq, fs_type, proc_type;
+type proc_mgq, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_mi_kernel ---
+typeattribute proc_mi_kernel base_typeattr_242;
+
+# --- proc_mi_log ---
+typeattribute proc_mi_log base_typeattr_242;
+
+# --- proc_mi_mem ---
+typeattribute proc_mi_mem base_typeattr_242;
+
+# --- proc_mi_mem_swappiness_pids ---
+typeattribute proc_mi_mem_swappiness_pids base_typeattr_242;
+
+# --- proc_mi_sched_ext ---
+typeattribute proc_mi_sched_ext base_typeattr_242;
+
+# --- proc_mi_wq_dynprio ---
+typeattribute proc_mi_wq_dynprio base_typeattr_242;
 
 # --- proc_min_free_kbytes ---
-type proc_min_free_kbytes, fs_type, proc_type;
+type proc_min_free_kbytes, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_min_free_order_shift ---
 typeattribute proc_min_free_order_shift fs_type;
@@ -350,19 +403,19 @@ typeattribute proc_misc fs_type;
 typeattribute proc_misc proc_type;
 
 # --- proc_mitee_log ---
-type proc_mitee_log, fs_type, proc_type;
+type proc_mitee_log, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mmdvfs_mmdvfs_opp ---
-type proc_mmdvfs_mmdvfs_opp, fs_type, proc_type;
+type proc_mmdvfs_mmdvfs_opp, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mmprofile ---
-type proc_mmprofile, fs_type, proc_type;
+type proc_mmprofile, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mmqos_mmqos_bw ---
-type proc_mmqos_mmqos_bw, fs_type, proc_type;
+type proc_mmqos_mmqos_bw, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_modem_enhance ---
-type proc_modem_enhance, fs_type, proc_type;
+type proc_modem_enhance, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_modules ---
 typeattribute proc_modules fs_type;
@@ -373,46 +426,46 @@ typeattribute proc_mounts fs_type;
 typeattribute proc_mounts proc_type;
 
 # --- proc_mpbe ---
-type proc_mpbe, fs_type, proc_type;
+type proc_mpbe, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mrdump_rst ---
-type proc_mrdump_rst, fs_type, proc_type;
+type proc_mrdump_rst, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_msdc_debug ---
-type proc_msdc_debug, fs_type, proc_type;
+type proc_msdc_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtd ---
-type proc_mtd, fs_type, proc_type;
+type proc_mtd, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtk_batoc_throttling ---
-type proc_mtk_batoc_throttling, fs_type, proc_type;
+type proc_mtk_batoc_throttling, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtk_es_reg_dump ---
-type proc_mtk_es_reg_dump, fs_type, proc_type;
+type proc_mtk_es_reg_dump, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtk_jpeg ---
-type proc_mtk_jpeg, fs_type, mlstrustedobject, proc_type;
+type proc_mtk_jpeg, base_typeattr_242, fs_type, mlstrustedobject, proc_type;
 
 # --- proc_mtk_mali_log ---
-type proc_mtk_mali_log, fs_type, proc_type;
+type proc_mtk_mali_log, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtk_mdp_debug ---
-type proc_mtk_mdp_debug, fs_type, proc_type;
+type proc_mtk_mdp_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtkcooler ---
-type proc_mtkcooler, fs_type, proc_type;
+type proc_mtkcooler, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtkfb ---
-type proc_mtkfb, fs_type, proc_type;
+type proc_mtkfb, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtktz ---
-type proc_mtktz, fs_type, proc_type;
+type proc_mtktz, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtmon ---
-type proc_mtmon, fs_type, proc_type;
+type proc_mtmon, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_mtprintk ---
-type proc_mtprintk, fs_type, proc_type;
+type proc_mtprintk, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_net ---
 typeattribute proc_net fs_type;
@@ -439,7 +492,10 @@ typeattribute proc_panic fs_type;
 typeattribute proc_panic proc_type;
 
 # --- proc_panic_on_rcu_stall ---
-type proc_panic_on_rcu_stall, fs_type, proc_type;
+type proc_panic_on_rcu_stall, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_partition ---
+typeattribute proc_partition base_typeattr_242;
 
 # --- proc_percpu_pagelist_high_fraction ---
 typeattribute proc_percpu_pagelist_high_fraction fs_type;
@@ -450,36 +506,39 @@ typeattribute proc_perf fs_type;
 typeattribute proc_perf proc_type;
 
 # --- proc_perfmgr ---
-type proc_perfmgr, fs_type, proc_type;
+type proc_perfmgr, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_pid_max ---
 typeattribute proc_pid_max fs_type;
 typeattribute proc_pid_max proc_type;
 
 # --- proc_pidmap ---
-type proc_pidmap, fs_type, proc_type;
+type proc_pidmap, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_pipe_conf ---
 typeattribute proc_pipe_conf fs_type;
 typeattribute proc_pipe_conf proc_type;
 
 # --- proc_pl_lk ---
-type proc_pl_lk, fs_type, proc_type;
+type proc_pl_lk, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_pmic_tia ---
-type proc_pmic_tia, fs_type, proc_type;
+type proc_pmic_tia, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_power ---
-type proc_power, fs_type, proc_type;
+type proc_power, base_typeattr_242, fs_type, proc_type;
+
+# --- proc_power_save ---
+typeattribute proc_power_save base_typeattr_242;
 
 # --- proc_powerhal_cpu_ctrl ---
-type proc_powerhal_cpu_ctrl, fs_type, proc_type;
+type proc_powerhal_cpu_ctrl, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_ppb ---
-type proc_ppb, fs_type, proc_type;
+type proc_ppb, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_ppm ---
-type proc_ppm, fs_type, proc_type;
+type proc_ppm, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_pressure_cpu ---
 typeattribute proc_pressure_cpu fs_type;
@@ -512,10 +571,10 @@ typeattribute proc_sched fs_type;
 typeattribute proc_sched proc_type;
 
 # --- proc_sched_debug ---
-type proc_sched_debug, fs_type, proc_type;
+type proc_sched_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_sched_migration_cost_ns ---
-type proc_sched_migration_cost_ns, fs_type, proc_type;
+type proc_sched_migration_cost_ns, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_security ---
 typeattribute proc_security fs_type;
@@ -526,63 +585,66 @@ typeattribute proc_slabinfo fs_type;
 typeattribute proc_slabinfo proc_type;
 
 # --- proc_slabtrace ---
-type proc_slabtrace, fs_type, proc_type;
+type proc_slabtrace, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_slogger ---
-type proc_slogger, fs_type, proc_type;
+type proc_slogger, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_stat ---
 typeattribute proc_stat fs_type;
 typeattribute proc_stat proc_type;
 
 # --- proc_stpbt ---
-type proc_stpbt, fs_type, proc_type;
+type proc_stpbt, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_swappiness ---
-type proc_swappiness, fs_type, proc_type;
+type proc_swappiness, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_swaps ---
 typeattribute proc_swaps fs_type;
 typeattribute proc_swaps proc_type;
 
 # --- proc_swpm ---
-type proc_swpm, fs_type, proc_type;
+type proc_swpm, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_sysrq ---
 typeattribute proc_sysrq fs_type;
 typeattribute proc_sysrq proc_type;
 
 # --- proc_thermal ---
-type proc_thermal, fs_type, proc_type;
+type proc_thermal, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_timer ---
 typeattribute proc_timer fs_type;
 typeattribute proc_timer proc_type;
 
 # --- proc_tkcore ---
-type proc_tkcore, fs_type, proc_type;
+type proc_tkcore, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_tmi_log ---
-type proc_tmi_log, fs_type, proc_type;
+type proc_tmi_log, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_touch_boost ---
-type proc_touch_boost, fs_type, proc_type;
+type proc_touch_boost, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_tp_file ---
-type proc_tp_file, fs_type, proc_type;
+type proc_tp_file, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_tp_lockdown ---
-type proc_tp_lockdown, fs_type, proc_type;
+type proc_tp_lockdown, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_tp_selftest ---
-type proc_tp_selftest, fs_type, proc_type;
+type proc_tp_selftest, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_tty_drivers ---
 typeattribute proc_tty_drivers fs_type;
 typeattribute proc_tty_drivers proc_type;
 
+# --- proc_tzdbg_dir ---
+typeattribute proc_tzdbg_dir base_typeattr_242;
+
 # --- proc_ufs_debug ---
-type proc_ufs_debug, fs_type, proc_type;
+type proc_ufs_debug, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_uid_concurrent_active_time ---
 typeattribute proc_uid_concurrent_active_time fs_type;
@@ -616,12 +678,15 @@ typeattribute proc_uid_procstat_set proc_type;
 typeattribute proc_uid_time_in_state fs_type;
 typeattribute proc_uid_time_in_state proc_type;
 
+# --- proc_union_power ---
+typeattribute proc_union_power base_typeattr_242;
+
 # --- proc_uptime ---
 typeattribute proc_uptime fs_type;
 typeattribute proc_uptime proc_type;
 
 # --- proc_usb_plat ---
-type proc_usb_plat, fs_type, proc_type;
+type proc_usb_plat, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_vendor_sched ---
 typeattribute proc_vendor_sched fs_type;
@@ -640,7 +705,7 @@ typeattribute proc_vmstat fs_type;
 typeattribute proc_vmstat proc_type;
 
 # --- proc_vpu_memory ---
-type proc_vpu_memory, fs_type, proc_type;
+type proc_vpu_memory, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_watermark_boost_factor ---
 typeattribute proc_watermark_boost_factor fs_type;
@@ -651,39 +716,39 @@ typeattribute proc_watermark_scale_factor fs_type;
 typeattribute proc_watermark_scale_factor proc_type;
 
 # --- proc_wlan_status ---
-type proc_wlan_status, fs_type, proc_type;
+type proc_wlan_status, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_wmt_aee ---
-type proc_wmt_aee, fs_type, proc_type;
+type proc_wmt_aee, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_wmtdbg ---
-type proc_wmtdbg, fs_type, proc_type;
+type proc_wmtdbg, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_wmtuserproc ---
-type proc_wmtuserproc, fs_type, proc_type;
+type proc_wmtuserproc, base_typeattr_242, fs_type, proc_type;
 
 # --- proc_zoneinfo ---
 typeattribute proc_zoneinfo fs_type;
 typeattribute proc_zoneinfo proc_type;
 
 # --- proc_zraminfo ---
-type proc_zraminfo, fs_type, proc_type;
+type proc_zraminfo, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_blockio ---
-type procfs_blockio, fs_type, proc_type;
+type procfs_blockio, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_cam_dbg ---
-type procfs_cam_dbg, fs_type, proc_type;
+type procfs_cam_dbg, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_cam_exception ---
-type procfs_cam_exception, fs_type, proc_type;
+type procfs_cam_exception, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_gpu_img ---
-type procfs_gpu_img, fs_type, proc_type;
+type procfs_gpu_img, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_irq ---
-type procfs_irq, fs_type, proc_type;
+type procfs_irq, base_typeattr_242, fs_type, proc_type;
 
 # --- procfs_memory ---
-type procfs_memory, fs_type, proc_type;
+type procfs_memory, base_typeattr_242, fs_type, proc_type;
 

@@ -1,6 +1,7 @@
 # ============================================================
 # File: early_virtmgr.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -13,14 +14,12 @@ typeattribute early_virtmgr coredomain;
 typeattribute early_virtmgr domain;
 typeattribute early_virtmgr halclientdomain;
 
-init_daemon_domain(early_virtmgr)
+allow early_virtmgr early_virtmgr_exec:file { entrypoint execute getattr map open read };
 allow early_virtmgr trusty_security_vm_launcher:dir search;
 allow early_virtmgr trusty_security_vm_launcher:fd use;
-allow early_virtmgr trusty_security_vm_launcher:fifo_file { r_file_perms write };
-allow early_virtmgr trusty_security_vm_launcher:file read;
-allow early_virtmgr trusty_security_vm_launcher:lnk_file read;
 allow early_virtmgr trusty_security_vm_launcher:process sigchld;
-allow early_virtmgr trusty_security_vm_launcher:unix_stream_socket { r_file_perms write };
+allow early_virtmgr trusty_security_vm_launcher:{ fifo_file unix_stream_socket } { getattr ioctl read write };
+allow early_virtmgr trusty_security_vm_launcher:{ file lnk_file } read;
 allow early_virtmgr trusty_security_vm_launcher_tmpfs:file rw_file_perms;
 
 # --- early_virtmgr_exec ---

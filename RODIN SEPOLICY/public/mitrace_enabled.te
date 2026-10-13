@@ -1,6 +1,7 @@
 # ============================================================
 # File: mitrace_enabled.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

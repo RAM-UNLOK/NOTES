@@ -1,6 +1,7 @@
 # ============================================================
 # File: mobile_log_d.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Logging
@@ -9,13 +10,8 @@
 # ============================================================
 
 # --- mobile_log_d ---
-type mobile_log_d;
+type mobile_log_d, base_typeattr_1062, base_typeattr_1065, base_typeattr_1066, base_typeattr_1069, base_typeattr_1070, base_typeattr_1073, base_typeattr_1075, base_typeattr_1078, base_typeattr_1079, base_typeattr_1080, base_typeattr_1081, base_typeattr_1082, base_typeattr_1083, base_typeattr_1086, base_typeattr_1087, base_typeattr_1088, base_typeattr_1091, base_typeattr_1092, base_typeattr_1095, base_typeattr_1096, base_typeattr_1097, base_typeattr_1100, base_typeattr_1101, base_typeattr_1102, base_typeattr_1105, base_typeattr_1106, base_typeattr_1109, base_typeattr_1110, base_typeattr_1111, base_typeattr_1112, base_typeattr_1113, base_typeattr_1116, base_typeattr_1117, base_typeattr_1120, base_typeattr_1121, base_typeattr_1122, base_typeattr_1125, base_typeattr_1126, base_typeattr_1127, base_typeattr_1130, base_typeattr_1131, base_typeattr_1134, coredomain, domain, mlstrustedsubject;
 
-typeattribute mobile_log_d coredomain;
-typeattribute mobile_log_d domain;
-typeattribute mobile_log_d mlstrustedsubject;
-
-get_prop(mobile_log_d, debug_prop)
 get_prop(mobile_log_d, device_logging_prop)
 get_prop(mobile_log_d, mmc_prop)
 get_prop(mobile_log_d, safemode_prop)
@@ -25,19 +21,16 @@ get_prop(mobile_log_d, system_mtk_mobile_log_prop)
 get_prop(mobile_log_d, system_mtk_persist_mtk_aee_prop)
 init_daemon_domain(mobile_log_d)
 set_prop(mobile_log_d, debug_prop)
-set_prop(mobile_log_d, system_mtk_mobile_log_prop)
 allow mobile_log_d debugfs_tracing:dir create_dir_perms;
 allow mobile_log_d debugfs_tracing_instances:dir create_dir_perms;
 allow mobile_log_d debugfs_tracing_instances:file create_file_perms;
 allow mobile_log_d debuglog_data_file:dir { create_dir_perms relabelto };
 allow mobile_log_d debuglog_data_file:file create_file_perms;
-allow mobile_log_d dumpstate:process transition;
-allow mobile_log_d dumpstate:process { siginh rlimitinh };
+allow mobile_log_d dumpstate:process { rlimitinh siginh transition };
 allow mobile_log_d fuse:dir create_dir_perms;
 allow mobile_log_d fuse:file create_file_perms;
-allow mobile_log_d kernel:system { syslog_read syslog_mod };
-allow mobile_log_d kmsg_device:chr_file r_file_perms;
-allow mobile_log_d logcat_exec:file rx_file_perms;
+allow mobile_log_d kernel:system { syslog_mod syslog_read };
+allow mobile_log_d kmsg_device:chr_file { getattr ioctl lock open read watch watch_reads };
 allow mobile_log_d logcat_exec:file rx_file_perms;
 allow mobile_log_d logd:unix_stream_socket connectto;
 allow mobile_log_d logdr_socket:sock_file write;
@@ -55,9 +48,9 @@ allow mobile_log_d self:capability { chown fowner fsetid setgid setuid };
 allow mobile_log_d self:capability2 syslog;
 allow mobile_log_d shell_exec:file rx_file_perms;
 allow mobile_log_d storage_file:dir create_dir_perms;
-allow mobile_log_d storage_file:file create_file_perms;
-allow mobile_log_d storage_file:lnk_file create_file_perms;
+allow mobile_log_d storage_file:{ file lnk_file } create_file_perms;
 allow mobile_log_d system_file:file x_file_perms;
+allow mobile_log_d system_mtk_mobile_log_prop:property_service set;
 allow mobile_log_d toolbox_exec:file rx_file_perms;
 allow mobile_log_d vfat:dir create_dir_perms;
 allow mobile_log_d vfat:file create_file_perms;

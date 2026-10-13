@@ -1,6 +1,7 @@
 # ============================================================
 # File: simpleperf_boot.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Power & Thermal
 # Subcategory: Power Management

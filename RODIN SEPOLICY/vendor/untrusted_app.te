@@ -1,6 +1,7 @@
 # ============================================================
 # File: untrusted_app.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Apps & UX
 # Subcategory: Third-party Apps
@@ -10,41 +11,40 @@
 
 # --- untrusted_app ---
 typeattribute untrusted_app domain;
-typeattribute untrusted_app halclientdomain;
 
-binder_call(untrusted_app, hal_mediaeventgatherservice)
-binder_call(untrusted_app, hal_mediaeventgatherservice_service)
-binder_call(untrusted_app, mtk_hal_neuralnetworks)
 binder_use(untrusted_app)
 hal_client_domain(untrusted_app, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app, hal_miperf)
 hal_client_domain(untrusted_app, hal_videoservice)
 allow untrusted_app fuseblk:dir search;
 allow untrusted_app fuseblk:file rw_file_perms;
+allow untrusted_app hal_mediaeventgatherservice:binder call;
+allow untrusted_app hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app hal_mediaeventgatherservice_service:service_manager find;
 allow untrusted_app mediaserver:dir search;
+allow untrusted_app mtk_hal_neuralnetworks:binder call;
 allow untrusted_app proc_mtktz:dir search;
 allow untrusted_app proc_mtktz:file r_file_perms;
 allow untrusted_app radio:unix_stream_socket connectto;
 allow untrusted_app vtservice:dir search;
-neverallow untrusted_app vendor_fp_info_prop:dir { create_dir_perms x_file_perms append audit_access execmod link mounton quotaon relabelfrom relabelto unlink };
-neverallow untrusted_app vendor_fp_info_prop:file { create_file_perms x_file_perms audit_access entrypoint execmod link mounton quotaon relabelfrom relabelto };
+neverallow untrusted_app vendor_fp_info_prop:dir { create_dir_perms append audit_access execmod execute link map mounton quotaon relabelfrom relabelto unlink watch_mount watch_sb watch_with_perm };
+neverallow untrusted_app vendor_fp_info_prop:file { create_file_perms audit_access entrypoint execmod execute execute_no_trans link mounton quotaon relabelfrom relabelto watch_mount watch_sb watch_with_perm };
 neverallow untrusted_app vendor_fp_info_prop:property_service set;
 
 # --- untrusted_app_25 ---
 typeattribute untrusted_app_25 domain;
-typeattribute untrusted_app_25 halclientdomain;
 
-binder_call(untrusted_app_25, hal_mediaeventgatherservice)
-binder_call(untrusted_app_25, hal_mediaeventgatherservice_service)
 binder_use(untrusted_app_25)
 hal_client_domain(untrusted_app_25, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app_25, hal_miperf)
 hal_client_domain(untrusted_app_25, hal_videoservice)
 allow untrusted_app_25 goodix_fingerprint_service:service_manager find;
+allow untrusted_app_25 hal_mediaeventgatherservice:binder call;
+allow untrusted_app_25 hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app_25 hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app_25 hal_mediaeventgatherservice_service:service_manager find;
 allow untrusted_app_25 mobicore_vendor_file:dir search;
-allow untrusted_app_25 mtk_hal_neuralnetworks:binder transfer;
 allow untrusted_app_25 proc_mtktz:dir search;
 allow untrusted_app_25 proc_mtktz:file r_file_perms;
 allow untrusted_app_25 proc_net:file r_file_perms;
@@ -62,10 +62,7 @@ allow untrusted_app_25 sysfs_therm:file r_file_perms;
 
 # --- untrusted_app_27 ---
 typeattribute untrusted_app_27 domain;
-typeattribute untrusted_app_27 halclientdomain;
 
-binder_call(untrusted_app_27, hal_mediaeventgatherservice)
-binder_call(untrusted_app_27, hal_mediaeventgatherservice_service)
 binder_use(untrusted_app_27)
 get_prop(untrusted_app_27, vendor_mtk_atci_sys_prop)
 get_prop(untrusted_app_27, vendor_mtk_atm_ipaddr_prop)
@@ -73,15 +70,15 @@ hal_client_domain(untrusted_app_27, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app_27, hal_miperf)
 hal_client_domain(untrusted_app_27, hal_videoservice)
 allow untrusted_app_27 goodix_fingerprint_service:service_manager find;
+allow untrusted_app_27 hal_mediaeventgatherservice:binder call;
+allow untrusted_app_27 hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app_27 hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app_27 hal_mediaeventgatherservice_service:service_manager find;
 allow untrusted_app_27 radio:unix_stream_socket connectto;
 
 # --- untrusted_app_29 ---
 typeattribute untrusted_app_29 domain;
-typeattribute untrusted_app_29 halclientdomain;
 
-binder_call(untrusted_app_29, hal_mediaeventgatherservice)
-binder_call(untrusted_app_29, hal_mediaeventgatherservice_service)
 binder_use(untrusted_app_29)
 hal_client_domain(untrusted_app_29, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app_29, hal_miperf)
@@ -89,40 +86,43 @@ hal_client_domain(untrusted_app_29, hal_videoservice)
 allow untrusted_app_29 data_vendor_hmp_file:dir rw_dir_perms;
 allow untrusted_app_29 data_vendor_hmp_file:file rw_file_perms;
 allow untrusted_app_29 goodix_fingerprint_service:service_manager find;
+allow untrusted_app_29 hal_mediaeventgatherservice:binder call;
+allow untrusted_app_29 hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app_29 hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app_29 hal_mediaeventgatherservice_service:service_manager find;
 
 # --- untrusted_app_30 ---
 typeattribute untrusted_app_30 domain;
-typeattribute untrusted_app_30 halclientdomain;
 
-binder_call(untrusted_app_30, hal_mediaeventgatherservice)
-binder_call(untrusted_app_30, hal_mediaeventgatherservice_service)
 binder_use(untrusted_app_30)
 get_prop(untrusted_app_30, vendor_fp_prop)
 hal_client_domain(untrusted_app_30, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app_30, hal_miperf)
 hal_client_domain(untrusted_app_30, hal_videoservice)
+allow untrusted_app_30 hal_mediaeventgatherservice:binder call;
+allow untrusted_app_30 hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app_30 hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app_30 hal_mediaeventgatherservice_service:service_manager find;
 
 # --- untrusted_app_32 ---
 typeattribute untrusted_app_32 domain;
-typeattribute untrusted_app_32 halclientdomain;
 
-binder_call(untrusted_app_32, hal_mediaeventgatherservice)
-binder_call(untrusted_app_32, hal_mediaeventgatherservice_service)
 binder_use(untrusted_app_32)
 hal_client_domain(untrusted_app_32, hal_mediaeventgatherservice)
 hal_client_domain(untrusted_app_32, hal_miperf)
 hal_client_domain(untrusted_app_32, hal_videoservice)
+allow untrusted_app_32 hal_mediaeventgatherservice:binder call;
+allow untrusted_app_32 hal_mediaeventgatherservice_service:binder call;
+allow untrusted_app_32 hal_mediaeventgatherservice_service:fd use;
 allow untrusted_app_32 hal_mediaeventgatherservice_service:service_manager find;
 
 # --- untrusted_app_all ---
 get_prop(untrusted_app_all, vendor_mtk_nn_option_prop)
 get_prop(untrusted_app_all, vendor_mtk_webp_enhancement_prop)
 get_prop(untrusted_app_all, vendor_promotion_prop)
-allow untrusted_app_all apuext_device:chr_file r_file_perms;
+allow untrusted_app_all apuext_device:chr_file { getattr ioctl lock open read watch watch_reads };
 allow untrusted_app_all debugfs_ion:dir search;
 allow untrusted_app_all proc_mtk_jpeg:file rw_file_perms;
 allow untrusted_app_all sysfs_devices_block:dir search;
-allowxperm untrusted_app_all proc_mtk_jpeg:file ioctl { (range 0x7812 0x7814) };
+allowxperm untrusted_app_all proc_mtk_jpeg:file ioctl 0x7812-0x7814;
 

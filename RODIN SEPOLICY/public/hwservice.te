@@ -1,6 +1,7 @@
 # ============================================================
 # File: hwservice.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -279,7 +280,12 @@ typeattribute hwservicemanager coredomain;
 typeattribute hwservicemanager domain;
 typeattribute hwservicemanager mlstrustedsubject;
 
-binder_call(hwservicemanager, logturbo)
+allow hwservicemanager logturbo:binder { call transfer };
+allow hwservicemanager miuibooster:binder transfer;
+allow hwservicemanager miuibooster:dir search;
+allow hwservicemanager miuibooster:file { open read };
+allow hwservicemanager miuibooster:process getattr;
+allow hwservicemanager smartplatformserver:binder transfer;
 
 # --- hwservicemanager_exec ---
 typeattribute hwservicemanager_exec exec_type;

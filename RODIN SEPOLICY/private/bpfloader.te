@@ -1,6 +1,7 @@
 # ============================================================
 # File: bpfloader.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -16,22 +17,22 @@ get_prop(bpfloader, abreuse_prop)
 get_prop(bpfloader, ctl_start_prop)
 get_prop(bpfloader, exported_system_prop)
 get_prop(bpfloader, powerctl_prop)
-set_prop(bpfloader, ctl_start_prop)
-set_prop(bpfloader, powerctl_prop)
-allow bpfloader bpf_sys_kprobe_file:file r_file_perms;
-allow bpfloader bpf_sys_vmlinux_file:file r_file_perms;
-allow bpfloader cache_file:dir create_dir_perms;
-allow bpfloader cache_file:file create_file_perms;
+allow bpfloader bpf_sys_kprobe_file:file { getattr open read };
+allow bpfloader bpf_sys_vmlinux_file:file { getattr open read };
+allow bpfloader cache_file:dir { add_name create getattr open read remove_name search setattr write };
+allow bpfloader cache_file:file { append create getattr open read setattr unlink write };
 allow bpfloader cache_file:lnk_file read;
-allow bpfloader cache_recovery_file:dir create_dir_perms;
-allow bpfloader cache_recovery_file:file create_file_perms;
-allow bpfloader cgroup_v2:dir { read open };
-allow bpfloader fs_bpf_miui:dir create_dir_perms;
-allow bpfloader fs_bpf_miui:file { read create setattr rename };
-allow bpfloader fs_bpf_miui:lnk_file { r_file_perms create };
-allow bpfloader fs_sys_miui:file r_file_perms;
+allow bpfloader cache_recovery_file:dir { add_name create getattr open read remove_name search setattr write };
+allow bpfloader cache_recovery_file:file { append create getattr open read setattr unlink write };
+allow bpfloader cgroup_v2:dir { open read };
+allow bpfloader ctl_start_prop:property_service set;
+allow bpfloader fs_bpf_miui:dir { add_name create remove_name search write };
+allow bpfloader fs_bpf_miui:file { create read rename setattr };
+allow bpfloader fs_bpf_miui:lnk_file { create getattr read };
+allow bpfloader fs_sys_miui:file { getattr open read };
 allow bpfloader hyper_bpfloader_socket:sock_file { read write };
-allow bpfloader self:perf_event { open cpu kernel write };
+allow bpfloader powerctl_prop:property_service set;
+allow bpfloader self:perf_event { cpu kernel open write };
 allow bpfloader uncrypt:unix_stream_socket connectto;
 allow bpfloader uncrypt_socket:sock_file write;
 allow bpfloader vfat:dir create_dir_perms;

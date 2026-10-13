@@ -1,6 +1,7 @@
 # ============================================================
 # File: hal_presence.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Sensors & Location
 # Subcategory: Sensor HAL
@@ -13,5 +14,6 @@ binder_call(hal_presence_client, hal_presence_server)
 allow hal_presence_client volte_uce_ua_hwservice:hwservice_manager find;
 
 # --- hal_presence_server ---
-binder_call(hal_presence_server, hal_presence_client)
+allow hal_presence_server hal_presence_client:binder call;
+allow hal_presence_server hal_presence_client:fd use;
 

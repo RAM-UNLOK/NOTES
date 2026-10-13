@@ -99,12 +99,6 @@ vendor.sf.hwc_repaint_fmt                             u:object_r:system_mtk_sf_c
 # [ Radio & Telephony ]
 # --- IMS & VoLTE ---
 persist.vendor.radio.cfu_over_ims                     u:object_r:system_mtk_supp_serv_prop:s0
-persist.vendor.radio.simswitchstate                   u:object_r:system_mtk_capability_switch_prop:s0
-persist.vendor.radio.wait.imsi                        u:object_r:system_mtk_capability_switch_prop:s0
-persist.vendor.radio.waitimsi.roaming                 u:object_r:system_mtk_capability_switch_prop:s0
-vendor.gsm.radio.ss.imsdereg                          u:object_r:system_mtk_supp_serv_prop:s0
-vendor.ril.imsconfig.force.notify                     u:object_r:system_mtk_imsconfig_prop:s0
-vendor.ril.imsi.status.                               u:object_r:system_mtk_capability_switch_prop:s0
 
 # --- MediaTek IMS & VoLTE ---
 persist.vendor.mtk_rcs_single_reg_support             u:object_r:system_mtk_rcs_single_reg_support_prop:s0
@@ -131,32 +125,34 @@ persist.vendor.radio.new.sim.slot                     u:object_r:system_mtk_capa
 persist.vendor.radio.port_index                       u:object_r:system_mtk_atci_sys_prop:s0
 persist.vendor.radio.selfreg                          u:object_r:system_mtk_selfreg_prop:s0
 persist.vendor.radio.sim.status                       u:object_r:system_mtk_capability_switch_prop:s0
+persist.vendor.radio.simswitchstate                   u:object_r:system_mtk_capability_switch_prop:s0
 persist.vendor.radio.unlock                           u:object_r:system_mtk_capability_switch_prop:s0
 persist.vendor.radio.unlock.roaming                   u:object_r:system_mtk_capability_switch_prop:s0
+persist.vendor.radio.wait.imsi                        u:object_r:system_mtk_capability_switch_prop:s0
+persist.vendor.radio.waitimsi.roaming                 u:object_r:system_mtk_capability_switch_prop:s0
 persist.vendor.radio.wm_fddtimer                      u:object_r:system_mtk_world_phone_prop:s0
 persist.vendor.radio.wm_selectmode                    u:object_r:system_mtk_world_phone_prop:s0
 radio.dataroaming.enable.suffix.subid                 u:object_r:radio_prop:s0
+radio.editims.secretcode                              u:object_r:radio_prop:s0
 radio.modem.modemresetting                            u:object_r:radio_prop:s0
+radio.newapn.secretcode                               u:object_r:radio_prop:s0
+radio.wechat.secretcode                               u:object_r:radio_prop:s0
 ro.ril.oem.ctacode                                    u:object_r:sno_prop:s0
 ro.ril.oem.imei                                       u:object_r:deviceid_prop:s0
 ro.ril.oem.meid                                       u:object_r:deviceid_prop:s0
 ro.ril.oem.psno                                       u:object_r:sno_prop:s0
 ro.ril.oem.sno                                        u:object_r:sno_prop:s0
 vendor.cdma.icc.operator.mcc                          u:object_r:system_mtk_cdma_prop:s0
+vendor.gsm.radio.ss.imsdereg                          u:object_r:system_mtk_supp_serv_prop:s0
 vendor.gsm.radio.ss.sc                                u:object_r:system_mtk_supp_serv_prop:s0
 vendor.radio.dsda.state                               u:object_r:system_mtk_common_data_prop:s0
 vendor.ril.atci.flightmode                            u:object_r:system_mtk_atci_sys_prop:s0
 vendor.ril.capctrl_loaded                             u:object_r:system_mtk_capctrl_sys_prop:s0
 vendor.ril.cdma.inecmmode_by_slot                     u:object_r:system_mtk_cdma_ecm_prop:s0
+vendor.ril.imsconfig.force.notify                     u:object_r:system_mtk_imsconfig_prop:s0
+vendor.ril.imsi.status.                               u:object_r:system_mtk_capability_switch_prop:s0
 vendor.ril.test.poweroffmd                            u:object_r:system_mtk_power_off_md_prop:s0
 vendor.ril.testmode                                   u:object_r:system_mtk_power_off_md_prop:s0
-
-# --- Samsung IMS & VoLTE ---
-radio.editims.secretcode                              u:object_r:radio_prop:s0
-
-# --- Samsung Modem & RIL ---
-radio.newapn.secretcode                               u:object_r:radio_prop:s0
-radio.wechat.secretcode                               u:object_r:radio_prop:s0
 
 # --- Xiaomi Modem & RIL ---
 ro.ril.miui.ctacode                                   u:object_r:miui_sno_prop:s0
@@ -218,7 +214,7 @@ persist.vendor.sensors.hal.log                        u:object_r:vendor_sensors_
 sys.boot.gsensor                                      u:object_r:system_mtk_collision_prop:s0
 
 # [ Hardware & Peripheral ]
-# --- Samsung USB ---
+# --- USB ---
 persist.vendor.usb.reversechg.enable                  u:object_r:exported_system_prop:s0
 
 # --- Xiaomi USB ---
@@ -256,6 +252,7 @@ persist.offlinelog.                                   u:object_r:log_prop:s0
 persist.pcie.gen1state                                u:object_r:radio_prop:s0
 persist.pcie.rpmstate                                 u:object_r:radio_prop:s0
 persist.private.device_name                           u:object_r:system_private_prop:s0
+persist.secretcode.show_5ga                           u:object_r:radio_prop:s0
 persist.settings.large_screen_opt.enabled             u:object_r:exported_system_prop:s0 exact bool
 persist.suscollision.                                 u:object_r:system_mtk_collision_prop:s0
 persist.sys.abreuse.abstatus                          u:object_r:abreuse_prop:s0
@@ -376,7 +373,6 @@ persist.vendor.wlschg.lowInductanceOffset             u:object_r:exported_system
 persist.vendor.wlschg.rxoffset                        u:object_r:exported_system_prop:s0
 
 # --- Samsung NVRAM & Calibration ---
-persist.secretcode.show_5ga                           u:object_r:radio_prop:s0
 persist.sys.log_time_gap_sec                          u:object_r:exported_system_prop:s0
 
 # --- Xiaomi NVRAM & Calibration ---
@@ -453,6 +449,7 @@ mcd.extra.params                                      u:object_r:exported_system
 pm.dexopt.baseline                                    u:object_r:exported_pm_prop:s0 exact string
 pm.dexopt.first-use                                   u:object_r:exported_pm_prop:s0 exact string
 pm.dexopt.install-create-dm                           u:object_r:exported_pm_prop:s0 exact string
+pm.dexopt.secondary                                   u:object_r:exported_pm_prop:s0 exact string
 ro.arm64.memtag.bootctl_supported                     u:object_r:system_mtk_memtag_prop:s0
 ro.channel.com.snapchat.android                       u:object_r:exported_system_prop:s0
 ro.com.google.clientidbase                            u:object_r:exported_system_prop:s0
@@ -521,9 +518,6 @@ vendor.suppserv.                                      u:object_r:system_mtk_supp
 vendor.ter.service                                    u:object_r:system_mtk_terservice_prop:s0
 vendor.video.framework.                               u:object_r:system_video_framework_prop:s0
 vendor.wfdwcg.enable                                  u:object_r:exported_system_prop:s0
-
-# --- Samsung Misc ---
-pm.dexopt.secondary                                   u:object_r:exported_pm_prop:s0 exact string
 
 # --- Xiaomi Misc ---
 miui.extm.low_data                                    u:object_r:system_perf_init_prop:s0

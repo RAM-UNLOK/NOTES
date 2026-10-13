@@ -1,6 +1,7 @@
 # ============================================================
 # File: crosvm.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
@@ -11,12 +12,10 @@
 # --- crosvm ---
 typeattribute crosvm coredomain;
 typeattribute crosvm domain;
-typeattribute crosvm halclientdomain;
 
 hal_client_domain(crosvm, hal_graphics_allocator)
 allow crosvm trusty_security_vm_launcher:fd use;
-allow crosvm trusty_security_vm_launcher:fifo_file { r_file_perms write };
-allow crosvm trusty_security_vm_launcher:unix_stream_socket { r_file_perms write };
+allow crosvm trusty_security_vm_launcher:{ fifo_file unix_stream_socket } { getattr ioctl read write };
 allow crosvm trusty_security_vm_launcher_tmpfs:file rw_file_perms;
 
 # --- crosvm_exec ---

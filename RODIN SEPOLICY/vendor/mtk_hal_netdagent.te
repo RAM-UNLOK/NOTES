@@ -1,6 +1,7 @@
 # ============================================================
 # File: mtk_hal_netdagent.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: MediaTek
 # Category: Network (Wi-Fi, BT, NFC)
 # Subcategory: Wi-Fi Stack
@@ -14,9 +15,10 @@ allow mtk_hal_netdagent_client mtk_hal_netdagent_hwservice:hwservice_manager fin
 allow mtk_hal_netdagent_client mtk_hal_netdagent_service:service_manager find;
 
 # --- mtk_hal_netdagent_server ---
-add_hwservice(mtk_hal_netdagent_server, hidl_base_hwservice)
 add_hwservice(mtk_hal_netdagent_server, mtk_hal_netdagent_hwservice)
-add_service(mtk_hal_netdagent_server, mtk_hal_netdagent_service)
-binder_call(mtk_hal_netdagent_server, mtk_hal_netdagent_client)
-binder_use(mtk_hal_netdagent_server)
+allow mtk_hal_netdagent_server mtk_hal_netdagent_client:binder call;
+allow mtk_hal_netdagent_server mtk_hal_netdagent_client:fd use;
+allow mtk_hal_netdagent_server mtk_hal_netdagent_service:service_manager { add find };
+allow mtk_hal_netdagent_server servicemanager:binder { call transfer };
+allow mtk_hal_netdagent_server servicemanager:fd use;
 

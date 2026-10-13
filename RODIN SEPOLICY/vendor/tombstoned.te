@@ -1,6 +1,7 @@
 # ============================================================
 # File: tombstoned.te
 # Tier: vendor
+# Partitions: odm, vendor
 # Vendor: AOSP / Generic
 # Category: Debug, Logging & Diagnostics
 # Subcategory: Debug tools

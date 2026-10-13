@@ -1,6 +1,7 @@
 # ============================================================
 # File: flags_health_check.te
 # Tier: private
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc

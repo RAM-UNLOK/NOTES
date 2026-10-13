@@ -1,6 +1,7 @@
 # ============================================================
 # File: mi_sw_sync_dev.te
 # Tier: public
+# Partitions: product, system_ext
 # Vendor: AOSP / Generic
 # Category: Uncategorized
 # Subcategory: Misc
