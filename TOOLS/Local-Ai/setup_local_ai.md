@@ -274,3 +274,8 @@ source ~/.bashrc
    claude-local
    ```
 ```
+
+
+1. Create the file: Run nano cleanup_ai.sh, paste the script, and save (Ctrl+O, Enter, Ctrl+X).
+2. Make it executable: Run chmod +x cleanup_ai.sh.
+3. Execute it: Run ./cleanup_ai.sh (you will be prompted for your sudo password to remove system-level Ollama files).
