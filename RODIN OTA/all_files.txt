@@ -4013,6 +4013,8 @@ system/system/framework/oat/arm64/apex@com.android.adservices@javalib@service-sd
 system/system/framework/oat/arm64/apex@com.android.adservices@javalib@service-sdksandbox.jar@classes.odex.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.adservices@javalib@service-sdksandbox.jar@classes.vdex
 system/system/framework/oat/arm64/apex@com.android.adservices@javalib@service-sdksandbox.jar@classes.vdex.fsv_meta
+system/system/framework/oat/arm64/apex@com.android.appsearch@javalib@service-appsearch.jar@classes.art
+system/system/framework/oat/arm64/apex@com.android.appsearch@javalib@service-appsearch.jar@classes.art.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.appsearch@javalib@service-appsearch.jar@classes.odex
 system/system/framework/oat/arm64/apex@com.android.appsearch@javalib@service-appsearch.jar@classes.odex.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.appsearch@javalib@service-appsearch.jar@classes.vdex
@@ -4071,6 +4073,8 @@ system/system/framework/oat/arm64/apex@com.android.scheduling@javalib@service-sc
 system/system/framework/oat/arm64/apex@com.android.scheduling@javalib@service-scheduling.jar@classes.odex.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.scheduling@javalib@service-scheduling.jar@classes.vdex
 system/system/framework/oat/arm64/apex@com.android.scheduling@javalib@service-scheduling.jar@classes.vdex.fsv_meta
+system/system/framework/oat/arm64/apex@com.android.tethering@javalib@service-connectivity.jar@classes.art
+system/system/framework/oat/arm64/apex@com.android.tethering@javalib@service-connectivity.jar@classes.art.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.tethering@javalib@service-connectivity.jar@classes.odex
 system/system/framework/oat/arm64/apex@com.android.tethering@javalib@service-connectivity.jar@classes.odex.fsv_meta
 system/system/framework/oat/arm64/apex@com.android.tethering@javalib@service-connectivity.jar@classes.vdex
@@ -13553,7 +13557,6 @@ vendor/lib64/libpcap.so
 vendor/lib64/libpcdbi.so
 vendor/lib64/libpda_usdriver.so
 vendor/lib64/libperfctl_vendor.so
-vendor/lib64/libpiex.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpkm.so
 vendor/lib64/libpng.so
