@@ -37,6 +37,11 @@ grep "avc:" full_logcat1.log | cut -d' ' -f3- | sort -u > sorted_avc_denials.txt
 adb logcat -b all | grep "avc: denied"
 ```
 
+### Build Check
+```bash
+mka check-selinux-treble-labeling
+```
+
 ### AVC denial anatomy
 ```
 avc: denied { open read } for pid=1234 comm="mtk_hal_audio"
