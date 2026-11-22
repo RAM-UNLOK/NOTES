@@ -483,3 +483,7 @@ echo ""
 echo -e "  ${CYAN}Next step:${RESET}  source ~/.bashrc   (or open a new terminal)"
 echo -e "  ${CYAN}Full log :${RESET}  $LOG_FILE"
 echo ""
+
+sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+sudo apt update
+sudo apt install clang llvm lldb lld
