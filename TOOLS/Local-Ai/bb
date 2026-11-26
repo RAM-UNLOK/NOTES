@@ -1,0 +1,59 @@
+Perform a deep, high effort, read-only code audit and review of this entire repository (root directory and every subfolder). Do NOT modify any files.
+
+### 1. Required Skills & Execution Order
+Load and apply the following OpenCode skills **one by one (sequentially)** using your `skill` tool (and load their `references/` files as needed). Do not combine or skip steps—complete a full pass for each skill before moving to the next:
+
+1. **`compose-expert`**
+2. **`jetpack-compose-performance`**
+3. **`material-design-3-ui`**
+
+### 2. Step-by-Step Workflow
+
+#### Step 1: Full Repository Inventory
+- Recursively enumerate **every file and subfolder** in the repository.
+- Output a complete file tree / inventory and identify all Kotlin, Jetpack Compose, UI, theme, navigation, resource, and Gradle/configuration files to ensure 100% coverage with zero skipped subdirectories.
+- Read every relevant source file in full before reviewing it. Never assume or guess implementation details from filenames alone.
+
+#### Step 2: Sequential Skill Audits (One by One)
+Run three distinct, thorough audit passes across all discovered files:
+
+- **Pass 1 — `compose-expert` Audit:**
+  - Load `compose-expert` first and evaluate every relevant file against its guidelines.
+  - Check Compose architecture, Unidirectional Data Flow (UDF), state hoisting, ViewModel/UI-state boundaries, side-effect APIs (`LaunchedEffect`, `DisposableEffect`, `SideEffect`, `rememberCoroutineScope`), lifecycle awareness (`collectAsStateWithLifecycle`), Modifier ordering & chaining, slot APIs, composable scoping/reusability, navigation patterns, and `@Preview` coverage.
+
+- **Pass 2 — `jetpack-compose-performance` Audit:**
+  - Load `jetpack-compose-performance` second and re-evaluate every relevant file strictly for runtime and composition performance.
+  - Check recomposition scopes, parameter stability (`@Immutable`, `@Stable`, unstable collections/lambdas, kotlinx-collections-immutable or strong skipping implications), improper `remember` / `derivedStateOf` usage, reading state too high in the tree (instead of deferring via lambdas or `Modifier.offset { }` / `drawBehind`), `LazyColumn`/`LazyRow`/`LazyVerticalGrid` missing `key` and `contentType`, heavy allocations or side effects inside composition, and unnecessary layout passes/subcomposition.
+
+- **Pass 3 — `material-design-3-ui` Audit:**
+  - Load `material-design-3-ui` third and re-evaluate all UI, theme, and resource files strictly for Material Design 3 compliance and UX quality.
+  - Check `MaterialTheme` setup (ColorScheme, dynamic color, Typography scale, Shapes), hardcoded colors/dimensions instead of theme tokens, proper M3 components vs. legacy M2 or custom hacks, dark/light theme parity, edge-to-edge & `WindowInsets` handling, spacing/alignment consistency, touch target sizes (minimum 48dp), contrast, and accessibility (`contentDescription`, semantics, role descriptions).
+
+### 3. Required Output Format
+
+Present your final report clearly with the following sections:
+
+1. **Audit Coverage Summary**
+   - Total files scanned, list of all directories/subfolders audited, and any files excluded (e.g., build artifacts/generated code) with justification.
+
+2. **Executive Summary**
+   - Overall assessment per pillar (`Compose Architecture`, `Performance`, `Material Design 3 UI`) and top systemic patterns found across the codebase.
+
+3. **Full Findings List & File-by-File Code Review**
+   - Group findings by **Skill / Pillar** (or by file, clearly tagged with the skill).
+   - For **every issue**, include:
+     - **Severity:** `Critical` | `High` | `Medium` | `Low`
+     - **Location:** Exact `path/to/File.kt:line_number`
+     - **Skill / Rule Violated:** Which of the 3 skills flagged it and why
+     - **Issue Explanation:** Concrete impact (bugs, jank, unnecessary recompositions, M3/a11y regressions)
+     - **Recommended Fix:** Exact `Before` vs. `After` code snippet
+
+4. **Prioritized Recommendations & Action Plan**
+   - Organize actionable next steps into:
+     - **Quick Wins** (low effort, high impact)
+     - **Performance Optimizations**
+     - **Architecture & Compose Refactoring**
+     - **Material 3 & Accessibility Polish**
+
+Be exhaustive, precise, and strictly evidence-based—cite only exact symbols, file paths, and line numbers you directly observed in the repository.
+
